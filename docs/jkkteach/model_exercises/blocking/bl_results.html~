@@ -1,0 +1,233 @@
+<html>
+<head><title>Prof Kruschke, Data</title></head>
+<body bgcolor="#FFBBBB">
+
+
+<center>
+<h3> Prof. John K. Kruschke</h3>
+</center>
+<center>
+<h2>Data from Blocking of Associative Learning</h2>
+</center>
+
+<p>
+<center>
+<table border=2 cellpadding=1>
+<tr>
+<td colspan=4 align=center>
+<em><strong>Table 1': Mean Responses of Many Participants</strong></em>
+<br>(3 = Probably A, 1 = Maybe A, -1 = Maybe B, -3 = Probably B.
+<br>Individual mean computed first for each cell,
+then mean across 71 individuals is tabulated here.)
+</td>
+</tr>
+<tr>
+<td align=center>Disease A</td>
+<td align=center>Disease B</td>
+<td align=center>Blocking</td>
+<td align=center>Overshadowing</td>
+</tr>
+<tr>
+<td align=center>2.92<br>SS/df=0.078<br>N=71</td>
+<td align=center>-2.96<br>SS/df=0.041<br>N=71</td>
+<td align=center>-0.31<br>SS/df=0.44<br>N=71</td>
+<td align=center>0.51<br>SS/df=0.51<br>N=71</td>
+</tr>
+</table>
+</center>
+
+<p>
+<h3>Memory for Training Cases:</h3>
+
+<p>For both diseases, accuracy during the test phase was extremely good.
+
+<p>
+<h3>Blocking Test Cases:</h3>
+
+<p>There was a blocking effect, on average, with people tending to
+prefer disease B for the blocking cases.  That is, the mean of -0.31
+is significantly less than zero, <em>t</em>(70)=3.95, <em>p</em>&lt;.01.
+
+<p>There were notable individual differences, however.  Below is a
+frequency distribution of individual means for the blocking cases.  It
+can be seen that many people showed no blocking effect, and a few even
+the opposite of a blocking effect.  But a significant number of people
+did exhibit blocking.
+
+<center>
+<table border=1 cellpadding=5>
+<tr><td>
+<pre>
+                                     Cum
+      Value  Frequency  Percent   Percent
+
+      -3.00         1      1.4       1.4
+      -2.00         1      1.4       2.8
+      -1.50         2      2.8       5.6
+      -1.00        11     15.5      21.1
+       -.50        18     25.4      46.5
+        .00        29     40.8      87.3
+        .50         6      8.5      95.8
+       1.00         3      4.2     100.0
+               -------  -------
+      Total        71    100.0
+
+
+        |
+  -3.00 |** 1
+        |
+  -2.00 |** 1
+        |
+  -1.50 |*** 2
+        |
+  -1.00 |****************** 11
+        |
+   -.50 |****************************** 18
+        |
+    .00 |************************************************ 29
+        |
+    .50 |********** 6
+        |
+   1.00 |***** 3
+        |
+        +---------+---------+---------+---------+---------+
+        0         6        12        18        24        30
+                             Frequency
+</pre>
+</td></tr></table></center>
+
+<p><h3>Overshadowing Test Cases:</h3>
+
+
+<p>There was an overshadowing effect, on average, with people tending
+to prefer disease A for the overshadowing cases.  That is, the mean of
+0.51 is significantly greater than zero, <em>t</em>(70)=6.04,
+<em>p</em>&lt;.01.
+
+<p>There were notable individual differences, however.  Below is a
+frequency distribution of individual means for the overshadowing
+cases.  It can be seen that many people showed no overshadowing
+effect, and a few even the opposite of an overshadowing effect.  But a
+significant number of people did exhibit overshadowing.
+
+<center>
+<table border=1 cellpadding=5>
+<tr><td>
+<pre>
+                                Cum
+  Value  Frequency  Percent  Percent
+
+   -.50         5      7.0      7.0
+    .00        29     40.8     47.9
+    .50        11     15.5     63.4
+   1.00        18     25.4     88.7
+   1.50         4      5.6     94.4
+   2.00         2      2.8     97.2
+   2.50         1      1.4     98.6
+   3.00         1      1.4    100.0
+           -------  -------
+  Total        71    100.0
+
+
+        |
+   -.50 |******** 5
+        |
+    .00 |************************************************ 29
+        |
+    .50 |****************** 11
+        |
+   1.00 |****************************** 18
+        |
+   1.50 |******* 4
+        |
+   2.00 |*** 2
+        |
+   2.50 |** 1
+        |
+   3.00 |** 1
+        |
+        +---------+---------+---------+---------+---------+
+        0         6        12        18        24        30
+                             Frequency
+</pre>
+</td></tr></table></center>
+
+
+<p><h3>Correlation of Blocking with Overshadowing</h3>
+
+<p>It turns out that there was a significant correlation of blocking
+with overshadowing.  That is, if a person showed overshadowing, then
+he or she tended also to show blocking.  The correlation was highly
+significant, with r = -.612.  A scatterplot of 71 individuals is shown
+below.  Notice that many people (21) showed zero blocking and zero
+overshadowing, but many other people showed both, with covarying
+magnitude.
+
+<center>
+<table border=1 cellpadding=5>
+<tr><td>
+<pre>
+
+                              Blocking vs. Overshadowing
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        1+               1    1         1                                   +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+       .5+               1    4                        1                    +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        0+               2  (21)   3    2         1                         +
+         |                                                                  |
+         |                                                                  |
+B        |                                                                  |
+l        |                                                                  |
+o     -.5+               1    2    7    8                                   +
+c        |                                                                  |
+k        |                                                                  |
+i        |                                                                  |
+n        |                                                                  |
+g      -1+                    1    1    6    3                              +
+         |                                                                  |
+M        |                                                                  |
+e        |                                                                  |
+a        |                                                                  |
+n    -1.5+                              1         1                         +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+       -2+                                   1                              +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+     -2.5+                                                                  +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+       -3+                                                  1               +
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+         -2        -1         0         1         2         3         4
+
+                                  Overshadowing Mean
+</pre>
+</td></tr></table></center>
+
+
+
+
+<p>
+<br><br><br><br>
+<center>
+<h5>Copyright &copy; 1999 John K. Kruschke</h5>
+</center>
+
+<p><hr>
+
+</body>
+</html>

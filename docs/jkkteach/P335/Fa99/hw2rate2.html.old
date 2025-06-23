@@ -1,0 +1,2256 @@
+<html>
+<head><title>HW2 Training Phase 2</title></head>
+<body bgcolor="#BBBBBB">
+<center>
+
+<!--
+*PE1* = ear aches
+*PL1* = skin rash
+*I1*  = back pain
+*PE2* = dizziness
+*PL2* = sore muscles
+*I2*  = stuffy nose
+*L2* = A
+*E1* = B
+*E2* = C
+*L1* = D
+-->
+
+
+<!-- Second training phase -->
+
+<!-- ===================================================================== -->
+<a name="trainI1PE1-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-5fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-5fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-5fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-5fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PE2-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-5fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-5fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-5fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-5fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI1PL1-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-5fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-5fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-5fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-5fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PL2-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-5fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-5fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-5fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-5fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPE1I1-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-5fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-5fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-5fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-5fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL1I1-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-5fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-5fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-5fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-5fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPE2I2-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-5fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-5fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-5fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-5fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-5">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL2I2-5">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-5fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-5fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-5fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-5fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-5fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-5fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+
+<!-- ===================================================================== -->
+<a name="trainPE1I1-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-6fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-6fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-6fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-6fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPE2I2-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-6fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-6fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-6fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-6fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL1I1-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-6fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-6fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-6fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-6fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL2I2-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-6fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-6fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-6fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-6fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PE1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PE1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI1PE1-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-6fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-6fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-6fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-6fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI1PL1-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-6fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-6fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-6fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-6fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PE2-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-6fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-6fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-6fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-6fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-6">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PL2-6">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-6fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-6fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-6fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-6fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-6fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PE1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-6fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PE1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI1PE1-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-7fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-7fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-7fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-7fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PE2-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-7fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-7fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-7fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-7fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI1PL1-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-7fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-7fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-7fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-7fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PL2-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-7fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-7fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-7fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-7fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPE1I1-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-7fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-7fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-7fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-7fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL1I1-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-7fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-7fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-7fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-7fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPE2I2-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-7fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-7fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-7fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-7fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-7">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL2I2-7">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-7fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-7fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-7fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-7fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-7fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-7fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE1I1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+
+<!-- ===================================================================== -->
+<a name="trainPE1I1-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-8fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-8fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-8fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE1I1-8fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE1I1-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPE2I2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPE2I2-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-8fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-8fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-8fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPE2I2-8fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPE2I2-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL1I1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL1I1-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-8fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-8fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-8fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL1I1-8fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL1I1-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainPL2I2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainPL2I2-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-8fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-8fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-8fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainPL2I2-8fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PE1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainPL2I2-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PE1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI1PE1-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>ear aches</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-8fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-8fbc">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-8fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PE1-8fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PE1-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>ear aches</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease B.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI1PL1-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI1PL1-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>back pain</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>skin rash</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-8fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-8fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-8fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI1PL1-8fbc">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI1PL1-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>back pain</font></td></tr>
+<tr><td align=center><font size=+2>skin rash</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease D.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PE2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PE2-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>dizziness</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-8fbw">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-8fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-8fbc">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PE2-8fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PE2-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>dizziness</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease C.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#trainI2PL2-8">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="trainI2PL2-8">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td colspan=4 align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td colspan=4 align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td colspan=4 align=center>Which disease does this patient have?</td></tr>
+<tr>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-8fbc">A</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-8fbw">B</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-8fbw">C</a></font></td></tr>
+  </table>
+</td>
+<td align=center>
+  <table border=1>
+    <tr><td><font size=+2><a href="#trainI2PL2-8fbw">D</a></font></td></tr>
+  </table>
+</td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-8fbc">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2>Correct! This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#learnquery2">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<a name="trainI2PL2-8fbw">&nbsp;</a>
+<br><br><br>
+<table>
+<tr><td align=center><font size=+2>stuffy nose</font></td></tr>
+<tr><td align=center><font size=+2>sore muscles</font></td></tr>
+<tr><td align=center>
+  <font size=+2><strong>WRONG!</strong> This patient has disease A.</font></td>
+</tr>
+<tr>
+<td align=center>When you are done studying this case,
+<br><a href="#learnquery2">click here to continue.</a></td>
+</tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+<!-- ===================================================================== -->
+<a name="learnquery2">&nbsp;</a>
+<br><br><br>
+For this exercise to be effective, 
+<br>you must know these cases very well before going on.
+<br>Do you think you now know all 
+<br>these cases <strong>very well</strong>?
+<br>If <strong>not</strong>, 
+<a href="#trainI1PE1-7">click here for more practice</a>.
+<br>If so, 
+<a href="hw2rate3.html#testinstruct">click here to go to the test phase</a>.
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+</center>
+
+</FORM>
+</body>
+</html>
+
+

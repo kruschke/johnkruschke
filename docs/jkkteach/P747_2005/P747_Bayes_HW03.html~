@@ -1,0 +1,64 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 2, Due Wednesday Sept 14, 2005.
+
+<p>General directions:
+<li>
+Make a cover sheet, without any answers, that has your name and student ID number (not your SS number). On all subsequent sheets, that have your answers, write only your student ID number (not your SS number, and not your name).
+<li>
+Make a photocopy of your homework, and hand in the original and the photocopy. (Of course, you might want to keep another copy for yourself!) The copy, with the cover page removed, will be used for peer-grading.
+<li>
+Show your work. When solving applied problems, first express the solution or method in terms of general formulas, then plug in specific numbers to get a specific numerical solution. Annotate the progression of calculations so that a reader can understand why you are doing what you are doing.
+
+<ul>
+
+<p>
+<li>
+p. 70, #14, half of part (a): Derive equations 2.9 and 2.10.
+
+<p>
+<li>
+p. 68, #8, part (a).
+
+<p>
+<li>
+Suppose you are estimating the mean weight of guinea pigs. You suppose
+that weights are normally distributed around the mean, &mu;, with
+standard deviation of 0.3. Your unnormalized prior is p(&mu;) = &mu;
+exp(-(&mu;/3)^2). You then select a guinea pig at random and find that
+its weight is 3.0. Determine the posterior distribution on &mu; by
+using an R script modeled after <a href="BayesCoinFlip.R">the one
+shown in class</a> for the coin flip example. Plot graphs of the prior
+and posterior densities (normalized). Use a comb for &mu; that spans
+the interval [0,10].
+
+<!--
+<p>
+<li>
+p. 68-69, #10, parts (a) and (b).
+-->
+
+<!--
+<p>
+<li>
+p. 69, #11, part (a).
+-->
+
+</ul>
+
+</ul>
+<p><hr>
+</body>
+</font>
+</html>
+
+
+

@@ -1,0 +1,316 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<hr><p>
+<center>
+<h2> 
+<a href="q550.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Introduction.
+</h2>
+</center>
+
+
+<ol>
+
+<p><strong><li>Modeling in general</strong>
+
+<p>All branches of science create models of the systems they study.
+In fact, many cognitive scientists believe that a fundamental aspect
+of human intelligence is the active construction and manipulation of
+mental models of the world.  What's so great about models?
+
+<p><strong>1.1 The goals and roles of modeling.</strong>
+
+<p>Models serve many purposes; perhaps the most obvious is
+<em>prediction</em> of future states of the modeled system.  This is
+clearly the primary purpose of mental models used by people in "the
+real world".
+
+<p>There is another purpose for modeling in science.  When struggling
+to understand some system in the world, scientists usually think first
+of relatively vague, informal principles that underlie the system's
+behavior.  The scientists then conduct experiments to test the
+informal explanatory principles.  If the explanatory principles are
+confirmed, then they can be made explicit and independent from the
+intuitions of the theorist by expressing the principles in a formal
+model.  A formal model also makes relatively precise predictions,
+and can be tested more stringently than the informal principles.  If a
+model can be constructed which adequately fits the data, then the
+underlying explanatory principles accrue more support.  Thus, even if
+a formal model isn't predictive, it can support <em>understanding and
+explanation</em>.  
+
+<p>Note also that a model can be predictive without being explanatory.
+This type of model is sometimes referred to as "mere curve fitting".
+Such a model fits the known data and interpolates or extrapolates to
+newly tested situations, but does not express any explanatory
+principles.  In summary, a model can be predictive without being
+explanatory, or a model can be explanatory without being predictive.
+Ultimately we would like our models to be both explanatory and
+predictive.
+
+
+<p><strong>1.2 The structure of modeling.</strong>
+
+<p>Figure 1 shows the general scheme of cognitive modeling.  The top
+row refers to stuff in the real world.  The bottom row denotes formal
+representations of this stuff.  The top row, going from "environment"
+through the "cognizer" to "behavior" could really refer to any system
+that has input, processing, and output.  (There is usually assumed to
+be some temporal and causal priority of the input, but this is not
+essential.)
+
+<center>
+<p><img src="modeling2.gif" alt="Diagram of modeling">
+<br><em>Figure 1. The structure of modeling.</em>
+</center>
+
+<p>We can observe the environment and the behavior of the cognizer,
+but we cannot observe its innards (and even when we do, it doesn't
+reveal how it works).  Our goal is to explain how the cognizer
+generates its particular behavior in particular environments.
+
+<p>The first step in modeling is formally representing the environment
+and the behavior.  That is, we have to <em>measure</em> the observable
+stuff in the world.  But we don't measure everything, instead we
+select some aspects that seem relevant to the behavior we are
+interested in.  Moreover we don't measure with infinite detail and
+accuracy, instead we compress and summarize our measurements.  These
+acts of selection, measurement, and compression yield formal
+descriptions of the environment (input) and behavior (output).
+
+<p>A model is a formal transformation, or function, which takes as its
+input the formal description of the environment, and produces as its
+output a predicted formal description of the behavior.  If the model
+is a good one, its output will closely match the measured behavior of
+the real cognizer.
+
+<p>The formal transformation might involve many intervening variables,
+or formal constructs, or internal representations.  In an explanatory
+model, these internal formal constructs are supposed to correspond to
+something in the cognizer being modeled.  The internal formal
+constructs should be expressions of the underlying explanatory
+principles that motivated the model.
+
+<p>As an example, consider one of Newton's laws,
+<em>a</em>=<em>F</em>/<em>m</em>, where <em>a</em> is the acceleration
+of an object, <em>F</em> is the force on the object, and <em>m</em> is
+the mass of the object.  The "environment" for this system is the
+force and mass.  The "behavior" is the acceleration.  The "cognizer"
+is the physical system that converts force and mass into acceleration.
+Physicists have developed thoroughly systematized operations for
+measuring mass, force, and acceleration, whereby we get formal
+representations <em>F</em>, <em>m</em> and <em>a</em>.  Newton's law
+is a formal model that transforms <em>F</em> and <em>m</em> into a
+predicted value of <em>a</em>.  The model is an accurate one if the
+predicted value of <em>a</em> matches the measured value.
+
+<p><strong>In general</strong>, for any model of the form
+<em>y=f(x)</em>, the relevant "environment" is whatever <em>x</em>
+refers to, the relevant "behavior" is whatever <em>y</em> refers to,
+and the "cognizer" is whatever carries out the transformation that
+<em>f</em> refers to.
+
+<p><strong><li>Connectionist models in particular</strong>
+
+<p>There are many formalisms to choose from when modeling a system.  The
+application of connectionist formalisms to human cognition was
+originally motivated by the ideas that cognition is carred out by
+massively parallel and distributed processing on neurons, and that
+this type of processing will have a strong influence on behavior.
+Thus, connectionist modeling is motivated to some extent by a denial
+of an axiom in artificial intelligence: If we don't need flapping
+wings to fly, we don't need brains to think.  I don't think
+connectionists want to deny the possibility of artificial
+intelligence, but connectionists often do argue that brain-style
+processing is necessary for good models of human cognition.
+
+<p><strong>2.1 Characteristics and appeal of connectionist models</strong>
+
+<ul>
+
+<li>Computational architecture:  A large network of autonomous, simple
+processors (like interconnected neurons).
+
+<li>Each processor makes strictly local computations.
+
+<li>Example: Output activation equals the sum of the weighted inputs.
+
+<li>Long term memory is in the connection weights, as those connection
+weights govern the behavior of the system.  (Hence the name,
+"connectionism".)
+
+<li>Learning is adjustment of connection weights.
+
+<li>Learning is also computed locally.
+
+</ul>
+
+<p>There are two overarching appealing aspects of connectionist
+network behavior: Learning by example and constraint satisfaction.
+
+
+<p><em>2.1.1 Learning by example.</em>
+
+<p><em>2.1.2 Constraint satisfaction.</em>
+
+
+
+
+<p><strong><li>Network architectures</strong>
+
+<p><strong>3.1 Nodes as neurons (or atoms or concepts or people or
+societies)</strong>
+
+Although connectionist networks were motivated by neurons, the nodes
+in connectionist networks can correspond to many different levels of
+analysis.
+
+<ul>
+
+<li><em>Atoms</em>  Magnetic spin in Ising model, motivated Hopfield
+neural model.  Node activation is spin orientation, connection weights
+are degree of electromagnetic influence.
+
+<li><em>Neurons</em> Activation is slow potential, connection weight
+is synaptic conductance.
+
+<li><em>Concepts</em> Activation is confidence that the concept is true
+or present, connection weight is associative strength.
+
+<li><em>People</em> Activation could be the intensity of an opinion,
+and connection weight could reflect group affiliation.
+
+<li><em>Nations</em>
+
+<li><em>Stars</em>
+
+<li><em>Galaxies</em>
+
+</ul>
+
+
+<p><strong>3.2 Progression of architectures: A framework for the course</strong>
+
+<p>
+<center>
+<table border=3 cellspacing=5 cellpadding=20 width=80%>
+<tr>
+<td align=center>
+<strong>Progression of Architectures</strong>
+</td>
+</tr>
+<tr>
+<td>
+<ul>
+<li>Feed-forward
+	<ul>
+<p>	<li>Single-layer
+		<ul>
+<p>		<li>Linear
+<p>		<li>Non-linear (perceptrons)
+		</ul>
+<p>	<li>Multiple-layer (vanilla backprop, RBF's, SDM, 
+	mixture of experts, etc.)
+	</ul>
+<p><li>Recurrent
+	<ul>
+<p>	<li>``Simple'' recurrent networks  (Elman-style SRN's)
+<p>	<li>Symmetrically recurrent networks 
+		<ul>
+<p>		<li>Self connections only (cascaded activation)
+<p>		<li>With lateral connections (Hopfield, BSB, 
+		lateral inhibition and WTA, Boltzmann, etc.)
+		<br> - stability of activation
+		<br> - learning algorithms
+		</ul>
+<p>	<li>Competitive learning
+	</ul>
+<p><li>Hybrid architectures (e.g., interactive activation)
+</ul>
+</td>
+</tr>
+</table>
+</center>
+
+<p><strong>3.3 A recurring theme: Local and global analyses</strong>
+
+<p>We will see repeatedly that "local" computations, i.e.,
+computations that use only information that is directly accessible to
+individual nodes or connections, yield a global (network wide)
+interpretation, and that global motivations can translate into purely
+local computations.
+
+
+<p>
+<center>
+<table border=1 cellspacing=1 cellpadding=5 width=80%>
+
+<tr>
+<td colspan=2 align=center><strong>Selected correspondences of local and 
+global analyses</strong></td>
+</tr>
+
+<tr>
+<td align=center><em>Local</em></td>
+<td align=center><em>Global</em></td>
+</tr>
+
+<tr>
+<td>Hebbian learning in linear networks</td>
+<td>Gradient ascent on global goodness;<br>maximal preservation of global information</td>
+</tr>
+
+<tr>
+<td>Delta-rule learning</td>
+<td>Gradient descent on global error</td>
+</tr>
+
+<tr>
+<td>Local activation updates in symmetric recurrent networks</td>
+<td>Hill-climbing on global "goodness"</td>
+</tr>
+
+<tr>
+<td>Local learning rule in Boltzmann machines</td>
+<td>Gradient descent on global measure of discrepancy</td>
+</tr>
+
+<tr>
+<td>Competitive learning rule</td>
+<td>Gradient ascent on global summed activation (gaussian nodes)</td>
+</tr>
+
+</table>
+</center>
+
+<p><strong><li>The PDP software</strong>
+
+
+<p>The PDP programs take a number of files as input:
+The "template" file and optional associated "look" file, the "startup"
+file, and the "network" file.  A PDP program can generate an record of
+its processing, called a "log" file.   
+
+<p>To analyze results, you can use the "colex" program to extract only
+the relevant data from the log file, and then use the "plot" program
+to make rough plots of the data.  The plot program takes as input both
+the data file and a "format" file.
+
+<p>Details will be discussed and demonstrated in class.
+
+</ol>
+
+
+<p>Copyright &copy; 1997 by John K. Kruschke
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

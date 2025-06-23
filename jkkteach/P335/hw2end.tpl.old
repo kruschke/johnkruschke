@@ -1,0 +1,681 @@
+# begin template file
+
+*define-variables*
+!show-sig = no
+# end of define-variables section
+
+*error-response*
+<html>
+<head><title>Error</title></head>
+<body bgcolor="#FF3333">
+<p>Click the "Back" button on your web browser to return to the
+previous ratings page.
+<p><hr>
+</body>
+</html>
+# end error-response section
+
+*success-response*
+<html>
+<head><title>P335 Prof Kruschke, Homework 2</title></head>
+<body bgcolor="#FFBBBB">
+
+
+<center>
+<h2> P335 Cognitive Psychology, Prof. John K. Kruschke</h2>
+</center>
+<center>
+<h2>Homework 2: Attention Shifting During Encoding of Associations</h2>
+</center>
+
+<p>You're now done with the ratings.  <em>Print this page, and be sure
+to check that everything shown on your screen is properly and fully
+printed.</em> If anything is missing from the printed version, copy it
+from the computer screen by hand.  Complete the printed paper by hand,
+and turn it in on the due date.
+
+
+
+<p> <strong>A record of your data.</strong> Each cell of Table 1
+(below) contains the confidence ratings you gave for the corresponding
+symptoms.  Each cell contains two ratings, because you were tested on
+each combination twice.  Along with each disease and symptom is a code
+in parentheses that will be explained below. The subsections of the
+table will also be explained below.
+
+<!--
+*PE1* = ear aches
+*PL1* = skin rash
+*I1*  = back pain
+*PE2* = dizziness
+*PL2* = sore muscles
+*I2*  = stuffy nose
+*L2* = A
+*E1* = B
+*E2* = C
+*L1* = D
+-->
+
+<p><table border=2 cellpadding=5>
+<tr>
+<td colspan=6 align=center><em>Table 1: Your Ratings ("raw" data)</em></td>
+</tr>
+<tr>
+<td align=center valign=bottom rowspan=2>Type of Case</td>
+<td align=center valign=bottom rowspan=2>Symptoms</td>
+<td align=center colspan=4>Diseases</td>
+</tr>
+<tr>
+<td align=center>A (L2)</td>
+<td align=center>B (E1)</td>
+<td align=center>C (E2)</td>
+<td align=center>D (L1)</td>
+</tr>
+<tr>
+<td align=center valign=center rowspan=4>Training Cases</td>
+<td align=center>back pain (I1)<br>ear aches (PE1)</td>
+<td align=center>[I1PE1-L2], [PE1I1-L2]</td>
+<td align=center>[I1PE1-E1], [PE1I1-E1]<br>(correct)</td>
+<td align=center>[I1PE1-E2], [PE1I1-E2]</td>
+<td align=center>[I1PE1-L1], [PE1I1-L1]</td>
+</tr>
+<tr>
+<td align=center>stuffy nose (I2)<br>dizziness (PE2)</td>
+<td align=center>[I2PE2-L2], [PE2I2-L2]</td>
+<td align=center>[I2PE2-E1], [PE2I2-E1]</td>
+<td align=center>[I2PE2-E2], [PE2I2-E2]<br>(correct)</td>
+<td align=center>[I2PE2-L1], [PE2I2-L1]</td>
+</tr>
+<tr>
+<td align=center>back pain (I1)<br>skin rash (PL1)</td>
+<td align=center>[I1PL1-L2], [PL1I1-L2]</td>
+<td align=center>[I1PL1-E1], [PL1I1-E1]</td>
+<td align=center>[I1PL1-E2], [PL1I1-E2]</td>
+<td align=center>[I1PL1-L1], [PL1I1-L1]<br>(correct)</td>
+</tr>
+<tr>
+<td align=center>stuffy nose (I2)<br>sore muscles (PL2)</td>
+<td align=center>[I2PL2-L2], [PL2I2-L2]<br>(correct)</td>
+<td align=center>[I2PL2-E1], [PL2I2-E1]</td>
+<td align=center>[I2PL2-E2], [PL2I2-E2]</td>
+<td align=center>[I2PL2-L1], [PL2I2-L1]</td>
+</tr>
+<tr>
+<td align=center valign=center rowspan=2>Ambiguous Cases</td>
+<td align=center>back pain (I1)</td>
+<td align=center>[I1-1-L2], [I1-2-L2]</td>
+<td align=center>[I1-1-E1], [I1-2-E1]</td>
+<td align=center>[I1-1-E2], [I1-2-E2]</td>
+<td align=center>[I1-1-L1], [I1-2-L1]</td>
+</tr>
+<tr>
+<td align=center>stuffy nose (I2)</td>
+<td align=center>[I2-1-L2], [I2-2-L2]</td>
+<td align=center>[I2-1-E1], [I2-2-E1]</td>
+<td align=center>[I2-1-E2], [I2-2-E2]</td>
+<td align=center>[I2-1-L1], [I2-2-L1]</td>
+</tr>
+<tr>
+<td align=center valign=center rowspan=2>Conflicting Cases</td>
+<td align=center>ear aches (PE1)<br>skin rash (PL1)</td>
+<td align=center>[PE1PL1-L2], [PL1PE1-L2]</td>
+<td align=center>[PE1PL1-E1], [PL1PE1-E1]</td>
+<td align=center>[PE1PL1-E2], [PL1PE1-E2]</td>
+<td align=center>[PE1PL1-L1], [PL1PE1-L1]</td>
+</tr>
+<tr>
+<td align=center>dizziness (PE2)<br>sore muscles (PL2)</td>
+<td align=center>[PE2PL2-L2], [PL2PE2-L2]</td>
+<td align=center>[PE2PL2-E1], [PL2PE2-E1]</td>
+<td align=center>[PE2PL2-E2], [PL2PE2-E2]</td>
+<td align=center>[PE2PL2-L1], [PL2PE2-L1]</td>
+</tr>
+</table>
+
+<p><strong>The Underlying Structure of the Symptoms and
+Diseases.</strong> The experiment was split into three phases: An
+early training phase, when you learned about just two diseases; a
+later training phase, when you learned about two new diseases along
+with the earlier two; and then a testing phase, when you rated your
+confidence that various symptom combinations indicated the different
+diseases.
+
+<p>The two diseases from the early training phase are shown in the
+first two rows of Table 1.  The two diseases from the late training
+phase are shown in the next two rows of Table 1.  Consider the first
+case in Table 1, which includes the symptoms "back pain" and "ear
+aches".  Its correct diagnosis was disease B.  Now look at the third
+case of Table 1, and notice that it also has the symptom "back pain."
+Its correct diagnosis was disease D (not disease B). Thus, the
+symptom, "back pain," is an <em>imperfect</em> predictor of the
+diseases.  The code in parentheses, "I1," next to the symptom "back
+pain," denotes the fact that the symptom is an imperfect predictor.
+Each symptom has a code next to it, e.g., "I1" or "PE1", which is used
+as an abstract label for the symptom.  The correspondence of codes
+with symptoms and diseases is summarized here:
+<table cellpadding=5>
+<tr>
+<td valign=top>
+ <table>
+ <tr><td colspan=3><em>Diseases:</em></td></tr>
+ <tr><td align=right>E1</td><td>=</td><td align=left>B</td></tr>
+ <tr><td align=right>L1</td><td>=</td><td align=left>D</td></tr>
+ <tr><td align=right>E2</td><td>=</td><td align=left>C</td></tr>
+ <tr><td align=right>L2</td><td>=</td><td align=left>A</td></tr>
+ </table>
+</td>
+<td></td>
+<td valign=top>
+ <table>
+ <tr><td colspan=3><em>Symptoms:</em></td></tr>
+ <tr><td align=right>PE1</td><td>=</td><td align=left>ear aches</td></tr>
+ <tr><td align=right>I1</td><td>=</td><td align=left>back pain</td></tr>
+ <tr><td align=right>PL1</td><td>=</td><td align=left>skin rash</td></tr>
+ <tr><td align=right>PE2</td><td>=</td><td align=left>dizziness</td></tr>
+ <tr><td align=right>I2</td><td>=</td><td align=left>stuffy nose</td></tr>
+ <tr><td align=right>PL2</td><td>=</td><td align=left>sore muscles</td></tr>
+ </table>
+</td>
+</tr>
+</table>
+Figure 1, below, shows which symptoms corresponded with which diseases
+in the training phases of the experiment. You might find it helpful to
+write the symptom names next to the abstract labels in Figure 1.
+Study Figure 1 carefully; if you don't understand it, nothing that
+follows will make any sense.
+
+<p>
+<center>
+<table border=1 cellpadding=10 width=80%>
+<tr><td align=center>
+<p><IMG SRC="http://www.indiana.edu/~jkkteach/P335/ibrstruct.gif" align=center>
+</td></tr>
+<tr><td>
+<font size=-1><strong>Figure 1: The correspondence of symptoms to
+diseases in the experiment.</strong> The ovals surround symptoms seen
+in various cases, and the arrows point from symptoms to the
+corresponding diseases.  Diseases E1 and E2 were trained in the
+<em>early</em> phase (hence their labels, "E"); diseases L1 and L2
+were trained in the <em>later</em> phase (hence their labels, "L").
+Symptom I1 is an <em>imperfect</em> predictor of diseases E1 and L1
+(hence its label, "I").  Symptom PE1 is a <em>perfect</em> predictor
+of <em>early</em> disease E1 (hence its label, "PE"), and symptom PL1
+is a perfect predictor of later disease L1.  The same structure
+appears for diseases E2 and L2.  </font>
+</td></tr>
+</table>
+</center>
+
+<p><strong>Summarize your data.</strong> You can see from Figure 1
+that the structure of the diseases E1 and L1 was just copied for
+diseases E2 and L2.  Therefore you can collapse your data across the
+two structures, in order to get more stable estimates of your ratings.
+For example, the rating you gave to disease E1 for symptoms I1 and PE1
+can be collapsed with the rating you gave to disease E2 for symptoms
+I2 and PE2.  Both ratings indicate your confidence that symptoms I and
+PE indicate the <em>corresponding</em> early disease E.  As another
+example, the rating you gave to disease E<strong>1</strong> for
+symptom I<strong>2</strong> can be collapsed with the rating you gave
+for disease E2 for symptom I1, because both ratings show your
+confidence that symptom I indicates the early disease from the
+<em>other</em> substructure.  Table 2, below, does this collapsing for
+you.
+
+<p><table border=2 cellpadding=5>
+<tr>
+<td colspan=6 align=center><em>Table 2: Your Ratings, 
+<br>Collapsed Across Duplicated Substructures </em></td>
+</tr>
+<tr>
+<td align=center valign=bottom rowspan=2>Type of Case</td>
+<td align=center valign=bottom rowspan=2>Symptoms</td>
+<td align=center colspan=4>Diseases</td>
+</tr>
+<tr>
+<td align=center>corresponding E</td>
+<td align=center>corresponding L</td>
+<td align=center>other E</td>
+<td align=center>other L</td>
+</tr>
+<tr>
+<td align=center valign=center rowspan=2>Training Cases</td>
+<td align=center>I and PE</td>
+<td align=center>[I1PE1-E1], [PE1I1-E1], [I2PE2-E2], [PE2I2-E2]<br>(correct)<br>____</td>
+<td align=center>[I1PE1-L1], [PE1I1-L1], [I2PE2-L2], [PE2I2-L2]<br>____</td>
+<td align=center>[I1PE1-E2], [PE1I1-E2], [I2PE2-E1], [PE2I2-E1]<br>____</td>
+<td align=center>[I1PE1-L2], [PE1I1-L2], [I2PE2-L1], [PE2I2-L1]<br>____</td>
+</tr>
+</tr>
+<tr>
+<td align=center>I and PL</td>
+<td align=center>[I1PL1-E1], [PL1I1-E1], [I2PL2-E2], [PL2I2-E2]<br>____</td>
+<td align=center>[I1PL1-L1], [PL1I1-L1], [I2PL2-L2], [PL2I2-L2]<br>(correct)<br>____</td>
+<td align=center>[I1PL1-E2], [PL1I1-E2], [I2PL2-E1], [PL2I2-E1]<br>____</td>
+<td align=center>[I1PL1-L2], [PL1I1-L2], [I2PL2-L1], [PL2I2-L1]<br>____</td>
+</tr>
+<tr>
+<td align=center>Ambiguous Cases</td>
+<td align=center>I</td>
+<td align=center>[I1-1-E1], [I1-2-E1], [I2-1-E2], [I2-2-E2]<br>____</td>
+<td align=center>[I1-1-L1], [I1-2-L1], [I2-1-L2], [I2-2-L2]<br>____</td>
+<td align=center>[I1-1-E2], [I1-2-E2], [I2-1-E1], [I2-2-E1]<br>____</td>
+<td align=center>[I1-1-L2], [I1-2-L2], [I2-1-L1], [I2-2-L1]<br>____</td>
+</tr>
+<tr>
+<td align=center>Conflicting Cases</td>
+<td align=center>PE and PL</td>
+<td align=center>[PE1PL1-E1], [PL1PE1-E1], [PE2PL2-E2], [PL2PE2-E2]<br>____</td>
+<td align=center>[PE1PL1-L1], [PL1PE1-L1], [PE2PL2-L2], [PL2PE2-L2]<br>____</td>
+<td align=center>[PE1PL1-E2], [PL1PE1-E2], [PE2PL2-E1], [PL2PE2-E1]<br>____</td>
+<td align=center>[PE1PL1-L2], [PL1PE1-L2], [PE2PL2-L1], [PL2PE2-L1]<br>____</td>
+</tr>
+</table>
+
+<p><em>On the blank line in each cell of Table 2, write the mean of the
+ratings in the cell.</em>
+
+<dl>
+
+<p><dt>Consider your ratings of the training cases: <dd>Your ratings
+for the correct diagnoses of the training cases should be very high,
+near 100 (because you were trained on them!).  You ratings for the
+"other" diagnoses of the training cases should be low, near zero.
+
+<p>For cases of I and PE, was your mean rating of corresponding
+disease E (the correct diagnosis) at least 60 confidence points higher
+than your mean rating of corresponding disease L?  (circle
+one:)&nbsp;YES&nbsp;/&nbsp;NO
+
+<p>For cases of I and PL, was your mean rating of corresponding
+disease L (the correct diagnosis) at least 60 confidence points higher
+than your mean rating of corresponding disease E?  (circle
+one:)&nbsp;YES&nbsp;/&nbsp;NO
+
+<p>If your confidence ratings for the training cases are not strongly
+correlated with the correct diagnoses, it means that you did not learn
+them very well. Unfortunately, this means that the other results are
+not very meaningful; it's like asking someone, who doesn't know
+anything about the candidates, to predict which candidate will win the
+election.  Nevertheless, please complete the rest of the assignment
+even if you didn't learn the training cases very well.
+
+<p><dt>Consider your ratings of the ambiguous case, I: <dd>The
+structure in Figure 1 shows that symptom I indicates disease E no more
+or less accurately than it indicates disease L.  Therefore, a person
+<em>should</em> just flip a coin to decide between (corresponding)
+diseases E and L, when presented with ambiguous symptom I.  That is, a
+person's confidence ratings for corresponding diseases E and L should
+be about equal (and confidence ratings for the "other" diseases should
+be very low).  
+
+<p>Were your mean confidence ratings for E and L about equal?  Circle the
+relation that best describes your mean ratings for I:
+<center>
+<br>E&gt;L&nbsp;&nbsp;&nbsp;E=L&nbsp;&nbsp;&nbsp;E&lt;L
+</center>
+<br>Many people tend to favor diagnosis E over diagnosis L (that
+is,E&gt;L) , for this ambiguous symptom I.  This is a strange result
+that needs explanation.
+
+<p><dt>Consider your ratings for the conflicting case PE and PL.
+<dd>Figure 1 shows that symptom PE perfectly indicates disease E, and
+symptom PL perfectly indicates disease L, so a person <em>should</em>
+just flip a coin to decide between corresponding diseases E and L.
+That is, confidence ratings for E should be about the same as
+confidence ratings for L (and confidence ratings for the "other"
+diseases should be very low).  
+
+<p>Were your mean confidence ratings for E and L about equal?  Circle the
+relation that best describes your ratings for PE and PL:
+<center>
+<br>E&gt;L&nbsp;&nbsp;&nbsp;E=L&nbsp;&nbsp;&nbsp;E&lt;L
+</center>
+<br>Many people tend to favor diagnosis L over diagnosis E (that is,
+E&lt;L), for these conflicting symptoms. This strange result needs
+explanation.
+
+</dl>
+
+
+
+<p><strong>A Theory of Attention Shifting during Learning.</strong>
+What is happening in people's minds that makes them prefer diagnosis L
+when presented with symptoms PE and PL, but prefer diagnosis E when
+presented with symptom I?  One theory explains the phenomenon as
+follows: In the first phase of learning, during which there are cases
+of I+PE=>E (that is, symptoms I and E paired with disease E), people
+learn about both symptoms.  The symptoms I and PE share predictive
+strength, so that each has a moderately strong association with
+disease E.  In the second phase of learning, after the learners
+thoroughly know I+PE=>E, people see cases of I+PL=>L.  The shared
+symptom I is misleading, because people have previously associated it
+with disease E, not with disease L.  So, people <em>shift
+attention</em> away from I, toward PL, to reduce their predictive
+error.  Then they learn an association from PL to L.  This association
+from PL to L must be fairly strong, because PL must by itself predict
+L.  If people didn't shift attention away from symptom I when learning
+about disease L, then it would be much more difficult to learn: As an
+association from I to L was building up, it would conflict with the
+previously learned association from I to E, and performance on cases
+of both I+PL and I+PE would be diminished.  Figure 2, below, shows the
+associations that are learned according to this simple theory of
+attention shifting.
+
+<p>
+<center>
+<table border=1 cellpadding=10 width=80%>
+<tr><td align=center>
+<p><IMG SRC="http://www.indiana.edu/~jkkteach/P335/ibrexplain.gif" align=center>
+</td></tr>
+<tr><td>
+<font size=-1><strong>Figure 2: Learned associations when attention is
+shifted away from I during learning of I+PL=>L.</strong> The left
+panel is the structure of the stimuli shown to learners, as explained
+in Figure 1.  The right panel shows the learned associations, with the
+thickness of the arrow indicating the strength of the associations,
+according to the attention-shifting theory.
+</font>
+</td></tr>
+</table>
+</center>
+
+<p>The attention-shifting theory says that stimuli are <em>actively
+encoded</em> by learners.  That is, learners don't just passively
+absorb everything in the stimulus indiscriminately.  Instead, people
+selectively attend to specific parts of the stimulus, and then
+remember what they have paid attention to.  But the theory goes beyond
+that by predicting <em>what</em> people will attend to.  People are
+predicted to divert attention away from aspects of the stimulus that
+conflict with previous learning, and direct attention toward aspects
+that don't conflict with, or are consistent with, previous learning.
+That is, the theory predicts that people will shift attention to
+reduce error, and then learn about what they are attending to.
+
+
+<p><strong>A Formal Model.</strong> The theory described above can be
+expressed in a formal (mathematical) model and simulated on a computer
+to see how well it fits human preferences.  It is beyond the intended
+scope of this assignment to delve into all the details of such a
+model. We'll just consider some aspects of it, and you can see the
+article cited at the end of this assignment for more details, if you
+like.
+
+<p>The foundation of the model is a simple connectionist network
+(similar to the interactive activation model of letter recognition,
+which you learned about in relation to the word-superiority effect).
+Simple nodes represent symptoms or diseases, and weighted connections
+represent learned associations.  One major function of this network is
+to convert symptoms into confidences in the possible diagnoses.
+Figure 3, below, specifies how the model performs this function. Read
+the caption carefully, because understanding it is critical for
+generating model predictions later.
+
+<p>
+<center>
+<table border=1 cellpadding=10 width=80%>
+<tr><td align=center>
+<p><IMG SRC="http://www.indiana.edu/~jkkteach/P335/adit.gif" align=center>
+</td></tr>
+<tr><td>
+<font size=-1><strong>Figure 3: A connectionist model of learned
+associations.</strong> The <em>left panel</em> shows the general
+situation.  When symptoms are presented, the corresponding symptom
+nodes are activated (at the bottom of the network), with activation
+denoted by a<sub>s</sub> as shown by the bottom equation. Activation
+then propagates upward, across the weighted connections, to the
+disease nodes. The weight on the connection from symptom s to disease
+d is denoted w<sub>ds</sub>. The activation, a<sub>d</sub>, of the
+disease nodes is the weighted sum of the symptom activations, as shown
+by the middle equation. The disease activations are then converted
+into confidences; confidence c<sub>D</sub> in a diagnosis D is modeled
+as the activation a<sub>D</sub> of the corresponding disease relative
+to the total activation of all diseases, as shown by the top equation.
+The <em>right panel</em> shows a specific example, with connection
+weights already established by learning with attention shifts, and
+with the symptoms PE and I presented.  The activation of disease E was
+computed as follows: a<sub>E</sub> = w<sub>E,PE</sub>*a<sub>PE</sub> +
+w<sub>E,I</sub>*a<sub>I</sub> + w<sub>E,PL</sub>*a<sub>PL</sub> = .7*1
++ .3*1 + -.3*0 = 1.0.  The activation of disease L was computed
+similarly: a<sub>L</sub> = w<sub>L,PE</sub>*a<sub>PE</sub> +
+w<sub>L,I</sub>*a<sub>I</sub> + w<sub>L,PL</sub>*a<sub>PL</sub> =
+-.1*1 + .1*1 + .9*0 = 0.0.  The confidence in diagnosing these
+symptoms as disease E is given by computing the activation of disease
+E relative to the total activation of all the dieseases.  Thus,
+c<sub>E</sub> = a<sub>E</sub>/(a<sub>E</sub>+a<sub>L</sub>) =
+1.0/(1.0+0.0) = 1.0.  The confidence in diagnosing this case as
+disease L is given similarly: c<sub>L</sub> =
+a<sub>L</sub>/(a<sub>E</sub>+a<sub>L</sub>) = 0.0/(1.0+0.0) = 0.0.
+</font>
+</td></tr>
+</table>
+</center>
+
+<p>A second major function of the model is learning the connection
+weights.  The essential idea for understanding how the model learns is
+<em>error reduction</em>.  On any trial of learning, the model makes
+its diagnosis as described in Figure 3, and then the correct diagnosis
+is supplied by the experimenter.  Any discrepancy, between the model's
+predictions and the correct answer, constitutes an error.  The model
+has attention strengths (not shown in Figure 3) on each symptom, and
+these attention strengths are shifted to reduce error.  Then the model
+adjusts the connection weights to reduce error further.  After several
+trials of learning, the model is making accurate predictions, and so
+there is no error, and so there is no further change of the weights.
+An example of possible weights at the end of training is shown in the
+right panel of Figure 3.  Notice that the weights are not as extreme
+as suggested in Figure 2.  This is because attention shifting in the
+model is not as extreme as suggested by Figure 2.  Nevertheless, the
+asymmetry of Figure 2 is present in the example of Figure 3: The
+weight from I to E (.3) is stronger than the weight from I to L (.1),
+and the weight from PE to E (.7) is weaker than the weight from PL to
+L (.9).
+
+<p>In summary, the <em>representation</em> in this model is
+simplistic: node activations represent the presence or absence of
+corresponding symptoms or diseases.  The <em>processes</em> in this
+model are twofold: For generating predictions, there is spreading
+activation. For learning, there is error-driven attention shifting and
+error-driven weight changing.
+
+<p>
+
+<table>
+<tr>
+<td valign=top>
+<strong>Generate predictions of the model.</strong> Use the
+connection weights shown in the right panel of Figure 3 to generate
+predictions of the model for all the cases of Table 2.  Complete Table
+3 (at right).  The first row of Table 3 is already filled in, because the
+computations were carried out in Figure 3.
+</td>
+<td>
+<table border=2 cellpadding=10>
+<tr>
+<td colspan=8 align=center><em>Table 3: Model Predictions.
+</em></td>
+</tr>
+<tr>
+<td align=center valign=bottom rowspan=2>Symptoms</td>
+<td align=center colspan=3>Symptom Activation</td>
+<td align=center colspan=2>Disease Activation</td>
+<td align=center colspan=2>Diagnosis Confidence</td>
+</tr>
+<tr>
+<td align=center>a<sub>PE</sub></td>
+<td align=center>a<sub>I</sub></td>
+<td align=center>a<sub>PL</sub></td>
+<td align=center>a<sub>E</sub></td>
+<td align=center>a<sub>L</sub></td>
+<td align=center>c<sub>E</sub></td>
+<td align=center>c<sub>L</sub></td>
+</tr>
+<tr>
+<td align=center>I and PE</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1.0</td>
+<td align=center>0.0</td>
+<td align=center>1.0</td>
+<td align=center>0.0</td>
+</tr>
+<tr>
+<td align=center>I and PL</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr>
+<td align=center>I</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr>
+<td align=center>PE and PL</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<p>
+
+<table>
+<tr>
+<td valign=top> <strong>Compare your ratings with the model
+predictions.</strong> Plot the predicted confidences against your mean
+confidence ratings in the grid of Figure 4 (at right).  Use the
+<em>eight</em> confidence values from Table 3, and the corresponding
+mean confidence ratings from Table 2. <em>Label the points; e.g.,
+I+PE=>E, I+PE=>L, etc. Connect the points with lines, starting
+with the point that has the lowest mean confidence rating, and moving
+rightward to the point with the next lowest confidence rating, and so 
+forth.
+</td>
+<td>
+<table border=1 cellpadding=10>
+<tr><td align=center>
+<p><IMG SRC="http://www.indiana.edu/~jkkteach/P335/aditgrid.gif" align=center>
+</td></tr>
+<tr><td>
+<font size=-1><strong>Figure 4: Graph of model predictions vs. your
+mean ratings.</strong>
+</font>
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p>Please answer the following questions in the space provided.
+
+<!-- NEXT TIME:  MAKE THIS A QUESTION ABOUT CORRELATION, NOT MONOTONICITY -->
+<!-- DEFINE CORRELATION -->
+
+<p><strong>Question:</strong> Is the graph of predictions vs. data
+<em>monotonically increasing</em>?  Are violations of monotonicity
+small or severe? (We could analyze this statistically, of course, but
+we will not do so for this exercise.)
+
+<br><br><br><br>
+
+<!-- NEXT TIME:  MAKE THIS A QUESTION ABOUT CORRELATION, NOT MONOTONICITY -->
+<!-- DEFINE CORRELATION -->
+
+<p><strong>Question:</strong> Consider a model with <em>no</em>
+attention shifting.  This would lead to predictions as follows: For
+the training cases, confidence would be high and accurate.  For case
+I, confidence in E would equal confidence in L, with both at .5.
+Similarly, for case PE+PL, confidence in E and L would both be .5.
+Plot these predictions in Figure 4 (try to be neat, and keep the lines
+and labels clear).  Label this line as "No Attn".  Is this set of
+predictions monotonically increasing with your mean ratings, or is it
+drastically nonmonotonic?
+
+<br><br><br><br>
+
+<!-- NEXT TIME:  MAKE THIS A QUESTION ABOUT CORRELATION, NOT MONOTONICITY -->
+<!-- DEFINE CORRELATION -->
+
+<p><strong>Question:</strong> Which set of predictions - the ones of
+the model with attention shifting, or the ones of the model with no
+attention shifting - better fit your mean ratings?  That is, which set
+of predictions is more nearly a monotonic function of your mean
+ratings? (We could evaluate the relative fit statistically, of course,
+but we will not do that for this exercise.)
+
+<br><br><br><br>
+
+<!-- NEXT TIME: ASK ABOUT WHETHER RATINGS FOR I AND PE+PL DEVIATE
+SIGNIFICANTLY FROM EQUALITY.  THE TWO THEORIES MAKE DIFFERENT
+PREDICTIONS.  NEITHER THEORY REALLY INSISTS ON LINEAR CORRELATION
+BEING HIGH. -->
+
+
+
+
+<p><hr width=70%>
+
+<p><strong>So what?</strong> Selective attention is critical for
+understanding human learning and memory, in both the laboratory and
+natural settings.  Many laboratory phenomena which seem irrational,
+such as the preference for later-learned categories addressed in this
+exercise, are actually rational and adaptive if the goal is rapid
+learning.  Moreover, materials to be learned can be organized to take
+advantage of selective attention.
+
+<p><strong>To learn more:</strong> This exercise is based on
+experiments and models described at length by <a
+href="http://www.indiana.edu/~kruschke/baserate_abstract.html">
+Kruschke, J. K. (1996). Base rates in category learning.  <em>Journal
+of Experimental Psychology: Learning, Memory and Cognition</em>,
+<strong>22</strong>, 3-26.</a> This article shows detailed computer
+simulations and quantitative fits of an attention-shifting model to
+several sets of experimental data. This article also describes many
+other models of learning that fail to account for human performance
+because the models fail to include mechanisms for selective attention
+during encoding.
+
+<p><strong>Grading criteria.</strong> This homework assignment is
+worth up to 18 points.  Points are deducted for inaccuracies or
+omissions. (<a href="http://www.indiana.edu/~jkkteach/P335/latepolicy.html">Click here to read the Late
+Policy.</a>)
+
+<p><strong>What do you think of this assignment?</strong> Only between
+the due date of this assignment and the date of the next exam, please
+provide your evaluation of this assignment.  To fill out an evaluation
+form and get 2 points for your effort, <a
+href="http://www.indiana.edu/~jkkteach/P335/hweval.html">click
+here</a>.
+
+
+<center>
+<h5><p>Copyright &copy; 1998 John K. Kruschke</h5>
+</center>
+
+<p><hr>
+
+</body>
+</html>
+# end of success-response section
+
+*append-response*
+!append-file-name = "/ip/jkkteach/www/P335/hw2ratings.dat" 
+[I1PE1-E1], [PE1I1-E1], [I2PE2-E2], [PE2I2-E2], [I1PE1-L1], [PE1I1-L1], [I2PE2-L2], [PE2I2-L2], [I1PE1-E2], [PE1I1-E2], [I2PE2-E1], [PE2I2-E1], [I1PE1-L2], [PE1I1-L2], [I2PE2-L1], [PE2I2-L1], [I1PL1-E1], [PL1I1-E1], [I2PL2-E2], [PL2I2-E2], [I1PL1-L1], [PL1I1-L1], [I2PL2-L2], [PL2I2-L2], [I1PL1-E2], [PL1I1-E2], [I2PL2-E1], [PL2I2-E1], [I1PL1-L2], [PL1I1-L2], [I2PL2-L1], [PL2I2-L1], [I1-1-E1], [I1-2-E1], [I2-1-E2], [I2-2-E2], [I1-1-L1], [I1-2-L1], [I2-1-L2], [I2-2-L2], [I1-1-E2], [I1-2-E2], [I2-1-E1], [I2-2-E1], [I1-1-L2], [I1-2-L2], [I2-1-L1], [I2-2-L1], [PE1PL1-E1], [PL1PE1-E1], [PE2PL2-E2], [PL2PE2-E2], [PE1PL1-L1], [PL1PE1-L1], [PE2PL2-L2], [PL2PE2-L2], [PE1PL1-E2], [PL1PE1-E2], [PE2PL2-E1], [PL2PE2-E1], [PE1PL1-L2], [PL1PE1-L2], [PE2PL2-L1], [PL2PE2-L1], [!TIME], [!DATE]

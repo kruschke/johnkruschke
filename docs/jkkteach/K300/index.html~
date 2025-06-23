@@ -1,0 +1,72 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>K300 Statistics, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+
+<h2>K300 Statistics</h2>
+<p>
+<h3>
+<a href="http://www.indiana.edu/~kruschke/">
+Prof. John K. Kruschke</a></h3>
+
+<p><table align="center" cellpadding="10" bgcolor="lightgreen"><tr>
+<td>Jump to:</td>
+<td><a href="syllabus.html">Syllabus.</a></td>
+<td><a href="schedule.html">Schedule.</a></td>
+<td><a href="http://oncourse.iu.edu" target="new">Oncourse (new window).</a></td>
+</tr></table>
+
+<p>This web page is under construction and will be greatly expanded.
+
+
+<p><strong>Brief Description:</strong>
+
+Inferential statistics are at the foundation of all scientific
+knowledge. Some would argue that statistical inference is the root of
+all human knowledge of any sort: We are all intuitive
+statisticians. Statistical methods are merely ways to make decisions
+when we have uncertain information. Because all information in life is
+uncertain, and we constantly have to make decisions, statistical
+inference permeates life.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+In this class I'd like you to help motivate your interest in this
+topic. I'll try to do this two ways. First, I'll try to provide lots
+of real-world examples. Second, I'll try to make the applications
+things that you can get personally invested in. Hopefully you'll
+actually care enough about some of the real-world examples that you'll
+want to know how statistical methods help decide them.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+In this class I'd like you to acquire some transferable computer
+skills, no matter what field you go into later. To do this, I'll have
+you learn to use Excel. Many of you will have already used this
+general-purpose spreadsheet program, but hopefully you'll learn some
+new facets of it in this class.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Of course I want to help you learn core concepts of statistical
+inference. Fundamental among these concepts is the notion of a
+sampling distribution; we will use computers to simulate the
+generation of a lot of sampling distributions. I will emphasize the
+logic of hypothesis testing, and the related notions of confidence
+intervals and statistical power. As examples of this logic, we'll
+study various applications of the t-test and simple ANOVA. If there is
+time, we'll also touch on chi-square tests. (If I had my druthers, I'd
+teach Bayesian techniques, too, but I feel obligated to cover
+classical statistics first, and there won't be time for Bayesian
+extensions.)
+
+
+<p>This web page is at URL= <tt>http://www.indiana.edu/~jkkteach/K300/</tt>
+
+<p><hr>
+</BODY></font>
+</HTML>
+
+
+
+

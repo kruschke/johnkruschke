@@ -1,0 +1,54 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Open Mic Night
+<br>
+<!-- 117 words -->
+
+The poet steps up to the mic,\
+looks at us in the audience,\
+then reaches deep inside\
+and pulls out\
+a seashell,\
+twisted with finger-thick whorls,\
+lined with life ridges\
+and broken heart spires.\
+Cradling their seashell in their upturned hand,\
+the poet opens their mouth and exhales:\
+
+I can almost hear the ocean.\
+
+People lean forward\
+and cock their heads,\
+then lift their cupped hands\
+behind their ears.\
+I examine my hands\
+for cuppability,\
+and notice my palms\
+with fingerprints whorled,\
+life-lines ridged\
+and heart-lines broken.\
+I cradle these palms behind my ears\
+to amplify the poet's keening.\
+But gradually\
+I turn my clam-shell hands\
+to cover my ears completely:\
+
+and now I hear the ocean.\
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://www.thelakepoetry.co.uk/poetry-archive/march25a/" , journal_name = "*The Lake*" , publication_info = "01 March 2025.")`
+
+*Notes:* 
+When poets read their poems aloud, especially in the context of background noises in a crowd of people at an open-mic night, I find it challenging to hear every word and to fully comprehend the poem. Beyond comprehension, appreciation of a poem also depends on how it resonates with the listener. Perhaps, sometimes, a listener likes a poem best when it lets them hear themselves. Have you had this kind of experience listening to poetry? Is that the ocean you hear?
+
+
+`r next_link("poem_open_mic.html")`
+
+</small>

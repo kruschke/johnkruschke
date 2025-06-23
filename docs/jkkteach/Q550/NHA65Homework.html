@@ -1,0 +1,203 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>Q550 N. H. Anderson (1965) Homework; Prof. John K. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center> Q550 Models in Cognitive Science, Prof.  Kruschke <h2>
+Homework: <a href="Anderson1965.pdf">N. H. Anderson (1965) </a>
+Experiment and Models </h2> <strong></strong></center>
+
+<p>Please read <a href="Anderson1965.pdf">N. H. Anderson
+(1965)</a>. This homework uses MATLAB files:
+
+<ul>
+
+<li><a href="NHA65CW.m">NHA65CW.m</a>.  The partial replication of the
+experiment.
+
+<li><a href="NHA65mergedata.m">NHA65mergedata.m</a>.  A program that
+merges individual data files into a master file.
+
+<li><a href="NHA65stats.m">NHA65stats.m</a>.  A program that performs
+descriptive and inferential statistics on the master data file.
+
+<li><a href="NHA65averagingModel.m">NHA65averagingModel.m</a>.  The
+averaging model.
+
+</ul>
+
+Copy the files into your directory. (To do this, it is best to select
+all the text in your browser window, copy it into the paste buffer,
+then paste it into a blank M-file in MatLab, then save-as in MatLab.)
+
+<p>For all of the questions below, hand in (on the due date) the
+relevant snippets of output from MATLAB, such as command-window output
+or graphical output or M-file code. Please do not waste trees by
+printing pages and pages of irrelevant output.
+
+
+<ol>
+
+
+<!-- ------------------------------------------------------------ -->
+
+<p> <strong><li>Study the ethics of administering experiments to human
+participants.</strong> <em>The goal of this exercise is for you to be
+aware of ethical considerations when creating and running
+experiments.</em>
+
+<ul>
+
+<li>Read <a
+href="http://www.hhs.gov/ohrp/humansubjects/guidance/belmont.htm">The
+Belmont Report</a>. Very briefly summarize the three main points in
+the Applications section.
+
+<li>Read the I.U. web pages regarding protection of human subjects: <a
+href="http://www.research.indiana.edu/rschcomp/stures.html">STUDENT
+RESEARCH</a> and <a
+href="http://www.research.indiana.edu/rschcomp/sturespo.html">Student
+Research Policy</a> and <a
+href="http://www.research.indiana.edu/rschcomp/defini.html#nonresearch">
+Non-Research</a>. What are the three criteria by which student
+projects do not require HSC approval?
+
+</ul> 
+
+
+<!-- ------------------------------------------------------------ -->
+
+<p> <strong><li>Explore the replication of the experiment.</strong>
+<em>The goals of this exercise are to understand how to program an
+experiment in Matlab and to generate data for analysis and
+modeling.</em> <strong>RUN THE EXPERIMENT AS SOON AS POSSIBLE SO THAT
+THE DATA FILES CAN BE POSTED. You get credit for this exercise when
+you e-mail your data file to Prof. Kruschke.</strong> Load <a
+href="NHA65CW.m">NHA65CW.m</a> into your directory and run it,
+following the directions.  
+
+<p>After running the program, for your own edification, notice the
+sections of the program. These sections will be ordered much the same
+way in most experiments, including the one you will eventually program
+for your own project. Notice the way, in Matlab, that information is
+gathered from the user and the way data are stored. There are many
+subtleties in numeric and string and cell formatting; get used to
+reading the Matlab help files!
+
+
+<!-- ------------------------------------------------------------ -->
+
+<p> <strong><li>Data analysis.</strong> <em>The goal of this exercise
+is for you to explore aspects of data analysis in Matlab, and to see
+whether our replication data match the 1965 data.</em>
+
+<ul>
+
+<li>Get the 2005 class data files from <a
+href="http://www.indiana.edu/~jkkteach/Q550/NHA65datafiles/index.html">this
+link</a>. Do this only after at least 15 people (in 2005) have
+contributed data.  Copy each one into your own directory, being sure
+that there are no extra blank lines inserted between rows. (This might
+be a little tedious, but it only takes a few minutes.)  The program,
+<a href="NHA65mergedata.m">NHA65mergedata.m</a>, merges individual
+data files into a master file. Study this program so that you are
+familiar with how files are read. Merge the data files using this
+program. In your projects, you will have to do something like this,
+i.e., merge the data, as individuals e-mail you their data.
+
+<li> The program, <a href="NHA65stats.m">NHA65stats.m</a>, performs
+descriptive and inferential statistics on the master data file. Run
+the program. <br>A.  On the boxplot, mark any non-monotonicities of
+the medians. Also, mark any outliers (e.g., circle or highlight
+them). <br>B. Look at the program and extend the t-test section to
+include the two additional tests indicated. Show the output of the
+tests. <br>C. Consider the results of the <em>t</em>-tests. Are the
+predictions of the averaging model confirmed?
+
+<!--
+<li>Change the code of NHA65stats.m so that the data analysis is
+restricted just to the second block of trials. The motivation: Suppose
+in the first block that people are still getting used to the response
+scale and haven't really settled into stable ratings. Perhaps the
+second block is less variable than the first. Repeat A, B & C from the
+previous part.
+-->
+
+<!-- <li>Expand the program to test H vs. HH, L vs. LL,
+Mp vs. MpMp, and Mm vs. MmMm. -->
+
+</ul>
+
+
+
+<!-- ------------------------------------------------------------ -->
+
+<p> <strong><li>Fit the averaging model to the data.</strong> <em>The
+goal of this exercise is to explore the model and its ability to fit
+the data.</em> Copy <a href="NHA65averagingModel.m">the averaging
+model</a> into your directory. Read the comment section at the top of
+that file. In particular, read about the extension of the model to
+make it probabilistic, for which an extra parameter (n) is needed.
+
+<p>Notation: V<sub>H</sub> is the underlying psychological value of a
+high trait. H is the overt rating given to a high trait.
+
+<ul>
+
+<li>Anderson (1965) seems to claim that, if V<sub>H</sub> &gt;
+V<sub>Mp</sub> and that V<sub>L</sub> &lt; V<sub>Mm</sub>, then the
+(deterministic) averaging model predicts H &gt; H.Mp and L &lt;
+L.Mm. Is that always true? That is, are there parameter values for
+which that is <em>not</em> true?  If so, give an example of such
+parameter values. (Hint: Pick some constant values for V<sub>H</sub>
+&gt; V<sub>Mp</sub> &gt; V<sub>I</sub>. Then compute the predicted
+ratings for H and H.Mp as a function of the value of the averaging
+weight, w. Again, this is for the deterministic model; don't include
+the noise term.)
+
+<li>Try fitting the model to (mean) data that are actually generated
+by the (deterministic) model. (When doing your fit, make sure that the
+number of iterations in fminsearch is set high enough that it
+converges. In the output, 'exitflag' should not be 0.) Specifically,
+let V<sub>L</sub>=0, V<sub>Mm</sub>=20, V<sub>Mp=</sub>75,
+V<sub>H</sub>=95, V<sub>I</sub>=65 and w=0.7. Compute the predicted
+ratings for the 10 conditions (which you can easily do by scavenging
+snippets of code from the averaging model and putting into a new
+Matlab program). Now use those predicted ratings as data to be fit by
+the model. Initialize fminsearch at [ 0 25 75 100 50 0.5 10 ]. Does
+fminsearch settle onto the parameter values that generated the data?
+Try initializing the search with the correct parameter values. Does
+fminsearch stay there or stray away?
+
+<li>Now fit the model to the mean of the class data. (When doing your
+fit, make sure that the number of iterations in fminsearch is set high
+enough that it converges. In the output, 'exitflag' should not be 0.)
+Report the results for the following initial parameter vectors: <br> [
+0 25 75 100 50 0.7 20 ] <br> [ 0 25 75 100 50 0.1 20 ] What is the
+effect of small w?  <br> [ -10 20 80 110 50 0.7 20 ] Is it okay to
+have values &lt;0 or &gt;100?  <br> [ 0 25 75 100 80 0.7 20 ] What is
+the effect of large I?
+
+<li>The previous part found the maximal likelihood estimates of the
+parameters. If we were instead taking a Bayesian approach to parameter
+estimation, what would we do? Don't actually do the Bayesian approach;
+just briefly describe the steps involved if we were to apply it to the
+averaging model.
+
+
+</ul>
+
+
+<!-- ------------------------------------------------------------ 
+
+ ------------------------------------------------------------ -->
+
+
+</ol>
+
+
+<p><hr>
+</BODY>
+</font></HTML>

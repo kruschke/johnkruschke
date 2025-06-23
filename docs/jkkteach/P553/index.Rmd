@@ -1,0 +1,116 @@
+---
+title: "P553: Statistics"
+author: "<a href='https://jkkweb.sitehost.iu.edu/' target='_blank'>Prof. John Kruschke</a>"
+# date: "`r format(Sys.time(), '%H:%M, %d %B, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    number_sections: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# Overview 
+
+This course covers fundamental concepts of statistical inference, focusing on classical "frequentist" methods but also providing a glimpse of Bayesian methods. We will explore some of the most commonly used models, including t-tests, ANOVA, regression, etc. *More information about content is provided below in the schedule*.
+
+# Prerequisites
+
+This course is intended for all incoming graduate students in Psychological and Brain Sciences (PBS), and students from other fields are welcome. The course emphasizes conceptual unification, not rote mechanics. A purpose of P553 is to enrich and solidify your understanding of the conceptual underpinnings of methods to which you were previously exposed in an undergraduate stats class. 
+
+Students with relatively strong previous training in statistics should also find this course useful to refresh their knowledge and to gain a deeper understanding of the basic concepts. If you are a PBS major and have already taken a comparable graduate-level course, and feel that you are already thoroughly familiar with the material in P553, please talk with Prof. Kruschke to discuss a possible exemption from the PBS P553 requirement. Students exempted from P553 are encouraged to take other statistics courses, such as [Bayesian statistics](https://jkkweb.sitehost.iu.edu/jkkteach/P533/index.html).
+
+
+# After taking this course you should be able to...
+
+  * understand what a *p* value really is.
+  * know the models underlying typical analyses such as $t$-tests, ANOVA, regression, etc.
+  * conduct analyses in the R computing language.
+  * transfer your knowledge to more complex analyses and to other software.
+  * eagerly enroll in a subsequent course on [Bayesian statistics](https://jkkweb.sitehost.iu.edu/jkkteach/P533/index.html).
+
+# Information online: Canvas
+
+Our online hub for the course is IU [Canvas](https://canvas.iu.edu/). If you do not have access to Canvas, please notify Prof. Kruschke immediately. 
+
+# Contact
+
+## Instructor 
+
+[Prof. John Kruschke](https://jkkweb.sitehost.iu.edu/) (pronounced "crush-kee"), kruschke@indiana.edu. Office hours (possibly online) by appointment; please send email to arrange a time.
+
+## Assistant 
+
+See the Announcements in Canvas.
+
+# Course Materials:
+
+There is no required textbook for the course.
+
+## Software 
+
+We'll be using software called [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/). Both are free to download and install on your personal computer. Details will be provided in class. (Both are also on all IU UITS computers.)
+
+## Lecture Notes 
+
+Lecture materials will be posted online in [Canvas](https://canvas.iu.edu/). The early weeks have some extensive written notes, but the later weeks have only slides without written annotation (but with narration in video recordings from last year).
+
+## Other Reference Materials 
+
+There are numerous online resources for learning about R, RStudio, and RMarkdown. For example:
+
+  * [Chapter regarding R from the book *Doing Bayesian Data Analysis*](https://www-sciencedirect-com.proxyiub.uits.iu.edu/science/article/pii/B9780124058880000039) (or navigate to Ch 3 from  [here](https://www-sciencedirect-com.proxyiub.uits.iu.edu/book/9780124058880/doing-bayesian-data-analysis) if the previous link doesn't work), available free online through the IU Libraries once you login with your IU credentials.
+  * [A group-authored online textbook](https://ademos.people.uic.edu/)
+  * [R Guide at the Personality Project](http://personality-project.org/r/r.guide.html)
+  * [R guide from Baron and Li](https://www.sas.upenn.edu/~baron/from_cattell/rpsych/rpsych.html)
+  * [R's introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
+  * [Built-in R help](https://www.r-project.org/help.html)
+  * [A video series](https://www.youtube.com/user/TheLearnR/)
+  * [Quick R (book)](https://www.statmethods.net/r-tutorial/index.html)
+  * [Blog intro using tidyverse/ggplot2](http://blog.efpsa.org/2016/12/05/introduction-to-data-analysis-using-r/) We will *not* be using tidyverse or ggplot2, but I've included a link here FYI.
+  
+There are tons of other resources online. Of myriad books, one I recommend is [Data Analysis with R (2nd Ed) by Tony Fischetti](https://www.amazon.com/Data-Analysis-comprehensive-manipulating-visualizing/dp/1788393724/).
+
+# Schedule
+
+<!-- **Fall 2020: M/W 9:50-11:05am. Some days will meet synchronously online, other days will be asynchronous pre-recorded presentations. Due to COVID precautions, there will be no in-person meetings.** The first week will have synchronous Zoom meetings both Monday and Wednesday; subsequent weeks will typically have Zoom meetings on Mondays but not Wednesdays.  -->
+
+**Fall 2021: M/W 10:00am-11:15am, PY111.**
+
+Homework assignments are due on Wednesdays. Please see [Canvas](https://canvas.iu.edu/) for detailed schedule announcements.
+
+```{r echo=FALSE, results='asis'}
+sched = read.csv("./P553Schedule.csv")
+library(knitr)
+kable(sched)
+```
+
+# Homework: 
+
+There will be weekly homework assignments. You are encouraged to use whatever resources help you understand the homework and complete it with full comprehension, but ultimately you must write your own answers on your own and in your own words. In your answers that you submit, please provide explanations and thoroughly show all your computations, with annotation that explains what you are doing. An unannotated succession of computations will not get full credit, even if it is numerically correct. An excellent system for writing up homework is [RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html), as will be described in class.
+
+# Course Grading Method: 
+
+Grading is based on your total homework score, as a percentile relative to the class. There are no exams and no projects. N.B.: Scores tend to be very high, so do not think that, say, 96% must be a grade of A because it could end up being an A- if, say, two thirds of the class does better than 96%. Typically the late penalties turn out to be a bigger deduction than points missed due to errors, so don't fall behind. As this is a graduate course, grades are typically in the A to high B range, and only rarely is a C or less assigned.
+
+All assignments are mandatory. Late homework is exponentially penalized with a half-life of one week, meaning that after one week 50% is the maximum possible score. (The R program for the exponential decay is in the Canvas files; see LatePenalty.R.) No homework may be turned in more than three weeks later than its due date (and no homework may be turned in after 12:00 noon of Wednesday of finals week). There are two reasons for this policy: First, the course moves quickly and the material is largely cumulative, so the late penalty acts as an extra incentive to keep up. Second, the assistant, who will be grading the homework, must not be given a flood of late homework papers at the end of the semester. In recognition of the fact that "life happens" (e.g., short-term illness, personal turmoil, overwhelming confluence of deadlines, etc.), your two worst late penalties will be dropped. In other words, for every homework we will record the scores with and without a late penalty. The two homeworks with the largest difference between with- and without- late penalty will have their late penalty dropped. *Note, therefore, that any homework not turned in will count as zero.*
+
+# Disclaimer
+
+All information in this document is subject to change. Changes will be announced in class.
+
+# University Policies
+
+## Academic Integrity 
+
+As a student at IU, you are expected to adhere to the standards detailed in the Code of Student Rights, Responsibilities, and Conduct (Code). Academic misconduct is defined as any activity that tends to undermine the academic integrity of the institution. Violations include: cheating, fabrication, plagiarism, interference, violation of course rules, and facilitating academic dishonesty. When you submit an assignment with your name on it, you are signifying that the work contained therein is yours, unless otherwise cited or referenced. Any ideas or materials taken from another source for either written or oral use must be fully acknowledged. All suspected violations of the Code will be reported to the Dean of Students and handled according to University policies. Sanctions for academic misconduct may include a failing grade on the assignment, reduction in your final course grade, and a failing grade in the course, among other possibilities. If you are unsure about the expectations for completing an assignment or taking a test or exam, be sure to seek clarification from your instructor in advance.
+
+## Note Selling (Don't)
+
+Several commercial services have approached students regarding selling class notes/study guides to their classmates. Selling the instructor's notes/study guides in this course is not permitted. Violations of this policy will be reported to the Dean of Students as academic misconduct (violation of course rules). Sanctions for academic misconduct may include a failing grade on the assignment for which the notes/study guides are being sold, a reduction in your final course grade, or a failing grade in the course, among other possibilities. Additionally, you should know that selling a faculty member's notes/study guides individually or on behalf of one of these services using IU email, or via Canvas may also constitute a violation of IU information technology and IU intellectual property policies; additional consequences may result.
+
+## Online Course Materials
+
+The faculty member teaching this course holds the exclusive right to distribute, modify, post, and reproduce course materials, including all written materials, study guides, lectures, assignments, exercises, and exams. While you are permitted to take notes on the online materials and lectures posted for this course for your personal use, you are not permitted to re-post in another forum, distribute, or reproduce content from this course without the express written permission of the faculty member. Any violation of this course rule will be reported to the appropriate university offices and officials, including to the Dean of Students as academic misconduct.

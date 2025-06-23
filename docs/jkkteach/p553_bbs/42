@@ -1,0 +1,28 @@
+SUBJECT>Re: about skewed distribution
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Wednesday, 2 October 2002, at 11:25 a.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>39
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Interesting example! So, it's probably correct to say that in a distribution skewed to the right (positively), the mean is <em>usually</em> larger than the median.
+<P>How can you judge which is larger <em>for sure</em>? I think you just have to compute them explicitly.
+<P>&gt; I have some doubt about the
+<BR>&gt; conclusion that the mean is larger
+<BR>&gt; than median in positive skewed
+<BR>&gt; distributions. I understand that
+<BR>&gt; mean is more sensitive to extreme
+<BR>&gt; outliers, but not all skewed distribtutions
+<BR>&gt; neccesarily have extreme outliers.
+<BR>&gt; I generated an example here: 1,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,7,7,7,7,8,8,8.
+<BR>&gt; In this positively skewed distribution,
+<BR>&gt; the mean is 4.7, but the median(the
+<BR>&gt; 18th score) is 5, which is lager
+<BR>&gt; than 4.7 (you can test my result
+<BR>&gt; in SPSS). So generally, how can
+<BR>&gt; we judge which one is lager in
+<BR>&gt; a positively skewed distribution
+<BR>&gt; without extreme outliers?

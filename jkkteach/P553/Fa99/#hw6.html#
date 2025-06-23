@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 6</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology
+<br>Homework 6: One-way ANOVA.
+<br>Due 19 October 1999.
+</h2>
+</center>
+
+<ol>
+
+<p><li>(3 pts.)
+
+Suppose an experiment has three conditions with three subjects each,
+with scores as follows:
+
+<center>
+<table width=100%>
+<tr>
+<td align=right>Group A: 1, 2, 3</td>
+<td align=center>Group B: 2, 3, 4</td>
+<td align=left>Group C: 5, 6, 7</td>
+</tr></table>
+</center>
+
+Conduct an omnibus ANOVA completely by hand, showing your work.  State
+the three main assumptions of the test.  Then verify your computations
+with SPSS, including your printout.
+
+<p><li>(4 pts.)
+
+P. 346, Set II, #2.  Do each part by hand, and check each part with
+SPSS.  What is the proportion of variance accounted for by group
+membership?  Also compute the effect size and approximate power for
+each part.  Notice that all that differs between part (a) and part (b)
+is the mean of Group 2, but the <em>range</em> of group means is the
+same.  What component(s) of the F statistic is affected by this
+change in group mean?
+
+
+
+<p><li>(4 pts.)
+
+P.346, Set <strong>I</strong>, #6.  Write down the three lists of
+words that you find, and indicate the length of each word.  You can
+conduct the analysis in SPSS if you like.
+
+
+<p><li>(3 pts.)
+
+P. 347, Set II, #4.  Show your work, but do not do part (a). Do part
+(b).  Do not do part (c).
+
+<p><li>(4 pts.)
+
+P. 373, Set II, #2.  Also compute R<sup>2</sup>.  Do by hand, verify
+in SPSS.  Annotate how you determine R<sup>2</sup> from your SPSS
+print out.
+
+<p><li>(4 pts.)
+
+P. 373, Set II, #5.  Verify in SPSS, using both ANOVA and
+<em>t</em>-test. Annotate the corresponding parts of the ANOVA and
+<em>t</em>-test print outs.
+
+<p><li>(3 pts.)
+
+For this exercise you are to draw a diagram of power for one-way
+ANOVA, analogous to <a href="power.html">the power diagram for
+standardized means</a>.  Suppose that there are three normal
+populations with common variance sigma<sub>W</sub>.  Under the null
+hypothesis, mu<sub>1</sub> = mu<sub>2</sub> = mu<sub>3</sub>.  Under
+the alternative hypothesis, mu<sub>1</sub>+1 = mu<sub>2</sub> =
+mu<sub>3</sub>-1.  Draw pictures of the two sets of populations, and
+draw pictures of the implied sampling distributions of F.  Indicate
+F<sub>crit</sub>, the region that constitutes the Type I error rate,
+and, importantly, the region that constitutes the power.  Can you find
+a clear way to indicate effect size, <em>f</em> (p. 339) in your
+drawing?  Would effect size be drawn on the population side or on the
+sampling side?
+
+
+</ol>
+
+
+
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

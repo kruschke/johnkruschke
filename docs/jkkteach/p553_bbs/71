@@ -1,0 +1,18 @@
+SUBJECT>Re: Computing the linear regression equation by hand...
+POSTER>Jeff Reynolds
+EMAIL>jtreynol@indiana.edu
+DATE>Monday, 28 October 2002, at 11:17 p.m.
+IP_ADDRESS> REMOTE_HOST: dial-123-179.dial.indiana.edu; REMOTE_ADDR: 156.56.123.179
+PREVIOUS>69
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Nate,
+<P>Thanks for the very useful post! I think there's one problem though. You've got the following...
+<P>(Yi - My)/SDy = r (Xi - Mx)/SDx
+<P>...turning into this equation...
+<P>Yi = [(SDy r)/SDx] Xi + [(SDy r Mx)/SDx] + My
+<P>...but the first + sign should be a minus, thus:
+<P>Yi = [(SDy r)/SDx] Xi - [(SDy r Mx)/SDx] + My
+<P>-Jeff

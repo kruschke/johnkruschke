@@ -1,0 +1,239 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>Q550 Maximal Likelihood and Bayesian Model Comparison Homework;
+Prof. John K. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+Q550 Models in Cognitive Science, Prof. Kruschke
+<h2>
+Homework: Maximal Likelihood and Bayesian Model Comparison
+
+
+</h2>
+
+Modified 5:15pm Tuesday Feb. 8, 2005
+<br>Modified 10:30am Thursday Feb. 10, 2005
+<br>Modified Sunday Feb. 20, 2005
+<br>Modified Wednesday Feb. 23, 2005
+</center>
+
+<p>Please turn in your Matlab program, clearly commented, and its
+output (with the answers to the questions below clearly annotated).
+
+<p>
+Suppose we are measuring some value of interest, such as the simple
+response time (RT) to a flash of light. Here are the RT's, in msec:
+345, 350, 365, 385, 410, 495.
+
+<p>
+Consider two models of RT:
+<ul>
+
+<li>Gaussian:
+p( t | &mu;,&sigma; ) = [1/(&sigma;*sqrt(2*&pi;))] * exp( -0.5 * ( t - &mu;
+)<sup>2</sup> / &sigma;<sup>2</sup> )
+
+<p>
+<li>Exponential:
+p( t | &mu;,&sigma; ) = (1/&sigma;) * exp(
+-(1/&sigma;) * ( t - &mu; ) ) for t >= &mu;, and p( t | &mu;,&sigma; )
+= 0 otherwise.
+
+</ul>
+
+where t is response time and &mu; and &sigma; are parameters (such that &mu;>0 and
+&sigma;>0). We assume that the data are independent, so p(data|&mu;,&sigma;) is the
+product of p(t<sub>i</sub>|&mu;,&sigma;) for the data = {t<sub>i</sub>}.
+
+<p>1. Using fminsearch (i.e., not using a closed form solution), find
+the maximal likelihood parameter values for each model. That is, find
+the parameter values that maximize the probability of the data.
+
+<p>2. Suppose we have the following prior distribution over the
+parameter values: p(&mu;,&sigma;) = k * 1/&mu; * 1/&sigma;, for &mu; = 10 to 1010, sampled
+every 20, for &sigma; = 1 to 501, sampled every 10, and k is set such that
+the sum of the probabilities over that grid is 1.0.
+
+<p>2A. For each model, determine the likelihood over the parameter
+values (on that grid). That is, determine p(data|&mu;,&sigma;) for every point
+on the grid. (Do NOT print this array out; just show the Matlab
+code. Or show a surface graph if you like.) Do the peaks of these
+likelihoods match the solution you found in Question 1?
+
+<p>2B. For each model, determine the posterior distribution over the
+parameter values (on that grid), given the data. That is, determine
+p(&mu;,&sigma;|data) from p(&mu;,&sigma;) and p(data|&mu;,&sigma;).  (Do NOT print this array
+out; just show the Matlab code. Or show a surface graph if you like.)
+When you sum (i.e., integrate) across the parameter grid you'll be
+computing p(data|model), which you'll need for the next part...
+
+<p>2C. Compute p(Gaussian|data) and p(Exponential|data), assuming
+equal priors on the two models.
+
+<blockquote><small> Hint: Let M1 denote Model 1, D denote the Data,
+and R denote the paRameters. Then
+
+<p> p(M1|D) 
+<br> = p(D|M1) p(M1) / p(D)
+<br> = p(D|M1) p(M1) / [ p(D|M1) p(M1) +  p(D|M2) p(M2) ]
+
+<p>where the priors are unbiased, i.e., p(M1) = p(M2) = 0.5, <br>and
+where p(D|M) = Integral_R p(D|R,M) p(R|M)
+
+</small></blockquote>
+
+
+<small>
+
+<b>Some Matlab hints:</b>
+
+<p><li>Suppose that the particular data response times are in the vector
+<tt>
+<br>> t = [ t1 t2 t3 t4 t5 t6 ];
+</tt>
+<br>The exponential model probabilities can be computed by the sequence of commands
+<tt>
+<br>> p = zeros(size(t));
+<br>> p(t>=m) = (1/s)* exp( -(1/s) * ( t(t>=m) - m ) );
+</tt>
+<br>Notice the use of <em>logical indexing</em> such as <tt>t(t>=m)</tt>.
+
+<p><li>When calling fminsearch, there is no way to keep the parameters
+non-negative. That is, fminsearch does not allow you to specify limits
+on the parameter space. Instead, do this: In your definition of the
+model function, check whether a parameter passed into the function is
+negative, and if it is, send back a Really Bad Fit value to fminsearch
+so that it avoids that parameter value in the future:
+<tt>
+<br>> function fitValue = ExponentialModel( paramVector )
+<br>> m = paramVector(1) ;
+<br>> &sigma; = paramVector(2) ;
+<br>> ReallyBadFit = 9.9e+99 ; % arbitrary value
+<br>> if m < 0
+<br>>    fitValue = ReallyBadFit;
+<br>>    return;
+<br>> end
+<br>> % etc.
+</tt>
+
+<p><li>It is good programming style to keep the arbitrary data from an
+experiment out of the definition of your model. That is, the model
+really has two types of arguments: (1) the parameters and (2) the data
+and experiment design constants. The model takes those two arguments
+and returns a fit value. You can pass <em>both</em> kinds of arguments to your
+model through fminsearch. The <a href="fminsearchExample.m">example below</a> shows you how.
+<p><table border="1" cellpadding="5">
+<tr><td><small><tt>
+
+<br>function fminsearchExample()
+<br>%
+<br>% Example to accompany Q550 Homework. The goal here is to illustrate the
+<br>% passing of additional arguments to functions called by fminsearch. This
+<br>% is useful for passing data and experiment design constants into models.
+<br>%
+<br>% This example puts both the Gaussian and Exponential models into a single
+<br>% sub-function, which one would never do in 'real life'. But doing it here
+<br>% illustrates the use of structures and switch statements in Matlab.
+<br>%
+<br>% John Kruschke, February 2005.
+<br>
+<br>% MyFunctionToMinimize, defined below, is Gaussian, so its parameters are
+<br>% mu and sigma. They are initialized here.
+<br>muInit = 0.0 ;
+<br>sigmaInit = 10.0 ;
+<br>parInit = [ muInit sigmaInit ] ;
+<br>
+<br>% Data vector could have any number of values.
+<br>data = [ 10.0 20.0 25.0 32.0 ] ;
+<br>MyFunctionArguments.data = data ;
+<br>% Comment out one of the statements below (whichever model you do NOT want)
+<br>MyFunctionArguments.model = 'Gaussian';
+<br>% MyFunctionArguments.model = 'Exponential';
+<br>
+<br>% Call fminsearch. Notice the last argument is MyFunctionArguments, i.e.,
+<br>% the data.
+<br>searchOptions = optimset('Display','iter') ;
+<br>[bestParam,fitVal,exitflag,output] = fminsearch( @MyFunctionToMinimize, ...
+<br>   parInit, searchOptions, MyFunctionArguments ) ;
+<br>
+<br>% Display the outcome of fminsearch, and display the mean and SD of the
+<br>% data.
+<br>fprintf(1,'fminsearch best fitting mu and sigma:\n\t%f\t%f\n', bestParam);
+<br>fprintf(1,'Mean and SD of data:\n\t%f\t%f\n', mean(data), std(data,1));
+<br>
+<br>%-------------------------------------------------------------------------
+<br>function FitDiscrepancy = MyFunctionToMinimize( Parameters, ...
+<br>   MyFunctionArguments )
+<br>%
+<br>% This function determines the Gaussian probability of the data specified
+<br>% in MyFunctionArguments relative to the mean and sd specified in
+<br>% Parameters. The output is the negative log likelihood of the data.
+<br>%
+<br>% This function expects a Parameters vector with two components and a
+<br>% MyFunctionArguments vector (e.g., data constants) with an arbitrary
+<br>% number of components.
+<br>
+<br>% Unpack the arguments into meaningful components.
+<br>mu = Parameters(1);
+<br>sigma = Parameters(2);
+<br>data = MyFunctionArguments.data;
+<br>model = MyFunctionArguments.model;
+<br>
+<br>% ReallyBadFit is any value bigger than a negLogLik you would get.
+<br>ReallyBadFit = 9.9e+99 ;
+<br>
+<br>% Check if sigma is non-positive, and if so, return a punishing fit value.
+<br>if sigma <= 0.0;
+<br>   FitDiscrepancy = ReallyBadFit ;
+<br>   return;
+<br>end
+<br>% If exponential model is being fit, then check if mu is greater than any
+<br>% data values, and if so, return a punishing fit value.
+<br>if strcmp(model,'Exponential')
+<br>   if sum(data < mu)
+<br>      FitDiscrepancy = ReallyBadFit ;
+<br>      return;
+<br>   end
+<br>end
+<br>
+<br>% pDatum (below) is a vector of probabilities of the data values.
+<br>switch model
+<br>
+<br>   case 'Gaussian'
+<br>      % Notice in the formula below that ((data-mu)/sigma) is a vector, and
+<br>      % its components are individually squared by using the .^ operator.
+<br>      pDatum = (1/(sigma*sqrt(2*pi))) * ...
+<br>         exp( -0.5 * (( data - mu )/sigma).^2 );
+<br>
+<br>   case 'Exponential'
+<br>      % Notice the use of logical indexing.
+<br>      pDatum = zeros(size(data));
+<br>      pDatum(data >= mu) = (1/sigma) * ...
+<br>         exp( -(1/sigma) * ( data(data >= mu) - mu ) ) ;
+<br>
+<br>   otherwise
+<br>      error('Model not recognized');
+<br>
+<br>end
+<br>
+<br>negLogLik = -sum(log(pDatum));
+<br>
+<br>FitDiscrepancy = negLogLik ;
+<br>
+<br>%-------------------------------------------------------------------------
+<br>
+
+</tt></small></td></tr>
+</table>
+
+
+</small>
+
+
+<p><hr>
+</BODY>
+</font>
+</HTML>

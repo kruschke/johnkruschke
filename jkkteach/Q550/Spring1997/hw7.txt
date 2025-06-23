@@ -1,0 +1,65 @@
+
+Q550 Homework 7: Competitive Learning.
+
+Due Thursday, April 27.  NO EXCEPTIONS.
+
+Use the files provided below to explore the influences of (i) the
+number of output nodes and (ii) the learning rate, on the behavior of
+competitive learning.  In this exercise there are three input nodes,
+and the patterns represent single "features" in the input.  The
+patterns are presented cyclically, using "strain."
+
+Your job is to "strain" the network for three different learning rates
+and three different numbers of output (cluster) nodes.  Use learning
+rates of 1.0, 0.5 or 0.05, and 1, 2 or 3 output nodes.  For each of
+the nine combinations, "strain" the network and describe the
+asymptotic behavior of the weights.  Briefly explain why it occurs, in
+terms of the mechanisms of competitive learning.
+
+Hints: You can use the same template file for all runs.  For a given
+number of output nodes, you can change the learning rate by typing
+"set param lrate" on the command line (and then don't forget to
+"reset").  To change the number of output nodes, quit the program,
+change the "set config noutputs" line in the the start-up file, and
+re-invoke the program.
+
+cycle.tem
+---------
+define: layout
+epochno  $
+
+                 INPUT ACT
+                   x  y  z
+   cpname $      $            
+
+                   WEIGHTS
+                    from
+                   x  y  z       OUTPUT
+to output-node1  $               $
+to output-node2
+to output-node3
+end
+epochno variable 1 $ 0 epochno     6 1
+cpname  variable 1 $ n cpname      6 1
+input   vector   1 $ n activation  h 3 1.0    0 3
+weights matrix   1 $ n weight      h 3 100.0  3 3  0 3
+output  vector   1 $ n activation  v 2 1.0    3 3
+
+cycle.str
+---------
+set config noutputs 2
+set config ninputs 3
+set param lrate 0.5
+set dlevel 1
+set stepsize pattern
+set single 1
+set nepoch 10
+get patterns cycle.pat
+
+cycle.pat
+---------
+x  1 0 0
+y  0 1 0
+z  0 0 1
+
+=== end ===

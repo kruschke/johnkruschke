@@ -1,0 +1,89 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 11, Due Wednesday Dec. 7, 2005.
+
+<!--
+<br><strong>UNDER CONSTRUCTION! DO NOT YET DO!</strong>
+-->
+
+<font size="-1">
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and
+student ID number (not your SS number). On all subsequent sheets, that
+have your answers, write only your student ID number (not your SS
+number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the
+photocopy. (Of course, you might want to keep another copy for
+yourself!) The copy, with the cover page removed, will be used for
+peer-grading.
+
+<li>
+Include your complete R program. Make sure it is well commented, so that
+the reader knows why each line of code is there.
+</font>
+
+
+<p>
+In this homework we compare null hypothesis significance testing (NHST) with Bayesian analysis. The domain of application is coin flipping, wherein we measure a two category outcome (heads or tails). We flip the coin N=20 times and get r=6 heads. We are interested in two hypotheses: One hypothesis is that the coin is fair with the probability of heads being <em>p</em>=.50; the other hypothesis is that the coin is biased to come up heads only <em>p</em>=.25. These hypotheses are formalized in more detail below.
+
+
+<ol>
+
+<li>NHST.
+
+
+
+<p><em>A. Test the null hypothesis.</em> Can the null hypothesis (<em>p</em>=.50) be rejected? Assume a non-directional null hypothesis, i.e., a two-tailed test, with Type I error rate set at 5%. In other words, is the probability of getting just 6 or fewer heads less than 2.5%?
+
+<p><em>B. Determine the confidence interval.</em> What is the range of values for <em>p</em> that could not be rejected? (Again, using a two-tailed test with Type I error rate of 5%.)
+
+<p><em>C. Compute the power.</em> For an alternative hypothesis of <em>p</em>=.25, what is the power of the test? That is, if the alternative hypothesis is true, what is the probability of rejecting the null hypothesis?
+
+
+
+
+<p><li>Bayesian analysis.
+
+
+
+<p><em>A. Determine the credible interval.</em> Suppose the prior on <em>p</em> is Beta(1,1). Notice that the prior is uniform, with mean <em>p</em>=.50, so this is one possible expression of a "null" hypothesis.
+<br>* What is the 95% posterior credible interval? (Define the credible interval as on the bottom of p.38 of our textbook; i.e., the region of highest posterior density. One way to find this is with the "rising tide method" used in class.)
+<br>* How does the credible interval compare with the confidence interval found in NHST (larger, smaller, overlapping)?
+<br>* Does the credible interval contain <em>p</em>=.50?
+<br>Now answer these three questions again, using a prior of Beta(10,10), which also is a reasonable expression of a "null" hypothesis.
+
+
+<p><em>B. Compare null and alternative hypotheses.</em> Consider the following two hypotheses. The null hypothesis, H0, supposes a prior of Beta(10,10). The alternative, H1, supposes a prior of Beta(5,15).
+<br>* What is the mean of the H0 prior? What is the mean of the H1 prior?
+<br>* With r=6 and N=20, determine the Bayes factor p(r|H1)/p(r|H0).
+<br>* Suppose that H1 is true; i.e., coins are minted with flipping probabilities as described by H1. Generate random values of <em>p</em> from H1, and for each <em>p</em> generate a random value of r and compute the Bayes factor p(r|H1)/p(r|H0). Do that enough times so that a histogram of the Bayes factors is fairly stable. Show the histogram. What is the probability that the Bayes factor is greater than 1.0? What is the probability that the Bayes factor is greater than 20.0?
+<br>Answer these three questions again, using H0: Beta(1,1) and H1: Beta(50,150).
+
+
+</ol>
+
+<font size="-1">
+<p>Post Script: We will not pursue the topic of <em>sample size determination</em> in this homework, but it follows from the questions above. In NHST, sample size is determined by power: We determine the minimal N that yields the desired power. In Bayesian analysis, sample size is determined in various ways, but one approach is to determine the minimal N that yields a desired probability of the Bayes factor being greater than, say, 20.0. See Weiss (1997).
+</font>
+
+
+
+<p><hr>
+</body>
+</font>
+</html>
+
+
+

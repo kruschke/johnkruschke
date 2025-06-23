@@ -1,0 +1,960 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                            Appendix L
+                   Two Adaptive Mapping Programs
+
+     These programs use a two dimensional square array of model 
+neurons to test the mapping algorithm discussed in Chapter 14.  We 
+define a Pascal TYPE Neuron which contains a RECORD of the location 
+of the unit, its "activity," and its connections to the input stimulus 
+lines.  The first program uses only two connections between the input 
+stimulus and the neuron, giving a two dimensional array matching the 
+input pattern dimension, though many of the most interesting results 
+for adaptive maps occur when the array dimension and the stimulus 
+dimensions do not match, as we show in the second demonstration program.  
+
+     For the simulations in the first program each unit receives only 
+two inputs, that is, allowable inputs are points in a two dimensional 
+pattern.  During initialization, all the connections are set to small 
+random values.   When a pattern is presented to all the model neurons, 
+it provokes the most "activity" in one of them.  What is done is to look for
+the closest response, that is, the unit whose connections most closely 
+match the input stimulus.  In our program, finding this unit is a two 
+step process.  First, we compute the distance between the connections 
+of every unit in the array and the input stimulus in PROCEDURE 
+Compute_activities.  Second, we find the smallest value of activity, 
+which gives the unit with the closest match to the input in PROCEDURE 
+Find_closest.
+
+     Once the closest unit is found, we use it as the center of a 
+neighborhood.  Initially the neighborhoods are very large, as large as
+80% of the entire array, but get smaller as the simulation goes on,
+until only the six closest array members are modified.  The modification 
+rule simply multiplies the existing weights by a constant, one minus 
+Alpha, and then adds Alpha times the pattern to the connections.  There 
+is no need to normalize here because we are looking at relative responses.  
+The modification is done in PROCEDURE Modify_weights: This procedure is 
+repeated over and over again by PROCEDURE Iteration.
+
+     The rest of the program is concerned with "human factors." Several 
+initial two dimensional probability distributions for the input stimulus 
+are provided for experimentation, a bar, a triangle, a square, and a 
+circle.  A sequence of equally spaced points in the input distribution 
+is tested. When tested, the program labels the unit that responds best 
+when that particular stimulus point is presented.  The display can present 
+the best responses of units either to the points equally spaced throughout 
+the original distribution, or to points in the square that were never 
+presented during learning because they were not in the input distribution.
+
+     MAPS starts for asking for a random number seed.  Then it asks
+for the learning parameter, Alpha.  A good initial choice for Alpha is 
+0.1.  Then the program asks for the decay constant in iterations of the 
+neighborhood decay term, 1000 or 2000 is appropriate.  The probability 
+distribution of the input can be taken from a bar ('b'), a circle ('c') 
+a doughnut ('d'), a square ('s') or a triangle ('t').  One of these 
+letters must be chosen.  The program will then responds to letter commands 
+input from the command line.  "b" displays the unit giving the best 
+response to a particular input point.  "d" shows the shape of the
+initial distribution and will display the points chosen for display by 'b'.  
+"i" determines the number of iterations to perform.  "m" gives the 
+best response of units to the missing part of the input distribution,
+that is, to points in the square that the program never used.
+"q" means quit the program.  "x" starts executing the program until as 
+the number iterations chosen by "i" is reached.
+
+     We can make a small modification of our mapping program to do a 
+high dimensional simulation.  The main modification simply involved 
+changing the definition of the Pascal RECORD Neuron to have 384 connections 
+instead of 2 and removing the code specific to the continuous distributions.
+
+     In the second program, MAPNUMBER, used for the high dimensional 
+simulations, the commands are a little different.  As before, the program 
+prompts for "Seed," followed by a prompt for "Alpha" which is the learning 
+constant.  Again, 0.1 is a good initial value.  Next, the time constant 
+of neighborhood decay is requested: good starting values are 1000 or 2000.  
+Then the program prompts for a parameter "group size" which is used in the 
+display routines: a good initial value is 100.  The final prompt is for the 
+name of the input file containing the ASCII patterns (48 character) which 
+are converted into 384 dimensional state vectors.  
+
+     The program then waits for input from the command line.  Typing an 
+"a" from the command line displays the best response for every point 
+in the array, with the overall best responding unit for each input 
+pattern marked with an '*'.  (Type "a" before any learning to see that 
+the initialization truly is random.)  Next, the numbers 1,2,3,4,5, and 0, 
+followed by "x" iterate for 1, 2, 3, 4, 5 and 10 times the group size.  
+("x" typed alone will iterate for Group Size iterations.)  Nothing is 
+displayed until "a" is typed.  This program is computation intensive.
+
+     Examples of operation of both the high and low dimensional programs 
+and the high dimensional test patterns can be seen in Chapter 14.
+This appendix contains both the high and low dimensional programs and 
+the three high dimensional test sets, numbers.txt, bars.txt, and 
+symbols.txt.
+
+----------------------------------------------------------------------
+                  Two dimensional map forming program
+----------------------------------------------------------------------
+
+PROGRAM Maps (Input, Output);
+
+  CONST Array_size = 19;  
+
+  TYPE  Neuron = RECORD
+                 X,Y        : INTEGER;   {Location on 2-D map array.      }
+                 Activity   : REAL;      {Closeness to current stimulus.  }
+                 Connections: ARRAY [1..2] OF REAL; {Connection strengths.}
+                 END;
+  VAR I,J,
+      Seed,
+      Old_seed,
+      Iterate_until,
+      Iteration_nr:INTEGER;
+      Distribution,               
+      Input_char  : CHAR;
+      Initial_Map,
+      Current_Map : ARRAY [1..Array_size, 1..Array_size] OF Neuron;
+      Stimulus    : ARRAY [1..2] OF REAL;
+      Closest     : Neuron;
+      Size_constant,  
+      Alpha       : REAL;
+      Plot_missing,
+      VT100, 
+      Quit        : BOOLEAN;
+
+FUNCTION MTH$RANDOM (VAR Seed: INTEGER): REAL; EXTERN;  {VMS library call.}
+
+FUNCTION Random: REAL;   {Generates uniformly distributed random number}
+        BEGIN            {0 and 1.                                     }
+        Random:= MTH$RANDOM (Seed);
+        END;
+
+{VT100 Screen control procedures.                                }
+{These are standard ANSI escape sequences.                       }
+{They can be disabled by setting Boolean variable VT100 to FALSE.}
+
+PROCEDURE Clear_screen;  {Erase screen, leave cursor at home.}
+        BEGIN
+        IF VT100 THEN
+           WRITE (CHR (27), '[f', CHR (27),'[2J');
+        END;
+
+PROCEDURE Erase_line;  {Erases line to end.}
+       BEGIN
+       IF VT100 THEN
+          WRITE (CHR (27), '[K');
+       END;
+
+PROCEDURE GoToXY (X,Y: INTEGER);  {X = column number, Y = row number.}
+        BEGIN
+        IF VT100 THEN
+           BEGIN
+           WRITELN;
+           WRITE (CHR (27), '[');
+           IF Y<10 THEN WRITE (Y:1) ELSE WRITE (Y:2);
+           WRITE (';');
+           IF X<10 THEN WRITE (X:1) ELSE WRITE (X:2);
+           WRITE ('H');
+           END;
+        END;
+
+PROCEDURE Initialize_map;
+        VAR I,J          : INTEGER;
+            N            : Neuron;
+        BEGIN
+        FOR I:= 1 TO Array_size DO
+            FOR J:= 1 TO Array_size DO
+            BEGIN
+            N.Activity       := 0; 
+            N.X              := I;
+            N.Y              := J;
+            {Initialize weights with small random values.}
+            N.Connections [1]:= 0.01 * (Random-0.5);
+            N.Connections [2]:= 0.01 * (Random-0.5);
+            {Place "neuron" in appropriate map position.}
+            Initial_map[I,J]:= N;
+            Current_map[I,J]:= N; 
+            END;
+        END;
+
+PROCEDURE Compute_activities;
+       VAR I,J   : INTEGER;
+           X_dist, 
+           Y_dist: REAL;
+      BEGIN
+       {Compute activities of all units.  Unit with smallest distance }
+       {between synaptic values and input will be chosen.             }
+       {Using Euclidean distance.                                     }
+       FOR I:= 1 TO Array_size DO
+           FOR J:= 1 TO Array_size DO
+           BEGIN
+           X_dist:= SQR (Current_map[I,J].Connections[1] - Stimulus[1]);
+           Y_dist:= SQR (Current_map[I,J].Connections[2] - Stimulus[2]);
+           Current_map[I,J].Activity:=  SQRT (Y_dist + X_dist);
+           END;
+       END;
+
+PROCEDURE Find_closest;
+       VAR I,J           : INTEGER;
+           Closest_so_far: Neuron;
+       BEGIN
+       Closest_so_far.Activity:= 100000;
+       FOR I:= 1 TO Array_size DO
+           FOR J:= 1 TO Array_size DO
+           IF (Current_map[I,J].Activity < Closest_so_far.Activity)
+               THEN Closest_so_far:= Current_map [I,J];
+       Closest:= Closest_so_far;
+       END;
+
+PROCEDURE Modify_weights;
+     VAR I,J, Delta_I, Delta_J : INTEGER;
+         Size, 
+         Distance_to_closest: REAL;
+     BEGIN
+     {Somewhat arbitrary formula for computing neighborhood size.}
+     {Assumes modification neighborhood starts out large and gets}
+     {small with exponential distribution.                       }
+     Size:= 1.5 + 0.3 * Array_size
+                 * EXP (- Iteration_nr / Size_constant);
+     FOR I:= 1 TO Array_size DO
+         FOR J:= 1 TO Array_size DO
+             BEGIN
+             {Checks to see if unit is within the neighborhood of the }
+             {unit with the synaptic weights closest to the input.    }
+             Delta_I:= Closest.X - I; 
+             Delta_J:= Closest.Y - J;
+             Distance_to_closest:= SQRT(SQR(Delta_I) + SQR (Delta_J));
+             IF (Distance_to_closest < Size) THEN
+                BEGIN
+                {Weaken old connections and add on a bit of the stimulus}
+                {to the connections.                                    }
+
+                {Modify x connections.}
+                Current_map[I,J].Connections[1]:=
+                      (1 - Alpha) * Current_map[I,J].Connections[1]
+                       + Alpha * Stimulus[1];
+                {Modify y connections.}
+                Current_map[I,J].Connections[2]:=
+                      (1 - Alpha) * Current_map[I,J].Connections[2] 
+                       + Alpha * Stimulus[2];
+
+                END;
+             END;
+     END;
+
+{These functions control the distributions of input stimulus vectors.}
+{More can be added easily.                                           }
+
+FUNCTION Bars: BOOLEAN;
+     BEGIN
+     IF ( (Stimulus[1] <= -0.2) OR (Stimulus[1] >= 0.2) )
+     THEN Bars:= TRUE ELSE Bars:= FALSE;
+     END;
+
+FUNCTION Circle: BOOLEAN;
+     VAR Radius: REAL;
+     BEGIN
+     Radius:= 0.3;
+     IF (SQRT(Stimulus[1]*Stimulus[1] + Stimulus[2]*Stimulus[2]) <= Radius)
+     THEN Circle:= TRUE ELSE Circle:= FALSE;
+     END;
+
+FUNCTION Doughnut: BOOLEAN;
+    BEGIN
+    {Hole has sides of length 0.5 centered on 0,0 }
+    IF  ((ABS (Stimulus[1]) < 0.25)
+     AND (ABS (Stimulus[2]) < 0.25))
+    THEN Doughnut:= FALSE ELSE Doughnut:= TRUE;
+    END;
+
+FUNCTION Triangle: BOOLEAN;
+    BEGIN
+    IF (Stimulus[1] <= Stimulus[2]) THEN Triangle:= TRUE ELSE Triangle:= FALSE;
+    END;
+
+PROCEDURE Make_stimulus;
+    VAR I, J: INTEGER;
+
+    {The general strategy is to choose points until an acceptable  }
+    {point from the desired distribution appears.                  }
+    {The test point are chosen uniformly from the square with sides}
+    {from -0.5,0.5.                                                }
+
+    PROCEDURE Choose_stimulus;
+        BEGIN
+        Stimulus [1]:= Random - 0.5; Stimulus [2]:= Random - 0.5;
+        END;
+
+    BEGIN
+    {Chooses distribution of input stimuli.  This is not a very efficient way }
+    {of doing the choice, but it ensures that equal areas in the subset of the}
+    {square distribution selected have equal probability of being chosen.     }
+
+    CASE Distribution OF
+
+      'B','b': {This stimulus distribution is two bars with the center}
+               {eight columns zero.                                   }
+               REPEAT Choose_stimulus UNTIL (Bars = TRUE);
+
+      'C','c': {This stimulus distribution is a circle centered on 0,0   }
+               REPEAT Choose_stimulus UNTIL (Circle = TRUE);
+
+      'D','d': {This stimulus distribution is a square doughnut with     }
+               {no points chosen from a center square of side length 0.5.}
+               REPEAT Choose_stimulus UNTIL (Doughnut = TRUE);
+
+      'S','s': {This stimulus distribution is uniformly from the square. }
+               Choose_stimulus;
+
+      'T','t': {This stimulus distribution is a right triangle with two  }
+               {sides on the x- and y- axes and the other side the main  }
+               {diagonal.                                                }
+               REPEAT Choose_stimulus UNTIL (Triangle = TRUE);
+       END;
+
+    END;
+
+PROCEDURE Iteration;
+     VAR I,J: INTEGER;
+     BEGIN
+     Iteration_nr:= Iteration_nr+1;
+     Make_stimulus;
+     Compute_activities; 
+     Find_closest;
+     Modify_weights;
+     END;
+
+PROCEDURE Best_responses;
+     VAR I,J, 
+         Best_X, Best_Y: INTEGER;
+         Show          : BOOLEAN;
+     BEGIN
+     Clear_screen;
+     GoToXY (1,1);
+     IF Plot_missing 
+     THEN WRITE ('               Best Responses of MISSING Input Points')
+     ELSE WRITE ('                    Best Responses of Input Points');
+     GoToXY (1,2);
+     WRITE ('Alpha: ', Alpha:5:1, 
+            ' Nbhd Decay: ', Size_constant:6:0,
+            ' Seed: ', Old_seed:6 );
+     CASE Distribution OF
+          'B','b': WRITE (' Distribution: Bars.');
+          'C','c': WRITE (' Distribution: Circle.');
+          'D','d': WRITE (' Distribution: Doughnut.');
+          'S','s': WRITE (' Distribution: Square.');
+          'T','t': WRITE (' Distribution: Triangle.');
+          END;
+     FOR I:= 1 TO Array_size DO
+         FOR J:= 1 TO Array_size DO
+         BEGIN
+         {Exactly Array_size points from -0.5 to +0.5}
+         Stimulus[1]:= ((I-1)/(Array_size-1)) - 0.5;
+         Stimulus[2]:= ((J-1)/(Array_size-1)) - 0.5;
+         CASE Distribution OF
+              'B','b': IF Bars THEN Show:= TRUE ELSE Show:= FALSE;
+              'C','c': IF Circle THEN Show:= TRUE ELSE Show:= FALSE;
+              'D','d': IF Doughnut THEN Show:= TRUE ELSE Show:= FALSE;
+              'S','s': Show:= TRUE; 
+              'T','t': IF Triangle THEN Show:= TRUE ELSE Show:= FALSE; 
+              END;
+    
+             {I are columns, J are rows.  }
+             {Columns are denoted by CAPITALS, rows by lower case.}
+             {Plot_missing flag only displays responses to points }
+             {missing from initial distribution.                  }
+             IF Plot_missing THEN Show:= NOT Show;
+             IF Show THEN BEGIN
+                          Compute_activities; 
+                          Find_closest;
+                          Best_X:= Closest.X;
+                          Best_Y:= Closest.Y;
+                          GoToXY ( (10+3*Best_X), Best_Y+2);  
+                          WRITE (CHR (I+64), CHR(J+96));
+                          END;
+         END;
+     END;
+
+PROCEDURE Show_input_distribution; 
+     VAR I,J : INTEGER;
+         Show: BOOLEAN;
+     BEGIN
+     Clear_screen;
+     GoToXY (1,1);
+     WRITE ('                      Distribution of Input Points');
+     GoToXY (1,2);
+     WRITE ('Alpha: ', Alpha:5:1, 
+            ' Nbhd Decay: ', Size_constant:6:0,
+            ' Seed: ', Old_seed:6 );
+     CASE Distribution OF
+          'B','b': WRITE (' Distribution: Bars.');
+          'C','c': WRITE (' Distribution: Circle.');
+          'D','d': WRITE (' Distribution: Doughnut.');
+          'S','s': WRITE (' Distribution: Square.');
+          'T','t': WRITE (' Distribution: Triangle.');
+          END;
+     FOR I:= 1 TO Array_size DO
+         FOR J:= 1 TO Array_size DO
+         BEGIN
+         {Exactly Array_size points from -0.5 to +0.5}
+         Stimulus[1]:= ((I-1)/(Array_size-1)) - 0.5;
+         Stimulus[2]:= ((J-1)/(Array_size-1)) - 0.5;
+         CASE Distribution OF
+              'B','b': IF Bars THEN Show:= TRUE ELSE Show:= FALSE;
+              'C','c': IF Circle THEN Show:= TRUE ELSE Show:= FALSE;
+              'D','d': IF Doughnut THEN Show:= TRUE ELSE Show:= FALSE;
+              'S','s': Show:= TRUE; 
+              'T','t': IF Triangle THEN Show:= TRUE ELSE Show:= FALSE; 
+              END;
+             {I are columns, J are rows.  }
+             {Columns are denoted by CAPITALS, rows by lower case.}
+             IF Show THEN BEGIN
+                  GoToXY ((10+3*I), J+2);  
+                  WRITE (CHR (I+64), CHR(J+96));
+                  END;
+         END;
+     END;
+
+
+PROCEDURE Initialize;
+      VAR I: INTEGER;
+      BEGIN
+      VT100:= TRUE; 
+      WRITELN ('This is a demonstration of the Kohonen self-organizing  ');
+      WRITELN ('mapping algorithm.                                      ');
+      WRITE   ('Seed       : ');           READLN (Seed);  Old_seed:= Seed;
+      WRITE   ('Alpha      : ');          READLN (Alpha); 
+      WRITE   ('Nbhd decay : ');  READLN (Size_constant);
+      WRITELN ('Probability distribution of input stimuli -- ');
+      WRITE   ('  B)ars, C)ircle, D)oughnut, S)quare, T)riangle: ');
+      READLN (Distribution);
+      Iterate_until:= 1;
+      Initialize_map;
+      Plot_missing:= FALSE;
+      END;
+
+BEGIN {Main Program}
+Initialize;
+Clear_screen;
+Iteration_nr:= 0;
+Quit:= FALSE; 
+REPEAT
+  GoToXY (1,23); 
+  Erase_line;
+  WRITE ('Iteration: ', Iteration_nr:6, 
+         '. B)est rsp D)ist I)t until M)iss Q)uit X)cute > '); 
+  READLN (Input_char); 
+  CASE Input_char OF
+      'B','b': Best_responses;
+      'D','d': Show_input_distribution; 
+      'I','i': BEGIN
+               GoToXY (1,23); Erase_line;
+               WRITE ('Iterate until: ');  READLN (Iterate_until);
+               END;
+      'M','m': BEGIN
+               Plot_missing:= TRUE;
+               Best_responses;
+               Plot_missing:= FALSE;
+               END;
+      'Q','q': Quit:= TRUE; 
+      'X','x': BEGIN
+               GoToXY (1,23);
+               Erase_line;
+               WRITE ('Iterating until: ', Iterate_until:6);
+               GoToXY (1,23);
+               REPEAT Iteration UNTIL (Iteration_nr = Iterate_until);
+               END;
+      END;  
+Until Quit;
+END.  {Main Program}
+
+------------------------------------------------------------------------
+         This program forms maps from high dimensionality inputs
+------------------------------------------------------------------------
+
+PROGRAM Mapnumber (Input, Output, Stimulus_file);
+
+  CONST Array_size       =  19;  
+        Dimensionality   = 384;
+        Nr_of_characters =  48;   {48 characters in 384 dim system.}
+
+  TYPE  Stimulus_vector     = ARRAY [1..Dimensionality] OF REAL;
+        String              = VARYING [80] OF CHAR;
+        Char_vector         = ARRAY [1..Nr_of_characters] OF CHAR;
+        Neuron = RECORD
+                 X,Y        : INTEGER; 
+                 Activity   : REAL;
+                 Connections: Stimulus_vector; 
+                 END;
+
+  VAR I,J,
+      Nr_of_stimuli,
+      Group_size,
+      Original_group_size,
+      Delay_Parameter,
+      Iteration_nr,
+      Seed    : INTEGER;
+
+  Input_file_name,
+      Input_string: String;
+
+  Stimulus_file:  TEXT;
+  Learn_char,
+  Input_char  : CHAR;
+  Initial_Map,
+  Current_Map,
+  Next_map    : ARRAY [1..Array_size, 1..Array_size] OF Neuron;
+  Stimulus_set: ARRAY [1..99] OF Stimulus_vector; 
+  Current_stimulus: Stimulus_vector;
+  Current_N,
+  Closest      : Neuron;
+  Size_decay_start,
+  Size_constant,  
+      Alpha   : REAL;
+  VT100, 
+    Continue  : BOOLEAN;
+
+{This is a series of screen control commands for a VT100  }
+{terminal or equivalent.  It should work on most terminals}
+{or common terminal emulators.                            }
+
+FUNCTION MTH$RANDOM (VAR Seed: INTEGER): REAL; EXTERN;
+
+FUNCTION Random: REAL;  {Unif. dist real number betweeen 0, 1}
+        BEGIN
+        Random:= MTH$RANDOM (Seed);
+        END;
+
+PROCEDURE Make_stimulus_vector (Input_String: Char_vector;  
+                                VAR V: Stimulus_vector);
+    TYPE  Byte = ARRAY [1..8] OF INTEGER;
+    VAR I, J: INTEGER;
+        B   : Byte;
+
+    PROCEDURE Zero_Byte (VAR B: Byte);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 8 DOWNTO 1 DO B[I]:= 0;
+       END;
+
+    PROCEDURE Zero_stimulus (VAR V: Stimulus_vector);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 1 TO Dimensionality DO V[I]:= 0;
+       END;
+ 
+    PROCEDURE Nr_to_Byte (Nr: INTEGER; VAR B: BYTE);
+       VAR I, Power_of_2, Remainder, Parity: INTEGER;
+       BEGIN
+       Remainder:= Nr;    Parity:= 0;     Power_of_2:= 256;
+       FOR I:= 8 DOWNTO 1 DO {msb in B[8], lsb in B[1]}
+              BEGIN
+              Power_of_2:= Power_of_2 DIV 2;
+              IF ( (Remainder - Power_of_2) <  0 ) THEN B[I]:= -1;
+              IF ( (Remainder - Power_of_2) >= 0 ) THEN
+                     BEGIN
+                     B[I]:= 1;
+                     Remainder:= Remainder - Power_of_2;
+                     Parity:= Parity + 1;
+                     END;
+              END;
+       IF ODD (Parity) THEN B[8]:= 1 ELSE B[8]:= -1;
+       END;
+
+     PROCEDURE Add_Byte_to_Vector (VAR V: Stimulus_vector; I: INTEGER; B: BYTE);
+       VAR J: INTEGER;
+       BEGIN
+       FOR J:= 1 TO 8 DO V[ (I-1)*8 + J ]:= B [9-J];
+       END;
+ 
+  BEGIN {Make_stimulus_vector.}
+  FOR I:= 1 TO Nr_of_Characters DO
+          BEGIN
+          Nr_to_byte (ORD (Input_String [I]), B);
+          IF (Input_String [I] = '_') THEN Zero_byte (B); 
+          Add_Byte_to_vector (V, I, B);
+          END;
+
+ {FOR I:= 1 TO Nr_of_characters DO
+          BEGIN
+          WRITE (Input_string[I]);
+          FOR J:= 1 TO 8 DO WRITE (V[ (I-1)*8 + J]:3);
+          WRITELN;
+          END; }
+
+  END;  {Make_stimulus_vector.}
+
+PROCEDURE Normalize_weights (VAR N: Neuron);
+        VAR Weight_length, 
+               Sum: REAL;
+            I     : INTEGER;            
+        BEGIN
+        Sum:= 0;
+        FOR I:= 1 TO Dimensionality DO Sum:= Sum + SQR (N.Connections[I]);
+        Weight_length:= SQRT ( Sum);
+        FOR I:= 1 TO Dimensionality DO 
+                N.Connections [I]:= N.Connections [I]/Weight_length;
+        END;
+
+PROCEDURE Initialize_map;
+        VAR I,J,K: INTEGER;
+            Weight_length: REAL;
+            N  : Neuron;
+        BEGIN
+        FOR I:= 1 TO Array_size DO
+            FOR J:= 1 TO Array_size DO
+            BEGIN
+            N.Activity       := 0; 
+            N.X              := I;
+            N.Y              := J;
+            FOR K:= 1 TO Dimensionality DO 
+                    N.Connections [K]:= 0.0001 * (Random-0.5);
+            Initial_map[I,J] := N;
+            Current_map[I,J] := N; 
+            END;
+        END;
+
+PROCEDURE Compute_activities; 
+       VAR I,J, K: INTEGER;
+           Sum: REAL;
+      BEGIN
+       {Compute activities of units.  Unit with smallest distance }
+       {between synaptic values and input will be chosen.         }
+       {activity.  Using Euclidean distance.                      }
+       FOR I:= 1 TO Array_size DO
+           FOR J:= 1 TO Array_size DO
+           BEGIN
+           Sum:= 0;
+           FOR K:= 1 TO Dimensionality DO
+               Sum:= Sum + SQR (Current_map[I,J].Connections[K] 
+                                          - Current_Stimulus[K]);
+           Current_map[I,J].Activity:=  SQRT (Sum);
+           END;
+       END;
+
+PROCEDURE Find_closest;
+       VAR I,J: INTEGER;
+           Closest_so_far: Neuron;
+       BEGIN
+       Closest_so_far.Activity:= 100000;
+       FOR I:= 1 TO Array_size DO
+           FOR J:= 1 TO Array_size DO
+           IF (Current_map[I,J].Activity < Closest_so_far.Activity)
+               THEN Closest_so_far:= Current_map [I,J];
+       Closest:= Closest_so_far;
+       END;
+
+PROCEDURE Clear_screen;  {Erase screen, leave cursor at home.}
+        BEGIN
+        IF VT100 THEN
+           WRITE (CHR (27), '[f', CHR (27),'[2J');
+        END;
+
+PROCEDURE Erase_line;  {Erases line to end.}
+       BEGIN
+       IF VT100 THEN
+          WRITE (CHR (27), '[K');
+       END;
+
+PROCEDURE Bottom_of_block; {Moves cursor to line 23.}
+       BEGIN
+       IF VT100 THEN
+          WRITE (CHR(27), '[23;1f');
+       END;
+
+PROCEDURE Save_cursor;
+        BEGIN
+        IF VT100 THEN
+           WRITE (CHR (27), '7');
+        END;
+
+PROCEDURE Restore_cursor;
+        BEGIN
+        IF VT100 THEN
+           WRITE (CHR (27), '8');
+        END;
+
+PROCEDURE Bottom_line; {Clears and writes on bottom line.}
+        BEGIN
+        IF VT100 THEN
+           WRITE (CHR (27), '[24;1f', CHR (27), '[0K');
+        WRITELN;   {To avoid problems with WRITE's exceeding line limits.}
+        END;
+
+PROCEDURE GoToXY (X,Y: INTEGER);  {X = column number, Y = row number.}
+        BEGIN
+        IF VT100 THEN
+           BEGIN
+           WRITELN;
+           WRITE (CHR (27), '[');
+           IF Y<10 THEN WRITE (Y:1) ELSE WRITE (Y:2);
+           WRITE (';');
+           IF X<10 THEN WRITE (X:1) ELSE WRITE (X:2);
+           WRITE ('H');
+           END;
+        END;
+
+PROCEDURE Modify_weights;
+     VAR I, J, K, Delta_I, Delta_J : INTEGER;
+         Size, 
+         Distance_to_closest: REAL;
+     BEGIN
+     Size:= 1.5 + 0.3 * Array_size
+                 * EXP (- (Iteration_nr - Size_decay_start)/Size_constant);
+     FOR I:= 1 TO Array_size DO
+         FOR J:= 1 TO Array_size DO
+             BEGIN
+             Delta_I:= Closest.X - I; 
+             Delta_J:= Closest.Y - J;
+             Distance_to_closest:= SQRT(SQR(Delta_I) + SQR (Delta_J));
+             IF (Distance_to_closest < Size) THEN
+                BEGIN
+                FOR K:= 1 TO Dimensionality DO 
+                   Current_map[I,J].Connections[K]:=
+                      (1 - Alpha) * Current_map[I,J].Connections[K]
+                       + Alpha * Current_stimulus[K];
+                END;
+             END;
+     END; 
+
+PROCEDURE Iteration;
+     VAR I,J,K,
+         Current_stimulus_number: INTEGER;
+     BEGIN
+     Iteration_nr:= Iteration_nr+1;
+     Current_stimulus_number:= TRUNC (Nr_of_stimuli * Random) + 1;
+     Current_stimulus := Stimulus_set [Current_stimulus_number];
+     GoToXY (1,2);
+     Erase_line;
+     WRITE ('It. : ', Iteration_nr:4, '.  Stim: ', Current_stimulus_number:2);
+     
+{     FOR I:= 1 TO Nr_of_characters DO
+          BEGIN
+          WRITE ('Current: ', Current_stimulus_number:3,'  ');
+          FOR J:= 1 TO 8 DO WRITE (Current_stimulus [ (I-1)*8 + J]:6);
+          WRITELN;
+          END; }
+
+     Compute_activities;
+     Find_closest;
+     Modify_weights;
+     END; 
+
+PROCEDURE Display_All_Points; 
+     VAR I,J,K,L,
+         Smallest_stimulus : INTEGER;
+         Current_neuron: Neuron;
+         Smallest_activity, 
+         Activity  :REAL;
+
+     FUNCTION Neuron_activity (N: Neuron) : REAL;
+           VAR K    : INTEGER;
+               Sum  : REAL;
+           BEGIN
+           Sum:= 0;
+           FOR K:= 1 TO Dimensionality DO
+               Sum:= Sum + SQR (N.Connections[K] - Current_Stimulus[K]);
+           Neuron_activity := SQRT (Sum);
+           END;
+             
+     BEGIN
+     Clear_screen;
+     GoToXY(1,1);
+     WRITELN 
+     ('               Best Responses  (* is maximum response)   ');
+    
+     {This procedure finds the best matching stimulus for all }
+     {units in the map.                                       }
+     FOR I:= 1 TO Array_size DO
+         FOR J:= 1 TO Array_Size DO 
+             BEGIN
+             Smallest_activity:= 100000;
+             Smallest_stimulus:= 0; 
+             Current_neuron:= Current_map [I,J];
+               {Next loop picks out stimulus that is closest to }
+               {weights of the current_neuron.                  }
+                FOR L:= 1 TO Nr_of_stimuli DO
+                    BEGIN
+                    Current_stimulus:= Stimulus_set [L];
+                    Activity:= Neuron_activity (Current_neuron);
+                    IF (Activity < Smallest_Activity)
+                       THEN BEGIN
+                            Smallest_activity:= Activity;
+                            Smallest_stimulus:= L;
+                            END;
+                    END;
+             GoToXY ((3*I+10),(J+2)); 
+             WRITE(Smallest_stimulus:2,' '); 
+             END;
+
+      {This part of the procedure picks out the maximum response to }
+      {a particular stimulus and denotes it by a letter 'P.'        }   
+      FOR I:= 1 TO Nr_of_stimuli DO
+             BEGIN
+             Current_stimulus:= Stimulus_set[I];
+             Compute_activities;
+             Find_closest;
+             GoToXY ((3*Closest.X+12),(Closest.Y+2)); 
+             WRITE('*'); 
+             END;
+     GoToXY (1,2);
+     Erase_line;
+     WRITE ('  Iteration: ', Iteration_nr:5);
+     WRITE ('   Data File: ',Input_file_name);
+     END;
+
+PROCEDURE Read_stimuli;
+     VAR String_length,
+         I               : INTEGER;
+         Input_string    : Char_vector; 
+         S               : String;
+     BEGIN
+     Nr_of_stimuli:= 0;
+     OPEN (Stimulus_file, Input_file_name, OLD);
+     RESET (Stimulus_file);
+
+     WRITELN ('Opening file: ', Input_file_name);
+
+     WHILE NOT EOF (Stimulus_file) DO
+         BEGIN
+         Nr_of_stimuli:= Nr_of_stimuli + 1;
+         FOR I:= 1 TO Nr_of_characters DO Input_string[I]:= '_';
+         READLN (Stimulus_file, S);
+         IF (S.Length > Nr_of_characters) 
+                            THEN String_length:= Nr_of_characters
+                            ELSE String_length:= S.Length;
+         FOR I:= 1 TO String_length DO Input_string [I]:= S.Body[I];
+
+         {WRITE ('Input: ',Nr_of_stimuli:2,'  ');
+         FOR I:= 1 To String_length DO WRITE (Input_string [I]); WRITELN;}
+
+         Make_stimulus_vector (Input_string, Stimulus_set [Nr_of_stimuli]);
+         END;
+     CLOSE (Stimulus_file);
+     END;
+
+PROCEDURE Initialize;
+      VAR I: INTEGER;
+      BEGIN
+      VT100:= TRUE;
+      WRITELN ('This is a demonstration of the Kohonen self-organizing, map');
+      WRITELN ('generating algorithm.                                      ');
+      WRITELN ('This simulation uses large weight vectors with structure.  ');
+
+      WRITE   ('Seed       : ');                  READLN (Seed); 
+      WRITE   ('Alpha      : ');                 READLN (Alpha); 
+      WRITE   ('Nbhd decay : ');         READLN (Size_constant);
+      WRITE   ('Group size : ');            READLN (Group_size); 
+      WRITE   ('Input file : ');       READLN (Input_file_name);
+      Size_decay_start:= 1;
+      Original_group_size:= Group_size;
+      Initialize_map;
+      END;
+
+BEGIN {Main Program}
+Initialize;
+Read_stimuli;
+Clear_screen;
+Iteration_nr:= 0;
+Continue:= TRUE; 
+WHILE (Continue = TRUE) DO
+  BEGIN
+  GoToXY (1,23); 
+  Erase_line;
+  WRITE (' Iteration: ', Iteration_nr:6, '. Q)uit X)ecute > '); 
+  READLN (Input_char); 
+  CASE Input_char OF
+      'A','a': Display_all_points;
+      'G','g': BEGIN 
+               GoToXY (1,23);
+               WRITE ('New Group Size: '); 
+               READLN (Original_group_size);
+               Group_size:= Original_group_size;
+               END;
+      'N','n': BEGIN
+               GoToXY (1,23);
+               WRITE ('Reset neighborhood size to orginal');
+               Size_decay_start:= Iteration_nr;
+               END;
+      'Q','q': Continue:= FALSE; 
+      'X','x': BEGIN
+               GoToXY (1,23);
+               Erase_line;
+               WRITE (' Iterating until: ', (Iteration_nr+Group_size):6);
+               FOR J:= 1 TO Group_size DO Iteration; 
+               Group_size:= Original_group_size;
+               END;     
+      '1'    : Group_size:= Group_size;
+      '2'    : Group_size:= 2*Group_size; 
+      '3'    : Group_size:= 3*Group_size;
+      '4'    : Group_size:= 4*Group_size;
+      '5'    : Group_size:= 5*Group_size;
+      '0'    : Group_size:= 10*Group_size;
+      END;
+  
+  END;   {Loop}
+
+END.  {Main Program}
+
+----------------------------------------------------------------
+                ASCII input file numbers.txt
+----------------------------------------------------------------
+One1 #$mL%<'EW' =====___________________________
+Two2 ^H^5L&8UWI ___=====________________________
+3Thr g,P'Ty\Ava ______=====_____________________
+For4 |[unw.`X@L _________=====__________________
+5Fve jYjdj/tQ|3 ____________=====_______________
+Six6 "P?%|]<a8S _______________=====____________
+7Svn lHz#X=i^0V __________________=====_________
+Eig8 0\{HLct*Gv _____________________=====______
+Nin9 8u"</(zV?g ________________________=====___
+10Tn BfC`!VM$&( ___________________________=====
+----------------------------------------------------------------
+                ASCII input file symbols.txt
+----------------------------------------------------------------
+One1 #$mL%<'EW' ________________________________
+Two2 ^H^5L&8UWI ________________________________
+3Thr g,P'Ty\Ava ________________________________
+For4 |[unw.`X@L ________________________________
+5Fve jYjdj/tQ|3 ________________________________
+Six6 "P?%|]<a8S ________________________________
+7Svn lHz#X=i^0V ________________________________
+Eig8 0\{HLct*Gv ________________________________
+Nin9 8u"</(zV?g ________________________________
+10Tn BfC`!VM$&( ________________________________
+----------------------------------------------------------------
+                ASCII Input file bars.txt
+----------------------------------------------------------------
+_______________ =====___________________________
+_______________ ___=====________________________
+_______________ ______=====_____________________
+_______________ _________=====__________________
+_______________ ____________=====_______________
+_______________ _______________=====____________
+_______________ __________________=====_________
+_______________ _____________________=====______
+_______________ ________________________=====___
+_______________ ___________________________=====
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

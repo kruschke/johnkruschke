@@ -1,0 +1,234 @@
+<HTML> <font face="Tahoma" color="#4A3C31">
+<HEAD>
+<TITLE>Bayesian data analysis, IUPUI, 2016</TITLE>
+</HEAD>
+<!-- <body bgcolor="#A9E2F3" link="midnightblue" vlink="navy"> -->
+<body bgcolor="#E1D8B7" link="#4B4AA9" vlink="#4B306A">
+
+<table bgcolor="white" cellpadding="10" align="center" border="1" color="#BF5700">
+<tr>
+<td align="center" valign="center">
+    <h2>
+    <b>Bayesian Data Analysis</b>
+    </h2>
+    <h3>
+    Two-day workshop at
+    <br>Indiana University - Purdue University Indianapolis
+    <p>August 18-19 (Th-Fr), 2016
+    </h3>
+</td>
+<td align="center" valign="center">
+    <a href="http://psych.iupui.edu/" target="_blank">
+    <img src="IUPUIscienceBldg.jpg" width="250" alt="IUPUI Science Bldg with skyline">
+    </a>
+</td>
+</tr>
+</table>
+
+
+<p>Many fields of science are transitioning from null hypothesis significance testing (NHST) to Bayesian data analysis. Bayesian analysis provides rich information about the relative credibilities of all candidate parameter values for any descriptive model of the data, without reference to <i>p</i> values. Bayesian analysis applies flexibly and seamlessly to complex hierarchical models and realistic data structures, including small samples, large samples, unbalanced designs, missing data, censored data, outliers, etc. (More about why to go Bayesian is described <a href="#WhyGoBayesian">below</a>.) This workshop shows you how to do Bayesian data analysis, hands on, with free software called R and JAGS.
+
+<p>This workshop is sponsored through the <a href="http://psych.iupui.edu/" target="_blank">IUPUI Department of Psychology</a>. The workshop is limited to an IUPUI-affiliated audience, and registration for the workshop is required, see details <a href="#Registration">below</a>.
+
+<p><b>Workshop Objectives:</b>
+You will learn <ul>
+<li>the rich information provided by Bayesian analysis and how it differs from traditional (frequentist) statistical analysis
+<li>the concepts of Bayesian reasoning; you already are Bayesian in how you intuitively think about data analysis
+<li>the concepts and hands-on use of modern algorithms ("Markov chain Monte Carlo") that achieve Bayesian analysis for realistic applications
+<li>how to use the <i>free</i> software R and JAGS for Bayesian analysis, with many programs created by the instructor, readily useable and adaptable for your research applications
+<li>some useful applications, including hierarchical (multilevel) models. See more details in the list of topics, below.
+</ul>
+
+<p><b>Workshop Audience:</b>
+The intended audience is graduate students, faculty, and other researchers, from all disciplines, who want a <i>ground-floor introduction</i> to doing Bayesian data analysis.
+
+<p><b>Workshop Prerequisites:</b>
+No specific mathematical expertise is presumed. In particular, no matrix algebra and no calculus is used in the workshop. Some previous familiarity with statistical methods such as a <i>t</i>-test or linear regression can be helpful, as is some previous experience with programming in any computer language, but these are not critical.
+
+
+<p><b>Schedule of Topics:</b>
+
+<p>(Subject to change)
+
+<ul style="list-style-type:square">
+
+<p><b>Day 1:</b>
+<li><i>9:00-10:20.</i> The foundational ideas of Bayesian reasoning: Re-allocation of credibility across possibilities, and possibilities are parameter values in a mathematical model of data. Illustrative examples. Bayes rule and grid approximation.
+    <!--
+    (See this <a href="https://sites.google.com/site/doingbayesiandataanalysis/sample-chapter/DoingBayesianDataAnalysisChapter2.pdf?attredirects=0&d=1"><b>introductory chapter</b></a> and video at right.)
+    -->
+<li><i>10:20-10:40.</i> Break.
+<li><i>10:40-12:00.</i> Introduction to R. Hands-on: Estimating the probability of a dichotomous outcome.
+<li><i>12:00-1:30.</i> Lunch break (on your own).
+<li><i>1:30-2:50.</i> Analytical solution to Bayes rule for a continuous distribution. Markov chain Monte Carlo (MCMC) and hands-on with JAGS.
+<li><i>2:50-3:10.</i> Break.
+<li>
+<table align="right" width="40%" cellpadding="5" bgcolor="white">
+ <tr><td align="center">
+  <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2606016" target="_blank">
+  <img src="EstimationBayesianTable2-2Dsimple.png" width="100%">
+  </a>
+ </td></tr>
+ <tr><td align="center">
+  <small>
+  Two conceptual distinctions in data analysis, converging on the methods presented in this workshop. <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2606016" target="_blank">Manuscript here</a>. (NHST = null hypothesis significance testing. MLE = maximum likelihood estimation.)</small>
+ </td></tr>
+</table>
+<i>3:10-4:30.</i> Realistic example and interpreting results: Comparing two groups. Highest density interval (HDI) with region of practical equivalence (ROPE). Model comparison and the Bayes factor.
+<li>
+<i>4:30-5:00.</i> <b>Cap:</b> Two historical trends in data analysis (see figure at right). Discussion.
+<p><b>Day 2:</b>
+<li><i>9:00-10:20.</i> Hierarchical (a.k.a. multilevel) models and shrinkage.	 Example: Therapeutic touch. Hands-on: Meta-analysis of ESP.
+<li><i>10:20-10:40.</i> Break.
+<li><i>10:40-12:00.</i> Linear regression, trend analysis, and hierarchical models. It’s easy in JAGS! Hands-on: Family income.
+<li><i>12:00-1:30.</i> Lunch break (on your own).
+<li><i>1:30-2:50.</i> Hierarchical multiple linear regression and variable selection, i.e., model selection.
+<li><i>2:50-3:10.</i> Break.
+<li><i>3:10-4:30.</i> Item Response Theory: Logistic model.  (<i>Alternatively:</i> Hierarchical “ANOVA” with multiple comparisons, nonhomogeneous variances, non-normal distributions.)
+<li><i>4:30-5:00.</i> <b>Cap:</b> How to report a Bayesian analysis. Discussion.
+</ul>
+
+<!-- --------------------------------------------------------- -->
+<!-- ######################################################### -->
+<br clear="all"><hr><p>
+<a name="Instructor">
+
+<a href="https://sites.google.com/site/doingbayesiandataanalysis/paraphernalia" target="_blank">
+<img src="PuppyMugFromRasmusBaath.jpg" width="25%" hspace="15" align="left" alt="Mug from Rasmus Baath">
+</a>
+
+<b>Who is the instructor?</b>
+<p><a href="https://sites.google.com/site/doingbayesiandataanalysis/about-the-author" target="_blank">John Kruschke</a> is eight-time winner of Teaching Excellence Recognition Awards from Indiana University, where he is Professor of Psychological and Brain Sciences, and Adjunct Professor of Statistics. He has written an <a href="#RecBook">acclaimed introductory textbook on Bayesian data analysis</a> and many <a href="#WhyGoBayesian">tutorial articles</a>. He has given <a href="https://sites.google.com/site/doingbayesiandataanalysis/workshops" target="_blank">numerous popular workshops on Bayesian methods</a>. His research interests include the science of moral judgment and Bayesian data analysis. He received the Troland Research Award from the National Academy of Sciences, and the Remak Distinguished Scholar Award from Indiana University. He has been on the editorial boards of several scientific journals, including <i>Psychological Review</i>, the <i>Journal of Experimental Psychology: General</i>, the <i>Journal of Mathematical Psychology</i>, and others.
+
+
+<!-- ######################################################### -->
+<br clear="all"><hr><p>
+<a name="Software">
+
+<a href="https://sites.google.com/site/doingbayesiandataanalysis/software-installation" target="_blank">
+<img src="NotebookComputerDownload.jpg" alt="Notebook Computer Icon" width="25%" align="left" hspace="15">
+</a>
+
+
+
+<b>Install software before arriving.</b>
+<p>You are encouraged to bring a notebook computer to the workshop, so you can run the programs and see how their output corresponds with the presentation material. Please install the software <i>before arriving at the workshop</i>. The software and programs are occasionally updated, so please check here a week before the workshop to be sure you have the most recent versions. <b>For complete installation instructions, please refer to <a href="https://sites.google.com/site/doingbayesiandataanalysis/software-installation" target="_blank">the software page</a>.</b> We will not be using Stan in this workshop, so you do not need to install Stan.
+
+
+<!-- ######################################################### -->
+<br clear="all"><hr><p>
+<a name="RecBook">
+
+<a href="https://sites.google.com/site/doingbayesiandataanalysis/" target="_blank">
+<img src="CoverDBDA2E-FrontOnly-600wide.png" width="25%" hspace="15" align="left" alt="Book cover">
+</a>
+
+
+<b>Recommended textbook:</b>
+<p><i>Doing Bayesian Data Analysis, Second Edition: A Tutorial with R, JAGS, and Stan</i>. The book is a genuinely accessible, tutorial introduction to <i>doing</i> Bayesian data analysis. The software used in the workshop accompanies the book, and many topics in the workshop are based on the book. (The workshop uses software and examples in the second edition, not the first edition.) Further information about the book, and a 30% publisher's discount, can be found at <a href="https://sites.google.com/site/doingbayesiandataanalysis/" target="_blank"><b>the book's web site</b></a>.
+
+
+<!-- ######################################################### -->
+<br clear="all"><hr><p>
+<a name="Registration">
+
+<a href="https://sites.google.com/site/doingbayesiandataanalysis/" target="_blank">
+<img src="IUPUIscienceBldgWithSkyline.png" width="25%" hspace="15" align="left" alt="IUPUI Science Bldg">
+</a>
+
+
+<b>Registration:</b>
+<p>The workshop is limited to an IUPUI-affiliated audience, and registration for the workshop is required. Procedures will be posted here as they are established.
+
+
+<!-- ######################################################### -->
+<br clear="all"><hr><p>
+<a name="WhyGoBayesian">
+
+<!-- <blockquote> -->
+
+<!--
+<table align="right" width="40%" cellpadding="5" bgcolor="white">
+ <tr><td align="center">
+ <a href="http://www.indiana.edu/~kruschke/BEST/" target="_blank">
+  <img src="http://www.indiana.edu/~kruschke/BEST/BESTexample.jpg" width="100%">
+  </a>
+ </td></tr>
+ <tr><td align="center">
+  <small>A posterior probability distribution for parameters that describe two groups, showing complete distributions of the difference of means (right middle), the difference of standard deviations, the effect size (right bottom), and posterior predictive check (right upper).</small>
+ </td></tr>
+</table>
+-->
+
+<table border="0" cellpadding="5" width="430" align="right" bgcolor="white">
+<tr><td>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/fhw1j1Ru2i0" frameborder="0" allowfullscreen></iframe>
+</td></tr>
+<tr><td align="center">
+<font size="-1">A brief video that describes Bayesian estimation for comparing two groups, and how Bayesian estimation supersedes the <i>t</i> test. <br>See also <a href="https://sites.google.com/site/doingbayesiandataanalysis/sample-chapter/DoingBayesianDataAnalysisChapter2.pdf?attredirects=0&d=1"><b>this introductory chapter</b></a>.</font>
+</td></tr>
+</table>
+
+<b>Why go Bayesian?</b></a> <p>Sciences from astronomy to zoology are changing from null-hypothesis significance testing to Bayesian data analysis, because Bayesian analysis provides richer information with great flexibility and without need for <i>p</i> values. Read more:
+<ul>
+
+<!--
+<li> An <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm"
+target="_blank">open letter</a> explaining why it's time to go
+Bayesian.
+-->
+
+<li> An <a href="https://sites.google.com/site/doingbayesiandataanalysis/sample-chapter/DoingBayesianDataAnalysisChapter2.pdf?attredirects=0&d=1"> introductory chapter</a> that explains the two foundational concepts of Bayesian data analysis.
+
+<li> <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2606016" target="_blank">A manuscript that explains two historical trends in data analysis</a> that converge on the methods presented in this workshop.
+
+<li> An article that shows the rich information provided by Bayesian estimation in the context of analyzing data from two groups:
+    Kruschke, J. K. (2013). <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2013JEPG.pdf" target="_blank">Bayesian estimation supersedes the <i>t</i> test.</a><sup><b>*</b></sup> <i>Journal of Experimental Psychology: General</i>, 142(2), 573-603. More info, including links to videos, is <a href="http://www.indiana.edu/~kruschke/BEST/" target="_blank">here</a>.
+
+<li><sup>&nbsp;</sup>An article that explains two Bayesian methods to assess null values, and which one is typically more informative:
+    Kruschke, J. K. (2011). <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2011PoPScorrected.pdf" target="_blank">Bayesian assessment of null values via parameter estimation and model comparison.</a><sup><b>*</b></sup> <em>Perspectives on Psychological Science</em>, <b>6</b>(3), 299-312.
+
+<li> An article that provides an overview of Bayesian analysis aimed at organizational researchers, with example of multiple linear regression:
+    Kruschke, J. K., Aguinis, H., & Joo, H. (2012). <a href="http://www.indiana.edu/~kruschke/articles/KruschkeAJ2012.pdf" target="_blank">The time has come: Bayesian methods for data analysis in the organizational sciences.</a><sup><b>*</b></sup> <i>Organizational Research Methods</i>, 15(4), 722-752.
+
+<li><sup>&nbsp;</sup>An overview article:
+    Kruschke, J. K. (2010).  <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2010WIRES.pdf" target="_blank">Bayesian data analysis.</a><sup><b>*</b></sup>  <em>Wiley Interdisciplinary Reviews: Cognitive Science</em>, <b>1</b>(5), 658-676. <!-- (<a href="http://dx.doi.org/10.1002/wcs.72" target="_blank">doi:10.1002/wcs.72</a>) -->
+
+<li><sup>&nbsp;</sup>An article that emphasizes that Bayesian data analysis is appropriate regardless of the status of Bayesian models of cognition:
+    Kruschke, J. K. (2010).  <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2010TiCS.pdf" target="_blank">What to believe: Bayesian methods for data analysis.</a><sup><b>*</b></sup>  <em>Trends in Cognitive Sciences</em>, <b>14</b>(7), 293-300.
+
+</ul>
+<p><small><sup>*</sup>Your click on this link constitutes your request to the author for a personal copy of the article exclusively for
+individual research.</small>
+</td></tr>
+</table>
+
+<!-- </blockquote> -->
+
+
+<!-- --------------------------------------------------------- -->
+<!-- ######################################################### -->
+<br clear="all"><hr><p>
+
+
+
+<table align="right" width="40%" cellpadding="5" bgcolor="white">
+ <tr><td align="center">
+ <a href="http://doingbayesiandataanalysis.blogspot.com/2011/10/bayesian-models-of-mind-psychometric.html" target="_blank">
+ <img src="BayesianModelsOfMind.jpg" alt="Bayesian Model Diagram" align="right" width="100%">
+ </a>
+ </td></tr>
+ <tr><td align="center">
+  <small>Read more at <a href="http://doingbayesiandataanalysis.blogspot.com/2011/10/bayesian-models-of-mind-psychometric.html" target="_blank">this blog entry</a>.</small>
+ </td></tr>
+</table>
+
+
+<b>Bayesian data analysis, Bayesian psychometrics, and Bayesian models of cognition.</b> <p>Data analysis involves "generic" descriptive models (such as linear regression) without any necessary interpretation as cognitive computation. <i>The rational way to estimate parameters in descriptive models is Bayesian, regardless of whether or not Bayesian models of mind are viable.</i> The concepts and methods of Bayesian data analysis transfer to other Bayesian models, including Bayesian models of cognition. Read more at <a href="http://doingbayesiandataanalysis.blogspot.com/2011/10/bayesian-models-of-mind-psychometric.html" target="_blank">this blog entry</a>.
+
+
+<!-- --------------------------------------------------------- -->
+<!-- ######################################################### -->
+<br clear="all"><hr>
+
+</BODY> </font></HTML>

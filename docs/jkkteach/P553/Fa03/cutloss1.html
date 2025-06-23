@@ -1,0 +1,223 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+<h2>
+<p>Cut Your Losses, Episode 1.
+</h2>
+</center>
+
+
+<p> When you roll a pair of dice, there is variability in the values
+that come up, from one roll to the next.  What's the <em>best
+description</em> of a typical value for the dice? A description is
+also called a <em>model</em>.  We'll consider two candidate models of
+the dice.  One model is simply your intuitive guess on each roll.
+Another model is the fixed value 7.  For purposes of this exercise,
+we'll measure the discrepancy between the model and the actual value
+as the squared difference between the model prediction and the actual
+value of the dice. This discrepancy is the loss you are trying to cut;
+i.e., the best model should cut your losses to the minimal possible
+amount.
+
+
+<p>Roll the pair of dice 10 times.  Before each roll make a guess as
+to the outcome. Enter the results in the table below. (An interesting
+way to generate a guess is with a roll of the dice, so that you're
+actually rolling the pair of dice twice for each row of the
+table. This is "interesting" because in some respects the dice are a
+perfect model of themselves. Another interesting way to generate a
+guess is by choosing the same number - other than 7 - every time.)
+Notation: Outcome of die 1 is D1, outcome of die 2 is D2.
+
+<p>
+<center>
+<table border=1 cellpadding=10>
+<tr>
+<td>Roll #</td>
+<td>Your<br>Guess</td>
+<td>Actual<br>D1+D2</td>
+<td>Residual Variance from Guess:<br>(D1+D2 - Guess)<sup>2</sup></td>
+<td>Residual Variance from 7:<br>(D1+D2 - 7)<sup>2</sup></td>
+</tr>
+<tr>
+<td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr></tr>
+<tr>
+<td colspan=3 align=right>Total:</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</center>
+
+<p>Which model, your guess or 7, yielded the lower total residual
+variance?
+
+<p>Did "7" yield the lower residual on <em>every</em> roll?  If it
+did, <em>must</em> it?
+
+<p>Did "7" yield the lower <em>total</em> residual for every person in
+your discussion class?  If it did, <em>must</em> it?
+
+<p><hr width=70%>
+
+
+
+<p>
+
+<table align=right border=1 cellpadding=10 width=50%>
+<tr>
+<td rowspan=2 valign=bottom>D1</td>
+<td colspan=6 align=center>D2</td>
+</tr>
+<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+<tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+
+Now we will generate a probability distribution for the possible
+outcomes of the dice.  The goal is to understand that the most likely
+value is 7, and hence to get a glimpse of why this value is the best
+model of the outcome.
+
+
+There are 36 equally likely outcomes for a role of the dice, as
+indicated in the table at the right.  In the table, enter the sum of
+D1 and D2.  <font size=-1><p>(Actually it takes a few steps to show
+that each of the 36 combinations is equally likely. To wit: Each
+outcome of a single die has probability 1/6; i.e., p(D1=x) = 1/6 for x
+= 1,...,6, and p(D2=y) = 1/6 for y = 1,...,6.  Because the outcomes of
+the two dice are independent, the probability of of any particular
+combination of outcomes is the product of the individual
+probabilities: p(D1=x and D2=y) = 1/6 * 1/6 = 1/36 for any x and
+y.)</font>
+
+
+<br><br><br><br><br><br><br>
+<p>Now count the number of times each sum occurs, and enter the
+frequency in the table below:
+
+<p><center>
+<table border=1 cellpadding=10>
+<tr>
+<td align=right>Sum:</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<td align=right>Frequency:</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</center>
+
+<p>Which sum occurs most frequently?
+
+<p>Is the frequency distribution symmetric around that value?
+
+<br><br>(So, perhaps now you have a somewhat better sense of why 7 is
+the best guess for the sum of two dice.  This is formalized in more
+detail in <a href="cutloss2.html">Episode 2</a>...)
+
+<p><hr>
+
+</BODY>
+</HTML>

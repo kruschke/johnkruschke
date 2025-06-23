@@ -1,0 +1,72 @@
+<HTML>
+<font face="tahoma">
+
+<HEAD>
+<TITLE>Bayesian Adaptive Research Design, Prof. Kruschke</TITLE>
+</HEAD>
+
+<BODY bgcolor="khaki">
+
+<center>
+<h2> P747 Bayesian Adaptive Research Design.  <br> Spring 2011,
+Section 16650, Fridays 9:05am-11:50am, Room 230 of Psychology Bldg.
+</h2> <br>UNDER CONSTRUCTION!  </center>
+
+<p><b>Motivation:</b>
+
+<br>The FDA says so: <a
+href="http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm071072.htm"
+target="_blank">Guidance for the use of Bayesian statistics in medical
+device clinical trials</a>. See Section 2.6, regarding benefits of
+using Bayesian methods.
+
+
+<p><b>Required textbook:</b> 
+<br>&bull; Berry, S. M., Carlin, B. P., Lee, J. J., &amp; Muller, P. (2011).
+<i>Bayesian Adaptive Methods for Clinical Trials</i>.  Boca Raton: CRC
+Press.  ISBN: 9781439825488. <br>The book has a web site with programs
+for examples in the book.
+
+<p><b>Other required readings</b> are being planned and will be
+announced. Candidate readings include the following:
+
+<br>&bull; Cavagnaro, D. R., Myung, J. I., Pitt, M. A., &amp; Kujala,
+J. V. (2010). Adaptive design optimization: A mutual information-based
+approach to model discrimination in cognitive science. <i>Neural
+Computation</i>, <b>22</b>, 887-905.
+
+<br>&bull; Loredo, T. J., &amp; Chernoff, D. F. (2003). Bayesian adaptive
+exploration. In: E. D. Feigelson &amp; G. J. Babu (Eds.),
+<i>Statistical Challenges in Astronomy</i>, Ch. 4, pp. 57-70. New
+York: Springer.
+
+<br>&bull; something about adaptive testing, e.g. VanDerLindenP2010
+
+<br>&bull; "Chapter 13: Goals, Power, and Sample Size" from <a
+href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/"
+target="_blank">Kruschke, J. K. (2010). <i>Doing Bayesian data
+analysis: A tutorial with R and BUGS</i>.</a>
+
+<p><b>Pre-requisites:</b> <br>A previous course in Bayesian data
+analysis, including experience with R and BUGS, such as <a
+href="http://www.indiana.edu/~jkkteach/P533/"
+target="_blank">P533</a>. We will be using R and BUGS to carry out the
+examples presented in the required textbook (see the textbook web
+site).
+
+
+<p><b>Course format:</b> <br><i>This is a seminar-style course, not a
+lecture-style course. Students will lead presentations of material.</i>
+
+<p><b>Course grading:</b> Grades will be based on presentation quality
+and participation when not presenting.
+
+<br clear="all">
+
+<p><hr><p>
+
+
+</BODY>
+</HTML>
+
+

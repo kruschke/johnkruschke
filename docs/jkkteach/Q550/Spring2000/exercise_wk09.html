@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/Q550/">
+Q550 Models in Cognitive Science</a>,
+<a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+<h2>
+Exercises, Week 9: The Delta Rule. Due Tuesday March 21.
+</h2>
+</center>
+
+<p>The print command in Tlearn is problematic. Instead of using the
+Tlearn print command, use screen dumps. In Win95/98/NT, press the
+Print_Screen key to put the entire screen into a paste buffer. Then
+paste the screen into a Word (or other text processor) using the
+Edit->Paste menu in Word. To capture just a single window instead of
+the whole screen, highlight (click on) the desired window and then
+press ALT-Print_Screen. For Macintosh computers, the key combination
+'apple'+shift+4+caps_lock saves a picture of a selected window. Once
+saved, double-clicking the file opens the picture in SimpleText, from
+which you can either print it or paste it right into a Word doc.
+Alternatively, the key combination 'apple'+shift+3 will save a picture
+file of the entire screen.
+
+
+<p><strong>1. XOR problem.</strong> Work through the <tt>tlearn</tt>
+example on pp. 117-126.  Once you have understood the example, do the
+following: In <em>Training Options</em>, change from "Seed with 5" to
+"Seed Randomly."  The seed must be set randomly for the remainder of
+this set of exercises.  Now repeatedly train the network (use Cntrl-t
+in Windows or Apple-t in Mac), and watch what happens in the <em>Error
+Display</em>.  You'll see that on some runs, the network doesn't fully
+learn the XOR patterns.
+
+<p><em>1A.</em> For one of the runs in which the network does not
+fully learn, print out the <em>Error Display</em> and the
+<em>Connection Weights</em> display.  Which pattern has the network
+not learned?
+
+<p><em>1B.</em> Now train the network 50 times, and tally the number
+of times that the network reduced the error to below 0.100 within 4000
+sweeps (report this tally).
+
+<p><em>1C.</em> Now change the architecture so that there are 10
+hidden nodes (instead of 2).  Train this network 50 times, and tally
+the number of times that the network reduced the error to below 0.100
+within 4000 sweeps (report this tally).  At the end of any one of
+these runs, print out the <em>Connection Weights</em> display and the
+<em>Network Architecture</em> display.  Why does this network learn
+the XOR more reliably with 10 hidden nodes than with 2 hidden nodes?
+
+<p><em>1D.</em> Now add a fifth pattern to the training set: input
+pattern 0.5,0.5 goes to output 0.5.  You'll need to alter the .data
+and .teach files accordingly.  Now train the 10-hidden node network on
+this 5-pattern set 50 times. Tally the number of times that the
+network reduced the error to below 0.100 within 4000 sweeps (report
+this tally).  At the end of any one of these runs, print out the
+<em>Connection Weights</em> display.  Now change back to the 2-hidden
+node network.  Train this network 50 times on the 5-pattern training
+set.  Tally the number of times that the network reduced the error to
+below 0.100 within 4000 sweeps (report this tally).  At the end of any
+one of these runs, print out the <em>Connection Weights</em> display.
+Why can't the 2-node network learn the 5-pattern set?  Why can the
+10-node network learn the 5-pattern set?
+
+
+<p><strong>2. Blocking and Overshadowing.</strong> In preparation for
+this exercise, review the exercise on blocking and overshadowing that
+you did during the first week of class: <a
+href="http://www.indiana.edu/~jkkteach/P335/hw2intro.html">
+Error-driven model for associative learning.</a> <a
+href="http://www.indiana.edu/~jkkteach/P335/hw2results.html">(Summary
+of results.)</a>
+
+<p>Your job now is to set up a network in T-learn to simulate the
+Rescorla-Wagner model described in the earlier exercise. The model
+architecture should like this:
+
+<br><img align=center 
+src="http://www.indiana.edu/~jkkteach/P335/hw2network.gif">
+
+<br> Notice that there is no bias node, and no hidden layer.  Notice
+also that the output nodes are linear, not sigmoidal.
+
+
+<p>The model should be trained in two phases, just as you were trained
+in the learning phase of the first-week exercise.  The first phase
+should have 18 cases of each pattern pair (i.e., 18 cases of stiff
+neck -> A; and, 18 cases of dizziness -> B), and the second phase
+should have 18 cases of each pattern pair (i.e., 18 cases of stiff
+neck and pallid skin -> A; and, 18 cases of itchy toes and double
+vision -> B).
+
+<p>Initialize the network with weights of zero. Train your network
+with a learning rate of 0.05 and a momentum of zero. Train the
+patterns in random order within each phase (of course the two phases
+should be done sequentially, with weights retained from one phase to
+the next). 
+
+<p>Print out your .cf, .data, and .teach files. Print out the
+architecture display and the weights display at the end of training.
+Annotate these print outs to briefly explain what each is.
+
+<p>Test the network with the same test cases as in the first-week
+exercise.  Does the network show good performance on the training
+items?  Does the network show blocking?  Does the network show
+overshadowing?  Include relevant print-outs that have the answers to
+these questions, and annotate the print outs to explain what question
+each answers.
+
+<p><strong>Extensive notes, including diagrams of <em>T-learn</em> set
+up for this exercise, are available on <a
+href="http://www.indiana.edu/~jkkteach/Q550/blocking_in_Tlearn.htm">another
+web page.</a></strong>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

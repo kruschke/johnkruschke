@@ -1,0 +1,15 @@
+<center>
+<p>What do you predict to be the quality of this raft?
+<br>
+<table cellpadding=10 width=30%>
+<tr>
+<td align=center>
+<input type="radio" name="test_response" value="E"><strong>[OutE]</strong>
+</td>
+<td align=center>
+<input type="radio" name="test_response" value="L"><strong>[OutL]</strong>
+</td>
+</tr>
+</table>
+<p>
+</center>

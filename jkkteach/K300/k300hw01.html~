@@ -1,0 +1,66 @@
+<html>
+<title>K300, Prof. Kruschke</title>
+<body>
+
+K300 Statistics, Prof. Kruschke
+<h3>
+Homework 1, Due at the beginning of class, Tuesday January 18, 2005.
+</h3>
+
+Be sure to <li>write your name and ID on every page <li>make a copy of
+your homework for your own records and exam study <li>staple (not
+paper clip) your pages <li>write clearly <li>annotate your
+computations -- an unannotated sequence of numbers and derivations
+that mysteriously ends up with the correct numerical answer will
+<em>not</em> be given full credit <li>answer every part of every
+question.
+
+<ol>
+
+<li>5 pts. According to the syllabus,
+<ul>
+<li>How many points should this homework be worth?  <li>If you were to
+turn in this homework on the Thursday after it is due, how many points
+would you get? <li>If you decided not to do this homework or the next
+one, and had no documented emergency to excuse them, would both zeros
+count toward your final grade?
+</ul>
+
+<li>6 pts.  Page 25, #9. For each distribution, be sure to mention
+three aspects: Number of modes, skewness, and kurtosis.
+
+<li>6 pts. Work through Rosenberg's Excel sheet, <tt>1-5 Practice
+Describing Data</tt>. For this homework, print out and turn in
+<em>only</em> the "Practice" sheet (not the "Intro" sheet, etc.) with
+the summary stats filled in and the histogram showing.
+
+<li>7 pts.  Page 27, #19. Do this by hand, then repeat parts a, b, c
+and d in Excel. (Print out your Excel spreadsheet with graphs.)
+
+<li>6 pts. Page 55, #12.
+
+<li>6 pts. Page 55, #13. Do this by hand, then repeat in Excel. For
+the Excel print-out, annotate exactly the functions and procedures you
+used.
+
+
+<li>4 pts. Suppose a person has entered data into an Excel
+spreadsheet, using column C from rows 3 to 211 (inclusive). <ul>
+<li>She wants to determine the mean of the data. Would she be correct
+to type into an empty cell this formula:
+<tt>=SUM(C3:C211)/COUNT(C3:C211)</tt> ?  <li>She wants to determine
+the mean of the data. Would she be correct to type into an empty cell
+this formula: <tt>=AVERAGE(C3:C211)</tt> ?  <li>She wants to detemine
+the standardized score for the first datum. Would she be correct to
+type into an empty cell this formula:
+<tt>=(C3-AVERAGE(C3:C211))/STDEVP(C3:C211)</tt> ?  <li>She wants to
+detemine the standardized score for the first datum. Would she be
+correct to type into an empty cell this formula:
+<tt>=(C3-AVERAGE(C3:C211))/STDEV(C3:C211)</tt> ?
+</ul>
+
+
+</ol>
+
+<hr>
+</body></html>

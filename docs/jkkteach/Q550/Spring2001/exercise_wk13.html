@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/Q550/">
+Q550 Models in Cognitive Science</a>,
+<a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+<h2>
+Exercises, Week 13, Due Tuesday 17 April 2001.
+</h2>
+</center>
+
+
+
+<p><strong>Category specific impairments: Replication of Farah and
+McClelland (1991).</strong> For this exercise, we'll set up an
+autoassociative network like the one described on pages 255-260.
+The "project name" for <tt>tlearn</tt> will be "fm91".
+
+
+<p>Below is the network's configuration file.  Nodes 1-24 are the
+verbal input, nodes 25-48 are the visual input, nodes 49-68 represent
+functional semantics, and nodes 69-128 represent visual semantics.
+Nodes 129-256 are just copies of nodes 1-128, respectively, from the
+previous time step.  Compare the specifications in the file, below,
+with the architecture shown in Figure 11.6 (p. 257) of the textbook.
+
+<p><strong><a href="fm91/fm91.cf">fm91.cf</a></strong>:
+<pre>
+NODES:
+nodes = 256
+inputs = 128
+outputs = 128
+output nodes are 1-128
+CONNECTIONS:
+groups = 0
+1-128 from i1-i128 = 1. & 1. fixed one-to-one
+129-256 from 1-128 = 1. & 1. fixed one-to-one
+1-48 from 177-256
+49-128 from 129-176
+SPECIAL:
+linear = 129-256
+bipolar = 1-128
+selected = 1-48
+weight_limit = 0.0001
+</pre>
+
+<p>We'll train the network with just three "living" patterns and three
+"non-living" patterns, unlike the original simulation, which used ten
+of each.  We cycle each pattern 10 times, to let the activations
+settle.  Hence the training files contain (3+3)x10=60 rows.  The
+<tt>.reset</tt> files are very important: They reset the network
+activations at the beginning of each pattern's set of 10 cycles.
+
+<p><strong>Training pattern files:</strong>
+<br><a href="fm91/fm91.data">fm91.data</a>
+<br><a href="fm91/fm91.teach">fm91.teach</a>
+<br><a href="fm91/fm91.reset">fm91.reset</a>
+
+<p>Train the network with the <tt>fm91.*</tt> files, using the
+following parameter values: Train for 600 sweeps, with a learning rate
+of 0.15, momentum of zero, bias offset of zero, seed randomly, log
+error every 60 sweeps, train sequentially (not randomly!), do not dump
+weights, use and log RMS error, update weights every 1 sweep, and use
+reset file.  Let me emphasize that last setting: Be sure that the "Use
+reset file" box is checked.
+
+<p><em>Closely examine the training patterns in <tt>fm91.data</tt>.
+How can you determine which of the six distinct patterns are living
+things, and which are nonliving things?  For these patterns, how many
+functional semantic features are non-zero for living things?  How many
+functional semantic features are non-zero for nonliving things?  How
+many visual semantic features are non-zero for living things?  How
+many visual semantic features are non-zero for nonliving things?</em>
+
+<p><em>Train the network and show a plot of error as a function of
+training sweep.</em>
+
+<p>Now test the network, using the most recent weights.  Make sure
+that "calculate error" is checked, and make sure that "use reset file"
+is checked.  No need to log error, and no need to send output to
+window or to append output to a file.
+
+<p><em>Test the network on the training set, on the picture
+generalization set (below), and on the name generalization set (also
+below). Show the three plots of error as a function of pattern.  In
+your plots, mark which patterns correspond to living things, and which
+patterns correspond to non-living things.</em>
+
+<p><strong>Picture generalization pattern files:</strong>
+<br><a href="fm91/fm91picgen.data">fm91picgen.data</a>
+<br><a href="fm91/fm91picgen.teach">fm91picgen.teach</a>
+<br><a href="fm91/fm91picgen.reset">fm91picgen.reset</a>
+
+<p><strong>Name generalization pattern files:</strong>
+<br><a href="fm91/fm91namgen.data">fm91namgen.data</a>
+<br><a href="fm91/fm91namgen.teach">fm91namgen.teach</a>
+<br><a href="fm91/fm91namgen.reset">fm91namgen.reset</a>
+
+<p>Now lesion the network.  Beware!  The lesioning utility does not
+work properly in the PC version, and might not work properly in the
+Mac version either.  So proceed with caution: Read all these
+instructions before actually executing any of them.  Under the
+"Special" menu, click on lesioning.  In the dialogue box, double click
+in the "weight file" box and then select <tt>fm91-600.wts</tt>. Check
+the NODES box, and remove 99 percent of nodes 49-68 (for a functional
+semantic lesion) or nodes 69-128 (for a visual semantic lesion). If
+you are using a PC, and maybe if you are using a Mac, when you click
+OK, an output window will then pop-up and begin spewing forth all the
+new, lesioned weights.  This screen dump not only takes forever
+(several minutes), it is also full of contaminated non-ascii
+characters.  So, here's what to do to salvage the lesioning (at least
+on a PC): While the screen dump is happening, press
+[cntrl]-[alt]-[delete].  In Windows95/98, this interrupts the process
+and asks if you really want to kill <tt>tlearn</tt>.  Click "Yes"!
+(That's satisfying, isn't it?) Now, explore the tlearn directory you
+were working in, and you should find a file called <tt>les_tmp</tt>.
+This file has the correctly lesioned weights in it, so rename it
+something like fm91-vis-lsn.wts or fm91-sem-lsn.wts (depending on
+which nodes you lesioned).  Repeat this process a second time to
+lesion the other nodes: Re-invoke tlearn, load the fm91 project,
+<em>and use the old weights, <tt>fm91-600.wts</tt></em>.  That is,
+don't retrain the network; use the results of training from the first
+time, and just lesion the weights differently.  (If you use a PC and
+you cannot get the lesioning to work, you might try grabbing this
+zipped file of trained and lesioned weights: <a
+href="fm91/fm91wts_arch.zip">fm91wts_arch.zip</a>.)
+
+<p><em>Now test the training patterns and both sets of generalization
+patterns for both kinds of lesions.  Show plots of error (six plots in
+all; i.e., two sets of lesioned weights, times three pattern sets).
+Label the living and nonliving patterns in each plot.  For each type
+of lesion, is the error on the living patterns more or less than the
+error on the nonliving patterns?  Does this correspond to the results
+of Farah and McClelland? (Compare with Figure 11.7, p. 258.)
+
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

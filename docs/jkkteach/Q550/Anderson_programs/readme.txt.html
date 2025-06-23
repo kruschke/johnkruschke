@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>
+
+
+Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                           README.TXT 
+                         November 1, 1994
+
+     These files contain programs and documentation designed to 
+accompany the book, "An Introduction to Neural Networks" by James 
+A. Anderson, Department of Cognitive and Linguistic Sciences, Brown 
+University, Providence, RI 02912.
+
+     There are two types of files present in this collection.  All are 
+in plain ASCII format.  There are no executable programs in this 
+collection.  The source code for the programs must be extracted from
+the text and compiled.  All the complete programs have been tested and
+run correctly as of November 1, 1994 on a Digital Equipment Corporation 
+Alpha workstation running Open VMS AXP version 1.5.
+
+    The first group of files is a series of written Appendices, labeled
+AppA, AppB, and so on.  These appendices contain documentation, Pascal 
+source code, and some test files for the programs as described in the book.
+The version of Pascal used, DEC Pascal, V.5.0-2, for Alpha AXP, has a few 
+peculiarities and these programs may have to be modified slightly to run 
+on different computers, especially UNIX machines.  However this style of 
+Pascal is similar to the popular PC compiler, Turbo Pascal, and some of 
+the programs will recompile without modification under Turbo Pascal. (Some
+later versions of Turbo Pascal and other compilers may require addition to 
+the programs of PROCEDURES ClrScr and GoToXY since they are not predefined.  
+Working code for these PROCEDURES has been provided in AppA.TXT.)
+
+     The other material provided is a longer set of programs called 
+ASSOCIAT and BSB, versions of which were used for the simulations described 
+in Chapters 15, 16, and 17.  The code in these relatively long programs is 
+mostly concerned with human factors, and was not discussed in the book.  
+Unfortunately, this code makes extensive use of string handling commands in
+DEC Pascal, which is where DEC Pascal differs most from some other Pascal 
+implementations.  A standard UNIX Pascal to C converter seems to do well 
+on these programs, but some effort is required to convert them to the Unix 
+version of Pascal.
+
+     A manual for use of ASSOCIAT and BSB is provided in file
+MANUAL.TXT.  
+
+     Three examples of operation of these programs are provided in a set 
+of Command files (*.COM) which provide the commands and data necessary to 
+run several of the simulations discussed in Chapter 16.  (*.COM files 
+essentially are lists of keystrokes used to run the programs.)  It is 
+therefore easy to modify the command files for experimental use.  These
+files are equivalent to redirected input from the keyboard to
+a file in UNIX.  If a VMS system is available, the command files can
+be executed directly.  
+
+     Interesting neural network programs tend to be computation 
+intensive and often generate and use large data files.  Problems
+converting these programs to personal computers usually lie more in the 
+size of the data structures used (Vectors, Matrices) than in raw computer 
+speed.  To run properly on smaller machines, the dimensionality of the 
+vectors and matrices used in the programs may have to be reduced.
+
+
+                          Table of Contents
+
+File           Description
+--------------------------------------------------------------------
+
+README.TXT     This file.
+
+APPA.TXT       Appendix A.  Utility PROCEDURES and TYPES, FUNCTIONS 
+               and PROCEDURES from Chapter 3.  PROGRAM TestVector.
+
+APPB.TXT       Lateral Inhibition Program  (Chapter 4.)
+
+APPC.TXT       PROCEDURES, FUNCTIONS and TYPES from Chapter 5.
+
+APPD.TXT       Inner Product Demonstration (Chapter 7).
+
+APPE.TXT       Summed Vector Memory (Chapter 7).
+
+APPF.TXT       Two Simple Linear Associator Demonstrations (Chapter 7).
+
+APPG.TXT       Associative Memory Demonstration, Discrimination
+               by Length.  (Chapter 7).
+
+APPH.TXT       Utility PROCEDURES for Character Based Simulations
+               (Chapter 7.)
+
+APPI.TXT       Character Based Demonstration of the Linear
+               Associator (Chapter 7).
+
+APPJ.TXT       Character Based Demonstration of the Widrow-Hoff
+               Algorithms (Chapter 9).  Includes States "data base."
+
+APPK.TXT       A simple Boltzmann Machine.  (Chapter 12).
+
+APPL.TXT       Two Adaptive Mapping Programs (Chapter 14).
+
+APPM.TXT       Simple BSB Procedure.  Includes States 
+               "data base." (Chapter 15).
+
+-----------------------------------------------------------------------
+                       Other Included Material 
+-----------------------------------------------------------------------
+
+ASSOCIAT.PAS   Forms connection matrix.    
+BSB.PAS        Makes stimulus vectors and controls computation.
+
+MANUAL.TXT     Provides documentation for ASSOCIAT and BSB as
+               well as examples of usage.
+    
+BSBPROC.INC    Included Files that are part of the BSB.PAS
+INTERP.INC     source code.  May be concatenated in
+LIST.INC       one big file and inserted in BSB.PAS if your 
+MAKESTIM.INC   compiler does not use included code.
+NUMPRES.INC
+READF.INC         
+READNF.INC        
+VT100CTR.INC      
+WRITEF.INC
+
+RESET.PAS      Resets a VT100 to normal after a screen control disaster.
+
+MKDIS.COM      Command files (keystrokes) required to run 
+LRNDIS.COM     a version of the Disambiguation demonstration
+DIS.COM        of Chapter 16.
+
+MKDRUGS.COM    Command files (keystrokes) required to run
+LRNDRUGS.COM   a version of the Drugs demonstration of
+DRUGS.COM      Chapter 16.
+
+MKOHMS.COM     Command files (keystrokes) required to
+LRNOHMS.COM    run a version of the Ohms demonstration
+OHMS.COM       of Chapter 16.
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

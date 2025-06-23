@@ -1,0 +1,46 @@
+---
+title: "poem_r_code"
+---
+
+```{r}
+#| echo: false
+
+link_new_tab <- function( url , display_text = url ){
+  return( paste0( 
+    '<a href="' , url , '" target="_blank">' , display_text , '</a>' ) )
+}
+
+qrc_png <- function( url , journal_name = url , publication_info = "" , 
+                     qrc_ht=60  ){
+  require("qrcode")
+  # create filename, remove punct from url:
+  png_name <- url
+  for ( split_at in c( "/" , ":" , "\\." , "-" , "_" , "=" , "\\&" , "\\?" ,
+                       "%" , "#"  ) ) {
+    png_name <- paste0( strsplit( png_name , split_at )[[1]] , collapse="" )
+  }
+  png_name <- paste0( "_qrc_" , png_name , ".png" )
+  png_name_wdir <- paste0( "./_site/" , png_name )
+  # create qr code image and save:
+  qrc <- qr_code( url )
+  png( png_name )
+  plot( qrc )
+  invisible( dev.off() )
+  file.copy( png_name , png_name_wdir )
+  # return formatted image and text:
+  img_str <- paste0( "<img src='" , png_name ,
+                     "' height=" , qrc_ht , 
+                     " class='image-left'>" )
+  url_str <- paste0( "<a href='" , url ,
+                     "' target='_blank'>" ,
+                     journal_name , "</a>" )
+  end_str <- "<br clear='left'>"
+  return( paste( img_str , url_str , 
+                 ifelse( nchar(publication_info)>0 , ", " , "" ) , 
+                 publication_info , end_str ) )
+}
+
+end_poem_mark <- "<br><p>" 
+# end_poem_mark <- "<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9753; &#10087; <p>"
+
+```

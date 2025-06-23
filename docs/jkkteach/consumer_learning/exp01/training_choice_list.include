@@ -1,0 +1,11 @@
+<center>
+<p><hr>
+<p>Select an item to read about (click the spot next to its label):
+<br>
+<br><input type="radio" name="item_code" value="I.PC_1">(I.PC_1)
+<br><input type="radio" name="item_code" value="I.PC_2">(I.PC_2)
+<br><input type="radio" name="item_code" value="I.PC_3">(I.PC_3)
+<br><input type="radio" name="item_code" value="I.PR_1">(I.PR_1)
+<p><strong><INPUT TYPE="submit" VALUE="Click here to view the selected item"></strong>
+<p><hr>
+</center>

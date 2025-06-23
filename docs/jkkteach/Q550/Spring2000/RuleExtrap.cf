@@ -1,0 +1,12 @@
+NODES:
+nodes = 26
+inputs = 2
+outputs = 6
+output nodes are 21-26
+CONNECTIONS:
+groups = 0
+1-20 from i1-i2
+21-26 from 1-20
+1-26 from 0
+SPECIAL:
+selected = 1-26

@@ -1,0 +1,20 @@
+SUBJECT>Re: Homework 3, #3 (one- or two-tailed confidence intervals)
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Saturday, 21 September 2002, at 4:16 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>15
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<P>&gt; Hello, I wanted to ask if
+<BR>&gt; we are supposed to get the two-tailed
+<BR>&gt; conficence interval(CI) for the
+<BR>&gt; answer or just one-tailed one.
+<BR>&gt; ...
+<P>This issue of a one-tailed confidence interval is a subtlety I never discussed in class, nor is it discussed in the textbook (as far as I remember).
+<P>In real research practice, one-tailed tests are frowned upon. Many journal editors will not accept manuscripts that use one-tailed tests. The reason is this: Suppose you have a directional hypothesis, that the sample mean with be <em>greater</em> than zero. So you plan to conduct a one-tailed test, with a critical value at 1.65 standard errors above zero. Now suppose that you actually run the experiment, and the data turn out to have a mean far <em>less</em> than zero, in fact more than 1.96 standard errors below zero. If you slavishly stick with your one-tailed test, you will not reject your directional null hypothesis. But no researcher in his/her right mind would do that. Instead, s/he would conclude that there was a significant reduction and then conduct more experiments trying to replicate and understand this effect. In essence, all tests are "really" non-directional and two-tailed.
+<P>Despite that fact that one-tailed tests are not done much in real research, one can still pursue the idea of a one-tailed confidence interval. The definition is the same as always: <em>The confidence interval is the range of population means that could not be rejected by the observed sample mean.</em> A one-tailed confidence interval turns out to be unbounded on one side: Visualize sliding the sampling distribution back and forth over the observed sample mean. As you contact the critical value on the one tail of the sampling distribution, you define the limit of one side of the confidence interval. As you slide the sampling distribution the other way, there is no critical value ever encountered, so the other side of the confidence interval is unbounded.
+<P>Conclusion: Despite the fact that one-tailed confidence intervals can be defined, they are never really done this way. Two-tailed tests are always implicitly assumed. So, determine the two-tailed confidence interval.

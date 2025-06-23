@@ -1,0 +1,282 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 9</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology
+<br>Homework 9: Non-Normal Populations
+<br>Due 19 November 1996.
+</h2>
+</center>
+
+
+
+<p><strong>1. (5 pts)</strong> A zoologist is studying the sounds
+produced by two species of bats.  She randomly samples 10 recordings
+from each of the two species, and measures the dominant frequency (in
+Hz) of each sound production.  The data are as follows:
+
+<pre>
+spec_1  spec_2
+  4675   38177
+ 34544   80822
+  6634    7708
+   518    1212
+  6974   46630
+ 13360    4024
+   545   89322
+   365     898
+   314   32860
+  1556    4230
+</pre>
+
+Do the two species differ in the mean dominant frequency of their
+sound productions? (Conduct a two-tailed t-test, pooling only if it
+seems appropriate.)  Have the assumptions of the test been satisfied?
+
+<p>The zoologist is actually interested in the effective
+<em>pitch</em> of the sound, not the raw frequency of sound.  (To
+convert to pitch from frequency, just take the logarithm of
+frequency.)  Do the two species differ in the mean dominant pitch of
+their sound productions? (Conduct a two-tailed t-test, pooling only if
+it seems appropriate.)  Have the assumptions of the test been
+satisfied?
+
+<p>Do the conclusions of the two tests differ? Which test is more
+appropriate, the one on frequency or the one on pitch? Why?
+
+
+<p><strong>2. (6 pts)</strong> Exercise 4, Set II, p.474, A&A text.
+Use the 20 groupings shown with the exercise (not the Minitab macro
+below).  Don't bother with "explaining what you have done to someone
+who is not familiar with randomization tests".
+
+<p><strong>3. (6 pts)</strong> Consider hypothetical data for two
+groups as follows:
+<br>Group 1: 1 20 22 24
+<br>Group 2: 23 25 27 46
+
+<ul>
+
+<li>Conduct a two-tailed t-test on the scores (pooling if
+appropriate). Are the assumptions of the t-test met?
+
+<li>Convert the original scores to rank values, and conduct a t-test
+on the ranks. (Use the Minitab "<tt>rank</tt>" command.) How does the
+conclusion compare with the previous test?
+
+<li>Conduct a randomization test on the scores, using the Minitab
+macro shown below.  Generate a sampling distribution from 500
+samplings.  How does the conclusion compare with the previous two
+tests?  In particular, is the shape of the sampling distribution
+roughly normal?
+
+</ul>
+
+<p><strong>4. (8 pts)</strong> A researcher is studying the effects
+of two drugs.  Four rats are randomly assigned to each of two groups,
+where Group 1 gets Drug A and Group 2 gets Drug B.  The researcher
+measures the time it takes each rat to get through a maze.  Results
+are as follows: 
+<br>Group 1 times (in minutes): 1.000, 0.500, 0.333, 0.250.  
+<br>Group 2 times: 0.250, 0.200, 0.167, 0.143.
+
+<ul>
+
+<li>Conduct a two-tailed t-test on the times. Are the assumptions of
+the t-test met?
+
+<li>Now reconsider the dependent variable.  Instead of measuring time
+taken, transform it to speed.  Since the net distance travelled was a
+constant, converting time to speed is accomplished by computing the
+reciprocal of time.  Now conduct a two-tailed t-test on the speeds.
+Are the conlusions the same for the test on time and on speed?  Which
+test is more appropriate and why?
+
+<li>Convert the original (time) scores to rank values, and conduct a
+t-test on the ranks. (Use the Minitab "<tt>rank</tt>" command.)  Do
+the same with the transformed (speed) scores.  How do the conclusions
+compare with the previous two tests?
+
+<li>Conduct a randomization test on the original (time) scores, using
+the Minitab macro shown below.  Generate a sampling distribution from
+500 samplings.  Do the same with the transformed (speed) scores.  How
+do the conclusions compare with the previous three tests?  In
+particular, are the shapes of the sampling distributions roughly
+normal?
+
+</ul>
+
+
+<p><hr>
+
+<p>Here is a Minitab macro, <tt>tgrt.MAC</tt>, for running a
+two-group randomization test for the difference of means of two
+groups.  Scores are entered in column X, group codes in column Y (the
+group codes must be 1 or 2).  You must specify the number N of samples
+it should generate and the column Z in which it should store the
+samples.  The command then looks like this:
+
+<pre>
+MTB > %tgrt X Y N Z
+</pre>
+
+<p><em>Notice the "%" at the beginning, which tells Minitab to look
+for the macro program tgrt.MAC in your directory.</em>
+
+<p>For example, if the scores were in column c1 and the group codes
+were in column c2, and you wanted to generate 500 samples, with column
+c3 as storage for the sample differences of means, you'd type:
+
+<pre>
+MTB > %tgrt c1 c2 500 c3
+</pre>
+
+<p>Here is the macro program code itself; you can type it into a file
+in your account, or you can copy it from my directory on Zinc:
+/N/fs2/kruschke/Zinc/tgrt.MAC
+
+<pre>
+macro
+tgrt x y n z
+#
+# Minitab macro by John Kruschke, November 1996.
+# Does a two-group randomization test, outputting a histogram
+# of the differences of means.
+# Arguments:
+# x = data column
+# y = group code column; groups must be coded as 1 and 2
+# n = number of samplings to generate
+# z = column for depositing sample statistics
+#
+############################################################
+#
+# Declare variables:
+#
+# macro arguments (global variables) defined above:
+#
+mcolumn x
+mcolumn y
+mconstant n
+mcolumn z
+#
+# other (local) variables:
+#
+# d is a 'dummy' column used for permuted group codes
+mcolumn d
+# ct is the total number of scores (total sample size)
+mconstant ct
+# i is a dummy index for loops
+mconstant i
+mconstant pval
+mconstant act
+# rx is row index and sample counter
+mconstant rx
+# s1 is sum group 1
+mconstant s1
+# n1 is count of group 1
+mconstant n1
+# s2 is sum group 2
+mconstant s2
+# n2 is count of group 2
+mconstant n2
+#
+# Determine total sample size
+#
+let ct = count(x)
+#
+# Determine the difference of means for the *actual* sample:
+#
+# initialize accumulators
+#
+let n1 = 0
+let n2 = 0
+let s1 = 0
+let s2 = 0
+# 
+# go through the scores and accumulate group sums
+#
+do i = 1 : ct
+	if y(i) = 1
+		let s1 = s1 + x(i)
+		let n1 = n1 + 1
+	elseif y(i) = 2
+		let s2 = s2 + x(i)
+		let n2 = n2 + 1
+	else
+		note ERRONEOUS GROUP CODE (MUST BE 1 OR 2)
+		exit
+	endif
+enddo
+# 
+# output the difference of means in the sampling column
+#
+	let act = (s2/n2)-(s1/n1)
+	note
+	note ACTUAL DIFFERENCE OF GROUP MEANS (GROUP 2 - GROUP 1):
+	print act
+#
+# Now generate the sampling distribution:
+#
+# initialize sample counter 
+#
+do rx = 1 : n
+	#
+	# initialize accumulators
+	#
+	let n1 = 0
+	let n2 = 0
+	let s1 = 0
+	let s2 = 0
+	#
+	# permute the group codes from column y, put into column d
+	#
+	sample ct y d
+	# 
+	# go through the scores and accumulate group sums
+	#
+	do i = 1 : ct
+		if d(i) = 1
+			let s1 = s1 + x(i)
+			let n1 = n1 + 1
+		elseif d(i) = 2
+			let s2 = s2 + x(i)
+			let n2 = n2 + 1
+		else
+			note ERRONEOUS GROUP CODE (MUST BE 1 OR 2)
+			exit
+		endif
+	enddo
+	# 
+	# place the difference of means in the sampling column
+	#
+	let z(rx) = (s2/n2)-(s1/n1)
+enddo
+#
+# output statistics of sampling distribution
+#
+note 
+note SAMPLING DISTRIBUTION STATISTICS (DESCRIBE, DOTPLOT, HISTOGRAM):
+describe z
+dotplot z
+histogram z
+#
+# compute probability of obtained difference of means
+#
+let pval = ( sum( abs(z) >= abs(act) )) / n
+note
+note TWO-TAILED PROBABILITY (UNDER NULL HYPOTHESIS)
+note OF GETTING ACTUAL DIFFERENCE OR GREATER:
+print pval
+endmacro
+</pre>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

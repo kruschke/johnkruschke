@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke, Syllabus</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">
+Prof. John K. Kruschke</a>
+<br><font size=+2><strong>Measures of Central Tendency</strong></font>
+ </center>
+
+<p>
+
+
+<font size=+2>
+We want to choose a value <em>M</em> that represents the central
+tendency of a distribution of numbers.  By "the central tendency" we
+mean the value <em>M</em> that has smallest average distance from all
+the scores <em>x<sub><em>i</em></sub></em> in the distribution.  We
+need, therefore, to formally define what we mean by distance.  Below
+are three definitions of distance, and the corresponding values for
+central tendency.  <em>Notation:</em>
+SUM<sub><em>i</em></sub>(<em>y</em><sub><em>i</em></sub>) is the sum
+of items <em>y</em> indexed by <em>i</em>.  <em>N</em> is the number
+of scores in the sample.
+
+
+
+
+
+<p><center><table border=1 cellspacing=1 cellpadding=6 width=100%>
+
+<tr>
+<td></td>
+<td><center><font size=+2>Formalization #1</font></center></td> 
+<td><center><font size=+2>Formalization #2</font></center></td>
+<td><center><font size=+2>Formalization #3</font></center></td>
+</tr>
+
+<tr>
+<td rowspan=2><font size=+2>Formal Measure of Variability, <em>V</em>
+</font></td>
+<td colspan=3>
+<center>
+
+<font size=+2>
+<strong> The variability of the scores around <em>M</em> is defined as
+the mean distance between <em>M</em> and the scores.  Formally,
+<em>V</em>&nbsp;=&nbsp;SUM<sub><em>i</em></sub>(&nbsp;<em>dist</em>(<em>x<sub><em>i</em></sub>,M</em>)&nbsp;)/<em>N</em>,
+where <em>dist</em>(<em>x<sub><em>i</em></sub>,M</em>) is the distance
+between <em>x<sub><em>i</em></sub></em> and <em>M</em>.  The three
+formalizations use three different formalizations of distance.
+</strong>
+</font>
+
+</center>
+</font></td>
+</tr>
+<tr>
+<td><font size=+2>
+<center>
+<em>dist</em>(<em>x<sub><em>i</em></sub>,M</em>)
+<table>
+<tr>
+<td rowspan=2 valign=center align=right><font size=+2>= </font></td>
+<td rowspan=2 valign=center align=center><font size=+4>{</font></font></td>
+<td valign=bottom><font size=+2>1 if |<em>x<sub><em>i</em></sub></em>-<em>M</em>| > 0</font></td>
+</tr>
+<tr>
+<td valign=top><font size=+2>0 if |<em>x<sub><em>i</em></sub></em>-<em>M</em>| = 0</font></td>
+</tr>
+</table>
+</center>
+
+</font></td>
+<td><font size=+2><center>
+<em>dist</em>(<em>x<sub><em>i</em></sub>,M</em>)
+= 
+|<em>x<sub><em>i</em></sub></em>-<em>M</em>|
+</center></font></td>
+<td><font size=+2><center>
+<em>dist</em>(<em>x<sub><em>i</em></sub>,M</em>)
+= 
+(<em>x<sub><em>i</em></sub></em>-<em>M</em>)<sup>2</sup>
+</center></font></td>
+</tr>
+
+<tr> 
+
+<td><font size=+2>Value of <em>M</em> that Minimizes the Variability</font></td>
+
+<td><font size=+2><em>M</em> minimizes <em>V</em> when <em>M</em> is the value of a
+most frequent score.
+
+<p>Proof: Virtually obvious from definition.
+
+</font></td>
+
+<td><font size=+2><em>M</em> minimizes <em>V</em> when half the scores are larger
+than <em>M</em> and half the scores are smaller than <em>M</em>.
+
+<p>Proof: Calculus...
+
+</font></td>
+
+
+<td><font size=+2><em>M</em> minimizes <em>V</em> when <p><center><em>M</em> =
+SUM<sub><em>i</em></sub>(<em>x<sub><em>i</em></sub></em>)/<em>N</em></center>
+
+<p>Proof: Calculus...
+
+</font></td> </tr>
+
+
+<tr> 
+<td><font size=+2>Terminology</font></td> 
+<td><font size=+2><em>M</em> is called the <strong>mode</strong>.</font></td>
+<td><font size=+2><em>M</em> is called the <strong>median</strong>.</font></td> 
+<td><font size=+2><em>M</em> is called the <strong>mean</strong>. The
+minimized variability is called the <strong>variance</strong>.</font></td>
+</tr>
+
+<tr> 
+
+<td><font size=+2>Problems</font></td> 
+
+<td><font size=+2>Descriptive: Not unique; distributions can
+be multi-modal.</font></td> 
+
+<td><font size=+2>Descriptive: Not unique for even <em>N</em>.
+<p>Inferential: Sampling distribution is difficult to generate
+analytically.</font></td> 
+
+<td><font size=+2>Descriptive: Over-emphasizes outliers. <p>But an inferential
+advantage: Sampling distribution <em>is</em> analytically
+tractable!</font></td>
+
+</tr>
+
+</table></center>
+
+<p><strong>An Example:</strong> Consider the set of values, 1 2 2 3 3
+3 4 4 4 4 5 5 5 5 5.  
+
+<!-- (That is, one 1, two 2's, three 3's, four 4's, and five 5's.) -->
+
+<ul>
+<li>The <em>mode</em> is 5.0, and the minimized Formalization #1
+variability around that mode is 0.67
+
+<li>The <em>median</em> is 4.0, and the minimized Formalization #2
+variability around that median is 1.00.
+
+<li>The <em>mean</em> is 3.67, and the variance (minimized
+Formalization #3 variability) around that mean is 1.55.
+</ul>
+
+
+<p>
+<h6><center>Copyright &copy; 1999, 2000 by John K. Kruschke</center></h6>
+<hr>
+
+</BODY>
+</HTML>
+
+

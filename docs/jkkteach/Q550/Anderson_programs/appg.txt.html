@@ -1,0 +1,310 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+
+                             Appendix G
+                   Associative Memory Demonstration
+                 Discrimination by Length (Chapter 7)
+
+     This program shows that the simple linear associator can
+discriminate new from old patterns, based on their length.  It is 
+essentially the same as the test program presented in Appendix F.
+
+     The program associates pairs of normalized zero mean random 
+vectors.  (MTH$RANDOM is the VAX library random number generator and
+should be changed for other computers.) The program prompts for the 
+seed of the random number generator,  the dimensionality of the system 
+(maximum 250) and the number of pairs to learn (maximum 50).  These 
+numbers can be easily changed.
+
+     When the pairs have been learned, the program computes the length 
+of the output vector for both the test and the learned vectors and 
+plots the histogram of values.  If the network performed perfectly, the 
+length of the learned output vector would be about 1 and the length of 
+the output from a test vector would be around zero.
+
+     The histogram is displayed using crude character based graphics.  
+The vertical axis gives 10 times the value of the inner product and the 
+horizontal the number of output lengths falling in that bin.  
+
+---------------------------------------------------------------------
+
+PROGRAM AMDEMOL (Input, Output);
+CONST Max_Dimensionality = 250;
+      Number_in_test_set =  50;
+      Number_to_learn    =  50;
+
+TYPE Vector           = ARRAY [1..Max_Dimensionality] OF REAL;
+
+     Matrix           = ARRAY [1..Max_dimensionality,
+                               1..Max_dimensionality] OF REAL;
+
+VAR I, J, Seed, Number_of_pairs, 
+       Number_learned, Index, Dimensionality: INTEGER;
+    A, Delta_A   : Matrix;
+    First, 
+           Second: Vector;
+    Test_vectors : ARRAY  [1..Number_in_test_set] OF Vector;
+    F_vectors    : ARRAY  [1..Number_to_learn] OF Vector;
+    G_vectors    : ARRAY  [1..Number_to_learn] OF Vector;
+    TS_histogram,
+    LS_histogram : ARRAY  [-50..50] OF INTEGER;
+    Exit         : BOOLEAN;
+    Input_char   : CHAR;
+
+PROCEDURE GoToXY (X,Y: INTEGER);
+   BEGIN
+   WRITELN;
+   WRITE (CHR (27), '[');
+   IF Y<10 THEN WRITE (Y:1) ELSE WRITE (Y:2);
+   WRITE (';');
+   IF X<10 THEN WRITE (X:1) ELSE WRITE (X:2);
+   WRITE ('H');
+   END;
+
+FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+    VAR             I: INTEGER;
+     Sum_of_products : REAL;
+    BEGIN
+    Sum_of_products := 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+    Inner_product:= Sum_of_products;
+    END;
+
+FUNCTION Vector_length (Vector_1: Vector): REAL;
+    VAR Sum_of_Squares: REAL;
+                     I: INTEGER;
+    BEGIN
+    Sum_of_Squares:= 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+    Vector_length:= SQRT (Sum_of_Squares);
+    END;
+
+PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+    VAR Length_of_vector_in: REAL;
+        I                  : INTEGER;
+        Vector_in_is_zero  : BOOLEAN;
+    BEGIN
+    Vector_out:= Vector_in;
+    Length_of_vector_in := Vector_length (Vector_in);
+    IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                 ELSE Vector_in_is_zero := FALSE;
+    IF Vector_in_is_zero 
+       THEN BEGIN
+            WRITE  ('Normalized zero vector!');
+            Vector_out:= Vector_in;  {Make Vector_out the zero vector.}
+            END       {Programming note: Watch out! no semicolon here!}
+       ELSE FOR I:= 1 TO Dimensionality DO
+            Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+    END;
+
+PROCEDURE Make_normalized_random_vector  (VAR V: Vector);
+
+    {This procedure generates a random vector with no DC component}
+    {on the average.                                              }
+
+    VAR I: INTEGER;
+
+    FUNCTION MTH$RANDOM (VAR Seed: INTEGER): REAL; EXTERN;
+
+    FUNCTION Random: REAL;
+        BEGIN
+        Random := MTH$RANDOM (Seed);
+        END;
+
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO V[I]:= Random - 0.5;
+    Normalize (V, V);
+    END; 
+
+PROCEDURE Matrix_times_vector (A: Matrix; F: Vector;
+                                      VAR G: Vector);
+
+    {This PROCEDURE forms the product Af = g where }
+    {both f and g are column vectors.              }
+
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO G[I]:= 0;   {Zero vector G.}
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO G[I]:= G[I] + A[I,J] * F[J];
+    END;
+
+
+PROCEDURE Add_matrices (Mx_1, Mx_2: Matrix; VAR Matrix_sum: Matrix);
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO
+            Matrix_sum [I,J] := Mx_1 [I,J] + Mx_2 [I,J];
+    END; 
+
+PROCEDURE Outer_product (G,F: Vector; VAR A: Matrix);
+    {                                                       }
+    {We want to generate an outerproduct matrix A so that   }
+    {            T                                          }
+    {     A = G F                                           }
+    {                                                       }
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO 
+            A[I,J] := G[I] * F[J];
+    END;
+
+PROCEDURE Make_test_vectors;
+  VAR I: INTEGER;
+  BEGIN
+  GoToXY (1,22);  WRITE ('Making test vectors   :         ');
+  FOR I:= 1 TO Number_in_test_set DO
+    BEGIN
+    Make_normalized_random_vector (Test_vectors [I]);
+    GoToXY (24,22);  WRITE (I:4);
+    END;
+  END;
+
+PROCEDURE Make_learned_vectors;
+  VAR I: INTEGER;
+  BEGIN
+  GoToXY (1,23); WRITE  ('Making learned vectors:         ');
+  FOR I:= 1 TO Number_to_learn DO
+    BEGIN
+    Make_normalized_random_vector (F_vectors [I]);
+    Make_normalized_random_vector (G_vectors [I]);
+    GoToXY (24,23);
+    WRITE (I:4);
+    END;
+  END;
+
+PROCEDURE Display_outputs;
+  VAR I,J: INTEGER;
+      Cos: REAL;
+  Begin
+  WRITE (CHR (27), '[f');   {To home.}
+  WRITE (CHR (27), '[2J');  {erase screen.}
+  GoTOXY (1,2);
+  WRITELN ('Learned Vectors. (*), Test Vectors (+).');
+  FOR I:=  0 TO 14 DO
+      BEGIN
+      Cos:= I/10;
+      WRITE (Cos:3:1,' ');
+      FOR J:= 1 TO LS_Histogram [I] DO WRITE ('*');
+      WRITELN;
+      END;
+  WRITELN;
+  GoTOXY (1,2);
+  WRITELN ('Learned Vectors. (*), Test Vectors (+).');
+  FOR I:= 0 TO 14 DO
+      BEGIN
+      Cos:= I / 10;
+      WRITE (Cos:3:1,' ');
+      FOR J:= 1 TO TS_histogram [I] DO WRITE ('+');
+      WRITELN;
+      END;
+  WRITELN;
+  END;
+
+PROCEDURE Initialize;
+  VAR I,J: INTEGER;
+  BEGIN
+  GoToXY (0,0);
+  WRITE (CHR(27), '[2J');
+  WRITELN ;
+  WRITELN ;
+  WRITELN ('Demonstration of Associative Memory.'                      );
+  WRITELN ('Learns random vectors which are associated using'          );
+  WRITELN ('an outer product matrix.   Tested with learned and'        );
+  WRITELN ('unlearned vectors.  Lengths of output vectors plotted.'    );
+  WRITELN ('Maximum Dimensionality is: ', Max_dimensionality:3  );
+  WRITE   ('Seed                     : ');  READLN (Seed);
+  WRITE   ('Dimensionality           : ');  READLN (Dimensionality);
+  WRITE   ('Nr of pairs to learn     : ');  READLN (Number_of_pairs);
+  WRITELN;
+  FOR I:= -50 TO 50 DO BEGIN LS_Histogram [I]:= 0; TS_histogram [I]:= 0 END;
+  Make_test_vectors;
+  Make_learned_vectors;
+  FOR I:= 1 TO  Dimensionality DO 
+      FOR J:= 1 TO Dimensionality DO BEGIN
+                                     A[I,J]:= 0; 
+                                     Delta_A[I,J]:= 0;
+                                     END;
+  END;
+
+PROCEDURE Demonstration;
+  VAR I,J: INTEGER;
+      G_out: Vector;
+      Goodness_of_recall: REAL;
+
+  BEGIN
+  Initialize;
+  GoToXY (1,1);
+  WRITE ('>> Learning:               ');
+  GoToXY (1,12); WRITE (CHR(27), '[K');
+  FOR I:= 1 TO Number_of_pairs DO
+      BEGIN
+      GoToXY (1,12);  
+      Outer_product (G_vectors[I], F_vectors[I], Delta_A);
+      Add_matrices (A, Delta_A, A);
+      Matrix_times_vector (A, F_vectors [I], G_out);
+      WRITELN ('Pairs learned: ', I:4, '  Length of last output: ',
+               Vector_length (G_out):8:4);
+      END;
+  GoToXY (1,1);
+  WRITE ('>> Testing after learning.');
+  GoToXY (1,12); WRITE (CHR(27), '[K');
+  FOR I:= 1 TO Number_of_pairs DO
+      BEGIN
+      GoToXY (1,12); 
+      Matrix_times_vector (A, F_Vectors [I], G_out);
+      Goodness_of_recall:= Vector_length (G_out);
+      WRITELN ('Pairs tested: ', I:4, '  Length of last output    : ',
+      Goodness_of_recall:8:4);
+      Index:= ROUND (10 * Goodness_of_recall);
+      LS_histogram [Index]:= LS_histogram [Index] + 1;
+      END;
+  GoToXY (1,1);  WRITE ('>> Using test vectors.     ');
+  GoToXY (1,12);  WRITE (CHR(27), '[K');
+  FOR I:=1 TO Number_in_test_set DO
+      BEGIN
+      GoToXY (1,12); 
+      Matrix_times_vector (A, Test_vectors [I], G_out);
+      Goodness_of_recall:= Vector_length (G_out);
+      WRITELN ('Pairs tested: ',I:4, '  Length of test output    : ',
+                Goodness_of_recall:8:4);
+      Index:= ROUND (10 * Goodness_of_recall);
+      TS_histogram [Index]:= TS_histogram [Index] + 1;
+      END;
+  Display_outputs;
+  GoToXY (1,1);
+  WRITE  ('>> Do you want to repeat this demonstration? Y/N ');
+  READLN (Input_char);
+  IF Input_char IN ['N','n'] THEN Exit:= TRUE ELSE Exit:= FALSE;
+  END;
+
+BEGIN {Main program.}
+REPEAT Demonstration UNTIL Exit;
+END. {Main program.}
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

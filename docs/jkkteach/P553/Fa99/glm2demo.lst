@@ -1,0 +1,344 @@
+
+For help with SPSS computing, contact the UITS Stat/Math
+Center (phone 855-4724; email statmath@indiana.edu; URL
+http://www.indiana.edu/~statmath).
+17 Nov 98   SPSS for OSF/1, Release 6.1                                                                                       Page 1
+16:43:46    Indiana University             DEC Alpha        OSF/1
+
+
+For OSF/1               Indiana University                    SPSS ID 12345678
+
+   1  0
+   2  0  COMMENT  Demo of equivalence of
+   3  0  COMMENT  t-test, oneway anova, regression, and glm
+   4  0  COMMENT  for two-group data.
+   5  0
+   6  0  set highres off .
+   7  0  set width = 80 .
+   8  set length = 54 .
+   9
+  10  data list free
+  11   / group score code1 code2 .
+  12  begin data
+  21  end data .
+  22
+  23
+
+Preceding task required .00 seconds CPU time;  .01 seconds elapsed.
+
+  24  plot
+  25   / plot score with group ;
+  26          score with code1 by code2 .
+  27
+
+PLOT requires 13320 bytes of workspace for execution.
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 2
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+* * * * * * * * * * * * * * * * *  P  L  O  T  * * * * * * * * * * * * * * * * *
+
+Data   Information
+
+          9 unweighted cases accepted.
+
+Size of the plots
+
+   Horizontal size is 65
+     Vertical size is 35
+
+Frequencies and symbols used (not applicable for control or overlay plots)
+
+          1 - 1     11 - B     21 - L     31 - V
+          2 - 2     12 - C     22 - M     32 - W
+          3 - 3     13 - D     23 - N     33 - X
+          4 - 4     14 - E     24 - O     34 - Y
+          5 - 5     15 - F     25 - P     35 - Z
+          6 - 6     16 - G     26 - Q     36 - *
+          7 - 7     17 - H     27 - R
+          8 - 8     18 - I     28 - S
+          9 - 9     19 - J     29 - T
+         10 - A     20 - K     30 - U
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 3
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+                               Plot of SCORE with GROUP
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        7+                                   1                              +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        6+                                   1                              +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        5+                                   1                        1     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+S       4+                                                            1     +
+C        |                                                                  |
+O        |                                                                  |
+R        |                                                                  |
+E        |                                                                  |
+        3+          1                                                 1     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        2+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        1+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        0+                                                                  +
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        -.4         0        .4        .8       1.2       1.6         2
+
+
+                                        GROUP
+
+         9 cases plotted.
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 4
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+                           Plot of SCORE with CODE1 by CODE2
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        7+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        6+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        5+          1                                                 0     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+S       4+                                                            0     +
+C        |                                                                  |
+O        |                                                                  |
+R        |                                                                  |
+E        |                                                                  |
+        3+          0                                                 0     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        2+          0                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        1+          0                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        0+                                                                  +
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        -.2         0        .2        .4        .6        .8         1
+
+
+                                        CODE1
+
+         9 cases plotted.
+0:          1:          $:Multiple occurrence
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 5
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+Preceding task required .02 seconds CPU time;  .03 seconds elapsed.
+
+  28  oneway score by group(0,2)
+  29   / contrast = -1  0  1
+  30   / contrast = -1  1  0 .
+  31
+
+ONEWAY problem requires 396 bytes of memory.
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 6
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+                       - - - - -  O N E W A Y  - - - - -
+
+
+      Variable  SCORE
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2       24.0000       12.0000      12.0000  .0080
+Within Groups              6        6.0000        1.0000
+Total                      8       30.0000
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 7
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+                       - - - - -  O N E W A Y  - - - - -
+
+
+      Variable  SCORE
+   By Variable  GROUP
+
+
+ Contrast Coefficient Matrix
+
+            Grp 0       Grp 2
+                  Grp 1
+
+Contrast  1  -1.0    .0   1.0
+
+Contrast  2  -1.0   1.0    .0
+
+
+
+                                          Pooled Variance Estimate
+                     Value      S. Error       T Value    D.F.       T Prob.
+
+Contrast  1         2.0000         .8165         2.449     6.0          .050
+
+Contrast  2         4.0000         .8165         4.899     6.0          .003
+
+
+                                        Separate Variance Estimate
+                     Value      S. Error       T Value    D.F.       T Prob.
+
+Contrast  1         2.0000         .8165         2.449     4.0          .070
+
+Contrast  2         4.0000         .8165         4.899     4.0          .008
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 8
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+Preceding task required .00 seconds CPU time;  .03 seconds elapsed.
+
+  32  manova score by group(0,2)
+  33   / design  group .
+  34
+The default error term in MANOVA has been changed from WITHIN CELLS to
+WITHIN+RESIDUAL.  Note that these are the same for all full factorial
+designs.
+17 Nov 98 SPSS for OSF/1, Release 6.1                                     Page 9
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+* * * * * * A n a l y s i s   o f   V a r i a n c e * * * * * *
+
+
+         9 cases accepted.
+         0 cases rejected because of out-of-range factor values.
+         0 cases rejected because of missing data.
+         3 non-empty cells.
+
+         1 design will be processed.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+17 Nov 98 SPSS for OSF/1, Release 6.1                                    Page 10
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+* * * * * * A n a l y s i s   o f   V a r i a n c e -- design   1 * * * * * *
+
+ Tests of Significance for SCORE using UNIQUE sums of squares
+ Source of Variation          SS      DF        MS         F  Sig of F
+
+ WITHIN+RESIDUAL            6.00       6      1.00
+ GROUP                     24.00       2     12.00     12.00      .008
+
+ (Model)                   24.00       2     12.00     12.00      .008
+ (Total)                   30.00       8      3.75
+
+ R-Squared =           .800
+ Adjusted R-Squared =  .733
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+3192 bytes of memory are needed for MANOVA execution.
+17 Nov 98 SPSS for OSF/1, Release 6.1                                    Page 11
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+Preceding task required .02 seconds CPU time;  .03 seconds elapsed.
+
+  35  regression variables = score, code1, code2
+  36   / dependent = score
+  37   / method = enter .
+  38
+
+     1364 bytes of memory required for REGRESSION procedure.
+        0 more bytes may be needed for Residuals plots.
+
+
+17 Nov 98 SPSS for OSF/1, Release 6.1                                    Page 12
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+           * * * *   M U L T I P L E   R E G R E S S I O N   * * * *
+
+
+Listwise Deletion of Missing Data
+
+Equation Number 1    Dependent Variable..   SCORE
+
+Block Number  1.  Method:  Enter
+
+
+Variable(s) Entered on Step Number
+   1..    CODE2
+   2..    CODE1
+
+
+Multiple R           .89443
+R Square             .80000
+Adjusted R Square    .73333
+Standard Error      1.00000
+
+Analysis of Variance
+                    DF      Sum of Squares      Mean Square
+Regression           2            24.00000         12.00000
+Residual             6             6.00000          1.00000
+
+F =      12.00000       Signif F =  .0080
+
+
+------------------ Variables in the Equation ------------------
+
+Variable              B        SE B       Beta         T  Sig T
+
+CODE1          2.000000     .816497    .516398     2.449  .0498
+CODE2          4.000000     .816497   1.032796     4.899  .0027
+(Constant)     2.000000     .577350                3.464  .0134
+
+
+End Block Number   1   All requested variables entered.
+17 Nov 98 SPSS for OSF/1, Release 6.1                                    Page 13
+16:43:46  Indiana University             DEC Alpha        OSF/1
+
+
+Preceding task required .02 seconds CPU time;  .03 seconds elapsed.
+
+  39  finish .
+
+    39 command lines read.
+     0 errors detected.
+     0 warnings issued.
+     0 seconds CPU time.
+     0 seconds elapsed time.
+       End of job.

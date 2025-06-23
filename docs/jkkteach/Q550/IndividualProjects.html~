@@ -1,0 +1,208 @@
+<html>
+<font face="tahoma">
+
+<head><title>Q550: Individual Projects</title></head>
+<body>
+
+<center>
+<h2><a href="index.html">Q550 (Prof. Kruschke):</a></h2>
+<h1> Individual Projects</h1></center>
+
+<h2>Finding a Topic</h2>
+
+<p>Here's one approach:
+
+<ol>
+
+<li> Start with an existing model in a domain that interests you. The
+model should have free parameters that are estimated by fitting to
+data. The model should also be a process model, not just descriptive
+“curve fitting”.
+
+<li> Identify the fundamental phenomena that the model addresses.
+
+<li> Of those phenomena, which is the simplest to replicate
+empirically? Invent a reduced version that can be run in 10 minutes.
+
+<li> Simplify the model to its essential mechanisms and parameters
+necessary to address the phenomenon.
+
+</ol>
+
+<p>Alternatively, start with a robust phenomenon and then find a
+simple model of it.
+
+
+<h2>Presentations: Number and Duration</h2>
+
+<ul>
+
+<li>Two presentations per person: One regarding the empirical
+phenomenon; one regarding the model.
+
+<li>Eighteen (18) minutes per presentation (i.e., four presentations
+per day).
+
+<li>There will also be a final report and poster due at the Final Exam
+time (which is **).
+
+</ul>
+
+
+
+<h2>Tentative Presentation Dates</h2>
+
+<ul>
+
+<li> Presentation 1 (empirical phenomenon): March 22, 24, 29, 31,
+April 5.
+ 
+<li> Presentation 2 (model): April 7, 12, 14, 19, 21.
+
+
+<li> Experiments must be available to run by one week after your first
+presentation.
+
+<li> Final report and poster at Final exam time (**).
+
+</ul>
+
+
+<h2>What to Present</h2>
+
+The talks are <em>proposals</em> regarding what you <em>plan</em> to
+do. Your poster and final report will document what you actually ended
+up doing.
+
+<ul>
+
+<li> Talk 1: Empirical Phenomenon
+
+<ul>
+<li> Motivation & background (answer the question, Who cares?)
+<li> Design (conditions, variables/factors)
+<li> Expected effect (differences between conditions)
+<li> Analysis (what kinds of statistical tests)
+</ul>
+
+<li> Talk 2: Model
+
+<ul>
+<li> Intuitive cognitive principle or mechanism
+<li> Formal expression of that mechanism
+<li> Parameters and their interpretation
+<li> Qualitative predictions of the model 
+(in same format as expected effect from experiment)
+<li> Measure of (mis-)fit to be used, and why 
+</ul>
+
+
+<li> Poster
+
+<ul>
+
+<li> Size: Approximately 3 ft tall by 4 ft wide. It does not need to
+be a single sheet of paper or cardboard; i.e., you can print it on
+several pieces of standard paper and arrange them within a 3x4 area.
+
+<li> Support: Either to be taped on wall with masking tape (not scotch
+tape) or on self-supporting cardboard display. (You provide the tape
+or the cardboard.)
+
+<li> Format: Use a very large font! It must be readable from a
+distance. Arrange the information in columns, not rows.
+
+<li> Keep it concise: The gist must be discernable in a mere 6
+minutes! (This is good practice for posters at real conferences.) In
+the 120-minute period there will be three shifts of six posters, each
+shift being about 35 minutes long (plus 5 minute set-up time).
+
+<li> Content: Should include the following sections
+
+<ul>
+
+<li> Project title and your name and departmental affiliation
+
+<li> Abstract
+
+<li> Motivation
+
+<li> Design of experiment
+
+<li> Results and statistical analysis
+
+<li> Model description
+
+<li> Fit measure and procedure
+
+<li> Model best fit parameter values and predictions
+
+<li> Conclusion 
+
+<li> References 
+
+</ul>
+
+</ul>
+
+<li> Final Report: Submit to Prof. Kruschke the following:
+
+<ul>
+
+<li> A copy of the poster.
+
+<li> Upload to Oncourse (a) your data analysis program(s) and (b) your
+model program <em>well commented</em>. Too many comments is far
+preferable to too few.
+
+
+</ul>
+
+</ul>
+
+
+<h2>How to Prepare Talks</h2>
+
+<ul>
+
+<li> Decide what essential points you need to make about each of the
+items in "What to Present" (above).
+
+<li> Rehearse your presentation so that you realize what pre-requisite
+issues need to be explained for each of the essential points. It's
+difficult if you start making your presentation, try to make an
+essential point, and suddenly realize that you need to explain some
+background details before the essential point can be clear.
+
+</ul>
+
+
+<h2>How to Present Talks</h2>
+
+<ul>
+
+<li> Visual aids, such as PowerPoint or overhead transparencies, are
+recommended but not required.  Chalk board and hand-outs are also an
+option, put these tend to be less easy for your audience to navigate.
+
+<ul>
+<li>Keep the overheads sparse; avoid too much text.
+<li>Use a large font (typically 24pt minimum).
+</ul>
+
+<li> Speak loudly. (Imagine you're speaking only to the person at the
+far back of the room, and remember that the overhead projector and/or
+computer projector make a lot of noise.)
+
+<li> You have only 18 minutes, so make your points concisely.
+
+</ul>
+
+
+
+
+
+
+</body>
+</font>
+</html>

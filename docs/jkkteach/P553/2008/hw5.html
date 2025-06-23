@@ -1,0 +1,193 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 5</TITLE>
+</HEAD>
+<BODY bgcolor="khaki">
+
+<center>
+<h3>
+<a href="http://www.indiana.edu/~jkkteach/P553/">P553 Statistics in Psychology</a>,
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+</h3>
+
+<h2>
+Homework 5. Due 14 October 2008.
+</h2>
+
+This homework might use a lot of paper to print all the output. To
+save paper, perhaps print two output pages per side of paper <em>if it is
+still legible and neat</em>. Please keep your answers in order, and clearly label what you are doing where.
+
+</center>
+
+<p>
+
+<ol>
+
+<p><li>(6 pts) t distribution: Use the linked <a
+href="samplet2groups.sps">SPSS syntax file</a> to explore sampling
+distributions of <em>t</em>. The goal of this exercise is for you to
+see how the t distribution is (or is not) affected by unequal
+variances or unequal sample sizes.  Please run the file in SPSS, print
+the output, and do the following.
+
+<ul>
+
+<li>Find the lines in the SPSS code (displayed in the output) that
+compute t with pooled or unpooled variance. Mark these lines and
+annotate which line computes which t (pooled or unpooled).
+
+
+<li><em>Equal variances and equal sample sizes:</em> The first
+sampling distribution assumes normal populations of equal means, equal
+variances, and equal sample sizes. <em>This is the null hypothesis on
+which are based the critical values of t in the table in the appendix
+of the textbook.</em> From the "statistics" output table, average the
+magnitudes of the 2.5 and 97.5 percentiles, and average the magnitudes
+of the 5 and 95 percentiles. Write these averages next to the
+table. Now look up the corresponding critical values of t in the t
+table in the textbook, and write these critical values next to the
+corresponding average percentile values. <em>Make sure to specify the
+df with your critical t values.</em>
+
+<li><em>Equal variances and unequal sample sizes:</em> Do the same
+thing for the next sampling distribution. Is there much influence on
+the critical values from the unequal sample sizes? In particular, has
+the Std. Deviation of the sampling distribution been much influenced?
+
+<li><em>Unequal variances and equal sample sizes:</em> Do the same
+thing for the next sampling distribution. Is there much influence of
+the unequal variances on the critical values (relative to the first
+"textbook" distribution above, not the second)? In particular, has the
+Std. Deviation of the sampling distribution been much influenced?
+Discuss how this relates to the corrected or adjusted df provided in
+SPSS t-test output when the variances are unequal.
+
+<li><em>Unequal variances and unequal sample sizes:</em> Near the
+top of p. 298 in Aron and Aron, it says "it turns out that in
+practice the t test gives pretty accurate results even when there are
+fairly large differences in the population variances, particulalrly
+when there are equal or near equal numbers of scores in the two
+samples." How does the fourth histogram relate to this statement?
+
+</ul>
+
+
+<!--
+<p><li> (4 pts.)  p. 373 #14.  Erratum: For Experiment
+<em>(c)</em>, the Control Group N should be 10, not 40.
+-->
+
+<!--
+<p><li> (4 pts.) p. 373 #15.
+Don't bother with parts (a)-(c), instead, do this: Compute the t-test
+by hand and annotate your work, then verify in SPSS (include the
+printout).
+-->
+
+
+<p><li> (6 pts.) p. 315 #19.  Don't bother with parts (a)-(c),
+instead, do this: Compute the t-test by hand and annotate your
+work. Then verify in SPSS, and include the printout. Notice that N1
+does not equal N2 in this case; are the t values different for pooled
+and unpooled variance (mark this on the printout)?
+
+
+<p><li> (6 pts.) We are interested in knowing whether girls' names
+tend to be longer than boys' names, in terms of number of letters.  Go
+to the Social Security Administration list of most popular baby names:
+<a href="http://www.ssa.gov/OACT/babynames/" target="new">
+http://www.ssa.gov/OACT/babynames/ </a>. Scroll down the page to the
+section where you can retrieve a list of the top baby names for a
+given year. Choose a year of your choice and get the list of <em>the
+top 50 names from the male and female lists.</em> Enter the data into
+SPSS and conduct the t-test (include the printout). Hint: To get the
+names into SPSS, try the following. First, on the SSA web page, drag
+the cursor over the table to highlight all the names. Copy and paste
+into a blank text document (e.g., Notepad in Windows). In the text
+document, make sure you have properly pasted all the names in three
+columns of 50 rows. Save the text document. Then in SPSS use File ->
+Read_Text_Data. Once the names are in your SPSS spreadsheet, compute
+their lengths using Transform -> Compute and the formula
+<tt>namelength = LENGTH(LTRIM(RTRIM(name)))</tt>.  <strong><em>ALSO:
+Determine the effect size and power.</em></strong> <i><a
+href="indep._t-tests_power.pdf">Click here</a> for detailed power
+tables.</i>
+
+
+<p>
+<table align=right border=1 cellspacing=0 cellpadding=5>
+
+<tr>
+<td align=center>Litter</td>
+<td align=center>Female</td>
+<td align=center>Male</td>
+</tr>
+
+<tr>
+<td align=center>A</td>
+<td align=center>6</td>
+<td align=center>6</td>
+</tr>
+
+<tr>
+<td align=center>B</td>
+<td align=center>5</td>
+<td align=center>7</td>
+</tr>
+
+<tr>
+<td align=center>C</td>
+<td align=center>4</td>
+<td align=center>8</td>
+</tr>
+
+<tr>
+<td align=center>D</td>
+<td align=center>3</td>
+<td align=center>9</td>
+</tr>
+
+<tr>
+<td align=center>E</td>
+<td align=center>2</td>
+<td align=center>10</td>
+</tr>
+
+</table>
+<li> (7 pts.)
+
+Suppose you are interested in the weights of newborn gerbils.  From
+each litter, you measure the weight of one female and one male.  Here
+are the results (at right):
+
+
+<p> (a) Is there a significant difference between the mean weights of
+newborn females and newborn males?  Conduct this test by considering
+the female and male samples to be <em>independent</em>. Do this by
+hand and verify with SPSS.  What is the effect size and power of this
+test? Finally, is it logically reasonable to suppose that the males
+and females within a litter have independent weights?
+
+<p> (b) Is there a significant difference between the weights of
+newborn females and newborn males littermates?  Conduct this test by
+considering the female and male littermates to be <em>matched
+pairs</em>, and compute a difference for each litter. Do this by hand
+and verify with SPSS.  What is the effect size and power of this test?
+
+<p> (c) Do you notice any relationship between weights of littermates
+that is not captured by the comparisons of means?
+
+</ol>
+
+<br clear="all"><p><hr>
+</BODY>
+</font>
+</HTML>
+
+
+
+
+
+

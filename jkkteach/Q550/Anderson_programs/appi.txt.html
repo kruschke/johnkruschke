@@ -1,0 +1,405 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                               Appendix I
+         Character Based Demonstration of the Linear Associator
+
+
+     AmCharDemo demonstrates how well the linear associator works
+when it is given state vectors based on character strings.  (Not very 
+well!)  This data representation is very demanding since a single
+sign error will change the character.  The program requires a file of 
+ASCII Character strings.  It will prompt for the filename of the file 
+containing the strings.  We have provided file test.txt which generated 
+the example used in Chapter 7.  These strings are converted into state 
+vectors, associated, using the linear associator, and tested, with the 
+resulting state vectors being reinterpreted into character strings to 
+check for accuracy. 
+
+     The program can also prompt for an interpretation threshold if 
+the appropriate comment brackets are removed from PROCEDURE Initialize.  
+Threshold is set to zero otherwise.   Vector elements whose absolute value
+is less than the threshold will result in non-printing characters.
+Adjusting the threshold (between 0 and 1) will let the network show 
+characters of which it is very sure (higher threshold) and less sure 
+about (lower threshold).
+
+-------------------------------------------------------------------
+
+PROGRAM AmCharDemo (Input, Output, Stimuli);
+
+CONST Dimensionality       = 200;
+      Number_of_characters =  25;
+
+Type Vector  =  ARRAY [1..Dimensionality] OF REAL;
+     String  =  ARRAY [1..Number_of_characters] OF CHAR;
+    
+     Matrix           = ARRAY [1..Dimensionality,
+                               1..Dimensionality] OF REAL;
+
+VAR  I,J, 
+     Number_of_associations : INTEGER;
+     A, Delta_A             : Matrix;
+     Stimuli                : TEXT; 
+     File_name              : VARYING [40] OF CHAR;
+     Output_vector          : Vector;
+     Eta,
+     Threshold              : REAL;
+     F_string,
+     G_string,
+     Input_string,
+     Interpretation         : String;
+     F_set,
+     G_set                  : ARRAY  [1..100] OF Vector;
+
+FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+    VAR             I: INTEGER;
+     Sum_of_products : REAL;
+    BEGIN
+    Sum_of_products := 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+    Inner_product:= Sum_of_products;
+    END;
+
+FUNCTION Vector_length (Vector_1: Vector): REAL;
+    VAR Sum_of_Squares: REAL;
+                     I: INTEGER;
+    BEGIN
+    Sum_of_Squares:= 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+    Vector_length:= SQRT (Sum_of_Squares);
+    END;
+
+PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+    VAR Length_of_vector_in: REAL;
+        I                  : INTEGER;
+        Vector_in_is_zero  : BOOLEAN;
+    BEGIN
+    Vector_out:= Vector_in;
+    Length_of_vector_in := Vector_length (Vector_in);
+    IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                 ELSE Vector_in_is_zero := FALSE;
+    IF Vector_in_is_zero 
+       THEN BEGIN
+            WRITE  ('Normalized zero vector!');
+            Vector_out:= Vector_in;  {Make Vector_out the zero vector.}
+            END       {Programming note: Watch out! no semicolon here!}
+       ELSE FOR I:= 1 TO Dimensionality DO
+            Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+    END;
+
+FUNCTION Vector_cosine (Vector_1, Vector_2: Vector): REAL;
+    VAR Normal_vector_1, Normal_vector_2: Vector;
+    BEGIN
+    Normalize (Vector_1, Normal_vector_1);
+    Normalize (Vector_2, Normal_vector_2);
+    Vector_cosine:= Inner_product (Normal_vector_1,Normal_vector_2);
+    END;
+    
+PROCEDURE Matrix_times_vector (A: Matrix; F: Vector;
+                                      VAR G: Vector);
+
+    {This PROCEDURE forms the product Af = g where }
+    {both f and g are column vectors.              }
+
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO G[I]:= 0;   {Zero vector G.}
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO G[I]:= G[I] + A[I,J] * F[J];
+    END;
+
+
+PROCEDURE Add_matrices (Mx_1, Mx_2: Matrix; VAR Matrix_sum: Matrix);
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO
+            Matrix_sum [I,J] := Mx_1 [I,J] + Mx_2 [I,J];
+    END; 
+
+PROCEDURE Outer_product (G,F: Vector; VAR A: Matrix);
+    {                                                       }
+    {We want to generate an outerproduct matrix A so that   }
+    {            T                                          }
+    {     A = G F                                           }
+    {                                                       }
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO 
+            A[I,J] := G[I] * F[J];
+    END;
+
+PROCEDURE Blank_string (VAR S: String);
+     VAR I: INTEGER;
+     BEGIN
+     FOR I:= 1 TO Number_of_characters DO S[I]:=' ';
+     END;
+
+PROCEDURE Interpret (Threshold: Real; 
+                             V: Vector; 
+            VAR Interpretation: String);
+
+    Type Byte    =  ARRAY [1..8] OF INTEGER;
+         IVector =  ARRAY [1..Dimensionality] OF INTEGER;
+
+    VAR  IV : Ivector;
+          
+    PROCEDURE Make_Binary_Vector (V: Vector; VAR IV: Ivector);
+        VAR J: INTEGER;
+        BEGIN
+        FOR J:= 1 TO Dimensionality DO
+                BEGIN
+                IV[J]:= 0;
+                IF V[J] >=  ABS(Threshold) THEN IV[J]:= 1;
+                IF V[J] <= -ABS(Threshold) THEN IV[J]:=-1;
+                END;
+        END;
+
+    FUNCTION Count (B: Byte): INTEGER; {Counts zeros in byte.}
+        VAR I,Sum: INTEGER;
+        BEGIN
+        Sum:= 0;
+        FOR I:= 1 TO 7 DO IF B[I]=0 THEN Sum:= Sum +1; {Ignore parity bit.}
+        Count:= Sum;
+        END;
+ 
+    FUNCTION Byte_Interpret (B: Byte): CHAR; 
+        VAR I, 
+            Charnr: INTEGER;
+        Print_char: CHAR;
+        Ambiguous : BOOLEAN;
+        BEGIN
+          {First check to see if all byte elements + 1 or - 1.}
+        IF Count (B) > 0 THEN Ambiguous:= TRUE ELSE Ambiguous:= FALSE;
+          {Now convert to byte of zero and +1.}
+        FOR I:= 1 TO 8 DO IF B[I]=-1 THEN B[I]:= 0; 
+          {Convert to Char. number.}
+        Charnr:= 64*B[7] + 32*B[6] + 16*B[5] + 8*B[4] + 4*B[3] + 2*B[2] + B[1];
+          {Special cases.}
+        IF (Charnr <  32) THEN Print_char := '#'    {Non-printing character. }
+                          ELSE Print_char := CHR (Charnr);  {Print character.}
+        IF (Charnr =   0) THEN Print_char := '_';   {Zero convention is '_'  }
+        IF (Charnr = 127) THEN Print_char:= '_';    {Delete convention is '_'}
+        IF Ambiguous THEN Print_char:= '_';         {Ambiguous character.    }
+        Byte_Interpret:= Print_char;
+        END;
+ 
+    PROCEDURE Read_IVector_as_ASCII (IV: Ivector; 
+                     VAR Interpretation: STRING);
+        VAR I,J: INTEGER;
+            B  : BYTE;
+        BEGIN
+        FOR J:= 0 TO (Number_of_characters - 1) DO 
+                BEGIN
+                {Next line flips order of vector elements.}
+                FOR I:= 1 TO 8 DO B[ 9 - I]:= IV[ J*8 + I]; 
+                Interpretation [(J+1)]:= Byte_Interpret (B);
+                END;
+         END;
+ 
+    BEGIN    {Interpret procedure}
+    Make_Binary_Vector (V, IV);
+    Read_IVector_as_ASCII (IV, Interpretation);
+    END;     {Interpret procedure.}
+
+PROCEDURE Make_stimulus (Input_string : String; 
+                     VAR Output_Vector: Vector);
+
+    Type Byte    =  ARRAY [1..8] OF INTEGER;
+         IVector =  ARRAY [1..Dimensionality] OF INTEGER;
+
+    VAR B: Byte;
+
+    PROCEDURE Zero_Byte (VAR B: Byte);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 8 DOWNTO 1 DO B[I]:= 0;
+       END;
+
+    PROCEDURE Nr_to_Byte (Nr: INTEGER; VAR B: BYTE);
+       VAR I, 
+           Power_of_2, 
+           Remainder, 
+           Parity       : INTEGER;
+       BEGIN
+       IF Nr > 128 THEN WRITELN ('Too large. ASCII conversion fails.'      );
+       IF Nr < 0   THEN WRITELN ('Negative number. ASCII conversion fails.');
+       Remainder:= Nr;    Parity:= 0;     Power_of_2:= 256;
+       FOR I:= 8 DOWNTO 1 DO {msb in B[8], lsb in B[1]}
+              BEGIN
+              Power_of_2:= Power_of_2 DIV 2;
+              IF ( (Remainder - Power_of_2) <  0 ) THEN B[I]:= -1;
+              IF ( (Remainder - Power_of_2) >= 0 ) THEN
+                     BEGIN
+                     B[I]:= 1;
+                     Remainder:= Remainder - Power_of_2;
+                     Parity:= Parity + 1;
+                     END;
+              END;
+       IF ODD (Parity) THEN B[8]:= 1 ELSE B[8]:= -1;
+       END;
+
+     PROCEDURE Add_Byte_to_Vector (VAR V: VECTOR; I: INTEGER; B: BYTE);
+       VAR J: INTEGER;
+       BEGIN
+       FOR J:= 1 TO 8 DO V[(I-1)*8 + J ]:= B [9-J];
+       END;
+
+   BEGIN {Make_stimulus}
+   FOR I:= 1 TO Number_of_characters DO
+       BEGIN
+       Nr_to_byte (ORD (Input_string [I]),B);
+       IF (Input_string[I] = '_') THEN Zero_byte(B);
+       Add_byte_to_vector (Output_vector, I ,B);
+       END;
+   END;  {Make_stimulus}
+
+PROCEDURE Write_string (S: String);
+   VAR I: INTEGER;
+   BEGIN
+   FOR I:= 1 TO Number_of_characters DO WRITE (S[I]);
+   END;
+
+PROCEDURE Read_stimuli;
+   VAR Input_line             : VARYING [80] OF CHAR;
+       Input_string           : String;
+
+   PROCEDURE Read_input_line;
+      VAR I : INTEGER;
+      BEGIN
+      Blank_string (Input_string);
+      READLN (Stimuli, Input_line);
+      IF (Length (Input_line) < Number_of_characters) 
+       THEN 
+       FOR I:= 1 TO Length(Input_line) DO Input_string[I]:= Input_line[I]
+       ELSE FOR I:= 1 TO Number_of_characters DO Input_string[I]:= Input_line[I];
+      END;
+
+   BEGIN
+   OPEN (Stimuli, File_name, OLD);
+   RESET (Stimuli);
+   Number_of_associations:= 0;
+   REPEAT 
+     Number_of_associations:= Number_of_associations + 1;
+     READLN (Stimuli);  {First line of association is a blank line.}
+     Read_input_line;  {Second line is the F stimuli. }
+     Make_stimulus (Input_string, F_set [Number_of_associations]);
+     Read_input_line;  {Third line is the G stimuli.}
+     Make_stimulus (Input_string, G_set [Number_of_associations]);
+   UNTIL EOF (Stimuli);
+   CLOSE (Stimuli);
+   END;
+
+PROCEDURE Associate (F,G : Vector);
+   BEGIN
+   Outer_product (G, F, Delta_A);
+   Add_matrices (A, Delta_A, A);
+   END;
+
+PROCEDURE Test_whole_set;
+  VAR I: INTEGER;
+  BEGIN
+  FOR I:= 1 TO Number_of_associations DO
+      BEGIN
+      Matrix_times_vector (A, F_set [I], Output_vector);
+      Interpret (0,         F_set [I], F_string);
+      Interpret (Threshold, G_set [I], G_string);
+      Interpret (Threshold, Output_vector, Interpretation);
+      WRITELN;
+      WRITELN (I:2,
+              '.   Cosine: ', Vector_cosine (Output_vector, G_set [I]):6:5,
+              '.   Length: ', Vector_length (Output_vector):6:5);
+      WRITE ( ' Input          ==> '); Write_string (F_string); WRITELN;   
+      WRITE ( ' Desired Output ==> '); Write_string (G_string); WRITELN;   
+      WRITE ( ' Actual Output  ==> '); Write_string (Interpretation); WRITELN;
+      END;
+  END;
+
+PROCEDURE Initialize;
+  VAR I,J: INTEGER;
+  BEGIN
+  WRITELN ('Demonstration of Associative Memory.'                      );
+  WRITELN ('Reads character vectors from a file.  Learns and recalls ' );
+  WRITELN ('the pairs of associations.'                                );
+  WRITELN;
+  WRITE   ('File name of stimuli : ');  READLN (File_name);
+  WRITE   ('Threshold            : ');  READLN (Threshold);
+  Eta:= 1/SQRT(Dimensionality);   {Learning constant. This is length of  }
+                                  {a vector completely composed of +1 and}
+                                  {-1.                                   }
+  Read_stimuli;
+  FOR I:= 1 TO Number_of_associations DO
+      FOR J:= 1 TO Dimensionality DO
+          F_Set[I][J]:= F_Set[I][J]*Eta;
+
+  {Initialize matrices.}
+  FOR I:= 1 TO Dimensionality DO 
+      FOR J:= 1 TO Dimensionality DO
+          BEGIN
+          A[I,J]:= 0;
+          Delta_A[I,J]:= 0;
+          END;
+  END;
+ 
+
+BEGIN  {Main Program}
+Initialize;
+WRITELN ('Threshold: ', Threshold:6:2);
+WRITELN ('Correct length of output vectors: ', SQRT(Dimensionality):8:5);
+FOR I:= 1 TO Number_of_associations DO 
+    BEGIN
+    Associate (F_Set [I], G_set [I]);
+    WRITELN ('After ', I:2,' learned associations.');
+    Test_whole_set;
+    WRITELN;
+    END;
+END.   {Main Program}
+
+--------------------------------------------------------------------
+            File test.txt used for testing the program.
+--------------------------------------------------------------------
+1234567890123456789012345  (A template for writing characters.)
+  Abbott and Costello
+    Laurel and Hardy
+2
+  Ludwig von Beethoven
+ Wolfgang Amadeus Mozart
+3
+2 4 6 8 10 12 14 16 18 20 
+A list of ten even numbers 
+4
+qwertyuiopasdfghjklzxcvb
+Keys in keyboard order  
+5
+Capital of Rhode Island
+Providence,thelargestcity
+6
+ASDF1234QWER5678ZXCV6789/?
+A bunch of random characters
+
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

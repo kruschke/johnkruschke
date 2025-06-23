@@ -1,0 +1,105 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 4, Due Wednesday Sept 28, 2005.
+<!--
+<br>UNDER CONSTRUCTION!
+-->
+
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and student ID number (not your SS number). On all subsequent sheets, that have your answers, write only your student ID number (not your SS number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the photocopy. (Of course, you might want to keep another copy for yourself!) The copy, with the cover page removed, will be used for peer-grading.
+
+<li>
+Show your work. When solving applied problems, first express the solution or method in terms of general formulas, then plug in specific numbers to get a specific numerical solution. Annotate the progression of calculations so that a reader can understand why you are doing what you are doing.
+
+
+<ol>
+<p>
+Consider two models, denoted H1 and H2:
+
+<br><center>
+<br>H1: p(y|m,s) = (1/(s*sqrt(2*pi))) * exp( -.5 * ( (y-m)/s )^2 )
+<br>
+<br>H2: p(y|m,s) = (1/(s*2)) * exp( -abs( (y-m)/s ) )
+</center>
+<br>For both models, m can be any real number, and s>0. H1 is the
+normal distribution, and H2 is the exponential distribution.
+
+<p>Consider a comb over m that goes from -50 to +50 at increments of
+0.1, and a comb over s that goes from 0.001 to +50 at increments of
+0.1. (Think: When the combs are crossed to form a joint parameter space, how
+many grid points are there?)
+
+<p>Assume non-informative priors. Thus, for H1, assume that p(m) is
+proportional to 1 and p(s) is proportional to 1/s^2 [yes, 1/s^2], and p(m,s)=p(m)*p(s). For H2, assume
+that p(m) is proportional to 1 and p(s) is proportional to 1/s [yes, 1/s], and p(m,s)=p(m)*p(s).
+
+<p>Suppose we gather five data points at random and we find these
+values: D = { -25, -23, -20, 5, 25 }.
+
+<p>
+<li>Estimation:
+
+<br>(A) What are the values of the mean and median of the data, and how do they compare with the values of m that maximize the likelihood for H1 and H2? (R code from previous assignments can be adapted to compute the likelihoods and maxima.)
+
+<br>(B) Show a contour graph (not a "persp" graph) of the joint posterior density of m and s, for H1 and for H2. (R code from previous assignments can be adapted to compute the posterior distribution.)
+
+<br>(C) What values of m and s maximize the joint posteriors for H1 and H2?
+
+<br>(D) Show a contour graph of the 95% confidence region in a separate plot, for both H1 and H2. Adapt the <a href="ConfidenceRegion.R">linked R code</a> to find the confidence region. (This confidence region is the "region of highest posterior density" described in the last paragraph of p.38 of the textbook.)
+
+
+<p>
+<li>Prediction:
+
+<br>We want to determine the probability of new data values, now that we have a posterior distribution over parameter values from previous data. We will do numerical approximation of the integral in Equation 1.3, p. 8, of the textbook. We will use a comb over y values that goes from -50 to 50 in increments of 1.0 [yes, 1.0].
+
+<br>(A) For each y value in the comb, determine p(y) by summing p(y|m,s) * p(m,s) * dm*ds over the posterior grid. In that calculation, p(m,s) comes from the posterior distribution you found in the previous exercise; a more precise expression would be p(m,s|D). Moreover, p(m,s) is a probability density, and multiplying it by dm*ds converts it to the probability of a grid pixel. Plot a graph of p(y) as a function of y.
+
+<br>(B) What is the value of y with the highest probability? What is the expected value of y, i.e., what is the mean of the distribution p(y)? Show the code snippets that you used to find the expected value.
+
+
+<p>
+<li>Model Comparison:
+
+<br>We want to know which model is more probable, given the data. As described in the first lecture,
+<center>
+p(H1|D) = p(D|H1) p(H1) / ( p(D|H1) p(H1) + p(D|H2) p(H2) )
+</center>
+and
+<center>
+p(H2|D) = p(D|H2) p(H2) / ( p(D|H1) p(H1) + p(D|H2) p(H2) )
+</center>
+hence
+<center>
+p(H1|D) / p(H2|D) = [ p(D|H1) / p(D|H2) ] [ p(H1) / p(H2) ] .
+</center>
+If we set neutral priors on the models, i.e. p(H1) = p(H2) = 0.5, then that becomes
+<center>
+p(H1|D) / p(H2|D) = p(D|H1) / p(D|H2) .
+</center>
+Now, p(D|H) = Integral dm*ds p(D|m,s,H) p(m,s,H). You'll recognize that as the denominator of Bayes' formula for parameter estimation. Fortunately, you already computed that integral, via numerical approximation, when normalizing the posterior in the first ("Estimation") exercise.
+
+<br>What is p(D|H1)? What is p(D|H2)? What is p(H1|D) / p(H2|D) ?  So, which model is a better model of the data?
+
+
+</ol>
+<p><hr>
+</body>
+</font>
+</html>
+
+
+

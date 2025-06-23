@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 2</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology<br>
+Homework 2, Due Tuesday 16 Sept. 2003.
+</h2>
+</center>
+
+<p><table border=1 cellpadding=10> <tr><td> <p><strong>SPSS syntax
+windows.</strong> Some of the exercises this week involve the use of
+SPSS to generate sampling distributions. Instead of manually rolling
+dice ourselves, we tell SPSS to randomly sample from a specified
+population. The commands that we use for this purpose are entered into
+an SPSS <em>syntax window</em>. To use syntax windows in SPSS, do the
+following.  Under menu Edit/Options click the Viewer tab. Then check
+the box by "Display commands in the log" (this will show you the SPSS
+commands in your output). Click Apply and Okay.
+
+
+<p>Copy the SPSS syntax files linked below into your own
+directory. (Click on the link, and your web browser will probably ask
+you what you want to do with the file. Just save it to whatever
+directory is appropriate for you. The web browser might instead
+display the text of the file. In this case, select/highlight all the
+text in the window, click "copy," and then "paste" into your own
+text-only editor, such as NotePad in Windows. In your text editor,
+save the file in your local directory. Or your web browser might know
+about .sps file extensions and immediately invoke SPSS from the syntax
+file. In this case, save the syntax file from the File menu in SPSS.)
+
+
+<ul>
+
+<li><a href="samplemeanuniform.sps">SPSS syntax for generating
+sampling distribution of the mean, from a uniform
+population. (Filename <tt>samplemeanuniform.sps</tt>.)</a>
+
+<li><a href="samplez.sps">SPSS syntax for generating sampling
+distribution of <em>z</em>. (Filename <tt>samplez.sps</tt>.)</a>
+
+</ul>
+</td></tr></table>
+
+
+<ol>
+
+<p><li> (3 pts.) <strong>The central limit theorem.</strong> Load the
+file <tt>samplemeanuniform.sps</tt> into a syntax window in SPSS. To
+do this, click menu File/Open/Syntax, and browse to find the file you
+saved in your directory. When the file is open in an SPSS syntax
+window, then run the file (click menu Run/All).  <em>In lab section,
+be sure you understand what every line of the SPSS program does.</em>
+Print the output, and on the output itself write answers to the
+following questions: <br>On the graph labeled "Histogram of Sample
+Score," why is the histogram roughly flat (uniform)?  <br>On the next
+graph, labeled "R1," why are the end bars of the histogram about half
+the height of all the interior bars of the histogram?  <br>Compare the
+three "Interactive Graphs." For each of the three histograms, how many
+samples contributed to the graph? For each histogram, state the size
+of the sample. What is the shape of the first histogram, and is it
+like the shape of the population it came from? What is the shape of
+the third histogram, and is it like the shape of the population it
+came from?<br>Suppose that we have a real sample of nine values, and
+the mean of the sample is 0.75. Mark this value on the appropriate
+histogram. Do you retain or reject the hypothesis that the sample came
+from a population that is uniformly distributed over the interval
+[0,1]?
+
+<p><li> (2 pts.) <strong>Sampling distribution of <em>z</em>.</strong>
+Load the file <tt>samplez.sps</tt> Run the file.  <em>In lab section,
+be sure you understand what every line of the SPSS program does.</em>
+Print the output, and on the output itself write answers to the
+following questions: <br>Why is the graph labeled "Histogram of Sample
+Mean" broader than the graph labeled "Histogram of Sample Z-score"?
+Theoretically, what should be the standard deviation of the graph
+labeled "Histogram of Sample Mean"?  Theoretically, what should be the
+standard deviation of the graph labeled "Histogram of Sample Z-score"?
+<br>After the "Frequencies" header in the output, there is a table
+that reports values of various percentiles in the Z-score
+distribution. Mark these percentiles in the corresponding
+histograms. Next to the table, annotate these values with the
+theoretically correct values.  <br>Suppose we have a real sample of
+three values, and the mean of the sample is 4.0. Mark this value in
+the histogram of sample means. What is the Z-score of this sample?
+Mark the Z-score in the histogram of sample Z-scores. Do you retain or
+reject the hypothesis that the sample came from a population that is
+normally distributed with mean=0.0 and SD=3.5?
+
+
+
+<p><li> (2 pts.)  Suppose we model a population of <em>continuous</em>
+values as a <strong>normal</strong> distribution with mean &mu; and
+standard deviation &sigma;.  Determine the maximal likelihood estimates
+of &mu; and &sigma; for the following two sets of scores sampled from the
+modeled population: <br>&nbsp;&nbsp;Set A: 1, 2, 3, 4, 5.
+<br>&nbsp;&nbsp;Set B: 1, 3, 3, 3, 5.
+
+
+<p><li> (2 pts.) Suppose we model a population of <em>integer</em>
+values as a <strong>uniform</strong> distribution.  The shape of a
+uniform distribution over discrete values is a bunch of spikes of
+equal heights.  An example is the probability distribution of a fair,
+six-sided die.  In general, the probability of a score is zero until
+the value gets up to <em>min</em>, at which point the probability
+rises to a fixed level until the value of the score gets to
+<em>max+1</em>, at which point the probability drops to zero again.
+Because the total probability of all possible values must add to 1.0,
+the fixed level of probability between <em>min</em> and <em>max</em>
+is 1/(<em>max</em>+1-<em>min</em>). For example, in the case of the
+fair six-sided die, <em>min</em>=1, <em>max</em>=6, and the
+probability of values from 1 to 6 is 1/6.  Consider the following
+scores: <br>&nbsp;&nbsp;Set A: 1, 2, 3, 4, 5.  <br>&nbsp;&nbsp;Set B:
+1, 3, 3, 3, 5.  <br>If we let <em>min</em>=0 and <em>max</em>=10, what
+is the probability of the scores in Set A?  If we let <em>min</em>=2
+and <em>max</em>=4, what is the probability of the scores in Set A?
+What are the maximal likelihood estimates of <em>min</em> and
+<em>max</em> for the scores in Set A?  What are the maximal likelihood
+estimates of <em>min</em> and <em>max</em> for the scores in Set B?
+<br>(For your personal edification, compare these results with the
+previous exercise.)
+
+
+
+<p><li> (2 pts.) Suppose someone claims that a certain six-sided die,
+(with sides numbered 1 through 6) is biased, such that the probability
+of rolling the die and getting the side with value <em>x</em> is
+<em>x<sup>2</sup>/91</em>.  Suppose that we roll the die twice and get value
+1 both times.  What is the probability of this happening, given the
+claim?  Do you disbelieve the claim?  Suppose that an alternative claim
+is that the probability of rolling value <em>x</em> is (7-x)/21.  What
+is the probability of getting two rolls of 1, given this alternative
+claim?  Do you disbelieve the alternative claim?
+
+
+<p><li> (4 pts.) p. 186, #17.  
+ 
+<br>Do not do the very last part, regarding explaining your answer to a
+person who has never had a course in statistics.
+
+
+<p><li> (4 pts.) p. 214, #16.
+
+<br>Do not do the very last part, regarding explaining your answer to
+a person who has never had a course in statistics. (If you want more
+practice doing this, try p. 214, #17.)
+
+<p><li> (2 pts.) p. 248, #13, parts a, d, f and g only.
+
+<p><li> (4 pts.) p. 248, #20, parts a and b only.
+
+<br><em>Also answer this: According to the assumed distribution of
+"alone dreams" per month in the general population, what percentage of
+people have fewer than zero such dreams per month?</em>
+
+(If you want more practice doing this, try p. 248, #19, parts a and b only.)
+
+
+</ol>
+
+<p><hr>
+</BODY>
+</HTML>
+
+

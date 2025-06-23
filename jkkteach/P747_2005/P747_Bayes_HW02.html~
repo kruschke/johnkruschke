@@ -1,0 +1,53 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 1, Due Wednesday Sept 7, 2005.
+
+<p>General directions:
+<li>
+Make a cover sheet, without any answers, that has your name and student ID number (not your SS number). On all subsequent sheets, that have your answers, write only your student ID number (not your SS number, and not your name).
+<li>
+Make a photocopy of your homework, and hand in the original and the photocopy. (Of course, you might want to keep another copy for yourself!) The copy, with the cover page removed, will be used for peer-grading.
+<li>
+Show your work. When solving applied problems, first express the solution or method in terms of general formulas, then plug in specific numbers to get a specific numerical solution. Annotate the progression of calculations so that a reader can understand why you are doing what you are doing.
+
+<ol>
+
+<p>
+<li>
+A standard deck of playing cards has 52 cards. 
+There are 13 values: 2, 3, 4, ..., 8, 9, 10, J, Q, K, A.
+Each of the 13 values comes in one of each of 4 suits: club, diamond, heart, spade. A pinochle deck of playing cards has 48 cards. There are 6 values: 9, 10, J, Q, K, A. Each of the 6 values comes in two of each of the 4 suits. We pull a deck at random from a cluttered game box. We know that there were 6 standard decks and 2 pinochle decks in the game box, and the deck we grabbed could have been any of those 8 decks with equal probability. We want to determine the probability that we grabbed a pinochle deck after drawing a card or two from the deck.
+
+<p>
+(A) Assuming the deck was previously well shuffled, we draw a card from the deck and find that it is a King of Hearts. What is the probability that the deck is a pinochle deck?
+
+<p>
+(B) Continuing from part A, we replace the first drawn card back into the deck and re-shuffle. We then draw another card from the deck, and find that it is a Queen of Diamonds. What is the probability that the deck is a pinochle deck?
+
+<p>
+(C) Suppose we have not yet drawn any cards from the deck. We now draw two cards (with replacement of the first card before drawing the second), and they are both Ace of Spades. What is the probability that the deck is a pinochle deck?
+
+<p>
+(D) Suppose we have not yet drawn any cards from the deck. We now draw two cards (with replacement of the first card before drawing the second), and they are both Six of Clubs. What is the probability that the deck is a pinochle deck?
+
+<p>
+<li>
+Suppose you are standing by a pond and you are skipping stones across its surface. You ponder the probability that a skipped stone will land with the same side up as when you threw it. Let &theta; be the probability that the stones land same side up. Your prior belief is that &theta; is about 0.5, but could be higher or lower, and a good description of your prior belief is p(&theta;) = (1-&theta;) &theta;, normalized appropriately. You throw two stones and find that they both land with the same side up as when thrown. What is the posterior probability distribution on &theta;? (Evaluate the denominator integral if you can, but in any case, express it clearly and simplify as much as possible.)
+
+
+
+</ol>
+
+
+<p><hr>
+</body>
+</font>
+</html>

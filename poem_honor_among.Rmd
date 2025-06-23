@@ -1,0 +1,59 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Honor Among Sleeves
+<br>
+
+<!-- 264 words -->
+
+All these sleeves are overwhelming. How can\
+a person choose the less bad hole to dig,\
+the word that won't offend if unspoken,\
+which nostril vents less carbon, the too big\
+or too small gesture of disagreement,\
+which eyebrow to raise, or whether to let\
+fall the other shoe, whether to lament\
+or to rejoice, to forgive or forget?\
+I watched an hourglass for clues of how\
+to discern which grain of sand best merits\
+a moment's shove from above to below,\
+but the judgment passed without a care, its\
+ruling like the wind I listened to for\
+days, trying to infer how it decides\
+which way to blow, while I just pray in four\
+directions, hold my bated breath inside.\
+I have learned not to open a carton\
+of eggs; it is impossible to choose\
+which hens' efforts should be granted pardon\
+while others win cracking -- or did they lose?\
+Such presumptuous advice men dispense,\
+to "put my best foot forward," as if rank-\
+ing toes and insteps is just common sense,\
+and calling one foot "worst" is merely frank.\
+So I'm stuck with my feet in the quicksand\
+of this immobilizing awareness,\
+this hard fact: the journey of a thousand\
+miles begins with a single unfairness.\
+And now it is unbearable to look\
+you in the eye, to choose which window to\
+surveil, and wonder whether I mistook\
+which camera was taking the photo,\
+and if I close my eyes, imagining\
+to kiss you in the dark, I agonize\
+wanting all of you at once: beginning\
+anywhere is such injustice, a lie.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://blueunicorn.org/" , journal_name = "*Blue Unicorn*" , publication_info = "Fall 2025 (posted pre-publication with permission)")`
+
+*Notes:* 
+Even the smallest decision is fraught with moral weight. To choose one as better is to judge the other as worse, even if no such demerit is intended. Meritocracy feels arbitrary and mendacious. Can a person remain honorable even choosing which sleeve to put on first? By the way, notice every line is *decasyllabic*, and every four lines follow an ABAB rhyme scheme.
+
+`r next_link("poem_honor_among.html")`
+
+</small>

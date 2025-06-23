@@ -1,0 +1,484 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+<h2>
+Cut Your Losses, Episode 2.
+</h2>
+</center>
+
+
+<p>As you recall from our <a href="cutloss1.html">last episode</a>, we
+found that the fixed number 7 was the value that yielded, in the long
+run, the smallest residual variance from the sum of two rolled dice.
+Residual variance was measured by the squared difference between the
+rolled value and the number 7.
+
+<p>In general, the best guess of the outcome is really a
+<em>description</em> of the <em>central tendency</em> of outcomes.
+When a description is formalized mathematically, it is a
+<em>model</em>.
+
+Our model is as follows: Any roll of the dice is the central tendency
+plus some deviation, or residual. We denote the central tendency as
+the letter M, a given outcome as y<sub>i</sub>, and the residual error
+as e<sub>i</sub>.  Then our model of a given outcome is written:
+
+<center> y<sub>i</sub> = M + e<sub>i</sub> </center>
+
+The <em>best</em> choice for the value of M is that value which
+minimizes the residuals across multiple outcomes.  So, to determine
+the best value of M, we need first to decide how to measure the
+residuals across multiple outcomes.
+
+
+<p>In this episode of "cut your losses," we'll consider three ways to
+measure residual variance, and the consequences for the best value of
+M in our model.  For purposes of this exercise, the outcome we'll
+consider is not the sum of the dice, but the <em>product</em> of the
+dice.
+
+<p><hr width=70%>
+
+<p><table>
+
+<tr><td>
+<p>Roll the dice 10 times.  Before each roll, guess the outcome.
+Enter the results in the table below.  Notation: Outcome of die 1 is
+D1; outcome of die 2 is D2; product of the outcomes is D1xD2.
+</tr></td>
+
+<tr><td>
+&nbsp;
+</tr></td>
+
+<tr><td>
+<p>
+<center>
+<table border=1 cellpadding=10>
+<tr><td colspan=5 align=center>
+<strong>Residual variance measured as squared deviation:</br> 
+(outcome - model)<sup>2</sup></strong>
+</td></tr>
+<tr>
+<td>Roll #</td>
+<td>Your<br>Guess</td>
+<td>Actual<br>D1xD2</td>
+<td>Residual Variance from Guess:<br>(D1xD2 - Guess)<sup>2</sup></td>
+<td>Residual Variance from 12.25:<br>(D1xD2 - 12.25)<sup>2</sup></td>
+</tr>
+<tr>
+<td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr></tr>
+<tr>
+<td colspan=3 align=right>Total:</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</center>
+</tr></td>
+
+<tr><td>
+&nbsp;
+</tr></td>
+
+<tr><td>
+<p>Which model, your guess or 12.25, yielded the lower total residual
+variance?
+</tr></td>
+
+<tr><td>
+&nbsp;
+</tr></td>
+
+<tr><td>
+<p>Did 12.25 yield the lower residual on <em>every</em> roll?  If it
+did, <em>must</em> it?
+</tr></td>
+
+<tr><td>
+&nbsp;
+</tr></td>
+
+<tr><td>
+<p>Did 12.25 yield the lower <em>total</em> residual for every person in
+your discussion class?  If it did, <em>must</em> it?
+</tr></td>
+
+<tr><td>
+&nbsp;
+</tr></td>
+
+<tr><td>
+<p>Is there any other value that will yield as low a residual as 12.25?
+</tr></td>
+
+<tr><td>
+&nbsp;
+</tr></td>
+
+</table>
+
+<p><hr width=70%>
+
+<p>Roll the dice 10 times.  Before each roll, guess the outcome.  (One
+interesting guess is the fixed value 12.25.)  Enter the results in the
+table below.  Notation: Outcome of die 1 is D1, outcome of die 2 is
+D2.  abs(y) means the absolute value of y.
+
+<p>
+<center>
+<table border=1 cellpadding=10>
+<tr><td colspan=5 align=center>
+<strong>Residual variance measured as absolute deviation:<br> 
+abs(outcome - model)</strong>
+</td></tr>
+<tr>
+<td>Roll #</td>
+<td>Your<br>Guess</td>
+<td>Actual<br>D1xD2</td>
+<td>Residual Variance from Guess:<br>abs(D1xD2 - Guess)</td>
+<td>Residual Variance from 10.0:<br>abs(D1xD2 - 10.0)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr></tr>
+<tr>
+<td colspan=3 align=right>Total:</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</center>
+
+<p>Which model, your guess or 10.0, yielded the lower total residual
+variance?
+
+<p>Did 10.0 yield the lower residual on <em>every</em> roll?  If it
+did, <em>must</em> it?
+
+<p>Did 10.0 yield the lower <em>total</em> residual for every person in
+your discussion class?  If it did, <em>must</em> it?
+
+<p>Is there any other value that will yield as low a residual as 10.0?
+
+<p><hr width=70%>
+
+<p>Roll the dice 10 times.  Before each roll, guess the outcome.  (One
+interesting guess is the fixed value 10.0.)  Enter the results in the
+table below.  Notation: Outcome of die 1 is D1, outcome of die 2 is
+D2.
+
+<p>
+<center>
+<table border=1 cellpadding=10>
+<tr><td colspan=5 align=center>
+<strong>Residual variance measured as number of deviations:<br> 
+0 if outcome = model, 1 otherwise</strong>
+</td></tr>
+<tr>
+<td>Roll #</td>
+<td>Your<br>Guess</td>
+<td>Actual<br>D1xD2</td>
+<td>Residual Variance from Guess:<br>0 if D1xD2 = Guess, 1 otherwise</td>
+<td>Residual Variance from 6.0:<br>0 if D1xD2 = 6.0, 1 otherwise</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr></tr>
+<tr>
+<td colspan=3 align=right>Total:</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</center>
+
+<p>Which model, your guess or 6.0, yielded the lower total residual
+variance?
+
+<p>Did 6.0 yield the lower residual on <em>every</em> roll?  If it
+did, <em>must</em> it?
+
+<p>Did 6.0 yield the lower <em>total</em> residual for every person in
+your discussion class?  If it did, <em>must</em> it?
+
+<p>Is there any other value that will yield as low a residual as 6.0? 
+
+<p><hr width=70%>
+
+<p>Now you will generate a probability distribution for the possible
+outcomes of the dice.  There are 36 equally likely outcomes for a role
+of the dice, as indicated in table below.  In the table, enter the
+<em>product</em> of D1 and D2.
+
+<p>
+<center>
+<table border=1 cellpadding=10 width=50%>
+<tr>
+<td rowspan=2 valign=bottom>D1</td>
+<td colspan=6 align=center>D2</td>
+</tr>
+<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+<tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</center>
+
+<p>Now make a bar graph of the probability of each possible outcome:
+
+<img src="cutloss2.gif" width=465 height=187 align=center>
+
+<!--
+<pre>
+
+ p(x)*36
+
+   ^
+  4+
+   |
+  3+
+   |
+  2+
+   |
+  1+
+   |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+->
+     1 2 3 4 5 6 7 8 9  11  13  15  17  19  21  23  25  27  29  31  33  35
+
+                                     D1 x D2
+</pre>
+-->
+
+<p>
+
+<p>What is the mean of this distribution?  Mark it on the graph. 
+Which measure of residual variability is minimized when M is the mean?
+
+<p>What is the median of this distribution?  Mark it on the graph.
+Which measure of residual variability is minimized when M is the median?
+
+<p>What is/are the mode/s of this distribution?  Mark it/them on the graph.
+Which measure of residual variability is minimized when M is a mode?
+
+
+<br><br><br>
+<hr>
+
+</BODY>
+</HTML>

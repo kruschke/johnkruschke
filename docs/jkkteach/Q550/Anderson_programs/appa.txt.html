@@ -1,0 +1,395 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                            Appendix A. 
+                       Utility Procedures and 
+           Types, Functions and Procedures from Chapter 3
+                         Program TESTVECTOR
+
+
+
+
+     Once, when I did a presentation on neural network technology on 
+satellite TV, I commented that I would be wary of commercial network 
+packages for three main reasons. First, neural network code is not 
+difficult to write.  Second, the field has few algorithms that are 
+well understood enough and stable enough to be "canned."  If you don't 
+write the code yourself, and don't have access to the source code, 
+then it is very difficult to make the modifications that will probably 
+be necessary.  Third, a point that is made repeatedly throughout this 
+book, commercial packages rarely help you with the most important part 
+of the application: the data representation fitted to the problem.
+
+     These comments caused a heated comment from one viewer on an
+evaluation form about the arrogance of academics who don't appreciate 
+the needs of practicing engineers.  However, at this time any neural 
+net application is a research application.  Anyone who uses a new 
+algorithm that they do not fully understand, whose workings are
+intrinsically statistical, and which was written by someone else, is 
+asking for trouble.  ("Sorry about the patient, judge.  Our neural 
+network diagnostic program gets it wrong sometimes and we aren't quite
+sure why.")
+
+     These appendices provide code fragments for a number of neural
+network primitive operations as well as several test programs.  The 
+fragments are written in Pascal.  The specific version of Pascal used 
+was VMS Pascal, running on Digital Equipment Corporation VAX 
+computers.  However, most programs will also compile and run with a 
+few minor modifications in Turbo Pascal.  Major problems using these 
+programs on PC's will generally involve array size: the size of 
+vectors and matrices may have to be drastically cut to fit in many PC 
+memories.  Computing speed is often less of a problem nowadays than 
+fitting large arrays in memory.  The larger programs described in the 
+last half of the book really require scientific workstations with 
+large, efficiently managed  memories and fast CPUs to run properly.  
+
+     One comment is in order about the use of Pascal.  Among serious 
+computer people Pascal is not very popular.  It is considered a 
+"bondage and discipline" language, according to the (highly 
+recommended) "New Hacker's Dictionary" (Cambridge, MA: MIT Press).  
+This means that Pascal does strict type checking and does not allow 
+the kind of freedom to bend rules of type and syntax found in 
+languages like C.  In this book the emphasis is on scientific 
+computation, specifically numerical simulations.  Scientific 
+programming usually involves straightforward numerical computation.  
+Clarity, readability, the ability to locate subtle errors, and the 
+ability to modify code long after the programs were written are 
+paramount virtues.  Pascal by its unforgiving nature enforces these 
+virtues more than any other common computer language.  I allow the use 
+of both Pascal and C in the neural modelling classes that gave rise to 
+this book.  My experience has been that students using C have far more 
+trouble with time consuming and hard-to-find bugs than students using 
+Pascal.  This is especially noteworthy since the students using C tend
+to be the more experienced programmers in the class, often computer 
+science majors.  Programs written in Pascal either don't work at all 
+or they work more or less correctly.  Bugs are relatively easy to fix, 
+once they are detected.  Even more, it is often possible to understand 
+what a Pascal PROCEDURE or FUNCTION is supposed to be doing years 
+after it was written, if only moderate care is taken in the use of 
+names. Properly written C code can also have these virtues, but for 
+some reason often does not.
+
+     Because visualization of complex systems is so important, we have 
+used crude character based graphics in a number of places in our 
+programs.  They are crude, but they get the job done.  Unfortunately, 
+the greater complexity of modern computer interfaces makes programming 
+anything to do with graphics now a job for professionals.  The 
+professional graphics look nicer, of course, but it is often difficult 
+to get these programs to operate in conjunction with simple test 
+programs of the kind we use throughout this book.  In terms of basic 
+visual understanding of the behavior of complex systems, the 
+attractive interfaces that now come with most computers are regressive 
+in that they make it much harder to do simple things than was the case 
+ten years ago.  I suspect, however, that the next few years will mark 
+the beginning of a golden age in the visualization of complex systems.  
+Some remarkable programs are just starting to appear, specifically 
+designed to use graphics to facilitate understanding of complexity.  
+Until the day that it becomes trivial to make connections between 
+graphics and the output of simulation programs there will still be 
+a place for quick and dirty graphics, such as those we have used here.
+
+     Earlier versions of Turbo Pascal and a number of other Pascal 
+variants have a couple of useful PROCEDURES for screen control that we 
+use often in our programs.  One is called GoToXY  and the other is 
+ClrScr.  GoToXY directs the cursor to location X,Y on the screen.  
+Unfortunately, the (X,Y) locations on the screen are not exactly what
+you would think they would be, based on usual mathematical convention. 
+
+     The screen control programs GoToXY and ClrScr will run on any 
+standard ANSI terminal or terminal emulator, for example a VT100 or
+its successors.
+ 
+ 
+                               Columns = X
+
+                   X=  1    2    3    4     ...           80
+                       -------------------------------------|
+                Y = 1  | (1,1)                              |
+                    2  |                                    |
+       Rows = Y     3  |                                    |
+                    4  |                                    |
+
+                       ...
+
+                       |                                    |
+                   24  |                                    |
+                       |------------------------------------|
+
+
+----------------------------------------------------------------------------
+                          Screen Control Procedures
+
+PROCEDURE GoToXY (X,Y: INTEGER);  {X = column number, Y = row number.}
+        BEGIN
+        {This Procedure Assumes a VT-100 Terminal or  }
+        {equivalent is being used.                    }
+        WRITELN;
+        WRITE (CHR (27), '[');
+        IF Y<10 THEN WRITE (Y:1) ELSE WRITE (Y:2);
+        WRITE (';');
+        IF X<10 THEN WRITE (X:1) ELSE WRITE (X:2);
+        WRITE ('H');
+        END;
+
+
+PROCEDURE ClrScr;  {Erase screen, leave cursor at home.}
+        BEGIN
+        WRITE (CHR (27), '[f', CHR (27),'[2J');
+        END;
+
+
+-----------------------------------------------------------------------
+                         Procedures from Chapter 3
+-----------------------------------------------------------------------
+     PROGRAM Test_vectors (Input, Output);
+
+     CONST Dimensionality = 200;
+
+     TYPE  Vector = ARRAY [1..Dimensionality] OF REAL;
+
+     ...
+
+
+   PROCEDURE Add_Vectors (Vector_1, Vector_2: Vector; 
+                              VAR Vector_sum: Vector);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 1 TO Dimensionality DO 
+           Vector_sum [I] := Vector_1 [I] + Vector_2 [I];
+       END;
+
+
+   PROCEDURE Subtract_Vectors (Vector_1, Vector_2: Vector;
+                            VAR Vector_difference: Vector);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 1 TO Dimensionality DO
+           Vector_difference [I] := Vector_1 [I] - Vector_2 [I];
+       END;
+
+
+   FUNCTION Vector_length (Vector_1: Vector): REAL;
+       VAR Sum_of_Squares: REAL;
+                        I: INTEGER;
+       BEGIN
+       Sum_of_Squares:= 0;
+       FOR I:= 1 TO Dimensionality DO 
+         Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+       Vector_length:= SQRT (Sum_of_Squares);
+       END;
+
+
+   PROCEDURE Scalar_times_vector (Scalar: REAL; Vector_in: Vector;
+                                             VAR Vector_out: Vector);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 1 TO Dimensionality DO
+         Vector_out [I] := Scalar * Vector_in [I];
+       END;
+
+     
+   FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+      VAR               I: INTEGER;
+          Sum_of_products: REAL;
+      BEGIN
+      Sum_of_products := 0;
+      FOR I:= 1 TO Dimensionality DO 
+        Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+      Inner_product:= Sum_of_products;
+      END;
+
+
+   PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+      VAR Length_of_vector_in: REAL;
+          I                  : INTEGER;
+          Vector_in_is_zero  : BOOLEAN;
+      BEGIN
+      Vector_out:= Vector_in;
+      Length_of_vector_in := Vector_length (Vector_in);
+      IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                   ELSE Vector_in_is_zero := FALSE;
+      IF Vector_in_is_zero 
+         THEN WRITE  ('Normalized zero vector!')
+         ELSE FOR I:= 1 TO Dimensionality DO
+              Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+      END;
+
+
+   FUNCTION Vector_cosine (Vector_1, Vector_2: Vector): REAL;
+      VAR Normal_vector_1, Normal_vector_2: Vector;
+      BEGIN
+      Normalize (Vector_1, Normal_vector_1);
+      Normalize (Vector_2, Normal_vector_2);
+      Vector_cosine:= Inner_product (Normal_vector_1,Normal_vector_2);
+      END;
+
+-----------------------------------------------------------------------
+     Below is a very simple test program.  I have found it useful to see 
+if students can get simple Pascal programs to compile and run with 
+their own particular computer and Pascal implementation.  It also 
+provides a little practice in use of the editor if the computer is 
+unfamiliar.
+-----------------------------------------------------------------------
+
+
+     PROGRAM Test_vectors (Input, Output);
+
+     CONST Dimensionality = 8;
+
+     TYPE  Vector = ARRAY [1..Dimensionality] OF REAL;
+
+     VAR a,b,c,d,w2,w3,c1,z: Vector;
+
+     PROCEDURE Add_Vectors (Vector_1, Vector_2: Vector; 
+                                       VAR Vector_sum: Vector);
+         VAR I: INTEGER;
+         BEGIN
+         FOR I:= 1 TO Dimensionality DO 
+             Vector_sum [I] := Vector_1 [I] + Vector_2 [I];
+         END;
+
+     PROCEDURE Subtract_Vectors (Vector_1, Vector_2: Vector;
+                                     VAR Vector_difference: Vector);
+         VAR I: INTEGER;
+         BEGIN
+         FOR I:= 1 TO Dimensionality DO
+             Vector_difference [I] := Vector_1 [I] - Vector_2 [I];
+         END;
+
+     FUNCTION Vector_length (Vector_1: Vector): REAL;
+         VAR Sum_of_Squares: REAL;
+                          I: INTEGER;
+         BEGIN
+         Sum_of_Squares:= 0;
+         FOR I:= 1 TO Dimensionality DO 
+             Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+         Vector_length:= SQRT (Sum_of_Squares);
+         END;
+
+     PROCEDURE Scalar_times_vector (Scalar: REAL; Vector_in: Vector;
+                                    VAR Vector_out: Vector);
+           VAR I: INTEGER;
+           BEGIN
+           FOR I:= 1 TO Dimensionality DO
+               Vector_out [I] := Scalar * Vector_in [I];
+           END;
+     
+     FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+        VAR I: INTEGER;
+            Sum_of_products: REAL;
+        BEGIN
+        Sum_of_products := 0;
+        FOR I:= 1 TO Dimensionality DO 
+            Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+        Inner_product:= Sum_of_products;
+        END;
+
+     PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+        VAR Length_of_vector_in: REAL;
+            I                  : INTEGER;
+            Vector_in_is_zero  : BOOLEAN;
+        BEGIN
+        Vector_out:= Vector_in;
+        Length_of_vector_in := Vector_length (Vector_in);
+        IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                     ELSE Vector_in_is_zero := FALSE;
+
+        IF Vector_in_is_zero 
+          THEN BEGIN
+               WRITE  ('Normalized zero vector!');
+               Vector_out:= Vector_in;  {Make Vector_out the zero vector.}
+               END       {Programming note: Watch out! no semicolon here!}
+           ELSE FOR I:= 1 TO Dimensionality DO
+                Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+        END;
+
+     FUNCTION Vector_cosine (Vector_1, Vector_2: Vector): REAL;
+        VAR Normal_vector_1, Normal_vector_2: Vector;
+        BEGIN
+        Normalize (Vector_1, Normal_vector_1);
+        Normalize (Vector_2, Normal_vector_2);
+        Vector_cosine:= Inner_product (Normal_vector_1,Normal_vector_2);
+        END;
+
+     PROCEDURE Initialize;
+        BEGIN
+
+        {Values for test vectors.}
+
+        a[1]:=-2;  b[1]:=  4;  w2[1]:= 1;  w3[1]:= 1;  c1[1]:=1; z[1]:=0; 
+        a[2]:= 5;  b[2]:=  1;  w2[2]:=-1;  w3[2]:= 1;  c1[2]:=0; z[2]:=0;
+        a[3]:= 1;  b[3]:= -3;  w2[3]:=-1;  w3[3]:=-1;  c1[3]:=0; z[3]:=0;
+        a[4]:= 2;  b[4]:= -3;  w2[4]:= 1;  w3[4]:=-1;  c1[4]:=0; z[4]:=0;
+        a[5]:=-2;  b[5]:=  0;  w2[5]:= 1;  w3[5]:=-1;  c1[5]:=0; z[5]:=0;
+        a[6]:=-1;  b[6]:= -2;  w2[6]:=-1;  w3[6]:=-1;  c1[6]:=0; z[6]:=0;
+        a[7]:= 3;  b[7]:= -1;  w2[7]:=-1;  w3[7]:= 1;  c1[7]:=0; z[7]:=0;
+        a[8]:= 4;  b[8]:=  5;  w2[8]:= 1;  w3[8]:= 1;  c1[8]:=0; z[8]:=0;
+
+        END;
+
+BEGIN {Main program.}
+Initialize;
+WRITELN ('Program to test vector routines.');
+WRITELN ('Lengths of test vectors.');
+WRITELN (' Length of a : ', Vector_length  (a):9);
+WRITELN (' Length of b : ', Vector_length  (b):9);
+WRITELN (' Length of w2: ', Vector_length (w2):9);
+WRITELN (' Length of w3: ', Vector_length (w3):9);
+WRITELN (' Length of c1: ', Vector_length (c1):9);
+WRITELN (' Length of z : ', Vector_length  (z):9);
+WRITELN;
+WRITELN ('Cosines.');
+WRITELN (' Cosine of angle between  a and  b: ', Vector_cosine   (a,b):9);
+WRITELN (' Cosine of angle between w2 and w3: ', Vector_cosine (w2,w3):9);
+WRITELN (' Cosine of angle between  c1 and z: ', Vector_cosine  (c1,z):9);
+WRITELN ;
+WRITELN ('Sums and differences.');
+WRITELN (' c:= a + b.'); Add_vectors (a,b,c);
+WRITELN (' d:= a - b.'); Subtract_vectors (a,b,d);
+WRITELN (' Length of c : ', Vector_length   (c):9);
+WRITELN (' Length of d : ', Vector_length   (d):9);
+WRITELN (' Cosine (c,d): ', Vector_cosine (c,d):9); 
+WRITELN ;
+WRITELN ('Normalize vectors.');
+        Normalize (a,a);
+        Normalize (b,b);
+        Normalize (c,c);
+        Normalize (d,d);
+        Normalize (w2,w2);
+        Normalize (w3,w3);
+        Normalize (z,z);
+WRITELN;
+WRITELN ('Some lengths of normalized vectors.');
+WRITELN (' New length of a : ', Vector_length   (a):9);
+WRITELN (' New length of c : ', Vector_length   (c):9);
+WRITELN (' New length of w2: ', Vector_length  (w2):9);
+WRITELN (' New length of z : ', Vector_length   (z):9);
+WRITELN;
+WRITELN ('Some cosines of normalized vectors.'); 
+WRITELN (' Cosine of angle between  a and  b: ', Vector_cosine   (a,b):9);
+WRITELN (' Cosine of angle between w2 and w3: ', Vector_cosine (w2,w3):9);
+WRITELN (' Cosine of angle between  c and  d: ', Vector_cosine   (c,d):9);
+WRITELN (' Cosine of angle between c1 and  z: ', Vector_cosine  (c1,z):9);
+END.  {Main program.}
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

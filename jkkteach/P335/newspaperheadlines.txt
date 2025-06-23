@@ -1,0 +1,113 @@
+
+<html>
+<HEAD>
+<TITLE>P335 Cognitive Psychology, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>Newspaper Headlines:</h2>
+<h3>Examples of ambiguity in language.</h3>
+
+<p>(Apologies if you find any of these offensive. There is no
+intention to offend; the only intention is to illustrate unintended
+meaning.)
+
+</center>
+
+
+<ul>
+
+<li>Grandmother of eight makes hole in one
+<li>Deaf mute gets new hearing in killing
+<li>Police begin campaign to run down jaywalkers
+<li>House passes gas tax onto senate
+<li>Stiff opposition expected to casketless funeral plan
+<li>Two convicts evade noose, jury hung
+<li>William Kelly was fed secretary
+<li>Milk drinkers are turning to powder
+<li>Safety experts say school bus passengers should be belted
+<li>Quarter of a million Chinese live on water
+<li>Farmer bill dies in house
+<li>Iraqi head seeks arms
+
+<li>Eye drops off shelf
+<li>Squad helps dog bite victim
+<li>Dealers will hear car talk at noon
+<li>Enraged cow injures farmer with ax
+<li>Lawmen from Mexico barbecue guests
+<li>Miners refuse to work after death
+<li>Two Soviet ships collide - one dies
+<li>Two sisters reunite after eighteen years at checkout counter
+
+
+<li>Never withhold herpes from loved one
+<li>Nicaragua sets goal to wipe out literacy
+<li>Drunk drivers paid $1,000 in 1984
+<li>Autos killing 110 a day, let's resolve to do better
+
+
+<li>If strike isn't settled quickly it may last a while
+<li>War dims hope for peace
+<li>Smokers are productive, but death cuts efficiency
+<li>Cold wave linked to temperatures
+<li>Child's death ruins couple's holiday
+<li>Blind woman gets new kidney from dad she hasn't seen in years
+<li>Man is fatally slain
+<li>Something went wrong in jet crash, experts say
+<li>Death causes loneliness, feeling of isolation
+ 
+<li>Queen Mary Having Bottom Scraped. 
+<li>Is There a Ring of Debris around Uranus? 
+<li>Panda Mating Fails - Veterinarian Takes Over. 
+<li>NJ Judge to Rule on Nude Beach. 
+<li>Child's Stool Great for Use in Garden. 
+<li>Dr. Ruth to Talk About Sex with Newspaper Editors. 
+<li>Organ Festival Ends in Smashing Climax. 
+<li>Stud Tires Out
+<li>Prostitutes Appeal to Pope
+<li>Panda Mating Fails; Veterinarian Takes Over
+<li>Soviet Virgin Lands Short of Goal Again
+
+<li>British Left Waffles on Falkland Islands
+<li>Lung Cancer in Women Mushrooms
+<li>Teacher Strikes Idle Kids
+<li>Reagan Wins on Budget, But More Lies Ahead
+<li>Shot Off Woman's Leg Helps Nicklaus to 66
+<li>Plane Too Close to Ground, Crash Probe Told
+<li>Juvenile Court to Try Shooting Defendant
+<li>Stolen Painting Found by Tree
+<li>Killer Sentenced to Die for Second Time in 10 Years
+<li>Enfields Couple Slain; Police Suspect Homicide
+<li>Red Tape Holds Up New Bridge
+<li>Deer Kill 17,000
+<li>Typhoon Rips Through Cemetery; Hundreds Dead
+<li>Man Struck by Lightning Faces Battery Charge
+<li>New Study of Obesity Looks for Larger Test Group
+<li>Astronaut Takes Blame for Gas in Spacecraft
+<li>Kids Make Nutritious Snacks
+<li>Chef Throws His Heart into Helping Feed Needy
+<li>Arson Suspect is Held in Massachusetts Fire
+<li>British Union Finds Dwarfs in Short Supply
+<li>Ban On Soliciting Dead in Trotwood
+<li>Lansing Residents Can Drop Off Trees
+<li>Local High School Dropouts Cut in Half
+<li>New Vaccine May Contain Rabies
+<li>Man Minus Ear Waives Hearing
+<li>Deaf College Opens Doors to Hearing
+<li>Air Head Fired
+<li>Steals Clock, Faces Time
+<li>Prosecutor Releases Probe into Undersheriff
+<li>Old School Pillars are Replaced by Alumni
+<li>Bank Drive-in Window Blocked by Board
+<li>Hospitals are Sued by 7 Foot Doctors
+<li>Some Pieces of Rock Hudson Sold at Auction
+<li>Sex Education Delayed, Teachers Request Training
+<li>Include your Children when Baking Cookies
+
+</ul>
+
+<p><hr>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+Week,Topic
+1,Describing noisy data with mathematical models. Getting started with R. 
+2,Finding the parameter values of a model that best fit the data: maximum likelihood estimation. 
+3,"Sampling distributions and *p* values, null hypothesis significance testing.  "
+4,"Confidence intervals. Sampling distributions, and hence *p* values and confidence intervals, depend on stopping and testing intentions. "
+5,Model comparison and deciding among models. 
+6,The generalized linear model. Simple linear regression. 
+7,Multiple linear regression. Concepts of mediation and moderation (interaction). 
+8,Oneway ANOVA. Multiple comparisons. 
+9,Multi-factor ANOVA. Interaction. 
+10,Dichotomous predicted variable: Logistic regression. 
+11,Nominal predicted variable: Softmax (multinomial) regression. 
+12,"Ordinal predicted variable: Ordered probit regression. (Article: <a href=""https://www.sciencedirect.com/science/article/pii/S0022103117307746"" target=""_blank"">Analyzing ordinal data with metric models: What could possibly go wrong?</a>)"
+13,"Count predicted variable: Log-linear models, using Poisson or negative-binomial pdf. "
+Break,
+14,"Introduction to Bayesian methods. <br>Article: <a href=""http://link.springer.com/article/10.3758/s13423-017-1272-1"" target=""_blank"">Bayesian analysis for newcomers</a>. <br>Article: <a href=""http://link.springer.com/article/10.3758/s13423-016-1221-4"" target=""_blank"">Bayesian and frequentist, hypothesis testing and estimation, power, meta-analysis</a>. <br>App: <a href=""https://jkkweb.sitehost.iu.edu/KruschkeFreqAndBayesAppTutorial.html"" target=""_blank"">The Shiny App!</a>. <br>Article: <a href=""https://jkkweb.sitehost.iu.edu/BEST/index.html"" target=""_blank"">Two-group comparison</a>. <br>Article: <a href=""https://jkkweb.sitehost.iu.edu/BMLR/index.html"" target=""_blank"">Linear regression</a>. <br>Chapter: <a href=""https://jkkweb.sitehost.iu.edu/articles/KruschkeVanpaemel2015.pdf"" target=""_blank"">Hierarchical models</a>."
+15,"Recap: Given some data, what analysis to do? Open and reproducible analyses. The replication crisis and the role of statistics. "
+Finals,"No final exam, but last homework assignment is due."

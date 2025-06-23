@@ -1,0 +1,56 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="khaki">
+
+<h3>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics</a>
+, Prof. Kruschke</h3>
+
+<h2>Using SPSS to generate binomial and Poisson probability distributions.</h2>
+
+
+<p>Basic procedure:
+<ol>
+
+<li>In the SPSS spreadsheet, enter consecutive values of
+<strong>r</strong> from 0 to N, in a column. On the variable view
+sheet, name this column "r", set the decimals to zero. 
+
+<li>On the menu bar, click <tt>Transform</tt> then
+<tt>Compute</tt>. Set the Target Variable to, say, "bp" (for binomial
+probability) and set the Numeric Expression to "PDF.BINOM(r,N,p)"
+where "r" is actually the letter "r" (which matches the variable name
+of the integers you entered in the previous step), "N" is the
+<em>number</em> N (not the letter), and "p" is the probability of
+success (not the letter). For example, if you entered digits 0 to 8 in
+the previous step, and you wanted the binomial distribution for
+probability success of 0.5, you would type "PDF.BINOM(r,8,.5)" in the
+Numeric Expression.
+
+<li>You can also get the <em>cumulative</em> binomial distribution in
+the exactly analogous way, using CDF.BINOM instead of PDF.BINOM. This
+is useful for determining tail probabilities. Be careful, though, to
+understand exactly what values are being accumulated!
+
+<li><strong>If you want the cumulative tail probability from r
+(inclusive) to N, use <blockquote>1 - CDF.BINOM( r-1 , N , p
+)</blockquote> In that formula, the "r-1" inside the CDF gets the
+<i>left</i> side cumulative <i>excluding</i> r. Then the "1-CDF..."
+gets the complementary right-side cumulative value. </strong>
+
+<li>The analogous procedure applies to the Poisson distribution. Use
+the expressions PDF.POISSON(r,m) and CDF.POISSON(r,m), where "r" is
+the letter "r" matching the integer variable name used in the first
+step above, and "m" is the numerical value of the mean.
+
+</ol>
+
+<p><hr>
+
+</BODY>
+</font>
+</HTML>

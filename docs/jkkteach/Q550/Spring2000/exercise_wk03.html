@@ -1,0 +1,201 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/Q550/">
+Q550 Models in Cognitive Science</a>,
+<a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+<h2>
+Exercises, Week 3, Due Tuesday February 1, 2000.
+</h2>
+</center>
+
+
+<p>"SnS Reading" refers to the collection edited by Scarborough and
+Sternberg.
+
+<p>(60 pts. total)
+
+<ol>
+
+<p><li>Suppose that items in the display are letters that vary in case
+and character, being either x, o, X or O.  Suppose that the target is
+X.  Consider the following eight displays (the following table is in a
+format similar to Table 10.3 of the textbook):
+
+<table border=1 cellpadding=3>
+<tr><th colspan=17>Balanced Displays</th></tr>
+<tr>
+<th>Display Size:</th>
+<th colspan=4>2</th>
+<th colspan=4>4</th>
+<th colspan=4>6</th>
+<th colspan=4>8</th>
+</tr>
+<tr>
+<th>Target:</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+</tr>
+<tr>
+<th>Form:</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+</tr>
+<tr>
+<th>Uppercase</th>
+<td>1</td><td>1</td> <td>0</td><td>1</td> <td>1</td><td>2</td> <td>0</td><td>2</td>
+<td>1</td><td>3</td> <td>0</td><td>3</td> <td>1</td><td>4</td> <td>0</td><td>4</td>
+</tr>
+<tr>
+<th>Lowercase</th>
+<td>0</td><td>.</td> <td>1</td><td>.</td> <td>1</td><td>.</td> <td>2</td><td>.</td>
+<td>2</td><td>.</td> <td>3</td><td>.</td> <td>3</td><td>.</td> <td>4</td><td>.</td>
+</tr>
+</table>
+
+
+<p>(A.) Suppose that selection is always for uppercase items (X or O)
+regardless of instructions or numerousity.  Plot the predictions of
+the selective search model for the eight displays. Suppose that the
+time to process an item (beta) is 20 msec, and the time to press a
+button (alpha, either present or absent) is 50 msec.
+
+<p>(B.) Suppose that selection is always for X's (uppercase or
+lowercase) regardless of instructions or numerousity.  Plot the
+predictions of the selective search model for the eight
+displays. Suppose that the time to process an item (beta) is 20 msec,
+and the time to press a button (alpha, either present or absent) is 50
+msec.
+
+<p>Now consider the following eight displays, and redo parts (A) and
+(B) in new graphs.
+
+<table border=1 cellpadding=3>
+<tr><th colspan=17>Unbalanced Displays</th></tr>
+<tr>
+<th>Display Size:</th>
+<th colspan=4>2</th>
+<th colspan=4>4</th>
+<th colspan=4>6</th>
+<th colspan=4>8</th>
+</tr>
+<tr>
+<th>Target:</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+<th colspan=2>Present</th><th colspan=2>Absent</th>
+</tr>
+<tr>
+<th>Form:</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+<th>x</th><th>o</th><th>x</th><th>o</th>
+</tr>
+<tr>
+<th>Uppercase</th>
+<td>1</td><td>1</td> <td>0</td><td>2</td> <td>1</td><td>1</td> <td>0</td><td>2</td>
+<td>1</td><td>1</td> <td>0</td><td>2</td> <td>1</td><td>1</td> <td>0</td><td>2</td>
+</tr>
+<tr>
+<th>Lowercase</th>
+<td>0</td><td>.</td> <td>0</td><td>.</td> <td>2</td><td>.</td> <td>2</td><td>.</td>
+<td>4</td><td>.</td> <td>4</td><td>.</td> <td>6</td><td>.</td> <td>6</td><td>.</td>
+</tr>
+</table>
+
+
+
+
+<p><li>10.3 (p.518).  The idea here is that the search <em>always</em>
+selects the feature with the least numerous distractors; i.e., it's
+<em>not</em> probabilistic. Nevertheless, the selection <em>time</em>
+is not constant for some reason.  What's a plausible reason?  (Hint:
+maybe it takes time to suppress attention to unselected items, and the
+more items there are, the longer it takes.  Suppose the suppression
+time is linear, i.e., gamma times the number of items to be
+suppressed, where gamma is a new parameter.)  Write the equation for
+predicted RT under this model, and plot the predictions for reasonable
+parameter values.
+
+<p><li>Consider the <strong>guided search model</strong> applied to these
+displays (the target is an upper case X):
+
+<pre>
+  +-------+ +-------+ 
+  |  O    | |  x    |  
+  |    x  | | O    O| 
+  |   O   | |   X x | 
+  |     X | | x     | 
+  |  x    | |   O   | 
+  +-------+ +-------+ 
+
+  +-------+ +-------+ 
+  |  o    | |  x    |  
+  |    x  | | o    o| 
+  |   o   | |   X x | 
+  |     X | | x     | 
+  |  x    | |   o   | 
+  +-------+ +-------+ 
+</pre>
+
+The top row above is a conjuction search of X among x and O.  The
+bottom row is a feature search of X among x and o.  The left displays
+have four distractors, the right displays have six distractors.
+
+<p>If we were to plot mean response times of these four types of
+displays, we'd get a graph something like this (for human data):
+<br>
+<pre>
+     ^
+     |    * conjunction search
+     |   /
+  RT |  /
+     | *
+     |
+     | *--* feature search
+     |
+     +-+--+->
+       4  6
+      Number of Distractors 
+</pre>
+<br>We want to know whether the guided search model will 
+generate predictions of that form.
+
+<p> Derive predictions of the guided search model when applied to
+these displays. Specifically, work out the number of item evaluations
+that would be needed, assuming that f<sub>x</sub>=1, f<sub>o</sub>=2,
+f<sub>uppercase</sub>=1, f<sub>lowercase</sub>=2,
+d<sub>shape</sub>=d<sub>case</sub>=0.5, noise variance is zero, and
+the stopping criterion is zero.  Plot the predicted number of
+evaluations as in Fig.10.11a, i.e., like the graph above.
+
+<p>If the noise variance is, instead of zero, a reasonably large
+value, then which display would tend to be fastest and which would
+tend to be slowest (that is, what is the difference in salience
+between the target and the distractors for each display)?
+
+<p>(There is a <a href="guidedsearch.html">worked example of
+computations in the the guided search model</a> on the web.)
+
+
+
+</ol>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

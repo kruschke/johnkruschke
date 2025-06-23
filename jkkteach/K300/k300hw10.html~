@@ -1,0 +1,169 @@
+<html>
+<font face="tahoma">
+<title>K300, Prof. Kruschke</title>
+<body>
+
+K300 Statistics, Prof. Kruschke
+<h3>
+Homework 10, Due at the beginning of class, Tuesday April 26, 2005.
+<!-- <br>UNDER CONSTRUCTION -- DO NOT YET DO -->
+
+</h3>
+
+<p>Be sure to <li>write your name and ID on every page <li>make a copy of
+your homework for your own records and exam study <li>staple (not
+paper clip) your pages <li>write clearly <li>show your work as
+appropriate -- an unannotated sequence of numbers and derivations that
+mysteriously ends up with the correct numerical answer will
+<em>not</em> be given full credit <li>answer every part of every
+question (unless instructed otherwise).
+
+<p><b>Reminder of how to do two-factor ANOVA in Excel:</b> On the
+Schedule tab of Oncourse, find the Excel spreadsheet named
+TwoFactorANOVA.xls. On its second worksheet you'll find info about how
+to do two-factor ANOVA in Excel.
+
+<ol>
+
+
+
+<p><li>10 pts.  Page 331, #23.  There are two significant results for
+which to describe the meaning. Also answer this: Where exactly do the
+values M=9.08 and M=7.46 come from, in terms of the four values in the
+bar graph?
+
+
+<p><li>10 pts.  
+
+An experimenter is interested in whether marking words with a color
+highlighter improves memory for those words. She is also interested in
+whether words are better remembered when they are accompanied by a
+picture. So she gives people a list of 24 words (which they studied
+for 50 seconds), and then has them recall (by writing) as many words
+as they can. Some people see the words in just black and white text,
+some in color highlighted text (with different words in different
+colors), some with black and white pictures next to the words, and
+some with color highlighted pictures and words. Here are the number of
+words correctly recalled for each group:
+
+<br>&nbsp;&nbsp;&nbsp; no picture, no color: 22, 12, 20, 14, 14, 12
+
+<br>&nbsp;&nbsp;&nbsp; no picture, with color: 14, 10, 19, 10, 15, 14
+
+<br>&nbsp;&nbsp;&nbsp; with picture, no color: 11, 7, 11, 15, 16, 12
+
+<br>&nbsp;&nbsp;&nbsp; with picture, with color: 9, 9, 16, 9, 9, 9
+
+<br>Do an ANOVA in Excel. You'll need to enter the data in an array,
+and appropriately label the rows and columns.  Print out the data
+table and results of the ANOVA. Next to the output table, clearly
+write answers to these questions:
+
+<p>A. Is there a significant interaction between picture inclusion
+and coloring? Indicate exactly where in the output you find the answer
+to this question.
+
+<p>B. What is the mean number of words recalled when there is no
+picture? What is the mean number of words recalled when there is a
+picture? Is there a significant main effect of picture inclusion?
+Indicate exactly where in the output you find the answers to these
+questions.
+
+<p>C. What is the mean number of words recalled when there is no
+color? What is the mean number of words recalled when there is color?
+Is there a significant main effect of color?  Indicate exactly where
+in the output you find the answers to these questions.
+
+<p>(By the way, these data are real. My daughter wondered about this
+and so designed the experiment, with relatively little input from me,
+although she didn't do the ANOVA.  The data are from her classmates at
+the time. They were in 5th grade.)
+
+<p><li>10 pts.  
+
+We want to know if the lengths of baby names have been changing over
+the years.  Visit
+<a href="http://www.socialsecurity.gov/OACT/babynames">
+http://www.socialsecurity.gov/OACT/babynames</a> and scroll to the
+section called <i>Popular Names by Birth Year</i>.  Select "2003" for
+year of birth and "Top 50" for Popularity. When the table of results
+appears, select all 50 rows of the info (drag your cursor over it) and
+copy and paste it into an Excel spreadsheet, starting in cell B2. Your
+Excel spreadsheet should now have 50 rows and 5 columns, just like the
+website table. Go back to the website, and select "1990" for the year
+of birth (and still "top 50"). Get the data and put it into Excel
+below the previous data. In your Excel spreadsheet, delete the values
+from the columns containing the number of babies with those
+names. Then, have Excel compute the number of letters in each name by
+using the "len()" function (as we did in Homework 7). Finally, add
+appropriate row and column labels.
+
+<p>Print out the results of the ANOVA (but don't print out the data
+table; that would kill too many trees). Next to the output table,
+clearly write answers to these questions:
+
+<p>A. Is there a significant interaction between year and gender?
+Indicate exactly where in the output you find the answer to this
+question.
+
+<p>B. What is the mean name length for boys? For girls?  Is there a
+significant main effect of gender?  Indicate exactly where
+in the output you find the answers to these questions.
+
+<p>C. What is the mean name length in 1990? In 2003?  Is there a
+significant main effect of year?  Indicate exactly where in the output
+you find the answers to these questions.
+
+<p><li>10 pts.  
+
+<em>There are two purposes for this exercise. One is for you to see
+that random samples from the null hypothesis can exhibit main effects
+and interactions, just by chance. A second is for you to see what
+significant main effects and interactions look like in the presence of
+random data noise, unlike the perfect textbook examples you learn
+from.</em>
+
+On the Schedule tab of Oncourse, find the Excel spreadsheet named
+TwoFactorANOVA.xls. On its third worksheet (with tab named "Random
+data from null hyp."), you will see data randomly sampled from a null
+hypothesis, with a two factor ANOVA conducted on the data. This was
+also shown in class.
+
+<p>Press F9 a few times to see how cell means can change, just by
+chance, when sampled from the null hypothesis. 
+
+<p>A. Press F9 until the row effect is significant but the column and
+interaction effects are not significant. Stop! Print one page that
+shows the data, ANOVA output, and graph. You will need to print in
+landscape orientation, and you might need to squeeze the left columns
+and textbox so that the entire ANOVA output table fits on the
+page. Next to the graph, write in your own words how the graph depicts
+the row effect.
+
+<p>B. Press F9 until the column effect is significant but the row and
+interaction effects are not significant. Stop! Print one page that
+shows the data, ANOVA output, and graph. You will need to print in
+landscape orientation, and you might need to squeeze the left columns
+and textbox so that the entire ANOVA output table fits on the
+page. Next to the graph, write in your own words how the graph depicts
+the column effect.
+
+<p>C. Press F9 until the interaction effect is significant but the
+column and row effects are not significant. Stop! Print one page that
+shows the data, ANOVA output, and graph. You will need to print in
+landscape orientation, and you might need to squeeze the left columns
+and textbox so that the entire ANOVA output table fits on the
+page. Next to the graph, write in your own words how the graph depicts
+the interaction effect.
+
+
+</ol>
+
+<hr>
+</body></font></html>
+
+
+
+
+
+

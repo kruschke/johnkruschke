@@ -1,0 +1,14 @@
+SUBJECT>hw4 #9, re: why is t-distribution skewed when mu isn't zero?
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Tuesday, 1 October 2002, at 12:54 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>
+NEXT> 47 49
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>When mu isn't zero, you found that the t distribution is skewed. But why is it skewed? The answer is: Because the distribution of S is skewed. So the real question is why is the distribution of t NOT skewed when mu=0?
+<P>Consider this simplified example. Suppose we draw three samples from a normal distribution. All three samples happen to have a mean of zero, but have S's of 1.0, 2.0 and 4.0. Notice that this distribution of sample S's is skewed. When we take the ratio of the mean over the S, as we do in a t-ratio, the result is just zero, zero and zero. That is, the skewness of the S's doesn't show up in the ratio.
+<P>Now, suppose we shift the population over, so that those three samples now each has a mean of 1. The ratio mean/S is then 1/1, 1/2, and 1/4, which IS skewed.
+<P>When we're sampling from a population with mean equal zero, then the sample means center around zero, and the skewness above and below the mean cancel out to give an overall symmetric distribution of t. When we're sampling from a population with mean not equal to zero, then the sample means center off of zero, and so the positive and negative skews do not cancel, and the t distribution is no longer symmetric.

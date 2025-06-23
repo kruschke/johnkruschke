@@ -1,0 +1,149 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 6</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology
+<br>Homework 6: One-way ANOVA.
+<br>Due 24 October 1996.
+</h2>
+</center>
+
+<p>1. (5 pts.) Generate sampling distributions for the F statistic
+using the Minitab code at the bottom of this page. (The code is
+restricted to three groups; what does this mean for the <em>df</em> of
+the distribution?)  For each generated distribution, is its mean close
+to what we would expect theoretically?  For each generated
+distribution, determine the .05 critical value.  Look up the tabled
+critical value (and state it in your homework).  Are the two critical
+values close?
+
+<p>2. (8 pts.)  A&A text, p.337, Ch. 11, Set II,
+<strong>#2</strong>. <br>Do each part by hand, and check each part
+with Minitab (use the "oneway" command).  What is the proportion of
+variance accounted for by group membership?  Also compute the effect
+size and approximate power for each part.  Notice that all that
+differs between part (a) and part (b) is the mean of Group 2, but the
+<em>range</em> of group means is the same.  What part of the F
+statistics does this difference affect?
+
+<p>3. (5 pts.)  A&A text, Ch. 11, p.337, Set II,
+<strong>#3</strong>. <br>Do by hand, and check with Minitab.  What is
+the proportion of variance accounted for by group membership?  Also
+compute the effect size and approximate power.  Do <em>not</em>
+"explain your answer to a person who ... is unfamiliar with analysis
+of variance".
+
+<p>4. (7 pts.) A&A text, Ch. 11, p.336, <strong>Set I, #6</strong>.
+<br> Do <em>not</em> use the list of random numbers supplied on p.336;
+instead, use Minitab to generate 30 random page numbers as follows:
+First, from your own dictionary determine how many pages of words
+there are. For example, my Webster's New Collegiate Dictionary has
+1365 pages of words.  Then in Minitab I would type
+
+<pre>
+#
+# 1365 below is the number of pages; change it to your value.
+# c4 below is just an arbitrary column.
+#
+random 30 c4;
+uniform 1 1365.
+round c4 c4
+print c4
+</pre>
+
+With the resulting random page numbers, look up the words as directed
+in the problem, <em>and include the words you find in your
+homework</em>.  With the resulting data, do an ANOVA by hand and
+verify with Minitab.  What is the proportion of variance accounted for
+by group membership?  Also determine the power and necessary sample
+size as asked in the problem.  Finally, is this truly random sampling
+of nouns, adjectives, and verbs?
+
+<!-- INCLUDE THE FOLLOWING IN SUBSEQUENT YEARS!!!                           -->
+<!-- <p>**. (** pts.)  A&A text, Ch. 12, p.364, Set II,                     -->
+<!-- <strong>#3</strong>. <br>Do by hand, and check with Minitab.  What is  -->
+<!-- the proportion of variance accounted for by group membership?  Also    -->
+<!-- compute the effect size and approximate power.  Notice that all that   -->
+<!-- differs between part (a) and part (b) is the scores in Groups 2 and 3. -->
+<!-- What part of the F statistics does this difference affect?             -->
+
+
+<p><hr>
+
+<p>Below are the Minitab commands for demonstrating the sampling
+distribution of the <em>F</em> statistic in Exercise 1.  This code is
+restricted to three groups.  You can (1) just type them into Minitab
+line by line, or (2) if you know how, you can download this page to
+your Mac or PC, edit away all the text above, and then execute it in
+Minitab, or (3) if you use Zinc, you can copy it from my directory:
+/N/fs2/kruschke/Zinc/F.mtb and /N/fs2/kruschke/Zinc/F_getsample.mtb.
+
+<p>To write the file named 'F_getsample.mtb', on Zinc you can use the
+<a href="http://www.indiana.edu/~ucspubs/b103/">Pico text editor</a>.
+
+<pre>
+# In a separate file named 'F_getsample.mtb', include the following 12 lines.
+# (The long lines should be all on one line, not split across lines.)
+# 
+# random 'N' 'sample1';
+# normal 0.0 1.0.
+# random 'N' 'sample2';
+# normal 0.0 1.0.
+# random 'N' 'sample3';
+# normal 0.0 1.0.
+# let 'gm' = (mean('sample1')+mean('sample2')+mean('sample3'))/3.0
+# let 'msb' = 'N'*((mean('sample1')-'gm')**2+(mean('sample2')-'gm')**2+(mean('sample3')-'gm')**2)/(3-1)
+# let 'msw' = (('N'-1)*(stdev('sample1')**2)+('N'-1)*(stdev('sample2')**2)+('N'-1)*(stdev('sample3')**2))/(3*('N'-1))
+# let 'F'('rowindex') = 'msb'/'msw'
+# let 'rowindex' = 'rowindex' + 1
+# end
+#
+######################################################################################################################
+#
+# Now initialize the sampling variables
+#
+name c1 'sample1'
+name c2 'sample2'
+name c3 'sample3'
+name c4 'F'
+name k1 'N'
+name k2 'rowindex'
+name k3 'gm'
+name k4 'msb'
+name k5 'msw'
+#
+# Now draw 500 samples of size 3 from each group, and 
+# plot the sampling distribution of the sample F
+#
+let 'N' = 3
+let 'rowindex' = 1
+noecho
+execute 'F_getsample.mtb' 500
+histogram 'F'
+describe 'F'
+#
+# Now draw 500 samples of size 21 from each group, and 
+# plot the sampling distribution of the sample F
+#
+let 'N' = 21
+let 'rowindex' = 1
+noecho
+execute 'F_getsample.mtb' 500
+histogram 'F'
+describe 'F'
+#
+# end
+#
+
+</pre>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,31 @@
+exp01 123 21 F L aaa A 02-Mar-2001 14:35:48
+983561748 training_phase_instructions
+983561758 I.PC_1
+983561768 I.PC_2
+983561774 I.PC_3
+983561779 I.PR_1
+exp01 123 21 F L aaa A 02-Mar-2001 14:36:38
+983561798 training_phase_instructions
+983561820 I.PR_1
+983561836 I.PC_1
+983561841 I.PC_2
+983561846 I.PC_3
+983561851 test_phase_instructions
+(test_instruction_resp) 983561886 I
+(test_instruction_resp) 983561919 I
+2 983561931 PC.PR
+3 983561940 farewell
+exp01 123 21 F L 111 B 04-Mar-2001 17:07:45
+983743665 training_phase_instructions
+983743674 I.PC_1
+983743680 I.PC_2
+983743684 I.PC_3
+983743693 I.PR_1
+983743697 test_phase_instructions
+(test_instruction_resp) 983743718 I
+4 983743725 I
+1 983743731 I
+3 983743738 I
+5 983743744 I
+3 983743749 PC.PR
+2 983743754 farewell

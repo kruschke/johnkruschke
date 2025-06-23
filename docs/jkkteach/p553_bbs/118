@@ -1,0 +1,17 @@
+SUBJECT>Re: #3d
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Monday, 16 December 2002, at 5:43 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>107
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<P>&gt; Does anyone know if on #3d
+<BR>&gt; a one sample or independent group
+<BR>&gt; t-test is used in the computation?
+<BR>&gt;
+<P>I assume you're asking about this one: <blockquote> 3. (6 pts) A group of 500 (otherwise normal) adults viewed a recent popular film which explored the psychopathologies of serial killers (in graphic detail). After the film, half the audience was randomly assigned to a debriefing seminar, and the other half went to a control group situation (the restrooms). Measurements of blood pressure were taken immediately after the film and after the post-film treatment. Here are data from 4 subjects in each group: <tt> <br> seminar control <br> before after before after <br> 145 136 117 105 <br> 128 124 128 108 <br> 110 109 110 104 <br> 117 115 145 115 </tt> </blockquote>
+<P><strong> The are two independent groups, each with 4 difference scores. </strong> If you were to enter the data into SPSS, the spread sheet would have 8 rows, one for each individual. Each row would contain a group identifier, a before score, and an after score. You would then compute a difference score for each individual. Then you'd do a t-test for independent groups on the difference scores.

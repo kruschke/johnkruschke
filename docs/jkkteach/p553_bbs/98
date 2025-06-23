@@ -1,0 +1,11 @@
+SUBJECT>Question 5B
+POSTER>charlie
+EMAIL>chcoe@indiana.edu
+DATE>Monday, 9 December 2002, at 9:50 p.m.
+IP_ADDRESS> REMOTE_HOST: d-37-34.dhcp-129-79.indiana.edu; REMOTE_ADDR: 129.79.37.34
+PREVIOUS>
+NEXT> 99
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Question 5B (A&A q29, p.542) wants us to confirm a chi square of 8.79. It gives us the four groups and percentages of postcards written and sent, but not the numbers in each group. N=110 which is not divisible by four and it will not result in 4 equal groups. Since observed frequency must be whole intergers, is it up to us to determine the group sizes to give us the correct chi square or am I just completely missing the boat (for the N^3 time)? thanks, charlie

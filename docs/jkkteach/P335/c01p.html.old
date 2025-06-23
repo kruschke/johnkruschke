@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>P335 Cognitive Psychology, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<FORM 
+METHOD="POST" 
+ACTION="/cgi-bin-local/public/transform2?jkkteach/www/P335/c01f">
+<center>
+Case 1 of 16
+<p>
+<table width=60%>
+<tr>
+<td align=center>
+<IMG SRC="http://www.indiana.edu/~jkkteach/P335/catstim13.gif"> 
+</td>
+</tr>
+<tr>
+<td align=center bgcolor="#FFDDDD">
+Is this a case of category X or O ?<br>
+(click your choice below)<br>
+<INPUT TYPE="radio" NAME="r01" VALUE=1>X
+<INPUT TYPE="radio" NAME="r01" VALUE=2>O
+</td>
+</tr>
+</table>
+<p><strong><INPUT TYPE="submit" VALUE="Show Correct Answer"></strong>
+</center>
+<br>Resp's so far: [r01] [r02] [r03] [r04] [r05] [r06] [r07] [r08]
+</FORM>
+</BODY>
+</HTML>
+
+
+
+

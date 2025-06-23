@@ -1,0 +1,114 @@
+<html>
+<title>K300, Prof. Kruschke</title>
+<body>
+
+K300 Statistics, Prof. Kruschke
+<h3>
+Exam 1: Sample Questions
+<br>Updated 10:00pm, Monday January 24, 2005
+</h3>
+
+Be sure to <li>write your name and ID on every page <li>write clearly
+<li>annotate your computations -- an unannotated sequence of numbers
+and derivations that mysteriously ends up with the correct numerical
+answer will <em>not</em> be given full credit <li>answer every part of
+every question.
+
+<ol>
+
+<li><em>Basic descriptive statistics.</em> Suppose a sample of scores
+consists of
+<br>
+<center> 1, 1, 1, 2, 2, 3, 6, 8 </center>
+<br>
+
+<ol>
+
+<li>Make a histogram (by hand) using bins with upper values of 1, 3,
+5, 7 and 9.
+
+<li>What is the mean of the sample?
+
+<li>Suppose the scores were entered in an Excel spreadsheet in cells
+B3:B10. What would you type in an empty cell to have Excel compute the
+mean?
+
+<li>What is the median of the sample?
+
+<li>What is the mode of the sample?
+
+<li>Is the sample symmetric or skewed, and if skewed, in which direction?
+
+<li>What is the variance of the sample? Show your work using columns
+of X, (X-M), (X-M)<sup>2</sup>.
+
+<li>What is the standard deviation of the sample?
+
+<li>Suppose the scores were entered in an Excel spreadsheet in cells
+B3:B10. What would you type in an empty cell to have Excel compute the
+standard deviation? [Careful to use the right version of the
+command... does it end in "P" or not?]
+
+<li>In this distribution, what is the Z-score of the raw value 1?
+(That is, convert the raw value 1 to a Z score.)
+
+<li>What would be the "raw" value of a datum whose Z-score is 2.0?
+
+</ol>
+
+<li><em>Percentages under normal distributions.</em> Suppose a
+population of heights is normally distributed.
+
+<ol>
+
+<li>What is the Z-score of a person at the 16th percentile?
+
+<li>What percentage of people are taller than a person whose Z-score is 2.0?
+
+<li>What percentage of people have heights between Z = -1.96 and Z = +1.96?
+
+</ol>
+
+
+<li><em>Percentages under NON-normal distributions.</em> 
+
+<ol>
+
+<li>Suppose a distribution is severely skewed to the right. Is the
+percentage of scores from the mean to +1SD equal to 34%? Is the
+percentage of scores from the mean to +1SD equal to the percentage of
+scores from the mean to -1SD?
+
+<li>Suppose a distribution is severely kurtotic, that is, it has lots
+of outliers on both sides of a narrow central peak. Is the percentage
+of scores from the mean to +1SD greater than, equal to, or less than
+34%?
+
+</ol>
+
+<li><em>Sampling and probability.</em>
+
+<ol>
+
+<li>Suppose our class consists of 55 females and 25 males. If we write
+each student's ID number on a piece of paper and put all the pieces of
+paper in box and draw one at random such that every ID number has an
+equal chance of being drawn, then what is the probability of getting
+an ID belonging to a female?
+
+<li>Suppose a population of scores in normally distributed with a mean
+of 70 and a SD of 15. If every score is equally likely to be sampled,
+what is the probability of sampling a score between 70 and 85? What is
+the probability of sampling a score between 40 and 100?
+
+</ol>
+
+</ol>
+
+<hr>
+</body></html>
+
+
+
+
+

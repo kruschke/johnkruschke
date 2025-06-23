@@ -1,0 +1,31 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Looking East
+<br>
+
+<!-- 45 words -->
+Looking east before sunrise I like to\
+see the slender crescent moon (sky haiku\
+so abbreviated it is only\
+an opening parenthesis, holy\
+punctuation setting aside last night's\
+constellations, planets, and satellites\
+as mere afterthoughts like the Milky Way,\
+which justify staying living for today).\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://orchardspoetry.com/" , journal_name = "*The Orchards Poetry Journal*" , publication_info = "Winter 2024 (7 December 2024), p. 115.")` 
+`r link_new_tab( url = "https://orchardspoetry.com/wp-content/uploads/2024/12/orchards-winter-2024-digital.pdf" , display_text = "*Download PDF.*" )`
+
+*Notes:* 
+This poem tries to embody the scene it describes. The words "cresent moon" are immediately illustrated by an opening parenthesis, "**(**", and all the elements of the night sky are contained by the parenthetical remark. Notice the lines are all *decasyllabic*. Notice also the triple rhyme of "I like to" with "sky haiku".
+
+`r next_link("poem_looking_east.html")`
+
+</small>

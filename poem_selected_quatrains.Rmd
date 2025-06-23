@@ -1,0 +1,211 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<small>
+`r next_link("poem_selected_quatrains.html")`
+</small>
+<br>
+
+## Selected Quatrains from *Doing Bayesian Data Analysis, 2nd Ed.*
+<br>
+
+<!-- approx. 32 words each -->
+
+Why quatrains in a statistics textbook? It's explained, tongue in cheek, on p. 2:
+
+<blockquote style="font-size:14px">
+the chapters commence with a stanza of elegant and insightful verse composed by a famous poet. The quatrains<sup>1</sup> are formed of dactylic<sup>2</sup> tetrameter<sup>3</sup>, or, colloquially speaking, "country waltz" meter. The poems regard conceptual themes of the chapter via allusion from immortal human motifs in waltz timing.
+
+<sup>1</sup> quatrain [noun]: Four lines of verse. Unless it's written "qua train," in which case it's a philosopher comparing something to a locomotive.
+
+<sup>2</sup> dactylic [adjective]: A metrical foot in poetry comprising one stressed and two unstressed syllables. Not to be confused with a pterodactyl, which was a flying dinosaur, and which probably sounded nothing like a dactyl unless it fell from the sky and bounced twice: THUMP-bump-bump.
+
+<sup>3</sup> tetrameter [noun]: A line of verse containing four metrical feet. Not to be confused with a quadraped, which has four feet, but is averse to lines.
+</blockquote>
+
+**Ch 1. What's in this book (read this first!)**
+
+Oh honey I'm searching for love that is true,\
+But driving through fog is so dang hard to do.\
+Please paint me a line on the road to your heart,\
+I'll rev up my pick up and get a clean start.
+
+<small>
+
+*Notes:*
+This chapter provides a road map to the book, which hopes to have you fall in love with Bayesian analysis even if you previously had unhappy relationships with statistics. The poem plays with those ideas.
+
+</small>
+
+**Ch 2. Introduction: Credibility, Models, and Parameters**
+
+I just want someone who I can believe in,\
+Someone at home who will not leave me grievin'.\
+Show me a sign that you'll always be true,\
+and I'll be your model of faith and virtue.
+
+<small>
+
+*Notes:*
+This chapter introduces ideas of mathematical models, credibility of parameter values, and the semantics of models. The poem plays with the words, "model," "believe," and "true," in an everyday context, and hints that Bayesian methods (personified) may be someone to believe in. (And yes, grammatically, the first line should be "in whom I can believe," but the poem is supposed to be colloquial speech. Besides, the grammatically correct version is iambic not dactylic!)
+
+</small>
+
+**Ch. 3. The R Programming Language**
+
+You said, dear Descartes, that "je pense, donc je suis,"\
+Deriving existence from uncertainty.\
+Now, you are gone, and we say, "au revoir,"\
+Doubtless we think, Ren&eacute;, therefore we R.
+
+<small>
+
+*Notes:*
+This chapter introduces the programming language R. The poem provides motivation for using R, primarily in the form of an extended setup for the final pun on the word "are." Further background: The French philosopher and mathematician, Ren&eacute; Descartes (1596-1650), wondered how he could be certain of anything. The only thing he could be certain of was his own thoughts of uncertainty, and therefore he, as thinker, must exist. In English, the idea is captured by the phrase, "I think therefore I am." Changed to plural, the phrase becomes "we think therefore we are."
+
+</small>
+
+**Ch. 4. What Is This Stuff Called Probability?**
+
+Oh darlin' you change from one day to the next,\
+I'm feelin' deranged and just plain ol' perplexed.\
+I've learned to put up with your raves and your rants:\
+The mean I can handle but not variance.
+
+<small>
+
+*Notes:*
+This chapter discusses ideas of probability distributions. Among those ideas are the technical definitions of the mean and variance of a distribution. The poem plays with colloquial meanings of those words.
+
+</small>
+
+**Ch. 5. Bayes' Rule**
+
+I'll love you forever in every respect\
+(I'll marginalize all your glaring defects)\
+But if you could change some to be more like me\
+I'd love you today unconditionally.
+
+<small>
+
+*Notes:*
+This chapter is about Bayes' rule, which shows how marginal probabilities relate to conditional probabilities when taking data into account. The terms "marginal" and (un-)"conditional" are used in the poem with their colloquial meanings. The poem also plays with the reversal of meaning between conditional and unconditional: The poem says that the conditional love, p(love|change), is greater than the marginal love, p(love), but ironically says that satisfying the condition would bring unconditional love.
+
+</small>
+
+**Ch. 6. Estimating a Binomial Probability**
+
+I built up my courage to ask her to dance\
+By drinking too much before taking the chance.\
+I fell on my butt when she said see ya later;\
+Less priors might make my posterior beta.
+
+<small>
+
+*Notes:*
+This chapter is about using the beta distribution as a prior distribution for the Bernoulli likelihood function, in which case the posterior distribution is also a beta distribution. The poem explains another way to make a posterior beta.
+
+</small>
+
+**Ch. 7. Markov Chain Monte Carlo**
+
+You furtive posterior: coy distribution.\
+Alluring, curvaceous, evading solution.\
+Although I can see what you hint at is ample,\
+I'll settle for one representative sample.
+
+<small>
+
+*Notes:*
+This chapter is about methods for approximating a posterior distribution by collecting from it a large representative sample. These methods are important because complex posterior distributions are otherwise very challenging to get a handle on. The poem says merely that complexly shaped posterior distributions are evasive, but instead of demanding a precise solution, we will do practical analysis with a representative sample. Some people have suggested that the poem seems to allude to something else, but I don't know what they could mean.
+
+</small>
+
+**Ch. 8. JAGS**
+
+I'm hurtin' from all these rejected proposals;\
+My feelings, like peelings, down garbage disposals.\
+S'pose you should go your way and I should go mine,\
+We'll both be accepted somewhere down the line.
+
+<small>
+
+*Notes:*
+This chapter is about the software package "JAGS," which stands for Just Another Gibbs Sampler. In Gibbs sampling, unlike Metropolis sampling, all proposed jumps are accepted, but all jumps are along a line parallel to a parameter axis. The quatrain personifies two different parameters in Gibbs sampling: they go orthogonal directions but both are accepted somewhere down the line.
+
+</small>
+
+**Ch. 15: The Generalized Linear Model**
+
+Straight and proportionate, deep in your core\
+All is orthogonal, ceiling to floor.\
+But on the outside the vines creep and twist\
+'round all the parapets shrouded in mist.
+
+<small>
+
+*Notes:*
+The poem is a metaphorical description of the generalized linear model (GLM). The core of the GLM is a linear combination of predictors; the resulting value is proportional to the magnitudes of the predictors, as described in the poem. The GLM can have a nonlinear inverse link function; this is the twisting vine in the poem. The GLM has a random noise distribution that obscures the underlying trend; this is the shrouding mist of the poem.
+
+</small>
+
+**Ch. 19: Metric Predicted Variable with One Nominal Predictor**
+
+Put umpteen people in two groups at random.\
+Social dynamics make changes in tandem:\
+Members within groups will quickly conform;\
+Difference between groups will soon be the norm.
+
+<small>
+
+*Notes:*
+The models in this chapter are analogous to traditional analysis of variance (ANOVA), which partitions variance into within-group variance and between-group variance. The poem suggests that for groups of people, within-group variance tends to decrease while between-group variance tends to increase.
+
+</small>
+
+**Ch. 21: Dichotomous Predicted Variable**
+
+Fortune and Favor make fickle decrees, it's\
+Heads or it's tails with no middle degrees.\
+Flippant commandments decreed by law gods, have\
+Reasons so rare they have minus log odds.
+
+<small>
+
+*Notes:*
+This chapter is about logistic regression, and one of the concepts is called "log odds," explained in Section 21.2.1. I was fortunate to rhyme "log odds" with "law gods" and then work backwards to their names, Fortune and Favor.
+
+</small>
+
+**Ch. 23: Ordinal Predicted Variable**
+
+The winner is first, and that's all that he knows, whether\
+Won by a mile or won by a nose. But\
+Second recalls every inch of that distance, in\
+Vivid detail and with haunting persistence.
+
+<small>
+
+*Notes:*
+This chapter is about modeling ordinal data. The poem emphasizes the emotional difference between ordinal and metric measurement.
+
+</small>
+
+**Ch. 25: Tools in the Trunk**
+
+She changes her hair, and he changes his style,\
+She paints on her face, and he wears a fake smile,\
+She shrink wraps her head, and he stretches the truth,\
+But they'll always be stuck with their done wasted youth.
+
+<small>
+
+*Notes:*
+One of the topics in this chapter is reparameterization, in which parameters of a model are transformed into new parameters. For example, a rectangle can be described in terms of its length and width, or in terms of its area and aspect ratio, where area = length x width and aspect ratio = length/width. Either way, it's the same rectangle. The poem personifies reparameterization.
+
+`r end_poem_mark`
+
+`r qrc_png( url = "https://jkkweb.sitehost.iu.edu/DBDA.html" , journal_name = "*Doing Bayesian Data Analysis, 2nd Edition*" , publication_info = "Academic Press, 2015.")`
+
+`r next_link("poem_selected_quatrains.html")`
+</small>

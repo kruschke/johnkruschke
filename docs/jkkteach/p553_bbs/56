@@ -1,0 +1,19 @@
+SUBJECT>Re: HW 5 #1-4
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Monday, 14 October 2002, at 1:54 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>55
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<P>&gt; I can't figure out how it
+<BR>&gt; is related to the corrected or
+<BR>&gt; adjusted df provided in SPSS t-test
+<BR>&gt; output when the variance are unequal.
+<BR>&gt;
+<P>For #17, p.374, SPSS tells us (if I entered the numbers correctly in my haste) that Levene's test for equality of variances yields F=0.008 with a significance of 0.933. That is, we definitely cannot reject the null hypothesis -that the underlying population variances are equal- based on these samples.
+<P>But despite that, SPSS goes ahead and tells us what t would be if we didn't assume equality of variances. Because N1 (=5) is not equal to N2 (=4), the t when variance is pooled is different than the t when variance is not pooled. In this case, t_pooled=0.404, with df=7 and sig=.698, whereas t_unpooled=0.409, df=6.803 and sig=.695 (again, if I didn't make a mistake).
+<P>For the unpooled results, of course there are actually 7 df in the data, but SPSS tells us a "corrected" df (6.803) that we can use as an index into the critical values listed in the t-table. For 7 df, the critical t value in the table is 2.365, but that's if we assume equal variances (and use a pooled estimate). If we don't assume equal variances and don't use a pooled estimate, then we have to be more conservative with the critical value of t, and move up the table to 6.803 df, i.e., roughly 80% of the way between the critical t for df=6 and the critical t for df=7.

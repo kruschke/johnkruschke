@@ -1,0 +1,14 @@
+---
+title: "How to contact me"
+lang: en
+---
+
+<!-- <b>Maybe the best method: [Message in a bottle service](http://www.conwasa.demon.co.uk/miabix.htm).</b> <br> Other often equally futile methods: -->
+
+Email: 
+
+  * johnkruschke@gmail.com for non-IU-related topics
+  * kruschke@iu.edu for IU-related matters, including IU students
+
+
+<!-- <b>Planning to visit by boat?</b> Please see the convenient map below. Our coordinates are 39.1719 degrees north latitude, -86.5200 degrees (west) longitude, approximately 760 feet above sea level.<br><img src="BermudaTriangle.jpg" alt="Bermuda Triangle" style="width:250px !important;"> -->

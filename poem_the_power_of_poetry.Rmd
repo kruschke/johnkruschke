@@ -1,0 +1,39 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## The Power of Poetry for Climate Change
+<br>
+
+<!-- 51 words -->
+
+When you consider\
+the carbon footprint\
+of butt sitting,\
+
+manufacturing text for hours, flushing\
+wasted words up the delete-key smokestack\
+while the glaciers and ice caps melt,\
+
+then you realize\
+*this poem has*\
+*enormous power for change*\
+
+because the depth of its impact\
+is how much\
+it made the oceans rise.\
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://www.thelakepoetry.co.uk/poetry-archive/march25a/" , journal_name = "*The Lake*" , publication_info = "01 March 2025.")`
+
+*Notes:* 
+This poem was provoked, in part, by reading this article: "The carbon emissions of writing and illustrating are lower for AI than for humans." Tomlinson B, Black RW, Patterson DJ, and Torrance AW. *Scientific Reports*, 2024, 14(1):3732. DOI: <a href="https://doi.org/10.1038/s41598-024-54271-x" target="_blank">10.1038/s41598-024-54271-x</a> Of course, the carbon emissions of (humans) writing quick doggerel are less than the carbon emissions of (humans) writing carefully crafted and moving poetry. Is it worth the cost?
+
+`r next_link("poem_the_power_of_poetry.html")`
+
+</small>

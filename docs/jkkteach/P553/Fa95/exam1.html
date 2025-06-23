@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke, Exam 1</TITLE>
+</HEAD>
+<BODY background="../bg.gif">
+
+<a name="top"></a>
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+<p>
+
+<center>
+<h2>
+P553 Statistics in Psychology, Prof. Kruschke<br>
+</h2>
+<h2>
+Exam 1 Review topics
+</h2>
+</center>
+
+Be sure to review the <a href="goals.html">instructional goals</a> of
+the first five weeks.<p>
+
+<ul>
+
+<li><strong>Measures of central tendency and variability:</strong>
+
+	<ul>
+
+	<li>Know about relative magnitudes of mode, median and mean in
+skewed distributions.
+
+	<li>Know how to compute mode, median and mean.
+
+	<li>Know the definitions of mode, median and mean in terms of
+the measures of variability that they minimize, and know how to
+compute those measures of variability.
+
+	</ul>
+
+<li><strong>Sampling distribution of the sample mean:</strong>
+
+	<ul>
+
+	<li>What does the sampling distribution look like for
+different sample sizes?
+
+	<li>What is the Central Limit Theorem?
+
+	<li>What is the central tendency, variance, and shape of the
+sampling distribution of the mean?
+
+	</ul>
+
+<li><strong>z-tests:</strong>
+
+	<ul>
+
+	<li>For z-tests, know about effect size, power and sample
+size, and be able to conduct a z-test (and know when to do so; see the
+<a href="dtreemeans.gif">decision tree</a> for tests considered so
+far).
+
+	</ul>
+
+<li><strong>t-tests:</strong>
+
+	<ul>
+
+	<li>For t-tests, know about effect size, power and sample
+size, and be able to conduct a t-test (and know when to do so; see the
+<a href="dtreemeans.gif">decision tree</a> for tests considered so
+far).  Know about single-sample t-tests and paired-samples t-tests.
+
+	</ul>
+
+</ul>
+
+<p><hr><p> (This sub-message posted 11 Oct 1995)<p> Several people
+have inquired about the exam question that asked for the minimal
+sample size required for a certain power. We are told that mu_0 = 100,
+mu_1 = 95, and sigma = 15.  What is the sample size needed for a power
+of .8 or better?  Here's the solution:<p> Notice that mu_1 is LESS
+than mu_0, so you can draw the picture of the sampling distributions
+correctly.  Now go through the usual two steps in computering power.
+First, from the null hypothesis, <br>
+
+z_crit = -1.65 = ( M_crit - 100 ) / ( 15 / sqrt(N) )<br>
+
+Second, from the alternative hypothesis,<br> 
+
+z for .8 = 0.84 = ( M_crit - 95 ) / ( 15 / sqrt(N) )<br>
+
+That gives two equations with two unknowns. Using the first equation,
+we get<br>
+
+M_crit = -1.65 * ( 15 / sqrt(N) ) + 100<br>
+
+Plugging that into the second equation yields<br> 
+
+0.84 = ( [ -1.65 * ( 15 / sqrt(N) ) + 100] - 95 ) / ( 15 / sqrt(N) )<br>
+
+Solving for N yields<br>
+
+N = [ ( 1.65*15 + .84*15 ) / (100-95) ]^2 = 55.8 <br>
+
+So, we need N to be at least 56 for a power at least 0.8.  (If I made
+an error anywhere in there, please let me know!  You can check it by
+computing the power for N=56.)<p>
+
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+
+</BODY>
+</HTML>

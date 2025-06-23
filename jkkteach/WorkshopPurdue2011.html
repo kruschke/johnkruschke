@@ -1,0 +1,227 @@
+<HTML> <font face="tahoma">
+
+<HEAD xmlns:og="http://opengraphprotocal.org/schema/">
+
+<TITLE>Bayesian Data Analysis, Purdue 2011</TITLE>
+
+<link rel="image_src" href="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialLinearRegressionDataLines.jpg" />
+
+<meta name="keywords" content="Bayesian,Bayesian statistics,Bayesian data analysis,Bayesian models,shrinkage,hierarchical models,ANOVA,analysis of variance,multiple comparisons,regression,logistic regression,statistical power,sample size,null hypothesis significance test,NHST,model comparison" />
+<meta name="description" content="A workshop on Bayesian data analysis at Purdue University." />
+
+<meta property="og:title" content="Workshop on Doing Bayesian Data Analysis" />
+<meta property="og:site_name" content="John K. Kruschke"/>
+<meta property="og:type" content="event" />
+<meta property="og:image" content="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialLinearRegressionDataLines.jpg" />
+<meta property="og:url" content="http://www.indiana.edu/~jkkteach/WorkshopPurdue2011.html" />
+<meta property="og:description" content="A workshop on Bayesian data analysis at Purdue University." />
+
+</HEAD>
+
+<body bgcolor="#77DDFF" link="midnightblue" vlink="navy">
+
+<hr>
+<center>
+<h2>
+Workshop: Introduction to Doing Bayesian Data Analysis
+</h2>
+<h3>
+Purdue University 
+<br>Saturday, Oct. 22, 2011, 9:00am - 12:00noon
+<br>Stewart Center (STEW), room 214
+</h3>
+<!--  <p><small><b>THIS PAGE IS UNDER CONSTRUCTION. PLEASE RETURN SOON FOR
+COMPLETE INFO.</b></small> -->
+</center>
+
+<table border="0" cellpadding="10" align="right" width="420"
+align="right" bgcolor="white"> <tr><td> <img
+src="BayesTutorial/TutorialLinearRegressionDataLines.jpg" width="420"
+alt="Success increasing with knowledge of Bayesian data
+analysis"></td></tr> <tr><td align="center"> <font size="-1"><b>Figure
+1. Why you should attend the tutorial.</b> <br>(Notice that the
+Bayesian analysis reveals many credible regression lines, for which
+the slopes and intercepts trade off, instead of just one "best"
+line.)</font> </td></tr> </table>
+
+<p>This workshop shows you how to do Bayesian data analysis,
+hands on (with free software called R and BUGS).
+<!-- The software is free; <b>see installation instructions, <a
+href="#beforeArriving">below</a>, <em>before</em> arriving at the
+tutorial</b>. -->
+The intended audience is grad students, faculty, and other researchers who want
+a ground-floor introduction to Bayesian data analysis. No mathematical
+expertise is presumed.
+<!-- If you can handle a few minutes of summation notation like
+&Sigma;<sub>i</sub>x<sub>i</sub> and integral notation like
+&int;&nbsp;x&nbsp;dx, you're good to go. Complete computer programs
+will be worked through, step by step. -->
+
+<p><b>Agenda:</b>
+<ul>
+<li> <b>The perils of <i>p</i> values</b>. (More reasons to go Bayesian are linked <a href="#whyGoBayesian">below</a>. See also Figure 1.)
+<li> <b>Bayes' rule, grid approximation, and R.</b>
+<li> <b>Markov chain Monte Carlo and BUGS.</b> This does not involve any physical restraints or insects. Unfortunately, it also does not involve Monte Carlo.
+<li> <b>Coffee break!</b> Everything tastes better when it's Bayesian.
+<li> <b>Bayesian comparison of means and Bayesian ANOVA with multiple comparisons.</b> Bayesian comparison of means avoids fatal flaws in null hypothesis significance testing.
+</ul>
+
+<p><b>Strongly recommended textbook:</b> <i>Doing Bayesian Data Analysis: A Tutorial with R and BUGS</i>. See some published reviews of the book <a href="http://doingbayesiandataanalysis.blogspot.com/search/label/book%20reviews" target="_blank"><b>here</b></a>. Other endorsements and information about the book can be read <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/" target="_blank"><b>here</b></a>.
+
+<p><hr>
+<small><p><b>Bayesian data analysis is not Bayesian modeling of
+cognition.</b> Data analysis involves "generic" descriptive models
+(such as linear regression) without any necessary interpretation as
+cognitive computation. <i>The rational way to estimate parameters in
+descriptive models is Bayesian, regardless of whether or not Bayesian
+models of mind are viable.</i> The concepts and methods of Bayesian data
+analysis transfer to other Bayesian models, including Bayesian models
+of cognition.
+</small>
+
+<p><hr>
+<p><a name="whyGoBayesian"><b>Why go Bayesian?</b></a> <em>See Figure 1.</em> But beyond that,
+sciences from astronomy to zoology are changing from 20th-century
+null-hypothesis significance testing to Bayesian data analysis.
+Read more:
+
+<ul>
+
+<li> An <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm"
+target="_blank">open letter</a> explaining why it's time to go
+Bayesian.
+
+<li> An <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010WIRES.pdf"
+target="_blank">article</a><sup>*</sup> that explains a critical flaw
+of <em>p</em>-values in null hypothesis significance testing, and two
+different Bayesian approaches to assessing null values.
+<ul><small>Kruschke, J. K. (2010).  Bayesian data analysis.  <em>Wiley
+Interdisciplinary Reviews: Cognitive Science</em>, <b>1</b>(5),
+658-676. (<a href="http://dx.doi.org/10.1002/wcs.72"
+target="_blank">doi:10.1002/wcs.72</a>)</small></ul>
+
+
+<li> An <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010TiCS.pdf"
+target="_blank">article</a><sup>*</sup> that emphasizes advantages of
+Bayesian data analysis and the fact that Bayesian data analysis is
+appropriate regardless of the status of Bayesian models of cognition.
+<ul><small>Kruschke, J. K. (2010).  What to believe: Bayesian methods
+for data analysis.  <em>Trends in Cognitive Sciences</em>,
+<b>14</b>(7), 293-300.  (<a
+href="http://dx.doi.org/10.1016/j.tics.2010.05.001"
+target="_blank">doi:10.1016/j.tics.2010.05.001</a>)</small></ul>
+
+<li> An <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2011PoPScorrected.pdf" target="_blank">article</a><sup>*</sup> that explains two Bayesian methods to assess null values, and which one is typically more informative.
+<ul><small>Kruschke, J. K. (2011). Bayesian assessment of null values via parameter estimation and model comparison. <em>Perspectives on Psychological Science</em>, <b>6</b>(3), 299-312.</small></ul>
+
+</ul>
+
+<small><sup>*</sup>Your click on this link constitutes your request to
+the author for a personal copy of the article exclusively for
+individual research.</small>
+
+
+
+<p><hr><p>
+
+<a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">
+<img src="BookCover071910.jpg" width="120" align="right" alt="Book cover.">
+</a>
+<b>Who is the instructor?</b> <a
+href="http://www.indiana.edu/~kruschke/" target="_blank">John
+Kruschke</a> is five-time winner of Teaching Excellence Recognition
+Awards from Indiana University, where he is Professor of Psychological
+and Brain Sciences, and Adjunct Professor of Statistics. He has
+written <a
+href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/"
+target="_blank"> an introductory textbook on Bayesian data
+analysis</a>; see also the articles linked above. His research
+interests include the science of moral judgment, applications of Bayesian
+methods to teaching and learning, and models of attention in learning,
+which he has developed in both connectionist and Bayesian
+formalisms. He received the Troland Research Award from the National
+Academy of Sciences. He is action editor for the <i>Journal of Mathematical Psychology</i>, and is on the editorial boards of <i>Psychological Review</i>, the <i>Journal of Experimental Psychology: General</i>, among others.
+
+
+<br clear="all">
+
+<a name="beforeArriving"></a><p>
+
+<table border="1" cellpadding="10">
+<tr><td bgcolor="ivory"><small>
+
+<b>Bringing a notebook computer?</b>
+
+<p>You do <i>not</i> need to bring a notebook computer to the course. But you are invited to bring one, so that you can run the programs and see how their output corresponds with the presentation material.
+If you want to bring a notebook computer to the course,
+you must install the software listed below <i>before arriving at the course</i>, because there will not be time to do it during the tutorial.
+
+
+<ol>
+
+<li>One of the packages we'll be using requires the <b>Windows
+operating system</b> (OS). If your machine can operate with Windows,
+the tutorial materials may operate best that way. If you are using
+Macintosh OS or Linux without the option to boot with Windows, please see <a href="http://doingbayesiandataanalysis.blogspot.com/" target="_blank">the blog</a> and search it with the term "Linux".
+
+<!-- you
+must install a <b>Windows emulator such as the <em>free</em>ware
+WINE</b> (which stands for WINE Is Not an Emulator). WINE can be
+downloaded from <a href="http://www.winehq.org/"
+target="_blank">http://www.winehq.org/</a>. <em>From this point on, these
+instructions assume you are running Windows or a Windows
+(non-)emulator.</em>
+-->
+
+<p><li>Install <b>the free programming language R</b>. Go to <a
+href="http://cran.r-project.org/"
+target="_blank">http://cran.r-project.org/</a>. In the box labelled
+"Download and Install R" click the "<b>Windows</b>" link. On the page
+that appears, click the "<b>base</b>" link. The next page that appears
+has the latest version of R as its top link. Click that link and
+follow the installation instructions. <b>Use the 32-bit version, not the
+64-bit version.</b> (Even if you are using MacOS or Linux, download the
+32-bit Windows executable.)
+
+<p><li>Invoke R. (If you are using MacOS or Linux, invoke the Windows
+version of R within WINE.) At the command line in the R console
+window, type<br> <tt><font
+size="+2"><b>install.packages("BRugs")</b></font></tt> <br>You must
+include the quotes around "BRugs", and type "BR" in uppercase and
+everything else in lowercase. You will be prompted to select an
+internet repository; choose a site that is geographically near you.
+
+<p>Note: You must be using a recent version of R for the install.packages("BRugs") command to work
+properly. Are you getting an error message that the package is not
+available? If so, try this: In the R console window, click menu items
+Packages > Select Repositories, and, in the resulting pop-up window,
+make sure to select both CRAN and CRAN(extras), then click
+okay. BRugs lives in CRAN(extras). Then try install.packages("BRugs")
+again. Thanks to Uwe Ligges for these hints!
+
+<p><li>Copy the following data analysis program to your computer and
+be sure that it runs. <em>Right click</em> <a
+href="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialBRugsTest.R"
+target="_blank">this link</a> and <em>save</em> the linked file on your
+computer, using any file name with a ".R" extension. Then, invoke R,
+and on the R console window click the menu items <em>File</em> >
+<em>Source&nbsp;R&nbsp;code...</em> Browse to your saved file and
+select it (and click Open or OK). The program should run in R and
+produce a graph in a new window and some output text in the R console.
+<p>If the program does not run, please study all the previous steps
+and be sure that each was successfully accomplished.
+
+<p><li>Download the programs from the <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/" target="_blank">book's web site</a>.
+
+</ol>
+</small>
+</td></tr></table>
+
+
+
+
+<p align="right"><font size="-1">This page URL:
+http://www.indiana.edu/~jkkteach/WorkshopPurdue2011.html</font> <hr>
+</BODY> </font></HTML>

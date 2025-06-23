@@ -1,0 +1,12 @@
+SUBJECT>#3
+POSTER>eddie
+EMAIL>eduferna@indiana.edu
+DATE>Friday, 27 September 2002, at 8:06 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.167
+PASSWORD>aaqgnPH/Ni6zs
+PREVIOUS>
+NEXT> 33
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>In #3, it gives us the estimated standard variance, and then calls it 's'. So which is it? In other words, when pluging it into our formula of M-u/s/sqrtN, do we need to do the sqrt of S (as if it WAS a variance score), or can we just plug it in as our s? Sadly enough, I'm voting for the second, because I JUST managed to catch this, and unfortunately after I solved them without using the squareroot of s.

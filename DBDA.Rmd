@@ -1,0 +1,12 @@
+---
+title: "The Book: Doing Bayesian Data Analysis"
+lang: en
+---
+
+### <a href="https://sites.google.com/site/doingbayesiandataanalysis/" target="_blank">Book Info and Software</a> 
+
+### <a href="http://doingbayesiandataanalysis.blogspot.com/" target="_blank">The Blog</a> 
+
+<a href="https://sites.google.com/site/doingbayesiandataanalysis/" target="_blank">
+<img src="DBDA2Ecover.png" alt="Book Cover" style="width:250px !important; border: 1px solid DeepSkyBlue;">
+</a>

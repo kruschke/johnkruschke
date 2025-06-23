@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- John K. Kruschke, 9/11/2019. johnkruschke@gmail.com -->
+<head>
+  <title>Art Criticism by Zahneknirsche</title>
+  <style>
+  div.frame {
+    max-width:800px;
+    margin: auto;
+  }
+  div.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  div.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  div.top-left {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+  }
+  div.bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+  }
+
+  </style>
+</head>
+
+<body>
+
+<center>
+<!-- create empty named paragraph that will be expanded by script -->
+<br><br>
+<div id="imgAndTextDiv" class="container">
+  <div id="imageDiv" class="frame"><!-- random image will be put here --></div>
+</div> <!-- end imgAndTextDiv -->
+<div id="frameDiv" class="frame">
+  <blockquote>
+    <p id="mainpar" style="font-size:24px"><!-- random text will be put here --></p>
+  </blockquote>
+</div>
+
+<script>
+  //---------------------------------------------------------------------------
+  // Define some useful functions.
+  // Create a sequence of integers:
+  function sequence( start , end ) { // assumes integers
+    var ans = [];
+    for (var i = start; i <= end; i++) { ans.push(i); }
+    return ans;
+  }
+  // Generate a random integer:
+  function randomInteger( min , max ) {
+    return Math.floor( Math.random() * (max-min+1) ) + min;
+  }
+  // Concatenate an array to itself several times:
+  function repeatArr( arr , nrep ) {
+    var newarr = [];
+    for ( var i=1; i<=nrep; i++) {
+      var newarr = newarr.concat( arr )
+    }
+    return newarr;
+  }
+  // Shuffle an array: (taken from https://javascript.info/task/shuffle)
+  function shuffle( arr ) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+      [arr[i], arr[j]] = [arr[j], arr[i]]; // swap elements
+    }
+    return arr;
+  }
+  // Create a string of non-breakable spaces, for padding:
+  function pad( n , mult=1 ) {
+    var padtext = ""
+    for ( var i=0; i<Math.floor(mult*n); i++) { padtext = padtext+"&nbsp;" }
+    return(padtext)
+  }
+
+    //----------------------------------------------------------------------------
+    // Put the random image into the div:
+
+    function htmlSymbol() { return( "&#" + randomInteger(9728,9983) + ";" ) ; }
+
+    function makeImage() {
+      document.getElementById("imageDiv").innerHTML =
+        "<img src='"
+        // + "https://picsum.photos/id/" + randomInteger(100,999) + "/600/200/"
+        + "ArtCriticImages/ArtCriticImg" + randomInteger(1,801) + ".jpg" // from running ArtCriticGetImages.R
+        + "'"
+        + " alt='[Staggeringly beautiful image here.]'>"
+        + "<div class='centered'><font size='5'>"
+        // + htmlSymbol() + pad(randomInteger(1,3))
+        + htmlSymbol() + pad(randomInteger(1,3))
+        + htmlSymbol() + pad(randomInteger(1,3))
+        + "?" + pad(100)+"..."
+        + "<br><br><br><br><br><br><br><br><br><br><br><br>"
+        + "</font></div>"
+        + "<div class='centered'><font size='5'>"
+        + "<br><br><br><br><br><br><br><br><br><br><br>"
+        + "..." + pad(100)
+        // + htmlSymbol() + pad(randomInteger(1,3))
+        + htmlSymbol() + pad(randomInteger(1,3))
+        + htmlSymbol() + pad(randomInteger(1,3))
+        + "!"
+        + "</font></div>"
+        ;
+    }
+
+    function makeText() {
+  //---------------------------------------------------------------------------
+  // Specify the phrases to be combined later
+
+  // The initial framing
+  var frame = [
+    // "In it" , // from Philipp Sherard
+    "Contained within this offering" ,
+    "Throughout the work" ,
+    "Permeating this masterpiece" ,
+    "Suffusing this body of work" ,
+    "Notwithstanding the brevity of this piece" ,
+    "Despite the obstacles confronting the creation of this work" ,
+    "In hidden corners of this work" ,
+    "As the discerning observer may note" ,
+    "Swaddled in the garment of this piece"
+  ] ;
+
+  // The opposing pairs of attributes
+  var XnotX = [
+    // [ "an almost preternatural insight into the significance of intelligible form" ,
+    //   "a lyrical sensuality" ] , // from Philipp Sherard
+    [ "profoundly analytical inward-directed attention" ,
+      "exquisitely sensitive exterior awareness" ] ,
+    [ "a depression of existential ennui, cynicism, and resignation" ,
+      "virtually religious faith in ultimate purpose" ] ,
+    [ "a metaphorical palette of sepia and gray" ,
+      "allusion to rainbows" ] ,
+    [ "neurotic anxiety in the corporeal" ,
+      "uncanny calmness in the spiritual" ] ,
+    [ "the divisiveness of hyperpolarization" ,
+      "the centripetal force of cohesion" ] ,
+    [ "the stiff-arm of high-brow condescension" ,
+      "the embrace of respectful regard" ] ,
+    [ "amusingly lighthearted facetiousness" ,
+      "disconcertingly grave incisiveness" ] ,
+    [ "a flurry of nonrepresentational gesture" ,
+      "a thrust of semiotic referentiality" ] ,
+    [ "the captivity of negative space" ,
+      "the freedom of figurative expression" ] ,
+    [ "the meaning of articulated signs" ,
+      "the vacuity of self-referential marginalia" ] ,
+    [ "nihilistic dementia" ,
+      "realistic perspicacity" ] ,
+    [ "singularity of purpose" ,
+      "duplicity of intent" ] ,
+    [ "recognition of primordial aloneness" ,
+      "approbation of evolved communality" ] ,
+    [ "fractal layering of filigree" ,
+      "unidimensional minimalism" ] ,
+    [ "a veritable forest of hyperventilation" ,
+      "a virtual parking lot of asphyxiation" ] ,
+    [ "the gravitas of wisdom" ,
+      "the levity of play" ] ,
+    [ "the sweet redolence of carnality" ,
+      "the pure scent of spirituality" ] ,
+    [ "the arid desert of despair" ,
+      "the steamy bayou of romance" ] ,
+    [ "a psychodynamic surrealism" ,
+      "algorithmic rationality" ] ,
+    [ "a candle in the darkness" ,
+      "a shadow in the sunshine" ] ,
+    [ "horizontality of landscape" ,
+      "verticality of portraiture" ] ,
+    [ "unity of type" ,
+      "diversity of instance" ] ,
+    [ "self-referentiality" ,
+      "meta-awareness" ] ,
+    [ "fluidity of concept" ,
+      "rigidity of form" ] ,
+    [ "win-win symbiosis" ,
+      "zero-sum competition" ] ,
+    [ "the weirdly strange and <i>outr&eacute;</i>" ,
+      "the comfortably familiar and <i>ordinaire</i>"] ,
+    [ "the syntax of signs" ,
+      "the semantics of signification" ] ,
+    [ "a dubious interrogative" ,
+      "a presumptuous imperative" ] ,
+    [ "a calculating utilitarianism" ,
+      "a reflexive deontology"] ,
+    [ "the aspiration of individualism" ,
+      "the obligation of collectivism" ]
+  ] ;
+
+  // The phrase that joins the opposing attributes
+  var join = [
+    "seeks an equilibrium with" ,
+    "tries to embrace" ,
+    // "is fused with" , // from Philipp Sherard
+    "coexists with" ,
+    "is masterfully intertwined with" ,
+    "merges with" ,
+    "is amalgamated with" ,
+    "shares a bed with" ,
+    "marries" ,
+    "is thrown into a blender with" ,
+    "twines a golden braid with" ,
+    "interlocks with" ,
+    "joins" ,
+    "resides in propinquity to" ,
+    "works together with" ,
+    "struggles against" ,
+    "finds itself allied with" ,
+    "converses with" ,
+    "is integrated with" ,
+    "is sewn seamlessly with" ,
+    "collides with" ,
+    "kisses" ,
+    "floats on the same tide as"
+  ] ;
+
+  // The consequence of the opposition
+  var conseq = [
+    // "preventing stylization from becoming academic and lifeless, the mere repetition of formulae" ,  // from Philipp Sherard
+    "creating a synthesis that is greater than the sum of its parts" ,
+    "yielding a cornucopia of unexpected insights" ,
+    "arresting the viewer with bemused admiration" ,
+    "inducing intellectual if not literal vertigo" ,
+    "provoking reflection and refraction in our minds" ,
+    "making one green with envy and pale with nausea" ,
+    "eliciting strong reactions from pedants and care-nots alike" ,
+    "falling into a bottomless abyss of reduplication" ,
+    "reclaiming the universality that once contained us all" ,
+    "making our lives richer for its presence" ,
+    "illuminating the inherent dialectic of life" ,
+    "reminding us that all perspectives are blind in their own way" ,
+    "mapping a maze of ingress and egress" ,
+    "surveying the stage of nature's drama" ,
+    "assaying the immeasurable" ,
+    "melding a sturdy alloy" ,
+    "firmly gripping us in its velvet glove" ,
+    "connecting us with significance" ,
+    "moving us a step closer to insight" ,
+    "unlocking doors that might be best unopened" ,
+    "enriching our lives with hints of what's possible"
+  ] ;
+
+  //----------------------------------------------------------------------------
+  // Now put the combined text into paragraph 'mainpar' created before script:
+  var xIdx = randomInteger(1,XnotX.length)-1 ;
+  var flipIdx = randomInteger(1,2)-1 ;
+  document.getElementById("mainpar").innerHTML =
+  "<b>"
+  + shuffle(frame)[0]      + ", "
+  + XnotX[xIdx][flipIdx]   + " "
+  + shuffle(join)[0]       + " "
+  + XnotX[xIdx][1-flipIdx] + ", "
+  + shuffle(conseq)[0]     + "."
+  + "</b>"
+  ;
+
+} // end function makeText()
+
+makeImage();
+//makeImgText();
+makeText();
+
+</script>
+
+<input type="button" value="Click to see another deep insight." onclick="makeImage(); makeText()" >
+
+<br><br><small><a href='https://jkkweb.sitehost.iu.edu/artcritic.html' target='_blank'>About this page</a>.</small>
+
+</center>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+11 Oct 99   SPSS for Unix, Release 6.12 (Solaris 2.x)                                                                         Page 1
+10:36:42    Indiana University             SUN SPARC        Solaris 2.3
+
+
+For Solaris 2.3         Indiana University                      SPSS ID 190581
+
+   1  0  set width=80.
+   2  set highres off.
+   3
+   4  COMMENT data file must first have date-string removed, and blank lines rem
+         oved.
+   5  data list file='hw1ratings.dat' free
+   6    / r1 to r40 time .
+   7
+   8  compute s12  = mean(  r1, r11, r21, r31 )   .
+   9  compute s13  = mean(  r2, r12, r22, r32 )   .
+  10  compute s14  = mean(  r3, r13, r23, r33 )   .
+  11  compute s15  = mean(  r4, r14, r24, r34 )   .
+  12  compute s23  = mean(  r5, r15, r25, r35 )   .
+  13  compute s24  = mean(  r6, r16, r26, r36 )   .
+  14  compute s25  = mean(  r7, r17, r27, r37 )   .
+  15  compute s34  = mean(  r8, r18, r28, r38 )   .
+  16  compute s35  = mean(  r9, r19, r29, r39 )   .
+  17  compute s45  = mean( r10, r20, r30, r40 )   .
+  18
+  19  COMMENT When did people do the exercise?
+  20  COMMENT Increment of 86400 seconds is 24 hours
+  21  COMMENT frequencies var=time
+  22  COMMENT  /barchart inc(86400) .
+  23
+  24  descriptives var = s12 s13 s14 s15 s23 s24 s25 s34 s35 s45
+  25   / statistics = mean variance .
+  26
+  27
+  28
+
+
+760 bytes of memory required for the DESCRIPTIVES procedure.
+40 bytes have already been acquired.
+720 bytes remain to be acquired.
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 2
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+
+
+
+Number of valid observations (listwise) =       203.00
+
+                               Valid
+Variable      Mean   Variance      N  Label
+
+S12           4.63       3.01    203
+S13           4.88       2.43    203
+S14           3.01       1.35    203
+S15           2.76       1.51    203
+S23           6.91       2.27    203
+S24           3.96       1.56    203
+S25           4.56       2.73    203
+S34           2.95       1.31    203
+S35           2.83       1.29    203
+S45           2.59       1.90    203
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 3
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+
+
+Preceding task required .11 seconds CPU time;  .00 seconds elapsed.
+
+  29  ttest pairs = s34 s45 .
+  30  COMMENT Tests of equal-overlap pairs:
+  31  COMMENT These are planned comparisons.
+  32  COMMENT DK vs KS
+  33
+
+T-TEST requires 104 bytes of workspace for execution.
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 4
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+t-tests for Paired Samples
+
+
+                 Number of           2-tail
+ Variable          pairs      Corr   Sig         Mean          SD     SE of Mean
+ -------------------------------------------------------------------------------
+ S34                                           2.9495       1.142           .080
+                    203       .324    .000
+ S45                                           2.5936       1.377           .097
+ -------------------------------------------------------------------------------
+
+
+          Paired Differences       |
+    Mean          SD    SE of Mean |      t-value             df      2-tail Sig
+ ----------------------------------|--------------------------------------------
+   .3559       1.477          .104 |         3.43            202            .001
+ 95% CI (.152, .560)               |
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 5
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+
+
+Preceding task required .02 seconds CPU time;  .00 seconds elapsed.
+
+  34  ttest pairs = s15 s35 .
+  35  COMMENT Tests of equal-overlap pairs:
+  36  COMMENT These are planned comparisons.
+  37  COMMENT AS vs DS
+  38
+
+T-TEST requires 104 bytes of workspace for execution.
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 6
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+
+t-tests for Paired Samples
+
+
+                 Number of           2-tail
+ Variable          pairs      Corr   Sig         Mean          SD     SE of Mean
+ -------------------------------------------------------------------------------
+ S15                                           2.7574       1.229           .086
+                    203       .623    .000
+ S35                                           2.8337       1.137           .080
+ -------------------------------------------------------------------------------
+
+
+          Paired Differences       |
+    Mean          SD    SE of Mean |      t-value             df      2-tail Sig
+ ----------------------------------|--------------------------------------------
+  -.0764       1.030          .072 |        -1.06            202            .292
+ 95% CI (-.219, .066)              |
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 7
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+
+
+Preceding task required .01 seconds CPU time;  .00 seconds elapsed.
+
+  39  ttest pairs = s12 s25 .
+  40  COMMENT Tests of equal-overlap pairs:
+  41  COMMENT These are planned comparisons.
+  42  COMMENT AB vs BS
+  43
+  44
+
+T-TEST requires 104 bytes of workspace for execution.
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 8
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+
+t-tests for Paired Samples
+
+
+                 Number of           2-tail
+ Variable          pairs      Corr   Sig         Mean          SD     SE of Mean
+ -------------------------------------------------------------------------------
+ S12                                           4.6256       1.734           .122
+                    203       .413    .000
+ S25                                           4.5603       1.654           .116
+ -------------------------------------------------------------------------------
+
+
+          Paired Differences       |
+    Mean          SD    SE of Mean |      t-value             df      2-tail Sig
+ ----------------------------------|--------------------------------------------
+   .0653       1.836          .129 |          .51            202            .613
+ 95% CI (-.189, .319)              |
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                       Page 9
+10:36:42  Indiana University             SUN SPARC        Solaris 2.3
+
+
+Preceding task required .01 seconds CPU time;  .00 seconds elapsed.
+
+  45  ttest pairs = s24 s14 .
+  46  COMMENT Tests of selected non-monotonicities:
+  47  COMMENT These are post-hoc tests.
+  48  COMMENT BK vs AK
+  49
+
+T-TEST requires 104 bytes of workspace for execution.
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                      Page 10
+10:36:43  Indiana University             SUN SPARC        Solaris 2.3
+
+t-tests for Paired Samples
+
+
+                 Number of           2-tail
+ Variable          pairs      Corr   Sig         Mean          SD     SE of Mean
+ -------------------------------------------------------------------------------
+ S24                                           3.9631       1.248           .088
+                    203       .528    .000
+ S14                                           3.0135       1.163           .082
+ -------------------------------------------------------------------------------
+
+
+          Paired Differences       |
+    Mean          SD    SE of Mean |      t-value             df      2-tail Sig
+ ----------------------------------|--------------------------------------------
+   .9495       1.174          .082 |        11.53            202            .000
+ 95% CI (.787, 1.112)              |
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                      Page 11
+10:36:43  Indiana University             SUN SPARC        Solaris 2.3
+
+
+Preceding task required .01 seconds CPU time;  1.00 seconds elapsed.
+
+  50  ttest pairs = s13 s25 .
+  51  COMMENT Tests of selected non-monotonicities:
+  52  COMMENT These are post-hoc tests.
+  53  COMMENT AD vs BS
+
+T-TEST requires 104 bytes of workspace for execution.
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                      Page 12
+10:36:43  Indiana University             SUN SPARC        Solaris 2.3
+
+t-tests for Paired Samples
+
+
+                 Number of           2-tail
+ Variable          pairs      Corr   Sig         Mean          SD     SE of Mean
+ -------------------------------------------------------------------------------
+ S13                                           4.8768       1.558           .109
+                    203       .227    .001
+ S25                                           4.5603       1.654           .116
+ -------------------------------------------------------------------------------
+
+
+          Paired Differences       |
+    Mean          SD    SE of Mean |      t-value             df      2-tail Sig
+ ----------------------------------|--------------------------------------------
+   .3165       1.997          .140 |         2.26            202            .025
+ 95% CI (.040, .593)               |
+11 Oct 99 SPSS for Unix, Release 6.12 (Solaris 2.x)                      Page 13
+10:36:43  Indiana University             SUN SPARC        Solaris 2.3
+
+
+Preceding task required .03 seconds CPU time;  .00 seconds elapsed.
+
+  54
+
+    53 command lines read.
+     0 errors detected.
+     0 warnings issued.
+     0 seconds CPU time.
+     1 seconds elapsed time.
+       End of job.

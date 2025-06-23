@@ -1,0 +1,2046 @@
+
+
+
+
+
+
+                              How-To-Use-It-Manual
+
+
+
+                  Stimulus Generation and Association Programs
+
+
+
+                     Brown University Neural Modeling Group
+
+                                  Release 2.05
+
+
+
+                                BSB and ASSOCIAT
+
+
+
+                               James A. Anderson
+
+
+
+                Department of Cognitive and Linguistic Sciences
+
+                                Brown University
+
+                                    Box 1978
+
+                              Providence, RI 02912
+
+                            James_Anderson@brown.edu
+
+                                November 1, 1994
+
+
+
+
+
+
+
+
+
+    Introduction.
+
+
+
+         This manual will tell you how to use a set of programs developed at
+
+    the Department of Cognitive and Linguistic Sciences, Brown University.
+
+    The programs are research programs designed to generate, maintain,
+
+    learn, and use sets of stimuli and matrices used in neural modelling
+
+    research.
+
+
+
+         The programs are written in VMS Pascal to run on a VAX.  There are
+
+    two programs of major interest.  One is called ASSOCIAT and generates
+
+    the matrices that associate pairs of vectors.  Actually, the internal
+
+    representation of a matrix is in the form of a FILE of a Pascal data
+
+    type called Neuron, but acts mathematically like a matrix.  The other is
+
+    a program with several parts.  It is called BSB.  One part generates
+
+    stimuli which are large state vectors.  These state vectors represent
+
+    strings of 25 characters in a 200 dimensional system.  Once generated,
+
+    the state vectors can be associated together using ASSOCIAT.  Another
+
+    part realizes the dynamics of the simple non-linear model called the
+
+    `Brain-state-in-a-Box'.  (See Anderson, Silverstein, Ritz and Jones,
+
+    1977, Anderson and Mozer, 1981; Anderson, 1986; and Anderson and Murphy,
+
+    1986; Anderson, 1993,1994)
+
+
+
+
+
+    Files
+
+
+
+         In VMS several files must be ASSIGNed so the programs will know
+
+    where to read and write the data.  Below is a set of ASSIGN statements
+
+    in the appropriate form.  The example chosen are the file assignments
+
+    from the `OHMS' demonstration, though the OHMS.COM file actually
+
+    contains more material than this, since it also rulns the demonstration.
+
+    These VMS commands should be put in a command file (in this case,
+
+    OHMS.COM) which makes the appropriate assignments for convenience.
+
+
+
+         $assign fohms.stm ffile
+
+         $assign gohms.stm gfile
+
+         $assign tohms.stm tfile
+
+         $assign nohms.neu nfile
+
+
+
+    Then execute the command file by typing @OHMS to make the assignments.
+
+    There are enough files to make life complicated unless some systematic
+
+    way is found to label the files.  Other computers have equivalent ways
+
+    of assigning data files used in a program to names.
+
+
+
+         By convention, the input and output vectors are given the extension
+
+    `.STM' and the file containing the matrix are given the extension
+
+    `.NEU'.  As a general point, the files constructed with these programs
+
+    can be quite large.  In the 200 dimensional system the files associated
+
+    with the matrix are 633 blocks long.  (A VMS block is 512 bytes.)
+
+
+
+
+
+    Making the Stimuli using BSB.
+
+
+
+         The first step in making stimuli is to RUN BSB.  The program will
+
+    ask you if you are using a VT100 or not.  Most modern terminals and
+
+    terminal emulators are sufficiently compatible with a VT100 for this
+
+    purpose, including the later DEC terminals, VT220, 320, etc.  Then some
+
+    initial information appears.  The general pattern of displays in BSB is
+
+    to have status information on the top 5 lines of the screen and the
+
+    command prompts on the bottom line.  Since the author of these programs
+
+    was influenced by UCSD Pascal at an impressionable age, extensive use is
+
+    made of self documenting prompts.  For example, 'T)hreshold' means that
+
+    if 'T' (or 't') is typed at the command prompt ('>') the threshold
+
+    interpretation parameter can be changed from its default.  In general,
+
+    typing a single letter, followed by <Return> will cause an action.  All
+
+    commands can be upper or lower case and most are protected to some
+
+    extent (not totally!) against erroneous inputs.  Not all commands appear
+
+    on the prompt lines, for reasons of space, particularly for setting some
+
+    of the less frequently used parameters in the simulation.
+
+
+
+         At first, there are no files present for BSB to work with.  Let us
+
+    assume you want to create a series of stimuli for future use.  The
+
+    prompt line tells you how many stimuli are present in the F File, the G
+
+    File, and the T File.  When the program first appears, these values are
+
+    all zero.  F File and G File have the customary meanings they have in
+
+    our neural modelling literature:  i.e.  the F File is the input set of
+
+    state vectors and the G File is the output set of state vectors.  The T
+
+    file contains a set of 'Test' vectors, usually partial input stimuli,
+
+    which are used to test the reconstructive and processing powers of the
+
+    system.
+
+
+
+         Although this simple form of our programs only performs
+
+    autoassociation, more complex versions can have different input and
+
+    output sets.
+
+
+
+         Input vectors are constructed from strings of characters.  We will
+
+    assume the system is 200 dimensional.  A character in the string is
+
+    represented by its ASCII number, i.e.  'a' is 97, '5' is 53, '=' is 61,
+
+    and so on.  These numbers are converted into binary representation, so
+
+    'a' becomes '01100001'.  Then the zeros are replaced with minus ones, so
+
+    we can maintain rough equality of numbers of positive and negative
+
+    elements which is convenient for the models, so the actual internal
+
+    representation of
+
+
+
+              'a' ---> -1,1,1,-1,-1,-1,-1,1.
+
+
+
+         Each character requires 8 vector elements, so a 200 dimensional
+
+    system contains enough elements for 25 characters.  The parity bit is
+
+    computed but not used in the simulations at present.  One reason for its
+
+    presence, is that eight bits allow the construction of `orthogonal'
+
+    character representations, which can sometimes be a convenience.  If
+
+    anyone wanted to actually use these programs for anything substatial it
+
+    is strongly recommended that a less arbitrary way of coding letters be
+
+    used.  The state vectors contain single precision floating point
+
+    numbers.  Currently no more than 100 stimuli are allowed in any one file
+
+    but this can be easily changed in the programs if necessary.
+
+
+
+         The technically inclined might like to know that stimuli are a
+
+    Pascal Record composed of two pieces:
+
+
+
+              CONST Dimensionality = 200;
+
+
+
+              TYPE  Vector    = ARRAY [1..Dimensionality] OF REAL;
+
+
+
+                    String    = PACKED ARRAY [1..60] OF CHAR;
+
+
+
+                    Stimulus  = RECORD
+
+                                Name: String;
+
+                                Val : Vector;
+
+                                END;
+
+
+
+
+
+
+
+
+
+                  Figure 1.  Initial appearance of the screen.
+
+
+
+                              ---------------------
+
+
+
+ BSB Neural Net Programs. 3-89  B)SB.  C)hange. E)xit. H)elp. 
+
+ L)ist. M)ode. N)eurons. R)ead. S)ave. T)hreshold.  W)rite.
+
+  Threshold:  5.0E-01  F File:    0  G File:    0  T File:    0
+
+ NO NEURON FILE.  Display TF. 
+
+
+
+ Initializing Files.
+
+ Reading neuron and stimulus files from disk.
+
+ Reading F file.
+
+ Reading G file.
+
+ Reading T file.
+
+ Reading neuron file (autoassociative).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ C>
+
+
+
+                              ---------------------
+
+
+
+
+
+
+
+         The program will automatically look for the assigned stimulus and
+
+    neuron files, and write its progress to the screen.  If it doesn't find
+
+    a file, it will write 'Stimulus file not found' to the command line
+
+    (i.e.  the 'C>' line).  You may have to watch carefully to see this line
+
+    appear, and then disappear when the next file is read.  The information
+
+    at the top of the screen will also inform you of progress.  In the
+
+    example, there are no stimuli in the F file, G file, and T file and this
+
+    is noted in the third line on the screen.  There is also a comment that
+
+    there is 'NO NEURON FILE' on the fourth line.
+
+
+
+         To contruct a stimulus, type 'C' from the first command level.
+
+    This allows you to 'C)hange' the stimuli in the Files, which currently
+
+    contain no stimulus vectors.  There are a number of options in 'C)hange'
+
+    to allow you to do various useful things to the stimuli.
+
+
+
+         Suppose you want to make a new stimulus, say the first stimulus in
+
+    the F File.  Type 'R', for 'Replace.' The program will then prompt you
+
+    as to which stimulus to replace.  If you say 'F1', the F[1] position in
+
+    the F File (which starts off as all blanks) will be replaced with what
+
+    you type and the appropriate state vector will be constructed.  Figure 2
+
+    shows the screen after the contents of several vectors (f1, f2, and f3)
+
+    have been replaced with ASCII character strings and f4 is about to be
+
+    replaced.  (The names of f1, f2 and f3 were l)isted and appear in the
+
+    center of the screen.
+
+
+
+
+
+
+
+             Figure 2. Appearance after several f stimuli are made.
+
+
+
+                              --------------------
+
+
+
+ Template: 1234567890123456789012345
+
+ New     : This will be f4.
+
+
+
+
+
+
+
+
+
+
+
+    F[ 1].  This is stimulus f1.____  G[ 1].
+
+    F[ 2].  This is stimulus f2.____  G[ 2].
+
+    F[ 3].  And this is f3._________  G[ 3].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Replace which stimulus (set, number) :  f4
+
+
+
+                              --------------------
+
+
+
+
+
+
+
+         After you choose the stimulus to replace, 'Template:' will appear
+
+    at the top of the screen.  This is a set of 25 digits to serve as a
+
+    reference marks for constructing your stimulus.  Underneath it is
+
+    'New     :' which is where the cursor is and where you can write the new
+
+    string.  Any ASCII character except '_'can be placed here and will be
+
+    represented as its appropriate byte.  The ASCII character '_' is
+
+    represented in the vector as all zeros.  If you hit return before the
+
+    end of the string, the vector will be filled out with zeros, represented
+
+    as underlines.  If you type in more than 25 characters, the excess will
+
+    be ignored.  Remember to use <Delete> to remove characters from a line,
+
+    as you always do on DEC systems.  Using the <Backspace> key will insert
+
+    non-printing control characters into the line, causing erratic behavior
+
+    of the system that is difficult to detect.
+
+
+
+         After you have typed in a few stimuli, you can see the current set
+
+    by typing 'L' for 'L)ist'.  This will list either the F file and the G
+
+    File or the T file and the F file, depending on which M)ode you have
+
+    chosen.  If there are more stimuli than will fit on the screen you can
+
+    move the file B)ackwards or F)orwards by typing 'b' or 'f'.  Typing any
+
+    other letter will return you to where you were.  The listing will remain
+
+    on the screen for reference until new information has to be written over
+
+    it.
+
+
+
+               Briefly the commands in C)hange are:
+
+
+
+               A)dd.  Form a state vector as the sum of other state vectors.
+
+          The resulting vector values are divided by the number in the sum
+
+          (i.e.  the average of the vectors is taken).  The '.Name' of this
+
+          type of state vector will appear in the L)isting as, for example,
+
+          'Sum f01 f02 f03' if it was the sum of stimulus vectors F[1],
+
+          F[2], and F[3].  Up to 16 vectors can be summed.
+
+
+
+               C)opy.  Copy a state vector in one location to another
+
+          location.  The program will prompt you for the stimulus to be
+
+          copied and where to put it.
+
+
+
+               E)dit.  This useful command will let you 'edit' an already
+
+          existing stimulus.  It will ask you for the stimulus number to
+
+          edit.  It will then give the old stimulus as the template and let
+
+          you type in the new stimulus right below it.  When you type
+
+          <Return> the new stimulus vector will replace the old one.
+
+
+
+               I)ndividual values.  Will show the individual element values.
+
+          The elements arranged on a byte per line with the number of the
+
+          first and last elements on the line numbered on left and right
+
+          sides of the screen, and the ASCII interpretation of the byte on
+
+          the left.  This command has its own command line.
+
+
+
+                    C)hoose chooses which vector to show.
+
+
+
+                    D)isplay displays the elements.
+
+
+
+                    M)ode (see below).
+
+
+
+                    Q)uit returns to C)hange.
+
+
+
+                    T)hreshold (see below).
+
+
+
+                    X)change allows you to change individual values.
+
+
+
+               L)ist.  Lists the state vectors in the files.  If the display
+
+          is in FG mode, the F File and the G File will be listed.  If the
+
+          display is in T mode, the T File and the F File will be listed.
+
+          If more than 16 vectors are present, only sixteen at a time will
+
+          be shown.  The 16 stimuli displayed can be shifted forward or
+
+          backward by typing 'F' or 'B'.  L)ist can be left by typing any
+
+          character other than 'F' or 'B'.
+
+
+
+               M)ode.  Change listing mode from displaying the F File and
+
+          the G File to displaying the T File and the F File or vice versa.
+
+
+
+               Q)uit.  Return to wherever you entered C)hange from.  C)hange
+
+          can also be entered from BSB.
+
+
+
+               R)eplace.  Replace a member of one of the files with a new
+
+          stimulus.
+
+
+
+               S)ave.  Save the file of stimuli to a disk file.  The program
+
+          will prompt you as to which file(s) you want to save.  The saved
+
+          file will be given the names you ASSIGNed to it earlier.  If there
+
+          is already a file of that name present, VMS will give the new file
+
+          a later version number.  For example, if F15.STM;2 is the ASSIGNed
+
+          initial stimulus file, if you S)ave a later version of the file,
+
+          it will get the name F15.STM;3, and so on.  If you purge your
+
+          directory, you will delete the earlier versions of the stimulus
+
+          file.  Don't forget to S)ave your work!
+
+
+
+               >>>The program does NOT automatically save new stimuli.<<<
+
+
+
+               T)emplate.  Sometimes it is convenient to use a template
+
+          other than digits to make remembering what goes where easier.
+
+          T)emplate allows you to make your own string of ASCII characters
+
+          to serve as a template, or to use a member of one of the Stimulus
+
+          files as a model for a template.
+
+
+
+
+
+    Using ASSOCIAT to Make a New Learning Matrix.
+
+
+
+         Suppose you have constructed a set of F and G stimuli.  You have
+
+    saved them to appropriate disk files, and now wish to form the
+
+    association matrix between the input and output sets.  This is done with
+
+    the program named ASSOCIAT.  ASSOCIAT can sometimes take sizeable
+
+    amounts of computer time on older VAXes.  Also the data files ASSOCIAT
+
+    automatically creates to store the results are very large (633 blocks in
+
+    a 200 dimensional system) so be sure you have enough free space in your
+
+    directory to write such a large file, otherwise the results of all the
+
+    computing may be lost.  (A block is 512 bytes on VMS systems.)
+
+
+
+         If you RUN ASSOCIAT, first the F and G files will be listed so you
+
+    can see if they are satisfactory.  A listing of a session using ASSOCIAT
+
+    to generate an Association matrix.  The data set is a set of ambiguous
+
+    descriptors used in the disambiguation demonstration.  (This is the
+
+    output seen when the command file lrndis.com is executed.)
+
+    ASSOCIAT program.  October 28, 1994.
+
+
+
+    The program is reading the FFILE.
+
+    The dimensionality of the system is 200
+
+
+
+    The program is reading the GFILE.
+
+
+
+    F and G stimuli used.
+
+
+
+     F[ 1] : BaseballGameBat BallDiamd                                   
+
+     G[ 1] : BaseballGameBat BallDiamd                                   
+
+
+
+     F[ 2] : Vampire MythBat NiteDracu                                   
+
+     G[ 2] : Vampire MythBat NiteDracu                                   
+
+
+
+     F[ 3] : Animal  LiveBat WingFlyng                                   
+
+     G[ 3] : Animal  LiveBat WingFlyng                                   
+
+
+
+     F[ 4] : Poker   GameBeerTablCards                                   
+
+     G[ 4] : Poker   GameBeerTablCards                                   
+
+
+
+     F[ 5] : Tennis  GameCortBallRackt                                   
+
+     G[ 5] : Tennis  GameCortBallRackt                                   
+
+
+
+     F[ 6] : Dancing RichPrtyBallSocty                                   
+
+     G[ 6] : Dancing RichPrtyBallSocty                                   
+
+
+
+     F[ 7] : GeoShapeTwoDCrclSqreDiamd                                   
+
+     G[ 7] : GeoShapeTwoDCrclSqreDiamd                                   
+
+
+
+     F[ 8] : GeoModelTreDSphrBallTetra                                   
+
+     G[ 8] : GeoModelTreDSphrBallTetra                                   
+
+
+
+     F[ 9] : ExpJewelRichRubyOpalDiamd                                   
+
+     G[ 9] : ExpJewelRichRubyOpalDiamd                                   
+
+
+
+    Seed for RN generator           : 
+
+    Number of associations to learn : 
+
+    Use CORRECTION procedure? Y or N: 
+
+    Use old Nfile as start? Y or N  : 
+
+    Number of synapses              : 
+
+    Setup completed.
+
+
+
+       10  Nr:    8   Cosine:  5.16E-01
+
+       20  Nr:    5   Cosine:  9.01E-01
+
+       30  Nr:    4   Cosine:  9.48E-01
+
+       40  Nr:    1   Cosine:  9.60E-01
+
+       50  Nr:    2   Cosine:  9.25E-01
+
+       60  Nr:    6   Cosine:  9.47E-01
+
+       70  Nr:    5   Cosine:  9.87E-01
+
+       80  Nr:    2   Cosine:  9.74E-01
+
+       90  Nr:    4   Cosine:  9.97E-01
+
+      100  Nr:    3   Cosine:  9.70E-01
+
+      110  Nr:    9   Cosine:  9.91E-01
+
+      120  Nr:    5   Cosine:  9.95E-01
+
+      130  Nr:    4   Cosine:  9.98E-01
+
+      140  Nr:    7   Cosine:  9.89E-01
+
+      150  Nr:    4   Cosine:  9.97E-01
+
+      160  Nr:    8   Cosine:  9.96E-01
+
+      170  Nr:    5   Cosine:  9.96E-01
+
+      180  Nr:    8   Cosine:  9.99E-01
+
+      190  Nr:    4   Cosine:  9.99E-01
+
+      200  Nr:    4   Cosine:  9.99E-01
+
+      210  Nr:    5   Cosine:  9.99E-01
+
+      220  Nr:    8   Cosine:  9.99E-01
+
+      230  Nr:    7   Cosine:  1.00E+00
+
+      240  Nr:    1   Cosine:  9.99E-01
+
+      250  Nr:    2   Cosine:  9.99E-01
+
+
+
+    Accuracy of recall of input set.
+
+
+
+
+
+      1  Name: BaseballGameBat BallDiamd                                   
+
+      Cosine:  9.99E-01  Length:  1.40E+01
+
+
+
+      2  Name: Vampire MythBat NiteDracu                                   
+
+      Cosine:  1.00E+00  Length:  1.39E+01
+
+
+
+      3  Name: Animal  LiveBat WingFlyng                                   
+
+      Cosine:  9.99E-01  Length:  1.40E+01
+
+
+
+      4  Name: Poker   GameBeerTablCards                                   
+
+      Cosine:  1.00E+00  Length:  1.40E+01
+
+
+
+      5  Name: Tennis  GameCortBallRackt                                   
+
+      Cosine:  9.99E-01  Length:  1.39E+01
+
+
+
+      6  Name: Dancing RichPrtyBallSocty                                   
+
+      Cosine:  1.00E+00  Length:  1.41E+01
+
+
+
+      7  Name: GeoShapeTwoDCrclSqreDiamd                                   
+
+      Cosine:  1.00E+00  Length:  1.40E+01
+
+
+
+      8  Name: GeoModelTreDSphrBallTetra                                   
+
+      Cosine:  9.99E-01  Length:  1.38E+01
+
+
+
+      9  Name: ExpJewelRichRubyOpalDiamd                                   
+
+      Cosine:  9.98E-01  Length:  1.38E+01
+
+
+
+    Writing to neuron output file.
+
+
+
+         The Prompts are mostly self explanatory.
+
+
+
+         1.  Seed starts off the random number generator.  Pairs of
+
+    associations from the set of stimulus pairs are presented randomly.  A
+
+    particular sequence can be repeated if the same seed is used.
+
+
+
+         2.  The number to be learned depends on the number of items in the
+
+    stimulus sets.  If the Widrow-Hoff error correction procedure is used,
+
+    about 30 presentations per pair is a good place to start.  If the linear
+
+    associator is used, only one presentation of each pair is necessary.
+
+
+
+         3.  Correction Procedure.  If 'Y' or 'y', the Widrow-Hoff error
+
+    correction procedure will be used, otherwise, the linear associator
+
+    without error correction will be used.
+
+
+
+         4.  Used Assigned Ninfile.  If 'Yes', a previously constructed
+
+    neuron file will be used as a starting point, otherwise all matrix
+
+    elements start off at zero.  You can teach an old matrix new tricks if
+
+    you wish.  If 'No', then a new matrix will be created.
+
+
+
+         5.  Number of synapses is the number of non-zero synapses in the
+
+    matrix.  The rest of the synapses are set identically to zero.
+
+    Execution speed is a linear function of number of synapses because of
+
+    the way the programs are written and the files are constructed.  This is
+
+    because the matrices are not stored as matrices but as lists of non-zero
+
+    synaptic connections.  Fewer synapses means less computation time.
+
+    Usually 50% connectivity is adequate for most systems we have
+
+    investigated up to now and seems to make the systems work better than
+
+    full connectivity, for reasons we now have some insight into.  It takes
+
+    a while to set up the matrix, so expect a wait.  If you set a
+
+    connectivity of over 75%, you will get a warning message, telling you to
+
+    expect a VERY long wait.  However, 100% connectivity is handled
+
+    separately, and sets up very fast.
+
+
+
+         After the matrix is set up and the system starts learning, the
+
+    program will print out a progress report every 10 presentations.  It
+
+    will tell you the cumulative number of trials, the stimulus pair
+
+    presented that trial, and the cosine between obtained and desired output
+
+    vectors, so you can check on progress and make sure the stimuli are
+
+    being presented correctly.  After learning is over, the program will
+
+    test how well the system learned.  It will take each F in the F File in
+
+    turn as input, compute the output, and compare that output with the
+
+    correct association by computing the cosine between the actual and
+
+    correct answers.  A cosine of 1.0 is perfect.  The length of the vectors
+
+    is also computed.  The new neuron file will then be written to whatever
+
+    file is ASSIGNed to Noutfile.  Remember, in a 200 dimensional system,
+
+    these files are 633 blocks long so make sure you have enough free space
+
+    in your account.
+
+
+
+
+
+    Using the Matrix.
+
+
+
+         To test the behavior of a previously constructed matrix, RUN BSB.
+
+
+
+         You must read in the matrix and the stimulus sets you wish to test.
+
+    This is done automatically in BSB.  The program will inform you of its
+
+    progress and whether or not it found the ASSIGNed files.  Success or
+
+    failure in retrieving files will appear on the status line (i.e.  the
+
+    bottom line).  This line will appear and disappear so you have to watch
+
+    carefully if you are interested.  The status box (the top five lines)
+
+    will tell you how many stimuli are in the stimulus files (0 if the files
+
+    were not present) and whether neuron files are present.  (See Figure 1.)
+
+
+
+         If the program cannot find the required files, it will tell you,
+
+    but will not stop the program.  Some other input errors may abnormally
+
+    terminate the program and you will get a VMS error message.  If you exit
+
+    the program abnormally, by hitting <CTRL>C, or if you manage to do
+
+    something fatal to the input, expect problems.  Since your terminal has
+
+    been reset to allow for the convenient display format, strange things
+
+    may have happpened to your display, like having all input and output
+
+    appear on one line.  You can either write a small program to reset your
+
+    terminal to normal or run BSB again and simply type 'e' to E)xit from
+
+    the program normally which will reset your VT-100.  A useful short
+
+    program is called RESET which will reset your terminal after an abnormal
+
+    exit from ITERATE:
+
+
+
+         PROGRAM Reset (Input, Output);           {Resets terminal.}
+
+         BEGIN   {Reset.}
+
+         WRITE (CHR(27), '[1;24r');               {Restore_scrolling.}
+
+         WRITE (CHR(27), '[f', CHR (27), '[2J');  {Clear_screen.}
+
+         END.    {Reset.} 
+
+
+
+
+
+    The Brain State in a Box Model.
+
+
+
+         To use the Brain-State-in-a-Box (BSB) Model, type 'B', for B)SB.
+
+    There now appear new prompt and command lines.  There are a number of
+
+    parameters of the simulation which can be changed if necessary, but the
+
+    system comes with appropriate defaults for general use.
+
+
+
+         Figure 3 shows the appearance of the initial BSB screen.
+
+
+
+
+
+
+
+                   Figure 3.  Initial appearance of BSB Screen
+
+
+
+                              --------------------
+
+
+
+ BSB>P)asses :  16     U)Limit: 1.3E+00  T)hreshold: 5.0E-01   Stim. #) : T 1
+
+ Mx: Synapses:  95   F)eedback: 7.0E-01      D)ecay: 6.5E-01    
+
+ RESTART         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ TF BSB Mx 1) 2) B)oth X)cute C)hange L)ist R)estart V)als Q)uit >
+
+
+
+                              --------------------
+
+
+
+
+
+         The variable x is the system state vector.  The actual equation
+
+    being used is
+
+
+
+         x(t + 1) = Decay * x(t) + Feedback * A x(t) + {f(0)}.
+
+
+
+    Decay is a decay parameter which measures the length of duration of the
+
+    `short term memory' of the system.  (If there was no feedback, activity
+
+    would decay geometrically with this fraction.  Feedback is a parameter
+
+    multiplying the feedback through the matrix.
+
+
+
+         If it is enabled, the term {f(0)} will add the initial state vector
+
+    to the state vector at every step.  It could correspond to a continous
+
+    input from an earlier processing stage.  This is related to what is
+
+    called 'clamping' in the Boltzmann machine literature and effectively
+
+    holds non-zero input vector elements constant so they cannot change in
+
+    later iterations.  This option is used in the DRUGS simulation.  It is
+
+    enabled if 'O' or 'o' is typed from the command line.
+
+
+
+         The possible commands in the BSB system are:
+
+
+
+               C)hange.  Change the state vectors in the F File, G File or T
+
+          File.  (see earlier description of this part of the program).
+
+
+
+               D)ecay allows change of the decay constant in the above
+
+          equation.
+
+
+
+               F)eedback allows change of the feedback constants in the
+
+          above equation.
+
+
+
+               L)ist.  List the vectors in the files.  If the display is in
+
+          FG mode, the F File and the G File will be listed.  If the display
+
+          is in T mode, the T File and the F File will be listed.  If more
+
+          than 16 vectors are present, only sixteen at a time will be shown.
+
+          The part displayed can be moved forward or backward by typing 'F'
+
+          or 'B'.  L)ist can be left by typing any character other than 'F'
+
+          or 'B'.
+
+
+
+               M)ode.  Changes the files L)isted from F and G to T and F or
+
+          vice versa.
+
+
+
+               O)riginal stimulus.  This option adds the original stimulus
+
+          vector to each iteration.  It is closely related to what is called
+
+          `clamping' in the Boltzmann machine literature since it
+
+          effectively ensures that initial values never decay away but are
+
+          always present at high amplitude.  A comment will appear on the
+
+          fifth line of the display if this option is in effect.  If O) is
+
+          typed again, the option is cancelled and the original stimulus
+
+          will not be added.
+
+
+
+               P)asses.  The number of iterations to be performed before the
+
+          command line returns and you can cease iterations or change
+
+          parameters.  The default value for P)asses is 16, the number of
+
+          lines on the scrolling portion of the CRT screen.
+
+
+
+               Q)uit.  Return to the highest command level.
+
+
+
+               R)estart the simulation with the initial stimulus.  Otherwise
+
+          typing X)cute will simply have the program continue what it was
+
+          doing.  The left part of the fourth status line will say RESTART
+
+          is the system will start from zero iterations.  Otherwise, the
+
+          number of completed iterations will appear here.
+
+
+
+               T)hreshold allows change of the interpretation threshold.
+
+          When the output of the equation above is generated it is simply a
+
+          200 dimensional vector of floating point numbers.  In order to see
+
+          what it is actually doing, this vector is interpreted, i.e.
+
+          turned back into an ASCII string.  This is done by letting every
+
+          value greater than Threshold be give value +1 and every value less
+
+          than - Threshold be given value -1.  Values nearer to zero than
+
+          plus or minus threshold are considered uninterpretable, and this
+
+          particular byte is interpreted as the zero character, '_'.
+
+          Non-printing characters are represented as '#'.  This thresholding
+
+          algorithm is only for the operator's convenience (i.e.  it
+
+          eliminates low amplitude ASCII garbage from the interpretations
+
+          and makes them easier to read) and it has no effect on the values
+
+          in the vector that are used for the next iteration.  The parity
+
+          bit is not used in the interpretation and it is not checked for
+
+          correctness.
+
+
+
+               U)limit.  Allows change of the upper and lower limits of the
+
+          box.  Note upper and lower limit need not be the same.
+
+
+
+               V)alues.  Will display the values of the current state vector
+
+          in terms of tenths of upper or lower limit.  If the value is equal
+
+          to the upper or lower limit, +L or -L will appear.  A digit refers
+
+          to tenths of the appropriate limit, i.e.  +5 means that the value
+
+          of that element is between 0.5 and 0.6 of the upper limit.
+
+
+
+               X)cute.  Start iterating the current state vector for P)asses
+
+          iterations.  Will continue from where it stopped if not R)eset.
+
+
+
+               #) allows choice of the stimulus number to be used for
+
+          staring the iterations if the system is R)eset.
+
+
+
+
+
+    Examples
+
+
+
+         Several examples of iterations using the matrices generated by a
+
+    disambiguation simulation are shown next.  Figure 5 shows the pairs of
+
+    associations.  Figure 6 shows the results of the first 16 iterations and
+
+    the next 16 iterations on 'bat ball'.  Figure 7 shows the results of the
+
+    first 16 and second 16 iterations on 'bat nite'.  (The common word,
+
+    'bat', is ambiguous and the context is able to choose the correct
+
+    meaning.  More details are given in Anderson and Murphy, 1986.)
+
+
+
+         'Check' refers to the number of element values equal to the Upper
+
+    or Lower limit and is a rough measure of the length of the vector and
+
+    how rapidly the vector is changing.  Positive feedback rapidly increases
+
+    the number of saturated elements.
+
+
+
+
+                                    Figure 5.
+
+                     Stimulus Set for Disambiguation Example
+
+
+
+
+                              --------------------
+
+ BSB Neural Net Program. 10-94 B)SB.  C)hange. E)xit. H)elp.
+
+ L)ist. M)ode. N)eurons. R)ead. S)ave. T)hreshold.  W)rite.  
+
+ Threshold:  5.0E-01  F File:    9  G File:    9  T File:   40
+
+ Synapses :  100  Display FG.
+
+
+
+    F[ 1]. BaseballGameBat BallDiamd   G[ 1]. BaseballGameBat BallDiamd
+
+    F[ 2]. Vampire MythBat NiteDracu   G[ 2]. Vampire MythBat NiteDracu
+
+    F[ 3]. Animal  LiveBat WingFlyng   G[ 3]. Animal  LiveBat WingFlyng
+
+    F[ 4]. Poker   GameBeerTablCards   G[ 4]. Poker   GameBeerTablCards
+
+    F[ 5]. Tennis  GameCortBallRackt   G[ 5]. Tennis  GameCortBallRackt
+
+    F[ 6]. Dancing RichPrtyBallSocty   G[ 6]. Dancing RichPrtyBallSocty
+
+    F[ 7]. GeoShapeTwoDCrclSqreDiamd   G[ 7]. GeoShapeTwoDCrclSqreDiamd
+
+    F[ 8]. GeoModelTreDSphrBallTetra   G[ 8]. GeoModelTreDSphrBallTetra
+
+    F[ 9]. ExpJewelRichRubyOpalDiamd   G[ 9]. ExpJewelRichRubyOpalDiamd
+
+
+
+
+
+
+
+
+
+
+
+ C>
+
+                              --------------------
+
+                                    Figure 6.
+
+                     Bat and Ball After 16 and 32 Iterations
+
+
+
+
+
+                              --------------------
+
+
+
+
+
+ BSB>P)asses :  16     U)Limit: 1.3E+00  T)hreshold: 5.0E-01   Stim. #) : t 5
+
+ Mx: Synapses: 100   F)eedback: 2.0E-01      D)ecay: 9.0E-01
+
+ RESTART
+
+
+
+      1.  ____________Bat Ball_____  Check:   0
+
+      2.  ____________Bat Ball_____  Check:   0
+
+      3.  ____________Bat Ball_____  Check:   0
+
+      4.  ____________Bat Ball_____  Check:   1
+
+      5.  ____________Bat Ball_____  Check:   5
+
+      6.  ____________Bat Ball_____  Check:  10
+
+      7.  _a__________Bat Ball_____  Check:  14
+
+      8.  _a__________Bat Ball_____  Check:  16
+
+      9.  _a__________Bat Ball_____  Check:  21
+
+     10.  _a__________Bat Ball_____  Check:  25
+
+     11.  _a_e________Bat Ball__a__  Check:  45
+
+     12.  _a_e________Bat Ball__a__  Check:  56
+
+     13.  _a_e_______eBat Ball__a__  Check:  67
+
+     14.  _a_e_______eBat Ball__a__  Check: 105
+
+     15.  Ba_e____G__eBat Ball__a__  Check: 108
+
+     16.  Ba_e____G__eBat Ball__a__  Check: 116
+
+
+
+ TF BSB X)ecute C)hange L)ist R)estart V)als Q)uit > 
+
+                              --------------------
+
+
+
+
+
+                              --------------------
+
+
+
+ BSB>P)asses :  16     U)Limit: 1.3E+00  T)hreshold: 5.0E-01   Stim. #) : t 5
+
+ Mx: Synapses: 100   F)eedback: 2.0E-01      D)ecay: 9.0E-01
+
+ It:  16
+
+
+
+     17.  Ba_e____G__eBat Ball__a__  Check: 124
+
+     18.  Ba_e____G__eBat Ball__a__  Check: 129
+
+     19.  Ba_e____Ga_eBat Ball__a__  Check: 135
+
+     20.  Ba_e____Ga_eBat Ball__a__  Check: 138
+
+     21.  Ba_e____Ga_eBat BallD_a__  Check: 144
+
+     22.  Ba_e__l_Ga_eBat BallDia__  Check: 149
+
+     23.  Ba_e__l_Ga_eBat BallDia__  Check: 154
+
+     24.  Ba_e__l_GameBat BallDia__  Check: 159
+
+     25.  Base__llGameBat BallDiam_  Check: 161
+
+     26.  Base__llGameBat BallDiam_  Check: 170
+
+     27.  Baseb_llGameBat BallDiam_  Check: 174
+
+     28.  BaseballGameBat BallDiamd  Check: 179
+
+     29.  BaseballGameBat BallDiamd  Check: 181
+
+     30.  BaseballGameBat BallDiamd  Check: 187
+
+     31.  BaseballGameBat BallDiamd  Check: 192
+
+     32.  BaseballGameBat BallDiamd  Check: 197
+
+
+
+ TF BSB X)ecute C)hange L)ist R)estart V)als Q)uit >
+
+                              --------------------
+
+                                    Figure 7
+
+                     Bat and Nite after 16 and 32 Iterations
+
+
+
+                              --------------------
+
+
+
+ BSB>P)asses :  16     U)Limit: 1.3E+00  T)hreshold: 5.0E-01   Stim. #) : t16
+
+ Mx: Synapses: 100   F)eedback: 2.0E-01      D)ecay: 9.0E-01
+
+ RESTART
+
+
+
+
+
+      1.  ____________Bat Nite_____  Check:   0
+
+      2.  ____________Bat Nite_____  Check:   0
+
+      3.  ____________Bat Nite_____  Check:   0
+
+      4.  ____________Bat Nite_____  Check:   0
+
+      5.  ____________Bat Nite_____  Check:   0
+
+      6.  ____________Bat Nite_____  Check:   1
+
+      7.  ____________Bat Nite_____  Check:   4
+
+      8.  ____________Bat Nite_____  Check:  10
+
+      9.  ________M___Bat Ni_eD____  Check:  21
+
+     10.  _a______M___Bat Ni_eD____  Check:  24
+
+     11.  _a______M_t_Bat Ni_eD_a__  Check:  31
+
+     12.  _a_____ M_t_Bat Ni_eD_a__  Check:  51
+
+     13.  _a_____ M_t_Bat Ni_eD_a__  Check:  71
+
+     14.  _a_____ M_t_Bat Ni_eD_a__  Check: 100
+
+     15.  _a_____ M_t_Bat Ni_eD_a__  Check: 119
+
+     16.  _a_____ M_t_Bat Ni_eD_a__  Check: 123
+
+
+
+ TF BSB X)ecute C)hange L)ist R)estart V)als Q)uit > 
+
+                              --------------------
+
+
+
+
+
+                              --------------------
+
+
+
+ BSB>P)asses :  16     U)Limit: 1.3E+00  T)hreshold: 5.0E-01   Stim. #) : t16
+
+ Mx: Synapses: 100   F)eedback: 2.0E-01      D)ecay: 9.0E-01
+
+ It:  16
+
+
+
+     17.  _a__i__ M_t_Bat NiteD_a__  Check: 127
+
+     18.  _am_i_e Myt_Bat NiteD_a__  Check: 141
+
+     19.  _am_i_e MythBat NiteD_ac_  Check: 147
+
+     20.  _ampire MythBat NiteDracu  Check: 158
+
+     21.  Vampire MythBat NiteDracu  Check: 166
+
+     22.  Vampire MythBat NiteDracu  Check: 169
+
+     23.  Vampire MythBat NiteDracu  Check: 171
+
+     24.  Vampire MythBat NiteDracu  Check: 173
+
+     25.  Vampire MythBat NiteDracu  Check: 180
+
+     26.  Vampire MythBat NiteDracu  Check: 193
+
+     27.  Vampire MythBat NiteDracu  Check: 199
+
+     28.  Vampire MythBat NiteDracu  Check: 200
+
+ >> Fully limited. Finished.
+
+
+
+
+
+
+
+
+
+
+
+ TF BSB X)ecute C)hange L)ist R)estart V)als Q)uit > 
+
+                              --------------------
+
+
+
+
+
+    Programming the System.
+
+
+
+         The system as described is primarily interactive.  However, it is
+
+    often convenient, when doing a systematic study of a system, to look at
+
+    a great many test vectors.  This release of the programs does not allow
+
+    non-interactive programming.  However, VMS command files will allow you
+
+    to do this conveniently from outside the program.  Command files are
+
+    files of system and program commands that are automatically executed
+
+    when prefaced with '@'.  System commands are preceded with '$' and lines
+
+    to serve as input to a program are simply typed.
+
+
+
+         Suppose we had a set of say, five test stimuli, an autoassociative
+
+    system, and we wished to iterate every test stimulus 50 times and save
+
+    the output of the program for future study.  Figure 8 shows a simple
+
+    command file to accomplish this.  This command file expects to find all
+
+    the appropriate files in the directory drb2:[anderson.code].
+
+
+
+         The first lines make all the assignments, and since they are system
+
+    commands they are preceded by a $.
+
+
+
+         The line
+
+
+
+              $assign drb2:[anderson.code]test.out sys$output
+
+
+
+    assigns the output from the program to a file test.out which can be
+
+    typed or studied with a text editor.  The complete VAX file
+
+    specification is drb2:[anderson.code]test.out if this is relevant for
+
+    your particular situation.  (If these programs are recompiled for a UNIX
+
+    system, "command files" have the same effect as redirecting the input
+
+    from a file instead of from the keyboard.)
+
+
+
+         Then BSB is run and the next lines form input to the program.  We
+
+    are not using a VT100, so the first line is n)o.  Then the input files
+
+    are l)isted.  We want to use the b)sb model.  In this case, we want each
+
+    p)ass to consist of 50 iterations and the o)riginal input vector to be
+
+    added after each iteration.  Then test stimuli  's t1 through t5 are
+
+    successively x)ecuted, the system being r)eset after each new test
+
+    stimulus.  Then b)sb is q)uit and the program e)xited.
+
+
+
+         The output will be found in the file named
+
+    drb2:[anderson.code]test.out.
+
+
+
+         This convenient technique allows large studies and parameter
+
+    variants to be run in batch mode as well by using the VMS SUBMIT command
+
+    with the command file.
+
+                                    Figure 8
+
+
+
+    $set default drb2:[anderson.code]
+
+    $assign testf.stm ffile
+
+    $assign testg.stm gfile
+
+    $assign testt.stm tfile
+
+    $assign test.neu nfile
+
+    $assign [anderson.test]test.out sys$output 
+
+    $run bsb 
+
+    n
+
+    l
+
+    m
+
+    l
+
+    b
+
+    p
+
+    50
+
+    o
+
+    #
+
+    t1
+
+    x
+
+    r
+
+    #
+
+    t2
+
+    x
+
+    r
+
+    #
+
+    t3
+
+    x
+
+    r
+
+    #
+
+    t4
+
+    x
+
+    r
+
+    #
+
+    t5
+
+    x
+
+    r
+
+    q
+
+    e
+
+
+
+
+
+    Demonstration Command Files
+
+
+
+         Because it is sometimes convenient to be able to regenerate
+
+    matrices or make stimulus files, we have provided command files for
+
+    three demonstrations.
+
+
+
+         We have already given examples of one demonstration, on lexical
+
+    disambiguation.  There are two other neural net demonstrations
+
+    available.  One is a simple drug data base, which contains information
+
+    about drugs, diseases and microorganisms.  There is also a demonstration
+
+    of an associative system learning Ohm's Law, which can 'reason' about
+
+    functional dependencies.
+
+
+
+         Each of the demonstrations has three command files associated with
+
+    it:
+
+
+
+    Demonstration   Generates           Generates             Runs 
+
+                    Matrix              Stimuli               Demo
+
+                    (.neu files)        (.stm files)
+
+                    (Uses ASSOCIAT)     (Uses BSB)            (Uses BSB)
+
+
+
+
+
+    Disambiguation: lrn.com             mkdis.com             dis.com
+
+
+
+    Ohm's Law:      lrnohms.com         mkohms.com            ohms.com
+
+
+
+    Drug data base: lrndrugs.com        mkdrugs.com           drugs.com
+
+
+
+    It may take a while (10 or 20 minutes on a MicroVAX CPU, a few seconds
+
+    on an Alpha machine) to make the connection matrices using ASSOCIAT.  It
+
+    may be of some value to have complete working `scripts' for some common
+
+    operations of BSB and ASSOCIAT.  These operations are listed in the
+
+    command files.
+
+
+
+         The details of the Ohms and Drugs simulations are described at
+
+    length in Chapter 16 in James A.  Anderson, "An Introduction to Neural
+
+    Networks", MIT Press, Cambridge, MA.  These programs are written so as
+
+    to be easy to modify for a particular application.  Most of the
+
+    simulations described in Chapters 15, 16, and 17 in the book were done
+
+    with modified versions of these programs.
+
+
+
+
+
+                                Acknowledgement
+
+
+
+
+
+         This research was primarily supported by National Science
+
+    Foundation Grants BNS-82-14728 BNS-85-18675, and BNS-90-23283 to James
+
+    Anderson, Department of Cognitive and Linguistic Sciences, Brown
+
+    University, Providence, RI, 02912.  Please acknowledge these grants if
+
+    you make use of these programs in published material.
+
+
+
+
+
+                                   References
+
+
+
+
+
+         J.A.  Anderson (1993), The BSB Model, Ed.  M.  Hassoun, Associative
+
+    Neural Networks, New York, NY:  Oxford University Press
+
+
+
+         J.A.  Anderson (1994), An Introduction to Neural Networks,
+
+    Cambridge, MA:  MIT Press.
+
+
+
+         J.A.  Anderson, Neural models for cognitive computation.  IEEE
+
+    Transactions:  Systems, Man, and Cybernetics.  1983, SMC-13, 799-815.
+
+    (Reprinted in V.  Vemuri (Ed.), Artificial Neural Networks:  Theoretical
+
+    Concepts, Washington, DC:  Computer Society Press of the IEEE, 1988.)
+
+
+
+         J.A.Anderson, Cognitive Capabilities of a Parallel System.  In E.
+
+    Bienenstock, F.  Foglemann, and G.  Weisbuch.  (Eds.) Disordered Systems
+
+    and Biological Organization, Berlin:  Springer, 1986.
+
+
+
+         J.A.  Anderson and M.  Mozer, Categorization and selective neurons.
+
+    In:  G.  Hinton and J.  Anderson (Eds.), Parallel Models for Associative
+
+    Memory.  Hillsdale, New Jersey:  Erlbaum Associates, 1981.  Revised
+
+    Edition, 1988.
+
+
+
+         J.A.  Anderson and G.L.  Murphy, Psychological Concepts in a
+
+    Parallel System.  In J.D.  Farmer, A.  Lapedes, N.  Packard, and B.
+
+    Wendroff.  (Eds.) Evolution, Games, and Learning.  New York:  North
+
+    Holland, 1986.  (With Gregory L.  Murphy).
+
+
+
+         J.A.  Anderson, J.  Silverstein, S.  Ritz, and R.  Jones,
+
+    Distinctive features, categorical perception and probability learning:
+
+    some applications of a neural model.  Psychological Review, 1978, 85,
+
+    597-603.  (Reprinted in J.A.  Anderson and E.  Rosenfeld (Eds.),
+
+    Neurocomputing, Cambridge, MA:  MIT Press, 1988).
+
+
+
+
+
+                                    Appendix
+
+
+
+                              Naming Conventions:
+
+
+
+         1) Pascal source programs are given the extension .PAS (of course)
+
+    and the executable files .EXE.
+
+
+
+         2) BSB.PAS uses a number of INCLUDEd files written in Pascal, which
+
+    are given the extension .INC.
+
+
+
+         3) Files containing sets of stimulus vectors are given the
+
+    extension .STM.  They are Pascal records containing a 60 character
+
+    header and a 200 dimensional floating point array.
+
+
+
+         4) Files containing matrices (actually files of a Pascal RECORD
+
+    type Neuron), are given the extension .NEU.  They are Pascal records
+
+    containing 200 `Neurons' which contain some constants and an array of
+
+    `Synapses'.
+
+
+
+         5) Files containing text are given the extension .RNO if the text
+
+    is in RUNOFF format and .MEM if it has formatted.
+
+
+
+         6) Command files are given the extension .COM.
+
+
+
+         7) Program output to a terminal is given the extension .OUT.
+

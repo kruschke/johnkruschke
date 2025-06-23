@@ -1,0 +1,498 @@
+<HTML>
+<font face="tahoma">
+
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF">
+
+<center>
+
+<h2> <a href="http://www.indiana.edu/~jkkteach/Q550/">Q550 Models in
+Cognitive Science</a>, <a
+href="http://www.indiana.edu/~kruschke/" target="new">Prof. John
+K. Kruschke</a>
+<br> Spring 2005, Section 25490, Tu & Th 11:15-12:30, Room 111 Psych
+</h2>
+
+
+
+<p><table cellpadding="3"><tr>
+
+<td>Jump to:</td>
+
+<th bgcolor="00FFFF"><a href="#administrivia">Administrivia</a></th>
+
+<th bgcolor="FF66FF"><a href="#schedule">Schedule</a></th>
+
+<th bgcolor="lightgreen"><a href="#matlab">MatLab</a></th>
+
+<th bgcolor="yellow"><a href="https://oncourse.iu.edu/"
+target="new">Oncourse (new window)</a></th>
+
+</tr></table>
+
+</center>
+
+<a name="administrivia"></a>
+
+<table cellpadding="10"><tr><td bgcolor="00FFFF">
+<p><h2>Administrivia:</h2>
+
+
+<p><strong>Instructor:</strong> Professor John K. Kruschke, e-mail:
+kruschke@indiana.edu, voice: 855-3192, office: 336 Psychology, hours:
+W 2:30-3:30 and by appointment. Web page: <a
+href="http://www.indiana.edu/~kruschke/">http://www.indiana.edu/~kruschke/</a>
+
+<p><strong>Class web page:</strong> This syllabus and all related
+class info are posted at <a
+href="http://www.indiana.edu/~jkkteach/Q550/">http://www.indiana.edu/~jkkteach/Q550/</a>. It
+will be frequently updated, so reload it every time you check it.
+
+<p><strong>Course content:</strong> As of Spring 2003, Q550 is
+intended to be a "capstone" course that integrates Q530 (programming
+methods) and Q560 (empirical methods) with cognitive modeling. The
+course is also intended to be a "hands on" experience for students to
+actually do some modeling, not just read about it.
+
+<blockquote>
+<small>The current format and content of Q550 is very different than previous
+renditions of Q550. Old versions were golden:
+<br>
+<li><a href="http://www.indiana.edu/~jkkteach/Q550/Spring2001/">Spring
+2001</a> (and previous since 1997). A survey of models in cognitive
+science.  <br><li><a
+href="http://www.indiana.edu/~jkkteach/Q550/Spring1997/">Spring
+1997</a> (and previous since 1990). A course covering exclusively
+<em>connectionist</em> networks.  </small></blockquote>
+
+<p><strong>Pre-requisites:</strong> Students should have previously
+taken Q530 (programming methods) and Q560 (empirical methods), or have
+equivalent experience and knowledge. We will be using the programming
+language MATLAB, which you can learn quickly if you have previous
+computer programming experience. You should also have some experience
+with collecting and analyzing data from biologically animate cognitive
+organisms such as humans. If you don't have much experience with these
+programming and empirical methods, take this course at your own risk!
+
+<p><strong>Exemptions:</strong> If you already have extensive
+experience in conducting experiments, analyzing data, and especially
+fitting models, then the instructor will consider granting you an
+exemption from the course. That means you will have satisfied the
+course requirement for Cognitive Science, but you do not get credit
+hours. Please contact the instructor if you believe that you may
+qualify for an exemption.
+
+<p><strong>Goals:</strong> Along with gaining understanding of
+concepts of modeling, students will get experience doing four things:
+<ol>
+<li>Designing and running a simple experiment relevant to their
+research interests.  <li>Analyzing the data using standard inferential
+statistics.  <li>Programming a simple cognitive process model for the
+experiment task.  <li>Fitting the model to the data.
+</ol>
+
+<p><strong>Readings and materials:</strong> No required
+textbook. Selected articles online. MatLab documentation online. See
+links below.
+
+<p><strong>Web bulletin board:</strong> Announcements and discussion
+will appear frequently on the web bulletin board in <a
+href="https://oncourse.iu.edu/"> Oncourse</a>.
+
+<p><strong>Grading:</strong> There will be various homework
+assignments throughout the course. Students will also make brief
+presentations describing their projects. A final poster and paper are
+also required. There will be no exams, but the final exam period will
+be devoted to a poster presentation session. The individual project
+will count for one half of the grade; the preceding homework
+assignments will count for one half of the grade.
+
+<p><strong>Disclaimer:</strong> Any information provided here is
+subject to change. Changes will be announced in class.
+
+</td></tr></table>
+
+<a name="schedule"></a> <p><table width="100%"
+cellpadding="10"><tr><td bgcolor="FF66FF"> <h2>Schedule of
+topics:</h2> The order of topics is listed below. The exact dates for
+each topic will be established en route. <em>Check this page
+frequently for updates.</em>
+
+<ol>
+
+<strong><li>Introduction: Examples of modeling; the meta-structure of
+modeling.</strong>
+
+<p>
+<table align="right" cellpadding="10"><tr><td
+bgcolor="FF9933"><em>Homework Assignment:</em> <br><a
+href="http://www.indiana.edu/~jkkteach/model_exercises/">Four
+exercises, on the web.</a> <br>Assigned Tue Jan 11. <br><em>Due Tue Jan 18.</em>
+</td></tr></table>
+
+<ul>
+<li><a
+href="http://www.indiana.edu/~jkkteach/Q550/repproc.html">Representation
+and process in models.</a> <li><a
+href="http://www.indiana.edu/~jkkteach/model_exercises/">Four simple
+experiment-and-model exercises, on the web.</a> <li><a
+href="http://www.indiana.edu/~jkkteach/Q550/gravmodel.html">General
+structure of modeling in the physical and cognitive sciences.</a>
+<li><a
+href="http://www.indiana.edu/~jkkteach/Q550/TemplateSimModel.gif">The
+template-similarity model (from one of the exercises, above) placed in
+the modeling framework.</a>
+<li><a href="Pennings2003.pdf">Do dogs know calculus?</a> A fetching example of modeling.
+</ul>
+
+<p><strong><li>Detailed example of modeling with MatLab.</strong>
+
+<ul>
+
+<p>
+<li>A full-scale example of a behavioral phenomenon and two models
+that might account for it.
+
+
+<ul>
+
+<li>Read <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2001JEPLMC.pdf"
+target="new"> Kruschke, J. K. (2001). The inverse base-rate effect is
+not explained by eliminative inference. <i>Journal of Experimental
+Psychology: Learning, Memory, and Cognition</i>, <b>27</b>,
+1385-1400.</a>
+
+<li>Understand the psychological ideas and their formal expressions in
+the two models. If you like, you can read the article that describes
+the EXIT model in detail (<a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2001JMP.pdf"
+target="new">Kruschke, 2001, <em>J. Math. Psych.</em></a>).
+
+<li>Understand the experiment procedure, the results, and the
+statistical analyses. (Hands-on details of experiments and statistics
+are saved for later.)  
+
+</ul>
+
+<p>
+<li>
+<table align="right" cellpadding="10"><tr><td
+bgcolor="FF9933"><em>Homework Assignment:</em> <br><a
+href="http://www.indiana.edu/~jkkteach/Q550/HillClimbingHomework.html">Hill
+climbing in MATLAB.</a> <br>Assigned Thursday January 27,
+2005. <br><em>Due Thursday February 5, 2005.</em>
+<br>
+<a href="ModelErrorGraph.jpg">
+<img src="ModelErrorGraph.jpg" width="300">
+</a>
+</td></tr></table>
+
+Parameter estimation: Finding parameter values that minimize
+discrepancy between data and model predictions.
+
+<ul>
+<li>Mathematical analysis and closed form solution.
+<li>Dense grid search.
+<li>Simulated annealing.
+<li>Hill climbing: Various algorithms.
+<ul>
+<small>Optional references:
+<li>Ch. 7, pp.253-294 of Bishop, C. M. (1995). Neural networks for
+pattern recognition. New York: Oxford University Press.
+<li>Ch. 5, pp.108-134 of Wickens, T. D. (1982). Models for
+behavior. San Francisco: Freeman.
+<li>Ch. 10, pp. 394-455 of Press, W. H., Teukolsky, S. A., Vetterling,
+W. T., Flannery, B. P. (1992). Numerical recipes in C (2nd
+Ed.). Cambridge, UK: Cambridge U. Press.
+</small>
+</ul>
+</ul>
+
+
+
+<p><br clear="all">
+
+<li>
+
+<table align="right" cellpadding="10" bgcolor="FF9933"><tr>
+<td width="150">
+<em>Homework Assignment:</em> <br><a
+href="http://www.indiana.edu/~jkkteach/Q550/MaxLikBayesHomework.html">Maximal
+likelihood <br>and Bayesian model comparison.</a> <br>Assigned Tuesday Feb 8,
+2005. <br><em>Due Tuesday Feb 22, 2005.</em>
+</td>
+<td>
+<a href="Q550BayesHW.jpg">
+<img src="Q550BayesHW.jpg" width="150">
+</a>
+</td>
+</tr></table>
+
+
+RMSD as a measure of discrepancy between data and model predictions.
+<ul>
+<li> Basic concepts of statistical testing of model fit.  
+(<a href="ModelRejectionForPosting.ppt">Power point presentation
+regarding model rejection.</a>)
+</ul>
+
+<li>Maximal likelihood as a measure of model fit.
+
+<small><ul> 
+
+<li><a href="Myung2003.pdf" target="new"> Myung,
+I. J. (2003). Tutorial on maximum likelihood
+estimation. <em>J. Math. Psych.</em>, 47, 90-100. </a>
+
+</ul></small>
+
+<li>Bayesian approach to parameter estimation and model selection.
+
+<small><ul> 
+
+<li><a href="PittM2002.pdf" target="new"> Pitt, M. A. and Myung,
+I. J. (2002). When a good fit can be bad. <em>Trends in
+Cog. Sci.</em>, 6, 421-425.</a>
+
+<li><a href="MyungP1997.pdf" target="new"> Myung, I. J. and Pitt,
+M. A. (1997). Applying Occam's razor in modeling cognition: A Bayesian
+approach. <em>Psychonomic Bulletin and Review</em>, 4, 79-95.</a>
+
+<li><a href="Lee2004.pdf">Lee, M. D. (2004). A Bayesian analysis of
+retention functions. <em>J. Math. Psych.</em>, 48, 310-321.</a>
+
+</ul></small>
+
+<!--
+
+<br clear="all">
+<table align="right" cellpadding="10"><tr><td
+bgcolor="FF9933"><em>Homework Assignment:</em> <br><a
+href="http://www.indiana.edu/~jkkteach/Q550/ElmoExitHomework.html">ELMO and EXIT in MATLAB.</a> <br>Assigned **.
+2003. <br><em>Due **.</em> </td></tr></table>
+
+<li>
+The two models programmed in MatLab.
+<ul>
+<li><a
+href="http://www.indiana.edu/~jkkteach/Q550/ExitTableThree.m">EXIT
+model in Matlab applied to Table 3 of Kruschke (2001).</a> <li><a
+href="http://www.indiana.edu/~jkkteach/Q550/ElmoTableThree.m">ELMO
+model in Matlab applied to Table 3 of Kruschke (2001).</a>
+</ul>
+
+-->
+
+</ul>
+
+
+<br clear="all">
+<table align="right" cellpadding="10"><tr><td
+bgcolor="FF9933"><em>Homework Assignment:</em> <br><a
+href="http://www.indiana.edu/~jkkteach/Q550/NHA65Homework.html">Anderson
+(1965) Homework.</a> <br>Assigned Thu Mar 3, 2005.  <br><em>Due Thu
+Mar 10, 2005.</em> <!-- <p> <a
+href="http://www.indiana.edu/~jkkteach/Q550/NHA65homeworkKey.doc">Anderson
+(1965) Homework KEY.</a> --> </td></tr></table>
+
+
+<strong><li>Detailed example of conducting an experiment and analyzing
+data in MatLab.</strong>
+
+<ul>
+
+<li>Read <a
+href="http://www.indiana.edu/~jkkteach/Q550/Anderson1965.pdf">N. H. Anderson
+(1965) regarding an averaging model of impression formation</a>.
+<ul><li>(Cf. the earlier <a
+href="http://www.indiana.edu/~jkkteach/model_exercises/additive_integration/">exercise
+regarding information integration</a>.)</ul>
+
+<li>Understand ethical treatment of participants.
+
+
+<ul>
+
+<li><a
+href="http://www.hhs.gov/ohrp/humansubjects/guidance/belmont.htm">
+Belmont report regarding ethical principles.</a>
+
+<li><a
+href="http://www.research.indiana.edu/rschcomp/hmpg.html">I.U. Human
+Subjects info.</a> Our in-class experiments will not need approval by
+the human subjects committee, but this information is posted here so
+that you know it exists, in case you will be conducting your own
+research in the future.
+
+</ul>
+
+
+<li>Program and run approximate replication of experiment in MatLab.
+
+<ul>
+
+<li> <a href="NHA65CW.m">Do this version that uses only the command
+window of Matlab (no GUI)</a>.
+
+<ul>
+<small>
+
+<li>For a very simple example of a GUI, even simpler than anything in
+the Matlab examples, check out these: <a
+href="GuiExample.fig">GuiExample.fig</a>, <a
+href="GuiExample.m">GuiExample.m</a>
+
+<li> Here is an old version of the experiment (not to be used for
+generating class data) that uses a graphical user interface (GUI) in
+Matlab.  You will need both the ".fig" file and the ".m" file: <a
+href="NHA65GUI3.fig">NHA65GUI3.fig</a>, <a
+href="nha65gui3.m">nha65gui3.m</a>. It might not work anymore...
+
+
+</small>
+</ul>
+
+</ul>
+
+<li>Do basic statistical analysis of results in MatLab.
+
+<ul>
+
+<li><a
+href="http://www.indiana.edu/~jkkteach/P553/statistics.pdf">Kruschke,
+J. K. (2003). Statistical Methods: Overview. In: L. Nadel (Ed.),
+Encyclopedia of Cognitive Science. Nature Publishing Group/ Macmillan
+Publishers Ltd.</a>
+
+<li>Wickens, T. D. (1998). Drawing conclusions from data: statistical
+methods for coping with uncertainty. In: D. Scarborough and
+S. Sternberg (Eds.), An invitation to cognitive science, vol. 4:
+Methods, models and conceptual issues.  Ch. 12, pp.585-634.
+
+<li><a href="NHA65mergedata.m">Matlab program for collating the
+collected data.</a>
+
+<li><a href="NHA65stats.m">Matlab program for statistical analysis of
+the Anderson data.</a>
+
+</ul>
+
+<li>Fit averaging model to data.
+
+
+<ul>
+
+
+<li><a href="NHA65averagingModel.m">Averaging model in Matlab.</a>
+
+
+</ul>
+
+
+
+</ul>
+
+
+
+
+<p><strong><li>Individual projects:</strong>
+
+<ul>
+
+<li><a href="IndividualProjects.html">Follow this link for details and
+suggestions regarding individual projects.</a>
+
+<li>Each student selects a topic of <em>personal interest</em>, and
+proposes a <em>simple</em> experiment and <em>simple</em> model for
+programming in MatLab. Students are encouraged to base their proposals
+on existing published research. The experiment must be short enough
+that it can be completed by a participant in 15 minutes. The model
+must be simple enough that the student can clearly explain it to the
+class and be confident that it is accurately programmed in MatLab. The
+model should also have a clear interpretation in terms of cognitive
+processes; purely "descriptive" models do not qualify. The proposal
+must be approved by the instructor <em>An example of all this is the
+N. H. Anderson work studied in the previous section of the
+course.</em>
+
+<li>Each student programs his/her experiment in MatLab, and other
+students are participants. Ethical treatment of participants will be
+emphasized.
+
+<li>Each student conducts a statistical analysis of the effects of
+interest in his/her data.
+
+<li>Each student programs the corresponding model, and fits the model
+to his/her data.
+
+<li>Periodic progress reports are submitted and presented in class,
+and a final report.  The final exam period will be devoted to a poster
+session in which students display their project.
+</ul>
+
+</ol>
+
+</td></tr></table>
+
+
+<a name="matlab"></a>
+<p><table width="100%" cellpadding="10"><tr><td bgcolor="lightgreen">
+<h2>MatLab resources:</h2>
+
+We will be using the computer software called "MATLAB" quite
+extensively, for programming models, experiments, and data analysis.
+
+<p><em>Where to find it</em>: MatLab and many accompanying "Toolboxes"
+are available on all I.U. public computers <em>except</em> Apple
+Macintoshes. If you want to install MatLab on your own machine,
+I.U. students can buy an annual lease through the StatMath Center, or
+buy a personal copy directly from <a
+href="http://www.mathworks.com/">MathWorks (the manufacturer of
+MatLab)</a>.
+
+<p>This is also a free Matlab-alike program called <a
+href="http://www.octave.org/" target="new">Octave</a>. It is supposed
+to match Matlab's syntax and functionality. It is not, however, as
+extensive as Matlab, and is not guaranteed to be fully compatible. So
+use Octave at your own risk. I require that all projects turned in
+--especially experiments that are distributed to all class members--
+have been fully tested in Matlab itself.
+
+
+<p>For programming experimients, you might consider using the <a
+href="http://psychtoolbox.org/">Psychophysics Toolbox for MatLab by
+Brainard and Pelli.</a> It is free. I have not yet used it myself.
+
+<p><em>Learning about MatLab</em>:
+<ul>
+<li><a
+href="http://www.indiana.edu/~statmath/math/matlab/">I.U. StatMath:
+Matlab main page.</a> The local I.U. StatMath Center master page for
+MatLab.  <li><a
+href="http://www.indiana.edu/~statmath/math/matlab/links.html">I.U. StatMath:
+Links to Matlab resources.</a> A list of useful links for MatLab,
+including many tutorials.  <li><a
+href="http://www.mathworks.com/access/helpdesk/help/techdoc/matlab.shtml">MatLab
+tutorial from the manufacturer.</a>
+</ul>
+
+
+</td></tr></table>
+
+
+
+<!-- ---------------------------------------------------- -->
+<p><hr>
+
+
+
+
+</BODY>
+</font>
+</HTML>
+
+

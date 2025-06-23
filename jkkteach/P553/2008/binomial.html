@@ -1,0 +1,353 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+<hr>
+
+<center> <h3><a href="p553.html">P553 Statistics in Psychology,
+Professor Kruschke</a> </h3> <h2>The Binomial Distribution and Its
+Uses</h2> </center>
+
+
+<p><strong>MOTIVATION:</strong> When the population is
+<strong>dichotomous</strong>, i.e., has just two values, what is the
+form of the sampling distribution?
+
+<p><strong>OUTLINE:</strong>
+<ul>
+<li>Derivation of the binomial distribution:
+<ul>
+<li>Permutations and <em>N choose r</em>
+<li>Minitab generates binomial probabilities
+</ul>
+<li>Applications of the binomial distribution:
+<ul>
+<li>Inference
+<ul>
+<li>A prerequisite: Expected value of the binomial
+</ul>
+<li>Power
+<li>Sample size
+</ul>
+<li>When <em>N</em> is large: Approximating the binomial with
+continuous distributions:
+<ul>
+<li>When <em>p</em> is moderate: The normal approximation.
+<ul>
+<li>A prerequisite: Variance of the binomial
+</ul>
+<li>When <em>p</em> is extreme: The Poisson approximation.
+</ul>
+</ul>
+<hr width=80%>
+
+
+
+<p><strong>Fleshed-out Outline:</strong> (Many more details provided
+in lecture)
+
+<ul>
+
+<li><strong>Derivation of the binomial distribution:</strong>
+
+<p>The population has two values or states; call one population state
+"success", the other "failure".  The probability of success is
+<em>p</em> (a population parameter), and the probabililty of failure
+is <em>q = 1.0 - p</em>.  The sample size is <em>N</em>.  The number of
+successes in the sample is <em>r</em> (and, of course, <em>r</em> is
+between 0 and <em>N</em>, inclusive).
+
+<ul>
+
+<p><li><strong>Permutations and <em>N choose r</em>:</strong>
+
+<p>For a given sample size <em>N</em>, the probability of any
+<em>particular</em> outcome with <em>r</em> successes and <em>N-r</em>
+failures is <em>p</em><sup><em>r</em></sup>
+<em>q</em><sup>(<em>N-r</em>)</sup>. There are a number of ways of
+getting <em>r</em> successes distributed in <em>N</em> individual
+outcomes, and this number is called <em>N choose r</em>.
+
+<p>If <em>N</em>=1, the sampling distribution has 
+<br>pr(<em>r</em>=0) = <em>q</em> and 
+<br>pr(<em>r</em>=1) = <em>p</em>.
+
+<p>If <em>N</em>=2, the sampling distribution has 
+<br>pr(<em>r</em>=0) = <em>qq</em> = <em>q<sup>2</sup></em>,
+<br>pr(<em>r</em>=1) = <em>pq</em>+<em>qp</em>
+= 2 <em>p</em> <em>q</em>, and
+<br>pr(<em>r</em>=2) = <em>pp</em> = <em>p<sup>2</sup></em>.
+
+<p>If <em>N</em>=3, the sampling distribution has 
+<br>pr(<em>r</em>=0) = <em>qqq</em> = <em>q<sup>3</sup></em>,
+<br>pr(<em>r</em>=1) = <em>pqq</em>+<em>qpq</em>+<em>qqp</em> 
+= 3 <em>p</em> <em>q</em><sup>2</sup>,
+<br>pr(<em>r</em>=2) = <em>ppq</em>+<em>pqp</em>+<em>qpp</em>
+= 3 <em>p</em><sup>2</sup> <em>q</em>, and
+<br>pr(<em>r</em>=3) = <em>ppp</em> = <em>p<sup>3</sup></em>.
+
+<p>In general, the sampling distribution is <br>pr(<em>r</em>) =
+(<em>N</em> choose <em>r</em>) <em>p</em><sup><em>r</em></sup>
+<em>q</em><sup>(<em>N-r</em></sup>) <br>where (<em>N</em> choose
+<em>r</em>) = <em>N</em>! / ( <em>r</em>!  (<em>N</em>-<em>r</em>)! )
+
+<p>The full derivation is provided in lecture.
+
+<p><li><strong>Minitab generates binomial probabilities;</strong> e.g.,
+
+<pre>
+ MTB > pdf;
+ SUBC> binomial 2 .5 .
+ 
+     BINOMIAL WITH N =   2  P = 0.500000
+        K          P( X = K)
+        0            0.2500
+        1            0.5000
+        2            0.2500
+</pre>
+
+Minitab also generates cumulative distributions; e.g.,
+
+<pre>
+ MTB > cdf;
+ SUBC> binomial 2 .5 .
+ 
+     BINOMIAL WITH N =   2  P = 0.500000
+        K  P( X LESS OR = K)
+        0            0.2500
+        1            0.7500
+        2            1.0000
+</pre>
+
+</ul>
+
+<li><strong>Applications of the binomial distribution:</strong>
+
+<ul>
+
+<p><li><strong>Inference</strong>
+
+<p>Does an experimentally obtained value of <em>r</em> deviate
+significantly from the expected value of <em>r</em> implied by a
+hypothesized <em>p</em>?
+
+<ul>
+
+<p><li><strong>A prerequisite: Expected value of the binomial</strong>
+
+<p><br>E(<em>r</em>) = <em>N p</em>
+
+<p>The full derivation is provided in lecture.
+
+</ul>
+
+<p>With knowledge of the expected value, we know the direction of
+deviation of the obtained value.  We can then cumulate the
+pr(<em>r</em>) for <em>r</em> equal to the obtained value or more
+deviant from the expected value than the obtained value, and see
+whether the sum is less than our permitted Type I error rate.
+
+<p>Example: Suppose we flip a coin 10 times and get 9 heads.  Can we
+reject the null hypothesis that the coin is fair?
+
+<p>The expected number of heads is 10 0.5 = 5.  Minitab tells us the
+predicted sampling distribution under the null hypothesis:
+
+<pre>
+ MTB > pdf;
+ SUBC> binomial 10 0.5 .
+ 
+     BINOMIAL WITH N =  10  P = 0.500000
+        K          P( X = K)
+        0            0.0010
+        1            0.0098
+        2            0.0439
+        3            0.1172
+        4            0.2051
+        5            0.2461
+        6            0.2051
+        7            0.1172
+        8            0.0439
+        9            0.0098
+       10            0.0010
+</pre>
+
+The probability of 9 or more heads is 0.0098 + 0.0010 = 0.0108 which
+is less than 2.5% (for a two-tailed test with Type I error rate of
+5%), so we reject the null hypothesis.
+
+<p>Note that the critical value for this non-directional hypothesis is
+<em>r</em>=9.  If we had a directional hypothesis, the critical value
+would still be 9, because the probability of 8 or greater is 0.0439 +
+0.0108 which exceeds 0.05.
+
+
+<p><li><strong>Power</strong>
+
+<p>Suppose there is an alternative hypothesis.  We compute power the
+usual way: First determine the critical value from the null
+hypothesis, then compute power from the alternative hypothesis.
+
+<p>Example: Instead of a fair coin, suppose the alternative hypothesis
+is that the probability of heads is 0.8.  Minitab tells us the
+predicted sampling distribution:
+
+<pre>
+ MTB > pdf;
+ SUBC> binomial 10 0.8 .
+ 
+     BINOMIAL WITH N =  10  P = 0.800000
+        K          P( X = K)
+        1            0.0000
+        2            0.0001
+        3            0.0008
+        4            0.0055
+        5            0.0264
+        6            0.0881
+        7            0.2013
+        8            0.3020
+        9            0.2684
+       10            0.1074
+</pre>
+
+<p>From the previous example we know that the critical value is 9, so
+the power is 0.2684 + 0.1074 = 0.3758.
+
+<p><li><strong>Sample size</strong>
+
+<p>Computing minimal sample size required for a certain power is a bit
+inelegant because the there is no easy formula for cumulated binomial
+probabilities (that I am aware of).  But we can use minitab in "hit
+and miss" fashion.
+
+<p>Example: Suppose we have a coin, with null hypothesis that it is
+fair and alternative hypothesis that it comes up heads with p=.8.
+What is the minimal N needed for a power of 0.8?  We know from above
+that N=10 yields a power of .3758, so we take a stab with N=15:
+
+<pre>
+     BINOMIAL WITH N =  15  P = 0.500000
+        K          P( X = K)
+      ...
+       11            0.0417
+       12            0.0139
+       13            0.0032
+       14            0.0005
+       15            0.0000
+</pre>
+
+Hence the critical value is 12.
+
+<pre>
+     BINOMIAL WITH N =  15  P = 0.800000
+        K          P( X = K)
+      ...
+       12            0.2501
+       13            0.2309
+       14            0.1319
+       15            0.0352
+</pre>
+
+Hence the power is .6481, not yet up to .8.
+
+<p>If we try with N=17, the power is still not up to .8.  If we try
+with N=18, we get the power we need:
+
+<pre>
+     BINOMIAL WITH N =  18  P = 0.500000
+        K          P( X = K)
+      ...
+       12            0.0708
+       13            0.0327
+       14            0.0117
+       15            0.0031
+       16            0.0006
+       17            0.0001
+       18            0.0000
+
+     BINOMIAL WITH N =  18  P = 0.800000
+        K          P( X = K)
+      ...
+       13            0.1507
+       14            0.2153
+       15            0.2297
+       16            0.1723
+       17            0.0811
+       18            0.0180
+</pre>
+
+<p>So, the minimal N is 18.
+
+</ul>
+
+<p><li><strong>When <em>N</em> is large: Approximating the binomial with
+continuous distributions:</strong>
+
+<p>When <em>N</em> is large, the factorials in <em>N choose r</em>
+become intractable, so we can't compute the binomial exactly.
+Instead, we approximate the binomial with continuous distributions.
+
+<p>With these approximations, we can conduct inferences, analyze
+power, and determine minimal sample sizes for desired power.
+
+<ul>
+
+<p><li><strong>When <em>p</em> is moderate: The normal approximation</strong>.
+
+<p>We can approximate the discrete binomial with the continuous normal
+when <em>N</em> is large and <em>p</em> is not extreme, using a normal
+distribution with the same mean and variance as the binomial: <em>mu =
+N p, sigma<sup>2</sup> = ?</em>.
+
+<ul>
+
+<p><li><strong>A prerequisite: Variance of the binomial</strong>
+
+<p><em>sigma<sup>2</sup> = N p q</em>, or <em>sigma</em> = sqrt( <em>N p q</em> ).
+
+<p>The full derivation is provided in lecture.
+
+</ul>
+
+<p>So, we can approximate the discrete binomial with the continuous
+normal, when <em>N</em> is large and <em>p</em> is not extreme, using
+a normal distribution with <em>mu = N p</em> and <em>sigma<sup>2</sup> = N p
+q</em>.
+
+<p>The value of pr(<em>r</em>) in the binomial is approximated by the
+normal distribution area from <em>r</em>-.5 to <em>r</em>+.5.  So in
+computing the probability of a tail of the distribution, we sum up
+from <em>r</em>-.5 on the high tail, or up to <em>r</em>+.5 on the low
+tail.  This is sometimes referred to as the "correction for
+continuity".
+
+<p><li><strong>When <em>p</em> is extreme: The Poisson
+approximation.</strong>
+
+<p>When <em>p</em> is extreme, the binomial is skewed (non-normal),
+and we instead approximate it with the discrete Poisson distribution:
+
+<p> pr(<em>x;m</em>) = ( exp(-<em>m</em>)  <em>m<sup>x</sup></em> ) / <em>x</em>!
+
+
+<p>for integer-valued <em>x</em> and <em>m</em> greater than zero.
+For the approximation to the binomial, we set <em>m = N p</em>, and
+<em>x</em> corresponds to <em>r</em>.
+
+</ul>
+
+</ul>
+
+<!--
+<p>
+<center>
+Copyright &copy; 1996 John K. Kruschke
+</center>
+-->
+
+<p><hr>
+</BODY>
+</HTML>
+
+

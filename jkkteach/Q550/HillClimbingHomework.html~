@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Hillclimbing Optimization Homework; Prof. John K. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+Q550 Models in Cognitive Science, Prof. Kruschke
+<h2> 
+Homework: Hillclimbing Optimization
+</h2>
+</center>
+
+<p>This homework uses four files for use with MATLAB. The four files are:
+<ol>
+
+<li><a href="ModelError.m">ModelError.m</a>. This is a function that takes two
+parameter values as input, and returns the error, i.e., the misfit
+between data and model predictions, as output.  
+
+<li><a href="SimpleHillClimb.m">SimpleHillClimb.m</a>. This is a
+simple hill-climbing routine for parameter optimization. It will be
+described in class.
+
+<li><a href="ModelErrorGraph.m">ModelErrorGraph.m</a>. This program
+calls the optimization routines and then graphs the results.
+
+<li><a href="GridEvaluation.m">GridEvaluation.m</a>. This is used for
+the graphing program.
+
+</ol>
+Copy the files into your directory. (To do this, it is best to select all the text in your browser window, copy it into the paste buffer, then paste it into a blank M-file in MatLab, then save-as in MatLab.) 
+
+<p>For all of the questions below, hand in (on the due date) the
+relevant print-outs from MATLAB, such as command-window output or
+graphical output or M-file code.
+
+<p>
+
+<ol>
+
+<p><strong><li>Explore the behavior of the optimization
+algorithms.</strong> Run the <tt>ModelErrorGraph.m</tt> program with
+various values of parInit and parInc, as specified below, <em>The goal
+of this exercise is for you to notice how the best fit found by the
+program depends on (a) the initial values of the parameters, (b) the
+increments used in the search, and (c) the type of search algorithm
+used.</em>
+
+<ul>
+
+<p><li>Effect of parameter increments. Set parInit = [ 1 -2 ]. Now run it using  parInc = [ 0.1 0.1 ] versus  parInc = [ 0.2 0.2 ]. Do SimpleHillClimb and fminsearch and fmincon end up at the same minimum for both increments? Do they end up in the same minimum as each other? Do
+they find one of the three local minima of the function or do they get
+stuck on a boundary of the allowed space? 
+
+<p><li>Effect of initial parameters. Set parInc = [ 0.1 0.1 ]. Run it using parInit = [ -2 0 ]  versus parInit = [ -2 0.5 ]. Do SimpleHillClimb and fminsearch and fmincon end up at the same minimum for both initial positions? Do they end up in the same minimum as each other? Do
+they find one of the three local minima of the function or do they get
+stuck on a boundary of the allowed space? 
+
+</ul>
+
+<p><strong><li>Try a different model.</strong> Modify the modelError.m
+file so that <blockquote><tt> 
+error = 10 * -cos( 2* (paramVals(1)^2+paramVals(2)^2)^0.5 ) ...
+              * exp( -0.5 * ((paramVals(1)+1)^2+(paramVals(2)-1)^2)^0.5 ) + 5.1 ; 
+</tt></blockquote> (The "..." is part of the MatLab code; it means that the command continues on the next line.) <em>The purpose of this exercise is to emphasize that
+the model program is separate from the fitting algorithm. Changing the
+function being optimized is like changing the model.</em>
+
+<ul>
+
+<p><li>Run this new model function using three different initial
+values, all with parInc = [ 0.1 0.1 ]:  parInit = [ 0 -1.5 ],  parInit
+= [ 0 -1.6 ] and parInit = [ 1.6 -1.6 ]. Do SimpleHillClimb and fminsearch and fmincon end up at the same minimum for both initial positions? Do they end up in the same minimum as each other? Do
+they find one of the two local minima of the function or do they get
+stuck on a boundary of the allowed space? 
+
+<p><li>Why does SimpleHillClimb sometimes get stuck at points where there is clearly a "downhill" slope? (Hint: It tests only X and Y increments, not diagonal increments.)
+
+</ul>
+
+
+<p><strong><li>Modify the program code to make it more
+elegant.</strong> As it is now, SimpleHillClimb.m has two copies of
+the code that increments and decrements parameters - one copy for each
+parameter. Modify the code so that there is <em>only one</em>
+increment-decrement section, embedded in a loop that is executed once
+for each parameter. The loop would probably look like this:
+<blockquote><tt>for parIndex = 1 : length( parInit )<br>&nbsp; &nbsp;
+&nbsp; % insert here: code for increment-decrement corresponding
+parameter<br>end</tt></blockquote> <em>The purposes of this exercise
+are (a) to make sure you really understand what the hill-climbing
+program is doing, and (b) to get you to really start programming in
+MATLAB</em> (even though loops are not MATLAB's strong suit).
+
+
+
+</ol>
+
+
+<p><hr>
+</BODY>
+</HTML>
+

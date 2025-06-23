@@ -1,0 +1,11 @@
+SUBJECT>Hmk6, prob3
+POSTER>Cindy
+EMAIL>cdrake@indiana.edu
+DATE>Monday, 21 October 2002, at 12:12 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.162.161
+PREVIOUS>
+NEXT> 62
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>I'm having trouble displaying the homogeneity of variance test in SPSS for problem #3. When I run the ANOVA, I get an error for the homogeneity test. It says "test of homogeneity of variances cannot be performed for score of group because the sum of caseweights is less than the number of groups" Any thoughts on what I can do to correct this?

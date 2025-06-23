@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#EECCCC">
+
+<center>
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+<h2>
+<p>Example of Model Calculations
+</h2>
+</center>
+
+Figure 1 (below) illustrates the calculations for activation
+propagation and weight learning in the model of Homework 2.  <em>The
+three training trials are <strong>not</strong> exactly the same
+sequence as in your homework, so the numerical values are not
+necessarily the same as what you should obtain in your homework.  This
+example is intended to explicitly demonstrate the type of calculations
+you should do.</em>
+
+
+
+<p>
+<center>
+<table border=1 cellpadding=10>
+<tr><td align=center>
+<IMG SRC="http://www.indiana.edu/~jkkteach/model_exercises/blocking/bl_example.gif"
+align=center>
+</td></tr>
+<tr><td align=center>
+<font size=-1>Figure 1.  Illustration of activation propagation and
+weight learning for three training trials and a test trial.</font>
+</td></tr>
+</table>
+</center>
+
+<p>For Training Trial 1, notice that all the weights start at zero,
+and the predicted activations are therefore both zero.
+
+<p>For Training Trial 2, the weight from <em>stiff neck</em> to A is
+now .5 because the learning from Trial 1 increased the weight from 0
+to .5.  Notice that the learning on this trial causes weights from
+both <em>stiff neck</em> and from <em>pallid skin</em> to increase by
+.25 because both of these symptoms are present.  They increase by .25
+because lrate*(t<sub>A</sub>-a<sub>A</sub>)*a<sub>s</sub> =
+.5*(1-.5)*1 = .25.
+
+<p>For Training Trial 3, the weights to B start at 0, because nothing
+has been learned about B yet.  Both weights increase by .5 as a result
+of this training trial.
+
+<p>(On your homework, there are additional training trials like Trial
+2 and Trial 3.  On these additional trials, the predicted activations
+of the diseases exactly match the teacher values.  Consequently, there
+is no more change in the weights.  If the learning rate were smaller
+than .5, say .1, then it would take more learning trials until the
+predicted activations matched the teaching values.)
+
+<p>For the Testing Trial, <em>pallid skin</em> and <em>double
+vision</em> are activated.  Notice that disease B is activated more
+strongly than disease A because of the stronger weight from <em>double
+vision</em> than from <em>pallid skin</em>.  There is no change in
+weights on this trial because there is no teacher value provided.
+
+
+<p>
+<h6><center>Copyright &copy; 1999 John K. Kruschke</center></h6>
+<p><hr>
+
+</BODY>
+</HTML>

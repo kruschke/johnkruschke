@@ -1,0 +1,73 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Cruel Sestina
+<!-- 315 words -->
+
+<small>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With appreciation and apologies to Taylor Swift\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and her wonderful song, Cruel Summer.\
+</small>
+<br>
+
+"No rules in breakable heaven." Looking in your eyes,\
+no fools could break even. Feeling this high\
+there's no falling. I'm floating light out the window,\
+no angel calling and time lingering slow.\
+No candles, no street lamps, sighing into the night.\
+No handles, no guard rails, resigned to the dice.\
+
+The hourglass frozen, stuck sand ice,\
+refracting the icicles into my eyes.\
+Maybe some summer we can reignite\
+the airborne embers once bonfire high.\
+If you don't see me you've set your eyes low,\
+I'm the spark floating out the window.\
+
+I've paid the blizzard, what does the wind owe?\
+Skate on the surface, slip-and-slide ice,\
+even the glaciers can see we're too slow,\
+just waiting and watching our love melt in sighs.\
+The heat from my mind in this fever-dream high\
+during the chill of this dark, this insomniac night.\
+
+Gravity's lost and this space stays finite\
+'round the hovering door and the floating window\
+that sometime fall low and sometime rise high\
+like the spots in my eyes or the dots on the dice\
+that roll over the table and face up realize\
+that the falling is fast but the waiting is slow.\
+
+Shot by that arrow, aim high but miss low,\
+breaking a vase in the bouquet of night,\
+marking a flower right between the eyes\
+while the petals, aroma float out the window,\
+and the rose thorns and arrow heads chopped into dice\
+are swept under the carpet we flew magic high.\
+
+Angels are watching and advocate shy\
+while devils pretend to take everything slow\
+and keep in their pockets the gambling dice\
+'til everything fades in the shadow of night\
+and they serenade yearning outside your window\
+until fever compels that you look in their eyes.\
+
+"Fever dream high in the quiet of the night,"\
+"Killing me slow out the window."\
+"Devils roll the dice, angels roll their eyes."\
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://www.discretionarylove.com/cruel-sestina/" , journal_name = "*Discretionary Love*" , publication_info = "01 October 2024.")`
+
+*Notes:* 
+A `r link_new_tab( url = "https://www.poetryfoundation.org/education/glossary/sestina" , display_text = "*sestina*" )` is a complex form dating back to twelfth century France. It has six stanzas of six lines each, followed by a seventh stanza, called the envoi, that has three lines. The final words of each line must be repeated in every stanza with a specific permutation from one stanza to the next. If we label the end words in one stanza as 1 2 3 4 5 6, then the end-words must be in the order 6 1 5 2 4 3 in the next stanza. The envoi must contain the same six words, two words per line. To create this poem, I first built the envoi with three phrases from Taylor Swift's song. I also avoided repeating a word explicitly from the last line of one stanza to the first line of the next; e.g., "dice" becomes "sand ice", "window" becomes "wind owe", etc. In the first stanza, I tried to engage the reader by making each pair of lines have parallel sounds throughout the lines.
+
+`r next_link("poem_cruel_sestina.html")`
+
+</small>

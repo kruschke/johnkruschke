@@ -1,0 +1,36 @@
+name: "johnkruschke.com"
+output_dir: docs # _site
+lang: en
+navbar:
+  title: "John K. Kruschke"
+  href: index.html
+  left:
+  - text: "Publications"
+    href: pubs.html
+  - text: "Bayesian"
+    menu:
+    - text: "Book"
+      href: DBDA.html
+    - text: "BARG"
+      href: BARG.html
+    - text: "App"
+      href: bayesAndFreqApp.html
+  - text: "More"
+    menu:
+    - text: "Courses Etc."
+      href: teach.html
+    - text: "Students"
+      href: students.html
+    - text: "Poems"
+      href: poems.html
+    - text: "Art Critic"
+      href: artcritic.html
+    - text: "Biography"
+      href: biography.html
+    - text: "Contact"
+      href: contact.html
+output:
+  html_document:
+    theme: flatly
+    css: jkkweb_style.css
+    lang: en

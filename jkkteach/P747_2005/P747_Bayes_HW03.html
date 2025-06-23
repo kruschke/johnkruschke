@@ -1,0 +1,70 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 3, Due Wednesday Sept 21, 2005.
+
+<p>General directions:
+<li>
+Make a cover sheet, without any answers, that has your name and student ID number (not your SS number). On all subsequent sheets, that have your answers, write only your student ID number (not your SS number, and not your name).
+<li>
+Make a photocopy of your homework, and hand in the original and the photocopy. (Of course, you might want to keep another copy for yourself!) The copy, with the cover page removed, will be used for peer-grading.
+<li>
+Show your work. When solving applied problems, first express the solution or method in terms of general formulas, then plug in specific numbers to get a specific numerical solution. Annotate the progression of calculations so that a reader can understand why you are doing what you are doing.
+
+
+<p>For this homework, you will find it useful to examine the script 
+<a href="FindMaxIndex.R">
+FindMaxIndex.R</a>. You can (should) apply appropriately modified versions of this code when answering various of the questions below.
+
+<p>Get the file <a href="BayesMeanVar.R">BayesMeanVar.R</a>.
+Run it and notice the graphs. 
+Using its built-in "weird" prior, answer the following questions. (Do not bother printing/handing in the graphs for the weird prior.) Now please answer these questions:
+
+<p>
+1. What is the mean of the data?  What is the SD of the data?
+
+<p>
+2. Answer these questions using FindMaxIndex.R-like code. Show the code snippet (not the whole program) and its results.
+
+<br>A. What values of mu and sd maximize the joint likelihood?
+
+<br>B. What value of mu maximizes the marginal likelihood (on mu)?
+
+<br>C. What value of sd maximizes the marginal likelihood (on sd)?
+
+<p>3. Answer these questions using FindMaxIndex.R-like code. Show the code snippet (not the whole program) and its results.
+  
+<br>A. What values of mu and sd maximize the joint posterior?
+
+<br>B. What value of mu maximizes the marginal posterior (on mu)?
+
+<br>C. What value of sd maximizes the marginal posterior (on sd)?
+
+<p>4. Now change the definition of prior such that it is not weird, but is instead the <em>noninformative</em> prior, as described in Chapter 3 of the textbook, bottom of p. 74. Run it using the uninformative prior. Print out only (i) the graph of the prior and (ii) the section of the code you changed to specify the noninformative prior.
+
+<p>5. Have the data changed? Has the likelihood function changed? Are the values of mu and sd that maximize the likelihood different than before?
+
+<p>6. Answer these questions using FindMaxIndex.R-like code. Show the code snippet (not the whole program) and its results.
+
+<br> A. What values of mu and sd maximize the joint posterior?
+
+<br>B. What value of mu maximizes the marginal posterior (on mu)?
+
+<br>C. What value of sd maximizes the marginal posterior (on sd)?
+
+
+
+<p><hr>
+</body>
+</font>
+</html>
+
+
+

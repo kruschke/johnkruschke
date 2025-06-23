@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Tahoma, Georgia;
+    background-color: #F0E68C ; <!-- "Khaki" -->
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-position: inside;
+}
+ul,li {
+    margin-left: 0px;
+    padding-left: 8px;
+}
+table,th,td {
+    border:1px solid black;
+    border-collapse:collapse;
+    padding:5px;
+}
+</style>
+</head>
+<body>
+ <!-- ################################################ -->
+
+<center>
+<h3>
+<a href="http://www.indiana.edu/~jkkteach/P553/">P553 Statistics in Psychology</a>, <a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+<h2>
+Schedule Overview, Fall 2014
+</h2>
+<h3>
+Schedule will change. <i>Check frequently for updates (and refresh your browser to be sure you're looking at the latest version).</i>
+</h3>
+</center>
+
+<p><b>Lecture will cover a lot of concepts that are not in the book.</b> <i>The book (Maindonald &amp; Braun, 2010, 3rd Ed) is intended only as a supplement and R reference.</i> Book resources are at <a href="http://maths-people.anu.edu.au/~johnm/r-book/daagur3.html" target="_blank">http://maths-people.anu.edu.au/~johnm/r-book/daagur3.html</a>. Also install the R package <tt>DAAG</tt> for the book.
+
+<p><b>Other R resources:</b>
+<ul>
+    <li>The Manuals link in the left column of the <a href="http://cran.r-project.org/" target="_blank">main R web site (CRAN)</a></li>
+    <li><a href="http://en.wikibooks.org/wiki/R_Programming" target="_blank">R Programming Wikibook</a></li>
+</ul>
+
+<p><b>Homework</b> is assigned on Tuesdays and is due the following Tuesday. Homework assignments might be updated until the last minute, so please do not undertake the homework assignments until they are officially assigned at each Tuesday's lecture.
+
+<p><b>Computer labs</b> are Thursday or Friday, and will address the homework that is due the following Tuesday. The Thursday and Friday labs are the same; attend the day that best fits your schedule. Please study the homework assignment before arriving at the computer lab so that you can ask questions.
+
+<table>
+<tr> <!-- --------------------------------------------------- -->
+    <th>Week</th>
+    <th>Lecture Topic</th>
+    <th>R</th>
+    <th>Book</th>
+    <th>Homework</th>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 1 </td>
+    <td> <!-- Topic -->
+    Data: An inconvenient requirement.
+    <ul>
+        <li>Questions we care about require data.</li>
+        <ul>
+            <li>Examples: Drug treatments, therapies, ...</li>
+            <li>(Why care? Evolved human emotions.)</li>
+        </ul>
+        <li>Data are measurements, which assume an observational procedure and a set of possible results (scale and sample space).</li>
+        <li>Data have random variation, caused by observation procedure and by source. Called "noise."</li>
+        <li>Conclusion: Questions we care about give us heaps of noisy data.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    Install software:
+    <ul>
+        <li>R: <a href="http://www.r-project.org/" target="_blank">http://www.r-project.org/</a>
+        <li>RStudio: <a href="http://www.rstudio.com/" target="_blank">http://www.rstudio.com/</a>
+        <li>DAAG package in R: <tt>install.packages("DAAG")</tt>
+    </ul>
+    Dealing with data files.
+    <ul>
+        <li>vectors, lists, factors, data frames, indexing.</li>
+        <li><tt>read.csv()</tt></li>
+    </ul>
+    </td>
+    <td> <!-- Book -->
+    Ch's. 1 and 14.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 01</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 1 (cont.)</td>
+    <td> <!-- Topic -->
+    Describing heaps of noisy data.
+    <ul>
+        <li>Summarizing data without an explicit mathematical model.</li>
+        <li>Summarizing data with an explicit mathematical model.</li>
+        <ul>
+            <li>Notions of probability mass and probability density.</li>
+            <li>Mathematical formula for probability density of output value as a function of parameter values.</li>
+            <li>Parameters are control knobs on a data-generating machine.</li>
+            <li>Parameter values are meaningful in the context of the model.</li>
+            <li>Examples for a single group: normal, exponential, t-distrib, binomial, ...</li>
+            <li>Examples with predictors: two groups, simple linear regression, ...</li>
+        </ul>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    <ul>
+        <li>Numerical summary: <tt>summary()</tt>, <tt>mean()</tt></li>
+        <li>Graphical summary: <tt>hist()</tt>.
+        <ul>
+            <li><tt>lattice</tt> package.</li>
+            <li><tt>ggplot2</tt> package.</li>
+        </ul>
+        <li>Pseudo-random value generators for various distributions.</li>
+        <li>Making graphs of mathematical functions, with data superimposed.</li>
+    </ul>
+    </td>
+    <td> <!-- Book -->
+    Ch's. 2, 3.1, 3.2, 3.3, and 15.
+    <!-- Idea of linear regression: Section 5.1. -->
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 01</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 2 </td>
+    <td> <!-- Topic -->
+    Finding the parameter values of a model that best fit the data.
+    <ul>
+        <li>Maximum likelihood estimation.</li>
+        <ul>
+            <li>Trial and error "by hand".</li>
+            <li>Trial and error automated: Hill climbing methods.</li>
+            <li>Mathematical analysis for exact solutions.</li>
+            <li>Special case: Least-squares estimation for normal distribution.</li>
+        </ul>
+        <li>Interpreting the parameter values. The magnitude carries the meaning.</li>
+        <li>Examples: Difference of means; slope in linear regression.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    <ul>
+        <li>Show likelihood of data with superimposed distributions and candidate parameter values.</li>
+        <li><tt>optim()</tt>, <tt>optimize()</tt>, </li>
+        <li><tt>mle()</tt> in <tt>bbmle</tt> package</li>
+    </ul>
+    </td>
+    <td> <!-- Book -->
+    Not much in book about this. Section 4.8.1.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 02</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 2-3 </td>
+    <td> <!-- Topic -->
+    Alternative descriptions by different models.
+    <ul>
+        <li>Examples: One mean for both groups vs different means for each group. No slope in linear regression vs with slope.</li>
+        <li>Nested vs non-nested models.</li>
+        <li>For nested models, maximum likelihood increases with complexity of model.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    More of previous...
+    </td>
+    <td> <!-- Book -->
+    Not much in book about this.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 03</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 3-4 </td>
+    <td> <!-- Topic -->
+    Decision: Is the more complex model merely fitting noise? In other words, is the more complex model better merely by chance?
+    <ul>
+        <li>Likelihood ratio for data D: <center>LR(D) = MaxLike<sub>restricted</sub>(D) / MaxLike<sub>full</sub>(D)</center></li>
+        <ul>
+            <li>Special case: Least-squares F ratio. F ratio is a monotonic transform of the likelihood ratio when the noise is normal and models are linear.</li>
+            <li>Variants: AIC and BIC.</li>
+        </ul>
+        <li>Definition: <center>p value of D<sub>actual</sub> = p( LR(D<sub>~null</sub>) > LR(D<sub>actual</sub>) )</center> for D<sub>~null</sub> sampled from null hypothesis according to intended stopping and testing assumptions.</li>
+        <li>Sampling distribution of LR(D<sub>~null</sub>).
+        <ul>
+            <li>As N gets large, the sampling distribution of -2 log LR(D<sub>~null</sub>) is approximately chi-square.</li>
+            <li>Sampling distribution of F ratio, of t, of slope.</li>
+        </ul>
+        <li>Traditional p value: Assumes fixed N stopping intention and single intended test.</li>
+        <li>Decision by p < .05.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    Case of two groups; case of simple linear regression.
+    </td>
+    <td> <!-- Book -->
+    Section 4.1; not much in book about this.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 04</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 4 </td>
+    <td> <!-- Topic -->
+    Confidence interval: The range of parameter values not rejected by p < .05.
+    <ul>
+        <li>Range of &theta; such that p( LR(D<sub>~&theta;</sub>) > LR(D<sub>actual</sub>) ) > .05 for LR(D<sub>~&theta;</sub>) sampled from &theta; hypothesis according to intended stopping and testing assumptions.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    Explicit examples of sampling distribution of likelihood ratio for different values of &theta;.
+    </td>
+    <td> <!-- Book -->
+    Section 4.2; not much in book about this.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 05</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 5 </td>
+    <td> <!-- Topic -->
+    Sampling distributions, hence p values and confidence intervals, depend on stopping intention and testing intention.
+    <ul>
+        <li>Stopping intention.</li>
+        <ul>
+            <li>Fixed N. Fixed duration. Interruption. Windfall. Random return (survey).</li>
+            <li>Optional stopping.</li>
+        </ul>
+        <li>Testing intention and corrections for multiple tests.</li>
+        <li>p value and confidence interval change when stopping intention changes: Examples.</li>
+        <li>p value and confidence interval change when testing intention changes: Examples.</li>
+        <li>Bayesian methods do not use sampling distributions.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    Special examples.
+    </td>
+    <td> <!-- Book -->
+    Not much in book; Section 4.4.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 06</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 6 </td>
+    <td> <!-- Topic -->
+    The generalized linear model.
+    <ul>
+        <li>Predict<i>ed</i> variable and predict<i>or</i> variables.</li>
+        <li>Types of measurement scales: Metric, Ordinal, Nominal, Count.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    <ul>
+        <li><tt>stats</tt> package: <tt>lm()</tt>, <tt>glm()</tt></li>
+        <li><tt>glmer</tt> package: <tt>lme4()</tt></li>
+        <li><tt>bbmle</tt> package: modifies and extends the mle classes in the <tt>stats4</tt> package.</li>
+    </ul>
+    </td>
+    <td> <!-- Book -->
+    Section 8.1.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 07</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 7 </td>
+    <td> <!-- Topic -->
+    Metric predicted and metric predictors.
+    <ul>
+        <li>Linear regression with one predictor.</li>
+        <li>Multiple linear regression.</li>
+        <li>Multiple tests. Variable selection.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    </td>
+    <td> <!-- Book -->
+    Ch's 5, 6.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 08</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 8 </td>
+    <td> <!-- Topic -->
+    Dichotomous predicted and metric preditors: Logistic regression.
+    </td>
+    <td> <!-- R -->
+    </td>
+    <td> <!-- Book -->
+    Section 8.2.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 09</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 9 </td>
+    <td> <!-- Topic -->
+    Metric predicted and nominal predictors.
+    <ul>
+        <li>ANOVA: One factor.</li>
+        <li>Multiple comparisons.</li>
+        <li>ANOVA: Multiple factors and interaction.</li>
+        <li>Between-subject and within-subject factors.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    <tt>aov()</tt>, <tt>anova()</tt>
+    </td>
+    <td> <!-- Book -->
+    7.1, 7.2, 10.1, 10.3, 10.4
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 10</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 10 </td>
+    <td> <!-- Topic -->
+    Metric predicted and mix of metric and nominal predictors: ANCOVA.
+    </td>
+    <td> <!-- R -->
+    </td>
+    <td> <!-- Book -->
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 11</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 10-11 </td>
+    <td> <!-- Topic -->
+    Count predicted.
+    <ul>
+        <li>Contingency tables.</li>
+        <ul>
+            <li>Discrete Pearson chi-sq vs continuous chi-sq, and approximate p value.</li>
+        </ul>
+        <li>log-linear models.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    <tt>chisq.test()</tt>
+    </td>
+    <td> <!-- Book -->
+    4.3, 8.4.
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 12</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 11-12 </td>
+    <td> <!-- Topic -->
+    Hierarchical models
+    <ul>
+        <li>Concepts and examples.</li>
+        <li>Explicit LME solution: <em>Shrinkage</em>.</li>
+        <li>Sampling distribution of likelihood ratio for nested hierarchical models.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    </td>
+    <td> <!-- Book -->
+    Ch. 10 (selected parts)
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 13</a> </td>
+</tr>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 12-13 </td>
+    <td> <!-- Topic -->
+    Multivariate models
+    <ul>
+        <li>E.g., bivariate correlation, structural equation models, factor analysis</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    </td>
+    <td> <!-- Book -->
+    Ch's 12, 13 (selected parts)
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 14</a> </td>
+<tr> <!-- --------------------------------------------------- -->
+    <td align="center"> <!-- Week / Day --> 14-15 </td>
+    <td> <!-- Topic -->
+    Bayesian methods
+    <ul>
+        <li>Concepts: Ch. 2 of DBDA2E.</li>
+        <li>Two-group comparison: JEP:G article.</li>
+        <li>Linear regression: ORM article.</li>
+        <li>Hierarchical models: Kruschke & Vanpaemel chapter.</li>
+    </ul>
+    </td>
+    <td> <!-- R -->
+    Software accompanies articles.
+    </td>
+    <td> <!-- Book -->
+    4.8
+    </td>
+    <td align="center"> <!-- Homework --> <a href="http://oncourse.iu.edu" target="new">HW 15</a> </td>
+</tr>
+
+</table>
+
+
+</body> <!-- ############################################### -->
+</html> 

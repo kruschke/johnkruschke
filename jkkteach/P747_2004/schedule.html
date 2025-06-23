@@ -1,0 +1,877 @@
+<HTML>
+<HEAD>
+<TITLE>P747 Modeling Methods, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+
+<h2>
+Schedule
+</h2><h3>P747 Modeling Methods<br>Prof. John K. Kruschke
+</h3>
+
+<p>
+This schedule is tentative and approximate. Changes will be announced
+in class and Oncourse. Check this schedule frequently for updates. 
+
+<p>
+Because this is a seminar course with only a few students enrolled, we
+will keep the progression of topics very flexible and responsive to
+student (and instructor!) interest and comprehension. Thus, the
+schedule below will probably be filled in retrospectively as the
+course progresses, and serve primarily as a record and review of what
+we have covered.
+
+
+<p>
+
+<table border="1" cellpadding="2">
+
+<tr>
+<th>Week</th>
+<th>Dates (Spring 2004)</th>
+<th>Topic and Assignments</th>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="center">Jan 12 - Jan 16</td>
+<td align="left">
+
+<em>Introductory readings: A model is a (parameterized) family of
+probability distributions, which implies a family of sampling
+distributions.</em> Non-textbook items are available in
+<a href="http://oncourse.iu.edu/" target="_blank">
+<strong>Oncourse (http://oncourse.iu.edu/)</strong></a>; go to the "In
+Touch" tab, then look in the section called "Group Spaces" and click
+on "Readings".
+
+<ol>
+
+<li>Myung, I. J., Pitt, M. A.  &amp; Kim, W. (2003).  Model
+Evaluation, Testing, and Selection. In: K. Lamberts and R. Goldstone
+(Eds.), <i>Handbook of Cognition</i>. London: Sage.
+
+<li>Morgan textbook:
+<br>Chapter 1, especially (or even exclusively) Examples 1.1 and 1.3.
+
+
+</ol>
+
+Optional additional readings:
+
+<ul>
+
+<li>Busemeyer, J. (in preparation). Working manuscript for textbook on
+model fitting and comparison. Chapters 1 and 2.
+
+<li>Navarro, D. J. &amp; Myung, I. J. (2003).  Model Evaluation and
+Selection. Manuscript for encyclopedia article.
+
+<li>Zucchini, W. (2000). An Introduction to Model
+Selection. <i>Journal of Mathematical Psychology</i>, <b>44</b>,
+41-61.
+
+
+</ul>
+
+</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="center">Jan 19 - Jan 23
+<br>No classes Monday Jan. 19: MLK Jr. Day.
+</td>
+<td align="left">
+
+
+
+<em>Maximal likelihood estimation.</em> Non-textbook items are available in
+<a href="http://oncourse.iu.edu/" target="_blank">
+<strong>Oncourse (http://oncourse.iu.edu/)</strong></a>; go to the "In
+Touch" tab, then look in the section called "Group Spaces" and click
+on "Readings".
+
+<ol>
+
+<li>Myung, I. J. (2003). Tutorial on maximal likelihood
+estimation. <i>Journal of Mathematical Psychology</i>, <b>47</b>,
+90-100.
+
+</ol>
+
+<p>
+<table align="center">
+<tr>
+<td>
+<a href="Myung2003samp.jpg">
+<img src="Myung2003samp.jpg" width="250">
+</a>
+</td>
+<td>
+<a href="Myung2003logl.jpg">
+<img src="Myung2003logl.jpg" width="250">
+</a>
+</td>
+</tr>
+<tr>
+<td colspan=2 width="500" align="center"><small> Left panel shows a
+predicted sampling distribution from the memory retention model
+<em>p(t) = w<sub>1</sub> exp( -w<sub>2</sub> t )</em>, with n=100 at
+each retention time. An actual sample's data rides (in red dots
+connected by red lines) atop the predicted sampling distribution. The
+right panel shows the log-likelihood of the data for different
+parameter values. Matlab programs and figures by Prof. Kruschke.
+</small> </td>
+</tr>
+</table>
+
+
+
+
+Optional additional readings:
+
+<ul>
+
+<li>Busemeyer, J. (in preparation). Working manuscript for textbook on
+model fitting and comparison. Chapter 3.
+
+
+
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="center">Jan 26 - Jan 30</td>
+<td align="left">
+
+<em>Continuation of maximal likelihood estimation. New this week:
+Numerical estimation/optimization techniques.</em> Non-textbook items
+are available in
+<a href="http://oncourse.iu.edu/" target="_blank">
+<strong>Oncourse (http://oncourse.iu.edu/)</strong></a>; go to the "In
+Touch" tab, then look in the section called "Group Spaces" and click
+on "Readings".
+
+<p>
+<table align="center">
+<tr>
+<td>
+<a href="hessian_surface.jpg">
+<img src="hessian_surface.jpg" width="250">
+</a>
+</td>
+<td>
+<a href="hessian_surface2.jpg">
+<img src="hessian_surface2.jpg" width="250">
+</a>
+</td>
+</tr>
+<tr>
+<td colspan=2 width="500" align="center"><small> Each figure above
+(click to enlarge) shows a function <b>R<sup>2</sup> -> R</b> with the
+linear approximation at a point and the Hessian approximation to the
+residuals. The left figure shows a Gaussian function and the right
+figure shows a quadratic. Notice in the right figure that the Hessian
+matches the linear residuals, to within limits of numerical
+approximation. The Matlab program that generated these graphs was
+written by Prof. Kruschke. </small> </td>
+</tr>
+</table>
+
+
+
+
+<ol>
+
+
+<li>Morgan textbook: 
+
+<br>Chapter 2; specifically section 2.2, regarding an example of an
+analytical solution to a maximal likelihood estimation problem.
+
+<br>Chapter 3: Function optimization methods.
+
+<br>If time, we'll go back to Myung (2003) and look at his Matlab
+programs for maximal likelihood estimation.
+
+
+<p><li><b>Assignment:</b> The goal of this assignment is for you to learn
+about the linear and Hessian approximations to a likelihood
+function. A secondary goal is for you to limber up your Matlab
+fingers. The assignment is for you to compose Matlab programs that can
+make graphs like those shown above. That is, for a given function of
+two variables, plot the function, its linear approximation at a point,
+its residuals, and the Hessian approximation to the residuals at that
+point. Due Monday February 9.
+
+
+</ol>
+
+Optional additional readings:
+
+<ul>
+
+<li>Busemeyer, J. (in preparation). Working manuscript for textbook on
+model fitting and comparison. Chapter 3.
+
+
+
+</ul>
+
+
+
+</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="center">Feb 2 - Feb 6</td>
+<td align="left">
+
+
+<em>Numerical estimation/optimization techniques.</em> Non-textbook items
+are available in
+<a href="http://oncourse.iu.edu/" target="_blank">
+<strong>Oncourse (http://oncourse.iu.edu/)</strong></a>; go to the "In
+Touch" tab, then look in the section called "Group Spaces" and click
+on "Readings".
+
+<p>
+<table align="center">
+<tr>
+<td align="center">
+<a href="StructureOfModelFittingProgramsInMatlab.jpg">
+<img src="StructureOfModelFittingProgramsInMatlab.jpg" width="350">
+</a>
+</td>
+</tr>
+<tr>
+<td width="500" align="center"><small> 
+Structure of model fitting programs in Matlab, as advised by Prof. Kruschke. </small> </td>
+</tr>
+</table>
+
+
+
+
+<ol>
+
+<li>Morgan textbook Chapter 3: Understanding the Newton-Raphson method and Hessian matrices. Example of likelihood optimization in Matlab for Fig. 3.4.
+
+<li>Myung (2003): Example of MLE fit to memory retention data, and Matlab code.
+
+<li>Busemeyer, J. (in preparation). Working manuscript for textbook on
+model fitting and comparison. Chapter 3 and its Appendix.
+
+
+<p><li><b>Assignment:</b> The goal of this assignment is for you to
+get experience with model fitting in Matlab.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The file BusemeyerRetentionModelData.txt, posted in 
+Oncourse, contains simulated data for a retention experiment like that
+described by Busemeyer in his Chapter 3. The file contains one row per
+trial, with each row specifying the Subject number, Duration (in
+seconds), the Trial number (for that duration for that subject), and
+the Recall success (1 for successful recall, 0 for failure to
+recall). As you can see by examining the file, there are 10 subjects,
+5 different durations, and 50 trials per duration.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Your job is to fit the retention model (Equation 4, Page 9, Chapter 3
+of Busemeyer's draft textbook) to each individual subject's data (i.e,
+using different parameter values for each subject), and to fit the
+model simultaneously to all the subjects (i.e., using a single set of
+parameter values to best fit all the data simultaneously).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Use maximal likelihood as your measure of fit. That is, minimize the
+negative log-likelihood.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Structure your files the way
+Prof. Kruschke recommends (see diagram above), putting the model
+in a file separate from the file that specifies the experiment design
+and data and fit function. An example of this sort of structure was
+described in class on Monday Feb. 9 and can be found in Oncourse under
+the "In Touch" tab, "Group Spaces" link "Matlab Programs", then in the
+folder "ForMyung2003". The model is specified in the file
+"ExpMemModel.m" and the experiment and data etc. are specified in the
+file "Murdock61_ExpMemModel.m". The log-likelihood computation also
+calls the function specified in "choose.m".
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Due Monday Feb. 16, by class time. 
+
+
+</ol>
+
+
+</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="center">Feb 9 - Feb 13</td>
+<td align="left">
+
+<em>Sampling distributions of maximal likelihood estimates.</em>
+
+
+
+<p>
+<table align="center">
+
+<tr>
+<td align="center">
+<a href="r3p5gp75n010.jpg">
+<img src="r3p5gp75n010.jpg" width="250">
+</a>
+</td>
+<td align="center">
+<a href="r3p5gp75n100.jpg">
+<img src="r3p5gp75n100.jpg" width="250">
+</a>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<a href="r4p0gp90n010.jpg">
+<img src="r4p0gp90n010.jpg" width="250">
+</a>
+</td>
+<td align="center">
+<a href="r4p0gp90n100.jpg">
+<img src="r4p0gp90n100.jpg" width="250">
+</a>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" width="500" align="center"><small> Sampling
+distributions of maximal likelihood estimates of parameters for the
+"toy" memory retention model <em>p(t) = 1/(1+exp(-r
+g<sup>t</sup>))</em>. Level contours show bivariate normal with same
+means and covariance as the sampling distribution. Rows are for
+different populations sampled from. Columns are for different sample
+sizes.  Click on any panel to enlarge. Matlab programs and graphs by
+Prof. Kruschke. </small> </td>
+</tr>
+
+</table>
+
+
+
+
+</td>
+</tr>
+
+<tr>
+<td align="center">6</td>
+<td align="center">Feb 16 - Feb 20</td>
+<td align="left">
+
+<em>Confidence intervals of maximal likelihood estimates.</em>
+
+
+<p>Readings:
+
+<ol>
+
+<li> Ch. 4 of Morgan textbook. (Unfortunately I'm discovering that the
+Morgan textbook is unsuitable as an initial tutorial on these topics;
+it might be better as a reminder or review for people already familiar
+with the details. Nevertheless, give it a go and I'll do a lot of
+derivations in class.)
+
+</ol>
+
+<p>
+<table align="center">
+
+<tr>
+<td align="center">
+<a href="HessApprox100samp.jpg">
+<img src="HessApprox100samp.jpg" width="250">
+</a>
+</td>
+<td align="center">
+<a href="HessApprox100ll79.jpg">
+<img src="HessApprox100ll79.jpg" width="250">
+</a>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<a href="HessApprox100ll72.jpg">
+<img src="HessApprox100ll72.jpg" width="250">
+</a>
+</td>
+<td align="center">
+<a href="HessApprox100ll67.jpg">
+<img src="HessApprox100ll67.jpg" width="250">
+</a>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" width="500" align="center"><small> Top left: Sampling
+distribution of maximal likelihood estimates for large N (this is same
+as the top right graph in last week's figure, rescaled). The other
+three panels show three specific samples' actual likelihood surfaces
+and Hessian approximations. Confidence regions can be constructed from
+the likelihood contours; approximate confidence regions can be
+constructed from the Hessian approximations. Matlab programs and
+graphs by Prof. Kruschke. </small> </td>
+</tr>
+
+</table>
+
+
+
+</td>
+</tr>
+
+<tr>
+<td align="center">7</td>
+<td align="center">Feb 23 - Feb 27</td>
+
+<td align="left" rowspan="3">   
+
+Readings:
+
+<ol>
+
+<li> Verguts, T. and Storms, G. (2003?). Assessing the informational
+value of parameter estimates in cognitive models. Unpublished
+manuscript.
+
+<li> Busemeyer, draft textbook, Chapter 4 and Appendix.
+
+<li> Ratcliff, R. and Tuerlinckx, F. (2002). Estimating parameters of
+the diffusion model: Approaches to dealing with contaminant reaction
+times and parameter variability. <em>Psychonomic Bulletin and
+Review</em>, 9(3), 438-481.
+
+</ol>
+
+Optional Readings:
+
+<ul>
+
+<li> Huber, D. E. (2003?). Computer simulations of the ROUSE model: An
+analytic method and a generally applicable technique for producing
+parameter confidence intervals. Unpublished manuscript.
+
+<li> Wichmann, F. A. and Hill, N. J. (2001). The psychometric
+function: II. Bootstrap-based confidence intervals and
+sampling. <em>Perception and Psychophysics</em>, 63(8), 1314-1329.
+
+</ul>
+
+<b>Assignments:</b>
+
+<ul>
+
+<li> This assignment follows from the Verguts and Storms
+manuscript. The purpose is to explore whether the parameter redundancy
+(or lack of redundancy) discovered by parameter fitting can be derived
+algebraically.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Show algebraically that, in ALCOVE, the specificity parameter ("c")
+and the attention learning rate parameter ("lambda_alpha") exactly
+trade off. That is, show that when one parameter is "twiddled" a small
+amount, an exactly compensating twiddle can be made in the other
+parameter. The relevant equations for the ALCOVE model can be found in
+the file Kruschke1992.pdf in the Readings Group Space, especially
+Eqn. 6, p. 24.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Next, show that, in RASHNL, the specificity parameter and the gain
+shift rate parameter do not trade off. See the file KruschkeJ1999.pdf
+in the Readings; especially Eqn. 7 on p. 1097.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+This is due in class Monday March 22.
+
+
+
+<p><li>
+This assignment follows-up on the linear regression example in
+Ratcliff and Tuerlinckx. Consider the model <br>
+<center>
+y = m * x + b + N(0,1)
+</center>
+where m and b are parameters and N(0,1) is a normal distribution with
+mean zero and standard deviation 1. For all the scenarios below, a
+sample is generated by 20 cases for each of x = {1,3,5,7,9}; i.e., 100
+data points total in a sample.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>1.</strong> Set m = 1 and b
+= 1 as true population parameters. Generate 200 random samples from
+this population, and for each sample use maximal likelihood estimation
+to determine m<sub>est</sub> and b<sub>est</sub>. Make a scatter plot
+of the sampling distribution of m<sub>est</sub> and
+b<sub>est</sub>. Compute the mean of m<sub>est</sub> and
+b<sub>est</sub>, and compare with the true values. Compute the SD of
+m<sub>est</sub> and b<sub>est</sub>, and the correlation of
+m<sub>est</sub> with b<sub>est</sub>.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>2.</strong> Repeat part 1
+but with contaminated samples, as follows. Generate a sample as
+before, but then for each individual data point retain it, as is, with
+92% probability, but replace it, with 8% probability, with a value
+randomly sampled from a uniform distribution over the interval
+[0,20]. Compare the new mean m<sub>est</sub> and mean b<sub>est</sub>
+with both the true values and the means obtained from uncontaminated
+samples. Comment also on the SDs and correlation, compared with
+uncontaminated samples.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<strong>3.</strong> Reparameterize the model as follows: 
+<br>
+<center>
+y = (m+b) * x + (b-m) + N(0,1)
+</center>
+Repeat part 1; i.e., with uncontaminated samples. Now the generating
+model again has the slope and intercept equal to 1; that is, (m+b)=1
+and (b-m)=1, which implies that m=0 and b=1.  Comment on the
+correlation of m<sub>est</sub> and b<sub>est</sub> for the
+reparameterized model, compared with the original model.
+
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Due Monday March 29 in class.
+
+
+
+
+</ul>
+
+
+</td>
+
+</tr>
+
+<tr>
+<td align="center">8</td>
+<td align="center">Mar 1 - Mar 5</td>
+
+</tr>
+
+<tr>
+<td align="center">9</td>
+<td align="center">Mar 8 - Mar 12</td>
+
+</tr>
+
+<tr>
+<td align="center">Spring Break</td>
+<td align="center">Mar 13 - Mar 21</td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="center">10</td>
+<td align="center">Mar 22 - Mar 26</td>
+<td align="left">
+
+Previous weeks explored how to estimate best fitting parameter
+values. We now explore how to evaluate whether the best fit is any
+good. First, we consider traditional goodness-of-fit testing. Then we
+consider measures of model complexity and generalizability.
+
+<p>
+Readings regarding the generalized <b>likelihood ratio test</b>
+(G<sup>2</sup>) for nested models:
+<ul>
+<li>Busemeyer Ch. 3, pp. 39-41.
+<li>Busemeyer Ch. 4, pp. 22-26.
+<li>Busemeyer Ch. 5, pp. 25-29.
+</ul>
+
+
+<p>
+<table align="center">
+
+<tr>
+<td align="center">
+<a href="G2Slide2.JPG">
+<img src="G2Slide2.JPG" width="250">
+</a>
+</td>
+<td align="center">
+<a href="G2Slide3.JPG">
+<img src="G2Slide3.JPG" width="250">
+</a>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<a href="G2Slide4.JPG">
+<img src="G2Slide4.JPG" width="250">
+</a>
+</td>
+<td align="center">
+<a href="G2Slide5.JPG">
+<img src="G2Slide5.JPG" width="250">
+</a>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<a href="G2Slide6.JPG">
+<img src="G2Slide6.JPG" width="250">
+</a>
+</td>
+<td align="center">
+<a href="G2Slide7.JPG">
+<img src="G2Slide7.JPG" width="250">
+</a>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" width="500" align="center"><small>Selected lecture
+overheads regarding G<sup>2</sup>. I hope the information here is
+approximately correct; treat it as a noisy sample.  </small> </td>
+</tr>
+
+</table>
+
+
+
+
+</td>
+</tr>
+
+
+
+
+<tr>
+<td align="center">11</td>
+<td align="center">Mar 29 - Apr 2</td>
+<td align="left">
+
+<b>Cross validation.</b>
+
+<p>
+<table align="center">
+
+<tr>
+<td align="center">
+<a href="CVSlide1.JPG">
+<img src="CVSlide1.JPG" width="250">
+</a>
+</td>
+<td align="center">
+<a href="CVSlide2.JPG">
+<img src="CVSlide2.JPG" width="250">
+</a>
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2" width="500" align="center"><small>Selected lecture
+overheads regarding cross validation.  </small> </td>
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+
+<tr>
+<td align="center">12</td>
+<td align="center">Apr 5 - Apr 9 </td>
+<td align="left">
+
+More on <b>cross-validation</b>.
+
+<p>Reading: Busemeyer and Wang (2000). Model comparisons and model
+selections based on generalization criterion methodology. <em>Journal
+of Mathematical Psychology</em>, 41, 171-289.
+
+
+</td>
+</tr>
+
+<tr>
+<td align="center">13</td>
+<td align="center">Apr 12 - Apr 16</td>
+<td align="left">
+<b>Bayesian model selection.</b>
+<p>Readings:
+<ul>
+<li>Myung and Pitt (1997).
+<li>David J. C. MacKay (1991 NIPS).
+<li>David J. C. MacKay (199X Network article).
+</ul>
+</td>
+</tr>
+
+<tr>
+<td align="center">14</td>
+<td align="center">Apr 19 - Apr 23</td>
+<td align="left">
+<b>Bayesian model selection.</b>
+<p>Readings: Continuation from last week.
+<ul>
+<li>Myung and Pitt (1997).
+<li>David J. C. MacKay (1991 NIPS).
+<li>David J. C. MacKay (199X Network article).
+</ul>
+
+<p>
+
+<table align="center">
+
+<tr>
+<td>
+<a href="BayesianModelFitting44.jpg">
+<img align="right" src="BayesianModelFitting44.jpg" width="250">
+</a>
+</td>
+<td>
+<a href="BayesianModelFitting62.jpg">
+<img align="right" src="BayesianModelFitting62.jpg" width="250">
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center" width="500">
+<small>
+Bayesian parameter estimation and model comparison for two "toy"
+retention models: <br>Exponential: p(x) = exp( -a * x ), and
+Sigmoidal: p(x) = 1 ./ ( 1 + exp( b * ( x - 1 ))).<br> The left panel
+above shows a case of "equal" prior distributions across the two
+parameters, with the result being a higher posterior probability for
+the Sigmoidal model. The right panel shows a case of different ranges
+for the priors of the two parameters, with the result being a higher
+posterior probability for the Exponential model. These graphs are
+generated by evaluating the model at many finely-spaced increments of
+the parameter. For multi-parameter models that are also time-consuming
+to evaluate even once, generating analogous graphs or computations
+could be impossible in practice. <br>Matlab program and graphs by
+Prof. Kruschke.
+</small>
+</td>
+</tr>
+
+</table>
+
+<p><b>Optional Assignment:</b> (Essentially, make the graphs shown
+above.)  Consider two "toy" memory retention models, which predict the
+probability (p) of recall as a function of duration (x, in some
+unspecified time scale):
+<blockquote>
+H1, exponential: p(x) = exp( -a * x )
+<br>
+H2, sigmoidal: p(x) = 1 ./ ( 1 + exp( b * ( x - 1 )))
+</blockquote>
+Each model has a single parameter, a and b respectively.  We assume
+that for any given duration x, when a subject tries to recall an item,
+the probability of success is p(x) and is independent of other trials;
+i.e., the sampling distribution of successful recall is distributed as
+a binomial distribution with probability p(x).
+
+<p>
+<table align="right" border="1" cellpadding="2">
+<tr>
+<th>Duration</th> 
+<td>0.33</td> <td>0.67</td> <td>1.33</td> <td>2.67</td> 
+</tr>
+<tr>
+<th>Proportion <br>recall </th> 
+<td>0.8</td> <td>0.6</td> <td>0.4</td> <td>0.1</td> 
+</tr>
+</table>
+
+We suppose that we have a sample of data from four durations, with
+10 items per duration. The observed proportion of recall is as
+shown at the right:
+
+<p>
+(A) Determine the maximal likelihood estimates of a and b for the two
+models. This is merely the sort of thing we did in previous weeks; we
+are maximizing p(data|a,hyp_a) and p(data|b,hyp_b). Graph the
+likelihood functions.  Graph the data points superimposed with the 
+curves of p(x) for these "best fitting" models.
+
+<p>
+(B) Suppose that we have identical "triangular" <i>prior</i>
+probability distributions over the two parameters, such that
+<blockquote>
+p(a|hyp_a) = (1/2) - abs( (1/4) * ( a - 2.0 ) ), 0 <= a <= 4.0.
+<br>
+p(b|hyp_b) = (1/2) - abs( (1/4) * ( b - 2.0 ) ), 0 <= b <= 4.0.
+</blockquote>
+Determine the <i>posterior</i> probability distributions over the two
+parameters, given the data above. Use Eqn's 3 and 6 of MacKay's
+chapter: 
+<blockquote>
+p(a|data,hyp_a) = p(data|a,hyp_a) p(a|hyp_a) / p(data|hyp_a)
+[Eqn. 3]
+<br>
+p(data|hyp_a) = Integral_a p(data|a,hyp_a) p(a|hyp_a) delta_a
+[Eqn. 6]
+</blockquote>
+When integrating for Eqn. 6, use numerical approximation. That
+is, finely divide the range of a into delta_a's, compute p(data|a) and
+p(a) at each point, and sum (integrate) them up across points. Don't
+forget to include delta_a in the product you are summing. Graph the
+prior and posterior distributions (superimposed). Is the maximum of
+each posterior close to the maximal likelihood estimate of the
+corresponding parameter?
+
+<p>
+(C) Suppose that the <i>prior</i> probabilities of the models are
+equal; i.e., p(hyp_a) = p(hyp_b) = 0.5. Determine the <i>posterior</i>
+probabilities of the models, given the data. Use the equations
+<blockquote>
+p(hyp_a|data) = p(data|hyp_a) p(hyp_a) / p(data)
+<br>
+p(data) = p(data|hyp_a) p(hyp_a) + p(data|hyp_b) p(hyp_b)
+</blockquote>
+and Eqn. 6, above. 
+
+</td>
+</tr>
+
+<tr>
+<td align="center">15</td>
+<td align="center">Apr 26 - Apr 30</td>
+<td align="left">
+Reading: <br>Pitt, Myung and Zhang (2002). Toward a method of selecting
+among computational models of cognition. <em>Psychological
+Review</em>, <b>109</b>, 472-491.
+</td>
+</tr>
+
+<tr>
+<td align="center">Final Exams</td>
+<td align="center">May 3 - May 8</td>
+<td align="center">(no final exam)</td>
+</tr>
+
+</table>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

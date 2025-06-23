@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 10</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology
+<br>Hints regarding Homework 10
+</h2>
+</center>
+
+Some binomial probability tables are available at
+<a href="binom_table.html">
+http://www.indiana.edu/~jkkteach/P553/binom_table.html
+</a>
+
+
+<p><hr>
+
+<p>
+<blockquote>
+<strong>3. (4 pts total)</strong> Consider a null hypothesis of
+p=.5 and an alternative hypothesis of p=.7.
+<p><strong>3A. (2 pts)</strong> For N=6, what is the power of the
+test?
+</blockquote>
+
+From the binomial table, we see that r<sub>crit</sub> is 6, because
+going down to r=5 has greater than 5% probability in the tail of the
+distribution...
+
+<blockquote>
+<p><strong>3B. (2 pts)</strong> If we want a power of at least .8,
+what is the minimal N?
+</blockquote>
+
+<p>We can use the normal approximation to at least get an initial
+value of N around which to search.
+
+<p>From the null hypothesis, with a Type-I error rate of .05, the
+normal approximation to the binomial implies that
+
+<p><center>
+z<sub>.05</sub>(r<sub>crit</sub>) = ( r<sub>crit</sub> - Np<sub>null</sub> ) 
+/ sqrt(Np<sub>null</sub>q<sub>null</sub>)
+<p>
+1.65 =  ( r<sub>crit</sub> - N*.5 ) / sqrt(N*.5*.5)
+</center>
+
+
+<p>(I have not applied the correction for continuity in the above
+formula, because we're only looking for an approximate N at this
+point.)
+
+<p>From the alternative hypothesis, for a power of .80, the normal
+approximation to the binomial implies that
+
+<p>
+<center>
+z<sub>.80</sub>(r<sub>crit</sub>) = ( r<sub>crit</sub> - Np<sub>alt</sub> ) 
+/ sqrt(Np<sub>alt</sub>q<sub>alt</sub>)
+<p>
+-0.84 =  ( r<sub>crit</sub> - N*.7 ) / sqrt(N*.7*.3)
+</center>
+
+<p>(Again, I have not applied the correction for continuity in the
+above formula, because we're only looking for an approximate N at this
+point.)
+
+<p>Now we just solve the two equations for N.  Then examine the exact
+binomial probability tables around that value of N.
+
+<p><hr>
+
+<p><blockquote><strong>4.</strong> This is simply asking, what's the probability of
+running an experiment twenty times and getting a false alarm twice, if the
+null hypothesis is true?  
+</blockquote>
+
+<p><hr>
+
+<p>
+<blockquote>
+<strong>5A. (2 pts)</strong> A random sample of 100 students has 54
+females and 46 males.  Can the null hypothesis, that the student
+population has 50% females, be rejected?
+</blockquote>
+
+<p>Assume a Type-I error rate of .05, two-tailed.
+<br>Assume that "female" is "success."
+<br>Use the normal approximation to the binomial.    
+<br>Use the correction for continuity.
+
+<p>Thus:  According to the null hypothesis,  mu = N*p = 100*.5 = 50.
+<br>sigma = sqrt(N*p*q) =sqrt(100*.5*.5) = 5.
+
+<p>WithOUT the correction for continuity, we have
+
+<p><center>
+z(54) = ( 54 - mu ) / sigma
+</center>
+
+<p>WITH the correction for continuity, we have
+
+<p><center>
+z(54) = ( (54-.5) - mu ) / sigma
+</center>
+
+<p>Does use of the correction for continuity affect the conclusion in
+this case? (Answer: No.) What if we had r=60 instead of r=54; would
+the correction for continuity affect the conclusion in this case?
+(Answer: Yes.)
+
+
+
+
+<p><hr>
+</BODY>
+</HTML>

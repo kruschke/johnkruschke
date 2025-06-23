@@ -1,0 +1,29 @@
+SUBJECT>Re: Last min. Q about this exam...
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Thursday, 7 November 2002, at 10:39 a.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>86
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<P>&gt; 1. Can we use a calculator
+<BR>&gt; to compute the standard deviation
+<BR>&gt; (instead of doing it step-by-step
+<BR>&gt; by hand) to save time?
+<P>Yes, but you've got to know whether your calculator is using N or N-1 when it's computing the SD!
+<P>&gt; 2. For the sample exam 2 (Q.3),
+<BR>&gt; we've got r=0.8 but when I ran
+<BR>&gt; a t-test, it turned out not significant.
+<BR>&gt; Is it possible for such a huge
+<BR>&gt; r to be insignificant? (maybe because
+<BR>&gt; of the small sample size; N=4?)
+<P>Yes, that's right.
+<P>&gt; 3. Based on the Q. above -
+<BR>&gt; do you want us to run a t-test
+<BR>&gt; for finding if the r is significant
+<BR>&gt; or not in the real test tomorrow?
+<P>Yes, do. That is, convert r to t and compare with t_crit.
+<P>

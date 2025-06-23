@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>Prof. John Kruschke. Model Exercises</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center> <h2> <a href="http://www.indiana.edu/~kruschke">Prof. John
+K. Kruschke</a>, Indiana University </h2> </center>
+
+
+<center><h1>Model Exercises</h1></center>
+
+
+<p>In each of the exercises you generate data in a quick experiment
+and then explore whether a given model can account for your data. The
+experiments take 10 minutes or less, and the modeling is done entirely
+with pencil and paper (and maybe a calculator in a few spots). Each
+exercise is linked to summaries of results from a large number of
+people, along with summaries of how well the models can fit these
+average data.
+
+<p>
+
+<br clear=all>
+<table align=right border=0 hspace=10 vspace=10><tr> <td><img
+src="dog.jpg"></td> <td><img src="cat.jpg"></td> </tr></table>
+<p><strong><a href="template_similarity/" target="new">Template
+similarity.</a></strong> Many things in the world look similar, yet we
+treat them very differently. On the other hand, if we treated
+differently everything that looks slightly different, then we could
+never generalize from what we've learned to any novel situation. In
+the linked experiment, you rate the similarities of letter-like
+patterns, and then examine whether a simple template model can account
+for your similarity ratings.
+
+<br clear=all>
+<img src="catstimindex.gif" align=left hspace=10 vspace=10>
+<strong><a href="category_learning/" target="new">Category
+learning.</a></strong> You learn to categorize simple geometric shapes
+like the one shown here. Then you are shown new shapes, and must
+decide how best to categorize them based on what you learned
+before. You then test whether the data can be fit by three different
+types of model: Exemplar, prototype or rule.
+
+<br clear=all>
+<img src="diagnosis.jpg" align=right hspace=10 vspace=10>
+<p><strong><a href="blocking/" target="new">Blocking of associative
+learning.</a></strong> In the experiment, you learn which symptoms
+indicate which (fictitious) diseases. You then are given new
+combinations of symptoms and asked to give your best diagnosis based
+on what you learned before. You then explore the predictions of a
+simple connectionist model to test whether is can match your behavior.
+
+
+<br clear=all>
+<img src="traits.gif" align=left hspace=10 vspace=10>
+<p><strong><a href="additive_integration/" target="new">Additive
+integration of personality traits.</a></strong> When deciding whether
+or not to continue a relationship with a new acquaintance, we assess
+the various aspects of their personalities. If a person is funny but
+overbearing, how likable is she? If a person is kind but dull, how
+likable is he?  In this exercise, you rate the likabilities of
+fictitious people with two personality traits, and then examine
+whether a simple additive model can account for your ratings.
+
+
+
+<br clear=all>
+
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+
+
+

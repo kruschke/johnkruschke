@@ -1,0 +1,147 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<h2> 
+<a href="q550.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<br>Spring 1997, Section 0978, Tu & Th 2:30-3:45, PY 228 
+<p>Homework 1: Introduction.
+<br>Due Thursday 23 January
+</h2>
+<strong>30 points total</strong>
+</center>
+
+<p><img src="modeling2.gif" align=right>
+
+<p><strong>1. Framework for modeling.</strong> The diagram at right
+shows the general structure of formal modeling 
+(<a href="modeling.html">discussed in class</a>).
+In this exercise you are to explain how some of the models described
+by Anderson in Chapters 1 and 2 fit into this structure.
+
+<p><em>1A. (4 pts.) The Nernst equation.</em> Consider the Nernst
+equation on page 22:
+
+<p>E = R * T * ln ( c<sub>1</sub> / c<sub>2</sub> )
+
+<p>This is a formal model relating the voltage difference, E, across a
+membrane to the difference of ionic concentrations, c<sub>1</sub> and
+c<sub>2</sub>, on the two sides of the membrane.
+
+<ul>
+
+<li>What things in the world are being modeled here?  That is, what
+corresponds to the "environment", "cognizer", and "behavior" for the
+Nernst equation?  Give a few examples of other aspects of neurons that
+have not been selected for inclusion in the model.
+
+<li>What is the formal description of the "environment" in this case?
+
+<li>What is the (direct) formal description of the "behavior" in this case?
+
+<li>What is the formal transformation that predicts the (formal
+description of the) behavior in this case?
+
+</ul>
+
+
+
+<p><em>1B. (4 pts.) The "cable" equations for neurons.</em> Consider
+the voltage V at a point x on the neural membrane at time t.  The
+"cable" equations for the voltage are
+
+
+<p>V(x) = V<sub>0</sub> * exp( -x / lambda )   [p.29, and Fig. 1.16]
+   
+<p>and
+  
+<p>V(t) = 1 - exp( -t / tau )        [p.30, and Fig. 1.17]
+ 
+
+<ul>
+
+<li>What things in the world are being modeled here?  That is, what
+corresponds to the "environment", "cognizer", and "behavior" for these
+cable equations applied to neurons?  Give a few examples of other
+aspects of neurons that have not been selected for inclusion in the
+model.
+
+<li>What is the formal description of the "environment" in this case?
+
+<li>What is the (direct) formal description of the "behavior" in this case?
+
+<li>What is the formal transformation that predicts the (formal
+description of the) behavior in this case?
+
+</ul>
+
+
+
+<p><em>1C. (4 pts.) The neural input-output function.</em> On page 57
+is given the formalization of neural input to output:
+
+<p>g = f( SUM<sub>i</sub> a<sub>i</sub> f<sub>i</sub> )
+
+<ul>
+
+<li>What things in the world are being modeled here?  That is, what
+corresponds to the "environment", "cognizer", and "behavior" for this
+equation applied to neurons?  Give a few examples of other aspects of
+neurons that have not been selected for inclusion in the model.
+
+<li>What is the formal description of the "environment" in this case?
+
+<li>What is the (direct) formal description of the "behavior" in this case?
+
+<li>What is the formal transformation that predicts the (formal
+description of the) behavior in this case?
+
+</ul>
+
+
+
+
+<p><strong>2. Familiarization with PDP software.</strong> This
+exercise is intended to familiarize you with the PDP software.
+Because many of the properties of the PDP software are introduced with
+the <tt>iac</tt> program, it will be our first exposure to the
+software, despite the fact that the <tt>iac</tt> architecture is more
+complicated than the single-layer feed-forward networks that will
+begin our systematic explorations.
+
+<p><em>2A. (5 pts.) Running the program.</em> Work through Exercise
+2.1, starting on page 38 of the PDP book, up to but not including
+question Q.2.1.1 (p. 43).  Save the screen of at this point, and print
+it out (it should look something like Fig. 4, p. 44).  Turn in your
+print out.
+
+<p><em>2B. (5 pts.) Logging and plotting results.</em> Work through
+Appendix D of the PDP book (pp. 283-288).  Make a graph like Figure 1,
+page 287, and turn it in.
+
+<p><strong>3. "Essential Vector Operations".</strong> This exercise is
+intended to make sure you review Chapter 3 of Anderson.
+
+<p><em>3A. (2 pts.) Normalization.</em> Normalize the vector (2,2).
+
+<p><em>3B. (3 pts.) Walsh functions.</em> Figure out four orthogonal
+Walsh vectors for a four-dimensional space.  Demonstrate that they
+are, in fact, orthogonal.
+
+<p><em>3C. (3 pts.) Linear dependence.</em> Show that (2,2) is a
+linear combination of (1,0) and (0,1).  Show that (2,2) is a linear
+combination of (1,1) and (1,-1).  Show that (2,2) is a linear
+combination of (-1,2) and (2,-1).  In other words, for each case, what
+linear combination of the vectors results in (2,2)?
+
+<p>Copyright &copy; 1997 by John K. Kruschke
+<hr>
+
+</BODY>
+</HTML>
+
+

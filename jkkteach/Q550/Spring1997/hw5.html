@@ -1,0 +1,382 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2> 
+<a href="q550.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<br>Spring 1997, Section 0978, Tu & Th 2:30-3:45, PY 228 
+<p>Homework 5: Simple Recurrent Networks (SRN's)
+<br>Due Tuesday 8 April.
+</h2>
+<p><strong>40 pts. total</strong>
+</center>
+
+<p>Please see <a href="hwcomments.html">comments regarding homework
+assignments</a>.
+
+<p><strong>1. Exploring an SRN.</strong>
+
+<p>Using program <tt>bp</tt>, set up an SRN using the template,
+network, and startup files supplied below.  The network has one input
+node, two hidden nodes (hence two temporal context nodes), and one
+output node.  The network is initialized with random weights, and with
+biases fixed at zero except for the output bias, which is initialized
+at a random value.  Note that in the network file (below) there are
+<em>three</em> "input" nodes, two of which are actually used as
+temporal context nodes.
+
+
+<p><hr width=70%>
+<em>srn.net</em>
+
+<pre>
+definitions:
+nunits 6
+ninputs 3
+noutputs 1
+end
+network:
+%r 3 2 0 3
+%r 5 1 3 2
+end
+biases:
+.....r
+end
+</pre>
+
+<p><hr width=70%>
+
+<p>Consider training the network with the recurring sequence
+<tt>00_100_100_1...</tt>, where the "<tt>_</tt>" in the pattern means
+a point at which the output is not required to be anything in
+particular.  One cycle of that sequence can be specified as follows:
+
+
+<p><hr width=70%>
+<em>srn.pat</em>
+
+<pre>
+00   0 -3 -4    0
+0_   0 -3 -4   -1
+01   0 -3 -4    1
+10   1 -3 -4    0
+</pre>
+
+<p><hr width=70%>
+
+<p>For program <tt>bp,</tt> the -1 in the last column indicates a "don't care"
+teacher value, and the -3 and -4 in the third and fourth columns mean
+"whatever values are in nodes 3 and 4."
+
+<p>Here are the template and startup files:
+
+<p><hr width=70%>
+<em>srn.tem</em>
+
+<pre>
+define: layout
+epoch   $       tss     $                           pname inact  teach
+cpname  $       pss     $                           $     $      $
+-
+-
+-
+-
+  in    context
+  act    activ               hidact
+ $     $          hid      $                 out
++-----+---------+ act     +---------+-----+  act    teach
+|$    |$        |$        |$        |$    | $       $
+|     |         |         +---------+-----+
++-----+---------+         wts-to-out  out
+ weights-to-hid                       bias
+end
+epochno   variable 2  $ 0 epochno      5 1.0
+tss       floatvar 2  $ n tss          6 1.0 
+cpname    variable 2  $ n cpname      -5 1.0
+pss       floatvar 2  $ n pss          6 1.0
+env.pname vector   0  $ n pname      v 5   0   0 4 
+env.ipat  matrix   0  $ n ipattern   h 3 1.0   0 4 0 1
+env.tpat  matrix   0  $ n tpattern   h 3 1.0   0 4 0 1
+input     vector   2  $ n activation h 4 100.0  0 1
+context   vector   2  $ n activation h 4 100.0  1 2
+hidden    vector   2  $ n activation h 4 100.0  3 2
+hidwts    matrix   2  $ n weight     h 4 100.0  3 2 0 1
+conwts    matrix   2  $ n weight     h 4 100.0  3 2 1 2
+hidden    vector   2  $ n activation v 4 100.0  3 2
+outwts    matrix   2  $ n weight     h 4 100.0  5 1 3 2
+obias     vector   2  $ n bias       h 4 100.0  5 1
+output    vector   2  $ n activation v 4 100.0  5 1
+targets   vector   2  $ n target     v 4 100.0  0 1
+</pre>
+
+<p><hr width=70%>
+<em>srn.str</em>
+
+<pre>
+get network srn.net
+get pattern srn.pat
+set dlevel 3
+set lflag 1
+set param lrate .5
+set param momentum 0.0
+set mode lgrain pattern
+set ecrit 0.1
+set nepochs 1000
+set param mu 0.0
+</pre>
+
+<blockquote> <strong>If you are using Copper:</strong> It turns out
+that the weights don't get properly randomly initialized on Copper
+(even with bp.hacked).  So, if you are using Copper, you can
+not-so-randomly initialize the weights with the following startup
+file:
+
+<pre>
+get network srn.net
+get pattern srn.pat
+set dlevel 3
+set lflag 1
+set param lrate .5
+set param momentum 0.0
+set mode lgrain pattern
+set ecrit 0.1
+set nepochs 1000
+set param mu 0.0
+set weight 3 0  0.1
+set weight 3 1 -0.1
+set weight 3 2  0.3
+set weight 4 0  0.3
+set weight 4 1 -0.2
+set weight 4 2  0.1
+set weight 5 3  0.2
+set weight 5 4 -0.1
+</pre>
+
+
+</blockquote>
+
+
+<p><hr width=70%>
+
+<p>Train the network, using <tt>strain</tt> (NOT <tt>ptrain</tt>!),
+until <tt>tss</tt> is less than 0.1.  It should reach <tt>ecrit</tt>
+of 0.1 within 1000 epochs; if it takes longer, <tt>newstart</tt> the
+network (not <tt>reset</tt>), and <tt>strain</tt> again.  It might
+take several newstarts before you find one that works.  Once you have
+a starting point that works, record the random number seed for future
+reference (type <tt>exam seed</tt>), so that if you ever want to
+retrain the network, you can re-seed with the same value.
+
+<p><strong>1A. Study the weight changes. (5 pts.)</strong> During
+training, <em>when the input is 0</em> (and the teacher is either 0 or
+1), do the weights from the one true input node change?  Why not?
+
+<p>Do the weights from the context nodes change? Why?
+
+<p>Do the weights from the hidden nodes change? Why?
+
+<p>When the teacher is -1 ("don't care"), do any of the weights change?
+Why not?
+
+<p><strong>1B. The role of temporal context. (5 pts.)</strong> How is
+it possible for the network to learn both pattern 00 and 01?  After
+all, they have the same inputs but different outputs.
+
+<p><strong>1C. Anticipation. (5 pts.)</strong> Does the output value
+for the pattern 0_ anticipate its next output value?  In what way?
+
+<p>Is it absolutely necessary that it anticipate?
+
+<p><strong>1D. Hidden node representation. (5 pts.)</strong> After
+training, <tt>tall</tt> the network several times, and plot the
+trajectory of the hidden node activations.  That is, let the x-axis be
+the activation of hidden node 1, the y-axis be the activation of
+hidden node 2, and plot the activations for each pattern, connecting
+the points with arrows.  Also, accurately plot the decision line made
+by the output node, and show how you derived the equation for that
+line.
+
+<p><blockquote>HINT: The decision line falls on points in hidden-node
+space which make the output node produce activation of 0.5.  The
+activation is 0.5 when the net input is 0.0.  So we need to determine
+which hidden-node activations produce an output-node net-input of 0.0:
+<p><table width=70%>
+<tr>
+    <td align=right>net<sup>out</sup></td>
+    <td>=</td>
+    <td align=left>0</td>
+</tr>
+<tr>
+    <td> </td>
+    <td>=</td>
+    <td align=left>w<sub>out,hid1</sub> act<sub>hid1</sub>
+                  + w<sub>out,hid2</sub> act<sub>hid2</sub>
+                  + bias<sup>out</sup></td>
+</tr>
+</table>
+<p>Just re-write this equation with act<sub>hid2</sub> on the left-hand side.
+</blockquote>
+
+<p><strong>1E. Let the SRN <em>dream</em>. (5 pts.)</strong> Set up a
+pattern file with all the input activations equal to zero; e.g., a
+pattern file with four repetitions of pattern <tt>0_</tt> from
+<tt>srn.pat</tt>.  The teacher values are irrelevant for
+<tt>tall</tt>-ing.  (When the input is always zero but activation
+cycles around, this is like dreaming.)
+
+<p>Now <tt>tall</tt> the trained network (from 1D) several times. (If
+you already quit the program after 1D, re-seed with the seed value you
+recorded, and retrain the network.)  Plot the trajectory as you did in
+1D.
+
+<p>Why does the network stabilize instead of cycling as in 1D?  Why
+does the network in 1D cycle instead of stabilizing?  (HINT: What is
+the role of the input activation?)
+
+
+<p><strong>2. An Oscillating Network.</strong>
+
+<p>Set up an SRN using the <tt>nostab.*</tt> files below.  The network
+has three output nodes, and three "input" nodes that are actually used
+as just the temporal context of the output nodes.  <em>Think carefully
+about how the weights are specified in the file,
+<tt>nostab.net</tt>.</em>
+
+
+<p><hr width=70%>
+<em>nostab.net</em>
+
+<pre>
+definitions:
+nunits 6
+ninputs 3
+noutputs 3
+end
+constraints:
+z 0.0
+m -10.0
+p 10.0
+end
+network:
+% 3 3 0 3
+zmp
+pzm
+mpz
+end
+biases:
+%z 3 3
+end
+</pre>
+
+<p><hr width=70%>
+<em>nostab.tem</em>
+
+<pre>
+define: layout
+epoch   $       tss     $                pname  ipatterns   tpatterns
+cpname  $       pss     $                $      $           $
+-
+-
+prior-act
+$
+-              current-act
+$              $
+-
+-
+weights
+end
+epochno   variable 2  $ 0 epochno      5 1.0
+tss       floatvar 2  $ n tss          6 1.0 
+cpname    variable 1  $ n cpname      -5 1.0
+pss       floatvar 2  $ n pss          6 1.0
+env.pname vector   0  $ n pname      v 5   0   0 1 
+env.ipat  matrix   0  $ n ipattern   h 3 1.0   0 1 0 3
+env.tpat  matrix   0  $ n tpattern   h 3 1.0   0 1 0 3
+input     vector   2  $ n activation h 4 100.0  0 3
+conwts    matrix   2  $ n weight     h 4 100.0  3 3 0 3
+hidden    vector   1  $ n activation v 4 100.0  3 3
+</pre>
+
+<p><hr width=70%>
+<em>nostab.str</em>
+
+<pre>
+get network nostab.net
+set dlevel 3
+set param mu 0.0
+get pat nostab.pat
+set state activation 3 1.0
+</pre>
+
+<p><hr width=70%>
+<em>nostab.pat</em>
+
+<pre>
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+</pre>
+
+<p><hr width=70%>
+
+
+<p><strong>2A. Strong cyclic weights (5 pts.).</strong> Use the
+pattern file above and <tt>tall</tt> the network several times.  Write
+down the activations for at least 12 updates.  Does the network
+oscillate or stabilize?
+
+<p><strong>2B. Weak cyclic weights (5 pts.).</strong> Now change the
+weights in the network file so that <tt>m</tt> is -1.0 and <tt>p</tt>
+is 1.0 (instead of -10.0 and 10.0, respectively), and re-invoke the
+program.  <tt>tall</tt> the network several times.  Write down the
+activations for at least 12 updates.  
+
+<p>Why does it stabilize instead of oscillate?
+
+
+
+<p><strong>2C. Small random weights (5 pts.).</strong> 
+
+
+<blockquote> <strong>If you are using Copper:</strong> It turns out
+that the weights don't get properly randomly initialized on Copper
+(even with bp.hacked).  So, if you are using Copper, using <tt>%r</tt>
+in the network file won't work.  Instead, you can just be your own
+random number generator and insert small values using the <tt>set
+weight</tt> command.</blockquote>
+
+
+Change the weights in the network file to small random values (e.g.,
+%r 3 3 0 3).  Re-invoke the program, and <tt>tall</tt> the network
+several times.  Does the network oscillate or stabilize?
+
+<p><tt>newstart</tt> the network with different random weights,
+<tt>set state activation 3 1.0</tt>, and <tt>tall</tt> again.  Do this
+process (newstart, set state act, and tall) five times.  For each
+network, report whether it stabilized or oscillated, its weights,
+and the activation values to which it stabilized or cycled through.
+(For most random weight configurations, the network will stabilize.)
+
+<p>If you like, venture an explanation as to why random networks usually
+stabilize (but we won't get to that in class for several days yet, and
+there aren't any points for it).
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

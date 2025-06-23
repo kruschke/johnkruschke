@@ -1,0 +1,18 @@
+SUBJECT>Final grades posted
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Friday, 20 December 2002, at 1:27 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>
+NEXT> 138
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Final grades are now posted. In the posted scores you will find some new variables, defined as follows:
+<P>HWPC = proportion correct on homework
+<P>EXPC = proportion correct on exams
+<P>WTDPC = weighted proportion correct (.4 homework plus .6 exams)
+<P>WTDPCEC = weighted proportion correct plus extracredit on first exam.
+<P>ZWTDPC = Z-score of your WTDPC relative to the rest of the class (just for your info)
+<P>GRADE: letter grade was computed this way: <br>WTDPCEC > 0.70 = B- <br>WTDPCEC > 0.76 = B <br>WTDPCEC > 0.82 = B+ <br>WTDPCEC > 0.88 = A- <br>WTDPCEC > 0.94 = A
+<P>

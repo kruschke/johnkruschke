@@ -1,0 +1,53 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Carbon Footprints of Unwanted Children
+<!-- 208 words -->
+<br>
+
+I can't put my finger on it, when did it\
+change? I would ride my bike miles from\
+home, even at night and in rain. No one\
+worried, I would just roam. It ended, maybe,\
+with a spoonful of cereal and a half gallon of\
+fear, the milk carton asking, feral and wild:\
+*"Have you, have you, seen this child?"*\
+
+When did having children become an\
+imposition? Mine were a gift and a reason to\
+keep trying, a joy and a purpose to postpone\
+dying. When did people reach the grim\
+decision that making babies would only reap\
+regret? Maybe it happened on the internet?\
+Doom-scrolling starving polar bears and\
+forests burning down, all trampled to death\
+by carbon footprints of our own. Therefore,\
+breeding carbon copies would only be\
+complicit. Ergo, we will have no\
+grandchildren to visit.\
+
+How did folks forget that we are children of\
+the universe? That we're allowed here too.\
+My toddler daughter knew. At twilight\
+beaming pure delight, using her own voice:\
+*"Daddy, there's a 'tar up in the 'ky!"*\
+Maybe, I could also give my voice a try?\
+Look up and hear the bluebird sing his\
+ancient Navajo song, *"Get up, my*\
+*grandchild, it is dawn!"* Reminding me that\
+I belong.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://sagemagazine.org/carbon-footprints-of-unwanted-children/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
+
+*Notes:* 
+This poem was provoked by thoughts of climate change. In our cultural climate, there has been a change in attitudes about children. This poem is about attitudes toward children (give them freedom, protect them from every conceivable danger), attitudes about children (they are a gift, they are an imposition), attitudes from children (joy and delight), and attitudes of our own affected by children (let's keep trying to make things better).
+
+`r next_link("poem_carbon_footprints.html")`
+
+</small>

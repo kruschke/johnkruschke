@@ -1,0 +1,79 @@
+<center>
+<p><hr>
+<p>Select an item to read about (click the spot next to its label):
+
+<p>
+<table border=0 cellspacing=5 width=70%>
+
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="I.PCtest_1">(I.PCtest_1)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="I.PRtest_1">(I.PRtest_1)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_1">(Itest_1)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="PC.PRtest_1">(PC.PRtest_1)
+</td>
+</tr>
+
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="I.PCtest_2">(I.PCtest_2)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="I.PRtest_2">(I.PRtest_2)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_2">(Itest_2)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="PC.PRtest_2">(PC.PRtest_2)
+</td>
+</tr>
+
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="I.PCtest_3">(I.PCtest_3)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="I.PRtest_3">(I.PRtest_3)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_3">(Itest_3)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="PC.PRtest_3">(PC.PRtest_3)
+</td>
+</tr>
+
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="I.PCtest_4">(I.PCtest_4)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="I.PRtest_4">(I.PRtest_4)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_4">(Itest_4)
+</td>
+<td align=left>
+<input type="radio" name="item_code" value="PC.PRtest_4">(PC.PRtest_4)
+</td>
+</tr>
+
+</table>
+
+<p><strong><INPUT TYPE="submit" VALUE="Click here to view the selected item"></strong>
+<p><hr>
+</center>
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## A Late Afternoon Lying on My Back
+<!-- 131 words -->
+<br>
+
+[Withheld until publication.]
+
+<!-- I want to believe\ -->
+<!-- the curtain blocking out the day\ -->
+<!-- is like a palm tree casting diamond shade.\ -->
+
+<!-- The weight of blanket on my upturned toes\ -->
+<!-- is like some beach sand warm beneath my feet.\ -->
+
+<!-- But if I am honest,\ -->
+<!-- the curtain blocking out the day\ -->
+<!-- is not a palm tree casting diamond shade.\ -->
+
+<!-- The weight of blanket on my upturned toes\ -->
+<!-- is not the beach sand warm beneath my feet.\ -->
+
+<!-- The heartbeat pulsing flushes in my ears\ -->
+<!-- is not the rhythmic surf upon the shore.\ -->
+
+<!-- The forced air hissing through the vent\ -->
+<!-- is not the sea breeze kiss caressing skin.\ -->
+
+<!-- The floaters in my vitreous eyes\ -->
+<!-- are not the sea birds hovering in time.\ -->
+
+<!-- The vacant half of mattress at my side\ -->
+<!-- is not your towel waiting while you swim.\ -->
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://pinehillsreview.com/" , journal_name = "*Pine Hills Review*" , publication_info = "13 August 2025")`
+
+*Notes:* 
+Just a love poem.
+
+`r next_link("poem_a_late_afternoon.html")`
+
+</small>

@@ -1,0 +1,106 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 5, Due Wednesday Oct 5, 2005.
+<br>** DUE DATE POSTPONED TO OCT. 12. **
+<!--
+<br>UNDER CONSTRUCTION!
+-->
+
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and
+student ID number (not your SS number). On all subsequent sheets, that
+have your answers, write only your student ID number (not your SS
+number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the
+photocopy. (Of course, you might want to keep another copy for
+yourself!) The copy, with the cover page removed, will be used for
+peer-grading.
+
+<li>
+Show your work. When solving applied problems, first express the
+solution or method in terms of general formulas, then plug in specific
+numbers to get a specific numerical solution. Annotate the progression
+of calculations so that a reader can understand why you are doing what
+you are doing.
+
+
+
+<p>
+For this assignment, it will be useful to know the basics of the Gamma
+function (which appears in Equations 5.6, 5.7 and 5.8 in the
+textbook). You can find a discussion of the Gamma function in the
+Wikipedia at <a href="http://en.wikipedia.org/wiki/Gamma_function">
+http://en.wikipedia.org/wiki/Gamma_function</a>. 
+
+In R, the function <tt>gamma</tt> returns the value of the gamma
+function. In R, type <tt>help("gamma")</tt> for information about the
+gamma function. You can generate a graph of the Gamma function that is
+much like the first diagram in the Wikipedia article by typing the
+following commands into R:
+
+<tt>
+<br> x <- seq( from = -5.005 ,to = 5.005 ,by = 0.01 )
+<br> y <- gamma( x )
+<br> plot( x ,y ,type="l" ,ylim=c(-5,5) ,col="red" )
+</tt>
+
+<p>
+<ol>
+Please do the following:
+
+<p><li>Carefully derive Equations 5.6, 5.7 and 5.8 in the
+textbook. Annotate the steps of your derivation. 
+<br>&nbsp;&nbsp;&nbsp;<em>Hint:</em> When working on the
+factor p(theta|alpha,beta,y), you will find it useful to review the
+discussion on p. 40 of the textbook.
+
+<p><li>Create R code that generates a graph just like Figure 5.3(a),
+p. 130 of the textbook. This is only asking for Figure 5.3(a), not
+Figure 5.3(b). <em>Also include a plot of the 95% confidence region,
+which Figure 5.3(a) does not have</em>.  Use a grid step of 0.01 on
+log(alpha/beta), and of 0.05 on log(alpha+beta). Carefully comment
+your code and hand it in, along with the graph.
+<br>&nbsp;&nbsp;&nbsp;<em>Hints:</em> The authors define the prior
+density in terms of alpha,beta, but use a grid defined on
+log(alpha/beta),log(alpha+beta). So to determine the prior density at
+any point on the grid, you have to convert grid values to alpha,beta
+values. Verify that for a point x,y on the grid, alpha =
+e^x*e^y/(1+e^x) and beta = e^y/(1+e^x).  <br>&nbsp;&nbsp;&nbsp;The
+authors use a range on log(alpha+beta) that goes from 1.0 to 5.0. I
+find that high values in that range cause overflow errors. So just use
+a range of 1.0 to 4.5 if you run into that
+problem. <br>&nbsp;&nbsp;&nbsp;The rat tumor data are available from
+the author's web site,
+http://www.stat.columbia.edu/~gelman/book/data/rats.asc
+
+<p><li>Find and report the values of alpha and beta that maximize the
+posterior distribution of Figure 5.3(a). Make a plot of the
+corresponding posterior distribution of theta; i.e.,
+p(theta|alpha@max,beta@max,y).  <br>&nbsp;&nbsp;&nbsp;<em>Hints:</em>
+You might find that there are two or more points at which the
+posterior is maximized, and so the array of indices returned by
+<tt>which</tt> has multiple rows. If so, be careful how you read out
+the values from that array.  <br>&nbsp;&nbsp;&nbsp;
+
+</ol>
+
+
+<p><hr>
+</body>
+</font>
+</html>
+
+
+

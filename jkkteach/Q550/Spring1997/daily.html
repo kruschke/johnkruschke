@@ -1,0 +1,472 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<hr>
+
+<center>
+<h2> Q550 (Connectionist) Models in Cognitive Science
+<br>Prof. John K. Kruschke
+<p>Daily Topics
+</h2>
+(see also the <a href="schedule.html">overview of topics and readings</a>)
+</center>
+
+<p>UNDER CONSTRUCTION
+
+<p><table border=1 cellspacing=1 cellpadding=5 width=100%>
+
+<tr>
+<td colspan=3 align=center><strong>Topics of each lecture</strong></td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% align=center><em>Wk.</em></td>
+<td width=20% align=center><em>Date</em></td> 
+<td width=75% align=center><em>Topic/Goal</em></td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>1</td>
+<td width=20% align=center>Tu 14 Jan</td> 
+<td width=75%>
+<strong>Introduction: Models in general; connectionist models in
+particular.</strong> (See <a href="modeling.html">web notes for the
+first few lectures</a>.)
+<ul>
+<li><em>Modeling in general.</em>
+<li><em>Connectionist models in particular.</em>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 16 Jan</td> 
+<td width=75%>
+<ul>
+<li><em>Overview of progression of architectures.</em>
+<li><em>Class demo of the PDP software: Its look and feel.</em>
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>2</td>
+<td width=20% align=center>Tu 21 Jan</td> 
+<td width=75%>
+<ul>
+<li><em>Details of files in PDP software.</em>
+<li>Example of modeling: a=F/m.
+</ul>
+<strong>Linear associators</strong>
+<ul>
+<li><em>Linear algebra:</em>
+<br>1. Why care about linear functions? (The principle
+of superposition.)
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 23 Jan</td> 
+<td width=75%>
+<ul>
+<li>Linear algebra, continued:
+<br>2. Vector spaces and linear transformations thereof.
+<br>3. Matrix representation:
+<br>3.1. "Basis" of a vector space.
+<br>3.2. Representation of vectors w.r.t. a basis.
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>3</td>
+<td width=20% align=center>Tu 28 Jan</td> 
+<td width=75%>
+<ul>
+<li>Linear algebra, continued:
+<br>3.3. Representation of linear transformations w.r.t. a basis.
+<br>4. Eigenvectors and eigenvalues: geometrically and in matrix
+representation.
+<li><em>Hebbian learning in linear networks:</em>
+<br>0. Notation
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 30 Jan</td> 
+<td width=75%>
+<ul>
+<li>Hebbian learning in linear networks, continued:
+<br>1. Local motivation - neurons.
+<br>2. Global motivation - gradient ascent on "goodness".
+<br>3. Properties of Hebbian learning:
+<br>3.1. Weight "explosion"
+<br>3.1.1. Weight decay - local and global motivations.
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>4</td>
+<td width=20% align=center>Tu 4 Feb</td> 
+<td width=75%>
+<ul>
+<li>Hebbian learning in linear networks, continued:
+<br>3.2. Perfect recall for orthonormal inputs.
+<br>3.3. Output is always a linear combination of teacher patterns.
+<li><em>An application of unsupervised Hebbian learning:
+Center-surround receptive field development.</em> Simulation and
+analysis in terms of maximal information preservation, by Linsker.
+<br>(Not covered due to lack of time.)
+<li><em>Learning by error reduction:</em>
+<br>1. Global motivation (gradient descent on error) yields local
+learning mechanism.
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 6 Feb</td> 
+<td width=75%>
+<ul>
+<li>Learning by error reduction, continued:
+<br>2. Properties of the delta-rule in linear nets:
+<br>2.1. Perfect recall for linearly independent inputs.
+<br>2.2. Same as Hebbian for orthonormal inputs.
+<br>2.3. Output is always a linear combination of teacher patterns.
+<br>2.4. The case of auto-association.
+<li><em>An application of delta-rule learning: Pattern completion</em> in Kohnonen et al.'s auto-encoder.
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>5</td>
+<td width=20% align=center>Tu 11 Feb</td> 
+<td width=75%>
+<ul>
+<li><em>More properties of the delta-rule in linear nets:</em>
+<br>Relation of delta rule to multiple linear regression.
+<br>Relation between the Hebb rule and delta rule.
+<li><em>Levels of description in linear networks:</em>
+<br>1. Feature basis and pattern basis.
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 13 Feb</td> 
+<td width=75%>
+<ul>
+<li>Levels of description in linear networks, continued:
+<br>2. Change of basis.
+<br>3. Feature and pattern level descriptions
+<br>3.1. are isomorphic at asymptote.
+<br>3.2. are non-isomorphic under localized damage.
+<br>3.2. are non-isomorphic during learning.
+<br>3.2. are non-isomorphic when non-linearities are introduced.
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>6</td>
+<td width=20% align=center>Tu 18 Feb</td> 
+<td width=75%><strong>Single-layer non-linear networks: Perceptrons</strong> 
+<ul>
+<li><em>The perceptron defined.</em>
+<li><em>Computational abilities and limitations.</em>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 20 Feb</td> 
+<td width=75%>
+<ul>
+<li><em>Learning: The perceptron convergence procedure.</em>
+<li><em>An application: Past tense acquisition</em> by Rumelhart and
+McClelland.
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>7</td>
+<td width=20% align=center>Tu 25 Feb</td> 
+<td width=75%><strong>Multi-layer non-linear networks: Backprop.</strong> 
+<ul>
+<li><em>Computational power of multi-layer networks.</em>
+<br>1. Examples of complex functions computed by a random multi-layer network.
+<br>2. Theorem: A single layer suffices for approximating any function.
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 27 Feb</td> 
+<td width=75%>
+<ul>
+<li><em>Learning by back-propagation of error.</em>
+<br>1. Global motivation, viz., gradient descent on error, 
+ results in local learning algorithm: the generalized delta rule.
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>8</td>
+<td width=20% align=center>Tu 4 Mar</td> 
+<td width=75%>
+<ul>
+<li><em>An application: NETtalk</em> by Sejnowski and Rosenberg.
+<li><em>Analyzing hidden-layer representations</em>
+<br>1. Cluster analysis in high-dimensionality layers (e.g., NETtalk)
+<br>2. Graphs for 2 or 3-D layers (e.g., 4-2-4 encoder)
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 6 Mar</td> 
+<td width=75%>
+<ul>
+<li>Analyzing hidden-layer representations, continued:
+<br>3. "Hinton diagrams" for medium-dim spaces or topologically arrayed layers
+ (e.g., Lehky and Sejnowski shape from shading)
+<li><em>Extensions of backprop and application to human category learning</em>
+<br>1. Exemplar-based hidden nodes in ALCOVE 
+(catastrophic forgetting in standard backprop).
+<br> cf. Sparse Distributed Memory
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>9</td>
+<td width=20% align=center>Tu 11 Mar</td> 
+<td width=75%>
+<ul>
+<li>Extensions of backprop and application to human category learning, 
+continued:
+<br>2. Dimensional attention on input nodes in ALCOVE 
+(lack of filtration advantage in standard backprop).
+<br> Multi-Dimensional Scaling also described
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 13 Mar</td> 
+<td width=75%>
+<ul>
+<li>Extensions of backprop and application to human category learning, 
+continued:
+<br>3. Mixture of networks in ATRIUM (lack of rule-like extrapolation in 
+exemplar-based models).
+</ul>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr></tr>
+<tr>
+<td align=center>Br.</td>
+<td width=20% align=center>18, 20 Mar</td> 
+<td width=75%>Spring Break</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>10</td>
+<td width=20% align=center>Tu 25 Mar</td> 
+<td width=75%>
+<strong>Simple Recurrent Networks (SRN's).</strong> 
+<ul>
+<li><em>Cascaded activation for a fixed input.</em>
+<li><em>Sequential input/output patterns.</em>
+<br>1. Jordan networks.
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 27 Mar</td> 
+<td width=75%>
+<ul>
+<li>Sequential input/output patterns, continued:
+<br>2. Elman networks (a.k.a. SRN's).
+<li><em>Applications of SRN's</em>
+<br>1. Grammar learning (Elman)
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>11</td>
+<td width=20% align=center>Tu 1 Apr</td> 
+<td width=75%>
+<ul>
+<li>Applications of SRN's, continued:
+<br>2. Course of learning in an SRN
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 3 Apr</td> 
+<td width=75%><ul>
+<li>Applications of SRN's, continued:
+<br>3. Modeling human sequence learning (Cleeremans and McClelland)
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>12</td>
+<td width=20% align=center>Tu 8 Apr</td> 
+<td width=75%>
+<strong>Symmetric Recurrent Networks.</strong>
+<ul>
+<li><em>Notion of constraint satisfaction by recurrent activation.</em>
+<li><em>Hopfield's proof of stability for discrete-valued activations.</em>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 10 Apr</td> 
+<td width=75%>
+<ul>
+<li><em>Hopfield's proof of stability for continuous-valued activations.</em>
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>13</td>
+<td width=20% align=center>Tu 15 Apr</td> 
+<td width=75%>
+<ul>
+<li><em>Applications of constraint satisfaction networks.</em>
+<br>Sentence disambiguation (Waltz and Pollack)
+<br>Analogy making (Holyoak and Thagard)
+<br>Stereopsis (Marr and Poggio)
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 17 Apr</td> 
+<td width=75%>
+<ul>
+<li><em>More applications.</em>
+<br>Dyslexia (Plaut, Hinton and Shallice)
+<li><em>From goodness to network design.</em>
+<br>If an application has a cost function that can be expressed
+as a "quadratic form", then a Hopfield-type network can optimize it.
+<li><em>Learning in Boltzmann machines.</em>
+<br>Another case of global motivation resulting in a local learning rule!
+<br>Speculations about the function of (REM) sleep.
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>14</td>
+<td width=20% align=center>Tu 22 Apr</td> 
+<td width=75%>
+<strong>Competitive Learning.</strong>
+<ul>
+<li><em>Local motivation: Best representative moves closer.</em>
+<br>The special case used in program <tt>cl</tt>.
+<br>Examples.
+<br>"Leaky" learning.
+<li><em>Global motivation: Maximize representation.</em>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 24 Apr</td> 
+<td width=75%>
+<ul>
+<li><em>Adaptive Resonance Theory (ART 1).</em>
+<li><em>Kohonen's self-organized feature maps.</em>
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr>
+<td width=5% rowspan=2 align=center>15</td>
+<td width=20% align=center>Tu 29 Apr</td> 
+<td width=75%>
+<strong>Modeling Psychological Data.</strong>
+<ul>
+<li><em>The <tt>ia</tt> model of the word-superiority effect.</em>
+<li><em>An interactive activation model of face priming.</em>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td width=20% align=center>Th 1 May</td> 
+<td width=75%><ul>
+<li><em>Review and Overview.</em>
+</ul>
+</td>
+</tr>
+
+<!-- ------------------- next week (two rows of table ) ---------------- -->
+
+<tr></tr>
+<tr>
+<td align=center>(Fin.)</td>
+<td align=center>(Th 8 May)</td> 
+<td colspan=3 width=80%>
+NO Final Exam for this course (NOT happening at 5:00-7:00 pm)</td>
+</tr>
+
+</table>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

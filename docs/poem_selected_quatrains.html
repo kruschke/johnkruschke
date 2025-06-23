@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>poem_selected_quatrains.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="jkkweb_style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">John K. Kruschke</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="pubs.html">Publications</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Bayesian
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="DBDA.html">Book</a>
+    </li>
+    <li>
+      <a href="BARG.html">BARG</a>
+    </li>
+    <li>
+      <a href="bayesAndFreqApp.html">App</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="teach.html">Courses Etc.</a>
+    </li>
+    <li>
+      <a href="students.html">Students</a>
+    </li>
+    <li>
+      <a href="poems.html">Poems</a>
+    </li>
+    <li>
+      <a href="artcritic.html">Art Critic</a>
+    </li>
+    <li>
+      <a href="biography.html">Biography</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<small>
+<table style="width:100%">
+<tr>
+<td style="width:33%; text-align:left">
+<a href="poem_magnifying_glass.html">← Previous Poem</a>
+</td>
+<td style="width:34%; text-align:center">
+<a href="poems.html#sec-my_poems">Poem List ↑</a>
+</td>
+<td style="width:33%; text-align:right">
+<a href="poem_looking_east.html">Next Poem →</a>
+</td>
+</tr>
+</table>
+<p></small> <br></p>
+<div id="selected-quatrains-from-doing-bayesian-data-analysis-2nd-ed."
+class="section level2">
+<h2>Selected Quatrains from <em>Doing Bayesian Data Analysis, 2nd
+Ed.</em></h2>
+<p><br></p>
+<!-- approx. 32 words each -->
+<p>Why quatrains in a statistics textbook? It’s explained, tongue in
+cheek, on p. 2:</p>
+<blockquote style="font-size:14px">
+<p>the chapters commence with a stanza of elegant and insightful verse
+composed by a famous poet. The quatrains<sup>1</sup> are formed of
+dactylic<sup>2</sup> tetrameter<sup>3</sup>, or, colloquially speaking,
+“country waltz” meter. The poems regard conceptual themes of the chapter
+via allusion from immortal human motifs in waltz timing.</p>
+<p><sup>1</sup> quatrain [noun]: Four lines of verse. Unless it’s
+written “qua train,” in which case it’s a philosopher comparing
+something to a locomotive.</p>
+<p><sup>2</sup> dactylic [adjective]: A metrical foot in poetry
+comprising one stressed and two unstressed syllables. Not to be confused
+with a pterodactyl, which was a flying dinosaur, and which probably
+sounded nothing like a dactyl unless it fell from the sky and bounced
+twice: THUMP-bump-bump.</p>
+<sup>3</sup> tetrameter [noun]: A line of verse containing four metrical
+feet. Not to be confused with a quadraped, which has four feet, but is
+averse to lines.
+</blockquote>
+<p><strong>Ch 1. What’s in this book (read this first!)</strong></p>
+<p>Oh honey I’m searching for love that is true,<br />
+But driving through fog is so dang hard to do.<br />
+Please paint me a line on the road to your heart,<br />
+I’ll rev up my pick up and get a clean start.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter provides a road map to the book, which
+hopes to have you fall in love with Bayesian analysis even if you
+previously had unhappy relationships with statistics. The poem plays
+with those ideas.</p>
+<p></small></p>
+<p><strong>Ch 2. Introduction: Credibility, Models, and
+Parameters</strong></p>
+<p>I just want someone who I can believe in,<br />
+Someone at home who will not leave me grievin’.<br />
+Show me a sign that you’ll always be true,<br />
+and I’ll be your model of faith and virtue.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter introduces ideas of mathematical models,
+credibility of parameter values, and the semantics of models. The poem
+plays with the words, “model,” “believe,” and “true,” in an everyday
+context, and hints that Bayesian methods (personified) may be someone to
+believe in. (And yes, grammatically, the first line should be “in whom I
+can believe,” but the poem is supposed to be colloquial speech. Besides,
+the grammatically correct version is iambic not dactylic!)</p>
+<p></small></p>
+<p><strong>Ch. 3. The R Programming Language</strong></p>
+<p>You said, dear Descartes, that “je pense, donc je suis,”<br />
+Deriving existence from uncertainty.<br />
+Now, you are gone, and we say, “au revoir,”<br />
+Doubtless we think, René, therefore we R.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter introduces the programming language R.
+The poem provides motivation for using R, primarily in the form of an
+extended setup for the final pun on the word “are.” Further background:
+The French philosopher and mathematician, René Descartes (1596-1650),
+wondered how he could be certain of anything. The only thing he could be
+certain of was his own thoughts of uncertainty, and therefore he, as
+thinker, must exist. In English, the idea is captured by the phrase, “I
+think therefore I am.” Changed to plural, the phrase becomes “we think
+therefore we are.”</p>
+<p></small></p>
+<p><strong>Ch. 4. What Is This Stuff Called Probability?</strong></p>
+<p>Oh darlin’ you change from one day to the next,<br />
+I’m feelin’ deranged and just plain ol’ perplexed.<br />
+I’ve learned to put up with your raves and your rants:<br />
+The mean I can handle but not variance.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter discusses ideas of probability
+distributions. Among those ideas are the technical definitions of the
+mean and variance of a distribution. The poem plays with colloquial
+meanings of those words.</p>
+<p></small></p>
+<p><strong>Ch. 5. Bayes’ Rule</strong></p>
+<p>I’ll love you forever in every respect<br />
+(I’ll marginalize all your glaring defects)<br />
+But if you could change some to be more like me<br />
+I’d love you today unconditionally.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter is about Bayes’ rule, which shows how
+marginal probabilities relate to conditional probabilities when taking
+data into account. The terms “marginal” and (un-)“conditional” are used
+in the poem with their colloquial meanings. The poem also plays with the
+reversal of meaning between conditional and unconditional: The poem says
+that the conditional love, p(love|change), is greater than the marginal
+love, p(love), but ironically says that satisfying the condition would
+bring unconditional love.</p>
+<p></small></p>
+<p><strong>Ch. 6. Estimating a Binomial Probability</strong></p>
+<p>I built up my courage to ask her to dance<br />
+By drinking too much before taking the chance.<br />
+I fell on my butt when she said see ya later;<br />
+Less priors might make my posterior beta.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter is about using the beta distribution as
+a prior distribution for the Bernoulli likelihood function, in which
+case the posterior distribution is also a beta distribution. The poem
+explains another way to make a posterior beta.</p>
+<p></small></p>
+<p><strong>Ch. 7. Markov Chain Monte Carlo</strong></p>
+<p>You furtive posterior: coy distribution.<br />
+Alluring, curvaceous, evading solution.<br />
+Although I can see what you hint at is ample,<br />
+I’ll settle for one representative sample.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter is about methods for approximating a
+posterior distribution by collecting from it a large representative
+sample. These methods are important because complex posterior
+distributions are otherwise very challenging to get a handle on. The
+poem says merely that complexly shaped posterior distributions are
+evasive, but instead of demanding a precise solution, we will do
+practical analysis with a representative sample. Some people have
+suggested that the poem seems to allude to something else, but I don’t
+know what they could mean.</p>
+<p></small></p>
+<p><strong>Ch. 8. JAGS</strong></p>
+<p>I’m hurtin’ from all these rejected proposals;<br />
+My feelings, like peelings, down garbage disposals.<br />
+S’pose you should go your way and I should go mine,<br />
+We’ll both be accepted somewhere down the line.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter is about the software package “JAGS,”
+which stands for Just Another Gibbs Sampler. In Gibbs sampling, unlike
+Metropolis sampling, all proposed jumps are accepted, but all jumps are
+along a line parallel to a parameter axis. The quatrain personifies two
+different parameters in Gibbs sampling: they go orthogonal directions
+but both are accepted somewhere down the line.</p>
+<p></small></p>
+<p><strong>Ch. 15: The Generalized Linear Model</strong></p>
+<p>Straight and proportionate, deep in your core<br />
+All is orthogonal, ceiling to floor.<br />
+But on the outside the vines creep and twist<br />
+’round all the parapets shrouded in mist.</p>
+<p><small></p>
+<p><em>Notes:</em> The poem is a metaphorical description of the
+generalized linear model (GLM). The core of the GLM is a linear
+combination of predictors; the resulting value is proportional to the
+magnitudes of the predictors, as described in the poem. The GLM can have
+a nonlinear inverse link function; this is the twisting vine in the
+poem. The GLM has a random noise distribution that obscures the
+underlying trend; this is the shrouding mist of the poem.</p>
+<p></small></p>
+<p><strong>Ch. 19: Metric Predicted Variable with One Nominal
+Predictor</strong></p>
+<p>Put umpteen people in two groups at random.<br />
+Social dynamics make changes in tandem:<br />
+Members within groups will quickly conform;<br />
+Difference between groups will soon be the norm.</p>
+<p><small></p>
+<p><em>Notes:</em> The models in this chapter are analogous to
+traditional analysis of variance (ANOVA), which partitions variance into
+within-group variance and between-group variance. The poem suggests that
+for groups of people, within-group variance tends to decrease while
+between-group variance tends to increase.</p>
+<p></small></p>
+<p><strong>Ch. 21: Dichotomous Predicted Variable</strong></p>
+<p>Fortune and Favor make fickle decrees, it’s<br />
+Heads or it’s tails with no middle degrees.<br />
+Flippant commandments decreed by law gods, have<br />
+Reasons so rare they have minus log odds.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter is about logistic regression, and one of
+the concepts is called “log odds,” explained in Section 21.2.1. I was
+fortunate to rhyme “log odds” with “law gods” and then work backwards to
+their names, Fortune and Favor.</p>
+<p></small></p>
+<p><strong>Ch. 23: Ordinal Predicted Variable</strong></p>
+<p>The winner is first, and that’s all that he knows, whether<br />
+Won by a mile or won by a nose. But<br />
+Second recalls every inch of that distance, in<br />
+Vivid detail and with haunting persistence.</p>
+<p><small></p>
+<p><em>Notes:</em> This chapter is about modeling ordinal data. The poem
+emphasizes the emotional difference between ordinal and metric
+measurement.</p>
+<p></small></p>
+<p><strong>Ch. 25: Tools in the Trunk</strong></p>
+<p>She changes her hair, and he changes his style,<br />
+She paints on her face, and he wears a fake smile,<br />
+She shrink wraps her head, and he stretches the truth,<br />
+But they’ll always be stuck with their done wasted youth.</p>
+<p><small></p>
+<p><em>Notes:</em> One of the topics in this chapter is
+reparameterization, in which parameters of a model are transformed into
+new parameters. For example, a rectangle can be described in terms of
+its length and width, or in terms of its area and aspect ratio, where
+area = length x width and aspect ratio = length/width. Either way, it’s
+the same rectangle. The poem personifies reparameterization.</p>
+<br>
+<p>
+<p><img src='qrc_httpsjkkwebsitehostiueduDBDAhtml.png' height=60 class='image-left'>
+<a href='https://jkkweb.sitehost.iu.edu/DBDA.html' target='_blank'><em>Doing
+Bayesian Data Analysis, 2nd Edition</em></a> , Academic Press, 2015.
+<br clear='left'></p>
+<table style="width:100%">
+<tr>
+<td style="width:33%; text-align:left">
+<a href="poem_magnifying_glass.html">← Previous Poem</a>
+</td>
+<td style="width:34%; text-align:center">
+<a href="poems.html#sec-my_poems">Poem List ↑</a>
+</td>
+<td style="width:33%; text-align:right">
+<a href="poem_looking_east.html">Next Poem →</a>
+</td>
+</tr>
+</table>
+<p></small></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

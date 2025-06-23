@@ -1,0 +1,474 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>K300 Statistics, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+
+<h2>
+Schedule 
+<!-- <br>This will be under construction throughout the semester,
+so check frequently for updates. -->
+</h2>
+<h3><a href="http://www.indiana.edu/~jkkteach/K300/">K300
+Statistics</a>, Spring 2005 (Section 9885), Tu & Th 2:30-3:45, Room 226. <br><a
+href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+
+<p>
+<table align="center" cellpadding="10" bgcolor="lightgreen">
+<tr>
+<td>Jump to:</td> 
+<td><a href="syllabus.html">Syllabus.</a></td>
+<td><a href="schedule.html">Schedule.</a></td> <td><a
+href="http://oncourse.iu.edu" target="new">Oncourse (new
+window).</a></td>
+</tr>
+</table>
+
+<p>
+This schedule is subject to change. Changes will be announced in
+class. Check this schedule frequently for updates.
+
+
+<p>
+<!-- Begin main table -->
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+
+<!-- Header row -->
+<tr>
+<th>Week</th>
+<th>Homework or Exams</th>
+<th>Readings and Lecture Topics</th>
+</tr>
+
+<!-- Week 1  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">1</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<a href="k300hw01.html">Homework 1</a> assigned Tues Jan 11.
+<br>Announcement (9am F 1/14): <br>Homework 1 now due <em>Thurs Jan 20</em>.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+ <table align="right" bgcolor="lightyellow" width="150"><tr><td>
+ <img src="anxiety.jpg" align="right" width="75">
+ <small>Math anxiety? <br>Check out the Aron et al. textbook, 
+ p.14 and p.19.</small>
+ </td></tr></table> 
+<!-- Aron textbook --> 
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): <li>Intro. to student,
+p. xix. <li>Ch. 1: Displaying the order in a group of
+numbers. <li>Ch. 2: Mean, SD and Z.
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> <li>Pp.1-32: Basic
+skills. <li>Ch. 1-1: Describing data. <li>Ch. 1-2: Functions and
+tools. <li>Ch. 1-3: Frequency distributions. <li>Ch. 1-4: Making
+charts.
+</td>
+</tr>
+
+<!-- Week 2  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">2</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw01.html">Homework 1</a> due Thu Jan 20</b>.
+<br><a href="k300hw02.html">Homework 2</a> assigned Tues Jan 18.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 2: Mean, SD and Z. <li>Ch. 4: Normal population and sampling.
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> <li>Ch. 2: The Z Statistic.
+</td>
+</tr>
+
+<!-- Week 3  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">3</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw02.html">Homework 2</a> due Tues Jan 25</b>.
+<br><b><a href="k300exam1.html">Exam 1</a> Thurs Jan 27</b>.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): <li>Ch. 1, 2 and 4 continued.
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> <li>Basic Skills, Ch. 1 and 2 continued.
+</td>
+</tr>
+
+<!-- Week 4  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">4</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<a href="k300hw03.html">Homework 3</a> assigned Tues Feb 1.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+ <!-- 
+ <table align="right" bgcolor="lightyellow" width="150"><tr><td>
+ <img src="exclamation.jpg" align="right" width="75">
+ <small>Core ideas this week!</small>
+ </td></tr></table> 
+ -->
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 5: Logic of hypothesis testing. 
+<!-- Rosenberg book -->
+</td>
+</tr>
+
+<!-- Week 5  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">5</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw03.html">Homework 3</a> due Tues Feb 8</b>.
+<br><a href="k300hw04.html">Homework 4</a> assigned Tues Feb 8.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+ <table align="right" bgcolor="lightyellow" width="150"><tr><td>
+ <img src="key.jpg" align="right" width="75">
+ <small>The notion of sampling distribution this week is key 
+ for everything else we will do. Don't miss this week.</small>
+ </td></tr></table> <!-- Aron textbook --> <em>Aron et
+al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): <li>Ch. 6: Hypothesis tests on
+means. Confidence intervals.  <!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> <li>Ch. 4: Sampling distributions,
+&amp; Ch. 5.  <li><em>Very instructive website:</em> <a
+href="http://www.ruf.rice.edu/~lane/stat_sim/sampling_dist/"
+target="new">Animated simulation of sampling distribution of the
+mean.</a>
+
+</td>OA
+</tr>
+
+<!-- Week 6  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">6</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw04.html">Homework 4</a> due Tues Feb 15</b>.
+<br><b><a href="k300exam2.html">Exam 2</a> Thurs Feb 17</b>.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): <li>Ch. 5 and Ch. 6 continued.
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> <li>Ch. 4 and Ch. 5 continued.
+</td>
+</tr>
+
+<!-- Week 7  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">7</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<a href="k300hw05.html">Homework 5</a> assigned Tues Feb 22.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+ <table align="right" bgcolor="lightyellow" width="150">
+ <tr>
+ <td> 
+ <a href="K300power26.jpg">
+ <img src="K300power26.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ <td> 
+ <a href="K300power51.jpg">
+ <img src="K300power51.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ <td> 
+ <a href="K300power76.jpg">
+ <img src="K300power76.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ </tr>
+ <tr><td colspan="3" width="250" align="center">
+ <small>Examples of graphs shown in class. These three show how 
+ power increases as sample size increases. Click to enlarge.</small>
+ </td></tr>
+ </table> 
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 7: Effect size and Statistical power.
+<!-- Rosenberg book -->
+</td>
+</tr>
+
+<!-- Week 8  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">8</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw05.html">Homework 5</a> due Tues Mar 1</b>.
+<br><a href="k300hw06.html">Homework 6</a> assigned Tues Mar 1.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 8: The t-test for a single mean. 
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> 
+<li>Ch. 6: The t Statistic -- One Sample.
+</td>
+</tr>
+
+<!-- Week 9  ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">9</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw06.html">Homework 6</a> due Tues Mar 8</b>.
+<br><b><a href="k300exam3.html">Exam 3</a> Thurs Mar 10</b>.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): <li>Ch. 7 and Ch. 8 continued.
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> <li> Ch. 6 continued.
+</td>
+</tr>
+
+<!-- Spring break  -------------------------------------------------------- -->
+<tr><td align="center">Spring<br>Break</td><td></td><td></td></tr>
+
+<!-- Week 10 ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">10</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<a href="k300hw07.html">Homework 7</a> assigned Tues Mar 22.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 9: t-test for two groups.
+<!-- Rosenberg book -->
+
+</td>
+</tr>
+
+<!-- Week 11 ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">11</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw07.html">Homework 7</a> due Tues Mar 29</b>.
+<br><a href="k300hw08.html">Homework 8</a> assigned Tues Mar 29.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+ <table align="right" bgcolor="lightyellow" width="150">
+ <tr>
+ <td> 
+ <a href="NonNormalQuestion.jpg">
+ <img src="NonNormalQuestion.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ <td> 
+ <a href="TransformingData.jpg">
+ <img src="TransformingData.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ <td> 
+ <a href="Resampling.jpg">
+ <img src="Resampling.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ </tr>
+ <tr><td colspan="3" width="250" align="center">
+ <small>Some slides presented in class. Click to enlarge.</small>
+ </td></tr>
+ </table> 
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 11 (p. 353-360 only): Transforming when data are non-normal. 
+<li>Re-sampling. Lecture material only.  
+
+<!-- Rosenberg book -->
+
+</td>
+</tr>
+
+<!-- Week 12 ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">12</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw08.html">Homework 8</a> due Tues Apr 5</b>.
+<br><b><a href="Exam4preview.mht">Exam 4</a> Thurs Apr 7</b>.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Continuation of Ch. 9, Ch. 11, and re-sampling.
+<!-- Rosenberg book -->
+
+</td>
+</tr>
+
+<!-- Week 13 ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">13</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<a href="k300hw09.html">Homework 9</a> assigned Tues Apr 12.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+ <table align="right" bgcolor="lightyellow" width="150">
+ <tr>
+ <td> 
+ <a href="PowerOfFtest.jpg">
+ <img src="PowerOfFtest.jpg" align="right" width="150"> 
+ </a>
+ </td>
+ <td> 
+ <tr><td width="150" align="center">
+ <small>Example of power of F test. Click to enlarge.</small>
+ </td></tr>
+ </table> 
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 10, <em>pp. 289-311</em>: Single-factor analysis of variance (ANOVA).
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> 
+<li>Ch. 8: Single-factor ANOVA.
+</td>
+</tr>
+
+<!-- Week 14 ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">14</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw09.html">Homework 9</a> due Tues Apr 19</b>.
+<br><a href="k300hw10.html">Homework 10</a> assigned Tues Apr 19.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+ <table align="right" bgcolor="lightyellow" width="150">
+ <tr>
+ <td> 
+ <a href="RowEffect.jpg">
+ <img src="RowEffect.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ <td> 
+ <a href="ColumnEffect.jpg">
+ <img src="ColumnEffect.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ <td> 
+ <a href="InteractionEffect.jpg">
+ <img src="InteractionEffect.jpg" align="right" width="75"> 
+ </a>
+ </td>
+ </tr>
+ <tr><td colspan="3" width="250" align="center">
+ <small>Example of row, column and interaction effects shown in class. 
+ Click to enlarge.</small>
+ </td></tr>
+ </table> 
+<!-- Aron textbook -->
+<em>Aron et al. textbook</em> (and <a
+href="http://wps.prenhall.com/hss_aron_statbhnss_3"
+target="new">companion website</a>): 
+<li>Ch. 10, <em>pp. 312-324</em>: Two-factor analysis of variance (ANOVA).
+<!-- Rosenberg book -->
+<br><em>Rosenberg Excel book:</em> 
+<li>Ch. 9: Two-factor ANOVA.
+</td>
+</tr>
+
+<!-- Week 15 ------------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">15</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300hw10.html">Homework 10</a> due Tues Apr 26</b>.
+</td>
+<!-- Readings and Lecture Topics ----------- -->
+<td align="left">
+<li>Tuesday: Homework discussion. Equivalence of F and t for two groups. Overview and review of course.
+<li>Thursday: Final exam preview and worked problems.
+</td>
+</tr>
+
+<!-- Finals Week ---------------------------------------------------------- -->
+<tr>
+<!-- Week Number --------------------------- -->
+<td align="center">Final<br>Exams</td>
+<!-- Homework or Exams --------------------- -->
+<td align="center">
+<b><a href="k300exam5.html">Final Exam</a> Tues May 3, 12:30-2:30</b>.
+</td>
+<td></td>
+</tr>
+
+<!-- End main table -->
+</table>
+
+
+</body>
+</font>
+</html>

@@ -1,0 +1,509 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+<h2>
+Generating a Sampling Distribution for Pearson <em>r</em>
+</h2>
+</center>
+
+
+<p>In this exercise, you'll generate a rough sampling distribution for
+the Pearson correlation statistic, <em>r</em>.  The goal of the
+exercise is to give you a concrete feeling for where the critical
+value of the <em>r</em> statistic comes from.
+
+<p>Instead of sampling from a bivariate normal distribution, we will
+sample from a bivariate uniform distribution, namely, the values of
+two dice.  We imagine that there is an X die and a Y die, and each
+individual in the population has scores determined by a throw of the
+two dice.  We will draw four individuals from the population for each
+sample (i.e., N=4).  We then compute the correlation of X and Y in the
+sample.  We repeat this process many times, and create a frequency
+histogram of the sample <em>r</em> values.
+
+<p>In the table below, enter the X and Y values from the values of the
+dice in your sample.  Then compute <em>r</em> from the "computational"
+formula (p. 97 of Aron and Aron),
+
+<table width=100%>
+<tr>
+<td align=right valign=center width=20%>
+<em>r</em> =
+</td>
+<td align=left valign=center width=80%>
+[N*SUM(X*Y)-SUM(X)*SUM(Y)]
+<br>/ [ 
+SQRT(N*SUM(X<sup>2</sup>)-(SUM(X))<sup>2</sup>) 
+*
+SQRT(N*SUM(Y<sup>2</sup>)-(SUM(Y))<sup>2</sup>) 
+]
+</td></tr>
+</table>
+
+Or, if you have a calculator that computes <em>r</em>, use your calculator.
+
+<p>
+<table border=1 cellpadding=5 width=100%>
+
+<tr>
+<td align=center width=10%>Repetition</td>
+<td align=center width=15%>X</td>
+<td align=center width=15%>X<sup>2</sup></td>
+<td align=center width=15%>Y</td>
+<td align=center width=15%>Y<sup>2</sup></td>
+<td align=center width=15%>X*Y</td>
+<td align=center width=15%><em>r</em></td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>1</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>2</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>3</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>4</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>5</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>6</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>7</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>8</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>9</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+<tr>
+<td rowspan=5 valign=center align=center>10</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td rowspan=5 valign=center align=center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+<td valign=center align=center>&nbsp;</td>
+</tr>
+<tr>
+<td valign=center align=center>SUM(X)<br>=_____</td>
+<td valign=center align=center>SUM(X<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(Y)<br>=_____</td>
+<td valign=center align=center>SUM(Y<sup>2</sup>)<br>=_____</td>
+<td valign=center align=center>SUM(X*Y)<br>=_____</td>
+</tr>
+
+</table>
+
+<p>Now make a histogram (below) of the 10 <em>r</em> values you
+generated, along with the 10 <em>r</em> values generated by each of
+nine classmates, so that you have plotted a total of 100 <em>r</em>
+values.  Keep track of the 6 highest <em>r</em> values in the set of
+100.
+
+<p>
+<table>
+<tr><td>
+<pre>
+Frequency
+
+  20 +    +     +     +     +     +     +     +     +     +     +
+  19 +    +     +     +     +     +     +     +     +     +     +
+  18 +    +     +     +     +     +     +     +     +     +     +
+  17 +    +     +     +     +     +     +     +     +     +     +
+  16 +    +     +     +     +     +     +     +     +     +     +
+  15 +    +     +     +     +     +     +     +     +     +     +
+  14 +    +     +     +     +     +     +     +     +     +     +
+  13 +    +     +     +     +     +     +     +     +     +     +
+  12 +    +     +     +     +     +     +     +     +     +     +
+  11 +    +     +     +     +     +     +     +     +     +     +
+  10 +    +     +     +     +     +     +     +     +     +     +
+   9 +    +     +     +     +     +     +     +     +     +     +
+   8 +    +     +     +     +     +     +     +     +     +     +
+   7 +    +     +     +     +     +     +     +     +     +     +
+   6 +    +     +     +     +     +     +     +     +     +     +
+   5 +    +     +     +     +     +     +     +     +     +     +
+   4 +    +     +     +     +     +     +     +     +     +     +
+   3 +    +     +     +     +     +     +     +     +     +     +
+   2 +    +     +     +     +     +     +     +     +     +     +
+   1 +    +     +     +     +     +     +     +     +     +     +
+   0 +----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+      -1.0  -.80  -.60  -.40  -.20   .00   .20   .40   .60   .80
+      -.81  -.61  -.41  -.21  -.01   .19   .39   .59   .79   1.0
+
+                           r value
+</pre>
+</td></tr></table>
+
+<p>After plotting all 100 <em>r</em> values, draw a line between the
+5th and 6th highest values.  This is your estimate of the critical
+<em>r</em> value for a 5% Type I error rate, one-tailed (or 10%
+two-tailed).  Convert this estimated critical value to a <em>t</em>
+value, using
+
+<table width=100%>
+<tr><td align=center>
+<em>t</em> = sqrt(N-2) * <em>r</em>  / sqrt(1-<em>r</em><sup>2</sup>)
+</td></tr>
+</table>
+
+<p>What is the tabled critical <em>t</em> value for N-2 df?  Is this
+close to the estimated critical value from your histogram?  What is a
+major difference between the form of the population you sampled from,
+and the form of the population assumed by the tabled critical values?
+
+
+<br><br><br>
+<hr>
+
+</BODY>
+</HTML>

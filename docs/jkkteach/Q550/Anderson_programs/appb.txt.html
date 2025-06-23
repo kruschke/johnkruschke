@@ -1,0 +1,279 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+
+                             Appendix B
+              Lateral Inhibition Program from Chapter 4
+
+
+     This program simulates the simple lateral inhibition found
+in the eye of Limulus.  The program is designed to be easily modified, 
+but is not very fast or efficient.  The basic program simulates a 
+one-dimensional eye that wraps around, with 80 "receptors."  The 
+initial pattern of excitation to the eye contains two step 
+functions, as determined in PROCEDURE Initialize_state_vector.  
+Inhibition from a unit to its neighbors is assumed to fall off 
+exponentially with distance from the unit.  The program will prompt 
+for the maximum strength of inhibition and the spatial extent of 
+inhibition, which parameter determines  the space constant of the 
+exponential fall off.  The program will also prompt for a parameter 
+"epsilon" which controls the properties of the fixed point iteration 
+used to compute the solution pattern for a given light distribution 
+and system properties.  Epsilon determines speed of convergence of 
+the numerical approximation used. If epsilon is too large, the 
+system will become numerically unstable, will not converge and 
+will "blow up."  If epsilon is too small, nothing bad will happen but 
+the system may move very slowly toward the solution.  Only 50 
+iterations are used, so the solution may not be found.  A good 
+initial value for epsilon is between 0.1 and 0.01.  It is obvious 
+when things are not working right and this parameter is not 
+critical.  In the Limulus the maximum inhibition observed
+experimentally is below 0.2; a reasonable length constant might lie 
+between about 2 and 4. 
+
+     This version of the program uses self inhibition, that is, a 
+unit inhibits itself, as is the case in the real animal.  For the 
+simulations of Winner-Take-All (WTA) networks, the self-inhibition 
+can be turned off by setting the self inhibition term in each unit 
+to zero.  This is done by zeroing element [I] in the vector 
+Inhibitory_weights[I] where I runs from 1 to Dimensionality,
+that is, Inhibitory_weights [I][I]:= 0.   In the terminology of 
+Chapter 5, the diagonal term of the connection matrix is set to zero.  
+For a good WTA network, both the space constant and the maximum value 
+of the inhibition should be large.  The chapter uses some simple 
+patterns, described there, as demonstrations.  
+
+-----------------------------------------------------------------------
+
+PROGRAM Lateral_inhibition (Input, Output);
+
+CONST  Dimensionality      =  80;
+       Number_of_iterations=  50;
+
+TYPE   Vector         = ARRAY [1..Dimensionality] OF REAL;
+
+VAR    Initial_state_vector,         {Starting pattern.                     }
+       State_vector      : Vector;   {Current state of the system.          }
+
+                                     {Vectors containing inhibitory weights.}
+       Inhibitory_weights: ARRAY [1..Dimensionality] OF Vector;
+                
+       Upper_limit,                  {Maximum firing rate of model neuron.  }
+       Lower_limit,                  {Minimum firing rate of model neuron.  }
+       Length_constant,              {Length constant of inhibition.        }
+       Epsilon,                      {Constant.                             }
+       Max_strength: REAL;           {Maximum value of inhibition.          }
+
+PROCEDURE ClrScr;                    {Erase screen, leave cursor at home.   }
+        BEGIN
+        WRITE (CHR (27), '[f', CHR (27),'[2J');
+        END;
+
+PROCEDURE GoToXY (X,Y: INTEGER);     {X = column number, Y = row number.    }
+        BEGIN
+        WRITELN;
+        WRITE (CHR (27), '[');
+        IF Y<10 THEN WRITE (Y:1) ELSE WRITE (Y:2);
+        WRITE (';');
+        IF X<10 THEN WRITE (X:1) ELSE WRITE (X:2);
+        WRITE ('H');
+        END;
+
+PROCEDURE Initialize_parameters;
+       VAR I, J      : INTEGER;
+           Input_char: CHAR;
+       BEGIN
+       ClrScr;
+       GoToXY (1,1);
+       WRITELN('Lateral Inhibition Demonstration.'                          );
+       WRITELN('Using a One Dimensional Circular Eye, with wraparound.'     );
+       WRITELN('Parameters of Lateral Inhibition.'                          );
+       WRITELN;
+       WRITE  ('Inhibitory Maximum Strength: ');        READLN (Max_strength);
+       Max_strength:= ABS (Max_strength);                {Assures inhibition.}
+       WRITE  ('Inhibitory Length Constant : ');     READLN (Length_constant);
+       WRITE  ('Epsilon                    : ');             READLN (Epsilon);
+       Upper_limit :=  75;      {Neuron discharge is limited above and below.}
+       Lower_limit :=   0;
+
+       END;
+
+PROCEDURE Make_inhibitory_weights;
+       VAR I,J,
+           Half_dimensionality: INTEGER;
+
+       PROCEDURE Make_first_vector;
+           VAR I: INTEGER;
+           BEGIN
+
+           FOR I:= 1 TO Half_dimensionality DO
+              Inhibitory_weights [1][I]:= 
+               -Max_strength * EXP (- (I-1) / Length_constant);
+
+           FOR I:= (Half_dimensionality+1) TO Dimensionality DO
+              Inhibitory_weights [1][I]:= 
+               -Max_strength * EXP (- ((Dimensionality+1)-I) / Length_constant);
+ 
+           END;
+
+
+       PROCEDURE Shift_elements_right (Input_vector : Vector; 
+                                   VAR Output_vector: Vector);
+           VAR I :INTEGER;
+           BEGIN
+           FOR I:= 1 TO (Dimensionality-1) DO 
+               Output_vector [I+1] := Input_vector [I];
+           Output_vector [1] := Input_vector [Dimensionality];
+           END;
+
+       BEGIN
+       Half_dimensionality:= Dimensionality DIV 2;
+       Make_first_vector;
+       FOR I:= 1 TO (Dimensionality-1) DO
+         Shift_elements_right (Inhibitory_weights[I], Inhibitory_weights[I+1]);
+       END;
+
+PROCEDURE Initialize_state_vector;
+       VAR I: INTEGER;
+       {The initial input is a rectangular pattern, changing from 10 to 40 }
+       {at neuron 20 and 40 to 10 at neuron 60.}
+       BEGIN
+       FOR I:=  1 TO 20 DO Initial_state_vector [I]:= 10;
+       FOR I:= 21 TO 60 DO Initial_state_vector [I]:= 40; 
+       FOR I:= 61 TO 80 DO Initial_state_vector [I]:= 10;
+       State_vector:= Initial_state_vector;
+       END;
+
+PROCEDURE Initialize_display;
+       BEGIN
+       ClrScr;                                                {Clears Screen.}
+       GoToXY (1,1);                    {Goes to upper left corner of screen.}
+       WRITELN ('Initial state: +.  Final state: *'                          );
+
+       WRITELN ('Parameters:',
+               ' Length Constant: ',  Length_constant:4:2,
+               ' Maximum Inhibition: ', Max_strength:4:2);
+                                         
+       WRITELN ('Neuron  |  Firing Rate: Spikes/Second |         |         |');
+       WRITELN ('        0........10........20........30........40........50');
+       END;
+
+PROCEDURE Display_state_vector (Displayed_vector: Vector;
+                                Starting_element: INTEGER; 
+                                Display_Character: CHAR);
+       VAR I, Row, Column: INTEGER;
+       BEGIN
+       FOR I:=  Starting_element TO (Starting_element + 18) DO
+           BEGIN 
+           Row:= 5 - Starting_element + I;
+           GoToXY (1, Row); WRITE (I:5);
+           Column:= ROUND (Displayed_vector [I]) + 9;
+           GoToXY (Column, Row); WRITE (Display_character);
+           END;
+       GoToXY (1,1);
+       END;
+
+PROCEDURE Compute_inhibited_state_vector;
+     VAR I,J             : INTEGER;
+         New_state_vector,
+         Difference      : Vector;
+
+     FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+        VAR I: INTEGER;
+            Sum_of_products: REAL;
+        BEGIN
+        Sum_of_products := 0;
+        FOR I:= 1 TO Dimensionality DO 
+            Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+        Inner_product:= Sum_of_products;
+        END;
+
+     PROCEDURE Subtract_Vectors (Vector_1, Vector_2: Vector;
+                                     VAR Vector_difference: Vector);
+         VAR I: INTEGER;
+         BEGIN
+         FOR I:= 1 TO Dimensionality DO
+             Vector_difference [I] := Vector_1 [I] - Vector_2 [I];
+         END;
+
+     FUNCTION Vector_length (Vector_1: Vector): REAL;
+         VAR Sum_of_Squares: REAL;
+                          I: INTEGER;
+         BEGIN
+         Sum_of_Squares:= 0;
+         FOR I:= 1 TO Dimensionality DO 
+             Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+         Vector_length:= SQRT (Sum_of_Squares);
+         END;
+
+     PROCEDURE Limit_state_vector (VAR V: Vector);
+        VAR I: INTEGER;
+        BEGIN
+        FOR I:= 1 TO Dimensionality DO 
+            BEGIN
+            IF V[I]>Upper_limit THEN V[I]:= Upper_limit;
+            IF V[I]<Lower_limit THEN V[I]:= Lower_limit;
+            END;
+        END;
+
+     PROCEDURE Convergence_test;
+        BEGIN
+        Subtract_vectors (New_state_vector, State_vector, Difference);
+        IF (Vector_Length (Difference) > 1.0) THEN
+            BEGIN   
+            GoToXY (1,1);
+            WRITE (CHR (7));
+            WRITELN('>>> Convergence Problem.',
+                    ' Length difference between last iterations is ',
+                    Vector_length (Difference):5:1, '.');
+            END;
+        END;
+
+     BEGIN {Compute_inhibited_state_vector.}
+     FOR I:= 1 TO Number_of_iterations DO 
+         BEGIN
+         FOR J:= 1 TO Dimensionality DO
+           BEGIN
+           New_state_vector[J]:= State_vector[J] +
+                 Epsilon * ( Initial_State_vector[J] +
+                     Inner_product (Inhibitory_weights[J], State_vector) 
+                     - State_vector[J]);
+           END;
+         Limit_state_vector (New_state_vector);
+         IF (I = Number_of_iterations) THEN Convergence_test;
+         State_vector:= New_state_vector;
+         END;
+     END;  {Compute_inhibited_state_vector.}
+
+BEGIN {Main Program.}
+Initialize_state_vector;
+Initialize_parameters;
+Initialize_display;
+Display_state_vector (Initial_state_vector, 12, '+');
+Make_inhibitory_weights;
+Compute_inhibited_state_vector;
+Display_state_vector (State_vector, 12, '*');
+READLN;                          {Keeps display on screen until hit <RET>.}
+END.  {Main Program.}
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

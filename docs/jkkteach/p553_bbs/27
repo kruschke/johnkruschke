@@ -1,0 +1,24 @@
+SUBJECT>Re: #6 last part
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Tuesday, 24 September 2002, at 10:41 a.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>23
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<P>&gt; I have a question about #6,
+<BR>&gt; about how much additional money
+<BR>&gt; would the experimenter expect to
+<BR>&gt; pay subjects for the increase in
+<BR>&gt; power. Do we need to figure expected
+<BR>&gt; value to figure the amount of money?
+<BR>&gt; I am not sure what formula to use...
+<BR>&gt; and I think I should probably not
+<BR>&gt; rely on what common sense is telling
+<BR>&gt; me. any suggestions? thanks.
+<P>This was supposed to be a simple question, intended merely to get you to realize that increases in power have a cost. In this case, we increase power by increasing the sample size, but each person in the sample costs money because we are paying him/her!
+<P>The details for this question: Under the old procedure, when people are not paid, each person got 71 letters on average. Under the new procedure, when people are paid $1 per letter, they get 74 letters on average. With N=20, the cost of the experiment is $1/letter * 74_letters/subject * 20_subjects.
+<P>The question is simply asking you, what is the increase in cost when you use 40 subjects instead of 20? That's the price you pay for the increase in power.

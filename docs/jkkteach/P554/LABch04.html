@@ -1,0 +1,117 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>P554 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="khaki">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/P554/">P554 Statistics in Psychology</a>, 
+Prof. Kruschke
+<br>
+<!-- ------------------------------------------------------------ -->
+Lab Assignment for Ch. 4. Th 25, F 26 Jan 2007.
+<!-- ------------------------------------------------------------ -->
+</h3>
+</center>
+
+<small>
+<p><em>General instructions.</em> This assignment is to be done in
+your lab session. Submit your assignment from the lab computer during
+lab time.  If the assignment involves SPSS, be sure that when you open
+SPSS, you set it so that commands are displayed in the output: Edit ->
+Options, Viewer tab, check box Display commands in the log.
+
+</small>
+
+<!--
+<p><b>Under construction. Do not yet do this assignment.</b><p>
+-->
+
+<p>
+<!-- ------------------------------------------------------------ -->
+
+Our goal in this lab exercise is to demonstrate how some contrasts can
+be correlated while other contrasts are independent.
+
+
+To do this, you will adapt the <a
+href="LAB_SampleContrasts.sps">linked SPSS syntax file</a>. This
+program samples three scores (n=3) from each of three normally
+distributed groups (a=3). It then computes the value of three
+contrasts for each sample. Then it determines the correlations of the
+contrasts across the random sample, and makes scatterplots of the
+contrasts. Your job is to complete the SPSS syntax
+(a.k.a. "programming code") and answer the questions below.
+
+
+
+<p>* Open the SPSS syntax file. Look closely at the code and find the
+comments, indicated like this: <br><tt>/* Here's an SPSS
+comment. */</tt> <br>Some comments simply explain what the code is
+doing. Other comments tell you to make some modifications.  Carry out
+the modifications to the code indicated by the comments.
+
+<p>* Run the code. Your output should have (i) a Frequencies table
+that shows the 95th and 97.5 percentile of the contrasts, (ii) a table
+of Descriptive Statistics for the contrasts, (iii) a table of
+correlations for the contrasts, and (iv) two scatterplots. If you try
+this several times, be sure to clear out all trial runs, and retain only
+the final run.
+
+<p>* In the top of the first Log textbox, type your full name. After
+that, type in answers to these questions:
+
+<p>(A) What is the value of
+&Sigma;<sub>j</sub>c<sub>1j</sub>c<sub>3j</sub>? Are the contrasts
+&Psi;<sub>1</sub> and &Psi;<sub>3</sub> orthogonal? What is the
+correlation across samples of &Psi;<sub>1</sub> and &Psi;<sub>3</sub>?
+
+<p>(B) Suppose a random sample has &Psi;<sub>3</sub> (=(M1+M2)/2-M3)
+greater than the 95th percentile. For such a sample, what is the
+probability that &Psi;<sub>1</sub> (=M1-M2) exceeds <em>its</em> 95th
+percentile? This question is asking for the conditional probability of
+getting a false alarm on &Psi;<sub>1</sub> given that you have a false
+alarm on &Psi;<sub>3</sub>. You can answer this question by counting
+the number of samples that exceed <em>both</em> 95th percentiles, and
+dividing by the number of samples that exceed just <em>one</em> 95th
+percentile. (And you can make those counts by clicking on the
+interactive scatterplot and setting the axis limits so that the lower
+limit is at the 95th percentile, which you determine from the output
+table.) Hint: The conditional probability should be about 5%, because
+the two contrasts are orthogonal.
+
+<p>(C) What is the value of
+&Sigma;<sub>j</sub>c<sub>2j</sub>c<sub>3j</sub>? Are the contrasts
+&Psi;<sub>2</sub> and &Psi;<sub>3</sub> orthogonal? What is the
+correlation across samples of &Psi;<sub>2</sub> and &Psi;<sub>3</sub>?
+
+<p>(D) Suppose a random sample has &Psi;<sub>3</sub> (=(M1+M2)/2-M3)
+greater than the 95th percentile. For such a sample, what is the
+probability that &Psi;<sub>2</sub> (=M1-M3) exceeds <em>its</em> 95th
+percentile? This question is asking for the conditional probability of
+getting a false alarm on &Psi;<sub>1</sub> given that you have a false
+alarm on &Psi;<sub>3</sub>. You can answer this question by counting
+the number of samples that exceed <em>both</em> 95th percentiles, and
+dividing by the number of samples that exceed just <em>one</em> 95th
+percentile. (And you can make those counts by clicking on the
+interactive scatterplot and setting the axis limits so that the lower
+limit is at the 95th percentile, which you determine from the output
+table.) Hint: The conditional probability should be much greater than
+5%, because the two contrasts are positively correlated.
+
+
+<p><em>What to turn in and how to turn it in.</em> Save a copy of the
+output file for your own records, and upload a copy to the Assignments
+in Oncourse.
+
+
+
+<!-- ------------------------------------------------------------ -->
+<p><hr>
+</BODY>
+</font>
+</HTML>
+
+

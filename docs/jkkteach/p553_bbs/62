@@ -1,0 +1,23 @@
+SUBJECT>Re: Hmk6, prob3
+POSTER>Mario F.
+EMAIL>mfific@indiana.edu
+DATE>Monday, 21 October 2002, at 5:10 p.m.
+IP_ADDRESS> REMOTE_HOST: dial-117-94.dial.indiana.edu; REMOTE_ADDR: 156.56.117.94
+PREVIOUS>61
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>I suggest to skip hom. of var. test in this problem. The data set is so artificial that SPSS does not want to deal it in a reguar way. So skip the test of homogeneity of variance in the problem #3. BUT, It will work in other questions.
+
+<P>&gt; I'm having trouble displaying
+<BR>&gt; the homogeneity of variance test
+<BR>&gt; in SPSS for problem #3. When I
+<BR>&gt; run the ANOVA, I get an error for
+<BR>&gt; the homogeneity test. It says "test
+<BR>&gt; of homogeneity of variances cannot
+<BR>&gt; be performed for score of group
+<BR>&gt; because the sum of caseweights
+<BR>&gt; is less than the number of groups"
+<BR>&gt; Any thoughts on what I can do to
+<BR>&gt; correct this?

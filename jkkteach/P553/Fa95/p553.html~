@@ -1,0 +1,346 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke</TITLE>
+</HEAD>
+<! BODY background="../bg.gif">
+<BODY bgcolor="FFFFFF">
+
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+<p>
+
+<center>
+<h1>
+P553 Statistics in Psychology<br>
+</h1>
+<h2>
+Fall 1995, Section 4373, Tu-Th 11:15-12:30, PY 111<br>
+</h2>
+</center>
+
+
+<a name="contents"></a>
+<h2>Contents:</h2>
+
+<ul>
+
+	<li> <a href="#instructor">Instructor and Assistants</a>
+
+	<li> <a href="#announcements">
+	Announcements</a>
+
+	<li> <a href="#newsgroup">P553 Newsgroup</a>
+
+	<li> <a href="goals.html">
+	Instructional Goals</a>
+
+	<li> <a href="#homework">
+	Homework Assignments</a>
+
+	<li> Review Topics for <a href="exam1.html">Exam 1</a>, 
+	<a href="exam2.html">Exam 2</a>, <a href="exam3.html">Exam 3</a>.
+
+	<li> <a href="scores.html">Exam and Homework Scores</a> 
+	(updated 14 Nov.)
+
+	<li> <a href="syllabus.html">
+	Syllabus</a>
+
+	<li> <a href="#links">
+	Links to Other Resources (including SPSS info)</a>
+
+</ul>
+<p>
+
+
+<a name="instructor"></a>
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+<p>
+
+<h2>Instructor and Assistants:</h2>
+
+<strong>Instructor: Prof. 
+<a href="http://www.indiana.edu/~kruschke/home.html">
+John K. Kruschke</a><br></strong>
+Office: PY 336, W 11:00-12:00 & Th 4:00-5:00, 855-3192<br>
+E-mail: <A HREF=mailto:KRUSCHKE@indiana.edu>kruschke@indiana.edu</A> <br>
+<p>
+Assistant: Anna Nelson<br>
+Office: Hillcrest 303, M 2:00-3:00, 855-5604 <br>
+E-mail: <A HREF=mailto:annelson@indiana.edu>annelson@indiana.edu</A> <br>
+<p>
+Assistant: Tim Petersime<br>
+Office: PY 353 (office of Lee Guth, 855-4922), M 10:00-11:00. Other times: 855-9884 <br>
+E-mail: <A HREF=mailto:tpetersi@indiana.edu>tpetersi@indiana.edu</A> <br>
+<p>
+
+<p><center>
+[ <a href="#contents">Contents</a> ]
+</center><p>
+
+<a name="announcements">
+</a>
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+
+<H2>Announcements:</H2>
+
+<dl>
+
+<dt>16 Nov., Thursday <dd>Homework 10 is updated, and is now due 28
+Nov.  There will be no lab sections this week, and next Tuesday's
+lecture period will be devoted to examples of problem solving. <p>
+
+<dt>1 Nov., Wednesday <dd>Dr.Kruschke's office hour on Thursday Nov.9
+(4-5pm) is cancelled.<p>
+
+<dt>31 Oct., Tuesday <dd>The Review Session will be at 7:00 in Room
+230 in the Psych. Building.  Take the main stairs to the 2nd floor;
+turn right.  At the T in the hall, turn left.  Room 230 is on the
+right. <p>
+
+<dt>27 Oct., Friday <dd>Please see the Homework 8 assignment for
+important new details about how to use SPSS. <p>
+
+<dt>11 Oct., Wednesday <dd>I posted a solution to the Exam 1 question
+that asked about sample size needed for a certain power in the z-test.
+Click on <a href="exam1.html">Review for Exam 1.</a><p>
+
+<dt>26 Sept., Tuesday <dd>There is now a helpful list of <a
+href="http://pcfwww.ucs.indiana.edu/tltl/documents/lockerfaq.html">
+Frequently Asked Questions about Student Lockers, Netscape,
+Newsgroups, etc.</a><p>
+
+<dt>24 Sept., Sunday <dd>Please check our <a
+href="news:ac.psy.p553.4373">newsgroup</a> for discussion regarding
+Homework 4.<p>
+
+<dt>22 Sept., Friday <dd>It turns out that SPSS on the cluster
+machines <em>can</em> do single-sample t-tests, but, as announced
+yesterday (see announcement of 21 Sept.), it is not an explicit menu
+item.  Please see <a href="hw4.html">Homework 4</a> for complete
+info.<p>
+
+<dt>21 Sept., Thursday <dd>There is a change in the requirements for
+<a href="hw4.html">Homework 4</a> (click on it to read about it).<p>
+
+<dt>13 Sept., Wednesday <dd>The StatMath folks have created a new web
+page for SPSS info, which links to a lot of useful information. Click
+on <a HREF="http://www.indiana.edu:80/~statmath/stat/spss/">
+<strong>SPSS at I.U.</strong></a>.<p>
+
+<dt>13 Sept., Wednesday <dd>The bibliographic database PsycINFO is now
+online via the IU Libraries.  Click on <a
+HREF="http://www.indiana.edu/~libweb/index.html"> <strong>I.U.
+Libraries</strong></a> and then scroll down to the section <strong>Indexes
+to Journal and Newspaper Articles</strong> and then click on
+PsycINFO.<p>
+
+<dt> 12 Sept., Tuesday <dd>Homework 2 due date is postponed until two
+days later, Thursday Sept. 14.  This is because it was announced in
+lab section that the homework due date would be postponed. If there is
+something asked for in the exercises that I didn't explicitly go over
+in lecture, read the book carefully, and please ask if you have
+questions.<p>
+
+<dt> 31 August, Thursday <dd>Homework 1 due date is postponed until
+one week later, Tuesday Sept. 12.  This is because of delays in being
+able to demonstrate SPSS in class.  There will be a second assignment
+posted on Sept. 5, on schedule, which will also be due Sept. 12.  <p>
+When using SPSS/PC in the PY120 computer cluster, be sure to get into
+windows first, then double click on the SPSS/PC+6.0 icon.  Don't use
+the old version 5 in DOS, unless you are already familiar with it. <p>
+
+<dt> 30 August, Wednesday <dd> New Web page address: Because the
+computer, Silver, is so slow (too many users), I have moved our web
+pages to a faster site.<br> Our P553 web page is now at
+<pre>http://www.indiana.edu/~jkkteach/P553/p553.html</pre><br>
+My homepage is now at
+<pre>http://www.indiana.edu/~kruschke/home.html</pre><br> <p>
+
+<dt> 29 August, Tuesday <dd> New office hours for Prof. Kruschke:
+Beginning the second week of classes, my Tuesday 4-5 office hour will
+be changed to Wednesday 11-12.  So, new office hours are Wed 11-12 and
+Thurs 4-5. <p>
+
+<dt>25 August, Friday 
+<dd>Announcements will be posted here, in reverse chronological order,
+so that the most recent announcement is listed first.
+
+</dl>
+
+
+<p><center>
+[ <a href="#contents">Contents</a> ]
+</center><p>
+
+
+<a name="newsgroup">
+</a>
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+
+<H2>P553 Newsgroup:</H2>
+
+Students: For posting to our newsgroup, it is imperative to run
+Netscape from your Student Lockers. The Netscape documentation is
+written from the perspective of the Student Locker, so hopefully, this
+won't become a problem.  <p> You may want to refer to the following
+documents:<br> <a href="http://www.indiana.edu/~ucspubs/b119/">
+Netscape 1.1N in the IUB public computing sites </a> <br> <a
+href="http://www.indiana.edu/~ucspubs/b073/"> The Student Locker
+handbook</a> <br> <a
+href="http://pcfwww.ucs.indiana.edu/tltl/documents/lockerfaq.html">
+Frequently Asked Questions about Student Lockers, Netscape,
+Newsgroups, etc.</a><p>
+
+
+<a href="news:ac.psy.p553.4373"> Click here to go to our <strong>P553
+NEWSGROUP</strong></a> <p>
+
+<p><center>
+[ <a href="#contents">Contents</a> ]
+</center><p>
+
+
+
+
+
+
+<a name="homework">
+</a>
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+
+<H2>Homework Assignments:</H2>
+
+<strong><a href="hw1OB.html">1. Originally due 5 Sept., NEW due date: 12
+Sept.</a></strong><p>
+
+<strong><a href="hw2.html">2. Originally due 12 Sept., NEW due date:
+14 Sept. (Thursday)</a></strong><p>
+
+<strong><a href="hw3.html">3. Due 19 Sept.</a></strong><p>
+
+<strong><a href="hw4.html">4. Due 26 Sept.</a></strong><p>
+
+<strong><a href="hw5.html">5. Due 10 Oct.</a></strong><p>
+
+<strong><a href="hw6.html">6. Due 17 Oct.</a></strong><p>
+
+<strong><a href="hw7.html">7. Due 24 Oct.</a></strong><p>
+
+<strong><a href="hw8.html">8. Due 31 Oct.</a></strong><p>
+
+<strong><a href="hw9.html">9. Due 14 Nov.</a></strong><p>
+
+<strong><a href="hw10.html">10. UPDATED. Due 28 Nov.</a></strong><p>
+
+<strong><a href="hw11.html">11. Due 5 Dec.</a></strong><p>
+
+<strong><a href="hw12.html">12. Due 12 Dec.</a></strong><p>
+
+<p><center>
+[ <a href="#contents">Contents</a> ]
+</center><p>
+
+<a name="links"></a>
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+<H2>Links to other resources:</H2>
+
+<UL>
+
+	<li> Indiana University
+
+	<ul>
+
+		<li><a HREF="http://www.indiana.edu:80/~statmath/stat/spss/">
+		<strong>SPSS at I.U.</strong></a>
+
+		<LI><A HREF="http://sckb.ucssc.indiana.edu/kb/">
+		<strong>University Computing Services Knowledge Base</strong>
+		</A>
+
+		<LI><A HREF="http://www.indiana.edu/~libweb/index.html">
+		<strong>I.U. Libraries</strong>
+		</A>
+
+		<LI><A HREF="http://www.indiana.edu/iub">
+		Indiana University, Bloomington
+		</A>
+
+		<LI>
+		<A HREF="http://www.psych.indiana.edu">
+		I.U. Cognitive Science
+		</A>
+
+		<!-- HREF="http://www.indiana.edu/~psych/home.html" -->
+
+		<LI>
+		<A HREF="http://www.bloomington.in.us/">
+		City of Bloomington
+		</A>
+
+	</ul>
+
+	<li> Outside I.U.
+	<ul>
+
+		<li>
+		<a href="http://www.spss.com/">SPSS Incorporated</a>
+
+		<LI>
+		<A HREF="http://psych.hanover.edu/APS/">
+		American Psychological Society
+		</A>
+
+		<LI>
+		<A HREF="http://www.apa.org/">
+		American Psychological Association
+		</A>
+
+		<LI>
+		<A HREF="http://matia.stanford.edu//cogsci.html">
+		Stanford Link List for Cognitive and Psychological Sciences
+		</A>
+
+		<LI>
+		<A HREF="http://psy.ucsd.edu/otherpsy.html">
+		UCSD Link List for Cognitive and Psychological Sciences
+		</A>
+
+		<LI>
+		<A HREF="http://pegasus.acs.ttu.edu/~civelek/newII/thanatos2.html">
+		PsychGuide to sites related to psychology
+		</A>
+
+	</ul>
+
+</UL>
+
+<p><center>
+[ <a href="#contents">Contents</a> ]
+</center><p>
+
+<center>
+<img src="../hr.gif" alt="==============================================">
+</center>
+
+<p>
+<strong>Usage statistics:</strong>
+<a href="../usage/Oct95.html">Oct.95</a>,
+<a href="../usage/Nov95.html">Nov.95</a>
+
+
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,15 @@
+SUBJECT>Statistical Power
+POSTER>Mario F.
+EMAIL>mfific@indiana.edu
+DATE>Sunday, 22 September 2002, at 1:17 p.m.
+IP_ADDRESS> REMOTE_HOST: dial-117-26.dial.indiana.edu; REMOTE_ADDR: 156.56.117.26
+PREVIOUS>
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>I made Excel simulation that deal with our lab power problem. We had "null" hypothesis that assumes mean value of dices will be 3.0, the alternative assumes 3.5. We have to show what would happen with our hypothesis when change the number of dices in a sample (2 dices and 10 dices). Now as we discussed we know that if more elements are sampled then higher the power. Therefore we could expect that in condition 10 dices it would be more likely to reject null hypothesis.
+<P>Excel generated random numbers (1-6) for conditions 2 dices and 10 dices. Then it calculates how many times mean value of outcome was greater then 3 (null). I did simulation on 100 trials and found that for n=2, proportion of mean being bigger then 3 is 0.66 and when throw 10 dices the proportion is 0.77. Thus it is more likely to reject the null.
+<P>Also I asked program to remap (x/2+1.75) value of two dices condition: now proportion was 0.80 (which is very close value obtained in standard n=10 condition). What happened with our n=2 scores after transformation? As we discussed the transformation changed each value such that variance on whole set is reduced and mean stays the same. Note that transformation of your data prior to analysis is sometimes very useful technique, but one have to be very carefully and has some theoretical explanation why transformation was used.
+<P>If anyone is interested in getting the excel file please email me.
+<P>Mario

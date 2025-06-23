@@ -1,0 +1,515 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h3>
+<a href="http://www.indiana.edu/~jkkteach/Q550/">Q550 Models in
+Cognitive Science,</a>
+<a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+
+<h2>
+Newton's Model of Gravity,
+and Models Generally.
+</h2>
+</center>
+
+
+<p>
+
+<table><tr><td>
+
+<table align=left vspace=5 hspace=5>
+<tr><td align=center valign=bottom><img src="newton2.jpg"></td></tr>
+<tr><td align=center valign=top>
+<font size=-1>
+Isaac Newton,<br>1641-1727
+</font></td></tr>
+</table>
+
+<table align=right vspace=5 hspace=5>
+<tr><td align=center valign=bottom><img src="appletree.jpg"></td></tr>
+<tr><td align=center valign=top>
+<font size=-1>
+Apple tree outside<br>Newton's birthplace.
+</font></td></tr>
+</table>
+
+<h3>Newton's vague idea (the proverbial apple on the noggin):</h3>
+
+<p align=justify>There is an unseen force of gravity that affects all objects,
+whether they are apples a few feet away or planetary satellites many
+miles away.  This force brings about observable movements in the
+objects.  This force acts instantaneously and across any medium for
+infinite extent.  The force is greater for larger objects, and the
+force diminishes with distance.  (Pretty bizarre idea, isn't it?  You
+can read <a href="http://members.tripod.com/~gravitee/principia.htm">
+Newton's <em>Principia</em> online</a>.)
+</p>
+
+</td></tr></table>
+
+<p>
+<h3>Newton's precise formalizations:</h3>
+
+<strong>2nd Law of Motion:</strong> &nbsp;  &nbsp; 
+<center><em> a = F / m </em></center>
+<br>Something observable, viz. acceleration <em>a</em> 
+(actually position and time
+are observable), is related to unobservable constructs, viz. force <em>F</em> 
+and mass <em>m</em>.
+<p>
+<strong>Law of Universal Gravitation:</strong>
+ &nbsp;  &nbsp; 
+<center><em> F = G m<sub>1</sub> m<sub>2</sub> / r<sup>2</sup> </em></center>
+<br>The force due to gravity between two objects is proportional to the masses of the objects, and is inversely proportional to the square of the distance between the objects.
+<ul>
+<li>applies to particles <li>applies independently (additively) to all
+particles simultaneously <li><em>G</em> is a parameter, estimated from observed
+data.  It turns out that <em>G</em> is essentially the same for all known
+locations and situations in the universe.
+</ul>
+
+<p>
+
+<table align=right vspace=5 hspace=5>
+<tr>
+<td align=center valign=bottom><img src="falling2.jpg"></td>
+</tr>
+<tr><td align=center valign=top>
+<font size=-1>
+Stroboscopic photography<br>verifies a prediction<br>of Newton's theory.
+</font>
+</td></tr>
+</table>
+
+<h3>A simple prediction of the theory:</h3>
+
+<p align=justify>
+For a small object of mass <em>m<sub>o</sub></em> near the surface of
+the earth, the object's acceleration <em>a</em> is given by:
+<center>
+<em>
+m<sub>o</sub> a = F = G m<sub>o</sub> m<sub>e</sub> / r<sup>2</sup><sub>e</sub>
+</em>
+</center>
+where <em>m<sub>e</sub></em> is the mass of the earth, and
+<em>r<sub>e</sub></em> is the distance between the center of the earth
+and center of the small object.  (We assume that the gravitational
+influence of a sphere, such as the earth, can be treated as if all the
+mass were concentrated at a single point at its center.  This
+assumption was proven by Newton using integral calculus, which he
+invented [as did Leibnitz].  We also assume that the distance
+travelled by the falling object is negligible compared with the
+distance between the center of the earth and the object, so we treat
+<em>r<sub>e</sub></em> as a constant.)  Rearranging the equation leads to
+<center>
+<em>
+a = G m<sub>e</sub> / r<sup>2</sup><sub>e</sub>
+</em>
+</center>
+Notice that this is a constant, called <em>g</em>.  That is, the
+acceleration of a falling object is independent of its mass.  See the
+photo at right for verification of this prediction.
+</p>
+
+<p>
+<h3>A related prediction:</h3>
+
+<p>
+Because acceleration is constant <em>g</em> (for small distances near
+the surface of the earth), we can integrate to find the equation for
+the position of the object as it falls:
+
+<center>
+<em> 
+<br>
+a = d<sup>2</sup>y/dt<sup>2</sup> = g
+<br>
+dy/dt = g t
+<br>
+y = 0.5 g t<sup>2</sup> 
+</em>
+</center>
+
+<p>(In these integrations I have left out the constants that represent
+the initial velocity and position.)  So, with constant increments in
+time, the distance fallen should be proportional to time squared, i.e.,
+0, 1, 4, 9, 16, etc.  Galileo had, a few decades before, already
+observed this with objects rolling down an inclined plane.  He noted
+that the distance travelled, during consecutive time intervals,
+increased by a constant: 1, 3, 5, 7, etc., just as Newton's laws
+predict.  (Newton was born the year that Galileo died.)
+
+<p>
+<h3>Models, in general, of the physical world:</h3>
+
+<p>In general, models of the physical world try to describe changes in
+observable physical attributes in terms of unseen physical components
+that cause the changes.  Newton's theory of gravity explains changes
+in position with time (the observables) in terms of gravity and mass
+(which are not directly observable).  
+
+<p>Models in science are replete with constructs that represent unseen
+physical entities: In physics there are electrical forces, magnetic
+forces, nuclear forces, etc.  In chemistry there are electron orbitals,
+with shells and subshells.  In biology there are germs that carry
+disease and genes that carry inherited traits (both unobservable when
+first proposed).
+
+<p>
+<table cellpadding=5 border=1>
+<tr><td align=center>
+<table>
+<tr>
+<td align=center>
+<table border=1>
+<tr><td align=center>Observable locations of particles at one moment in time</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>input<br>====&gt;</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Unobservable physical processes</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>output<br>=====&gt;</td></tr>
+</table>
+</td>
+<td align=center colspan=3>
+<table border=1>
+<tr><td align=center>Observable locations of particles at next moment in time</td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=center>
+<table cellpadding=5>
+<tr>
+<td align=center valign=center>||<br>||<br>||<br>V</td>
+<td align=left valign=center>
+<font size=-1>Selection,<br>Measurement,<br>Summarization</font>
+</td>
+</tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>&nbsp;</td></tr>
+</table>
+</td>
+<td align=center>
+<table cellpadding=5>
+<tr>
+<td align=center valign=center>^<br>||<br>||<br>V</td>
+<td align=left valign=center>?</td>
+</tr>
+</table>
+</td>
+<td align=center colspan=3>
+<table>
+<tr><td align=center>&nbsp;</td></tr>
+</table>
+</td>
+<td align=center>
+<table cellpadding=5>
+<tr>
+<td align=right valign=center>
+<font size=-1>Selection,<br>Measurement,<br>Summarization</font>
+</td>
+<td align=center valign=center>||<br>||<br>||<br>V</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal representation of locations at time t</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>input<br>====&gt;</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal transformation</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>output<br>=====&gt;</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal representation of locations
+at time&nbsp;t+1 (<em>prediction</em>)</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>?<br>=</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal representation of locations at
+time&nbsp;t+1 (<em>empirical data</em>)</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+<tr><td align=center>
+<font size=-1>
+Modelers of the physical world want this diagram to commute; i.e., the
+formal representation of the <em>predicted</em> world should match the
+formal representation of the <em>actual</em> world.
+This diagram will be discussed at length in lecture.
+</font>
+</td></tr>
+</table>
+
+<p>Models go beyond vague ideas about hidden constructs. Models
+<em>formalize</em> the ideas.  Formalization has several attractive
+qualities: First, it makes the idea publically accessible.  When an
+idea is only a vague intuition in the mind of the theorist, then the
+only way to really know what the theory predicts is to ask the
+theorist.  When the model is formalized, then anyone can determine
+what the theory predicts.  The predictions might be derivable from
+analytical mathematical methods, or they might only be derivable from
+computer simulations.  Second, formalization makes the theory
+precise. The predictions are quantitative and specific, so that the
+theory might actually be tested.  And, if the theory holds up, then
+its predictions are quantitatively useful.
+
+<p>When a theory works extremely accurately in a wide variety of
+situations, then people start to believe that the formal constructs in
+the model represent actual hidden entities in the world.  Because
+Newton's theory of gravity has worked so remarkably well, people
+actually began to think that there was an unseen force that acted
+instantaneously at all distances through all materials, pulling comets
+to the sun and knees to the ground.  The concept of gravity has become
+part of our cultural intuition about the physical world.  So when
+Einstein came along and obviated gravity, replacing it with geodesics
+in space-time, these new formal constructs were a "revolution."  No
+circumspect scientist reifies theoretical constructs, regardless of
+how well they fit observations.  The theoretical constructs are always
+just a metaphorical description.  But this does not mean that they are
+trivial or frivolous.  Good theories are, ultimately, widely useful
+for applications, and also deeply edifying for the explanatory
+perspective they yield.
+
+<p>
+<h3>Models, in general, of the <em>cognitive</em> world:</h3>
+
+<p>Modeling in cognitive science has essentially the same structure as
+modeling in physical science.  All that differs is the selection of
+physical attributes and processes that are deemed interesting.  Those
+physical attributes of the world that seem relevant for explaining
+cognition are called "stimuli," and those physical attributes of the
+world that seem relevant as indicators of cognition are called
+"behavior" or "responses."
+
+<p>
+<table cellpadding=5 border=1>
+<tr><td align=center>
+<table>
+<tr>
+<td align=center>
+<table border=1 cellpadding=10>
+<tr><td align=center>Observable stimuli</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>input<br>====&gt;</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Unobservable cognitive processes</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>output<br>=====&gt;</td></tr>
+</table>
+</td>
+<td align=center colspan=3>
+<table border=1 cellpadding=10>
+<tr><td align=center>Observable behavior (a.k.a. responses)</td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=center>
+<table cellpadding=5>
+<tr>
+<td align=center valign=center>||<br>||<br>||<br>V</td>
+<td align=left valign=center>
+<font size=-1>Selection,<br>Measurement,<br>Summarization</font>
+</td>
+</tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>&nbsp;</td></tr>
+</table>
+</td>
+<td align=center>
+<table cellpadding=5>
+<tr>
+<td align=center valign=center>^<br>||<br>||<br>V</td>
+<td align=left valign=center>?</td>
+</tr>
+</table>
+</td>
+<td align=center colspan=3>
+<table>
+<tr><td align=center>&nbsp;</td></tr>
+</table>
+</td>
+<td align=center>
+<table cellpadding=5>
+<tr>
+<td align=right valign=center>
+<font size=-1>Selection,<br>Measurement,<br>Summarization</font>
+</td>
+<td align=center valign=center>||<br>||<br>||<br>V</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal representation of stimuli</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>input<br>====&gt;</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal transformation</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>output<br>=====&gt;</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal representation of behavior
+(<em>prediction</em>)</td></tr>
+</table>
+</td>
+<td align=center>
+<table>
+<tr><td align=center>?<br>=</td></tr>
+</table>
+</td>
+<td align=center>
+<table border=1>
+<tr><td align=center>Formal representation of behavior
+(<em>empirical data</em>)</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+<tr><td align=center>
+<font size=-1>
+Modelers of the cognitive world want this diagram to commute; i.e., the
+formal representation of the <em>predicted</em> behavior should match the
+formal representation of the <em>actual</em> behavior.
+This diagram will be discussed at length in lecture.
+</font>
+</td></tr>
+</table>
+
+<p>Models in cognitive science specify formal descriptions of the
+incoming stimuli, the outgoing behavior, and the intermediate
+transformed states.  These formal descriptions are called
+<em>representations</em>.  A representation explicitly describes
+particular <em>contents</em> in a particular <em>format</em>.  For
+example, a phone book represents particular contents about people,
+--their phone number, address, and name-- in a particular format
+--alphabetical by last name.  Models in cognitive science also specify
+formal descriptions of transformations on these representations.  Such
+formal transformations are called <em>processes</em>.  
+
+<p>Any model in cognitive science specifies representation and
+process.  But (and here's the news) so does any model in physical
+science.  For example, Newton's model of gravity specifies certain
+representations of the world --position, time, mass, force-- and
+certain processes that transform positions at one time into new
+positions at a later time --multiplicative combination of masses and
+distances.  Thus, represenation and process <em>are in the model</em>,
+whether the model refers to the locations of particles or to the
+behavior of cognizant beings.
+
+<p>Just as physicists can begin to believe that the representations
+and processes in a successful model actually exist in the world,
+cognitive scientists can begin to believe that the representations and
+processes in a successful model actually exist in the mind. I believe
+that such reification of models is a mistake.  There is a lot of
+philosophical controversy about whether or not the mind actually has
+representations and processes, and exactly what these terms mean in
+this context, and whether or not artificial cognition can really be
+created by copying the representations and processes on other
+hardware.  I believe that such issues can remain unresolved while
+significant progress is made in models or cognition, just as
+significant progress has been made in physics despite philosophical
+uncertainty about whether or not a force of gravity really exists.
+
+<p>
+<h3>Summary of the main points:</h3>
+<ul>
+
+<li>Formal models are specifications of (more vague) explanatory
+theories.
+
+<li>Models posit formal constructs that reflect hidden processes and
+explanatory principles.
+
+<li>Models in the physical sciences and in the cognitive sciences have
+essentially the same (meta-)structure.  They both specify formal
+representations and processes.
+
+<li>Reification of formal constructs can lead to unresolvable
+philosophical conundrums.
+
+
+</ul>
+
+<p>
+<center>
+<font size=-2>
+Text and diagrams copyright &copy; 1999 John K. Kruschke.
+Photographs from www.corbis.com.
+</font>
+</center>
+<p><hr>
+</BODY>
+</HTML>
+
+
+

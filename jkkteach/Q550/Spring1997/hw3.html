@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<h2> 
+<a href="q550.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<br>Spring 1997, Section 0978, Tu & Th 2:30-3:45, PY 228 
+<p>Homework 3:  Non-Linear, Single-Layer Networks
+<br>(Perceptrons)
+<br>Due Thursday 27 February.
+</h2>
+
+<strong>30 pts. total</strong>
+
+<p><strong>IMPORTANT NOTICE: <br>The PDP software on the Unix machine
+Copper does <em>not</em> properly run the <tt>pa</tt> program for this
+assignment.  For this assignment, you must use either a PC or
+Macintosh (or a Unix machine that is not based on a 64-bit
+processor).</strong> <br>If this presents a problem for you, please
+contact Prof. Kruschke.
+
+</center>
+
+
+<p><strong>Rules and Exceptions in Perceptrons.</strong>
+
+<p>As an introduction to this exercise, look at questions
+Q.4.4.1-Q.4.4.4 in PDP III.  Study them, look at the answers in the
+back of the book, but don't turn in any answers to these questions.
+
+<p>Now do the following: 
+
+<ul>
+
+<li>First, <tt>get</tt> the pattern file <tt>78.pat</tt> and
+<tt>ptrain</tt> the network for 200 epochs. (Set the <tt>stepsize</tt>
+to <tt>nepoch</tt>, and set <tt>nepoch</tt> to 200, so that you aren't
+slowed down terribly by screen updates.) Save the screen so you later
+can examine the resulting weight matrix.
+
+<li>Second, <tt>reset</tt> the network, and <tt>get</tt> the pattern
+file <tt>all.pat</tt>, and <tt>ptrain</tt> for 200 epochs.  Save the
+screen.
+
+<li>Third, copy the <tt>78.pat</tt> file to a new file and in the new
+file change <em>both</em> the 147 and 148 patterns to exceptions, so
+that 147=>147 and 148=>148. <tt>Reset</tt> the network, <tt>get</tt>
+the new pattern file, and <tt>ptrain</tt> for 200 epochs.  Save the
+resulting screen.
+
+</ul>
+
+<p><strong>A. (6 pts.)</strong> In your homework, turn in printouts of
+the three saved screens referred to above.
+
+<p><strong>B. (6 pts.)</strong> Did the network learn the rule with
+one exception? (Careful!  This is a stochastic network, so you can't
+judge by outputs from a single test trial.  You must instead examine
+the weights!)
+
+<p>Explain how the weights are different in the one-exception case
+than in the no-exception case so that the exception could be
+accommodated.  (Don't just point out the different weights; explain
+what difference they make for getting the exception correct.)
+
+<p><strong>C. (6 pts.)</strong> Did the network learn the
+two-exception case?  Why or why not?
+
+<p>How are the weights different from the no-exception case?  Why?
+
+<p><strong>D. (6 pts.)</strong> Could the network learn some
+<em>other</em> two-exception case? (The answer is "yes".) Give an
+example.
+
+<p>Could it learn a three-exception case?  (The answer is yes.)  Give
+an example.
+
+<p><strong>E. (6 pts.)</strong> Why is it that some exceptions can be
+accommodated, but others cannot be?  (Just a simple answer about the
+general nature of perceptrons suffices.  You might be repeating
+yourself from previous answers.)
+
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+
+

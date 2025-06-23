@@ -1,0 +1,495 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+<h2>
+Generating a Sampling Distribution for F
+</h2>
+</center>
+
+
+<p>In this exercise, you'll generate a rough sampling distribution for
+the F statistic.  The goal of the exercise is to give you a concrete
+feeling for where the critical value of the F statistic comes from.
+
+<p>Instead of sampling from a normal distribution, we will sample from
+something close to a normal, namely, the sum of two dice.  The sum is
+distributed like a "triangle" from 2 to 12, with a mean of 7.  You
+determined this fact back in <a
+href="http://www.indiana.edu/~jkkteach/P553/cutloss2.html">Cut Your
+Losses, Episode 2</a>.
+
+<p>We imagine three identical populations (each determined by the sum
+of two dice), and we grab a sample of size three from each population.
+That is, you will roll the pair of dice three times to sample from the
+first population, then roll the pair of dice three more times to
+sample from the second population, and finally roll the pair of dice
+three more times to sample from the third population.  From those
+three sets of three scores, compute the F value.  Then repeat many
+times, and create a frequency histogram of the F values.
+
+
+<p>In the table below, compute the first two repetitions by hand.
+After those two repetitions, continue to roll the dice to get new
+values, but let SPSS compute the means, MS, and F for you.  (Each
+individual "score" is the sum of the two dice in a single roll.)
+
+<p>
+<table border=1 cellpadding=5>
+
+<tr>
+<td align=center>Repetition #</td>
+<td align=center>Sample Scores</td>
+<td align=center>Sample Means</td>
+<td align=center>Mean-Squares</td>
+<td align=center>F value</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>1</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>2</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>3</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>4</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>5</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>6</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>7</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>8</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>9</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>10</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>11</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>12</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>13</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>14</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>15</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>16</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>17</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>18</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>19</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+<tr>
+<td rowspan=3 valign=center align=center>20</td>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>1</sub> = _____</td>
+<td rowspan=3 valign=center align=center>
+MS<sub>B</sub> = _____<br><br>
+MS<sub>W</sub> = _____
+</td>
+<td rowspan=3 valign=center align=center>F(2,6) = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>2</sub> = _____</td>
+</tr>
+<tr>
+<td align=center>_____, _____, _____</td>
+<td align=center>M<sub>3</sub> = _____</td>
+</tr>
+
+</table>
+
+<p>Now make a histogram (below) of the 20 F values you generated,
+along with the 20 F values generated by each of four classmates, so
+that you have plotted a total of 100 F values.  Split the F values
+into bins, so that anything in the range 0.01 to 0.50 is plotted at
+0.5, anything from 0.51 to 1.0 is plotted at 1.0, anything from 1.01
+to 1.50 is plotted at 1.5, etc.
+
+<p>
+<table>
+<tr><td>
+<pre>
+Frequency
+
+  30 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  29 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  28 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  27 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  26 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  25 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  24 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  23 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  22 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  21 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  20 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  19 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  18 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  17 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  16 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  15 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  14 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  13 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  12 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  11 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+  10 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   9 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   8 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   7 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   6 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   5 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   4 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   3 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   2 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   1 +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +   +
+   0 +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+      0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0 8.5 9.0
+
+                           F value
+</pre>
+</td></tr></table>
+
+<p>After plotting all 100 F values, draw a line between the highest 5
+values and the lower 95 values.  Is this line near the tabled 5%
+critical value for F(2,6)?
+
+
+<br><br><br>
+<hr>
+
+</BODY>
+</HTML>

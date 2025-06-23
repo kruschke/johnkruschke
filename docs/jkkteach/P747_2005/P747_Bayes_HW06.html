@@ -1,0 +1,111 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 6, Due Wednesday Oct 19, 2005.
+
+<!--
+<br>UNDER CONSTRUCTION!
+-->
+
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and
+student ID number (not your SS number). On all subsequent sheets, that
+have your answers, write only your student ID number (not your SS
+number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the
+photocopy. (Of course, you might want to keep another copy for
+yourself!) The copy, with the cover page removed, will be used for
+peer-grading.
+
+<li>
+Show your work. When solving applied problems, first express the
+solution or method in terms of general formulas, then plug in specific
+numbers to get a specific numerical solution. Annotate the progression
+of calculations so that a reader can understand why you are doing what
+you are doing.
+
+
+
+<p>
+
+
+<p>
+
+
+
+
+<pre>
+# The code below creates a (prior) probability distribution over 
+# two parameters, named mu and sd. The code will run, as is, to
+# create a plot of the distribution. Your job is to extend the 
+# code so that it grabs 1000 random {mu,sd} pairs from that 
+# distribution, and plot those 1000 samples in mu,sd space. 
+
+# Specify comb values for mu.
+mu_min <- -30.0	# arbitrary
+mu_max <- 30.0	# arbitrary
+n_mu_bins <- 300	# arbitrary
+mu_binwidth <- ( mu_max - mu_min ) / n_mu_bins
+mu <- seq( from=mu_min ,to=mu_max ,by=mu_binwidth )
+
+# Specify comb values for sd.
+sd_min <- 0.0	# arbitrary
+sd_max <- 40.0	# arbitrary
+n_sd_bins <- 200	# arbitrary
+sd_binwidth <- ( sd_max - sd_min ) / n_sd_bins
+sd <- seq( from=sd_min ,to=sd_max ,by=sd_binwidth )
+
+# Determine the area of a grid cell.
+binarea = mu_binwidth * sd_binwidth
+
+# Specify the prior distribution on joint mu,sd space.
+# This is just an arbitrary weird function.
+p_mu_sd <- function( mu, sd ) { 
+	prob <-  exp(-((sd-2 -exp(mu/7))/sqrt(sd))^2) * exp(-((mu-0)/13)^2)
+ 	}
+prior <- outer( mu, sd, p_mu_sd )	# unnormalized
+prior <- prior / sum( prior )		# normalized
+prior_dens <- prior / binarea		# converted to density
+
+# Plot the prior.
+windows(6.5,5.0) 
+layout( matrix(c(1,2),nrow=1,ncol=2) ) 
+contour( mu, sd, prior_dens
+	,main="Prior Density"
+	,xlab="mu" ,ylab="sd"
+	,levels=max(prior_dens)*c(0.05,0.15,0.25,0.35,0.45,
+						0.55,0.65,0.75,0.85,0.95) 
+	,drawlabels=FALSE
+)
+
+# Now get 1000 random samples from the prior and display them in a second plot
+# next to the contour plot. Make sure that the axes of the two plots use the
+# same range. Use the method described in class, whereby you first get a value
+# of mu from its marginal, then get a value of sd from prior(sd|mu). (Or, you
+# could do sd first and then mu; it doesn't matter.) Fill in your code below.
+# Turn in your complete program and its graphical output.
+
+</pre>
+
+
+</ol>
+
+
+<p><hr>
+</body>
+</font>
+</html>
+
+
+

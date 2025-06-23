@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>P747 Advanced Model Fitting and Comparison, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+
+<h2>P747<br>Advanced Model Fitting and Model Comparison: <br>Computer
+techniques and theoretical issues.<p>Prof. John K. Kruschke
+</h2>
+
+
+<p><strong>Brief Description:</strong>
+This seminar is intended as a follow-up to 
+<a href="http://www.indiana.edu/~jkkteach/Q550/" target="_blank">
+the version of Q550 Prof. Kruschke taught in Spring 2003</a>. Other
+students with previous experience modeling data are also
+welcome. &para; In this course we will explore the mechanics of
+fitting models to data, and we will delve into theoretical issues in
+deciding which models fit best. We will consider topics such as
+different measures of discrepancy between data and model predictions,
+different algorithms for finding best-fitting parameter values,
+estimating confidence intervals for parameter values, detecting and
+dealing with parameter redundancy, measures of model complexity, and
+criteria for model selection. &para; The material will be discussed
+mostly at a general, methodological level, with only occasional
+application to specific models in cognitive science. Lots of "hands
+on" experience will be gained via work with MATLAB. See the <a
+href="schedule.html">schedule page</a> for more details about topics
+and lots of cool pictures.
+
+<p><strong>Required Textbook:</strong> 
+<a href="http://www.oup-usa.org/isbn/0340740418.html" target="_blank">
+Morgan, B. J. T. (2000). <em>Applied Stochastic Modelling</em>. New
+York: Oxford University Press.</a>
+
+<p><strong>Other Readings:</strong> Recent articles available online
+to IU students. Among these will be articles by In-Jae Myung regarding
+model complexity. Details TBA.
+
+<p><strong>Software:</strong> We will make extensive use of MATLAB.
+MATLAB is available on all IU public cluster computers. Details of
+campus availability can be found from the
+<a href="http://www.indiana.edu/~statmath/math/matlab/" target="_blank">
+Stat-Math Center.</a> MATLAB is available for purchase in student
+versions, see <a href="http://www.mathworks.com/" target="_blank">its
+manufacturer, MathWorks.</a> <p><strong></strong>
+
+<p>A free Matlab-alike, called Octave, is also available: <a
+href="http://www.octave.org/">http://www.octave.org/</a>. (Thanks to
+Christoph Weidemann for informing me of Octave.)
+
+<p><strong>Registration Info:</strong> Course number P747, section
+3885. Requires graduate standing in a field related to cognitive
+science or permission of the instructor.
+
+<p><strong>Time and Place:</strong> Spring semester, 2004. Mondays and
+Wednesdays, 10:10-11:25am, Psychology Building Room 113.
+
+<p><a href="syllabus.html"><strong>Syllabus.</strong></a>
+
+<p><a href="schedule.html"><strong>Schedule.</strong></a>
+
+<p>This web page is at URL= <tt>http://www.indiana.edu/~jkkteach/P747/</tt>
+
+<p><hr>
+</BODY>
+</HTML>
+
+

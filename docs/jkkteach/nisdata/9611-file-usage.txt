@@ -1,0 +1,98 @@
+
+                                   2-DEC-1996
+
+World-Wide Web Access Statistics for www.indiana.edu                  Page: 1
+
+File Accesses by Internet Node (Address) for November 1996
+                                                                Total    Total
+File Description                                                Nodes  Accesses
+--------------------------------------------------------------- -----  --------
+/~jkkteach/                                                       46       61
+/~jkkteach/P335/                                                   3        3
+/~jkkteach/P335/aivideo.html                                       3        3
+/~jkkteach/P335/announce.html                                     40       41
+/~jkkteach/P335/app1.html                                         31       35
+/~jkkteach/P335/app2.html                                          3        9
+/~jkkteach/P335/catmodels.html                                    27       45
+/~jkkteach/P335/essayqexample.html                                41       42
+/~jkkteach/P335/exam1.html                                        12       13
+/~jkkteach/P335/exam1qa.html                                       3        3
+/~jkkteach/P335/exam1results.html                                  6        7
+/~jkkteach/P335/exam1rev.html                                      2        2
+/~jkkteach/P335/exam2.html                                        32       37
+/~jkkteach/P335/exam2qa.html                                       1        1
+/~jkkteach/P335/exam2results.html                                 21       23
+/~jkkteach/P335/exam2rev.html                                      1        1
+/~jkkteach/P335/exam3.html                                       115      158
+/~jkkteach/P335/exam3qa.html                                      85      107
+/~jkkteach/P335/exam3results.html                                 10       10
+/~jkkteach/P335/exam3rev.html                                     48       72
+/~jkkteach/P335/exam4.html                                         8        8
+/~jkkteach/P335/goals.html                                        43       56
+/~jkkteach/P335/links.html                                         6        7
+/~jkkteach/P335/mazemodels.html                                   33       41
+/~jkkteach/P335/p335.html                                        147      198
+/~jkkteach/P335/p335ex2results.html                               10       10
+/~jkkteach/P335/p335schedule.html                                  1        1
+/~jkkteach/P335/patternrecog.html                                  1        1
+/~jkkteach/P335/schedule.html                                     19       30
+/~jkkteach/P335/semorgmodels.html                                 33      100
+/~jkkteach/P335/syllabus.html                                     28       32
+/~jkkteach/P553/                                                   1        1
+/~jkkteach/P553/announce.html                                     27       45
+/~jkkteach/P553/binomial.html                                      4       33
+/~jkkteach/P553/bronowski.html                                     7        7
+/~jkkteach/P553/centraltend.html                                   1        1
+/~jkkteach/P553/dectree.html                                      17       26
+/~jkkteach/P553/ex1scores.html                                    11       11
+/~jkkteach/P553/exam1.html                                        16       18
+/~jkkteach/P553/exam2.html                                        50       94
+/~jkkteach/P553/exam2review.html                                  17       22
+/~jkkteach/P553/exam2sample.html                                  23       32
+/~jkkteach/P553/exam2scores.html                                  15       17
+/~jkkteach/P553/exam3.html                                         8        8
+/~jkkteach/P553/goals.html                                        24       38
+/~jkkteach/P553/hw1.html                                           1        1
+/~jkkteach/P553/hw10.html                                         19       33
+/~jkkteach/P553/hw11.html                                          2        2
+/~jkkteach/P553/hw12.html                                          2        2
+/~jkkteach/P553/hw2.html                                           1        1
+/~jkkteach/P553/hw6.html                                           1        1
+
+                                   2-DEC-1996
+
+World-Wide Web Access Statistics for www.indiana.edu                  Page: 2
+
+File Accesses by Internet Node (Address) for November 1996
+                                                                Total    Total
+File Description                                                Nodes  Accesses
+--------------------------------------------------------------- -----  --------
+/~jkkteach/P553/hw7.html                                           3        3
+/~jkkteach/P553/hw8.html                                          15       19
+/~jkkteach/P553/hw9.html                                          33       67
+/~jkkteach/P553/hwlist.html                                       48       89
+/~jkkteach/P553/links.html                                         4        4
+/~jkkteach/P553/p553.html                                         87      178
+/~jkkteach/P553/schedule.html                                     17       25
+/~jkkteach/P553/syllabus.html                                     15       16
+/~jkkteach/Q500/categorization.html                                1        1
+/~jkkteach/Q550/                                                   4        6
+/~jkkteach/Q550/instructor.html                                   12       13
+/~jkkteach/Q550/q550.html                                         32       44
+/~jkkteach/Q550/syllabus.html                                     25       33
+/~jkkteach/Q750/                                                   6        6
+/~jkkteach/Q750/q750.html                                         11       13
+/~jkkteach/Q750/syllabus.html                                      6        8
+/~jkkteach/usage/Apr96.html                                        1        1
+/~jkkteach/usage/Dec95.html                                        1        1
+/~jkkteach/usage/Feb96.html                                        1        1
+/~jkkteach/usage/Jan96.html                                        1        1
+
+======================================================
+
+  Summary for November 1996
+
+  Total Internet Nodes (Addresses)              275
+  Total Accesses                               2079
+
+======================================================

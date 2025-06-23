@@ -1,0 +1,14 @@
+SUBJECT>HMW - Skewness and Kurtosis
+POSTER>Mario F.
+EMAIL>mfific@indiana.edu
+DATE>Saturday, 16 November 2002, at 7:20 p.m.
+IP_ADDRESS> REMOTE_HOST: hawkeye.psych.indiana.edu; REMOTE_ADDR: 129.79.162.141
+PREVIOUS>
+NEXT> 144
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Some students asked what values of skewness and kurosis would indicated significant departure from normality. Here is the suggestion:
+<P>Skewness A measure of the asymmetry of a distribution. The normal distribution is symmetric, and has a skewness value of zero. A distribution with a significant positive skewness has a long right tail. A distribution with a significant negative skewness has a long left tail. As a rough guide, a skewness value more than twice it's standard error is taken to indicate a departure from symmetry.
+<P>Standard Error of Kurtosis The ratio of kurtosis to its standard error can be used as a test of normality (that is, you can reject normality if the ratio is less than -2 or greater than +2). A large positive value for kurtosis indicates that the tails of the distribution are longer than those of a normal distribution; a negative value for kurtosis indicates shorter tails (becoming like those of a box-shaped uniform distribution).
+<P>You are welcomed to use this logic to infere whether your homework statistics (skew.and kurt.) inidicates departure from normality.

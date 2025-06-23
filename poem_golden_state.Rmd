@@ -1,0 +1,72 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Golden State
+<!-- 326 words -->
+<br>
+
+Dazzling synthetic threads of tangerine orange itched\
+me happy when I was eight years old, my favorite plaid\
+shirt, weft with runs of vibrant red and yellow.\
+Rough florescent fabric beaming brilliant orange as\
+
+marigold flowers in front of my sister's elementary school,\
+named: Marigold Elementary, next to Pleasant Valley High.\
+Marigolds by any other name would smell as ochre,\
+yet they flaunted pollen-heavy petticoats under\
+
+orange bosomed trees my father grew backyard.\
+Thorny green-leafed branches flashing orbs of orange\
+skins we peeled away to tongue the sweet segmented\
+fruits as orange the fields of California golden\
+
+poppies on Sierra foothills at the edge of\
+town if springtime rains would grace the ground transform the\
+dirt-dry taupe-straw grass to dappled orange gauze:\
+draping waves of paint daubes on the hills.\
+
+At university, long afternoons I'd gaze\
+from Panoramic Way across the burgeoning bay\
+to the Golden Gate Bridge spanning sunglint waves\
+beneath a saffron sunset -- which felt very romantic.\
+
+There I gave a girl a golden band, slid\
+despite her eternally seeing red. She insisted\
+her infernos cleared unhealthy underbrush\
+but in truth they only burned the greenwood black.\
+
+On a honeymoon trip to a coastal forest we puzzled at trees with\
+bizarrely crenulated ashen bark, solved when slanting\
+sunlight erupted a rapture of myriad Monarch butterflies,\
+tornado-thousand poppy petals sublimating sky.\
+
+I'd seen orange in trees before: father doubtful\
+driving our sedan through raging forest fire,\
+fulminating furies flaying flesh from off the trees on\
+both sides of the highway with no end in sight.\
+
+Long further down that road, though I nearly perished\
+in the flames, I repossessed the gold ring from\
+the arsonist girl in the home she set ablaze. The golden\
+bridge is sunken far below the western waves,\
+
+the orange-thread shirt is shed like an abandoned chrysalis.\
+Yet here the winging monarch flies unbidden into\
+mind, every orange flutter a flashbulb memory\
+migrating away, suspending me in a golden state.\
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "http://www.stickmanreview.com/V23N2/John%20Kruschke%20golden%20state.html" , journal_name = "*Stickman Review*" , publication_info = "V23N2, 19 December 2024.")`
+
+*Notes:* 
+The alacritous alliterations are intended to propel the poem and give it a rhythm and musicality along with the succession of orange imagery. I'm especially fond of the phrase, "tornado-thousand poppy petals sublimating sky," because it exactly captures the image in my mind. Notice every line is *hexameter* in its strongest syllables, or at least can be read that way, again intended to propel the poem rhythmically. Every stanza supports another; e.g., the shirt mentioned in the first stanza is recalled in the last, the grade schools in the second stanza are not merely to established idyllic imagery but also to set up the transition to university in the fifth stanza, the orange trees in the third stanza set up the contrast with orange in trees in the eighth stanza, the poppies in the fourth stanza set up the metaphor of Monarchs as poppy petals in the seventh stanza, and so on. The arson is metaphorical but emotionally real.
+
+`r next_link("poem_golden_state.html")`
+
+</small>

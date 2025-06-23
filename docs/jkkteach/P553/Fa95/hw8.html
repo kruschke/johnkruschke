@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 8</TITLE>
+</HEAD>
+<BODY>
+
+<center>
+<h2>
+P553 Statistics in Psychology<br>
+Homework 8, Due 31 October 1995.<br>
+</h2>
+</center>
+
+For your personal edification, do the "self test" in the A&A Study
+Guide for Chapter 16, but do not turn it in. <p>
+
+
+Enter the following data into SPSS.  There are three groups of four
+subjects each.  Nominal codings for the groups are also specified.
+<pre>
+group code1 code2 score
+1     0     0     1
+1     0     0     2
+1     0     0     3
+1     0     0     4
+2     0     1     6
+2     0     1     7
+2     0     1     8
+2     0     1     9
+3     1     0     2
+3     1     0     3
+3     1     0     4
+3     1     0     5
+</pre>
+
+<strong>New (Oct.27) SPSS info:</strong> To do the linear regression
+on the first two groups only (Exercise 1 part 3), you have to tell
+SPSS to use only the first two groups.  It turns out that there is no
+way to do that within the linear regression dialog box.  So, here
+are two alternative ways to do it:
+<ul>
+
+<li>Just delete the group-three data from your data sheet.  That is,
+delete the last four rows.  (You'll have to re-enter the data for
+subsequent exercises.)
+
+<li>For the SPSS-ophiles, you can set up a filter: In the data window,
+go to the Data menu, down to Select Cases.  In the dialog box, click
+on the button for "If condition is satisfied..." then click on the
+"If..." button.  In the new dialog box, type in "group <= 2" in the
+big area at the upper right.  Then click Continue, then click OK.
+Don't forget to turn the filter OFF for the subsequent exercises
+(under Data/ Select Cases click on the button for All Cases).
+
+</ul>
+
+<ol>
+
+<li>(7 pts)
+<ul>
+<li>Do a t-test on the first two groups.
+<li>Do a OneWay ANOVA on the first two groups only.
+<li>Do a linear regression on the first two groups only.
+<li>Compare the results.
+</ul>
+
+<li>(9 pts)
+<ul>
+<li>Do a OneWay ANOVA on all three groups, with the following contrasts:
+<ul>
+<li>Group 1 vs. Group 2 (use coefficients -1 1 0)
+<li>Group 1 vs. Group 3 (use coefficients -1 0 1)
+</ul>
+<li>Do a linear regression using code1 and code 2 as independent variables.
+What is the best linear prediction for each of the groups?
+<li>Compare the results, including a comparison of the "contrasts" in the ANOVA
+  with the "variables" in the regression equation.
+</ul>
+
+<li>(9 pts)
+<ul>
+<li>Do a linear regression of score on group (using all three groups).
+Describe the results, and make a graph of the data with the linear
+regression line.  What is the best linear prediction for each of the
+groups?
+<li>Compare this analysis, both conceptually and numerically, with the
+results from the previous exercise (#2).
+</ul>
+
+</ol>
+
+(End)
+
+
+</BODY>
+</HTML>
+
+

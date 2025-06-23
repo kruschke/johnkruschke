@@ -1,0 +1,235 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>P533/P534 Bayesian Data Analysis I &amp; II, Prof. Kruschke</TITLE>
+
+</HEAD>
+<BODY bgcolor="#77DDFF">
+
+<img src="P533webfig.jpeg" align="right">
+
+<center>
+<h2>
+P533/P534 Introduction to Bayesian Data Analysis I &amp; II.
+<br><br>Spring 2011: Mondays and Wednesdays, 5:45pm-8:15pm, 
+<br>Room 111 of the Psychology Building.  
+<br><br>P533 and P534 are consecutive 8-week courses
+in one semester. Each is 3 credits. P533 is Section 28493, P534 is
+Section 13685. P533 is required for P534. </h2>
+
+<h3>
+<a href="http://www.indiana.edu/~kruschke/" target="_blank">
+Prof. John K. Kruschke</a>
+</h3>
+
+</center>
+
+<p> P533/P534 is a tutorial introduction to doing Bayesian statistics
+for data analysis. In P533, we start from the basics of probabilities
+and Bayes' theorem, and gradually work our way through contemporary
+Monte Carlo methods in the context of simple analyses, building up to
+hierarchical models, model comparison, and power analysis. In P534, we
+do a variety of realistic applications, covering the Bayesian versions
+of linear regression, logistic regression, t-tests, analysis of
+variance, etc., including a look at repeated measures designs. More
+details about topic coverage is provided below. The course is intended
+to make advanced Bayesian methods genuinely accessible to real
+graduate students, and even unreal undergraduates (see pre-req's
+below). Many complete computer programs are provided for you do adapt
+to your own research.
+
+<p>
+<b>
+Why should we do Bayesian analysis instead of
+20th century null hypothesis significance testing?</b> Read
+<a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010WIRES.pdf"
+target="new">THIS</a>
+and <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010TiCS.pdf"
+target="new">THIS</a>.
+
+<p><b>Prerequisites:</b> <li>This is <i>not</i> a mathematical
+statistics course, but some math is unavoidable. If you can handle
+basic summation notation like &Sigma;<sub>i</sub> x<sub>i</sub> and
+integral notation like &int;&nbsp;x&nbsp;dx, you're in good shape. You
+will not need to generate mathematical derivations.
+
+<li>We will be doing a lot of computer programming in a language
+called R. R is free and can be installed on any computer. (We will be
+using a free add-on package called BRugs that only works with Windows,
+but which you can run with WINE in MacOS or Linux.) The road to
+understanding will be much smoother if you have already had some
+programming experience, in any language. It's easy to learn basic
+programming, but it can be time consuming, so if you don't have any
+previous experience, just anticipate spending more time. Learning to
+program can have huge payoffs in multiple situations later in your
+career, so it's worth the effort.
+
+<li>A previous course in traditional statistics (such as K300) or
+probability can be helpful as background, but is not
+essential. P533 and P534 proceed independently of traditional
+("null hypothesis significance testing") statistical methods.
+
+
+
+<p>
+
+<table cellpadding="5">
+<tr>
+
+<td valign="center">
+<a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis" 
+target="NEW">
+<img src="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/CoverSpine.jpg" 
+height="300" alt="Book spine.">
+</a>
+</td>
+
+<td valign="center">
+<b>Topics covered, in a little more detail:</b> P533 emphasizes the
+simplest data situation: two-valued measurements such as yes/no,
+agree/disagree, remember/forget, detect/miss, male/female,
+heads/tails, and so on. The main goal is to use this simple situation
+to develop all the methods of contemporary Bayesian analysis,
+including hierarchical models and even the
+impress-your-friends-with-this "transdimensional Markov chain Monte
+Carlo" method for model comparison! P534 applies the
+methods to more complex data designs, corresponding to classical
+methods of multiple linear regression, logistic regression, t-tests,
+analysis of variance, etc.
+
+<i>For complete details of coverage, see the textbook's <b>Table of
+Contents</b>, linked into the <a
+href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/"
+target="NEW"> textbook web page</a>.</i>
+
+<p>
+<b>Textbook:</b> <a
+href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis">
+<em>Doing Bayesian Data Analysis: A Tutorial with R and BUGS</em>, by
+J. K. Kruschke. Academic Press, 2010.</a>
+</td>
+
+<td valign="center">
+<a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis" 
+target="NEW">
+<img src="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/CoverFront.jpg" 
+height="300" align="right" alt="Book cover.">
+</a>
+</td>
+
+</tr>
+</table>
+
+<!--
+
+<small>
+
+<p>P533 Topics:
+
+<ol>
+
+<li> Models, parameters, beliefs. Intro to the R programming language.
+
+<li> Probability: Inside and outside the head. Mass and
+density. Conditional probabilities.
+
+<li> Bayes' theorem. Three goals of statistical inference.
+
+<li> Inferring a binomial proportion via exact mathematical analysis
+(easy, honest!).
+
+<li> Inferring a binomial proportion via grid approximation.
+
+<li> Inferring a binomial proportion via Monte Carlo
+approximation. <em>The Metropolis algorithm</em>.
+
+<li> Inferences regarding <em>two</em> binomial proportions. This
+motivates our first look at <em>Gibbs sampling</em>.
+
+<li> Binomial likelihood with <em>hierarchical priors</em>. Intro to
+"BUGS" software.
+
+<li> Hierarchical modeling and <em>model comparison</em>.
+
+<li> Goals, power, and sample size, i.e., <em>research design</em> from a
+Bayesian perspective.
+
+<li> Comparison of Bayesian inference with null hypothesis
+significance testing.
+
+</ol>
+
+<p>P534 Topics:
+
+<ol>
+
+<li> Generalized Linear Model
+
+<li> Estimating a mean and variance (like a classical t-test)
+
+<li> Simple linear regression
+
+<li> Oneway analysis of variance
+
+<li> Multiple predictors and their <i>interaction</i> (in regression
+and ANOVA)
+
+<li> Logistic regression (dichotomous dependent variable)
+
+<li> Ordinal dependent-variable regression
+
+<li> Two or more categorical dependent variables: Contingency table
+analysis.
+
+</ol>
+
+</small>
+
+-->
+
+
+<p><b>Discussion:</b>
+Please discuss the assignments and lectures on <a
+href="http://oncourse.iu.edu/" target="new">Oncourse</a> under the
+"Forums" link.  If you are attending the class but cannot get access
+to the Oncourse page, please e-mail Prof. Kruschke.
+
+<p><b>Grading; Homework; Exams:</b> There are homework exercises
+assigned every week or so. No exams or projects. Grades will be
+determined by performance on the homework assignments. All assignments
+are mandatory. There will be penalties for late homework unless you
+have a cogent excuse. These penalties are designed as an incentive to
+you because the material is cumulative; the penalties also help keep
+things fair to all students. If you must be late with an assignment,
+please notify the professor <i>immediately</i>.
+
+<small>
+
+<p><b>How does this course (P533/P534) differ from S626?</b> The
+Dept. of Statistics offers S626, Bayesian theory and data analysis.
+S626 has a prerequisite of "two statistics courses at the graduate
+level", and provides a mathematical treatment of Bayesian data
+analysis.  Students are encouraged to consider S626 after taking
+P533/P534.
+
+
+<p><b>Disclaimer:</b> All the information here is subject to
+change. Changes will announced in class.
+
+
+
+
+<br>
+<p>This web page is at URL = http://www.indiana.edu/~jkkteach/P533/
+
+</small>
+
+
+<p><hr>
+</BODY>
+</font></HTML>
+
+
+

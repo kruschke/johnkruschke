@@ -1,0 +1,16 @@
+SUBJECT>hypothesis testing logic
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Monday, 30 September 2002, at 10:52 a.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>
+NEXT> 41
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>A student raised this issue with Nathan:
+<P><blockquote> The probability of any two numbers being rolled with a fair six-sided die is 1/36, which falls below .05, meaning that anytime we've rolled the die twice we should reject the idea that it's fair. </blockquote>
+<P>That sounds like what we're doing in hypothesis testing, but it isn't exactly. That (above) is using this logic: "If the probability of getting the particular outcome is less than .05, then reject the hypothesis."
+<P>But statistical hypothesis testing really uses this logic: "If the probability of getting the outcome <em>that deviant or something more extreme than what we expect</em> is less than .05, then reject the hypothesis."
+<P>So, for two dice, we <em>expect</em> to get a sum of 7 because 7 is the average long-run value of the sum of two dice. The probability of getting a sum of 2 is 1/36, the probability of getting a sum of 3 is 2/36, the probability of getting a sum of 4 is 3/36, etc. Suppose we roll two dice and get a sum of 3. This is less than what we expect. The probability of getting this value (i.e., 3) <em>or something more deviant from what we expect</em> is 2/36 + 1/36 = 3/16 = .083, which is not less that the traditional critical value of .05 one-tailed or .025 two-tailed. Suppose instead that we had rolled the dice and obtained a sum of 2. The probability of getting something this deviant or more extreme than what we expect is 1/36 = .028. If we were doing a one-tailed test we would reject the hypothesis that the dice are fair. If the dice actually were fair, we'd be committing a Type I error --- but with repeated rolls we'd only be committing that error very rarely.
+<P>Another example: Consider IQ scores, which are designed to have a mean of 100 and an SD or 15 (or 16). Suppose we measure an individual's IQ and it turns out to be 117. The probability of getting an IQ of <em>exactly</em> 117 might be (say) just .013. So do we reject the hypotheis that the mean IQ is 100? No. The hypothesis testing logic asks, What is the probability of getting and IQ of 117 <em>or something even more deviant than what we expect</em>? The probability of getting an IQ of 117 <em>or higher</em> is around 10 to 15 percent.

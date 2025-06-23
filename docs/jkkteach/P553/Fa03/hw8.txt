@@ -1,0 +1,36 @@
+
+Enter the following data into SPSS:
+
+group code1 code2 score
+1     0     0     1
+1     0     0     2
+1     0     0     3
+1     0     0     4
+2     0     1     6
+2     0     1     7
+2     0     1     8
+2     0     1     9
+3     1     0     2
+3     1     0     3
+3     1     0     4
+3     1     0     5
+
+1.
+A. Do a t-test on the first two groups.
+B. Do a OneWay ANOVA on the first two groups only.
+C. Do a linear regression on the first two groups only.
+D. Compare the results.
+
+2.
+A. Do a OneWay ANOVA on all three groups, with the following contrasts:
+  Group 1 vs. Group 2 (use coefficients 1 -1  0)
+  Group 1 vs. Group 3 (use coefficients 1  0 -1)
+B. Do a linear regression using code1 and code 2 as independent variables.
+C. Compare the results, including a comparison of the contrasts in the ANOVA
+  with the variables in the regression equation.
+
+3.
+A. Do a linear regression of score on group (using all three groups).
+Describe the results.
+B. Compare the results, both conceptually and numerically, with the
+results from the previous exercies.

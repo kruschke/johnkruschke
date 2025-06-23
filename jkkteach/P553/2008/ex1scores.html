@@ -1,0 +1,162 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke, Syllabus</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+
+
+<a href="p553.html">
+<h2> P553 Statistics in Psychology
+<br>Fall 1996, Section 3505, Tu & Th 2:30-3:45, PY 111 
+<p>Exam 1 Results
+</h2>
+</a>
+
+</center>
+
+<p><hr><p>
+
+<pre>
+
+ MTB > desc 'ex1'
+ 
+                 N       N*     MEAN   MEDIAN   TRMEAN    STDEV   SEMEAN
+ EX1            20        1    91.30    93.00    92.06     8.31     1.86
+ 
+               MIN      MAX       Q1       Q3
+ EX1         69.00   100.00    89.25    97.00
+
+</pre>
+
+<p><hr><p>
+
+<pre>
+
+
+ MTB > hist 'ex1' 60 2
+ 
+ Histogram of EX1   N = 20   N* = 1
+ 
+ Midpoint   Count
+    60.00       0
+    62.00       0
+    64.00       0
+    66.00       0
+    68.00       0
+    70.00       1  *
+    72.00       1  *
+    74.00       0
+    76.00       0
+    78.00       0
+    80.00       0
+    82.00       0
+    84.00       1  *
+    86.00       0
+    88.00       1  *
+    90.00       3  ***
+    92.00       2  **
+    94.00       3  ***
+    96.00       2  **
+    98.00       3  ***
+   100.00       3  ***
+
+</pre>
+
+<p><hr><p>
+
+<pre>
+
+# NOTE: 'hw1-4' is the sum of the first four homework scores
+
+ MTB > plot 'ex1' 'hw1-4'
+ 
+       100+                                              2         *
+          -                              *     *   *
+  EX1     -                          *
+          -                                        2
+          -                          2
+        90+          *         *               *
+          -             *
+          -
+          -                    *
+          -
+        80+
+          -
+          -
+          -
+          -                                              *
+        70+   *
+          -
+            --+---------+---------+---------+---------+---------+----hw1-4   
+           84.0      87.0      90.0      93.0      96.0      99.0
+         N* = 3
+
+</pre>
+
+<p><hr><p>
+
+<pre>
+ MTB > regr 'ex1' 1 'hw1-4'
+ 
+ The regression equation is
+ EX1 = - 2.9 + 1.01 hw1-4
+ 
+ 18 cases used 3 cases contain missing values
+ 
+ Predictor       Coef       Stdev    t-ratio        p
+ Constant       -2.85       40.18      -0.07    0.944
+ hw1-4         1.0140      0.4342       2.34    0.033
+ 
+ s = 7.723       R-sq = 25.4%     R-sq(adj) = 20.8%
+ 
+ Analysis of Variance
+ 
+ SOURCE       DF          SS          MS         F        p
+ Regression    1      325.40      325.40      5.46    0.033
+ Error        16      954.38       59.65
+ Total        17     1279.78
+ 
+ Unusual Observations
+ Obs.    hw1-4        EX1        Fit  Stdev.Fit   Residual    St.Resid
+   4        97      72.00      95.51       2.69     -23.51      -3.25R 
+  16        84      69.00      82.33       4.09     -13.33      -2.03R 
+ 
+ R denotes an obs. with a large st. resid.
+</pre>
+
+<p><hr><p>
+
+<pre>
+# individual scores sorted by last four digits of ID:
+ 
+  ROW   ID69   HW1   HW2   HW3   HW4    EX1
+ 
+    1   0134    25    25    25    25     99
+    2   1331    22    21    19    25     87
+    3   1387    24    20    18    24     89
+    4   2153    24    24    19    22     84
+    5   2608    24    25    21    21     91
+    6   3194    22    24    23    23     98
+    7   3297    25    24    21    25     93
+    8   3467    25    22     *    21     94
+    9   4387    24    24    24    23     97
+   10   4725    25    24    24    24     72
+   11   4970    24    25    22    24     93
+   12   5675    24    25    25    20     97
+   13   5873    22    23    21     *      *
+   14   6548    23    18    18    25     69
+   15   6743    24    23    25    25    100
+   16   6795    25    25    22    19     92
+   17   6849    24    23     *    24     96
+   18   6927    24    24    22    24     90
+   19   8235    25    24    24    16     90
+   20   8307    24    24    24    25     99
+   21   9110    24    24    22    21     96
+</pre>
+
+<p><hr>
+
+</BODY>
+</HTML>

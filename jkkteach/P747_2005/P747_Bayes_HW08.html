@@ -1,0 +1,143 @@
+<html>
+<font face="tahoma">
+<body>
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 8, Due Wednesday Nov. 2, 2005.
+
+<!--
+<br>UNDER CONSTRUCTION!
+-->
+
+<font size="-1">
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and
+student ID number (not your SS number). On all subsequent sheets, that
+have your answers, write only your student ID number (not your SS
+number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the
+photocopy. (Of course, you might want to keep another copy for
+yourself!) The copy, with the cover page removed, will be used for
+peer-grading.
+
+<li>
+Include your complete R program. Make sure it is well commented, so that
+the reader knows why each line of code is there.
+</font>
+
+<p>
+Suppose we have a model with three parameters, a, b and c, with each in the interval [0,1]. Suppose that the posterior probability on a,b,c is proportional to the value p_abc given by this function:
+
+<pre>
+p_abc <- function( a , b , c ) {
+    d <- ((1-a)+b+c)/3
+    prob <- d^10*(1-d)^2 * a*(1-a)*b*(1-b)*c*(1-c)
+    return( prob )
+}
+</pre>
+Notice that the function is not normalized; pretend it is just the numerator of the posterior function determined by Bayes' formula.
+<em>Our goal is to estimate 95% confidence intervals on a, b and c.</em> (In this case we are finding the confidence intervals on the marginal distributions of a, b and c. We are not finding a 3D confidence region in a,b,c space.)
+
+<p>
+<b>A (The "rising tide" method):</b>
+Suppose we made fine combs on a, b and c, using 1,000 "teeth" per comb. Then we determined the posterior (p_abc) at every combination of a,b,c values. Then we summed across that grid and normalized to find the marginal probability of each value on the combs. Then, for each comb, we gradually incremented a height, h, until the sum of all grid probabilities greater than h was just less than 95%.
+<li>How many times was p_abc computed to determine the values on the 3D grid points?
+<li>To compute a marginal distribution (on parameter a, say) how many 3D grid points have to be summed over?
+
+<p>
+<b>B (The method of rejection sampling):</b>
+Use the method of rejection sampling to estimate confidence intervals on a, b and c. The code below shows an example of rejection sampling on a single dimension. You need to expand the method so that it generates not just a single random theta value, but independent a, b and c values.
+<li>For the "tractable" distribution, try using a uniform distribution over a,b,c space. Set the height of the uniform (like the arbitrary coefficient that appears in tractable_p_theta below) to a value that just barely exceeds p_abc for all a,b,c. Make histograms of 1,000 accepted a, b and c values, also showing the limits of the estimated 95% confidence interval and the number of rejected samples (as in the example code below). How many times was p_abc computed?
+<li>The uniform is rather inefficient. Can you think of another distribution that envelops p_abc more closely and from which R can generate random samples? For example, consider Beta(a,2,2) * Beta(b,2,2) * Beta(c,2,2) * constant. For this or some other function you think of, repeat the previous exercise. That is, make histograms of 1,000 accepted a, b and c values, also showing the limits of the estimated 95% confidence interval and the number of rejected samples (as in the example code below). How many times was p_abc computed?
+
+
+<p>
+<hr>
+<br>
+<small>
+<pre>
+# An example of rejection sampling.
+
+# Clean slate.
+rm(list=ls(all=TRUE))
+
+# Specify actual posterior probability density on theta
+actual_p_theta <- function( theta ) {
+    p_theta <- theta^4 * (1-theta)^2 * exp(theta) # need not be normalized
+    return( p_theta )
+}
+
+# Specify tractable probability density on theta which is always greater
+# than or equal to posterior_theta. Careful that it really is!
+# This must match the random theta generator defined in tractable_theta.
+tractable_p_theta <- function( theta ) {
+   p_theta <- 0.045 * dunif( theta, 0.0, 1.0) # Uniform.
+   return( p_theta )
+}
+# Specify tractable generator of theta, which must match the density function
+# defined in tractable_p_theta.
+tractable_theta <- function() {
+   theta <- runif( 1, 0.0, 1.0 ) # Uniform.
+   return( theta )
+}
+
+
+# Specify desired sample size.
+sample_size <- 1000
+
+# Initialize number accepted
+accepted_theta <- NULL
+n_rejected <- 0
+noerrorflag <- TRUE
+
+# Generate candidate theta's and accept or reject.
+while( length( accepted_theta ) < sample_size ) {
+    # Generate a theta value from the tractable distribution.
+    theta <- tractable_theta()
+    # Compute acceptance probability.
+    p_accept <- actual_p_theta(theta) / tractable_p_theta(theta)
+    # Check that p_accept is not > 1.0 (it never should be)
+    if ( p_accept > 1.0 ) {
+        print("** ERROR! actual_p_theta > tractable_p_theta **")
+        noerrorflag <- FALSE
+        break
+    }
+    # Accept it probabilistically.
+    accept <- ( runif(1,0.0,1.0) < p_accept )
+    # If accepted, concatenate it to the list, otherwise count rejects.
+    if ( accept ) {
+        accepted_theta <- c( accepted_theta , theta )
+    } else {
+        n_rejected <- n_rejected + 1
+    }
+} # end while
+
+if ( noerrorflag ) {
+    # Compute the 2.5th and 97.5th percentiles of the accepted theta's.
+    low_theta <- accepted_theta[
+        rank(accepted_theta) == floor(0.025*sample_size) ]
+    high_theta <- accepted_theta[
+        rank(accepted_theta) == ceiling(0.975*sample_size) ]
+    # Plot the accepted theta's.
+    histinfo <- hist( accepted_theta , xlim=c(0.0,1.0) )
+    text( 0 , max(histinfo$counts) ,
+        paste("95% C.I.: " , signif(low_theta,2) , ", "
+        , signif(high_theta,2)
+        , "\nN accepted: " , length(accepted_theta)
+        , "\nN rejected: " , n_rejected
+        , sep="")
+        , adj=c(0,1) )
+} # end if
+</pre>
+</small>
+<p>
+<hr>
+
+</body>
+</font>
+</html>

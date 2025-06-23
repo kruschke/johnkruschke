@@ -1,0 +1,515 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                               Appendix F
+            Simple Linear Associator Demonstration (Chapter 7)
+
+
+     This program demonstrates some of the properties of the linear 
+associator.  It associates pairs of random vectors with each other.  
+When it learns a pair, it reports the cosine of the angle between the 
+known correct output vector and what the network gives when the input 
+member of the pair is used as input.  After the network has learned as 
+many vector pairs as it was asked to, it then checks the performance 
+of the entire set of vectors, rather than just the last pair learned.
+
+     The output of the program simply gives some pertinent input and 
+output parameters.  The maximum size of the network is limited to 250 
+units, but this can be increased if there is sufficient memory 
+available on the workstation.
+
+     When it is run, the program prompts for a random number seed, 
+the dimensionality of the system (maximum 250), and the number of 
+vector pairs to learn (also maximum 250).  The random number generator 
+(MTH$RANDOM) is the library generator on a VMS VAX.  It will have to 
+be changed for other systems. 
+
+     Two versions of this simple test program are presented.  The
+first (AMDEMONOGR) uses text output, simply listing numerical
+values for the cosine between the actual and the desired output.  The
+output is in two groups.  First is the cosine between actual
+and desired output during learning.  The second is the cosine between
+actual and desired output for each member of the learned set after
+learning is complete. 
+
+      The second test program (AMDEMO) uses ASCII graphics to plot
+the cosines after learning is complete.  The cosines for the learned 
+vectors as well for as fifty random test vectors, for comparision,
+are plotted.  
+
+---------------------------------------------------------------------
+              Output of this Program is Simple Text
+---------------------------------------------------------------------
+
+PROGRAM AMDEMONOGR (Input, Output);
+
+CONST Max_Dimensionality = 250;
+      Number_to_learn    = 250;
+
+TYPE Vector           = ARRAY [1..Max_Dimensionality] OF REAL;
+
+     Matrix           = ARRAY [1..Max_dimensionality,
+                               1..Max_dimensionality] OF REAL;
+
+VAR I, J, Seed, 
+       Number_of_pairs, 
+       Number_learned, 
+       Dimensionality  : INTEGER;
+    A, Delta_A         : Matrix;
+    G_out              : Vector;
+    F_set,
+    G_set              : ARRAY  [1..Number_to_learn] OF Vector;
+    Exit               : BOOLEAN;
+    Input_char         : CHAR;
+
+PROCEDURE Zero_matrix;
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO
+            BEGIN A[I,J]      := 0;
+                  Delta_A[I,J]:= 0; END;
+    END;
+
+FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+    VAR             I: INTEGER;
+     Sum_of_products : REAL;
+    BEGIN
+    Sum_of_products := 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+    Inner_product:= Sum_of_products;
+    END;
+
+FUNCTION Vector_length (Vector_1: Vector): REAL;
+    VAR Sum_of_Squares: REAL;
+                     I: INTEGER;
+    BEGIN
+    Sum_of_Squares:= 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+    Vector_length:= SQRT (Sum_of_Squares);
+    END;
+
+PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+    VAR Length_of_vector_in: REAL;
+        I                  : INTEGER;
+        Vector_in_is_zero  : BOOLEAN;
+    BEGIN
+    Vector_out:= Vector_in;
+    Length_of_vector_in := Vector_length (Vector_in);
+    IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                 ELSE Vector_in_is_zero := FALSE;
+    IF Vector_in_is_zero 
+       THEN BEGIN
+            WRITE  ('Normalized zero vector!');
+            Vector_out:= Vector_in;  {Make Vector_out the zero vector.}
+            END       {Programming note: Watch out! no semicolon here!}
+       ELSE FOR I:= 1 TO Dimensionality DO
+            Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+    END;
+
+FUNCTION Vector_cosine (Vector_1, Vector_2: Vector): REAL;
+    VAR Normal_vector_1, Normal_vector_2: Vector;
+    BEGIN
+    Normalize (Vector_1, Normal_vector_1);
+    Normalize (Vector_2, Normal_vector_2);
+    Vector_cosine:= Inner_product (Normal_vector_1,Normal_vector_2);
+    END;
+    
+PROCEDURE Make_normalized_random_vector  (VAR V: Vector);
+
+    {This procedure generates a normalized random vector with no DC }
+    {component on the average.                                      }
+
+    VAR I: INTEGER;
+
+    FUNCTION MTH$RANDOM (VAR Seed: INTEGER): REAL; EXTERN;
+
+    FUNCTION Random: REAL;
+        BEGIN
+        Random := MTH$RANDOM (Seed);
+        END;
+
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO V[I]:= Random - 0.5;
+    Normalize (V,V);
+    END; 
+
+PROCEDURE Matrix_times_vector (A: Matrix; F: Vector;
+                                      VAR G: Vector);
+
+    {This PROCEDURE forms the product Af = g where }
+    {both f and g are column vectors.              }
+
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO G[I]:= 0;   {Zero vector G.}
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO G[I]:= G[I] + A[I,J] * F[J];
+    END;
+
+
+PROCEDURE Add_matrices (Mx_1, Mx_2: Matrix; VAR Matrix_sum: Matrix);
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO
+            Matrix_sum [I,J] := Mx_1 [I,J] + Mx_2 [I,J];
+    END; 
+
+PROCEDURE Outer_product (G,F: Vector; VAR A: Matrix);
+    {                                                       }
+    {We want to generate an outerproduct matrix A so that   }
+    {            T                                          }
+    {     A = G F                                           }
+    {                                                       }
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO 
+            A[I,J] := G[I] * F[J];
+    END;
+
+PROCEDURE Make_learned_vectors;
+  VAR I: INTEGER;
+  BEGIN
+  FOR I:= 1 TO Number_to_learn DO 
+    BEGIN
+    Make_normalized_random_vector (F_set [I]);
+    Make_normalized_random_vector (G_set [I]);
+    END;
+  END;
+
+PROCEDURE Initialize;
+  VAR I: INTEGER;
+  BEGIN
+  WRITELN ('Demonstration of Simple Linear Associative Memory.'        );
+  WRITELN ('System learns random vectors which are associated using'   );
+  WRITELN ('an outer product matrix.   Resulting matrix is tested'     );
+  WRITELN ('with the learned vectors.'                                 );
+  WRITELN;
+  WRITELN ('Maximum Dimensionality is: ', Max_dimensionality:3  );
+  WRITE   ('Seed                     : ');  READLN (Seed);
+  WRITE   ('Dimensionality           : ');  READLN (Dimensionality);
+  WRITE   ('Nr of pairs to learn     : ');  READLN (Number_of_pairs);
+  Zero_matrix;
+  WRITELN;
+  WRITELN;
+  Make_learned_vectors;
+  END;
+
+BEGIN {Main program.}
+REPEAT 
+  Initialize;
+  WRITELN ('Learning ',Number_of_pairs:3,' pairs of associations.');
+  FOR I:= 1 TO Number_of_pairs DO
+      BEGIN
+      Outer_product (G_set [I], F_set [I], Delta_A);
+      Add_matrices (A, Delta_A, A);
+      Matrix_times_vector (A, F_set [I], G_out);
+      WRITELN ('Pairs learned: ', I:2,   
+               '.  Cosine between G[',I:2,'] and actual output: ',
+                Vector_cosine  (G_out, G_set [I]):6:5);
+      END;
+   WRITELN;
+   WRITELN ('Learning complete.');
+   WRITELN 
+       ('The entire set of learned vectors will be tested with the matrix.');
+   FOR I:= 1 TO Number_of_pairs DO
+      BEGIN
+      Matrix_times_vector (A, F_set [I], G_out);
+      WRITELN ('Pair tested  : ', I:3, 
+               '.  Cosine between G[',I:2,'] and actual output: ',
+                Vector_cosine  (G_out, G_set [I]):6:5);
+      END;
+  WRITELN;
+  WRITE  ('>> Do you want to repeat this demonstration? Y/N ');
+  READLN (Input_char);
+  IF Input_char IN ['N','n'] THEN Exit:= TRUE ELSE Exit:= FALSE;
+UNTIL Exit;
+END. {Main program.}
+
+------------------------------------------------------------------
+      This Program Generates Simple ASCII Graphics as Output
+------------------------------------------------------------------
+
+PROGRAM AMDEMO (Input, Output);
+CONST Max_Dimensionality = 250;
+      Number_in_test_set =  50;
+      Number_to_learn    =  50;
+
+TYPE Vector           = ARRAY [1..Max_Dimensionality] OF REAL;
+
+     Matrix           = ARRAY [1..Max_dimensionality,
+                               1..Max_dimensionality] OF REAL;
+
+VAR I, J, Seed, Number_of_pairs, 
+       Number_learned, Index, Dimensionality: INTEGER;
+    A, Delta_A   : Matrix;
+    First, 
+           Second: Vector;
+    Test_vectors : ARRAY  [1..Number_in_test_set] OF Vector;
+    F_vectors    : ARRAY  [1..Number_to_learn] OF Vector;
+    G_vectors    : ARRAY  [1..Number_to_learn] OF Vector;
+    TS_histogram,
+    LS_histogram : ARRAY  [-20..20] OF INTEGER;
+    Exit         : BOOLEAN;
+    Input_char   : CHAR;
+
+PROCEDURE GoToXY (X,Y: INTEGER);
+   BEGIN
+   WRITELN;
+   WRITE (CHR (27), '[');
+   IF Y<10 THEN WRITE (Y:1) ELSE WRITE (Y:2);
+   WRITE (';');
+   IF X<10 THEN WRITE (X:1) ELSE WRITE (X:2);
+   WRITE ('H');
+   END;
+
+FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+    VAR             I: INTEGER;
+     Sum_of_products : REAL;
+    BEGIN
+    Sum_of_products := 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+    Inner_product:= Sum_of_products;
+    END;
+
+FUNCTION Vector_length (Vector_1: Vector): REAL;
+    VAR Sum_of_Squares: REAL;
+                     I: INTEGER;
+    BEGIN
+    Sum_of_Squares:= 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+    Vector_length:= SQRT (Sum_of_Squares);
+    END;
+
+PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+    VAR Length_of_vector_in: REAL;
+        I                  : INTEGER;
+        Vector_in_is_zero  : BOOLEAN;
+    BEGIN
+    Vector_out:= Vector_in;
+    Length_of_vector_in := Vector_length (Vector_in);
+    IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                 ELSE Vector_in_is_zero := FALSE;
+    IF Vector_in_is_zero 
+       THEN BEGIN
+            WRITE  ('Normalized zero vector!');
+            Vector_out:= Vector_in;  {Make Vector_out the zero vector.}
+            END       {Programming note: Watch out! no semicolon here!}
+       ELSE FOR I:= 1 TO Dimensionality DO
+            Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+    END;
+
+FUNCTION Vector_cosine (Vector_1, Vector_2: Vector): REAL;
+    VAR Normal_vector_1, Normal_vector_2: Vector;
+    BEGIN
+    Normalize (Vector_1, Normal_vector_1);
+    Normalize (Vector_2, Normal_vector_2);
+    Vector_cosine:= Inner_product (Normal_vector_1,Normal_vector_2);
+    END;
+    
+PROCEDURE Make_normalized_random_vector  (VAR V: Vector);
+
+    {This procedure generates a normalized random vector with no DC }
+    {component on the average.                                      }
+
+    VAR I: INTEGER;
+
+    FUNCTION MTH$RANDOM (VAR Seed: INTEGER): REAL; EXTERN;
+
+    FUNCTION Random: REAL;
+        BEGIN
+        Random := MTH$RANDOM (Seed);
+        END;
+
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO V[I]:= Random - 0.5;
+    Normalize (V,V);
+    END; 
+
+PROCEDURE Matrix_times_vector (A: Matrix; F: Vector;
+                                      VAR G: Vector);
+
+    {This PROCEDURE forms the product Af = g where }
+    {both f and g are column vectors.              }
+
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO G[I]:= 0;   {Zero vector G.}
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO G[I]:= G[I] + A[I,J] * F[J];
+    END;
+
+
+PROCEDURE Add_matrices (Mx_1, Mx_2: Matrix; VAR Matrix_sum: Matrix);
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO
+            Matrix_sum [I,J] := Mx_1 [I,J] + Mx_2 [I,J];
+    END; 
+
+PROCEDURE Outer_product (G,F: Vector; VAR A: Matrix);
+    {                                                       }
+    {We want to generate an outerproduct matrix A so that   }
+    {            T                                          }
+    {     A = G F                                           }
+    {                                                       }
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO 
+            A[I,J] := G[I] * F[J];
+    END;
+
+PROCEDURE Make_test_vectors;
+  VAR I: INTEGER;
+  BEGIN
+  GoToXY (1,22);  WRITE ('Making test vectors   :         ');
+  FOR I:= 1 TO Number_in_test_set DO
+    BEGIN
+    Make_normalized_random_vector (Test_vectors [I]);
+    GoToXY (24,22);  WRITE (I:4);
+    END;
+  END;
+
+PROCEDURE Make_learned_vectors;
+  VAR I: INTEGER;
+  BEGIN
+  GoToXY (1,23); WRITE  ('Making learned vectors:         ');
+  FOR I:= 1 TO Number_to_learn DO
+    BEGIN
+    Make_normalized_random_vector (F_vectors [I]);
+    Make_normalized_random_vector (G_vectors [I]);
+    GoToXY (24,23);
+    WRITE (I:4);
+    END;
+  END;
+
+PROCEDURE Display_outputs;
+  VAR I,J: INTEGER;
+  Begin
+  WRITE (CHR (27), '[f');   {To home.}
+  WRITE (CHR (27), '[2J');  {erase screen.}
+  GoTOXY (1,2);
+  WRITELN ('Learned Vectors. (*), Test Vectors (+).');
+  FOR I:= -7 TO 11 DO
+      BEGIN
+      WRITE (I:3,' ');
+      FOR J:= 1 TO TS_histogram [I] DO WRITE ('+');
+      WRITELN;
+      END;
+  WRITELN;
+  GoTOXY (1,2);
+  WRITELN ('Learned Vectors. (*), Test Vectors (+).');
+  FOR I:= -7 TO 11 DO
+      BEGIN
+      WRITE (I:3,' ');
+      FOR J:= 1 TO LS_Histogram [I] DO WRITE ('*');
+      WRITELN;
+      END;
+  WRITELN;
+  END;
+
+PROCEDURE Initialize;
+  VAR I: INTEGER;
+  BEGIN
+  GoToXY (0,0);
+  WRITE (CHR(27), '[2J');
+  WRITELN ;
+  WRITELN ;
+  WRITELN ('Demonstration of Associative Memory.'                      );
+  WRITELN ('Learns random vectors which are associated using'          );
+  WRITELN ('an outer product matrix.   Tested with learned and'        );
+  WRITELN ('unlearned vectors.'                                        );
+  WRITELN ('Maximum Dimensionality is: ', Max_dimensionality:3  );
+  WRITE   ('Seed                     : ');  READLN (Seed);
+  WRITE   ('Dimensionality           : ');  READLN (Dimensionality);
+  WRITE   ('Nr of pairs to learn     : ');  READLN (Number_of_pairs);
+  WRITELN;
+  FOR I:= -20 TO 20 DO BEGIN LS_Histogram [I]:= 0; TS_histogram [I]:= 0 END;
+  Make_test_vectors;
+  Make_learned_vectors;
+  END;
+
+PROCEDURE Demonstration;
+  VAR I,J: INTEGER;
+      G_out: Vector;
+      Goodness_of_recall: REAL;
+
+  BEGIN
+  Initialize;
+  GoToXY (1,1);
+  WRITE ('>> Learning:               ');
+  GoToXY (1,12); WRITE (CHR(27), '[K');
+  FOR I:= 1 TO Number_of_pairs DO
+      BEGIN
+      GoToXY (1,12);  
+      Outer_product (G_vectors[I], F_vectors[I], Delta_A);
+      Add_matrices (A, Delta_A, A);
+      Matrix_times_vector (A, F_vectors [I], G_out);
+      WRITELN ('Pairs learned: ', I:4, '  Cosine of last pair: ',
+               Vector_cosine  (G_out, G_vectors [I]):8:4);
+      END;
+  GoToXY (1,1);
+  WRITE ('>> Testing after learning.');
+  GoToXY (1,12); WRITE (CHR(27), '[K');
+  FOR I:= 1 TO Number_of_pairs DO
+      BEGIN
+      GoToXY (1,12); 
+      Matrix_times_vector (A, F_Vectors [I], G_out);
+      Goodness_of_recall:= Vector_cosine (G_out, G_vectors [I]);
+      WRITELN ('Pairs tested: ', I:4, '  Cosine of output    : ',
+      Goodness_of_recall:8:4);
+      Index:= ROUND (10 * Goodness_of_recall);
+      LS_histogram [Index]:= LS_histogram [Index] + 1;
+      END;
+  GoToXY (1,1);  WRITE ('>> Using test vectors.     ');
+  GoToXY (1,12);  WRITE (CHR(27), '[K');
+  FOR I:=1 TO Number_in_test_set DO
+      BEGIN
+      GoToXY (1,12); 
+      Matrix_times_vector (A, Test_vectors [I], G_out);
+      Goodness_of_recall:= Vector_cosine (G_out, G_vectors [I]);
+      WRITELN ('Pairs tested: ',I:4, '  Cosine of test       : ',
+                Goodness_of_recall:8:4);
+      Index:= ROUND (10 * Goodness_of_recall);
+      TS_histogram [Index]:= TS_histogram [Index] + 1;
+      END;
+  Display_outputs;
+  GoToXY (1,1);
+  WRITE  ('>> Do you want to repeat this demonstration? Y/N ');
+  READLN (Input_char);
+  IF Input_char IN ['N','n'] THEN Exit:= TRUE ELSE Exit:= FALSE;
+  END;
+
+BEGIN {Main program.}
+REPEAT Demonstration UNTIL Exit;
+END. {Main program.}
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

@@ -1,0 +1,36 @@
+# begin template file
+
+*define-variables*
+!show-sig = no
+# end of define-variables section
+
+*success-response*
+<html>
+<head><title>Thanks for the feedback!</title></head>
+<body>
+<h2>Thanks [name] for the feedback!</h2>
+The following was sent:
+<p>Your favorite color: [color]
+<p>Your text: [text]
+</body>
+</html>
+# end of success-response
+
+*email-response*
+To:kruschke@indiana.edu
+From:[email]
+Subject: Form test
+
+Sender's name: [name]
+Their e-mail address: [email]
+
+Their favorite color: [color]
+Their text: [text]
+# end e-mail section
+
+*append-response*
+!append-file-name = "/ip/jkkteach/www/dev/transformtest.dat"
+[name]	[email]	[color]	[text]
+# end append-response section
+
+# end template file

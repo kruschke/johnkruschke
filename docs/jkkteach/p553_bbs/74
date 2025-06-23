@@ -1,0 +1,13 @@
+SUBJECT>Regressions: X predicting Y
+POSTER>Nate
+EMAIL>nsteele@indiana.edu
+DATE>Tuesday, 29 October 2002, at 12:47 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.28
+PASSWORD>aaYA4AAdrkTNA
+PREVIOUS>
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>It should be noted that typically in regression you're trying to predict Y values (criterion) using known Xs (predictor).
+<P>Regressions using Y to predict X will not wind you up at the same equation (nor will they garner as many points in graded homeworks... hint... hint...)

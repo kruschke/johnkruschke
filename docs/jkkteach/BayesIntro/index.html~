@@ -1,0 +1,98 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>P747/P457 Intro. to Bayesian Statistics, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="khaki">
+
+
+<h2>P747/P457 <br>Introduction to Bayesian Statistics.</h2>
+
+<h3>
+<a href="http://www.indiana.edu/~kruschke/">
+Prof. John K. Kruschke</a>
+</h3>
+
+<p><b>Fall 2006: Wednesdays, 9:05-11:00am, room Psych 111.</b>
+<br>(P457 = section 23123; P747 = section 23139)
+
+
+<p><font size="+1">This course is a tutorial introduction to doing
+Bayesian statistics for data analysis.</font>
+
+<p><b>Intended audience:</b> The course is aimed at graduate students
+and advanced undergraduates.
+
+<p><b>Prerequisites:</b> <li>This is <i>not</i> a mathematical statistics
+course, but a fair amount of mathematics is unavoidable. If you know
+what someone means when she says, "The integral of x squared is
+one-third x cubed," then you should be okay. You will not have to
+<i>generate</i> a lot of mathematical derivations, but you will have
+to <i>understand</i> some, and some will involve basic calculus. Later
+topics might also involve linear algebra.  <li>We will be doing a lot
+of programming (in a language called R). The road to understanding
+will be much smoother if you have already had some programming
+experience, in any language. It's easy to learn basic programming, but
+it can be time consuming, so if you don't have any previous
+experience, just anticipate spending more time. Learning to program
+can have huge payoffs in multiple situations later in life, so it's
+worth the effort. <li>A previous course in traditional statistics
+(such as K300) or probability can be helpful as background. Although
+the course will be developed independently of traditional ("null
+hypothesis significance testing") statistical methods, you might find
+the concepts of probability easier to understand if you have already
+had some exposure to them.
+
+<p><b>Materials:</b> The primary materials will be info delivered at
+lecture and in course notes being written by the professor. Materials
+will be posted on <a href="http://oncourse.iu.edu/"
+target="new">Oncourse</a>. Please also discuss the assignments on <a
+href="http://oncourse.iu.edu/" target="new">Oncourse</a>.  The
+following textbooks are recommended other sources: <li>Albert and
+Rossman. Workshop Statistics: Discovery with Data, a Bayesian
+Approach. <br>The last few chapters of this book give a wonderfully
+clear introduction to the basics of Bayesian statistics --- but only
+the basics.  <li>Bolstad. Introduction to Bayesian Statistics.<br>
+Terrific tutorial that uses only basic calculus; highly
+recommended. Only down side is that it does not cover numerical
+approximation methods.  <li>Gill. Bayesian Methods: A Social and
+Behavioral Sciences Approach.  <br>and <li>Gelman, Carlin, Stern and
+Rubin: Bayesian Data Analysis.  <br>These two books offer more
+advanced examples of Bayesian methods, including Monte Carlo
+techniques.
+
+
+<p><b>Schedule:</b> This is a course in development, hence it is
+offered as a one-time "seminar." This means that the exact schedule of
+the course will be determined as we progress, in response to student
+feedback. Updated schedule information will be posted online as we go.
+
+<p><b>Grading; Homework; Exams:</b> There will be weekly homework
+assignments. At this time I plan no exams nor any final
+project. Grades will be determined by performance on the homework
+assignments. All assignments are mandatory. There will be penalties
+for late homework unless you have a cogent excuse. These penalties are
+designed as an incentive to you because the material is cumulative;
+the penalties also help keep things fair to all students. If you must
+be late with an assignment, please let me know <i>immediately</i>.
+
+<p><b>Disclaimer:</b> All the information here is subject to
+change. Changes will announced in class.
+
+
+<br>
+<p>(I taught a previous version of this course in 2005. 
+<a href="http://www.indiana.edu/~jkkteach/P747_2005/">Click here</a> 
+to view the web pages for that version.)
+
+<br>
+<p>This web page is at URL = 
+http://www.indiana.edu/~jkkteach/BayesIntro/
+
+
+<p><hr>
+</BODY>
+</font></HTML>
+
+
+

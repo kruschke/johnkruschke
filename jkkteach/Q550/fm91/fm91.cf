@@ -1,0 +1,16 @@
+NODES:
+nodes = 256
+inputs = 128
+outputs = 128
+output nodes are 1-128
+CONNECTIONS:
+groups = 0
+1-128 from i1-i128 = 1. & 1. fixed one-to-one
+129-256 from 1-128 = 1. & 1. fixed one-to-one
+1-48 from 177-256
+49-128 from 129-176
+SPECIAL:
+linear = 129-256
+bipolar = 1-128
+selected = 1-48
+weight_limit = 0.0001

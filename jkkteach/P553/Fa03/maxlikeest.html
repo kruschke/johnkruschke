@@ -1,0 +1,307 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 1</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<a href="p553.html">P553 Statistics in Psychology</a>,
+<a href="http://www.indiana.edu/~kruschke">Prof. Kruschke</a>
+<h2>
+Modeling with the normal distribution:
+<br>Maximal likelihood estimation of its parameter values
+</h2>
+</center>
+
+The normal (a.k.a. Gaussian) distribution is the well&minus;known
+bell&minus;shaped curve. The central limit theorem is one motivation for
+thinking of the normal distribution as the canonical model of a
+population.  The normal probability density of variable x, given parameter
+values &mu; and &sigma;, is
+
+<center>
+<table>
+<tr>
+<td valign=center>
+p( x | &mu;,&sigma; ) = 
+</td>
+<td align=right>
+<table>
+<tr><td valign=bottom align=center>1</td></tr>
+<tr><td valign=center><hr></td></tr>
+<tr><td valign=top align=center>&radic;(2&pi;&sigma;<sup>2</sup>)</td></tr>
+</table>
+</td>
+<td align=left valign=center>
+<em>exp</em>( &minus;0.5 [ (x&minus;&mu;) / &sigma; ]<sup>2</sup> )
+</td>
+</tr>
+</table>
+</center>
+
+<p>The question is now this: Given a set of observed scores
+x<sub>1</sub>,...,x<sub>N</sub>, what parameter values &mu; and &sigma;
+yield the highest probability of those scores?  For example, suppose
+we have three scores, with x<sub>1</sub>=10, x<sub>2</sub>=20 and
+x<sub>3</sub>=30.  If &mu;=1000 and &sigma;=1, then those three scores are
+extremely improbable.  If &mu;=20 and &sigma;=10, however, then the three
+scores are more probable.  What values of &mu; and &sigma; yield the
+highest probability for the scores?  These parameter values provide
+the "best fit" of the model to the data, in the sense that these
+parameter values yield the highest proabality of the sample data,
+relative to all other possible parameter values.
+
+<p>We assume that the scores are generated independently.  This
+implies that the probability of getting <em>the combination of all
+N</em> scores is the <em>product</em> of their individual
+probabilities:
+<p>
+<center>
+p( x<sub>1</sub> and ... and x<sub>N</sub> | &mu;,&sigma; ) 
+= p( x<sub>1</sub> | &mu;,&sigma; ) &middot; ... &middot;  p( x<sub>N</sub> | &mu;,&sigma; )
+</center>
+
+<p>The probability of getting all N scores from the normal
+distribution is therefore given by
+
+<p>
+<center>
+<table>
+<tr>
+<td valign=center>
+p( x<sub>1</sub> and ... and  x<sub>N</sub> | &mu;,&sigma; ) = 
+</td>
+</tr>
+<tr>
+<td align=right>
+<table>
+<tr><td align=center><sub>N</sub></td></tr>
+<tr><td align=center valign=center>&Pi;</td></tr>
+<tr><td align=center><sup>i=1</sup></td></tr>
+</table>
+</td>
+<td align=right>
+<table>
+<tr><td align=center>1</td></tr>
+<tr><td valign=center><hr></td></tr>
+<tr><td align=center>&radic;(2&pi;&sigma;<sup>2</sup>)</td></tr>
+</table>
+</td>
+<td align=left valign=center>
+<em>exp</em>( &minus;0.5 [ (x<sub>i</sub>&minus;&mu;) / &sigma; ]<sup>2</sup> )
+</td>
+</tr>
+</table>
+</center>
+
+<p>We want to determine the values of &mu; and &sigma; that maximize
+that probability.  A standard method from calculus, for determining
+the maximum of a function, is computing the derivative of the
+function and then solving for the value that makes the derivative
+zero.  In principle, we could apply this method directly to the
+formula above, but in practice, computing the derivative of an
+indexed product gets messy.  So, we will first convert the &Pi; (product)
+to a &Sigma; (sum) by applying the logarithm function to both sides of
+the equation.  The logarithm is a monotonic (order&minus;preserving)
+continuous function, so if we find the values of &mu; and &sigma; that
+maximize the <em>ln</em> of the probability, those same values maximize the
+probability itself.  Thus, we now want to find the values of &mu; and
+&sigma; that maximize the <em>ln</em> probability of the data:
+
+<p>
+<center>
+<table>
+<tr>
+<td colspan=3 valign=center align=left>
+<em>ln</em>( p( x<sub>1</sub> and ... and  x<sub>N</sub> | &mu;,&sigma; ) ) = 
+</td>
+</tr>
+<tr>
+<td align=right>
+<table>
+<tr><td align=center><sub>N</sub></td></tr>
+<tr><td align=center valign=center>&Sigma;</td></tr>
+<tr><td align=center><sup>i=1</sup></td></tr>
+</table>
+</td>
+<td align=right>
+<em>ln</em>
+</td>
+<td rowspan=3><font size=+5>(</font></td>
+<td align=right>
+<table>
+<tr><td align=center>1</td></tr>
+<tr><td valign=center><hr></td></tr>
+<tr><td align=center>&radic;(2&pi;&sigma;<sup>2</sup>)</td></tr>
+</table>
+</td>
+<td align=left valign=center>
+<em>exp</em>( &minus;0.5 [ (x<sub>i</sub>&minus;&mu;) / &sigma; ]<sup>2</sup> )
+</td>
+<td rowspan=3><font size=+5>)</font></td>
+</tr>
+</table>
+</center>
+
+<p>We will denote this <em>ln</em> probability as L.  By computing the
+logarithm of the term on the right hand side, and algebraically
+regrouping, the <em>ln</em> probability above becomes:
+
+<p>
+<center>
+<table>
+<tr>
+<td valign=center>L = (N/2)&middot;<em>ln</em>(2&pi;) &minus; N&middot;<em>ln</em>(&sigma;) &minus; </td>
+<td valign=center> 0.5 </td>
+<td align=right>
+<table>
+<tr><td align=center><sub>N</sub></td></tr>
+<tr><td align=center valign=center>&Sigma;</td></tr>
+<tr><td align=center><sup>i=1</sup></td></tr>
+</table>
+</td>
+<td align=left valign=center>
+[ (x<sub>i</sub>&minus;&mu;) / &sigma; ]<sup>2</sup> 
+</td>
+</tr>
+</table>
+</center>
+
+<p>Now we apply the method of calculus to find the value of &mu; that
+maximizes the logarithm of the probability.  The partial derivative of
+L with respect to &mu; is
+
+<p>
+<center>
+<table>
+<tr>
+<td align=right>
+<table>
+<tr><td align=center>&part; L</td></tr>
+<tr><td align=center valign=center><hr></td></tr>
+<tr><td align=center>&part; &mu;</td></tr>
+</table>
+<td valign=center>=</td>
+</td>
+<td valign=center>(&minus;1/&sigma;<sup>2</sup>)</td>
+<td align=right>
+<table>
+<tr><td align=center><sub>N</sub></td></tr>
+<tr><td align=center valign=center>&Sigma;</td></tr>
+<tr><td align=center><sup>i=1</sup></td></tr>
+</table>
+</td>
+<td align=left valign=center>
+(x<sub>i</sub>&minus;&mu;)
+</td>
+</tr>
+</table>
+</center>
+
+<p>Setting the derivative to zero and solving for &mu; yields
+
+<p>
+<center>
+<table>
+<tr>
+<td align=right>
+&mu;
+<td valign=center>=</td>
+</td>
+<td valign=center>(1/N)</td>
+<td align=right>
+<table>
+<tr><td align=center><sub>N</sub></td></tr>
+<tr><td align=center valign=center>&Sigma;</td></tr>
+<tr><td align=center><sup>i=1</sup></td></tr>
+</table>
+</td>
+<td align=left valign=center>
+x<sub>i</sub>
+</td>
+</tr>
+</table>
+</center>
+
+<p><em>That is, the maximal likelihood estimate of &mu; is mean of the
+scores.</em>  We will denote this mean as M<sub>x</sub>.
+
+<p>We can apply the same method to determine the maximal likelihood
+estimate of the standard deviation, &sigma;:
+
+<p>
+<center>
+<table>
+<tr>
+<td align=right>
+<table>
+<tr><td align=center>&part; L</td></tr>
+<tr><td align=center valign=center><hr></td></tr>
+<tr><td align=center>&part; &sigma;</td></tr>
+</table>
+<td valign=center>=</td>
+</td>
+<td valign=center>(&minus;N/&sigma;) + (1/&sigma;)</td>
+<td align=right>
+<table>
+<tr><td align=center><sub>N</sub></td></tr>
+<tr><td align=center valign=center>&Sigma;</td></tr>
+<tr><td align=center><sup>i=1</sup></td></tr>
+</table>
+</td>
+<td align=left valign=center>
+[(x<sub>i</sub>&minus;M<sub>x</sub>)/&sigma;]<sup>2</sup>
+</td>
+</tr>
+</table>
+</center>
+
+<p>Setting the derivative to zero and solving for &sigma; yields
+
+<p>
+<center>
+<table>
+<tr>
+<td align=right>
+&sigma;<sup>2</sup>
+<td valign=center>=</td>
+</td>
+<td valign=center>(1/N)</td>
+<td align=right>
+<table>
+<tr><td align=center><sub>N</sub></td></tr>
+<tr><td align=center valign=center>&Sigma;</td></tr>
+<tr><td align=center><sup>i=1</sup></td></tr>
+</table>
+</td>
+<td align=left valign=center>
+(x<sub>i</sub>&minus;M<sub>x</sub>)<sup>2</sup>
+</td>
+</tr>
+</table>
+</center>
+
+
+<p><em>That is, the maximal likelihood estimate of &sigma;<sup>2</sup>
+is the variance of the scores.</em>
+
+<p>In summary, we started with a set of scores,
+x<sub>1</sub>,...,x<sub>N</sub>.  We decided to try to model this set
+of scores as being generated by a normal probability distribution.  We
+then found the values of the parameters &mu; and &sigma; that made the
+distribution best fit the scores; that is, we found the values of &mu;
+and &sigma; that maximized the likelihood of the scores.  The resulting
+values turned out to be familiar: The maximal likelihood estimate of
+&mu; is the mean of the scores, and the maximal likelihood estimate of
+&sigma;<sup>2</sup> is the variance of the scores.
+
+
+<p>
+<h6><center>Copyright &copy; 1999 John K. Kruschke</center></h6>
+<hr>
+
+
+</BODY>
+</HTML>
+
+

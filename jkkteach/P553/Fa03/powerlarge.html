@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#EECCCC">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+<h1>
+<p>Statistical Power and Effect Size
+</h1>
+</center>
+
+<font size=+3>
+
+Figure 1 (below) illustrates the concepts of statistical power and
+effect size.  The diagram will be explained in detail in lecture.  One
+point to be emphasized is that <em>power</em> lives in the
+<em>sampling</em> distributions, whereas <em>effect size</em> lives in
+the <em>population</em> distributions.
+
+<p>
+<center>
+<table border=1 cellpadding=10>
+<tr><td align=center>
+<IMG SRC="http://www.indiana.edu/~jkkteach/P553/power.gif" 
+align=center>
+</td></tr>
+<tr><td align=center> 
+<font size=-1><em>Figure 1.  Illustration of effect size and power.</em>
+<br>The "1.65" in the sampling distribution of the null 
+<br>hypothesis assumes a Type&nbsp;I error rate of 5%.</font>
+</td></tr>
+</table>
+</center>
+
+<br clear="all"><br>
+
+<table align=right border=1 cellpadding=10 cellspacing=0>
+<tr><td align=center>
+<IMG SRC="http://www.indiana.edu/~jkkteach/P553/powersamp.gif" 
+align=center>
+</td></tr>
+<tr><td align=center> 
+<font size=-1><em>Figure 2. Sampling distributions
+<br>with critical value of sample mean
+<br>explicitly marked.</font>
+</td></tr>
+</table>
+
+<p>All the basic computations regarding power result from just the two
+equations that describe the position of the critical value in the
+sampling distributions.  Figure 2 (right) shows the two sampling
+distributions with the critical value of the sample mean labeled as
+M<sub>crit</sub>.  Recall from Figure 1 that sigma<sub>M</sub> =
+sigma/sqrt(N).
+
+<p>In the null hypothesis sampling distribution, the diagram indicates
+that
+
+<table cellpadding=20>
+<tr><td align=center><font size=+3>
+z<sub>null</sub>(M<sub>crit</sub>) = 
+(&nbsp;M<sub>crit</sub>&nbsp;-&nbsp;mu<sub>null</sub>&nbsp;)&nbsp;/&nbsp;sigma<sub>M</sub>
+</td>
+<td align=right><font size=+3>
+[Eqn. 1]
+</td>
+</tr>
+</table>
+
+The value of the Type I error rate sets the desired value of z; if we
+want the Type I error rate to be .05, then z(M<sub>crit</sub>) = 1.65,
+as shown in the diagram.
+
+<p>In the alternative hypothesis sampling distribution, the diagram indicates
+that
+
+<table  cellpadding=20>
+<tr><td align=center><font size=+3>
+z<sub>alt</sub>(M<sub>crit</sub>) = 
+(&nbsp;M<sub>crit</sub>&nbsp;-&nbsp;mu<sub>alt</sub>&nbsp;)&nbsp;/&nbsp;sigma<sub>M</sub>
+</td>
+<td align=right><font size=+3>
+[Eqn. 2]
+</td>
+</tr>
+</table>
+
+
+From this value of z<sub>alt</sub>(M<sub>crit</sub>), we can determine
+the power, or, if given a desired power, we can determine the needed
+value of z<sub>alt</sub>(M<sub>crit</sub>).
+
+
+<br clear="all">
+<p>
+<strong>Determining power:</strong>
+If you are given mu<sub>null</sub>, mu<sub>alt</sub>, sigma, alpha
+(i.e., the Type I error rate), and N, then you can compute the power
+from the two equations.  Start with Equation 1 to determine
+M<sub>crit</sub>.  Then use this value in Equation 2 to determine the
+resulting power.
+
+<p>
+<strong>Determining sample size:</strong>
+If you are given mu<sub>null</sub>, mu<sub>alt</sub>, sigma, alpha
+(i.e., the Type I error rate), and the desired power, then you can
+compute the needed N from the two equations.  Essentially, you simply
+plug in all the given information into the two equations, which yields
+two equations with two unknowns; the unknowns are N and
+M<sub>crit</sub>.  Solving the two equations yields N.  Doing this in
+the general case yields:
+
+<table width=100% cellpadding=10>
+<tr><td align=center><font size=+3>
+N = 
+[ ( z<sub>null</sub>(M<sub>crit</sub>) - z<sub>alt</sub>(M<sub>crit</sub>) ) 
+/ effect&nbsp;size ]<sup><strong>2</strong></sup>
+</td>
+<td align=right><font size=+3>
+[Eqn. 3]
+</td>
+</tr>
+</table>
+
+For example, if we have a Type I error rate of .05, then
+z<sub>null</sub>(M<sub>crit</sub>) = 1.65.  If we want a power of
+0.84, then z<sub>alt</sub>(M<sub>crit</sub>) = -1.00 (notice the
+negative sign, because M<sub>crit</sub> is less than
+mu<sub>alt</sub>).  For a moderate effect size of 0.5, then Equation 3
+implies that N = [ ( 1.65 - -1.00 ) / 0.5 ]<sup>2</sup> = 28.09, so we
+need N=29 to achieve a power of at least 0.84.
+
+</font>
+
+<p>
+<h6><center>Copyright &copy; 1999 John K. Kruschke</center></h6>
+<p><hr>
+
+</BODY>
+</HTML>

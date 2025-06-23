@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 3</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology<br>
+Homework 3: <em>z</em>-test.
+<br>Due 24 Sept. 1996.
+</h2>
+</center>
+
+<!-- IN SUBSEQUENT YEARS, INCLUDE THE MINITAB CLT GENERATION EXERCISE  -->
+<!-- IN THE PREVIOUS HOMEWORK INSTEAD OF IN THIS HOMEWORK!!!           -->
+
+<p>1. (4 pts.) The Minitab commands listed at the end of this page
+illustrate the central limit theorem.  The commands establish a skewed
+population distribution, from which we randomly sample.  Minitab grabs
+450 samples of size N from the population, computes the mean of each
+sample, and makes a histogram of the 450 sample means (i.e., a
+sampling distribution).  The commands do this for various sample sizes
+(N=1, 2, 5, 10 and 100).  Run the commands in Minitab and include a
+printout of your session.  Here are questions to answer: <ul> <li>For
+a sample size of 1, what are the <em>expected</em> frequencies for
+each value of the sample mean? <li>As the sample size increases, what
+happens to the mean of the sampling distribution? <li>As the sample
+size increases, what happens to the variance of the sampling
+distribution? <li>As the sample size increases, what happens to the
+shape of the sampling distribution?  </ul>
+
+<p>2. (2 pts.) Exercise 1, Set II, p.204 of A&A text.
+						     
+<p>3. (3 pts.) Exercise 3, Set II, p.204 of A&A text.
+						     
+<p>4. (2 pts.) Exercise 4, Set II, p.204 of A&A text.
+						     
+<p>5. (3 pts.) Exercise 5, Set II, p.204 of A&A text.
+						     
+<p>6. (2 pts.) Exercise 3, Set II, p.246 of A&A text.
+						     
+<p>7. (2 pts.) Exercise 5, Set II, p.247 of A&A text.
+
+<p>8. (4 pts.) Exercise 6d and 6e, Set II, p.247 of A&A text.
+
+<p>9. (3 pts.) Consider two population distributions.  We are told
+that mu_0 = 100, mu_1 = 95, and sigma = 15 (for both).  What is the
+sample size needed for a power of .8 or better?
+
+<p><hr>
+
+Below are the Minitab commands for demonstrating the central limit
+theorem in Exercise 1.  You can (1) just type them into Minitab line
+by line, or (2) if you know how, you can download this page to your
+Mac or PC, edit away all the text above, and then execute it in
+Minitab, or (3) if you use Zinc, you can copy it from my directory:
+/N/fs2/kruschke/Zinc/clt.MTB and
+/N/fs2/kruschke/Zinc/clt_getsample.mtb
+
+<p>To write the file named 'clt_getsample.mtb', on Zinc you can use
+the <a href="http://www.indiana.edu/~ucspubs/b103/">Pico text
+editor</a>.
+
+<pre>
+# In a separate file named 'clt_getsample.mtb', 
+# include the following five lines:
+#
+#  random 'N' 'sample';
+#  discrete 'x' 'p(x)'.
+#  let 'x_bar' ( 'rowindex' ) = mean( 'sample' )
+#  let 'rowindex' = 'rowindex' + 1
+#  end
+#
+# Now set up the population distribution
+#
+name c1 'x'
+set c1
+1 2 3 4 5 6 7 8 9
+end
+name c2 'p(x)'
+let c2 = 'x' / sum( 'x' )
+#
+# Print the population distribution
+#
+print 'x' 'p(x)'
+#
+# Plot the population distribution
+#
+plot 'p(x)' 'x';
+xstart 1;
+xincrement 2.
+#
+# Compute the expected value, variance, and SD of 'x'
+#
+let c3 = 'x' * 'p(x)'
+let k1 = sum(c3)
+name k1 'E[x]'
+print 'E[x]'
+let c3 = ( 'x' - 'E[x]' )**2 * 'p(x)'
+let k2 = sum(c3)
+name k2 'var(x)'
+print 'var(x)'
+let k3 = sqrt( 'var(x)' )
+name k3 'sd(x)'
+print 'sd(x)'
+#
+# Now initialize the sampling variables
+#
+name c3 'sample'
+name c4 'x_bar'
+name c5 'z(x_bar)'
+name k1 'N'
+name k2 'rowindex'
+#
+# Now draw 450 samples of size 1 and 
+# plot the sampling distribution of the sample mean
+#
+let 'N' = 1
+let 'rowindex' = 1
+noecho
+execute 'clt_getsample.mtb' 450
+histogram 'x_bar' 1.0 0.33333
+describe 'x_bar'
+#
+# Now draw 450 samples of size 2 and 
+# plot the sampling distribution of the sample mean
+#
+let 'N' = 2
+let 'rowindex' = 1
+noecho
+execute 'clt_getsample.mtb' 450
+histogram 'x_bar' 1.0 0.33333
+describe 'x_bar'
+#
+# Now draw 450 samples of size 5 and 
+# plot the sampling distribution of the sample mean
+#
+let 'N' = 5
+let 'rowindex' = 1
+noecho
+execute 'clt_getsample.mtb' 450
+histogram 'x_bar' 1.0 0.33333
+describe 'x_bar'
+#
+# Now draw 450 samples of size 10 and 
+# plot the sampling distribution of the sample mean
+#
+let 'N' = 10
+let 'rowindex' = 1
+noecho
+execute 'clt_getsample.mtb' 450
+histogram 'x_bar' 1.0 0.33333
+describe 'x_bar'
+#
+# Now draw 450 samples of size 100 and 
+# plot the sampling distribution of the sample mean
+#
+let 'N' = 100
+let 'rowindex' = 1
+noecho
+execute 'clt_getsample.mtb' 450
+histogram 'x_bar' 1.0 0.33333
+describe 'x_bar'
+#
+# End.
+#
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>
+
+

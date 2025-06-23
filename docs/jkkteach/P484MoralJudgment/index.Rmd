@@ -1,0 +1,244 @@
+---
+title: "P484/P640: Science of Moral Judgment"
+subtitle: "Spring Semester, 2022: Tu/Th 9:45AM-11:00AM, Room PY 111"
+author: 
+- name: "Professor: <a href='https://jkkweb.sitehost.iu.edu/' target='_blank'>John K. Kruschke</a>"
+  email: kruschke@indiana.edu
+# date: "`r format(Sys.time(), '%H:%M, %d %B, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    number_sections: false
+editor_options: 
+  chunk_output_type: console
+
+csl: "C:/Users/John/Desktop/kruschkeLOCAL/Research/apa.csl"
+link-citations: yes
+bibliography: "C:/Users/John/Desktop/kruschkeLOCAL/Research/references.bib"
+nocite: |
+  @BiasucciPrentice2021BehavioralEthics, @MalleScheutz2014MoralRobots, @AllenWS2006MachineEthics, @SripadaStich2006Norms, @keupp2013children, @rakoczy2013early, @SloaneBP2012Fairness, @Hamlin2013AttemptHelp, @HamlinEtAl2011InfantsAntisocial, @McCulloughKT2013Revenge, @CushmanEtAl2009Punishment, @HerrmannEtAl2007EvolvedSocialCognition, @ChudekH2011CultureGene, @DeScioliK2013, @LahtiW2005GroupStability, @Gigerenzer2010MoralSatisficing, @UttichL2010Norms, @SlomanFE2009CausalModelsMoral, @GraySW2014HarmlessWrongs, @HuebnerDH2009EmotionMoral, @Fiske2002SociomoralEmotions, @GrahamHN2009Liberals, @WaldmannNW2012MoralJudgment, @BartelsBCPM2015MoralJudgment, @HofmannWBS2014MoralityEveryday, @GiessnerV2010RelationalModels, @RaiFiske2011RelationshipRegulation, @JanoffBulmanC2016SocialJustice, @LandyUhlmann2016MoralityIsPersonal, @JanoffBulmanC2013Reply, @Graham2013MappingMoral, @UhlmannPD2015PersonCentered, @LiddellKruschke2014OstracismFines, @Lahti2013TwelveThings, @JanoffBulmanCarnes2013, @Goodwin2015MoralCharacter, @ChaurandBrauer2008SocialControl, @CelestinKruschke2019LayEvaluations, @Batson2011WhatsWrongEmotionReview, @Batson2016WhatsWrongBook, @WegnerGray2016MindClub, @FiskeRai2015VirtuousViolence, @Wilson2015DoesAltruismExist, @Bloom2013JustBabies, @Haidt2012, @HaidtK2010, @Tomasello2016HumanMorality 
+# bibliography: "P484MoralPsych.bib"
+# nocite: '@*'
+---
+
+
+```{r echo=FALSE}
+bibFile = "C:/Users/John/Desktop/kruschkeLOCAL/Research/references.bib"
+citeTitle = function( key , bibfile=bibFile ){
+  bibLines = readLines( bibfile ) # every line of bib file
+  keyline = grep( key , bibLines , value=FALSE ) # find line with key in it
+  if ( length(keyline)>0 ) { # if key is found, search for title in next lines
+    tryline = keyline+1
+    title = "" 
+    while ( title=="" ) {
+      searchline = trimws( bibLines[tryline] , "left" ) # trim whitespace from left
+      titletry = grep( "^title" , searchline , ignore.case=TRUE , value=TRUE )
+      if ( length(titletry) > 0 ) { 
+        title = titletry
+        # Strip initial characters through to initial "{":
+        for ( i in 1:nchar(title) ) {
+          if ( substr(title,i,i)=="{" ) {
+            title = substr(title,i+1,nchar(title))
+            break
+          }
+        }
+        # Strip final "}":
+        for ( i in nchar(title):1 ) {
+          if ( substr(title,i,i)=="}" ) {
+            title = substr(title,1,i-1)
+            break
+          }
+        }
+        # Split into words, split by spaces:
+        titleWords = strsplit( title, " " )[[1]]
+        # Go through words, leaving as-is if there are braces, converting to lowercase if not:
+        title = ""
+        wordCount = 0
+        for ( word in titleWords ) {
+          wordCount = wordCount+1
+          if ( nchar(word)>0 ) {
+            wordA = strsplit(word,"\\{")[[1]]
+            if ( length(wordA) > 1 ) { # if there is a "{"
+              pre = wordA[1]
+              wordB = strsplit(wordA[2],"\\}")[[1]]
+              word = paste0(pre,paste0(wordB,collapse=""))
+              title = paste0( title , " " , word )
+            } else {
+              if ( wordCount==1 ) { # if it's the first word, capitalize first letter
+                title = paste0( title , " " , 
+                                paste0( toupper(substr(word,1,1)) , 
+                                        tolower(substr(word,2,nchar(word))) ) )
+              } else { # otherwise convert to all lowercase
+                title = paste0( title , " " , tolower(word) )
+              }
+            }
+          }
+        }
+        title = trimws( title , "left" ) # trim whitespace from left
+      }
+      tryline = tryline+1
+    }
+    return( paste0("@",key,": ",title) )
+  } else {
+    return( "(citation key not found)" )
+  }
+}
+```
+
+
+# Course description
+
+This course surveys recent scientific research about the psychology of moral judgment. Moral psychology examines how people make judgments of appropriate behavior. Many scientific disciplines inform this domain, including social psychology, anthropology, evolutionary biology, ethology, developmental psychology, cognitive psychology, robotics & artificial intelligence, and brain science. This is not a course about religion, nor is it a course about the philosophy of ethics. This course is about the psychological mechanisms of moral judgment as it is, not a course about what correct judgments ought to be.
+
+# Required readings
+
+This is a readings-and-discussion course. Each day focuses on specific book chapters or articles. Students are expected to actively discuss the readings in class. The list of readings is presented in the schedule, below. **Some of the readings address sensitive topics involving violence, sexuality, or disgust, and there are no alternative readings or assignments. If you are not willing to read about and discuss such topics, please do not enroll in the course.**
+
+<!-- ## Required Books  -->
+
+Please purchase these books:
+
+ * `r citeTitle("Haidt2012")`.
+<!-- Haidt, J. (2012). *The Righteous Mind: Why Good People Are Divided by Politics and Religion*. Pantheon. -->
+ 
+ * `r citeTitle("Tomasello2016HumanMorality")`. 
+<!-- Tomasello, M. (2016). *A Natural History of Human Morality*. Harvard University Press. -->
+
+ * `r citeTitle("BiasucciPrentice2021BehavioralEthics")`. 
+<!-- Biasucci, C. & Prentice, R. (2021). *Behavioral Ethics in Practice: Why We Sometimes Make the Wrong Decisions.* Routledge. -->
+
+<!-- ## Required Articles -->
+
+All required articles will be posted in Canvas. 
+
+<!-- * `r citeTitle("ChaurandBrauer2008SocialControl")`.  -->
+<!-- Chaurand, N., and Brauer, M. (2008). What determines social control? People's reactions to counternormative behaviors in urban environments. Journal of Applied Social Psychology, 38(7), 1689-1715. -->
+
+<!-- * `r citeTitle("JanoffBulmanCarnes2013")`. -->
+<!-- Janoff-Bulman, R., & Carnes, N. C. (2013). Surveying the moral landscape: moral motives and group-based moralities. Personality and Social Psychology Review, 17(3) 219-236. -->
+
+<!-- * `r citeTitle("Lahti2013TwelveThings")`.  -->
+<!-- Lahti, D. C. (2013). Twelve (more) things about the evolution of morality that make people nauseous. In K. Summers and B. Crespi (eds.), Human Social Evolution: The Foundational Works of Richard D. Alexander. New York: Oxford University Press, pp. 307-325. -->
+
+<!-- * `r citeTitle("RaiFiske2011RelationshipRegulation")`. -->
+<!-- Rai, T. S., & Fiske, A. P. (2011). Moral psychology is relationship regulation: moral motives for unity, hierarchy, equality, and proportionality. Psychological Review, 118(1), 57-75. -->
+
+The required readings have changed from from year to year. A list of readings accumulated across previous years is shown at the end of this document.
+
+
+# Schedule of topics and readings
+
+The schedule below is the plan as of `r format(Sys.time(), "%b %d, %Y")`. The exact dates or readings may change as the semester progresses. Any changes will be announced in class and on Canvas.
+
+| Week | Day | What                              |
+| :-:  | :-: | :-------------------------------- |
+| 1 |	Tu |	Welcome and course overview. Moral judgment in everyday life: the case of offensive comedy. [*WWYD* video](https://youtu.be/_Z6iE4BURpY). [*The Atlantic* article](http://www.theatlantic.com/magazine/archive/2015/09/thats-not-funny/399335/). |
+| 1 |	Th |	**Quiz.** `r citeTitle("ChaurandBrauer2008SocialControl")`. |
+| 2 |	Tu |	**Quiz.** `r citeTitle("Haidt2012")`: **Intro., 1, 2.** <br>There are many Haidt videos online, here are two. [Haidt talks about part II of the book](https://youtu.be/ONUM4akzLGE?t=25m25s), especially starting at 25 minutes. [Haidt talks about part III of the book](https://youtu.be/2APK3tlPL_0). |
+| 2 |	Th |	**Quiz.** `r citeTitle("Haidt2012")`: **3, 4.** |
+| 3 |	Tu |	**Quiz.** `r citeTitle("Haidt2012")`: **5, 6.** |
+| 3 |	Th |	**Quiz.** `r citeTitle("Haidt2012")`: **7, 8.** |
+| 4 |	Tu |	**Quiz.** `r citeTitle("Haidt2012")`: **9, 10.** |
+| 4 |	Th |	**Quiz.** `r citeTitle("Haidt2012")`: **11, 12, Conclusion.** |
+| 5 |	Tu |	**Quiz.** `r citeTitle("JanoffBulmanCarnes2013")`.  <br>[Janoff-Bulman talks about MMM and politics](https://youtu.be/tJr7ejEzdiA). |
+| 5 |	Th |	Review. |
+| 6 |	Tu |	**Exam.** |
+| 6 |	Th |	**Quiz.** `r citeTitle("Tomasello2016HumanMorality")`: **Preface and 1.** <br>[Tomasello summarizes the book](https://vimeo.com/55035079). See also `r citeTitle("Tomasello2018PrecisMorality")`, and `r citeTitle("Tomasello2018ResponseToComments")`. |
+| 7 |	Tu |	**Quiz.** `r citeTitle("Tomasello2016HumanMorality")`: **2.** |
+| 7 |	Th |	**Quiz.** `r citeTitle("Tomasello2016HumanMorality")`: **3.** |
+| 8 |	Tu |	**Quiz.** `r citeTitle("Tomasello2016HumanMorality")`: **4.** |
+| 8 |	Th |	**Quiz.** `r citeTitle("Tomasello2016HumanMorality")`: **5, Conclusion.** |
+| 9 |	Tu |	**Quiz.** `r citeTitle("Lahti2013TwelveThings")`. <br>[Lahti talks about this essay](https://vimeo.com/220985538). *Also today: Review.* |
+| 9 |	Th |	**Exam.** |
+| Break	| | |
+| 10 |	Tu |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **Intro, Part 1 intro, 1, 2, 3.** <br>See also the [Ethics Unwrapped website](https://ethicsunwrapped.utexas.edu/). |
+| 10 |	Th |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **4, 5, 6.** |
+| 11 |	Tu |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **7, 8.** |
+| 11 |	Th |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **9, 10.** |
+| 12 |	Tu |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **11.** **Also:** `r citeTitle("RaiFiske2011RelationshipRegulation")`. |
+| 12 |	Th |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **12, 13.** |
+| 13 |	Tu |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **14, 15.** |
+| 13 |	Th |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **16, 17.** |
+| 14 |	Tu |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **18, 19.** |
+| 14 |	Th |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **20, 21.** |
+| 15 |	Tu |	**Quiz.** `r citeTitle("BiasucciPrentice2021BehavioralEthics")`: **22, 23.** |
+| 15 |	Th |	Review and Overview. |
+| Finals | |	**Final Exam**, see registrar info for date and time |
+
+
+# Learning Objectives
+
+The items below do not exhaust everything to learn from this course, but here are at least a few key points.
+
+  * Be able to identify, define, describe, and explain the central ideas, including:
+    + What is human morality for? What are the many competing obligations involved?
+    + What psychological mechanisms (emotional and cognitive) have evolved to support those functions?
+  
+  * Be able to apply, analyze, and evaluate those ideas for specific applied cases (e.g., public reprimands, corporate cover ups, charitable giving, etc.).
+    + What are some ways to "improve" moral behavior?
+    + What are some ways to reduce moralistic disagreements?
+
+
+<!-- # Prerequisites -->
+
+<!-- Advanced undergraduates who are able to carefully read, digest, and discuss scientific literature are encouraged to enroll in P484. Graduate students should enroll in P640. Previous exposure to social psychology is helpful, but there are no formal pre-requisites. -->
+
+# Grading procedure
+
+## Quizzes
+
+Most classes begin with a short quiz about that day's reading. The purpose of the quiz is to motivate you to prepare for in-class discussion and to recognize your preparation. Each day's quiz consists of a small number of short-answer or multiple choice questions relevant to that day's reading. **The quiz starts promptly at the beginning of class.** Each quiz is worth up to 10 points.
+
+*Your lowest 4 quiz scores will be dropped*. Thus, if you must miss a day because of illness or personal reasons, that day simply counts as a zero and will be one of your 4 dropped scores. There are no make-up quizzes for missed days. The only way that a make-up for a missed quiz could be considered is if you had to miss more than 4 quiz days for reasons beyond your control, in which case notify Prof. Kruschke *as soon as possible*.
+
+## Exams 
+
+There are 3 exams. The purpose of the exams is to help you retrospectively synthesize the readings. Each exam will focus mostly on material from the immediately preceding part of the course, but there will be some questions that comprehensively integrate across all previous material. Each exam is worth 100 points, for 300 points total. *All exams are mandatory*. Make-up exams are given only if you had to miss an exam for reasons beyond your control, in which case you must notify Prof. Kruschke *immediately and in advance if possible*.
+
+## Research proposal 
+
+Graduate students enrolled in P640, but not undergraduates in P484, will compose a research proposal based on the course readings. The proposal should include an introduction that explains how the course readings motivate the proposed research and what novel contribution would be provided by the research. The proposal should explain the methods and procedures of the proposed research, and how they relate to the course readings. The proposal should also explain anticipated results and what type of statistical procedures might be used. The proposal does *not* need to include simulated (or actual) data or statistical analyzes. The proposal should not exceed 5,000 words. The proposal will count as 15% of the final course grade.
+
+## Course grade 
+
+Letter grades in P484 are based on your total points, as a percentile relative to other students in the course. Percentiles are established for P484 separately from P640. There are no pre-set point cutoffs for specific letter grades, nor is there a pre-set quota for how many students can receive A's or B's, etc. Past experience suggests that there will be approximately 30% A's, 40% B's, 25% C's, and 5% D's. For P640, grades will be assigned as is typical for a graduate readings course.
+
+# Information online: Canvas
+
+Our online hub for the course is IU <a href='https://canvas.iu.edu/' target='_blank'>Canvas (https://canvas.iu.edu/)</a>. If you do not have access to Canvas, please notify Prof. Kruschke immediately. *All announcements and discussion will be consolidated into the P484 Canvas site, therefore students who are enrolled in P640 will be given access to the P484 Canvas site*.
+
+# Contact
+
+## Instructor 
+
+<a href='https://jkkweb.sitehost.iu.edu/' target='_blank'>Prof. John Kruschke</a>, kruschke@indiana.edu. Office hours by appointment; please *do* ask.  Meetings may be held via Zoom.
+
+## Assistant 
+
+Please see info in Canvas.
+
+# Disclaimer
+
+All information in this document is subject to change. Changes will be announced in class.
+
+# University Policies
+
+## Academic Integrity 
+
+As a student at IU, you are expected to adhere to the standards detailed in the Code of Student Rights, Responsibilities, and Conduct (Code). Academic misconduct is defined as any activity that tends to undermine the academic integrity of the institution. Violations include: cheating, fabrication, plagiarism, interference, violation of course rules, and facilitating academic dishonesty. When you submit an assignment with your name on it, you are signifying that the work contained therein is yours, unless otherwise cited or referenced. Any ideas or materials taken from another source for either written or oral use must be fully acknowledged. All suspected violations of the Code will be reported to the Dean of Students and handled according to University policies. Sanctions for academic misconduct may include a failing grade on the assignment, reduction in your final course grade, and a failing grade in the course, among other possibilities. If you are unsure about the expectations for completing an assignment or taking a test or exam, be sure to seek clarification from your instructor in advance.
+
+## Note Selling (Don't)
+
+Several commercial services have approached students regarding selling class notes/study guides to their classmates. Selling the instructor's notes/study guides in this course is not permitted. Violations of this policy will be reported to the Dean of Students as academic misconduct (violation of course rules). Sanctions for academic misconduct may include a failing grade on the assignment for which the notes/study guides are being sold, a reduction in your final course grade, or a failing grade in the course, among other possibilities. Additionally, you should know that selling a faculty member's notes/study guides individually or on behalf of one of these services using IU email, or via Canvas may also constitute a violation of IU information technology and IU intellectual property policies; additional consequences may result.
+
+## Online Course Materials
+
+The faculty member teaching this course holds the exclusive right to distribute, modify, post, and reproduce course materials, including all written materials, study guides, lectures, assignments, exercises, and exams. While you are permitted to take notes on the online materials and lectures posted for this course for your personal use, you are not permitted to re-post in another forum, distribute, or reproduce content from this course without the express written permission of the faculty member. Any violation of this course rule will be reported to the appropriate university offices and officials, including to the Dean of Students as academic misconduct.
+
+-------------------------------------------------------------------------
+
+# Cumulative list of readings 2015-present
+<!-- reference list appears here -->
+

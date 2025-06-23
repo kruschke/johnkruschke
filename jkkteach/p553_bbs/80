@@ -1,0 +1,12 @@
+SUBJECT>Re: Levene's statistic
+POSTER>Nate
+EMAIL>nsteele@indiana.edu
+DATE>Wednesday, 6 November 2002, at 2:41 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.212
+PASSWORD>aaYA4AAdrkTNA
+PREVIOUS>79
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>The Levene statistic is there to gauge whether you should be looking at the pooled (equal variances assumed) output or the upooled (equalf variances not assumed) output to determine the significance of the test.

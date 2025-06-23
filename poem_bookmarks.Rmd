@@ -1,0 +1,42 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Bookmarks and Headstones
+<br>
+<!-- 123 words -->
+
+My shelves lift volumes covered soft and hard,\
+a thousand books I've given brief regard.\
+Slower gazing reveals the multitude\
+all clasping slender markers that protrude\
+like flowers lazing where the reading paused\
+and then expired when the flow was lost.\
+
+Like them my body is a flower clasped\
+between the fast-read chapters of my past\
+and all my future pages still untold.\
+After each day's loud narration, my soul\
+retreats to some hidden library room\
+while body marks where story should resume.\
+
+The vast hillside lawn has horizontal\
+shelves of tightly shouldered bookmarks, some tall\
+some short, but all denoting interrupt-\
+ted narratives of people who have upped\
+and stuck a headstone where life was leading,\
+and where visitors may resume reading.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://grand-little-things.com/2025/02/05/bookmarks-and-headstones-by-john-kruschke/" , journal_name = "*Grand Little Things*" , publication_info = "05 February 2025.")`
+
+*Notes:* 
+The lines are all *decasyllabic*. There is intentional echoing of sounds beyond the end rhymes; for example, "slower gazing" with "flowers lazing" and with "flow was lost". I had fun rhyming "interrupt-/ ted" with "upped/ and". The metaphors -- body as bookmark and headstone as bookmark -- still affect me even after reflection, and I hope they may work for you too.
+
+`r next_link("poem_bookmarks.html")`
+
+</small>

@@ -1,0 +1,149 @@
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S1
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2        4.2222        2.1111        .8261  .4821
+Within Groups              6       15.3333        2.5556
+Total                      8       19.5556
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S2
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2       29.5556       14.7778      10.2308  .0117
+Within Groups              6        8.6667        1.4444
+Total                      8       38.2222
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S3
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2         .6667         .3333        .0857  .9190
+Within Groups              6       23.3333        3.8889
+Total                      8       24.0000
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S4
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2        6.8889        3.4444        .3444  .7218
+Within Groups              6       60.0000       10.0000
+Total                      8       66.8889
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S5
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2       22.8889       11.4444       7.9231  .0207
+Within Groups              6        8.6667        1.4444
+Total                      8       31.5556
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S6
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2         .8889         .4444        .2222  .8070
+Within Groups              6       12.0000        2.0000
+Total                      8       12.8889
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S7
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2       14.0000        7.0000       2.6250  .1517
+Within Groups              6       16.0000        2.6667
+Total                      8       30.0000
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S8
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2        2.8889        1.4444        .1383  .8735
+Within Groups              6       62.6667       10.4444
+Total                      8       65.5556
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S9
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2        4.2222        2.1111        .2088  .8172
+Within Groups              6       60.6667       10.1111
+Total                      8       64.8889
+
+                       - - - - -  O N E W A Y  - - - - -
+
+      Variable  S10
+   By Variable  GROUP
+
+                                  Analysis of Variance
+
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2       21.5556       10.7778       6.9286  .0276
+Within Groups              6        9.3333        1.5556
+Total                      8       30.8889

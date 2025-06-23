@@ -1,0 +1,118 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 7, Due Wednesday Oct 26, 2005.
+
+<!--
+<br>UNDER CONSTRUCTION!
+-->
+
+<font size="-1">
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and
+student ID number (not your SS number). On all subsequent sheets, that
+have your answers, write only your student ID number (not your SS
+number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the
+photocopy. (Of course, you might want to keep another copy for
+yourself!) The copy, with the cover page removed, will be used for
+peer-grading.
+
+<li>
+Show your work. When solving applied problems, first express the
+solution or method in terms of general formulas, then plug in specific
+numbers to get a specific numerical solution. Annotate the progression
+of calculations so that a reader can understand why you are doing what
+you are doing.
+</font>
+
+<p>
+The R code below shows you one way to generate a sample of data from a probability model. It is analogous to the method we used to sample from a posterior distribution. Here, instead of a posterior probability distribution over parameter values, we simply set up a probability distribution over possible data values. The code runs as is; try it. Then figure out exactly what it is doing, so you can adapt the method to your own purposes.
+
+<p>
+For this assignment, do the following:
+<li>Suppose we have <tt>actual_data</tt> as in the R code below. Like Homework 4, start with a 1/sd^2 prior on mu and sd, and determine the posterior on mu and sd for a normal model. Make a contour plot of the posterior. This part is just like HW 4.
+<li>Generate 1,000 samples of mu,sd from that posterior. Plot the sampled mu,sd points along with the 95% confidence contour. This part is just like HW 6.
+<li>Now the new stuff: For each of the 1,000 sampled mu,sd values, generate simulated data from the model. That is, for each mu,sd pair, use the model with those parameter values to generate a random data set of the same size as the actual data. Make a 4x4 layout of histograms as follows: In the top-left cell, plot a histogram of the actual data, labeled as such. In the remaining 15 cells, plot simulated data samples from the model, using the first 15 mu,sd values sampled from the posterior. Show the mu,sd values in each histogram (e.g, using the "main" argument in the "hist" command -- you'll find the "bquote" function useful for this). Discuss whether the simulated data look like the actual data.
+<li>For each of the 1,000 simulated samples, compute the sample mean and sample SD. Make a histogram of the sample means and sample SD's. Do the actual data mean and SD fall in the extreme tails of the simulated sampling distributions? Discuss whether the simulated data seem to capture the actual data.
+
+
+
+
+<hr width="80%"><p>
+<pre>
+# Define the function for the model, i.e. the likelihood function.
+p_data_g_paramvals <- function( datavec , paramvec ) {
+    # This takes two vector arguments:
+    # datavec is vector of data for which probabilities are wanted.
+    # paramvec is vector of specific parameter values.
+    # Returns the probability of each datavec value (in a vector output).
+    #
+    mu = paramvec[1]
+    sd = paramvec[2]
+    # For normal model:
+    probvec <- (1/(sd*sqrt(2*pi))) * exp(-0.5*((datavec-mu)/sd)^2)
+#   # For exponential model:
+#   probvec <- (1/(2*sd)) * exp(-abs((datum-mu)/sd))
+    return( probvec )
+}
+
+# Specify actual data. Here this is used only to establish a reasonable scale
+# for the simulated data, and to establish the sample size for simulated data.
+# Here we have 45 normal points plus 5 outliers:
+actual_data <- c( rnorm(45,2.0,1.0) , runif(5,5.0,15.0) )
+
+# Set up comb for simulated data values.
+comb_min <- mean(actual_data) - 4.0*sd(actual_data) # arbitrary
+comb_max <- mean(actual_data) + 4.0*sd(actual_data) # arbitrary
+comb_inc <- (comb_max - comb_min) / 500 # arbitrary
+sim_data_comb <- seq( from = comb_min ,to = comb_max ,by = comb_inc )
+
+# Specify values of parameters. Here they are just pulled from thin air.
+# Usually they will be sampled from the posterior distribution.
+mu = mean(actual_data)
+sd = sd(actual_data)
+
+# Compute the probability of each value on the data comb, given the
+# parameter values specified above.
+p_sim_data_comb <- p_data_g_paramvals( sim_data_comb , c(mu,sd) )
+p_sim_data_comb <- p_sim_data_comb / sum(p_sim_data_comb) # normalize it!
+
+# Create right and left cdf of the p_sim_data_comb.
+right_cdf <- cumsum( p_sim_data_comb )
+left_cdf <- c( 0 , right_cdf[1:length(right_cdf)-1] )
+
+# Generate a sample of simulated data from the model.
+sim_data_sample <- NULL
+for( s_idx in 1:length(actual_data) ) {
+    randunif <- runif( 1, 0.0, 1.0 )
+    datum_idx <- which( randunif >= left_cdf & randunif < right_cdf )
+    datum_val <- ( sim_data_comb[ datum_idx ]
+                + (comb_inc*runif(1,-0.5,+0.5)) )
+    sim_data_sample <- c( sim_data_sample, datum_val )
+}
+
+layout( c(1,2) )
+hist(actual_data)
+hist(sim_data_sample)
+</pre>
+<p><hr>
+
+
+</body>
+</font>
+</html>
+
+
+

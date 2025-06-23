@@ -1,0 +1,21 @@
+SUBJECT>Re: HW12 #5
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Monday, 16 December 2002, at 5:31 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>106
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<BR>&gt; In the last question, which
+<BR>&gt; case (N=20 or N=200) gave the chi-square
+<BR>&gt; value with higher sifnificance?
+<BR>&gt; Does it mean larger power?
+<P>The question asks: <blockquote> Which case (N=20 or N=200) gave the chi-square value with higher significance (i.e., smaller probability that the null hypothesis would yield a value that large or larger)? </blockquote>
+<P>&gt; Another question, for good
+<BR>&gt; approximation by the continuous
+<BR>&gt; chi-square, is normal population
+<BR>&gt; the only conventional rule?
+<P>The guideline is that expected frequencies in all cells should be at least 5. The reason for this is that it does two things simultaneously: It makes sure that N is reasonably large and it makes sure that no cell probability is too extreme. We needed both of those qualities for the normal to be a good approximation to the binomial, and we need both of those qualities for the continuous chi-square to be a good approximation to the Pearson chi-squre.

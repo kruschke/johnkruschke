@@ -1,0 +1,405 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 9</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology
+<br>Homework 9: Non-Normal Populations
+<br>Due Thursday 20 November 2003.
+</h2>
+</center>
+
+<p><strong>1. (5 pts)</strong>
+Suppose you are a manufacturer of ball bearings, and you want to
+know if two production runs of ball bearings have significantly
+different size. You have three different assistants measure a random
+sample of 30 ball bearings from each run. The first assistant comes
+from the <em>coatings</em> division of the ball bearing plant, so she
+is interested in the <strong>surface area</strong> of the ball
+bearings, because the surface area determines how much anti-oxidant
+will be needed to coat the ball bearings. The second assistant comes
+from the <em>warehouse</em> division of the ball bearing plant, so she
+is interested in the <strong>radius</strong> of the ball bearings,
+because the radius determines how closely the bearings can be packed
+and stored. The third assistant comes from the <em>shipping</em>
+division of the ball bearing plant, so she is interested in the
+<strong>volume</strong> of the ball bearings, because the volume
+determines the weight and hence the shipping cost. All three
+assistants measure the same sample of ball bearings. Run the <a
+href="AreaRadiusVolume.sps">linked SPSS syntax file</a>, and answer
+the following questions.
+<ul>
+
+<li>Look at the syntax lines that generate the sample.  Is the area
+measurement sampled from a normal population, or is it skewed left or
+right? Is the radius measurement sampled from a normal population, or
+is it skewed left or right? Is the volume measurement sampled from a
+normal population, or is it skewed left or right?
+
+<li>For the first ball bearing, verify that area, radius and volume
+have the correct numerical relationship. That is, starting with the
+value of the radius, verify that surface area is 4*pi*radius**2, and
+that volume is (4/3)*pi*radius**3. Annotate the "Case Summaries" table
+with your answer.
+
+<li>When the areas, radii, and volumes are ranked, are the ranks the
+same for the three measures or different? Annotate the "Case
+Summaries" table with your answer.
+
+<li>In the t-tests, are the t values identical for the four different
+measures (i.e., area, radius, volume, and rank)? Do the four different
+measures lead to the same conclusion regarding the null hypothesis?
+
+<li>From the histograms and the descriptive statistics, do any of
+these measures look severely non-normal or non-homogeneous? Say why or
+why not, referring to the SD, skewness, and kurtosis values.
+
+<li>What is the significance level of the Mann-Whitney test? How does
+that compare with the significance level of the t-test on ranks?
+
+</ul>
+
+One conclusion from this exercise is that mild violations of normality
+typically don't have a drastic effect on the significance level.
+
+<p><strong>2. (5 pts)</strong> Response time distributions are often
+heavily skewed to the right. This is intuitively plausible, because
+response times can only be so fast, but there is no limit to how slow
+they can be. The <a href="ResponseTime.sps">linked SPSS syntax
+file</a> generates data skewed to the right. Run the file and do the
+following.
+
+<ul>
+
+<li>What the t-test on the raw data tell you? Annotate the output with
+your answer.
+
+<li>Make histograms of the data from each group separately, and
+determine the skewness and kurtosis of each group. (Use the commands
+in the SPSS file of the previous exercise as a guide, and check the
+SPSS textbook, too!) Are the data strongly non-normal? Annotate the
+"Descriptives" output with your answer.
+
+<li>Transform the data to normal distributions. (Unlike data sampled
+from the real world, here you can look at the SPSS syntax file that
+generated the sample to figure out the exact transformation that will
+normalize the data.)  Run a t-test on the transformed data. Is the
+conclusion of the t-test that same as for the raw data?
+
+<li>Transform the data to ranks. Run a t-test. What is the conclusion
+of the test?
+
+<li>Do a Mann-Whitney test. What is the conclusion?
+
+</ul>
+
+
+
+<p><strong>3. (5 pts)</strong> 
+Consider these data:
+<br>Group A: 0.0, 0.7, 0.7, 1.1, 1.1, 1.4
+<br>Group B: 1.1, 1.4, 1.4, 1.6, 1.6, 1.8
+
+<br>Which of the following transformations makes the group
+data most symmetric and homogeneous? exp(x), ln(x), x<sup>2</sup>,
+sqrt(x). Provide numerical evidence for your claim. <br>(Feel free to
+use SPSS for this problem.)
+
+<p>Consider now these data:
+<br>Group C: 0.0, 0.0, 0.7, 0.7, 1.6, 1.8
+<br>Group D: 0.0, 0.7, 1.6, 1.6, 1.8, 1.8
+
+<br>Which, if any, of the following transformations makes the group
+data  symmetric and homogeneous? exp(x), ln(x), x<sup>2</sup>,
+sqrt(x).  <br>(Feel free to use SPSS for this problem.)  <br>If no
+adequate transformation of the data can be found, what type of test
+could be conducted?
+
+
+<p><strong>4. (5 pts)</strong> A zoologist is studying the sounds
+produced by two species of bats.  She randomly samples 10 recordings
+from each of the two species, and measures the dominant frequency (in
+Hz) of each sound production.  The data are as follows:
+
+<pre>
+spec_1  spec_2
+  4675   38177
+ 34544   80822
+  6634    7708
+   518    1212
+  6974   46630
+ 13360    4024
+   545   89322
+   365     898
+   314   32860
+  1556    4230
+</pre>
+
+Do the two species differ in the mean dominant frequency of their
+sound productions? (Conduct a two-tailed t-test, pooling only if it
+seems appropriate. Use SPSS if you like.)  Have the assumptions of the
+test been satisfied?
+
+<p>The zoologist is actually interested in the effective
+<em>pitch</em> of the sound, not the raw frequency of sound.  (To
+convert to pitch from frequency, just take the logarithm of
+frequency.)  Do the two species differ in the mean dominant pitch of
+their sound productions? (Conduct a two-tailed t-test, pooling only if
+it seems appropriate.)  Have the assumptions of the test been
+satisfied?
+
+<p>Do the conclusions of the two tests differ? Which test is more
+appropriate, the one on frequency or the one on pitch? Why?
+
+
+
+<p><strong>5. (5 pts)</strong> Suppose you are measuring individuals
+on some measure of polarity, and individuals tend to cluster toward -1
+or +1. You have two groups of people, and you want to know whether the
+mean polarities of the groups differ. This is a difficult situation
+because the distributions of the scores are strongly bimodal; i.e.,
+non-normal.  The <a
+href="http://www.indiana.edu/~jkkteach/P553/ResampBimodGrps.SPS">
+linked SPSS file</a> specifies scores from two groups. Do the
+following: (A) Run a t-test on the means of the two groups. Are the
+assumptions of the t-test satisfied? According to the t-test, what is
+the probability of getting a difference of means from the null
+hypothesis this large or larger? (B) Use the SPSS program to generate
+a resampling distribution of the difference of means. According to the
+resampling distribution, are the means of the two groups significantly
+different? What is the probability of getting a difference of means
+from the null hypothesis this large or larger? Remember, it's a
+two-tailed test.
+
+
+
+<!-- --------------------------------------------------------------
+
+<p><strong>3. (6 pts)</strong> Consider hypothetical data for two
+groups as follows: <br>Group 1: 1 20 22 24 <br>Group 2: 23 25 27 46
+
+<ul>
+
+<li>Conduct a two-tailed t-test on the scores (pooling if
+appropriate). Are the assumptions of the t-test met?
+
+<li>Convert the original scores to rank values, and conduct a t-test
+on the ranks. (Use the Minitab "<tt>rank</tt>" command.) How does the
+conclusion compare with the previous test?
+
+<li>Conduct a randomization test on the scores, using the Minitab
+macro shown below.  Generate a sampling distribution from 500
+samplings.  How does the conclusion compare with the previous two
+tests?  In particular, is the shape of the sampling distribution
+roughly normal?
+
+</ul>
+
+<p><strong>4. (8 pts)</strong> A researcher is studying the effects
+of two drugs.  Four rats are randomly assigned to each of two groups,
+where Group 1 gets Drug A and Group 2 gets Drug B.  The researcher
+measures the time it takes each rat to get through a maze.  Results
+are as follows: 
+<br>Group 1 times (in minutes): 1.000, 0.500, 0.333, 0.250.  
+<br>Group 2 times: 0.250, 0.200, 0.167, 0.143.
+
+<ul>
+
+<li>Conduct a two-tailed t-test on the times. Are the assumptions of
+the t-test met?
+
+<li>Now reconsider the dependent variable.  Instead of measuring time
+taken, transform it to speed.  Since the net distance travelled was a
+constant, converting time to speed is accomplished by computing the
+reciprocal of time.  Now conduct a two-tailed t-test on the speeds.
+Are the conlusions the same for the test on time and on speed?  Which
+test is more appropriate and why?
+
+<li>Convert the original (time) scores to rank values, and conduct a
+t-test on the ranks. (Use the Minitab "<tt>rank</tt>" command.)  Do
+the same with the transformed (speed) scores.  How do the conclusions
+compare with the previous two tests?
+
+<li>Conduct a randomization test on the original (time) scores, using
+the Minitab macro shown below.  Generate a sampling distribution from
+500 samplings.  Do the same with the transformed (speed) scores.  How
+do the conclusions compare with the previous three tests?  In
+particular, are the shapes of the sampling distributions roughly
+normal?
+
+</ul>
+
+<p><hr>
+
+<p>Here is a Minitab macro, <tt>tgrt.MAC</tt>, for running a
+two-group randomization test for the difference of means of two
+groups.  Scores are entered in column X, group codes in column Y (the
+group codes must be 1 or 2).  You must specify the number N of samples
+it should generate and the column Z in which it should store the
+samples.  The command then looks like this:
+
+<pre>
+MTB > %tgrt X Y N Z
+</pre>
+
+<p><em>Notice the "%" at the beginning, which tells Minitab to look
+for the macro program tgrt.MAC in your directory.</em>
+
+<p>For example, if the scores were in column c1 and the group codes
+were in column c2, and you wanted to generate 500 samples, with column
+c3 as storage for the sample differences of means, you'd type:
+
+<pre>
+MTB > %tgrt c1 c2 500 c3
+</pre>
+
+<p>Here is the macro program code itself; you can type it into a file
+in your account, or you can copy it from my directory on Zinc:
+/N/fs2/kruschke/Zinc/tgrt.MAC
+
+<pre>
+macro
+tgrt x y n z
+#
+# Minitab macro by John Kruschke, November 1996.
+# Does a two-group randomization test, outputting a histogram
+# of the differences of means.
+# Arguments:
+# x = data column
+# y = group code column; groups must be coded as 1 and 2
+# n = number of samplings to generate
+# z = column for depositing sample statistics
+#
+############################################################
+#
+# Declare variables:
+#
+# macro arguments (global variables) defined above:
+#
+mcolumn x
+mcolumn y
+mconstant n
+mcolumn z
+#
+# other (local) variables:
+#
+# d is a 'dummy' column used for permuted group codes
+mcolumn d
+# ct is the total number of scores (total sample size)
+mconstant ct
+# i is a dummy index for loops
+mconstant i
+mconstant pval
+mconstant act
+# rx is row index and sample counter
+mconstant rx
+# s1 is sum group 1
+mconstant s1
+# n1 is count of group 1
+mconstant n1
+# s2 is sum group 2
+mconstant s2
+# n2 is count of group 2
+mconstant n2
+#
+# Determine total sample size
+#
+let ct = count(x)
+#
+# Determine the difference of means for the *actual* sample:
+#
+# initialize accumulators
+#
+let n1 = 0
+let n2 = 0
+let s1 = 0
+let s2 = 0
+# 
+# go through the scores and accumulate group sums
+#
+do i = 1 : ct
+	if y(i) = 1
+		let s1 = s1 + x(i)
+		let n1 = n1 + 1
+	elseif y(i) = 2
+		let s2 = s2 + x(i)
+		let n2 = n2 + 1
+	else
+		note ERRONEOUS GROUP CODE (MUST BE 1 OR 2)
+		exit
+	endif
+enddo
+# 
+# output the difference of means in the sampling column
+#
+	let act = (s2/n2)-(s1/n1)
+	note
+	note ACTUAL DIFFERENCE OF GROUP MEANS (GROUP 2 - GROUP 1):
+	print act
+#
+# Now generate the sampling distribution:
+#
+# initialize sample counter 
+#
+do rx = 1 : n
+	#
+	# initialize accumulators
+	#
+	let n1 = 0
+	let n2 = 0
+	let s1 = 0
+	let s2 = 0
+	#
+	# permute the group codes from column y, put into column d
+	#
+	sample ct y d
+	# 
+	# go through the scores and accumulate group sums
+	#
+	do i = 1 : ct
+		if d(i) = 1
+			let s1 = s1 + x(i)
+			let n1 = n1 + 1
+		elseif d(i) = 2
+			let s2 = s2 + x(i)
+			let n2 = n2 + 1
+		else
+			note ERRONEOUS GROUP CODE (MUST BE 1 OR 2)
+			exit
+		endif
+	enddo
+	# 
+	# place the difference of means in the sampling column
+	#
+	let z(rx) = (s2/n2)-(s1/n1)
+enddo
+#
+# output statistics of sampling distribution
+#
+note 
+note SAMPLING DISTRIBUTION STATISTICS (DESCRIBE, DOTPLOT, HISTOGRAM):
+describe z
+dotplot z
+histogram z
+#
+# compute probability of obtained difference of means
+#
+let pval = ( sum( abs(z) >= abs(act) )) / n
+note
+note TWO-TAILED PROBABILITY (UNDER NULL HYPOTHESIS)
+note OF GETTING ACTUAL DIFFERENCE OR GREATER:
+print pval
+endmacro
+</pre>
+
+----------------------------------------------------------- -->
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

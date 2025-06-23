@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+
+<h2> <a href="http://www.indiana.edu/~jkkteach/Q550/">Q550 Models in
+Cognitive Science</a>, <a
+href="http://www.indiana.edu/~kruschke/" target="new">Prof. John
+K. Kruschke</a>
+</h2>
+
+</center>
+
+<p><strong>Spring 2003:</strong> Unlike previous renditions of this
+course, Q550 is now supposed to be a "capstone" course that integrates
+Q530 (programming methods) and Q560 (empirical methods) with cognitive
+modeling. (Links to the previous version of this course appear at the
+bottom of this page.)
+
+<p><em>Pre-requisites:</em> Students should have previously taken Q530
+(programming methods) and Q560 (empirical methods), or have equivalent
+experience and knowledge. This means (1) having some experience with
+programming computers in some language - we'll be using MATLAB and
+SPSS, which you can learn quickly if you have previous computer
+programming experience, and (2) having some experience with or
+exposure to collecting and analyzing data from biologically animate
+cognitive organisms such as humans. If you don't have much experience
+with these methods, take the course at your own risk!
+
+<p><em>Goals:</em> Students will get experience doing four things:
+<ol>
+<li>Design and run a simple experiment relevant to their research interests.
+<li>Analyze the data using standard inferential statistics.
+<li>Program a simple cognitive process model for the experiment task.
+<li>Fit the model to the data.
+</ol>
+
+<p><em>Approximate schedule and topics:</em>
+<ul>
+<li><em>Complete example of doing four things above, from
+literature.</em> (2 weeks) <li><em>Complete example of doing four
+things above, hands-on, for a "canned" experiment and model.</em> (2
+weeks) <li><em>Design and execute student's own experiment.</em>
+Should be a simple experiment replicating an established effect, for
+educating the rest of the class. Experiment can be implemented in
+PowerPoint, paper and pencil, Matlab, etc. Classmates will serve as
+participants. (4 weeks) <li><em>Analyze own data.</em> (2 weeks)
+<li><em>Program own model.</em> Should be a simple model reflecting
+established theories in the literature, for educating the rest of the
+class. "Simple" means, in particular, having only a few free
+parameters. We'll use Matlab. (3 weeks). <li><em>Fit model to
+data.</em> (1 week) <li><em>Present project to class.</em> This will
+be done in stages as the class progress, not as a final. </ul>
+
+<p>Readings and materials: Collected chapters, articles; no main
+textbook. The main computer software will be Matlab; possibly also
+SPSS.
+
+
+<p>
+
+<h2>MatLab resources:</h2>
+
+MatLab is available on all I.U. public computers <em>except</em> Apple
+Macintoshes.
+
+<p>If you want to install it on your own machine, I.U. students can
+buy an annual lease through the StatMath Center, or buy directly from
+MatLab. The Student Version release 13 costs $99 direct from MathWorks
+(the manufacturer of MatLab), and toolboxes typically cost $59 each.
+
+<p>The I.U. machines also have many MatLab Toolboxes installed,
+including the Statistics Toolbox, the Optimization Toolbox, the Neural
+Network Toolbox, and others. The toolbox for running experiments via
+MatLab is available separately; see the link below.
+
+<ul>
+
+<li><a
+href="http://www.indiana.edu/~statmath/math/matlab/">I.U. StatMath:
+Matlab main page.</a> The local I.U. StatMath Center master page for
+MatLab.
+
+<li><a
+href="http://www.indiana.edu/~statmath/math/matlab/links.html">I.U. StatMath:
+Links to Matlab resources.</a> A list of useful links for MatLab,
+including many tutorials.
+
+<li><a href="http://psychtoolbox.org/">Experiment toolbox for
+MatLab.</a> This links to the Psychophysics Toolbox by Brainard and
+Pelli.
+
+<li><a href="http://www.mathworks.com/">MatLab Vendor: MathWorks.</a>
+This links to the manufacturer of MatLab.
+
+<li><a
+href="http://www.mathworks.com/access/helpdesk/help/techdoc/matlab.shtml">MatLab
+tutorial from the manufacturer.</a>
+
+
+
+
+</ul>
+
+<p><hr>
+
+
+<p>The format of Q550 for Spring 2003 is different than previous
+renditions of Q550. The pages linked below are from the previous
+version (2001), so do not read them if you want to know about the
+upcoming version. But the old version was golden, so take a look for
+nostalgia's sake.
+
+
+<p>2001:
+
+<font size=+2>
+
+<ul>
+
+	<li> <a href="syllabus.html" target="new">Syllabus.</a>
+
+	<li> <a href="schedule.html" target="new">Schedule, with readings and homework.</a>
+
+	<li><a href="instructor.html" target="new">Instructor and Assistant 
+	Contact Information</a>
+
+	<li> <a href="http://www.indiana.edu/~jkkteach/q550_bbs/q550.cgi" target="new">
+	Discussion and Announcements</a>
+
+	<li> 
+	<a href="https://www.indiana.edu/~best/cgi-bin/postem/students.pl" target="new">
+	Your personal homework scores</a>.
+
+	<li> <a href="links.html" target="new">Links to Other Resources</a>
+
+</ul>
+
+</font>
+
+<p><hr>
+</BODY>
+</HTML>
+
+

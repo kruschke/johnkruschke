@@ -1,0 +1,105 @@
+---
+title: "_poem_r_code.Rmd"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(kableExtra)
+library(qrcode)
+
+# Poem info data frame:
+poem_info <- rbind(
+  c( "", "poems", 0, "01 Jan 1900" ) # placeholder for first
+  , c( "", "poems", 10000, "31 Dec 2100" ) # placeholder for last
+  , c( "Magnifying Glass (haiku)", "poem_magnifying_glass", 17, "25 Apr 2025" ) 
+  , c( "Selected Quatrains from DBDA2", "poem_selected_quatrains", 32, "03 Nov 2014" )
+  , c( "Looking East", "poem_looking_east", 45, "07 Dec 2024" ) 
+  , c( "Stratigraphy", "poem_stratigraphy", 50, "17 Feb 2025" )
+  , c( "Honor Among Sleeves", "poem_honor_among", 264, "15 Oct 2025" )
+  , c( "The Power of Poetry for Climate Change", "poem_the_power_of_poetry", 51, "01 Mar 2025" )
+  , c( "Any Time Spent", "poem_any_time", 72, "17 Feb 2025" )
+  , c( "Open Mic Night", "poem_open_mic", 117, "01 Mar 2025" )
+  , c( "Bookmarks and Headstones", "poem_bookmarks", 123, "05 Feb 2025" )
+  , c( "Were It Not for the Firefly", "poem_were_it_not", 129, "01 Sep 2024" )
+  , c( "A Late Afternoon Lying on My Back", "poem_a_late_afternoon", 131, "13 Aug 2025" )
+  , c( "At the Window", "poem_at_the_window", 138, "17 Feb 2025" )
+  , c( "The Sun Shines Fluidly on Every House", "poem_the_sun_shines", 170, "29 Nov 2024" )
+  , c( "Under Their Sink", "poem_under_their_sink", 168, "21 Jun 2025" )
+  , c( "The Purpose of Time", "poem_the_purpose_of_time", 173, "20 Feb 2025" )
+  , c( "Carbon Footprints of Unwanted Children", "poem_carbon_footprints", 208, "17 Feb 2025" )
+  , c( "In Retirement Sunlight Falls / Blackbirds Hang", "poem_in_retirement", 310, "16 May 2025" )
+  , c( "Cruel Sestina", "poem_cruel_sestina", 315, "01 Oct 2024" )
+  , c( "Golden State", "poem_golden_state", 326, "19 Dec 2024" )
+  , c( "Cueva de las Manos", "poem_cueva_de_las_manos", 212, "15 Sep 2025" )
+)
+# name, format, sort:
+colnames( poem_info ) <- c("title", "file", "n_word", "pub_date" )
+poem_info <- data.frame( poem_info )
+poem_info$file <- paste0( poem_info$file , ".html" )
+poem_info$n_word <- as.numeric( poem_info$n_word )
+poem_info$pub_date <- as.Date( poem_info$pub_date , format = "%d %b %Y" )
+poem_info <- poem_info[ order(poem_info$n_word), ]
+# poem_info <- poem_info[ order(poem_info$pub_date), ]
+# poem_info |> str()
+
+# Function for creating html table of next-poem links:
+next_link <- function( this_poem_file ){ # assumes `poem_info` is global df
+  this_poem_idx <- which( poem_info$file == this_poem_file )
+  table_html <- paste0(
+    "<table style='width:100%'><tr>
+    <td style='width:33%; text-align:left'>[&#8592; Previous Poem](",
+    poem_info$file[this_poem_idx-1]
+    ,")</td>
+    <td style='width:34%; text-align:center'>[Poem List &#8593;](poems.html#sec-my_poems)</td>
+    <td style='width:33%; text-align:right'>[Next Poem &#8594;](",
+    poem_info$file[this_poem_idx+1]
+    ,")</td>
+    </tr></table>"
+  )
+  return( table_html )
+}
+
+# Function for a link that opens in new tabl:
+link_new_tab <- function( url , display_text = url ){
+  return( paste0( 
+    '<a href="' , url , '" target="_blank">' , display_text , '</a>' ) )
+}
+
+# Function for creating html with qrc image, journal name, and pub info:
+qrc_png <- function( url , journal_name = url , publication_info = "" , 
+                     qrc_ht=60  ){
+  require("qrcode")
+  # create filename, remove punct from url:
+  png_name <- url
+  for ( split_at in c( "/" , ":" , "\\." , "-" , "_" , "=" , "\\&" , "\\?" ,
+                       "%" , "#"  ) ) {
+    png_name <- paste0( strsplit( png_name , split_at )[[1]] , collapse="" )
+  }
+  png_name <- paste0( "qrc_" , png_name , ".png" )
+  # create qr code image and save:
+  qrc <- qr_code( url )
+  png( png_name )
+  plot( qrc )
+  invisible( dev.off() )
+  # Return formatted image and text:
+  img_str <- paste0( "<img src='" , png_name ,
+                     "' height=" , qrc_ht , 
+                     " class='image-left'>" )
+  url_str <- paste0( "<a href='" , url ,
+                     "' target='_blank'>" ,
+                     journal_name , "</a>" )
+  end_str <- "<br clear='left'>"
+  return( paste( img_str , url_str , 
+                 ifelse( nchar(publication_info)>0 , ", " , "" ) , 
+                 publication_info , end_str ) )
+}
+
+# Definition of marker at end of poem:
+end_poem_mark <- "<br><p>" 
+# end_poem_mark <- "<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9753; &#10087; <p>"
+```

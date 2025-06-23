@@ -1,0 +1,21 @@
+SUBJECT>Computing the linear regression equation by hand...
+POSTER>Nate
+EMAIL>nsteele@indiana.edu
+DATE>Monday, 28 October 2002, at 1:57 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.212
+PASSWORD>aaYA4AAdrkTNA
+PREVIOUS>
+NEXT> 71
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>When figuring out what the regression equation is for raw scores (as in #3), it may be helpful to understand the concepts below:
+<P>The book gives you the standardized regression equation as
+<P>Zyi = rZxi (leaving out the + 0 for the intercept once standardized)
+<P>To calculate the raw score regression equation can be computed using what we know about Zscores...
+<P>(Yi - My)/SDy = r (Xi - Mx)/SDx
+<P>And then algebraically moving everything but Y over to the right...
+<P>Yi = [(SDy r)/SDx] Xi + [(SDy r Mx)/SDx] + My
+<P>This works out such that the first bracketed equation is the slope, and the second bracketed equation plus the mean of Y is the intercept. You won't have a Y or an X. The Y that is calculated is a predicted Y (denoted as Y with a hat/carat over it) and will not exactly match the Y values you have.
+<P>The values you arrive at should match the unstandardized B scores in SPSS's linear regression output or the linear regression line you can select for a scattergram (whichever you use to verify your handwork).
+<P>There is something close to this in the book, but this method may be easier since you already have all these values from calculating the z scores. Don't forget if you're predicting raw Y scores from raw Y scores you'll need to use raw coefficients (i.e., what you arrive at from this equation).

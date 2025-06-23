@@ -1,0 +1,177 @@
+From mgrlog@avanti.ucs.indiana.edu Thu Aug  1 06:31:26 1996
+Received: from belize.ucs.indiana.edu by croton.psych.indiana.edu; (5.65/1.1.8.2/07May94-0233PM)
+	id AA02836; Thu, 1 Aug 1996 06:31:26 -0500
+Received: from avanti.ucs.indiana.edu (avanti.ucs.indiana.edu [129.79.17.41]) by belize.ucs.indiana.edu (8.7.3/8.7.3/1.10IUPO) with SMTP id GAA25732 for <kruschke@indiana.edu>; Thu, 1 Aug 1996 06:29:49 -0500 (EST)
+Received: by avanti.ucs.indiana.edu; id AA09743; Thu, 1 Aug 1996 06:29:49 -0500
+Date: Thu, 1 Aug 1996 06:29:49 -0500
+From: Log Manager <mgrlog@avanti.ucs.indiana.edu>
+Message-Id: <9608011129.AA09743@avanti.ucs.indiana.edu>
+To: kruschke@indiana.edu
+Subject: WWW usage reports
+Status: RO
+
+<HTML><HEAD>
+<TITLE>World-Wide Web Access Statistics for jkkteach for www.indiana.edu</TITLE>
+</HEAD><BODY>
+<H1>World-Wide Web Access Statistics for jkkteach for www.indiana.edu</H1>
+<EM>Last updated: Thu, 01 Aug 1996 06:29:48 (GMT -0500)</EM>
+<UL>
+<LI><A HREF="#Daily">Daily Transmission Statistics</A>
+<LI><A HREF="#Hourly">Hourly Transmission Statistics</A>
+<LI><A HREF="#Domain">Total Transfers by Client Domain</A>
+<LI><A HREF="#Clump">Total Transfers by UCS Central UNIX Machines</A>
+<LI><A HREF="#Indiana">Total Transfers for Indiana University</A>
+<LI><A HREF="#USUniversity">Total Transfers by US University</A>
+<LI><A HREF="#Subdomain">Total Transfers by Subdomain</A>
+<LI><A HREF="#Archive">Total Transfers from each Archive Section</A>
+</UL>
+<H2>Totals for Summary Period:  Jul  1 1996 to Jul 30 1996</H2>
+<PRE>
+Files Transmitted During Summary Period             180
+Bytes Transmitted During Summary Period          991869
+Average Files Transmitted Daily                       9
+Average Bytes Transmitted Daily                   49593
+</PRE>
+<HR>
+<H2><A NAME="Daily">Daily Transmission Statistics</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Date
+----- ----- ------------ -------- |------------
+ 3.89  2.76        27413        7 | Jul  1 1996
+ 1.67  1.67        16596        3 | Jul  2 1996
+ 5.00  3.92        38840        9 | Jul  3 1996
+15.00 16.42       162884       27 | Jul  5 1996
+ 1.67  0.70         6925        3 | Jul  7 1996
+ 2.22  1.69        16776        4 | Jul  8 1996
+ 7.78  8.78        87065       14 | Jul  9 1996
+ 8.89  4.46        44266       16 | Jul 10 1996
+ 7.78  8.58        85074       14 | Jul 11 1996
+ 7.22  4.83        47899       13 | Jul 14 1996
+ 1.67  3.36        33282        3 | Jul 17 1996
+ 2.78  4.29        42556        5 | Jul 18 1996
+ 6.11  4.84        47988       11 | Jul 19 1996
+ 5.56  6.06        60081       10 | Jul 22 1996
+ 1.11  1.10        10924        2 | Jul 24 1996
+ 2.78  4.12        40825        5 | Jul 26 1996
+ 1.67  1.50        14864        3 | Jul 27 1996
+ 2.78  3.73        36956        5 | Jul 28 1996
+13.33 16.10       159731       24 | Jul 29 1996
+ 1.11  1.10        10924        2 | Jul 30 1996
+</PRE>
+<HR>
+<H2><A NAME="Hourly">Hourly Transmission Statistics</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Time
+----- ----- ------------ -------- |-----
+ 6.11  6.36        63083       11 |  00
+ 5.56  6.81        67586       10 |  03
+ 0.56  0.98         9714        1 |  04
+ 1.11  1.10        10924        2 |  06
+ 3.89  2.76        27413        7 |  08
+10.00 13.53       134198       18 |  09
+10.00 10.38       102934       18 |  10
+ 3.89  4.58        45452        7 |  11
+ 9.44 10.76       106730       17 |  12
+16.11 10.85       107572       29 |  13
+ 7.22  8.56        84937       13 |  14
+ 7.22  6.30        62469       13 |  15
+ 7.78  7.39        73281       14 |  16
+ 2.22  3.05        30220        4 |  18
+ 0.56  0.02          180        1 |  19
+ 1.67  0.92         9164        3 |  20
+ 2.78  3.73        36956        5 |  22
+ 3.89  1.92        19056        7 |  23
+</PRE>
+<HR>
+<H2><A NAME="Domain">Total Transfers by Client Domain</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Domain
+----- ----- ------------ -------- |------------------------------------
+ 2.78  2.02        20005        5 | ca    Canada
+ 5.00  5.84        57915        9 | jp    Japan
+ 0.56  1.24        12269        1 | uk    United Kingdom
+ 8.33  7.40        73435       15 | com   US Commercial
+44.44 39.65       393228       80 | edu   US Educational
+ 1.67  0.92         9164        3 | net   Network
+ 1.67  1.62        16052        3 | unresolved 
+35.56 41.32       409801       64 | indiana.edu 
+</PRE>
+<HR>
+<H2><A NAME="Clump">Total Transfers by UCS Central UNIX Machines</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   UCS Central UNIX Machines
+----- ----- ------------ -------- |------------------------------------
+</PRE>
+<HR>
+<H2><A NAME="Indiana">Total Transfers for Indiana University</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Indiana University
+----- ----- ------------ -------- |------------------------------------
+ 2.78  3.73        36956        5 | evermann.indiana.edu
+ 1.11  1.38        13728        2 | iun.indiana.edu
+ 1.11  3.39        33580        2 | music.indiana.edu
+18.33 19.97       198068       33 | psych.indiana.edu
+ 0.56  0.98         9671        1 | tuliptree.indiana.edu
+ 1.67  1.50        14864        3 | ucs.indiana.edu
+</PRE>
+<HR>
+<H2><A NAME="USUniversity">Total Transfers by US University</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   US University
+----- ----- ------------ -------- |------------------------------------
+ 1.11  2.38        23611        2 | csus.edu
+ 0.56  0.02          180        1 | du.edu
+ 3.33  4.36        43286        6 | nevada.edu
+ 1.67  1.67        16596        3 | nyu.edu
+35.00 26.66       264393       63 | purdue.edu
+ 2.22  4.33        42996        4 | stanford.edu
+ 0.56  0.22         2166        1 | washington.edu
+</PRE>
+<HR>
+<H2><A NAME="Subdomain">Total Transfers by Subdomain</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Subdomain
+----- ----- ------------ -------- |------------------------------------
+10.00 10.38       102934       18 | Indiana University Public Clusters
+18.33 17.42       172788       33 | Other Domains
+ 1.67  1.62        16052        3 | Unresolved
+</PRE>
+<HR>
+<H2><A NAME="Archive">Total Transfers from each Archive Section</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Archive Section
+----- ----- ------------ -------- |------------------------------------
+ 1.67  0.45         4512        3 | /~jkkteach/P335/aivideo.html
+ 2.78  5.77        57230        5 | /~jkkteach/P335/app1.html
+ 3.33  1.33        13224        6 | /~jkkteach/P335/compmet.gif
+ 3.33  2.43        24084        6 | /~jkkteach/P335/exam1.html
+ 0.56  0.26         2596        1 | /~jkkteach/P335/exam2.html
+ 0.56  0.32         3213        1 | /~jkkteach/P335/exam3.html
+ 1.11  0.54         5346        2 | /~jkkteach/P335/exam4.html
+ 2.22  5.23        51848        4 | /~jkkteach/P335/goals.html
+ 3.33  1.26        12510        6 | /~jkkteach/P335/knoworgbot.gif
+ 3.33  1.99        19704        6 | /~jkkteach/P335/knoworgsmall.gif
+ 3.33  0.85         8478        6 | /~jkkteach/P335/knoworgtop.gif
+14.44 13.83       137172       26 | /~jkkteach/P335/p335.html
+ 1.11  1.60        15836        2 | /~jkkteach/P335/p335schedule.html
+ 1.11  1.10        10870        2 | /~jkkteach/P335/scores.html
+ 3.89 11.87       117754        7 | /~jkkteach/P335/syllabus.html
+ 0.56  0.18         1775        1 | /~jkkteach/P553/bronowski.html
+ 0.56  0.32         3188        1 | /~jkkteach/P553/exam1.html
+ 0.56  0.20         1996        1 | /~jkkteach/P553/exam2.html
+ 0.56  0.16         1568        1 | /~jkkteach/P553/hw6.html
+ 0.56  0.18         1759        1 | /~jkkteach/P553/hw9.html
+ 6.67 10.74       106479       12 | /~jkkteach/P553/p553.html
+ 0.56  0.70         6937        1 | /~jkkteach/P553/schedule.html
+ 2.22  5.54        54940        4 | /~jkkteach/P553/syllabus.html
+ 1.11  0.49         4842        2 | /~jkkteach/Q500/categorization.html
+ 4.44  5.50        54568        8 | /~jkkteach/Q750/q750.html
+ 4.44 13.54       134320        8 | /~jkkteach/Q750/syllabus.html
+12.78  7.50        74435       23 | /~jkkteach/bg.gif
+15.56  2.95        29309       28 | /~jkkteach/hr.gif
+ 0.56  1.24        12269        1 | /~jkkteach/usage/Dec95.html
+ 1.11  1.72        17104        2 | /~jkkteach/usage/Jun96.html
+ 1.67  0.20         2003        3 | /~jkkteach/usage/usage.html
+</PRE>
+<HR>
+</BODY></HTML>

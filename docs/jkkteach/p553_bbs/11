@@ -1,0 +1,18 @@
+SUBJECT>Re: Homework 3, #11
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Friday, 20 September 2002, at 11:39 a.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>7
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<BR>&gt; Finally, #11. Put simply,
+<BR>&gt; huh??? I'm not even sure where
+<BR>&gt; to start...what exactly should
+<BR>&gt; we be putting into SPSS to generate
+<BR>&gt; necessary syntax files?
+<P>Perhaps you didn't see that a complete syntax file is already linked into the homework. Just click on the link in the homework.
+<P>The SPSS program generates distributions of sample SD from two different uniform populations. From its output, you can get a pretty good estimate of power, if you understand what the program is doing and what the output is showing you.

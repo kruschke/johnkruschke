@@ -1,0 +1,13 @@
+SUBJECT>Re: Estimated Sigma &amp; Sample Test
+POSTER>Haixia
+EMAIL>hailiu@indiana.edu
+DATE>Wednesday, 2 October 2002, at 6:34 p.m.
+IP_ADDRESS> REMOTE_HOST: dial-116-42.dial.indiana.edu; REMOTE_ADDR: 156.56.116.42
+PASSWORD>aat2xy.pMef8Y
+PREVIOUS>50
+NEXT> 52
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>I think the two mathods should get the same result. I guess here what confused you is that in Prof. Kruschke's mathod, t is not equal to (M-mu)/sigma, but (M-mu)/(sigma/sqrtN). The estimated sigma, as stated by Prof. Kruschke, is equal to sqrt(ss/df), so, t=(M-mu)/sqrt(ss/df/N), which is exactly the same method stated in the book.
+<P>

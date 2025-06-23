@@ -1,0 +1,12 @@
+SUBJECT>Hmw 3, #11
+POSTER>Mario F.
+EMAIL>mfific@indiana.edu
+DATE>Monday, 23 September 2002, at 5:58 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.98
+PREVIOUS>
+NEXT> 24
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Note that you have two distributions to compare. They are not distribution of sample means but distribution of sample standard deviations. In order to estimate power forget that they are distribution of st.dev. but treat them in the same way as they are distribution of sample means. As you will discovered they have different means, but don't be misled with the fact that they have different standard deviations. In order to APROXIMATE power of the test you will need percentiles that are calculated for each of the distributions of st.dev. (see values in SPSS output tables). Percentiles should help you to determine cut-off score for 'null' distribution and for 'alternative' - as soon as you find score on alternative hypothesis approximation of the associated percentile on the 'alternative' distribution should be very easy to find.
+<P>In short- solution to this problem should be very easy to find without much calculations.

@@ -1,0 +1,205 @@
+<html>
+<font face="tahoma">
+<body>
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 9, Due Wednesday Nov. 9, 2005.
+
+<!--
+<br>UNDER CONSTRUCTION!
+-->
+
+<font size="-1">
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and
+student ID number (not your SS number). On all subsequent sheets, that
+have your answers, write only your student ID number (not your SS
+number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the
+photocopy. (Of course, you might want to keep another copy for
+yourself!) The copy, with the cover page removed, will be used for
+peer-grading.
+
+<li>
+Include your complete R program. Make sure it is well commented, so that
+the reader knows why each line of code is there.
+</font>
+
+<p>
+<b>This is a repeat of the previous homework assignment, but this time you use the Metropolis algorithm instead of rejection sampling.</b>
+
+Suppose, like last time, that we have a model with three parameters, a, b and c, with each in the interval [0,1]. Suppose that the posterior probability on a,b,c is proportional to the value p_abc given by this function:
+
+<pre>
+p_abc <- function( a , b , c ) {
+    d <- ((1-a)+b+c)/3
+    prob <- d^10*(1-d)^2 * a*(1-a)*b*(1-b)*c*(1-c)
+    return( prob )
+}
+</pre>
+Notice that the function is not normalized; pretend it is just the
+numerator of the posterior function determined by Bayes' formula.
+<em>Our goal is to estimate 95% confidence intervals on a, b and
+c.</em> (In this case we are finding the confidence intervals on the
+marginal distributions of a, b and c. We are not finding a 3D
+confidence region in a,b,c space.)
+
+Adapt the Metropolis algorithm from the code below to estimate
+confidence intervals on a, b and c.  Make histograms of 1,000 accepted
+a, b and c values, also showing the limits of the estimated 95%
+confidence interval and the number of rejected samples. Be careful not
+to use the initial "burn in" samples in the final 1,000 accepted
+points.  How many times was p_abc computed overall?
+
+
+<p>
+<hr>
+<br>
+<small>
+<pre>
+# Playing with the Metropolis algorithm.
+# John Kruschke, 1 November 2005.
+
+# Some illustrative variations:
+#
+# No adaptive SD for the jump distribution (i.e., sd_adapt <- FALSE ),
+# and sd's set small, at 0.2 (i.e., sd_a_now <- 0.2 and sd_b_now <- 0.2 ).
+# This yields few rejected candidate jumps, but takes a long time to
+# explore the parameter space.
+#
+# No adaptive SD for the jump distribution (i.e., sd_adapt <- FALSE ),
+# and sd's set large, at 20.0 (i.e., sd_a_now <- 20.0 and sd_b_now <- 20.0 ).
+# This yields many rejected candidate jumps, but explores the whole
+# parameter space.
+#
+# Adaptive SD (i.e., sd_adapt <- TRUE ).
+
+# Clean slate.
+rm(list=ls(all=TRUE))
+
+# Specify the probability distribution from which we want to sample.
+# Here I use the weird function I invented for previous homeworks.
+p_ab <- function( a, b ) {
+    # a can be any real value, roughly in [-30,+30]
+    # b should be positive, roughly in (0,+30]
+    # Note: resulting prob is not normalized.
+    if ( b > 0 ) {
+        prob <- exp(-((b-2-exp(a/7))/sqrt(b))^2)*exp(-((a-0)/13)^2)
+    } else {
+        prob <- 0.0
+    }
+    return( prob )
+}
+
+# Specify number of accepted points desired.
+n_goal <- 1000
+
+# Initialize the storage matrix for accepted a,b values.
+# ncol is 3 because it stores (1) a, (2) b and (3) probability(a,b).
+accepted_ab <- matrix( 0 , nrow=n_goal, ncol=3 )
+
+# Specify the initial a,b value for the random walk.
+# Careful that initial a,b has non-zero probability!
+a_now <- -10.0
+b_now <- 25.0
+p_now <- p_ab( a_now , b_now )
+
+# Store the initial position in the matrix of accepted values.
+n_accepted <- 1
+n_rejected <-0
+accepted_ab[n_accepted,] <- c( a_now , b_now , p_now )
+
+# Specify the next a,b position as a function of current a,b position.
+# This is the "jumping" or "proposal" distribution.
+# This function returns a vector with components a_next,b_next.
+ab_jump <- function( a_now, b_now, sd_a_now, sd_b_now ) {
+    # This is bivariate normal with zero covariance.
+    a_next <- rnorm(1, a_now, sd_a_now )
+    b_next <- rnorm(1, b_now, sd_b_now )
+    return( c( a_next , b_next ) )
+}
+
+# Initialize the attributes of the jumping distribution.
+sd_a_now <- 2.0
+sd_b_now <- 2.0
+sd_adapt <- FALSE
+
+# Do the random walk as a while-loop, which goes until we've accepted the
+# number of points specified by n_goal.
+while ( n_accepted < n_goal ) {
+
+    # Generate a candidate next a,b
+    ab_next_candidate <- ab_jump( a_now, b_now, sd_a_now, sd_b_now )
+
+    # For convenience, decompose that vector into its a,b components.
+    a_next_candidate <- ab_next_candidate[1]
+    b_next_candidate <- ab_next_candidate[2]
+
+    # Determine the probability at the candidate a,b.
+    p_next_candidate <- p_ab( a_next_candidate , b_next_candidate )
+
+    # Compute the density ratio of candidate and current points.
+    density_ratio <- p_next_candidate / p_now
+
+    # Probabilistically decide whether to accept the candidate point.
+    if ( runif(1,0.0,1.0) < density_ratio ) {
+
+        # Increment the accepted counter.
+        n_accepted <- n_accepted + 1
+
+        # Move to the candidate point.
+        a_now <- a_next_candidate
+        b_now <- b_next_candidate
+        p_now <- p_next_candidate
+
+        # Store the accepted a, b and probability.
+        accepted_ab[n_accepted,] <- c( a_now , b_now , p_now )
+
+        # Adjust the SD of the jumping distribution.
+        # This particular adaptation procedure is a cheap hack
+        # and is for illustrative purposes only. Do not use this
+        # for real research purposes!
+        if ( sd_adapt & ( n_accepted > 20 ) ) {
+            sd_a_now <- sd( accepted_ab[1:n_accepted,1] )
+            sd_b_now <- sd( accepted_ab[1:n_accepted,2] )
+        }
+
+        # Plot the accepted a,b points.
+        # Plot lines for all accepted point so far.
+        plot( accepted_ab[1:n_accepted,1] , accepted_ab[1:n_accepted,2]
+            ,type="l"
+            ,xlab="A" ,xlim=c(-25,25) ,ylab="B" ,ylim=c(0,30) )
+        # Plot current point as a red dot.
+        par(new=T)
+        plot( accepted_ab[n_accepted,1] , accepted_ab[n_accepted,2]
+            ,type="p" ,pch=19 ,cex=1.5 ,col="red"
+            ,xlab="A" ,xlim=c(-25,25) ,ylab="B" ,ylim=c(0,30) )
+        par(new=F)
+
+    } else {
+
+        n_rejected <- n_rejected + 1
+
+    }
+}
+
+# When done, re-plot using just points, not lines.
+plot( accepted_ab[1:n_accepted,1] , accepted_ab[1:n_accepted,2]
+    ,type="p"
+    ,xlab="A" ,xlim=c(-25,25) ,ylab="B" ,ylim=c(0,30) )
+text( 0, 30, paste("N rejected / N accepted = ",n_rejected/n_accepted) )
+
+#----------------------------------------------------------------------------
+</pre>
+</small>
+<p>
+<hr>
+
+</body>
+</font>
+</html>

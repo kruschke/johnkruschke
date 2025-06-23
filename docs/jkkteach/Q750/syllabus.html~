@@ -1,0 +1,432 @@
+<HTML>
+<HEAD> 
+<TITLE>Q750 Advances in Connectionist Models, Prof. Kruschke,
+Syllabus</TITLE>
+</HEAD>
+
+<!BODY background="../bg.gif">
+<BODY bgcolor="FFFFFF">
+
+<a name="top"></a>
+<center> <h2>Syllabus for Q750:<br></h2><h1>Recent Advances in
+Connectionist Models<br> </h1> <h3> (listed as "Neural Networks as
+Models of Cognition")<br></h3> <h2>Spring 1996, Section 1972, Tu & Th
+2:30-3:45, PY 230<br> </h2> </center>
+
+<strong>Instructor: Prof. 
+<a href="http://www.indiana.edu/~kruschke/home.html">
+John K. Kruschke</a><br></strong>
+<strong>Office:</strong> 855-3192, PY 336 by appt.<br>
+<strong>E-mail:</strong> <A HREF=mailto:KRUSCHKE@indiana.edu>kruschke@indiana.edu</A> <br>
+<p>
+
+
+<a name="contents"></a>
+<h3>Contents:</h3>
+<center>
+<h4>
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a>
+</h4></center>
+
+<p>
+
+
+<a name="description"></a>
+<h3>Course Description and Goals:</h3> 
+
+This course selectively surveys some recent applications of
+connectionist models to cognitive phenomena.  The emphasis is on
+models that attempt to address detailed empirical data.  We will not
+survey "generic" algorithms or architectures that are not directed at
+specific cognitive phenomena and empirical data.  The survey will be
+accomplished by reading and discussing various journal articles.  Each
+student will lead (or co-lead) discussion of selected articles.  <p>
+
+Each student will also program, from scratch, a connectionist model
+applied to cognitive phenomena of his or her choice.  The model could
+be a novel architecture or an existing model applied to new phenomena.
+The last few weeks of the course will be devoted to presentations of
+these projects. <p>
+
+The course has three main goals.  First, students should gain
+understanding of a variety of connectionist models applied to
+empirical data.  Second, students should gain experience applying a
+connectionist model to specific cognitive phenomena.  Third, students
+should gain a better understanding of the role of models in explaining
+empirical phenomena. <p>
+
+<h6><center>[ 
+<a href="#top">Top</a> | 
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a> ]
+</center></h6>
+
+<a name="prereqs"></a>
+<h3>Prerequisites:</h3> 
+
+<ol>
+
+<li>You must have strong background knowledge in connectionist models.
+This can be achieved by previously completing the course Q550.  If you
+are self-taught or have taken some other introductory course in
+connectionist models, please discuss the matter with Prof. Kruschke.
+
+<li>You must be adept at computer programming.  We will not have time
+to discuss programming methods much in class, so you are expected to
+be able to program independently.  The preferred programming language
+is C, but any language is permitted.  For all languages, the code
+turned in with your final project must be thoroughly commented.
+
+</ol>
+
+
+<h6><center>[ 
+<a href="#top">Top</a> | 
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a> ]
+</center></h6>
+
+
+
+
+<a name="schedule"></a> 
+
+<h3>Schedule:</h3> 
+
+The schedule below is approximate, and may flex and bend as the course
+progresses.  The order of topics will probably remain the same, but
+the exact dates for each topic might change. There might be changes to
+the readings as the course progresses. Full reference information for
+each reading is provided at the end of the syllabus. <p>
+
+<p> <strong>Schedule of Project Due Dates:</strong><br> A brief
+project proposal is due on the Thursday of the fourth week of class.
+The proposal must specify (1) the empirical phenomena to be addressed,
+(2) the type of model architecture you intend to use, (3) the
+programming language you will use, and (4) which computer you will
+use.  The final write-up of your project is due on the Thursday of the
+15th week of class, except for those people who present their projects
+on that day. For these people, the final write-up is due the next day,
+Friday.  There is no final exam.
+
+<dl>
+
+<dt><strong>Schedule of Readings:</strong><dd> 
+
+<dt><em>Week 1: Introduction and scheduling of presentations.</em>
+<dd>
+
+<a name="wk2"></a>
+<dt><em>Week 2: Meta-Theory.</em> <dd><ul> <li>McCloskey, M. (1991).
+Networks and theories: The place of connectionism in cognitive
+science.  <li>Seidenberg, M. S. (1993a).  Connectionist models and
+cognitive theory.  </ul>
+
+<a name="wk3"></a>
+<dt><em>Week 3: Category Learning.</em> <dd><ul> <li>Kruschke, J. K.
+(1992).  ALCOVE: An exemplar-based connectionist model of category
+learning.  <li>Kruschke, J. K. (1996).  Base rates in category
+learning.  </ul>
+
+<a name="wk4"></a>
+<dt><em>Week 4: Development.</em> <dd><ul> <li>Karmiloff-Smith, A.
+(1992).  Nature, nurture and PDP: Preposterous Developmental
+Postulates?  <li>Plunkett, K., Sinha, C., Moller, M. F. & Strandsby,
+O. (1992).  Symbol grounding or the emergence of symbols? Vocabulary
+growth in children and a connectionist net.  </ul>
+
+<a name="wk5"></a>
+<dt><em>Week 5: Sequence Learning.</em> <dd><ul> <li>Cleeremans, A. &
+McClelland, J. L. (1991).  Learning the structure of event sequences.
+<li>Dienes, Z. (1992). Connectionist and memory-array models of
+artificial grammar learning.  </ul>
+
+<a name="wk6"></a>
+<dt><em>Week 6: Similarity.</em> <dd><ul> <li>Goldstone, R. L. (1994).
+Similarity, interactive activation, and mapping.  <li>Goldstone, R. L.
+& Medin, D. L. (1994). Time course of comparison.  </ul>
+
+<a name="wk7"></a>
+<dt><em>Week 7: Strength of Processing.</em> <dd><ul> <li>Cohen, J,
+D., Servan-Schreiber, D. & McClelland, J. L. (1992).  A parallel
+distributed processing approach to automaticity.  <li>Cohen, J. D. &
+Servan-Schreiber, D. (1992).  Context, cortex, and dopamine: A
+connectionist approach to behavior and biology in schizophrenia.
+</ul>
+
+<a name="wk8"></a>
+<dt><em>Week 8: Memory.</em> <dd> <ul> <li>Chappell, M. & Humphreys,
+M. S. (1994).  An auto-associative neural network for sparse
+representations: Analysis and application to models of recognition and
+cued recall.  <li>McClelland, J. L., McNaughton, B. L. & O'Reilly, R.
+C. (1995).  Why there are complementary learning systems in the
+hippocampus and neocortex: Insights from the successes and failures of
+connectionist models of learning and memory.  </ul>
+
+<a name="wk9"></a>
+<dt><em>Week 9: Neural Dynamics of Vision.</em> <dd><ul>
+<li>Grossberg, S. (1994).  3-D vision and figure-ground separation by
+visual cortex.  </ul>
+
+<a name="wk10"></a>
+<dt><em>Week 10: Word Recognition.</em> <dd><ul> <li>Seidenberg, M.
+S., Plaut, D. C., Petersen, A. S., McClelland, J.  L. et al. (1994).
+Nonword pronunciation and models of word recognition.  <li>Seidenberg,
+M. S. (1993b). A connectionist modeling approach to word recognition
+and dyslexia.  </ul>
+
+<a name="wk11"></a>
+<dt><em>Week 11: Lesions.</em> <dd><ul> <li>Hinton, G. E. & Shallice,
+T. (1991).  Lesioning an attractor network: Investigations of acquired
+dyslexia.  <li>Humphreys, G. W.; Freeman, T. A.; Muller, H. J. (1992).
+Lesioning a connectionist model of visual search: Selective effects on
+distractor grouping.  </ul>
+
+<a name="wk12"></a>
+<dt><em>Week 12: Reprise of Meta-Theory.</em> <dd><ul> <li>Slezak,
+Latimer et al. (1994) <em>Symposium on Connectionist Models and
+Psychology: The Rationale for Psychologists Using (Connectionist)
+Models</em> <li>with reference to previously read papers by McCloskey,
+M. (1991) and Seidenberg, M. S. (1993a).  </ul>
+
+<dt><em>Weeks 13-15: Presentations of Student Projects.</em>
+
+</dl>
+
+
+<h6><center>[ 
+<a href="#top">Top</a> | 
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a> ]
+</center></h6>
+
+<a name="grades"></a>
+<h3>Grading Method:</h3> 
+
+Grades will be assigned on the basis of (a) quality in leading
+discussion of articles, (b) thoughtful participation in discussion
+even when not formally leading discussion, and (c) quality of the
+modeling project.  For leading discussion, quality is judged by
+accuracy of content and by clarity of presentation.  For the modeling
+project, quality is judged by many criteria, including but not limited
+to the following: Appropriateness of the model mechanisms to the
+phenomena being modeled; breadth and detail of empirical phenomena
+addressed; clarity of presenting the model and the program code;
+thoughtfulness in discussion of how the model helps explain the
+cognitive phenomena, based on successes and/or failures of the model.
+
+<p>
+
+
+<h6><center>[ 
+<a href="#top">Top</a> | 
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a> ]
+</center></h6>
+
+<a name="computers"></a>
+<h3>Computers:</h3> 
+
+There will be two main uses of computers in this course.  First, we
+will use the World Wide Web and a <a
+href="news:ac.cogs.q750">Newsgroup (ac.cogs.q750)</a> for posting
+announcements and discussion. Our class web page is
+
+<pre>
+<a href="http://www.indiana.edu/~jkkteach/Q750/q750.html">
+http://www.indiana.edu/~jkkteach/Q750/q750.html</a>
+                                 ^    ^
+                        upper case    lower case
+</pre>
+<p>
+
+Second, you will be using a computer to program your own connectionist
+models from scratch.  You may use any computer that is convenient for
+you.  Connectionist models are typically "computationally intensive,"
+so you will want to locate a fast machine.  If you have access in a
+lab to a Unix machine or a fast PC or Mac, that would be fine.
+Otherwise, there are various UCS Unix machines on which you can get
+accounts.  For information regarding how to get accounts, see the Web
+page <a href="http://sckb.ucssc.indiana.edu/kb/data/all.acop.html">
+http://sckb.ucssc.indiana.edu/kb/data/all.acop.html</a> and get
+additional information from the UCS Knowledge Base at <a
+href="http://sckb.ucssc.indiana.edu/kb/">
+http://sckb.ucssc.indiana.edu/kb/</a> .<p>
+
+
+<h6><center>[ 
+<a href="#top">Top</a> | 
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a> ]
+</center></h6>
+
+<a name="readings"></a>
+<h3>Required Readings:</h3> 
+
+We will read the articles listed below.  A package of the collected
+readings is available at the Indiana Memorial Union (IMU) Bookstore.
+There might be changes to the readings as the course progresses. <p>
+
+<dl>
+
+<dt>Chappell, M. & Humphreys, M. S. (1994).  <dd>An auto-associative
+neural network for sparse representations: Analysis and application to
+models of recognition and cued recall.  <br> <em>Psychological
+Review</em>, <strong>101</strong>, 103-128. <p>
+
+<dt>Cleeremans, A. & McClelland, J. L. (1991).  <dd>Learning the
+structure of event sequences.  <br> <em>Journal of Experimental
+Psychology: General</em>, <strong>120</strong>, 235-253. <p>
+
+<dt>Cohen, J. D. & Servan-Schreiber, D. (1992).  <dd>Context, cortex,
+and dopamine: A connectionist approach to behavior and biology in
+schizophrenia.  <br> <em>Psychological Review</em>,
+<strong>99</strong>, 45-77. <p>
+
+<dt>Cohen, J, D., Servan-Schreiber, D. & McClelland, J. L. (1992).
+<dd>A parallel distributed processing approach to automaticity.  <br>
+<em>American Journal of Psychology</em>, <strong>105</strong>,
+239-269. <p>
+
+<dt>Dienes, Z. (1992).  <dd>Connectionist and memory-array models of
+artificial grammar learning.  <br> <em>Cognitive Science</em>,
+<strong>16</strong>, 41-79. <p>
+
+<dt>Goldstone, R. L. (1994).  <dd>Similarity, interactive activation,
+and mapping.  <br> <em>Journal of Experimental Psychology: Learning,
+Memory & Cognition</em>, <strong>20</strong>, 3-28. <p>
+
+<dt>Goldstone, R. L. & Medin, D. L. (1994).  <dd>Time course of
+comparison <br> <em>Journal of Experimental Psychology: Learning,
+Memory & Cognition</em>, <strong>20</strong>, 29-50. <p>
+
+<dt>Grossberg, S. (1994).  <dd>3-D vision and figure-ground separation
+by visual cortex.  <br> <em>Perception & Psychophysics</em>,
+<strong>55</strong>, 48-120. <p>
+
+<dt>Hinton, G. E. & Shallice, T. (1991).  <dd>Lesioning an attractor
+network: Investigations of acquired dyslexia.  <br> <em>Psychological
+Review</em>, <strong>98</strong>, 74-95. <p>
+
+<dt>Humphreys, G. W.; Freeman, T. A.; Muller, H. J. (1992).
+<dd>Lesioning a connectionist model of visual search: Selective
+effects on distractor grouping.  <br> <em>Canadian Journal of
+Psychology</em>, <strong>46</strong>, 417-460. <p>
+
+<dt>Karmiloff-Smith, A. (1992) <dd>Nature, nurture and PDP:
+Preposterous Developmental Postulates?  <br> <em>Connection
+Science</em>, <strong>4</strong>, 253-269. <p>
+
+<dt>Kruschke, J. K. (1992).  <dd>ALCOVE: An exemplar-based
+connectionist model of category learning.  <br> <em>Psychological
+Review</em>, <strong>99</strong>, 22-44. <p>
+
+<dt>Kruschke, J. K. (1996). <dd>Base rates in category learning.  <br>
+<em>Journal of Experimental Psychology: Learning, Memory and
+Cognition</em>, <strong>22</strong>, 1-24. <p>
+
+<dt>McClelland, J. L., McNaughton, B. L. & O'Reilly, R. C. (1995).
+<dd>Why there are complementary learning systems in the hippocampus
+and neocortex: Insights from the successes and failures of
+connectionist models of learning and memory.  <br><em>Psychological
+Review</em>, <strong>102</strong>, 419-457. <p>
+
+<dt>McCloskey, M. (1991).  <dd>Networks and theories: The place of
+connectionism in cognitive science.  <br> <em>Psychological
+Science</em>, <strong>2</strong>, 387-395. <p>
+
+<dt>Plunkett, K., Sinha, C., Moller, M. F. & Strandsby, O. (1992).
+<dd>Symbol grounding or the emergence of symbols? Vocabulary growth
+in children and a connectionist net.  <br> <em>Connection
+Science</em>, <strong>4</strong>, 293-312. <p>
+
+<dt>Seidenberg, M. S. (1993a). <dd>Connectionist models and cognitive
+theory.  <br> <em>Psychological Science</em>, <strong>4</strong>,
+228-235. <p>
+
+<dt>Seidenberg, M. S. (1993b).  <dd>A connectionist modeling approach
+to word recognition and dyslexia.<br> <em>Psychological Science</em>,
+<strong>4</strong>, 299-304. <p>
+
+<dt>Seidenberg, M. S., Plaut, D. C., Petersen, A. S., McClelland, J.
+L. et al. (1994).  <dd>Nonword pronunciation and models of word
+recognition.  <br> <em>Journal of Experimental Psychology: Human
+Perception and Performance</em>, <strong>20</strong>, 1177-1196. <p>
+
+<dt>Slezak, P., Latimer, C., Coltheart, M., Andrews, S., Oliphant, G.,
+Bakker, P., Heath, R. A. & Watson, E. (1994). <dd><em>Symposium on
+Connectionist Models and Psychology: The Rationale for Psychologists
+Using (Connectionist) Models</em>, January 1994, University of
+Queensland, Australia. <br> <a
+href="http://www.cs.indiana.edu/Noetica/OpenForum.html">
+http://www.cs.indiana.edu/Noetica/OpenForum.html</a>
+
+</dl>
+
+
+<h6><center>[ 
+<a href="#top">Top</a> | 
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a> ]
+</center></h6>
+
+<a name="disclaimer"></a> <strong>Disclaimer:</strong> This syllabus
+is meant to be suggestive, not absolute. Any and all of the
+information on this syllabus is subject to change at any time,
+including grading policies, office hours, etc. Changes will be
+announced in class.
+
+
+<h6><center>[ 
+<a href="#top">Top</a> | 
+<a href="#description">Description and Goals</a> | 
+<a href="#prereqs">Prerequisites</a> | 
+<a href="#schedule">Schedule</a> | 
+<a href="#grades">Grading Method</a> | 
+<a href="#computers">Computers</a> |
+<a href="#readings">Readings</a> | 
+<a href="#disclaimer">Disclaimer</a> ]
+</center></h6>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

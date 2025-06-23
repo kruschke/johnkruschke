@@ -1,0 +1,247 @@
+<HTML> <font face="tahoma">
+
+<HEAD xmlns:og="http://opengraphprotocal.org/schema/">
+
+<TITLE>Bayesian Data Analysis, Cog Sci 2011 Tutorial</TITLE>
+
+<link rel="image_src" href="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialLinearRegressionDataLines.jpg" />
+
+<meta name="keywords" content="Bayesian,Bayesian statistics,Bayesian data analysis,Bayesian models,shrinkage,hierarchical models,ANOVA,analysis of variance,multiple comparisons,regression,logistic regression,statistical power,sample size,null hypothesis significance test,NHST,model comparison" />
+<meta name="description" content="Tutorial on Bayesian data analysis, Cognitive Science Conference, 2011." />
+
+<meta property="og:title" content="Tutorial on Doing Bayesian Data Analysis" />
+<meta property="og:site_name" content="John K. Kruschke"/>
+<meta property="og:type" content="event" />
+<meta property="og:image" content="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialLinearRegressionDataLines.jpg" />
+<meta property="og:url" content="http://www.indiana.edu/~jkkteach/CogSci2011Tutorial.html" />
+<meta property="og:description" content="Tutorial on Bayesian data analysis, Cognitive Science Conference, 2011." />
+
+</HEAD>
+
+
+<BODY bgcolor="skyblue"> <hr>
+
+<center>
+
+<h2>Doing Bayesian data analysis with R and BUGS </h2>
+<h3> Tutorial at the
+<a href="http://cognitivesciencesociety.org/conference2011/tutorials.html" target="_blank">Conference of the Cognitive Science Society</a>, 
+<br>Wednesday, July 20, 2011, Boston, Massachusetts. </h3>
+
+<!-- <p>THIS PAGE IS UNDER CONSTRUCTION. PLEASE RETURN SOON FOR COMPLETE INFO. -->
+
+</center>
+
+<table border="0" cellpadding="10" align="right" width="370"
+align="right" bgcolor="white"> 
+<tr><td> <img
+src="BayesTutorial/TutorialLinearRegressionDataLines.jpg" width="370"
+alt="Success increasing with knowledge of Bayesian data
+analysis"></td></tr> 
+<tr><td align="center"> <font size="-1"><b>Figure 1. Why you should attend the tutorial.</b> (Notice that the Bayesian analysis reveals many credible regression lines, for which the slopes and intercepts trade off, instead of just one "best" line.)</font> </td></tr> </table>
+
+<p>This tutorial introduces you to doing Bayesian data analysis, hands on. The intended audience is graduate students and other researchers who want a ground-floor introduction to Bayesian data analysis. No mathematical expertise is presumed.
+<!-- If you can handle a few minutes of summation notation like &Sigma;<sub>i</sub>x<sub>i</sub> and integral notation like &int;&nbsp;x&nbsp;dx, you're good to go. -->
+Complete computer programs will be provided. The software is free; see installation instructions, <a
+href="#beforeArriving">below</a>, <em>before</em> arriving at the
+tutorial.
+
+<p><b>Agenda:</b> The full-day tutorial progresses through the following topics.
+<ul>
+<li>9:00-10:30 <b>Bayes' Rule, Grid Approximation, and R.</b> We start with the basics of conditional probabilities, the meaning of Bayes' rule, and simple examples of Bayes' rule graphically illustrated with grid approximation in the programming language&nbsp;R.
+<br><small>10:30-11:00 Break</small>
+<li>11:00-12:30 <b>Markov Chain Monte Carlo (MCMC) and BUGS; Linear Regression.</b> We explain the idea of approximating distributions by large representative samples, and MCMC methods for generating them. The BUGS language is introduced and used to do Bayesian linear regression.
+<br><small>12:30-1:30 Lunch (on your own)</small>
+<li>1:30-3:00 <b>Hierarchical Models and Model Comparison.</b> Bayesian methods and the BUGS language make hierarchical modeling straight forward. Hierarchical models are tremendously useful for analyzing individual differences, repeated measures, and structural constraints across conditions. Model comparison is a case of hierarchical modeling.
+<br><small>3:00-3:30 Break</small>
+<li>3:30-5:00 <b>Bayesian ANOVA; Power Analysis</b>. We use <em>hierarchical</em> analysis of variance with Bayesian parameter estimates, for rich and flexible inferences about differences between groups. We conclude with a brief look at power analysis from a Bayesian perspective.
+</ul>
+
+
+<p><hr>
+<p><a name="whyGoBayesian"><b>Why go Bayesian?</b></a> <em>See Figure 1.</em> But beyond that,
+modern Bayesian methods are the best approach to empirical data analysis because Bayesian methods yield richer inferences than traditional methods and without use of ill-defined <em>p</em> values.
+Sciences from astronomy to zoology are changing from 20th-century null-hypothesis significance testing to Bayesian data analysis. 
+Read more:
+
+<ul>
+
+<li> An <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm"
+target="_blank">open letter</a> explaining why it's time to go
+Bayesian.
+
+<li> An <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010WIRES.pdf"
+target="_blank">article</a><sup>*</sup> that explains a critical flaw
+of <em>p</em>-values in null hypothesis significance testing, and two
+different Bayesian approaches to assessing null values.
+<ul><small>Kruschke, J. K. (2010).  Bayesian data analysis.  <em>Wiley
+Interdisciplinary Reviews: Cognitive Science</em>, <b>1</b>(5),
+658-676. (<a href="http://dx.doi.org/10.1002/wcs.72"
+target="_blank">doi:10.1002/wcs.72</a>)</small></ul>
+
+
+<li> An <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010TiCS.pdf"
+target="_blank">article</a><sup>*</sup> that emphasizes advantages of
+Bayesian data analysis and the fact that Bayesian data analysis is
+appropriate regardless of the status of Bayesian models of cognition.
+<ul><small>Kruschke, J. K. (2010).  What to believe: Bayesian methods
+for data analysis.  <em>Trends in Cognitive Sciences</em>,
+<b>14</b>(7), 293-300.  (<a
+href="http://dx.doi.org/10.1016/j.tics.2010.05.001"
+target="_blank">doi:10.1016/j.tics.2010.05.001</a>)</small></ul>
+
+
+</ul>
+
+<small><sup>*</sup>Your click on this link constitutes your request to
+the author for a personal copy of the article exclusively for
+individual research.</small>
+
+
+<p><hr>
+
+<table border="0" cellpadding="10" align="right" width="520" align="right" bgcolor="ivory">
+<tr><td align="center"> <img
+src="BayesTutorial/BayesianModelDiagramGeneric.jpg" height="200"
+alt="Diagram for generic Bayesian model">
+&nbsp;
+<img
+src="BayesTutorial/BayesianModelDiagramCognitive.jpg" height="200"
+alt="Diagram for generic Bayesian model">
+</td></tr>
+<tr><td align="center"> <font size="-1"><b>Figure 2. Concepts of Bayesian data analysis (left) transfer to Bayesian models of mind (right),</b> but Bayesian data analysis with generic descriptive models will be useful even when specific Bayesian models of mind fail to fit real behavior.</font> </td></tr>
+</table>
+
+
+<p><a name="NotBayesMind"><b>Bayesian data analysis is <i>not</i>
+Bayesian modeling of cognition...</b></a> 
+
+<p>Bayesian data analysis uses generic descriptive models such as
+linear regression, without any assertions about the processes that
+generated the data. Bayesian methods infer credible values of
+parameters in the descriptive models, such as credible slopes and
+intercepts in linear regression, as suggested in the left side of
+Figure&nbsp;2.
+
+<p><b>... but concepts and methods of Bayesian data analysis
+<em>transfer</em> to Bayesian models of cognition.</b>
+
+<p>Because the Bayesian approach to inference is the normative
+approach, some cognitive scientists posit that cognitive processing
+itself is based on Bayesian inference by the mind, as suggested in the
+right side of Figure&nbsp;2.
+<p><em>When you learn about concepts and methods of Bayesian data analysis, it is easier to understand Bayesian models of mind. But Bayesian data analysis will always be useful, even if particular Bayesian models of mind fail to accurately mimic cognition.</em>
+
+
+<br clear="all"><p><hr><p>
+
+<a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">
+<img src="BookCover071910.jpg" width="150" align="left" alt="Book cover.">
+</a>
+<b>Who is the instructor?</b> 
+<p><a
+href="http://www.indiana.edu/~kruschke/" target="_blank">John
+Kruschke</a> is five-time winner of Teaching Excellence Recognition Awards from Indiana University, where he is Professor of Psychological and Brain Sciences, and Adjunct
+Professor of Statistics. He has written <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/" target="_blank">
+an introductory textbook on Bayesian data analysis</a>; see also the articles linked above. He has presented many well-received workshops on Bayesian data analysis.
+<p>His research interests include the science of morality,
+applications of Bayesian methods to adaptive teaching and learning,
+and models of attention in learning, which he has developed in both
+connectionist and Bayesian formalisms. He received the Troland
+Research Award from the National Academy of Sciences. He chaired the
+Cognitive Science Conference in 1992.
+
+
+<br clear="all">
+
+<a name="beforeArriving"></a><p>
+
+<table border="1" cellpadding="10">
+<tr><td bgcolor="ivory">
+
+<small>
+
+<b>Bringing a notebook computer?</b>
+
+<p>You do <i>not</i> need to bring a notebook computer to the
+tutorial. But you are invited to bring one, so that you can run the
+programs and see how their output corresponds with the presentation
+material.  If you want to bring a notebook computer to the tutorial,
+you must install the software listed below <i>before arriving at the
+tutorial</i>, because there will not be time to do it during the
+tutorial and there might not be internet access.
+
+
+<ol>
+
+<li>One of the packages we'll be using requires the <b>Windows
+operating system</b> (OS). If your machine can operate with Windows,
+the tutorial materials may operate best that way. If you are using
+Macintosh OS or Linux without the option to boot with Windows, you
+must install a <b>Windows emulator such as the <em>free</em>ware
+WINE</b> (which stands for WINE Is Not an Emulator). WINE can be
+downloaded from <a href="http://www.winehq.org/"
+target="_blank">http://www.winehq.org/</a>. For Mac users, <a
+href="http://winebottler.kronenberg.org/"
+target="_blank">WineBottler</a> is reported to work for this
+installation. See <a
+href="http://doingbayesiandataanalysis.blogspot.com/2011/06/brugs-for-mac-users.html"
+target="_blank">this blog entry</a> for more details.  <em>From this
+point on, these instructions assume you are running Windows or a
+Windows (non-)emulator.</em>
+
+<p><li>Install <b>the free programming language R</b>. Go to <a
+href="http://cran.r-project.org/"
+target="_blank">http://cran.r-project.org/</a>. In the box labelled
+"Download and Install R" click the "<b>Windows</b>" link. On the page
+that appears, click the "<b>base</b>" link. The next page that appears
+has the latest version of R as its top link. <i>Get the 32-bit
+version, not the 64-bit version</i>. Click that link and follow the
+installation instructions. (Even if you are using MacOS or Linux,
+download the Windows executable and install R within WINE!)
+
+<p><li>Invoke R. (If you are using MacOS or Linux, invoke the Windows
+version of R within WINE.) At the command line in the R console
+window, type<br> <tt><font
+size="+2"><b>install.packages("BRugs")</b></font></tt> <br>You must
+include the quotes around "BRugs", and type "BR" in uppercase and
+everything else in lowercase. You will be prompted to select an
+internet repository; choose a site that is geographically near you.
+
+<p>Note: You must be using a recent version of R for the
+install.packages("BRugs") command to work properly. Are you getting an
+error message that the package is not available? If so, try this: In
+the R console window, click menu items Packages > Select Repositories,
+and, in the resulting pop-up window, make sure to select both CRAN and
+CRAN(extras), then click okay. BRugs lives in CRAN(extras). Then try
+install.packages("BRugs") again. Thanks to Uwe Ligges for these hints!
+
+<p><li>Copy the following data analysis program to your computer and
+be sure that it runs. <em>Right click</em> <a
+href="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialBRugsTest.R"
+target="_blank">this link</a> and <em>save</em> the linked file on your
+computer, using any file name with a ".R" extension. Then, invoke R,
+and on the R console window click the menu items <em>File</em> >
+<em>Source&nbsp;R&nbsp;code...</em> Browse to your saved file and
+select it (and click Open or OK). The program should run in R and
+produce a graph in a new window and some output text in the R console.
+<p>If the program does not run, please study all the previous steps
+and be sure that each was successfully accomplished.
+
+<p><li> Programs for the tutorial are selected from programs for the
+book, available <a
+href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/"
+target="_blank">here</a>, and from more recent work, available <a
+href="http://www.indiana.edu/~kruschke/RobustBayesianComparison/"
+target="_blank">here</a>. (Updated July 4, 2011.)
+
+
+</ol> </small>
+</td></tr></table>
+
+
+<p align="right"><font size="-1">This page URL:
+http://www.indiana.edu/~jkkteach/CogSci2011Tutorial.html</font> <hr>
+</BODY> </font></HTML>

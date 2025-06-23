@@ -1,0 +1,345 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                            Appendix K
+                    A Simple Boltzmann Machine
+
+
+     This program implements a simple Boltzmann machine.  Connectivity 
+is local and symmetric, with all units connected to their four neighbors, 
+above, below, to the left and to the right, with weights of +1.  There 
+are two global minima, with system energy -450 units, one composed of 
+all +1, and composed of all -1.  The units are connected in a toroid, 
+with top and bottom and left and right rows and columns neighbors.  The 
+Gibbs distribution is used to decide whether or not a unit changes state.
+
+     The program prompts for a random number seed, total number of 
+updatings to perform, a system temperature, and the number of 
+asynchronous updatings to perform before updating the screen display.  
+(Screen updates take much more time than the computation itself.)  The 
+lowest energy solution is displayed first.  A <CR> shows the initial 
+configuration and a second <CR> starts the updating process.  
+
+     The annealing schedule defined in PROCEDURE Flip is too fast, so 
+a very deep local energy minimum -- a band of one sign in the midst of 
+the other sign -- occurs occasionally.  This local minimum has system 
+energy of 390 units, well above the lowest energy state.   Experimentation 
+with the annealing schedule is interesting but time consuming.  The 
+program will stop if the lowest energy state is reached or when it 
+finishes the required number of iterations. 
+
+     The program itself is a straightforward realization of the dynamics 
+of a Boltzmann network as discussed in Chapter 12.  Any complexity in the 
+program is primarily due to the human factors and the display, as is 
+usually the case.  
+
+     For reasons of readability, a state vector unit or element, called
+f[i,j] in the text, is incorporated into a Pascal data type "element", 
+called Surface[I,J] in the program,  which contains the weights as well
+as the activities of units in the simulation.  The activities are called 
+Surface[I,J].F in the program.
+
+     An input system temperature of 0 units will lead to a system 
+behaving like a Hopfield network, where system energy decreases 
+monotonically.  The only difference between this network and a Hopfield 
+network as we defined it in Chapter 12 is that a state change that 
+produces a zero change in energy is never accepted.  This was done 
+because the extreme simplicity of the network used and its intrinsic 
+symmetries will always lead to a solution of all '+' if the original 
+updating rule is used.  This is because the original rule says a unit 
+changes to the '+' state if the synaptic inner product is equal to 
+or greater than zero.  The rule used by the program for zero temperature
+says that the state stays unchanged if the energy is unchanged.
+
+     Some of the quantities involving EXP (Delta_Energy/T), computed in 
+the program can get large as temperature drops and floating point under- 
+and overflows may occur. A few lines of code are incorporated in 
+PROCEDURE Flip to prevent this.
+
+----------------------------------------------------------------------
+
+PROGRAM Boltz (Input, Output);
+
+CONST X_size = 15;
+      Y_size = 15;
+      X_size_plus_1 = 16;
+      Y_size_plus_1 = 16;
+
+   {Note use of a Pascal data type to represent the elements.}
+   {The elements have a value and connections to nearest     }
+   {neighbors.                                               }
+
+TYPE  Connections = RECORD Up, Down, Right, Left: INTEGER;
+                    END;
+
+         Element  = RECORD F: Integer;
+                           C: Connections;
+                           END;
+
+VAR Surface       : ARRAY [0..X_size_plus_1, 0..Y_size_plus_1] OF Element;
+    I,J, Iteration: INTEGER;
+    Number_of_iterations,
+    Seed, Old_seed: INTEGER;
+    Display       : INTEGER;
+    Ground_state  : INTEGER;
+    Current_energy: INTEGER;
+    W_T_zero      : INTEGER;
+    T_zero,T      : REAL;
+
+{VAX Specific Routines.}
+
+FUNCTION MTH$RANDOM (VAR Seed: INTEGER):REAL;EXTERN;
+
+FUNCTION RANDOM: REAL;
+     BEGIN
+     RANDOM := MTH$RANDOM (Seed);
+     END;
+
+PROCEDURE GoToXY (X,Y: INTEGER);
+     BEGIN
+     WRITELN;
+     IF X<1 THEN X:= 1; IF X>80 THEN X:= 80;
+     IF Y<1 THEN Y:= 1; IF Y>24 THEN Y:= 24;
+     WRITE (CHR (27), '[');
+     IF Y<10 THEN WRITE (Y:1) ELSE WRITE (Y:2);
+     WRITE (';');
+     IF X<10 THEN WRITE (X:1) ELSE WRITE (X:2);
+     WRITE ('H');
+     END;
+
+PROCEDURE ClrEol;
+     BEGIN
+     WRITE (CHR(27), '[K');
+     END;
+
+PROCEDURE ClrScr;
+     BEGIN
+     WRITE (CHR(27), '[2J');
+     END;
+
+{End VAX Specific Routines.}
+
+{Puts the system state on a vt100.}
+
+PROCEDURE  Draw_Surface;
+     VAR I,J,T_write: INTEGER;
+     BEGIN
+     GoToXY (1,1);
+     WRITELN ('Iteration  : ', Iteration:5);
+     WRITELN;
+     FOR J:= 1 TO Y_size DO
+         BEGIN
+         FOR I:= 1 TO X_size DO
+             IF Surface [I,J].F > 0 THEN WRITE (' +')
+                                    ELSE Write (' -');
+         WRITELN;
+         END;
+     T_write:= ROUND (T);
+     GoToXY (1,21); WRITE ('Temperature   : ',     T_write:6);
+     GoToXY (1,22); WRITE ('Current energy: ',Current_energy:6);
+     GoToXY (1,23); WRITE ('Ground State  : ',Ground_state:6);
+     END;
+
+PROCEDURE Initialize;
+     VAR I,J: INTEGER;
+     BEGIN
+     ClrScr;
+     GoToXY (1,1);
+     WRITELN ('Demonstration of simple spin flip Boltzmann machine.');
+     WRITELN ('Only nearest neighbor interactions are used.        ');
+     WRITELN ('Lowest energy final solution will be homogeneous.   ');
+     WRITELN ('Choice of zero temperature disables noise addition. ');
+     WRITELN ('Initial states +1, -1 with equal probability.       ');
+     WRITELN;
+     WRITE   ('Seed                : ');                 READLN (Seed);
+     WRITE   ('Number of iterations: '); READLN (Number_of_iterations);
+     WRITE   ('Initial Temperature : ');               READLN (T_zero);
+     WRITE   ('Display interval    : ');              READLN (Display);
+     Old_seed := Seed;
+     T := T_zero;
+     W_T_zero:= ROUND (T_zero);
+     FOR I:= 0 TO X_size_plus_1 DO
+         FOR J:= 0 TO Y_size_plus_1 DO
+             BEGIN
+             Surface [I,J].F       :=  1;  {Initialize all values to +1}
+
+             Surface [I,J].C.Up    :=  1;  {All weights are set at + 1}
+             Surface [I,J].C.Down  :=  1;
+             Surface [I,J].C.Right :=  1;
+             Surface [I,J].C.Left  :=  1;
+             END;
+     END;
+
+FUNCTION B_Random (F: Real):BOOLEAN;
+    BEGIN
+    IF Random >= F THEN B_Random :=  TRUE ELSE B_random:= FALSE;
+    END;
+
+PROCEDURE Randomize_surface;
+    VAR I,J: INTEGER;
+    BEGIN
+    Iteration:=   1;
+    FOR I:= 0 TO X_size_plus_1 DO
+        FOR J:= 0 TO Y_size_plus_1 DO
+            BEGIN
+
+            {Randomize state; 0.5 probability of a +1}
+            IF B_random (0.5) THEN Surface [I,J].F :=  1
+                              ELSE Surface [I,J].F := -1;
+
+            {Weights remain at +1 from PROCEDURE Initialize.}
+            END;
+    END;
+
+PROCEDURE Expand_array;
+    {Copies rows and columns to produce toroidal wrap around.}
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO X_size DO
+        BEGIN
+        Surface [I,0]          := Surface [I,Y_size];  {Copies col 15 to col 0}
+        Surface [I,(Y_size+1)] := Surface [I,1];       {Copies col 0 to col 16}
+        END;
+    FOR J:= 1 TO Y_size DO
+        BEGIN
+        Surface [0,J]          := Surface [X_size, J]; {Copies row 15 to row 0}
+        Surface [(X_size+1),J] := Surface [1,J];       {Copies row 1 to row 16}
+        END;
+    END;
+
+FUNCTION Element_energy (X,Y: INTEGER): INTEGER;
+    VAR Energy,Up_coord, Down_coord,
+        Left_coord, Right_coord,
+        C_value, R_value, L_value, U_value, D_value: INTEGER;
+    BEGIN {Element energy.}
+  {Neighbors of element we are looking at.}
+    U_value:= Surface [X, (Y-1)].F;  
+    D_value:= Surface [X, (Y+1)].F;
+    R_value:= Surface [(X+1), Y].F;
+    L_value:= Surface [(X-1), Y].F;
+    C_value:= Surface [X,     Y].F;
+
+  {Computation of energy associated with connnections to a single element.}
+
+    Element_energy := - (C_value * U_value * Surface [X,Y].C.Up    +
+                         C_value * D_value * Surface [X,Y].C.Down  +
+                         C_value * R_value * Surface [X,Y].C.Right +
+                         C_value * L_value * Surface [X,Y].C.Left ) DIV 2 ;
+
+    END; {Element energy.}
+
+
+FUNCTION System_energy: INTEGER;  {Total system energy.}
+    VAR I,J: INTEGER;
+        Sum: INTEGER;
+    BEGIN  {System energy.}
+    Expand_array;  {Copy rows and columns to give toroidal geometry.}
+    Sum:= 0;
+    FOR I:= 1 TO X_size DO
+        FOR J:= 1 TO Y_size DO
+            Sum:= Sum + Element_energy (I,J);
+    System_energy:= Sum;
+    END;  {System energy.}
+
+PROCEDURE Flip;
+    VAR Delta_Energy, Old, New, I, J: INTEGER;
+        Ratio, Prob_unchanged_state, Sched   : REAL;
+    BEGIN
+    I := TRUNC (Random * X_size) + 1;         
+    J := TRUNC (Random * X_size) + 1;
+    Expand_array;  {Copy rows and columns to give toroidal geometry.}
+    {Flip to the new state.}
+    Surface [I,J].F := -1 * Surface [I,J].F;
+    New := Element_energy (I,J);
+    {Flip back to original state.}
+    Surface [I,J].F := -1 * Surface [I,J].F;
+    Old := Element_energy (I,J);
+    Delta_Energy:= 2*(New - Old);  {Factor of 2 because we are            }
+                                   {computing for a single unit.          }
+    {Hopfield network condition.}
+    {Slight variation on Hopfield: Change state only if energy is lowered }
+    {no matter what weights indicate.                                     } 
+    IF T_zero = 0 THEN
+        IF Delta_energy <  0 THEN Surface [I,J].F := -1 * Surface [I,J].F; 
+   
+
+    {Boltzmann machine condition.}
+    IF T_zero > 0 THEN
+        BEGIN   
+        Sched := - Iteration / 3000;     {Change this for different schedule.}
+        T := T_zero * EXP (Sched);                       {Annealing schedule.}
+        Ratio := Delta_energy / T;     
+        IF (Ratio> 50) THEN Ratio:=  50;
+        IF (Ratio<-50) THEN Ratio:= -50;
+        {Otherwise we have floating point overflows at very low temps.       }
+        {Gibbs distribution: prob (1)/prob(2) = exp (Ratio).                 }
+        {prob(1) = unchanged state; prob(2) = changed state.                 }
+
+        Prob_unchanged_state:= EXP(Ratio)/(1+EXP (Ratio));
+
+        {Call B_random.  If Delta_E large, positive, very unlikely to flip. }
+        {If Delta_E zero, then equally likely to flip or not flip.          }
+        IF B_random (Prob_unchanged_state) 
+           THEN Surface [I,J].F := -1 * Surface [I,J].F;
+        END;
+    END;
+
+BEGIN {Main Program.}
+Initialize;
+ClrScr;
+GoToXY(1,20);
+WRITE ('One of Two Lowest Energy States of this System.');
+Ground_state:= System_energy;
+Draw_surface;
+GoToXY (1,19); WRITE   (CHR (7),'>> Hit return to continue.'); READLN; ClrScr;
+Randomize_surface;
+Current_energy:= System_energy;
+Iteration:= 0;
+Draw_surface;
+GoToXY (1,19);  WRITE   (CHR (7),'>> Hit return to continue.'); 
+READLN; IF (Number_of_iterations > 0) THEN ClrScr;
+WHILE ((Iteration<Number_of_Iterations) AND (Current_energy>Ground_state)) DO
+       BEGIN
+       Flip;
+       Iteration:= Iteration + 1;
+       IF (Iteration MOD Display = 0) 
+       THEN BEGIN
+            Current_energy:= System_energy;
+            Draw_surface;
+            END;
+       END;
+GoToXY (1,24);
+IF (Iteration >= Number_of_iterations)
+   THEN WRITE ( CHR (7), CHR(7), 
+                '>> Finished Iterations.', 
+                ' Initial Temp: ',W_T_Zero:4, ' Seed: ', Old_seed:10);
+
+IF (Current_energy = Ground_state)
+   THEN WRITE ( CHR (7), CHR(7), 
+                '>> Reached ground state.',  
+                ' Initial Temp: ',W_T_Zero:4, ' Seed: ', Old_seed:10);
+
+READLN;  
+END.  {Main Program.}
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

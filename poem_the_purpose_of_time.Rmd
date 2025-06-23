@@ -1,0 +1,52 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## The Purpose of Time
+<!-- 173 words -->
+
+<small>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In response to a poem by X. J. Kennedy\
+</small>
+<br>
+
+Pushed from your mother's womb plop into your\
+nursing home, or having sex while the re-\
+sulting teenager leaves home forever,\
+your skin youth smooth .blink. old-age leathery;\
+if all life's moments collapsed impromptu,\
+the sensory flash would be too intense.\
+So, they quip, "the purpose of time is to\
+keep everything from happening at once,"\
+even though, in retrospect, all of life\
+implodes into a box we call the past.\
+Ironic, sure. But off. Time is a knife\
+that stabs into the dark of our half-assed\
+moral self, cleaving act from consequence,\
+daring us to buy now and pay later,\
+premeditate vengeance after grievance,\
+ignore the crap we flush downstream. Water\
+under the bridge -- is always stepped in twice,\
+once by us and again by our descend-\
+ents. Time the tempter, a con-man's device\
+that lures us to ignore and to pretend,\
+so we desire more and more of *now*\
+before the wheel of karma spins around\
+and slaps the future's hand-palm on our brow\
+and time's true purpose suddenly is found.\
+
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://sblaam.com/issues/#flipbook-1356/29/" , journal_name = "*Smoky Blue Literary and Arts Magazine*" , publication_info = "Issue #22 Spring/Summer 2025, p. 29; 20 February 2025.")`
+
+*Notes:* 
+Notice the lines are *decasyllabic*, and every four lines follow an ABAB rhyme scheme. The first ten lines of this poem paraphrase the 1997 poem by X. J. Kennedy, ["The Purpose of Time is to Prevent Everything From Happening at Once"](https://www.poetryfoundation.org/poetrymagazine/browse?volume=171&issue=2&page=33). This poem, by contrast, emphasizes the moral implications of time: Separating act from consequence, delaying comeuppance.
+
+`r next_link("poem_the_purpose_of_time.html")`
+
+</small>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<TITLE>P533 Bayesian Data Analysis, Prof. Kruschke</TITLE>
+<style>
+body {
+    font-family: Tahoma, Georgia;
+    background-color: #77DDFF ;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-position: inside;
+}
+ul,li {
+    margin-left: 0px;
+    padding-left: 8px;
+}
+table,th,td {
+    border:1px solid black;
+    border-collapse:collapse;
+    padding:5px;
+    margin: 10px;
+}
+</style>
+</head>
+<body>
+ <!-- ################################################ -->
+
+
+<h2>
+P533 Bayesian Data Analysis
+</h2>
+<h3>
+Spring 2015: Tu/Th 9:30-10:45am, Room 109 Psych.
+<br>Registration information <a href="http://registrar.indiana.edu/browser/soc4152/PSY/PSY-P533.shtml" target="_blank"><b>here</b></a>.
+</h3>
+<p><a href="http://www.indiana.edu/~kruschke/" target="_blank">Prof. John K. Kruschke</a>
+
+
+<table border="0" cellpadding="5" align="right" width="35%" bgcolor="white">
+<tr><td align="center">
+<a name="whyEnrollFigure"><img src="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialLinearRegressionDataLines.jpg" width="100%" alt="Success increasing with knowledge of Bayesian data analysis"></a>
+<br><font size="-1"><b>Figure 1. Why you should enroll.</b> <br>(Notice that the Bayesian analysis reveals many credible regression lines instead of just one "best" line.) See also <a href="#whyGoBayesian">these articles</a>.</font>
+</td></tr>
+</table>
+
+<p><b>Overview:</b>
+P533 is a tutorial introduction to doing Bayesian data analysis. The course is intended to make advanced Bayesian methods genuinely accessible to real graduate students. Advanced undergrads have also taken the course (and survived to tell the tale :-). <a href="#whyEnrollFigure">Figure 1</a> explains why you should enroll; see also <a href="#whyGoBayesian">these articles</a>.
+<br>&nbsp;&nbsp;&nbsp;
+The course covers all the fundamental concepts of Bayesian methods, and works from the simplest models up through hierarchical models applied to various types of data. More details about content are provided below in the context of chapters from the course textbook. If you know some basic stats and want a preview of what Bayesian analysis does, check out <a href="http://youtu.be/fhw1j1Ru2i0" target="_blank">this video</a>.
+<br>&nbsp;&nbsp;&nbsp;
+Students from all fields are welcome and encouraged to enroll. The course uses examples from a variety of disciplines.
+
+<!-- ---------------------------------------------------------------------------------------- -->
+
+<p><b>Prerequisites:</b>
+This is <i>not</i> a mathematical statistics course, but some math is unavoidable. If you can handle basic summation notation like &Sigma;<sub>i</sub> x<sub>i</sub> and integral notation like &int;&nbsp;x&nbsp;dx, then you're in good shape. You will not need to generate mathematical derivations.
+<br>&nbsp;&nbsp;&nbsp;
+We will be doing a lot of computer programming in a language called R. R is free and can be installed on any computer. The textbook includes an introductory chapter on R.
+<br>&nbsp;&nbsp;&nbsp;
+A previous course in traditional statistics or probability can be helpful as background, but is not essential. P533 proceeds independently of traditional ("null hypothesis significance testing") statistical methods.
+
+<br clear="all">
+
+<table border="0" cellpadding="5" align="right" width="35%" bgcolor="white">
+<tr><td align="center">
+<a href="https://sites.google.com/site/doingbayesiandataanalysis/"
+target="_blank"><img src="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/DBDA2Ecover.png" width="100%" alt="Book cover."></a>
+</td></tr></table>
+
+<b>Textbook:</b> <a
+href="https://sites.google.com/site/doingbayesiandataanalysis/" target="_blank"><em>Doing Bayesian Data Analysis, 2nd Edition: A Tutorial with R, JAGS, and Stan</em></a>, by J. K. Kruschke. Academic Press, 2014.
+</td>
+<p>
+Table of contents:
+<ol>
+<li>What's in this book.
+<li>Introduction: Credibility, models, and parameters.
+<li>The R programming language.
+<li>What is this stuff called probability?
+<li>Bayes' rule.
+<li>Inferring a binomial probability via exact mathematical analysis.
+<li>Markov chain Monte Carlo.
+<li>JAGS.
+<li>Hierarchical models.
+<li>Model comparison and hierarchical modeling.
+<li>Null hypothesis significance testing.
+<li>Bayesian approaches to testing a point ("null") hypothesis.
+<li>Goals, power, and sample size.
+<li>Stan.
+<li>Overview of the generalized linear model.
+<li>Metric predicted variable on one or two groups.
+<li>Metric predicted variable with one metric predictor.
+<li>Metric predicted variable with multiple metric predictors.
+<li>Metric predicted variable with one nominal predictor.
+<li>Metric predicted variable with multiple nominal predictor.
+<li>Dichotomous predicted variable.
+<li>Nominal predicted variable.
+<li>Ordinal predicted variable.
+<li>Count predicted variable.
+<li>Tools in the trunk.
+</ol>
+
+<p><b>Grading; Homework; Exams:</b> There are homework exercises assigned every week or so. No exams or projects. Grades will be determined by performance on the homework assignments. All assignments are mandatory. There will be penalties for late homework unless you have a cogent excuse. These penalties are designed as an incentive to you because the material is cumulative; the penalties also help keep things fair to all students. If you must be late with an assignment, please notify the professor <i>immediately</i>.
+
+<p><b>Discussion:</b> Please discuss the assignments and lectures on <a href="http://oncourse.iu.edu/" target="_blank">Oncourse</a> under the "Forums" link.  If you are attending the class but cannot get access to the Oncourse page, please e-mail Prof. Kruschke.
+
+<table border="0" cellpadding="10" bgcolor="lightblue">
+<tr><td>
+<a name="whyGoBayesian"><b>Why go Bayesian?</b></a> <a href="#whyEnrollFigure">Figure 1</a> gave one answer, but beyond that, sciences from astronomy to zoology are changing from 20th-century null-hypothesis significance testing to Bayesian data analysis, because Bayesian analysis provides rich information with flexible application to numerous models. Read more:
+<ul>
+<!--
+<li> An <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm" target="_blank">open letter</a> explaining why it's time to go Bayesian.
+-->
+<li>An introductory article that shows the rich information provided by Bayesian estimation in the context of analyzing data from two groups: Kruschke, J. K. (2012).  <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2012JEPG.pdf" target="_blank">Bayesian estimation supersedes the <i>t</i>&nbsp;&nbsp;test.</a>&nbsp;<sup><b>*</b></sup> <em>Journal of Experimental Psychology: General</em>. More info, including links to videos, is <a href="http://www.indiana.edu/~kruschke/BEST/" target="_blank">here</a>.
+<li>An introductory article focusing on linear regression: Kruschke, J. K., Aguinis, H., & Joo, H. (2012). <a href="http://www.indiana.edu/~kruschke/articles/KruschkeAJ2012.pdf" target="_blank">The time has come: Bayesian methods for data analysis in the organizational sciences.</a>&nbsp;<sup><b>*</b></sup> Organizational Research Methods, 15(4), 722-752.
+<li>An overview article: Kruschke, J. K. (2010). <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2010WIRES.pdf" target="_blank">Bayesian data analysis.</a>&nbsp;<sup><b>*</b></sup> <em>Wiley Interdisciplinary Reviews: Cognitive Science</em>, <b>1</b>(5), 658-676.
+<li>An article that emphasizes that Bayesian data analysis is appropriate regardless of the status of Bayesian models of cognition:
+    Kruschke, J. K. (2010).  <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2010TiCS.pdf" target="_blank">What to believe: Bayesian methods for data analysis.</a>&nbsp;<sup><b>*</b></sup> <em>Trends in Cognitive Sciences</em>, <b>14</b>(7), 293-300.
+<li>An article that explains two Bayesian methods to assess null values, and which one is typically more informative: Kruschke, J. K. (2011). <a href="http://www.indiana.edu/~kruschke/articles/Kruschke2011PoPScorrected.pdf" target="_blank">Bayesian assessment of null values via parameter estimation and model comparison</a>&nbsp;<sup><b>*</b></sup>. <em>Perspectives on Psychological Science</em>, <b>6</b>(3), 299-312.
+</ul>
+<small>&nbsp;<sup><b>*</b></sup>Your click on this link constitutes your request to the author for a personal copy of the article exclusively for individual research, and the author's delivery of that copy. Any other use is prohibited.</small>
+</td></tr>
+</table>
+
+<small>
+<p><b>How does this course (P533/P534) differ from S626?</b> The Dept. of Statistics offers S626, Bayesian theory and data analysis. S626 has a prerequisite of "two statistics courses at the graduate level", and provides a mathematical treatment of Bayesian data analysis.  Students are encouraged to consider S626 after taking P533.
+<p><b>Disclaimer:</b> All the information here is subject to change. Changes will announced in class.
+</small>
+
+<p>This web page is at URL = http://www.indiana.edu/~jkkteach/P533/
+
+<p><hr>
+</BODY>
+</font></HTML>
+
+
+

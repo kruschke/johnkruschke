@@ -1,0 +1,288 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/Q550/">
+Q550 Models in Cognitive Science</a>,
+<a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+<h2>
+Exercises, Week 14, Due Tuesday April 24, 2001.
+</h2>
+<strong>Because of the wide tables below, this document prints better in
+<em>landscape orientation</em>.</strong>
+</center>
+
+
+
+<p><strong>Lewontin reading.</strong> Compose answers to questions
+3.1, 3.2 and 3.5 (p. 131 of SnS).  One page maximum per answer, please!  (It
+might be better to do the exercise below before answering the Lewontin
+questions.)
+
+<p><strong>Evolution of networks.</strong> Consider the XOR problem in
+a 1-hidden layer backprop network (cf. pp. 117-126).  In previous
+homework, you found that success in solving the task depended on the
+number of hidden nodes.  In this exercise, we'll pretend that networks
+that learn the XOR pass on their genes to the next generation, and the
+<em>genes determine the number of hidden nodes</em> in the progeny.
+That is, a parent network with H hidden nodes has children with H
+hidden nodes.
+
+<p>Let's suppose that if a network gets below an error of 0.1 by sweep
+4000 (puberty), then the network generates <strong>2</strong>
+children, with the same number of hidden nodes (but with random
+initial weights).
+
+<p>There is a cost of having hidden nodes, however, because it takes
+more food to maintain a larger network.  So, while larger networks
+will probably solve the learning task better than smaller networks,
+they might not find enough food to live until puberty (4000 sweeps).
+Here are the relevant probabilities:
+
+<p>
+<center>
+<table border=1 cellpadding=10>
+<tr>
+<td align=center>H</td>
+<td align=right>1</td>
+<td align=right>2</td>
+<td align=right>3</td>
+<td align=right>4</td>
+<td align=right>5</td>
+<td align=right>6</td>
+</tr>
+<tr>
+<td align=center>probability of 
+<br>reaching criterial error 
+<br>by puberty</td>
+<td align=right>0.00</td>
+<td align=right>0.40</td>
+<td align=right>0.80</td>
+<td align=right>0.95</td>
+<td align=right>0.98</td>
+<td align=right>0.99</td>
+</tr>
+<tr>
+<td align=center>probability of 
+<br>finding enough food 
+<br>until puberty</td>
+<td align=right>0.99<sup>(pop./600)</sup></td>
+<td align=right>0.90<sup>(pop./600)</sup></td>
+<td align=right>0.80<sup>(pop./600)</sup></td>
+<td align=right>0.70<sup>(pop./600)</sup></td>
+<td align=right>0.60<sup>(pop./600)</sup></td>
+<td align=right>0.50<sup>(pop./600)</sup></td>
+</tr>
+</table>
+</center>
+
+<p>Notice that the probability of getting enough food depends on the
+total size of the population, denoted by "pop." in the table.  The
+higher the population, the lower the probability of finding enough
+food.  For example, if the population is 1200, then the probability
+that a network with 6 hidden nodes would find enough food is
+0.50<sup>(1200/600)</sup>=0.25.
+
+<p>If a network both learns the XOR and gets enough food, then it will
+generate 2 children.  After this, all the elderly networks die, and
+the children all try to learn the XOR and get enough food.
+
+<p><strong>Fill in the table below, to find out which size network
+will become the most prevalent after 5 generations in this
+environment, when starting with a uniform distribution of hidden
+layers sizes, in a population of 600 networks.</strong> You don't need
+to simulate any networks for this exercise; just compute the expected
+values of the number of survivors in each generation based on the
+probabilities in the table above.  For each generation, use the total
+population as the value for "pop." in the table above.
+
+<p>
+<table border=1 cellpadding=10 width=100%>
+
+<tr>
+<td colspan=2 align=right>H</td>
+<td align=right>1</td>
+<td align=right>2</td>
+<td align=right>3</td>
+<td align=right>4</td>
+<td align=right>5</td>
+<td align=right>6</td>
+</tr>
+
+<tr>
+<td>Initial <br>generation</td>
+<td><em>Total pop: ______</em></td>
+<td align=right>100</td>
+<td align=right>100</td>
+<td align=right>100</td>
+<td align=right>100</td>
+<td align=right>100</td>
+<td align=right>100</td>
+</tr>
+
+<tr>
+<td rowspan=3>generation 1</td>
+<td>probability of 
+<br>learning AND surviving 
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<td># learning survivors<br>(round down)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td># offspring<br><em>Total pop: ______</em></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td rowspan=3>generation 2</td>
+<td>probability of 
+<br>learning AND surviving 
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<td># learning survivors<br>(round down)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td># offspring<br><em>Total pop: ______</em></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td rowspan=3>generation 3</td>
+<td>probability of 
+<br>learning AND surviving 
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<td># learning survivors<br>(round down)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td># offspring<br><em>Total pop: ______</em></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td rowspan=3>generation 4</td>
+<td>probability of 
+<br>learning AND surviving 
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<td># learning survivors<br>(round down)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td># offspring<br><em>Total pop: ______</em></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td rowspan=3>generation 5</td>
+<td>probability of 
+<br>learning AND surviving 
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<td># learning survivors<br>(round down)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td># offspring<br><em>Total pop: ______</em></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+</table>
+
+
+
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

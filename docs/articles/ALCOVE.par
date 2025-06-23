@@ -1,0 +1,31 @@
+The parameter file for ALCOVE should have the following
+values specified, in the following order:
+-------------------------------------------------------
+strict teacher? (1=yes, 0=no)
+T=
+t=
+phi (output prob mapping constant)=
+learning rate output weights=
+initial value of specificities=
+learning rate specificities=
+learning rate attention=
+metric power=
+activation power=
+attention capacity constraint? (1=yes, 0=no)
+attention non-negativity constraint? (1=yes, 0=no)
+------------------------------------------------------
+Here is an example:
+------------------------------------------------------
+ 1
+ 1.0
+ 0.0
+ 1.000
+ 0.100
+ 1.000
+ 0.000
+ 0.010
+ 1.0
+ 1.0
+ 0
+ 0
+-----------------------------------------------------

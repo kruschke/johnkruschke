@@ -1,0 +1,33 @@
+Week,Day,Chapter
+1,Tu,"2. Introduction: Credibility, models, and parameters. Strongly recommended article:  [<i>Bayesian data analysis for newcomers</i>](https://link.springer.com/article/10.3758/s13423-017-1272-1)"
+1,Th,3. The R programming language. Instructions for installation of software are [here](https://sites.google.com/site/doingbayesiandataanalysis/software-installation)
+2,Tu,4. Probability. 
+2,Th,5. Bayes rule.
+3,Tu,6. Inferring a probability via mathematical analysis. 
+3,Th,7. Markov chain Monte Carlo (MCMC). 
+4,Tu,8. JAGS. 
+4,Th,"8, continued. "
+5,Tu,9. Hierarchical (a.k.a. multi-level) models. 
+5,Th,"9, continued. 10. Model comparison."
+6,Tu,"10, continued. 11. Null hypothesis significance testing (NHST). Strongly recommended article: [<i>The Bayesian New Statistics</i>](https://link.springer.com/article/10.3758/s13423-016-1221-4)"
+6,Th,"11. NHST, continued. "
+7,Tu,12. Bayesian null assessment. Strongly recommended article: [<i>Rejecting or accepting paramter values in Bayesian estimation</i>](https://journals.sagepub.com/doi/full/10.1177/2515245918771304)</a> and its [important supplement](https://osf.io/fchdr/).
+7,Th,"12, continued. "
+8,Tu,"13. Goals, power, and sample size. See also [this video](http://www.youtube.com/playlist?list=PL_mlm7M63Y7j641Y7QJG3TfSxeZMGOsQ4)."
+8,Th,"13, continued. "
+9,Tu,"15. The generalized linear model. 16. Metric predicted variable, 1 or 2 group predictor variable."
+9,Th,"16, continued. Also power analysis applied to two groups. See article, [<i>Bayesian estimation supersedes the t test</i>](../../BEST/index.html)."
+Break,,
+10,Tu,"Extended Spring break due to corona virus disruption. <br><small>(Previously: 17. Metric predicted variable, metric predictor variable.)</small>"
+10,Th,"Extended Spring break due to corona virus disruption. <br><small>(Previously: 17, continued. 18. Metric predicted variable, metric predictor variables. See also, [<i>The time has come: Bayesian methods for data analysis in the organizational sciences</i>](../../BMLR/index.html).)</small>"
+11,Tu,"<b>17. Metric predicted variable, metric predictor variable.</b> <br><small>(Previously: 18, continued.)</small>"
+11,Th,"<b>17, continued. 18. Metric predicted variable, metric predictor variables. See also, [<i>The time has come: Bayesian methods for data analysis in the organizational sciences</i>](../../BMLR/index.html).</b> <br><small>(Previously: 19. Metric predicted variable, nominal predictor variable.)</small>"
+12,Tu,"<b>18, continued.</b> <br><small>(Previously: 19, continued. 20. Metric predicted variable, nominal predictor variables.)</small>"
+12,Th,"<b>19. Metric predicted variable, nominal predictor variable.</b> <br><small>(Previously: 20, continued.)</small>"
+13,Tu,"<b>19, continued. 20. Metric predicted variable, nominal predictor variables.</b> <br><small>(Previously: 21. Dichotomous predicted variable (logistic regression).)</small>"
+13,Th,"<b>20, continued.</b> <br><small>(Previously: 22. Nominal predicted variable (softmax regression). For an applied example of hierarchical conditional logistic regression, see [<i>Ostracism and fines in a public goods game with accidental contributions: The importance of punishment type</i>](http://journal.sjdm.org/14/14721a/jdm14721a.pdf).)</small>"
+14,Tu,"<b>21. Dichotomous predicted variable (logistic regression).</b> <br><small>(Previously: 22, continued. 23. Ordinal predicted variable (ordered probit regression). Recommended article: [<i>Analyzing ordinal data with metric models: What could possibly go wrong?<i>](https://www.sciencedirect.com/science/article/pii/S0022103117307746).)</small>"
+14,Th,"<b>22. Nominal predicted variable (softmax regression). For an applied example of hierarchical conditional logistic regression, see [<i>Ostracism and fines in a public goods game with accidental contributions: The importance of punishment type</i>](http://journal.sjdm.org/14/14721a/jdm14721a.pdf).</b> <br><small>(Previously: No class, to attend Conference of Midwestern Psych Association, but that was canceled.)</small>"
+15,Tu,"<b>22, continued. 23. Ordinal predicted variable (ordered probit regression). Recommended article: [<i>Analyzing ordinal data with metric models: What could possibly go wrong?<i>](https://www.sciencedirect.com/science/article/pii/S0022103117307746).</b> <br><small>(Previously: 23, continued.)"
+15,Th,"<b>23, continued.</b> <br><small>(Previously: 24. Count predicted variable.)</small>"
+Finals,,"No final exam, but last homework assignment is due."

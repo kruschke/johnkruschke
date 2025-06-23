@@ -1,0 +1,14 @@
+SUBJECT>Skewness and Kurtosis
+POSTER>nurul
+EMAIL>baby_gurl_2518@yahoo.com
+DATE>Friday, 18 November 2005, at 12:19 a.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 60.48.184.4
+PREVIOUS>93
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Z score for skewness = S-0/ SE skewness
+<P>Z score for kurtosis = sqrt(K-0/ SE kurtosis)
+<P>If Z score for both skewness and kurtosis larger than Z score normal (95%) that is 1.96, the data is not normal..
+<P>My question is, the equation for kurtosis must be sqrt... Why?

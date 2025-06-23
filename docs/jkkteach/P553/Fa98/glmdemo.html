@@ -1,0 +1,465 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<h2> P553 Statistics in Psychology, Prof. Kruschke
+
+<p>Equivalence of t-test, oneway anova, correlation, regression, and
+general linear model (manova) in SPSS
+
+</h2>
+</center>
+
+<p>This document shows examples of SPSS analyses applied first to two
+groups, then to three groups.
+
+<p><a href="http://www.indiana.edu/~statmath/smdoc/index.html">UITS
+has web documentation about SPSS</a>.
+
+<p><hr><p>
+<h3>The Data to be Analyzed (Two Groups).</h3>
+There are two groups of three scores, as follows:
+<pre>
+data list free
+ / group score .
+begin data
+ 0 1
+ 0 2
+ 0 3
+ 1 3
+ 1 4
+ 1 5
+end data .
+</pre>
+
+
+<p><hr><p>
+<h3>A Plot of the Data (Two Groups).</h3>
+<pre>
+plot
+ / plot score with group .
+
+* * * * * * * * * * * * * * * * *  P  L  O  T  * * * * * * * * * * * * * * * * *
+
+                               Plot of SCORE with GROUP
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        6+                                                                  +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        5+                                                            1     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        4+                                                            1     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+S       3+          1                                                 1     +
+C        |                                                                  |
+O        |                                                                  |
+R        |                                                                  |
+E        |                                                                  |
+        2+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        1+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        0+                                                                  +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+       -1+                                                                  +
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        -.2         0        .2        .4        .6        .8         1
+
+                                        GROUP
+</pre>
+
+
+<p><hr><p>
+<h3>t-test (Two Groups, of course).</h3>
+<pre>
+t-test groups = group(1,0)
+ / variables = score .
+
+t-tests for Independent Samples of GROUP
+
+                             Number
+ Variable                   of Cases       Mean          SD   SE of Mean
+ -----------------------------------------------------------------------
+ SCORE
+
+ GROUP 1                       3         4.0000       1.000         .577
+ GROUP 0                       3         2.0000       1.000         .577
+ -----------------------------------------------------------------------
+
+          Mean Difference = 2.0000
+
+          Levene's Test for Equality of Variances: F= .000   P= 1.000
+
+
+       t-test for Equality of Means                                      95%
+ Variances   t-value       df    2-Tail Sig     SE of Diff           CI for Diff
+ -------------------------------------------------------------------------------
+ Equal          2.45        4          .070           .816        (-.267, 4.267)
+ Unequal        2.45     4.00          .070           .816        (-.267, 4.267)
+ -------------------------------------------------------------------------------
+</pre>
+
+
+<p><hr><p>
+<h3>Oneway ANOVA (Two Groups).</h3>
+Notice that if you square the <em>t</em> value (2.45) from the t-test
+(above), the result matches the F value (6.00) from the ANOVA (below).
+Notice also that the two-tailed probability for the t-test matches the
+probability for the ANOVA.
+<pre>
+oneway score by group(0,1) .
+
+                       - - - - -  O N E W A Y  - - - - -
+      Variable  SCORE
+   By Variable  GROUP
+                                  Analysis of Variance
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             1        6.0000        6.0000       6.0000  .0705
+Within Groups              4        4.0000        1.0000
+Total                      5       10.0000
+</pre>
+
+
+<p><hr><p>
+<h3>Correlation (Two Groups).</h3>
+Notice that the square of the correlation (below) equals 
+SS<sub>B</sub>/SS<sub>T</sub> from the ANOVA (above).  Notice also
+that the probability matches the probabilities in the t-test and
+the ANOVA.
+<pre>
+correlations variables = score with group .
+
+                      - -  Correlation Coefficients  - -
+
+             GROUP
+
+SCORE         .7746
+            (    6)
+            P= .070
+
+Coefficient / (Cases) / 2-tailed Significance
+</pre>
+
+
+<p><hr><p>
+<h3>Regression Analysis (Two Groups).</h3>
+Notice that the regression analysis yields correlation and probability
+values equal to those of 
+the previous analyses.  The regression analysis also tells us the
+coefficients of the best fitting line through the data, i.e.,
+<center>predicted score = 2.0 * GROUP + 2.0</center>
+Draw this line on the PLOT, above, and you'll see that the line
+goes through the group means.
+<pre>
+regression variables = score, group
+ / dependent = score
+ / method = enter .
+
+           * * * *   M U L T I P L E   R E G R E S S I O N   * * * *
+
+Multiple R           .77460
+R Square             .60000
+Adjusted R Square    .50000
+Standard Error      1.00000
+
+Analysis of Variance
+                    DF      Sum of Squares      Mean Square
+Regression           1             6.00000          6.00000
+Residual             4             4.00000          1.00000
+
+F =       6.00000       Signif F =  .0705
+
+
+------------------ Variables in the Equation ------------------
+
+Variable              B        SE B       Beta         T  Sig T
+
+GROUP          2.000000     .816497    .774597     2.449  .0705
+(Constant)     2.000000     .577350                3.464  .0257
+</pre>
+
+
+<p><hr><p>
+<h3>General Linear Model (Two Groups).</h3>
+In SPSS, a general linear model can be invoked by the MANOVA command.
+You specify the predictor variables with the "design" subcommand.
+That is, you are telling SPSS the design of the model you want it to test.  
+Because we have just one predictor variable, i.e., group, 
+the design subcommand for this application is pretty simple.
+<pre>
+manova score by group(0,1)
+ / design group .
+
+* * * * * * A n a l y s i s   o f   V a r i a n c e -- design   1 * * * * * *
+
+ Tests of Significance for SCORE using UNIQUE sums of squares
+ Source of Variation          SS      DF        MS         F  Sig of F
+
+ WITHIN+RESIDUAL            4.00       4      1.00
+ GROUP                      6.00       1      6.00      6.00      .070
+
+ (Model)                    6.00       1      6.00      6.00      .070
+ (Total)                   10.00       5      2.00
+
+ R-Squared =           .600
+ Adjusted R-Squared =  .500
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</pre>
+
+<p><hr><p>
+<h2>Now consider <em>three</em> groups...</h2>
+
+<p><hr><p>
+<h3>The Data (Three Groups).</h3>
+The data from the three groups are coded two different ways.  The
+first coding is with a single variable called "group," with values 0,
+1 and 2.  The second coding is with <em>two</em> variables called
+"code1" and "code2."  This makes the change from group 0 to group 1
+<em>orthogonal</em> to the change from group 0 to group 2.
+<pre>
+data list free
+ / group score code1 code2 .
+begin data
+ 0 1.0 0 0
+ 0 2.0 0 0
+ 0 3.0 0 0
+ 1 5.0 0 1
+ 1 6.0 0 1
+ 1 7.0 0 1
+ 2 3.0 1 0
+ 2 4.0 1 0
+ 2 5.0 1 0
+end data .
+</pre>
+
+<p><hr><p>
+<h3>Plots of the Data (Three Groups).</h3>
+<pre>
+plot
+ / plot score with group ;
+        score with code1 by code2 .
+
+                               Plot of SCORE with GROUP
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        7+                                   1                              +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        6+                                   1                              +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        5+                                   1                        1     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+S       4+                                                            1     +
+C        |                                                                  |
+O        |                                                                  |
+R        |                                                                  |
+E        |                                                                  |
+        3+          1                                                 1     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        2+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        1+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        0+                                                                  +
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        -.4         0        .4        .8       1.2       1.6         2
+
+                                        GROUP
+
+
+                           Plot of SCORE with CODE1 by CODE2
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        7+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        6+          1                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        5+          1                                                 0     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+S       4+                                                            0     +
+C        |                                                                  |
+O        |                                                                  |
+R        |                                                                  |
+E        |                                                                  |
+        3+          0                                                 0     +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        2+          0                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        1+          0                                                       +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        0+                                                                  +
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        -.2         0        .2        .4        .6        .8         1
+
+                                        CODE1
+</pre>
+
+<p><hr><p>
+<h3>Oneway ANOVA, with Paired Comparisons (Three Groups).</h3>
+<pre>
+oneway score by group(0,2) 
+ / contrast = -1  0  1
+ / contrast = -1  1  0 .
+
+
+                       - - - - -  O N E W A Y  - - - - -
+                                  Analysis of Variance
+
+                                  Sum of         Mean             F      F
+        Source           D.F.    Squares       Squares          Ratio  Prob.
+
+Between Groups             2       24.0000       12.0000      12.0000  .0080
+Within Groups              6        6.0000        1.0000
+Total                      8       30.0000
+
+
+  Contrast Coefficient Matrix
+             Grp 0  Grp 1  Grp 2
+Contrast  1   -1.0     .0    1.0
+Contrast  2   -1.0    1.0     .0
+
+                                          Pooled Variance Estimate
+                     Value      S. Error       T Value    D.F.       T Prob.
+Contrast  1         2.0000         .8165         2.449     6.0          .050
+Contrast  2         4.0000         .8165         4.899     6.0          .003
+
+                                        Separate Variance Estimate
+                     Value      S. Error       T Value    D.F.       T Prob.
+Contrast  1         2.0000         .8165         2.449     4.0          .070
+Contrast  2         4.0000         .8165         4.899     4.0          .008
+</pre>
+
+<p><hr><p>
+<h3>Regression Analysis (Three Groups).</h3>
+Notice that the r<sup>2</sup> from the regression analysis (below)
+matches SS<sub>B</sub>/SS<sub>T</sub> from the ANOVA (above).  Notice
+also that the <em>t</em> values for the paired comparisons, using
+pooled variance estimates in the ANOVA (above) match the <em>t</em>
+values for the CODE1 and CODE2 factors in the regression analysis
+(below).  The regression analysis tells us that <center>predicted
+score = 2.0 * CODE1 + 4.0 * CODE2 + 2.0</center> If you plug in the
+appropriate values of CODE1 and CODE2 for each of the groups, you can
+see that the regression equation predicts the mean of each group.
+<pre>
+regression variables = score, code1, code2
+ / dependent = score
+ / method = enter .
+
+           * * * *   M U L T I P L E   R E G R E S S I O N   * * * *
+
+Multiple R           .89443
+R Square             .80000
+Adjusted R Square    .73333
+Standard Error      1.00000
+
+Analysis of Variance
+                    DF      Sum of Squares      Mean Square
+Regression           2            24.00000         12.00000
+Residual             6             6.00000          1.00000
+
+F =      12.00000       Signif F =  .0080
+
+
+------------------ Variables in the Equation ------------------
+
+Variable              B        SE B       Beta         T  Sig T
+
+CODE1          2.000000     .816497    .516398     2.449  .0498
+CODE2          4.000000     .816497   1.032796     4.899  .0027
+(Constant)     2.000000     .577350                3.464  .0134
+</pre>
+
+<p><hr><p>
+<h3>General Linear Model (Three Groups).</h3>
+In SPSS, the MANOVA command invokes a general linear model.
+We tell SPSS in the "design" subcommand that the model should 
+use two predictor variables, viz, CODE1 and CODE2.  Notice
+in the output (below) that the significance of each variable
+matches the analyses above.
+<pre>
+manova score by code1(0,1) code2(0,1)
+ / design code1, code2 .
+
+* * * * * * A n a l y s i s   o f   V a r i a n c e -- design   1 * * * * * *
+
+ Tests of Significance for SCORE using UNIQUE sums of squares
+ Source of Variation          SS      DF        MS         F  Sig of F
+
+ WITHIN+RESIDUAL            6.00       6      1.00
+ CODE1                      6.00       1      6.00      6.00      .050
+ CODE2                     24.00       1     24.00     24.00      .003
+
+ (Model)                   24.00       2     12.00     12.00      .008
+ (Total)                   30.00       8      3.75
+
+ R-Squared =           .800
+ Adjusted R-Squared =  .733
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</pre>
+
+
+
+<p><hr>
+</BODY>
+</HTML>
+
+
+

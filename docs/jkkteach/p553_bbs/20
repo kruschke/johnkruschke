@@ -1,0 +1,17 @@
+SUBJECT>Re: Homework 3 #5
+POSTER>Mario F
+EMAIL>mfific@indiana.edu
+DATE>Monday, 23 September 2002, at 5:57 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.98
+PREVIOUS>19
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>No it is just zero, as expected population value. As you could observe in the table predicted mean would be expected value for other distribution. What matters here are difference between means (effect size), and secondly it is possible to have distributions with zero mean and non-zero st. deviations. And you have standard deviations (denoted by summation sign). So if you take careful look in equations you will see that when population mean is zero it will not make zero value of other parameters.
+<P>(for example Znull=( Mcrit - Mnull )/SigmaM
+
+<P>&gt; Am I missing something on
+<BR>&gt; problem #5, or does the mean=0
+<BR>&gt; screw everything up on the calculations?
+<BR>&gt;

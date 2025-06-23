@@ -1,0 +1,11 @@
+SUBJECT>Re: hypothesis testing logic
+POSTER>Haixia Liu
+EMAIL>hailiu@indiana.edu
+DATE>Wednesday, 2 October 2002, at 11:22 a.m.
+IP_ADDRESS> REMOTE_HOST: d-237-243.dhcp-129-79.indiana.edu; REMOTE_ADDR: 129.79.237.243
+PREVIOUS>34
+NEXT> 44 45
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>So, for the problem in HW#2, the correct reason to reject the null hypothesis is not just because the possibility of this outcome is below 0.05, but because the possibility of getting this outcome or something more extreme than what we expect is less than .05. Or, in other word, the possibility of getting this outcome is located beyound 95% CI, or located in the 5% 'unconfidential interval'. What's more, I think, for this problem, solving the cutoff where the probability of getting the outcome that deviant or something more extreme than what we expect is less than .05 makes more sence that solving the specific possibility of this outcome.

@@ -1,0 +1,265 @@
+<HTML>
+<HEAD>
+<TITLE>P335 Cognitive Psychology, Prof. Kruschke, Exam 2</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<hr>
+
+<center>
+
+<h2> <a href="p335.html">P335 Cognitive Psychology 
+<br>Fall 1996, Section 3465, Tu & Th 11:15-12:30, PY 226</a> 
+
+<p>Exam 2 Results
+</h2>
+</center>
+
+<p>Some common problems on the exam:
+<ul>
+
+<li>Be careful to answer everything that's asked for and only what's
+asked for.  If it asks for theory, don't go into great length about
+experiments, and vice-versa.  It it asks to describe an experiment, be
+sure to state the I.V.'s and D.V.'s, etc.  If it asks to describe two
+conditions, then be sure to describe both conditions.
+
+<li>It can help tremendously to sketch a graph of results (properly
+labelled!) in your answer, for two reasons: 1. It is a terrific memory
+aid for you (as we'll learn, images are remembered very well).  2. It
+is a concise way to communicate to the exam grader that you really
+know the results!  On the other hand, don't just draw the graph
+without also explicitly describing the I.V.'s and D.V., etc.
+
+<li>In describing release from P.I., many people did not state that
+memory on the first trial was nearly perfect.  Also in describing
+release from P.I., many people did not say that the main implication
+was that STM cannot be purely acoustic.
+
+<li>In describing results from the Loftus experiment on the influence
+of questions after witnessing an event, many people left out important
+details, such as the fact that performance was negatively affected by
+inconsistent questions even immediately after viewing the event.
+
+<li>Many people didn't correctly answer one part of the question
+regarding Craik and Tulving's depth of processing experiment, namely,
+why words which were answered with "yes" were recalled better than
+words which were answered with "no".  A few people confused the "depth
+of processing" experiment with the experiment on elaboration within a
+level of processing.
+
+</ul>
+
+<p><hr>
+<p>Exam 2 class statistics:
+
+<pre> 
+                 N       N*     MEAN   MEDIAN   TRMEAN    STDEV   SEMEAN
+ EXAM1          70        0    77.33    81.00    78.85    16.24     1.94
+ EXAM2          68        2    73.77    75.75    74.12    12.81     1.55
+ 
+               MIN      MAX       Q1       Q3
+ EXAM1       19.00   100.00    69.00    87.50
+ EXAM2       39.00    96.00    63.25    84.75
+</pre>
+
+<!-- ***************************************** -->
+<p><hr>
+
+<p>Histograms of exam scores:
+
+<pre> 
+                                                       .
+                                                    .. :
+                                            :  :.:. :: :  .. . :
+           . .          .    .   . :  .:....: ::::: :: ::.:: : :.:
+           -------+---------+---------+---------+---------+---------EXAM1   
+
+                                                  .
+                                     . ... ..    .:.   : . :
+                        .     ..  .:.:.:::.::::.::::::::::.:...
+           -------+---------+---------+---------+---------+---------EXAM2   
+                 30        45        60        75        90       105
+</pre>
+
+<!-- ***************************************** -->
+<p><hr>
+
+<p>Exam 2 scores plotted as a function of Exam 1 scores:
+
+<pre> 
+          -                                                  *     *
+  EXAM2   -                                            *    2  * * *
+          -                                       *       *  * * 2
+          -                                         *  * * *   * **
+        80+                                     *  ** ** *  *
+          -                    *                 **   *  2*  *
+          -                        * *   *            **
+          -                             *          3  ** *
+          -                          *   * *  * **  * *  *
+        60+                                 ***  *
+          -                                   2  **
+          -               *
+          -    *
+          -
+        40+                               *
+          -
+          -
+            --------+---------+---------+---------+---------+--------EXAM1   
+                   30        45        60        75        90
+         N* = 2
+</pre>
+
+<!-- ***************************************** -->
+<p><hr>
+
+<p>There was a highly significant correlation of Exam 2 scores with
+Exam 1 scores:
+
+<pre> 
+ MTB > corr 'exam2' 'exam1'
+ 
+ Correlation of EXAM2 and EXAM1 = 0.705
+ 
+ MTB > regr 'exam2' 1 'exam1'
+ 
+ The regression equation is
+ EXAM2 = 26.2 + 0.610 EXAM1
+ 
+ 68 cases used 2 cases contain missing values
+ 
+ Predictor       Coef       Stdev    t-ratio        p
+ Constant      26.179       5.996       4.37    0.000
+ EXAM1        0.60960     0.07547       8.08    0.000
+ 
+ s = 9.151       R-sq = 49.7%     R-sq(adj) = 49.0%
+ 
+ Analysis of Variance
+ 
+ SOURCE       DF          SS          MS         F        p
+ Regression    1      5464.4      5464.4     65.25    0.000
+ Error        66      5527.4        83.7
+ Total        67     10991.7
+ 
+ Unusual Observations
+ Obs.    EXAM1      EXAM2        Fit  Stdev.Fit   Residual    St.Resid
+   4        63      39.00      64.58       1.59     -25.58      -2.84R 
+  14        23      48.00      40.20       4.30       7.80       0.97 X
+  28        39      50.00      49.95       3.15       0.05       0.01 X
+  34        19          *      37.76       4.59          *          * X
+  43        47      75.50      54.83       2.59      20.67       2.36R 
+ 
+ R denotes an obs. with a large st. resid.
+ X denotes an obs. whose X value gives it large influence.
+</pre>
+
+<!-- ***************************************** -->
+<p><hr>
+
+<p>Exam 2 scores were on average 4.3 points lower than Exam 1 scores,
+a statistically significant decline:
+
+<pre> 
+ MTB > let c7 = 'exam2' - 'exam1'
+ MTB > ttest c7
+ 
+ TEST OF MU = 0.00 VS MU N.E. 0.00
+ 
+              N      MEAN    STDEV   SE MEAN        T    P VALUE
+ C7          68     -4.30    10.77      1.31    -3.29     0.0016
+</pre>
+
+<!-- ***************************************** -->
+<p><hr><p>
+
+<p>Individual scores are reported below, sorted by the last four
+digits of your student ID number.  Please verify that our recorded
+scores match the correct scores on your exams!
+
+<p>If your score on Exam 2 was less than Exam 1, it doesn't
+necessarily mean you did worse relative to the rest of the class.  As
+indicated above, there was a mean decline of 4.3 points, so that if
+your score declined less than 4.3 points, you're actually doing better
+than you did on Exam 1, relatively speaking.
+
+<p>See the syllabus for <a
+href="syllabus.html#lettergrades">information on letter grades</a> and
+<a href="syllabus.html#dispute">how to dispute a score</a>.
+
+<p>
+<pre> 
+  ROW   ID69   EXAM1  EXAM2
+    1   0002    91.0   89.0
+    2   0081    66.0   60.0
+    3   0274    86.0   84.0
+    4   0291    64.5   62.0
+    5   0454    87.0   77.5
+    6   0588    82.5   67.0
+    7   0650    89.0   83.0
+    8   0775    69.0   59.0
+    9   0936    89.5   91.0
+   10   0957    72.0   81.5
+   11   0973    76.5   81.0
+   12   1006    56.0   63.0
+   13   1037    77.5   84.0
+   14   1219    63.0   39.0
+   15   1336    91.0   77.5
+   16   1520    82.0   90.0
+   17   1549    78.0   78.0
+   18   1562    69.0   56.0
+   19   1630   100.0   95.0
+   20   1698    95.0   85.0
+   21   1719    75.0   87.0
+   22   1794    74.0   55.0
+   23   1829    76.0   67.0
+   24   1990    94.0   87.0
+   25   2058    90.0   79.0
+   26   2136    60.5   69.0
+   27   2290    81.5   62.5
+   28   2319    81.0   75.0
+   29   2484    87.0   88.0
+   30   2621    82.0   83.0
+   31   2809    98.0   85.0
+   32   3051    81.0   69.0
+   33   3101    86.0   76.0
+   34   3245    98.0   86.0
+   35   3343    81.5   79.5
+   36   3360    74.0   62.0
+   37   3459    23.0   48.0
+   38   3543   100.0   92.0
+   39   3582    72.0   65.0
+   40   4286    61.0   64.0
+   41   4401    47.0   75.5
+   42   4444    52.5   71.0
+   43   4468    74.0   59.0
+   44   4743    69.0   57.0
+   45   4837    98.5   85.0
+   46   5448    77.0   69.0
+   47   5535    97.0   93.0
+   48   5691    86.0   63.0
+   49   5921    90.0   91.0
+   50   5999    95.0   92.0
+   51   6404    82.0   73.0
+   52   6811    86.0   66.0
+   53   7008    74.5   76.0
+   54   7056    19.0      *
+   55   7268    91.0   96.0
+   56   7273    85.0      *
+   57   7761    75.5   54.5
+   58   7988    77.5   64.0
+   59   8078    39.0   50.0
+   60   8179    74.0   77.5
+   61   8543    62.0   70.0
+   62   8684    68.5   62.0
+   63   8889    86.0   79.0
+   64   8939    97.5   88.0
+   65   8968    77.0   67.5
+   66   9064    67.0   58.0
+   67   9459    55.0   72.0
+   68   9541    81.5   72.0
+   69   9674    86.0   76.0
+   70   9886    83.0   78.0
+</pre>
+<p><hr>
+</BODY>
+</HTML>

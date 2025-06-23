@@ -1,0 +1,25 @@
+SUBJECT>Re: #3
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Sunday, 29 September 2002, at 9:40 p.m.
+IP_ADDRESS> REMOTE_HOST: dial-122-164.dial.indiana.edu; REMOTE_ADDR: 156.56.122.164
+PREVIOUS>30
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Hmmm... That is confusing: S, as in the table, denotes the estimated standard *deviation*, but the text says "variance".
+<P>By analogy to exercise #1 on p.332, the authors must mean *variance*, not deviation. That is, the table should have S^2 in its header, not S.
+<P>&gt; In #3, it gives us the estimated
+<BR>&gt; standard variance, and then calls
+<BR>&gt; it 's'. So which is it? In other
+<BR>&gt; words, when pluging it into our
+<BR>&gt; formula of M-u/s/sqrtN, do we need
+<BR>&gt; to do the sqrt of S (as if it WAS
+<BR>&gt; a variance score), or can we just
+<BR>&gt; plug it in as our s? Sadly enough,
+<BR>&gt; I'm voting for the second, because
+<BR>&gt; I JUST managed to catch this, and
+<BR>&gt; unfortunately after I solved them
+<BR>&gt; without using the squareroot of
+<BR>&gt; s.

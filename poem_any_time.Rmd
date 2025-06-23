@@ -1,0 +1,56 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Any Time Spent
+<br>
+
+<!-- 72 words -->
+
+Any time spent\
+Not making babies.\
+Or not making money.\
+
+Any time spent\
+Not tilling the soil.\
+Or not dancing the floor.\
+
+Any time spent\
+Not watching the sunset.\
+Or watching the sunset.\
+
+Any time spent\
+Not being outraged.\
+Or being outraged.\
+
+Any time spent\
+Being forced to choose.\
+Or regretting your choice.\
+
+Any time spent\
+Having no choice.\
+Or lamenting your fate.\
+
+Any time spent\
+Going on living.\
+Or giving up.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://sagemagazine.org/any-time-spent/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
+
+*Notes:* 
+What is wasted time? It's any time spent doing fruitless or worthless things, or not doing fruitful and worthy things. But what are those? Each tercet contemplates a different angle on what's worth doing or contemplating.
+The first suggests what matters is production: babies and money.
+The second suggests (Protestant) ethics: working hard and dancing (in my mind, but not explicit in the poem, according to the traditional song `r link_new_tab( "https://en.wikipedia.org/wiki/Simple_Gifts" , "*Simple Gifts:*" )` "by turning, turning we come down right").
+The third suggests gratitude and appreciation of beauty; but then backtracks, wondering if that's a waste because it violates the first and second.
+The fourth suggests moral engagement and outrage is important, but then suggests mere outrage is unproductive.
+The fifth and sixth go together, pondering categories of choice, because the whole issue of How To Spend One's Time presumes one has some degree of choice.
+The last tercet abstracts to the highest level. It was provoked by reading `r link_new_tab( "https://www.nytimes.com/2023/11/19/nyregion/david-buckel-climate-activist-suicide-fossil-fuels.html" , "an article in the NYT")` about a climate activist who committed suicide but his loved ones and colleagues did not give up.
+
+`r next_link("poem_any_time.html")`
+
+</small>

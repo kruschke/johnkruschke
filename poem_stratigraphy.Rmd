@@ -1,0 +1,50 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Stratigraphy
+<br>
+
+<!-- 50 words -->
+<center>
+<br>
+<br>
+gods&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the<br>
+of&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+valley<br>
+&nbsp;&nbsp;&nbsp;&nbsp;monumental<br>
+a&nbsp;<br>
+sustaining<br>
+&nbsp;&nbsp;I.V.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;an<br>
+from&nbsp;&nbsp;&nbsp;<br>
+drips&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;like<br>
+justified<br>
+&nbsp;&nbsp;&nbsp;&nbsp;center<br>
+solo&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stacked<br>
+words&nbsp;in&nbsp;<br>
+&nbsp;&nbsp;&nbsp;solace&nbsp;seeks&nbsp;one<br>
+loss&nbsp;relentless<br>
+&nbsp;&nbsp;and&nbsp;age&nbsp;with&nbsp;then<br>
+<i>scree</i>&nbsp;<i>scree</i>&nbsp;<i>scree</i>&nbsp;<i>scree</i>&nbsp;<i>scree</i>&nbsp;<i>scree</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>scree</i>&nbsp;&nbsp;pools&nbsp;abundant&nbsp;floods&nbsp;deluge&nbsp;a&nbsp;&nbsp;<i>scree</i><br>
+<i>scree</i>&nbsp;<i>scree</i>&nbsp;&nbsp;gush&nbsp;and&nbsp;rain&nbsp;words&nbsp;youth&nbsp;in&nbsp;&nbsp;<i>scree</i>&nbsp;<i>scree</i><br>
+<br>
+</center>
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://sagemagazine.org/stratigraphy/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
+
+*Notes:* 
+The poem is intended to be read first as in standard English, left to right, top to bottom, then to be read again as a geologist would read strata, from bottom to top, and *right to left*. Feel your eyes as you read upward. The poem is formatted to resemble a rock formation in [Monument Valley](https://en.wikipedia.org/wiki/Monument_Valley) and [The Valley of the Gods](https://en.wikipedia.org/wiki/Valley_of_the_Gods). 
+
+`r next_link("poem_stratigraphy.html")`
+
+</small>

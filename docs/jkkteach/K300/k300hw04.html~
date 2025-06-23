@@ -1,0 +1,79 @@
+<html>
+<title>K300, Prof. Kruschke</title>
+<body>
+
+K300 Statistics, Prof. Kruschke
+<h3>
+Homework 4, Due at the beginning of class, Tuesday Feb. 15, 2005.
+<br>UNDER CONSTRUCTION. DO NOT YET DO THIS.
+
+</h3>
+
+Be sure to <li>write your name and ID on every page <li>make a copy of
+your homework for your own records and exam study <li>staple (not
+paper clip) your pages <li>write clearly <li>show your work -- an
+unannotated sequence of numbers and derivations that mysteriously ends
+up with the correct numerical answer will <em>not</em> be given full
+credit <li>answer every part of every question (unless instructed
+otherwise).
+
+
+<ol>
+
+<li>  pts.
+
+<li>  pts.
+
+<li>  pts.
+
+
+<li> ** pts.
+
+<em>Rosenberg Excel worksheet 4-2.</em> Work through to the sheet
+labeled "your data (n=9)". 
+<ul>
+<li>Before following the instructions on that sheet, make the
+following correction: Notice in cell B18 the formula is
+=AVERAGE(B9:B17). That is correct; the numbers in row 18 should be the
+means of the 9 numbers above them. But in all the subsequent columns,
+the formula is entered incorrectly. For example, in column C the
+formula in cell C18 is =AVERAGE(C10:C17) but it should be
+=AVERAGE(C9:C17). To fix this error, select cell B18, then drag the
+lower right corner of the selection box over all the highlighted cells
+to its right in row 18.
+
+<li>Now follow the instructions on the worksheet, but for the random
+number seed, use the last four digits of your student ID number.
+
+<li>Print just the first page of that sheet (not all 50 columns), so we
+can see the mean of the sample means and the SD of the sample means.
+</ul>
+
+<li> ** pts.
+
+<em>Excel project: Sampling distribution of the mean.</em> This is
+much like the Rosenberg spreadsheet in the previous exercise, but laid
+out differently. Variations of this spreadsheet will be used in future
+homework assignments, which is why I'm having you get familiar with
+the layout now.
+
+<ul>
+<li>Get the spreadsheet from the Oncourse Group Space, "Excel
+Spreadsheets". The name of the file is K300HW4_SampDistMean.xls.
+<li><em>Carefully</em> follow the directions displayed in green in the
+spreadsheets. Notice that there are three sheets in the workbook. Do
+all three.  <li>Print out one page for each of the three worksheets,
+i.e., three pages total, such that each page shows the Mean of the
+Sample Means, etc., in column J. You might have to use landscape
+orientation when you print. <li>On each page of the print out, circle
+the Z-score of the 95th %ile and write next to it what it should be,
+in theory, if we had an infinite number of samples instead of just
+500.
+
+
+</ul>
+
+</ol>
+
+<hr>
+</body></html>

@@ -1,0 +1,310 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/Q550/">
+Q550 Models in Cognitive Science</a>,
+<a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+<h2>
+Exercises, Week 12, Due Tuesday April 10, 2001.
+</h2>
+</center>
+
+
+
+<p><strong>Balance beam network (MPnR Chapter 10).</strong>
+Exercises 1-5 on p. 242 of McLeod et al.
+
+<p><strong>Rules and exceptions (Chapter 12).</strong> For this exercise, you
+set up a simple backprop network and perform a simulation similar to
+the one described on pages 270-273.
+
+<p>You will train a network on the categorization problem illustrated
+below.  There are two input dimensions, the X-value and the Y-value.
+Different combinations of X,Y are categorized into one of 6
+categories, 1-6.  The number in each cell of the table below indicates
+the correct categorization.  Notice that for most X,Y combinations,
+the correct categorization can be determined by a simple rule: "If X
+is greater than .5, then it's in category 6, otherwise it's in
+category 5."  There are four exceptions to this rule, highlighted with
+asterisks in the table below.  These exceptions each occur 10 times in
+the training set, while each rule instance occurs just 1 time.
+
+
+<pre>
+                 X-value
+      .2  .3  .4  .5  .6  .7  .8  .9
+     +---+---+---+---+---+---+---+---+
+  .9 |   |   |   |   | 6 | 6 | 6 |   |
+     +---+---+---+---+---+---+---+---+
+  .8 |   |   |   |   | 6 |*3*| 6 |   |
+Y    +---+---+---+---+---+---+---+---+
+  .7 |   |*1*| 5 | 5 | 6 | 6 | 6 |   |
+v    +---+---+---+---+---+---+---+---+
+a .6 |   | 5 | 5 | 5 | 6 | 6 | 6 |   |
+l    +---+---+---+---+---+---+---+---+
+u .5 |   | 5 | 5 | 5 | 6 | 6 |*2*|   |
+e    +---+---+---+---+---+---+---+---+
+  .4 |   | 5 |*4*| 5 |   |   |   |   |
+     +---+---+---+---+---+---+---+---+
+  .3 |   | 5 | 5 | 5 |   |   |   |   |
+     +---+---+---+---+---+---+---+---+
+  .2 |   | 5 | 5 | 5 |   |   |   |   |
+     +---+---+---+---+---+---+---+---+
+</pre>
+
+
+<p>The question is, how will the network <em>extrapolate</em> to the
+untrained corners of the input space?  In particular, how will the
+network categorize points .2,.9 and .9,.2?  As discussed in lecture,
+people extrapolate according to the rule.  Does the network?
+To investigate this question, use the files below.
+
+<p><hr width=75%><p>
+<tt>RuleExtrap.cf</tt>
+<pre>
+NODES:
+nodes = 26
+inputs = 2
+outputs = 6
+output nodes are 21-26
+CONNECTIONS:
+groups = 0
+1-20 from i1-i2
+21-26 from 1-20
+1-26 from 0
+SPECIAL:
+selected = 1-26
+</pre>
+
+<p><hr width=75%><p>
+<tt>RuleExtrap.data</tt>
+<pre>
+distributed
+69
+.3 .7
+.3 .7
+.3 .7
+.3 .7
+.3 .7
+.3 .7
+.3 .7
+.3 .7
+.3 .7
+.3 .7
+.8 .5
+.8 .5
+.8 .5
+.8 .5
+.8 .5
+.8 .5
+.8 .5
+.8 .5
+.8 .5
+.8 .5
+.7 .8
+.7 .8
+.7 .8
+.7 .8
+.7 .8
+.7 .8
+.7 .8
+.7 .8
+.7 .8
+.7 .8
+.4 .4
+.4 .4
+.4 .4
+.4 .4
+.4 .4
+.4 .4
+.4 .4
+.4 .4
+.4 .4
+.4 .4
+.3 .2
+.3 .3
+.3 .4
+.3 .5
+.3 .6
+.4 .2
+.4 .3
+.4 .5
+.4 .6
+.4 .7
+.5 .2
+.5 .3
+.5 .4
+.5 .5
+.5 .6
+.5 .7
+.6 .5
+.6 .6
+.6 .7
+.6 .8
+.6 .9
+.7 .5
+.7 .6
+.7 .7
+.7 .9
+.8 .6
+.8 .7
+.8 .8
+.8 .9
+</pre>
+
+<p><hr width=75%><p>
+<tt>RuleExtrap.teach</tt>
+<pre>
+distributed
+69
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 1 0 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 1 0 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 1 0 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 1 0
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+0 0 0 0 0 1
+</pre>
+
+<p><hr width=75%><p>
+<tt>RuleGen.data</tt>
+<pre>
+distributed
+6
+.2 .9
+.9 .2
+.5 .8
+.6 .4
+.5 .7
+.6 .5
+</pre>
+
+<p><hr width=75%><p>
+<tt>RuleGen.teach</tt>
+<pre>
+distributed
+6
+0 0 0 0 1 0
+0 0 0 0 0 1
+0 0 0 0 1 0
+0 0 0 0 0 1
+0 0 0 0 1 0
+0 0 0 0 0 1
+</pre>
+
+<p><hr width=75%>
+
+<p>Show a printout of the architecture, including the bias.
+
+<p>For training, set the learning rate to .2 and the momentum to .8.
+Do 138,000 sweeps.  Train randomly (not sequentially), and with a
+random seed. Log the error every 690 sweeps.  No need to dump weights.
+Show a plot of the error as a function of training sweep.
+
+<p>Test generalization using RuleGen.data.  Show a printout of the
+error as a function of the six patterns.  (For your own understanding,
+the Node Activations window is very useful when testing
+generalization.) For each point in this graph, label it with the
+corresponding input pattern, the most active output category, and the
+correct output category.  Does the network generalize according to the
+rule?
+
+<p>Does this outcome depend on the number of hidden nodes?  Describe
+what happens when you double the number of hidden nodes.  What happens
+when you halve the number of hidden nodes?
+
+<p>Optional: For those of you who just can't get enough of this, try a
+different input representation.  Instead of each dimension having just
+a single input node, use a bank of nodes for each dimension, one node
+per value (much like the input representation used for the balance
+beam problem).  Does the network generalize to the corners differently
+than before?  Does the network generalize to the corners according to
+the rule?
+
+<p><strong>Background reading:</strong> Michael Erickson and I have
+examined human learning of these sorts of category structures. We have
+also designed connectionist models that fit the data fairly well. The
+models implement the ideas that there are available two
+representations: exemplars and rules. The connectionist architecture
+uses gradient descent on error to decide which representation learns
+best for which cases. See
+<a href="http://www.indiana.edu/~kruschke/ek96_abstract.html">http://www.indiana.edu/~kruschke/ek96_abstract.html</a> 
+and
+<a href="http://www.indiana.edu/~kruschke/ruleextrap.html">http://www.indiana.edu/~kruschke/ruleextrap.html</a>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+
+
+

@@ -1,0 +1,71 @@
+<p>
+<table border=1 align=center>
+<tr><td>
+<table border=0 cellspacing=0 cellpadding=2 align=center>
+<tr><td colspan=4 align=center><font size="-1">
+<u>SELECT a raft to read about (click the spot next to its name):</u>
+</font></td></tr>
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="I.PEtest_1"><font size="-1">Arena
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="PL.Itest_1"><font size="-1">Estrella
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_1"><font size="-1">Gaviota
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="PE.PLtest_1"><font size="-1">Mar
+</font></td>
+</tr>
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="I.PLtest_1"><font size="-1">Agua
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_3"><font size="-1">Cangrejo
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="PL.PEtest_2"><font size="-1">Isla
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="PE.Itest_1"><font size="-1">Calor
+</font></td>
+</tr>
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="PE.PLtest_2"><font size="-1">Flamingo
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="PE.Itest_2"><font size="-1">Briza
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="I.PLtest_2"><font size="-1">Sal
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_2"><font size="-1">Pez
+</font></td>
+</tr>
+<tr>
+<td align=left>
+<input type="radio" name="item_code" value="Itest_4"><font size="-1">Palmera
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="PL.PEtest_1"><font size="-1">Malesa
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="I.PEtest_2"><font size="-1">Sol
+</font></td>
+<td align=left>
+<input type="radio" name="item_code" value="PL.Itest_2"><font size="-1">Caracol
+</font></td>
+</tr>
+<tr><td colspan=4 align=center><font size="-1"><strong>
+<INPUT TYPE="submit" VALUE="Click here to VIEW the selected raft">
+</strong></font></td></tr>
+</table>
+</td></tr></table>
+
+
+

@@ -1,0 +1,70 @@
+<HTML>
+
+<HEAD>
+<TITLE>Adventures in whitewater rafting</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF">
+
+<FORM METHOD="POST"
+ACTION="transform.cgi?jkkteach/www/consumer_learning/exp02/instructions">
+
+<center>
+<table width=50% border=1 cellpadding=10>
+
+<tr><td align=right>
+
+<p align=right>CAREFULLY type the <em>three-digit</em> <strong>subject number</strong>. 
+<br>For example, subject 1 is entered
+as <strong><tt>001</tt></strong>, <br>subject 27 is entered as
+<strong><tt>027</tt></strong>, <br>subject 101 is entered as
+<strong><tt>101</tt></strong>, <br>etc. 
+<em>Please be extra careful to type this 
+correctly!</em>&nbsp;&nbsp;<input NAME="subj_number" size="3">
+
+
+
+<p>Booth:
+<select size="1" name="booth">
+<option value="" selected>(none)
+<option value="A">A
+<option value="B">B
+<option value="C">C
+<option value="D">D
+<option value="E">E
+<option value="O">other
+</select>
+
+<p>Age (in years): &nbsp;&nbsp; <input name="age" size="2">
+
+<p>Sex:
+<select size="1" name="sex">
+<option value="" selected>(none)
+<option value="F">female
+<option value="M">male
+</select>
+
+<p>Handedness:
+<select size="1" name="handedness">
+<option value="" selected>(none)
+<option value="R">right
+<option value="L">left
+<option value="A">ambidextrous
+</select>
+
+<p>Your (experimenter, not participant) three initials:
+&nbsp;&nbsp;
+<input NAME="initials" size="3">
+
+</td></tr></table></center>
+
+<p>
+<center><input type="submit" value="Proceed to instructions to participant."></center>
+
+</FORM> 
+</BODY> 
+</HTML>
+
+
+
+

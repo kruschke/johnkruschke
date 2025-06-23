@@ -1,0 +1,53 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## At the Window
+<!-- 138 words -->
+<br>
+
+I pray to the Invisible:\
+
+Please protect us\
+from blizzard and hail, from blaze and swelter,\
+from flying insects that sting and swarm,\
+from pestilence and sulfurous miasma,\
+and from the crowded bluster and welter.\
+
+But let us see the light,\
+through your architectured frame,\
+of sun, of stars, of moon, of clouds,\
+of dappled leaves, of shimmering creek,\
+and all your gentle creatures without names.\
+
+And give us wisdom  --\
+when through your fearsome grace,\
+you slay a bird mid-flight\
+and leave an ashen smudge\
+suspended mid-air in its place.\
+
+AND when non-believers\
+doubt your clear perfection,\
+then at dusk reveal the veil\
+of dust and spots and filth\
+co-mingled in their own reflection,\
+
+So then, in them,\
+it will grow known\
+that they reside within\
+the mercy of your windowed house\
+and they should not throw stones.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://sagemagazine.org/at-the-window/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
+
+*Notes:* 
+Windows are miraculous. They are nearly invisible. We rely on them. Yet they depend on our treating them reverently. Do you believe in windows, even when you cannot see them? Perhaps other things too? Form: In every stanza of five lines, the second and fifth lines rhyme, with double rhymes (e.g., "architec<u>ture</u>d fr<u>ame</u>" with "crea<u>ture</u>s without n<u>ame</u>s", and "f<u>ear</u>some gr<u>ace</u>" with "<u>air</u> in its pl<u>ace</u>"). Content: In the third stanza, the image of the bird slain by crashing into a window uses the words "ashen smudge", which are an allusion to Vladimir Nabokov's poem, *Pale Fire*, which begins: "I was the shadow of the waxwing slain / by the false azure in the windowpane; / I was the smudge of ashen fluff -- and I / lived on, flew on, in the reflected sky."
+
+`r next_link("poem_at_the_window.html")`
+
+</small>

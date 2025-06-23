@@ -1,0 +1,31 @@
+SUBJECT>Re: Normality Test in SPSS
+POSTER>nsr
+EMAIL>
+DATE>Monday, 20 June 2005, at 11:36 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 202.51.230.147
+PASSWORD>aaTu/HG5bIs/o
+PREVIOUS>94
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<P>&gt; If you would like to test
+<BR>&gt; whether obtained distribution of
+<BR>&gt; scores is normal you might use
+<BR>&gt; Kolmogorov-Smirnov test.The Kolmogorov-Smirnov
+<BR>&gt; test is based on the largest absolute
+<BR>&gt; difference between the observed
+<BR>&gt; and the expected cumulative distributions.
+<BR>&gt;
+<P>&gt; To use it go to: Analyze/NonParamtericTest/1-Sample-K-S
+<BR>&gt;
+<P>&gt; There, choose your variable
+<BR>&gt; and check normal box. If K-S score
+<BR>&gt; is not significant (bottom of output)
+<BR>&gt; then the distribution is highly
+<BR>&gt; likely normal!
+<P>&gt; You could try it and test
+<BR>&gt; your data in HMW#9 (optional but
+<BR>&gt; highly suggested).
+<P>&gt;

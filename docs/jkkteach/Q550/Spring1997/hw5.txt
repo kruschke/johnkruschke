@@ -1,0 +1,254 @@
+Q550 Homework 5: Simple Recurrent Networks (SRN's).
+
+Due **
+
+1. Exploring an SRN.
+
+Using program "bp," set up an SRN using the template, network, and
+startup files supplied below.  The network has one input node, two
+hidden nodes (hence two context nodes), and one output node.  The
+network is initialized with random weights, and biases fixed at zero
+except for the output bias, which is initialized at a random value.
+Note that in the network file (below) there are three "input" nodes,
+two of which are actually used as context nodes.
+
+srn.net
+-------
+definitions:
+nunits 6
+ninputs 3
+noutputs 1
+end
+network:
+%r 3 2 0 3
+%r 5 1 3 2
+end
+biases:
+.....r
+end
+
+Consider training the network with the recurring sequence
+00_100_100_1..., where the "_" in the pattern means a point at which
+the output is not required to be anything in particular.  One cycle of
+that sequence can be specified as follows:
+
+srn.pat
+-------
+00   0 -3 -4    0
+0_   0 -3 -4   -1
+01   0 -3 -4    1
+10   1 -3 -4    0
+
+For program "bp," the -1 in the last column indicates a "don't care"
+teacher value, and the -3 and -4 in the third and fourth columns mean
+"whatever values are in nodes 3 and 4."
+
+Here are the template and startup files:
+
+srn.tem
+-------
+define: layout
+epoch   $       tss     $                           pname inact  teach
+cpname  $       pss     $                           $     $      $
+
+
+
+
+  in    context
+  act    activ               hidact
+ $     $          hid      $                 out
++-----+---------+ act     +---------+-----+  act    teach
+|$    |$        |$        |$        |$    | $       $
+|     |         |         +---------+-----+
++-----+---------+         wts-to-out  out
+ weights-to-hid                       bias
+end
+epochno   variable 2  $ 0 epochno      5 1.0
+tss       floatvar 2  $ n tss          6 1.0 
+cpname    variable 2  $ n cpname      -5 1.0
+pss       floatvar 2  $ n pss          6 1.0
+env.pname vector   0  $ n pname      v 5   0   0 4 
+env.ipat  matrix   0  $ n ipattern   h 3 1.0   0 4 0 1
+env.tpat  matrix   0  $ n tpattern   h 3 1.0   0 4 0 1
+input     vector   2  $ n activation h 4 100.0  0 1
+context   vector   2  $ n activation h 4 100.0  1 2
+hidden    vector   2  $ n activation h 4 100.0  3 2
+hidwts    matrix   2  $ n weight     h 4 100.0  3 2 0 1
+conwts    matrix   2  $ n weight     h 4 100.0  3 2 1 2
+hidden    vector   2  $ n activation v 4 100.0  3 2
+outwts    matrix   2  $ n weight     h 4 100.0  5 1 3 2
+obias     vector   2  $ n bias       h 4 100.0  5 1
+output    vector   2  $ n activation v 4 100.0  5 1
+targets   vector   2  $ n target     v 4 100.0  0 1
+
+srn.str
+-------
+get network srn.net
+get pattern srn.pat
+set dlevel 3
+set lflag 1
+set param lrate .5
+set param momentum 0.0
+set mode lgrain pattern
+set ecrit 0.1
+set nepochs 1000
+set param mu 0.0
+
+
+Train the network, using "strain" (NOT ptrain!), until "tss" is less
+than 0.1.  It should reach "ecrit" of 0.1 within 1000 epochs; if it
+takes longer, "newstart" the network (not "reset"), and "strain"
+again.  It might take several newstarts before you find one that
+works.  Once you have a starting point that works, record the random
+number seed for future reference (type "exam seed"), so that if you
+ever want to retrain the network, you can re-seed with the same value.
+
+1A. During training, when the input is 0 and the teacher is 0 or 1, do
+the weights from the input nodes change? Why not?
+
+Do the weights from the context nodes change? Why?
+
+Do the weights from the hidden nodes change? Why?
+
+When the teacher is -1 ("don't care"), do any of the weights change?
+Why not?
+
+1B. How is it possible for the network to learn both pattern 00 and
+01?  After all, they have the same inputs but different outputs.
+
+1C. Does the output value for the pattern 0_ anticipate its next
+output value?  In what way?  Is it absolutely necessary that it
+anticipate?
+
+1D. After training, "tall" the network several times, and plot the
+trajectory of the hidden node activations.  That is, let the x-axis be
+the activation of hidden node 1, the y-axis be the activation of
+hidden node 2, and plot the activations for each pattern, connecting
+the points with arrows.  Also, accurately plot plot the decision line
+made by the output node, and show how you derived the equation for
+that line. HINT: The line is given by
+
+     net^{out} = 0
+               =   w_{out,hid1} * act_{hid1} 
+                 + w_{out,hid2} * act_{hid2} 
+                 + bias^{out}.
+
+1E. Let the SRN dream: Set up a pattern file with all the input
+activations equal to zero; e.g., a pattern file with four repetitions
+of pattern 0_ from srn.pat (note that the teacher values are
+irrelevant for "tall"-ing).  Now "tall" the trained network (from 1D)
+several times (if you already quit the program after 1D, re-seed with
+the seed value you recorded, and retrain the network), and plot the
+trajectory as you did in 1D.  Why does the network stabilize instead
+of cycling as in 1D?  Why does the network in 1D cycle instead of
+stabilizing?  HINT: What is the role of the input activation?
+
+
+2. An Oscillating Network.
+
+Set up an SRN using the "nostab.*" files below.  It has three output
+nodes, and three "input" nodes that are actually used as just the
+temporal context of the output nodes.  Think carefully about how the
+weights are specified in the file, nostab.net.
+
+nostab.net
+----------
+definitions:
+nunits 6
+ninputs 3
+noutputs 3
+end
+constraints:
+z 0.0
+m -10.0
+p 10.0
+end
+network:
+% 3 3 0 3
+zmp
+pzm
+mpz
+end
+biases:
+%z 3 3
+end
+
+
+Here are the template and startup files:
+
+nostab.tem
+----------
+define: layout
+epoch   $       tss     $                pname  ipatterns   tpatterns
+cpname  $       pss     $                $      $           $
+
+
+prior-act
+$
+               current-act
+$              $
+
+
+weights
+end
+epochno   variable 2  $ 0 epochno      5 1.0
+tss       floatvar 2  $ n tss          6 1.0 
+cpname    variable 1  $ n cpname      -5 1.0
+pss       floatvar 2  $ n pss          6 1.0
+env.pname vector   0  $ n pname      v 5   0   0 1 
+env.ipat  matrix   0  $ n ipattern   h 3 1.0   0 1 0 3
+env.tpat  matrix   0  $ n tpattern   h 3 1.0   0 1 0 3
+input     vector   2  $ n activation h 4 100.0  0 3
+conwts    matrix   2  $ n weight     h 4 100.0  3 3 0 3
+hidden    vector   1  $ n activation v 4 100.0  3 3
+
+nostab.str
+----------
+get network nostab.net
+set dlevel 3
+set param mu 0.0
+get pat nostab.pat
+set state activation 3 1.0
+
+
+2A. Let the network dream: Use the pattern file below and "tall" the
+network several times.  Write down the activations for at least 12
+updates.  Does the network oscillate or stabilize?
+
+nostab.pat
+----------
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+00   -3 -4 -5   -1 -1 -1
+
+2B. Now change the weights in the network file so that "m" is -1.0 and
+"p" is 1.0 (instead of -10.0 and 10.0, respectively), and re-invoke
+the program.  "tall" the network several times.  Write down the
+activations for at least 12 updates.  Why does it stabilize instead of
+oscillate?
+
+2C. Change the weights in the network file to small random values
+(e.g., %r 3 3 0 3).  Re-invoke the program, and "tall" the network
+several times.  Does the network oscillate or stabilize?  
+
+"newstart" the network with different random weights, "set state
+activation 3 1.0", and "tall" again.  Do that (newstart, set state
+act, and tall) five times.  For each network, report whether they
+stabilized or oscillated, their weights, and the activation values to
+which they stabilized or cycled through.  (For most random weight
+configurations, the network will stabilize.)
+
+If you like, venture an explanation as to why random networks usually
+stabilize (but we won't get to that in class for several days yet, and
+there aren't any points for it).
+
+=== end ===

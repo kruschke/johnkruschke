@@ -1,0 +1,119 @@
+
+                                   2-FEB-1997
+
+World-Wide Web Access Statistics for www.indiana.edu                  Page: 1
+
+File Accesses by Internet Node (Address) for January 1997
+                                                                Total    Total
+File Description                                                Nodes  Accesses
+--------------------------------------------------------------- -----  --------
+/~jkkteach/                                                       41       54
+/~jkkteach/P335/aivideo.html                                       3        3
+/~jkkteach/P335/announce.html                                      5        5
+/~jkkteach/P335/app1.html                                          5        5
+/~jkkteach/P335/app2.html                                          1        1
+/~jkkteach/P335/catmodels.html                                     2        2
+/~jkkteach/P335/essayqexample.html                                 1        1
+/~jkkteach/P335/exam1.html                                         5        5
+/~jkkteach/P335/exam1qa.html                                       2        2
+/~jkkteach/P335/exam1results.html                                  2        2
+/~jkkteach/P335/exam1rev.html                                      1        1
+/~jkkteach/P335/exam2.html                                         2        2
+/~jkkteach/P335/exam2qa.html                                       2        2
+/~jkkteach/P335/exam2results.html                                  1        1
+/~jkkteach/P335/exam2rev.html                                      1        1
+/~jkkteach/P335/exam3.html                                         2        2
+/~jkkteach/P335/exam3qa.html                                       1        1
+/~jkkteach/P335/exam3results.html                                  1        1
+/~jkkteach/P335/exam3rev.html                                      1        1
+/~jkkteach/P335/exam4.html                                        15       18
+/~jkkteach/P335/exam4qa.html                                       1        1
+/~jkkteach/P335/exam4results.html                                 14       16
+/~jkkteach/P335/exam4rev.html                                      2        2
+/~jkkteach/P335/goals.html                                        23       27
+/~jkkteach/P335/links.html                                         5        5
+/~jkkteach/P335/mazemodels.html                                    2        2
+/~jkkteach/P335/p335.html                                         36       43
+/~jkkteach/P335/p335schedule.html                                  1        4
+/~jkkteach/P335/patternrecog.html                                  4        4
+/~jkkteach/P335/schedule.html                                      7       12
+/~jkkteach/P335/semorgmodels.html                                  2        2
+/~jkkteach/P335/syllabus.html                                     16       18
+/~jkkteach/P553/announce.html                                      3        3
+/~jkkteach/P553/binomial.html                                      1        1
+/~jkkteach/P553/bronowski.html                                     2        2
+/~jkkteach/P553/exam1.html                                         3        4
+/~jkkteach/P553/exam1review.html                                   1        1
+/~jkkteach/P553/exam3.html                                         9        9
+/~jkkteach/P553/exam3review.html                                   1        1
+/~jkkteach/P553/exam3sample.html                                   1        1
+/~jkkteach/P553/exam3scores.html                                   8        8
+/~jkkteach/P553/goals.html                                         2        2
+/~jkkteach/P553/hwlist.html                                        2        2
+/~jkkteach/P553/links.html                                         5        5
+/~jkkteach/P553/p553.html                                         33       35
+/~jkkteach/P553/schedule.html                                      3        3
+/~jkkteach/P553/syllabus.html                                      5        5
+/~jkkteach/Q500/                                                   1        2
+/~jkkteach/Q500/categorization.html                                2        2
+/~jkkteach/Q550/                                                  38       70
+/~jkkteach/Q550/anderson_programs/README.txt                       1        1
+
+                                   2-FEB-1997
+
+World-Wide Web Access Statistics for www.indiana.edu                  Page: 2
+
+File Accesses by Internet Node (Address) for January 1997
+                                                                Total    Total
+File Description                                                Nodes  Accesses
+--------------------------------------------------------------- -----  --------
+/~jkkteach/Q550/anderson_programs/appa.txt.html                    8       10
+/~jkkteach/Q550/anderson_programs/appb.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appc.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appd.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appe.txt.html                    4        4
+/~jkkteach/Q550/anderson_programs/appf.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appg.txt.html                    3        4
+/~jkkteach/Q550/anderson_programs/apph.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appi.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appj.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appk.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appl.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/appm.txt.html                    3        3
+/~jkkteach/Q550/anderson_programs/jaalist.html                    14       17
+/~jkkteach/Q550/anderson_programs/readme.txt.html                  7       13
+/~jkkteach/Q550/announce.html                                     34       52
+/~jkkteach/Q550/daily.html                                        11       16
+/~jkkteach/Q550/goals.html                                        22       47
+/~jkkteach/Q550/hw1.html                                          39       87
+/~jkkteach/Q550/hw2.html                                          49       95
+/~jkkteach/Q550/hw3.html                                          16       23
+/~jkkteach/Q550/hw4.html                                           8       10
+/~jkkteach/Q550/hw5.html                                           6        6
+/~jkkteach/Q550/hw6.html                                           4        4
+/~jkkteach/Q550/hw7.html                                           6        7
+/~jkkteach/Q550/hw8.html                                          10       13
+/~jkkteach/Q550/hwlist.html                                       56      109
+/~jkkteach/Q550/instructor.html                                   32       56
+/~jkkteach/Q550/links.html                                        24       33
+/~jkkteach/Q550/modeling.html                                     28       64
+/~jkkteach/Q550/q550.html                                         91      194
+/~jkkteach/Q550/schedule.html                                     61      159
+/~jkkteach/Q550/scores.html                                       21       24
+/~jkkteach/Q550/syllabus.html                                     59      103
+/~jkkteach/Q750/                                                   5        5
+/~jkkteach/Q750/q750.html                                          9       12
+/~jkkteach/Q750/syllabus.html                                     11       13
+/~jkkteach/nisdata/                                                1        4
+/~jkkteach/usage/Aug96.html                                        1        1
+/~jkkteach/usage/Dec95.html                                        4        4
+/~jkkteach/usage/usage.html                                        1        2
+
+======================================================
+
+  Summary for January 1997
+
+  Total Internet Nodes (Addresses)              199
+  Total Accesses                               1624
+
+======================================================

@@ -1,0 +1,176 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Hillclimbing Optimization Homework; Prof. John K. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center> Q550 Models in Cognitive Science, Prof.
+Kruschke <h2> Homework: EXIT and ELMO Models </h2>
+<strong>Warning: This homework will take several
+hours to complete!</strong></center>
+
+<p>This homework uses MATLAB files:
+<ul>
+
+<li><a href="ElmoTableThree.m">ElmoTableThree.m</a>.
+The ELMO model, applied to the experiment that
+generated Table 3 of Kruschke (2001).
+
+<li><a href="ExitTableThree.m">ExitTableThree.m</a>.
+The EXIT model, applied to the experiment that
+generated Table 3 of Kruschke (2001).
+
+</ul>
+
+We will also use some of the programs from the
+previous assignment. <em>They have been modified, so
+please get the new versions.</em>
+
+<ul>
+
+<li><a
+href="SimpleHillClimb.m">SimpleHillClimb.m</a>. A
+simple hill-climbing routine for parameter
+optimization. It will be described in class.
+
+<li><a
+href="ModelErrorGraph.m">ModelErrorGraph.m</a>. This
+program calls the optimization routines and then
+graphs the results.
+
+<li><a href="GridEvaluation.m">GridEvaluation.m</a>.
+This is used for the graphing program.
+
+</ul>
+
+Copy the files into your directory. (To do this, it
+is best to select all the text in your browser
+window, copy it into the paste buffer, then paste it
+into a blank M-file in MatLab, then save-as in
+MatLab.)
+
+<p>For all of the questions below, hand in (on the
+due date) the relevant print-outs from MATLAB, such
+as command-window output or graphical output or
+M-file code.
+
+<p>
+
+<ol>
+
+<p><strong><li>Explore the behavior of the optimization algorithms
+applied to these models.</strong> <em>The goal of this exercise is for
+you to see how long it takes, in real time, for a search algorithm to
+find a minimum.</em> For this exercise it might help to know that you
+can interrupt MATLAB while it is executing a program by typing
+"cntrl-C" in its command window.
+
+Put the following lines into a script file, and then run the file. The
+"tic" and "toc" commands start and stop a clock, and tell you the
+elapsed time.  <blockquote><tt> paramInit = [ 0.7 0.7 0.7 0.7 ];
+<br>searchOptions = optimset('Display','iter'); <br>tic
+<br>[X,FVAL,exitflag,output] =
+fminsearch(@ElmoTableThree,paramInit,searchOptions) <br>ElmoSeconds =
+toc <br>ElmoMinutes = ElmoSeconds/60.0 <br>ElmoNumEvals =
+output.funcCount </tt></blockquote>
+
+Now put the following lines into a script file, and then run the file.
+
+<blockquote><tt> paramInit = [ 2.7 2.8 4.4 1.8 0.14 2.6 0.04 ];
+<br>searchOptions = optimset('Display','iter'); <br>tic
+<br>[X,FVAL,exitflag,output] =
+fminsearch(@ExitTableThree,paramInit,searchOptions) <br>ExitSeconds =
+toc <br>ExitMinutes = ExitSeconds/60.0 <br>ExitNumEvals =
+output.funcCount </tt></blockquote>
+
+How much time did it take <strong>per evaluation</strong> for ELMO and
+for EXIT? (You can estimate that duration by dividing the total
+duration by the number of evaluations conducted during the search. The
+number of evaluations is given by "<tt>funcCount</tt>" in the
+"<tt>output</tt>" of fit algorithm.) Why does EXIT take so much
+longer, per evaluation, than ELMO?  (Hint: Does ELMO do any
+trial-by-trial learning?  Does ELMO separately simulate multiple
+individual participants?)
+
+<p>Do you think those are really the best parameter values, or did it
+get stuck in a non-optimal local minimum? Why do you think that?
+(Consider the error surfaces in the next exercise.)
+
+
+<p><strong><li>Examine error surfaces of ELMO and EXIT for two
+parameters.</strong> <em>The goal of this exercise is for you to see
+what real error spaces look like, as opposed to the artificial
+functions from the previous assignment.</em>
+
+<ol>
+
+<li>Make a copy of ElmoTableThree.m called ElmoTwoParam.m. Make a copy
+of ModelErrorGraph.m called ElmoErrorGraph.m. In these copies, edit
+the code as follows:
+
+<li>In ElmoTwoParam.m, set all but two of the parameters to the
+(constant) best fitting values discovered by the search algorithm of
+the previous exercise. Which two parameters you leave free is your
+choice; any two will do. Let the remaining two parameters be
+paramVector(1) and paramVector(2).  Thus, the model becomes a function
+of two (free) parameters instead of four.
+
+<li>In ElmoErrorGraph.m, <em>first</em> comment out all three sections
+that call the fitting algorithms.  That is, comment out the sections
+involving SimpleHillClimb, fmincon, and fminsearch. Also comment out
+any lines in the graphing code that refer to any of these fits (i.e.,
+all the "plot" commands). <em>Second</em>, set parLow and parHigh so
+that a reasonable range of the two free parameters will be displayed
+in the graph of the error surface. Think carefully about what is a
+reasonable range for each parameter! <em>Third</em>, set parInc so
+that the number of steps it takes to traverse the range can be
+computed in a modest amount of time. That is, the GridEvaluation
+function will evaluate the error of ELMO at every combination of
+parameter values set by the increment across the range. Thus, the
+GridEvaluation function will call ELMO approximately
+(1+(parHigh(1)-parLow(1))/parInc(1)) *
+(1+(parHigh(2)-parLow(2))/parInc(2)) times. Based on the duration per
+evaluation that you computed in the previous exercise, make sure that
+the total time needed to span the grid is not too extreme!
+<em>Fourth</em>, change the function handle in GridEvaluation to
+@ElmoTwoParam.  <em>Fifth</em>, change the "title", "xlabel", and
+"ylabel" commands so that they accurately describe the parameters you
+chose to vary.
+
+<li> Look at the resulting graphs. Do they seem
+fairly smooth with a single minimum, or are they
+corrugated, crenulated, furrowed and cratered with
+many local minima?
+
+</ol>
+
+<p><strong>Do the analogous exercise for
+EXIT.</strong>
+
+
+<p><strong><li>Adapt the models to different
+experimental data.</strong>  <em>The goal of this
+exercise is for you to understand the inner workings
+of the model programs, by modifying them to apply to
+a different situation.</em>
+
+<p> Make a copy of ElmoTableThree.m called
+ElmoTableNine.m. Edit this copy so that it performs
+a best fit to the data of Table 9, on p.1396, in
+Kruschke (2001). You'll have to change the pattern
+vectors that it can "know", and you'll have to
+change the fit calculations at the end of the
+program. Run the fit and show the results.
+
+<p><strong>Do the analogous exercise for
+EXIT.</strong>
+
+
+
+
+</ol>
+
+
+<p><hr>
+</BODY>
+</HTML>

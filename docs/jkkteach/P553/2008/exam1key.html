@@ -1,0 +1,228 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke, Exam 1</TITLE>
+</HEAD>
+<BODY bgcolor="khaki">
+<font face="tahoma">
+
+
+<center>
+<h3>
+P553 Statistics in Psychology, Prof. Kruschke<br>
+</h3>
+<h2>
+Sample Exam 1 with Answers
+<br><strong>Actual Exam Will Differ</strong>
+</h2>
+</center>
+
+<p>This exam is closed-book and closed-notes, but you are encouraged
+to use a calculator.  There are 100 points possible, with points for
+each problem as marked.  Distributed separately will be tables for
+<strong>z</strong>, <strong>t</strong>, and <strong>power of
+t</strong>. Please do not write on these tables because they will be
+re-used for future exams.  You have 75 minutes; please allocate your
+time carefully. Please annotate your work; an uncommented stream of
+scribbles that mysteriously ends up with the right answer will not get
+full credit!
+
+<!--
+<p>
+<table align=right border=1 cellspacing=0 cellpadding=10>
+<tr><td>&nbsp;&nbsp;</td></tr>
+</table>
+In the box at the right, please write a number from 1 to 10 that indicates your <em>confidence</em> about the exam, where 1 means very low confidence, 5 means moderate confidence, and 10 means very high confidence. You may use any integer value from 1 to 10. Please give your rating <em>before</em> looking at the rest of the exam, and please do not later change the rating you write in this box.
+-->
+
+<br clear="all">
+<hr>
+
+<ol>
+
+<p><strong><li> (15 pts):</strong> 
+
+<p><strong>(a)</strong> In a distribution skewed to the right,
+which is larger, the median or the mean?  Why?
+
+<BLOCKQUOTE>
+The mean is at least as large as (and typically larger than) the median in a distribution skewed to the right. This is because the mean, which minimizes squared deviations instead of absolute deviations, is more sensitive to outliers than the median.
+</BLOCKQUOTE>
+
+<p><strong>(b)</strong> Suppose a sample contains the following
+nine scores: 1, 2, 2, 3, 3, 4, 4, 4, 4.  What are the mode, median and mean values?
+
+<BLOCKQUOTE>
+The mode is 4. The median is 3. The mean is 27/9=3.0.
+</BLOCKQUOTE>
+
+<p><strong>(c)</strong> State the definitions of mode, median and mean in terms of the measures of variability that each minimizes. For the sample in Part (b), above, compute the value of the minimal variability for each measure of central tendency. 
+
+<BLOCKQUOTE>
+The mode minimizes V=(1/N)*&Sigma;<SUB>i</SUB>dist(x<SUB>i</SUB>,M), where dist(x<SUB>i</SUB>,M)=0 if |x<SUB>i</SUB>-M|=0 and dist(x<SUB>i</SUB>,M)=1 otherwise. In this case, V=(1/9)*[dist(1,4) + dist(2,4) + dist(2,4) + dist(3,4) + dist(3,4) + dist(4,4) + dist(4,4) + dist(4,4) + dist(4,4)] = (1/9)*5 = 5/9.
+<P>
+The median minimizes V=(1/N)*&Sigma;<SUB>i</SUB>|x<SUB>i</SUB>-M|. In this case, V=(1/9)*[|1-3| + |2-3| + |2-3| + |3-3| + |3-3| + |4-3| + |4-3| + |4-3| + |4-3|] = 8/9.
+<P>
+The mean minimizes V=(1/N)*&Sigma;<SUB>i</SUB>|x<SUB>i</SUB>-M|<SUP>2</SUP>. In this case, V=(1/9)*[|1-3|<SUP>2</SUP> + |2-3|<SUP>2</SUP> + |2-3|<SUP>2</SUP> + |3-3|<SUP>2</SUP> + |3-3|<SUP>2</SUP> + |4-3|<SUP>2</SUP> + |4-3|<SUP>2</SUP> + |4-3|<SUP>2</SUP> + |4-3|<SUP>2</SUP>] = 10/9.
+</BLOCKQUOTE>
+
+<p><strong><li> (20 pts):</strong>
+
+<p><strong>(a)</strong> For a given population distribution, what does the sampling distribution of the mean look like when the sample size is 1?  (describe in words)
+
+<BLOCKQUOTE>
+When the sample size is 1, the mean of the sample equals the single score in the sample, and the sampling distribution looks exactly like the population distribution.
+</BLOCKQUOTE>
+
+<p><strong>(b)</strong> What does the sampling distribution of the mean look like when the sample size approaches infinity? (describe in words)
+
+<BLOCKQUOTE>
+The sampling distribution approaches a single peak at the population mean.
+</BLOCKQUOTE>
+
+<p><strong>(c)</strong> Briefly state the Central Limit Theorem for the sampling distribution of the sample mean.
+
+<BLOCKQUOTE>
+The sampling distribution of the mean becomes approximately normally distributed as the sample size increases.
+</BLOCKQUOTE>
+
+<p><strong>(d)</strong> Suppose we have a population with mean mu = 47.0 and standard deviation sigma = 30.0.  If we sample from that population with sample size N = 25, what is the expected value of the sample mean?  What is the standard deviation (standard error) of the sampling distribution of the mean?
+
+<BLOCKQUOTE>
+The expected value of the sample mean equals the population mean, which in this case is 47.0.
+<P>
+The standard error of the sampling distribution is sigma/sqrt(N) = 30.0/sqrt(25) = 6.0.
+</BLOCKQUOTE>
+
+<p><strong><li> (35 pts):</strong>
+
+<p>Suppose we have a null hypothesis that mu<sub>0</sub> = 0.0 and sigma<sub>0</sub> = 10.0, and an alternative hypothesis that mu<sub>1</sub> = 5.0 (with the same sigma).  We assume that the populations are normally distributed.
+
+<p><strong>(a)</strong> What is the effect size for these hypotheses?
+
+<BLOCKQUOTE>
+The effect size is (mu<sub>1</sub>-mu<sub>0</sub>)/sigma = (5.0-0.0)/10.0 = 0.5.
+</BLOCKQUOTE>
+
+<p><strong>(b)</strong> Using a Type I error rate of alpha = .05, and a sample size of N = 10, what is the power of the test? (Assume a non-directional, two-tailed test.)
+
+<BLOCKQUOTE>
+From the null hypothesis, we compute the critical value for the mean. First consider the "high tail" of the distribution:
+<BR>z<SUB>0</SUB>(M<SUB>crit</SUB>) = 1.96 = (M<SUB>crit</SUB>-mu<SUB>0</SUB>)/(sigma/sqrt(N)) = (M<SUB>crit</SUB>-0.0)/(10.0/sqrt(10))
+<BR>which, when rearranged, implies that
+<BR>M<SUB>crit</SUB> = 1.96 * 10.0 / sqrt(10) = 6.20.
+<P>
+Next, we determine where that critical value lies in the alternative hypothesis sampling distribution:
+<BR>z<SUB>1</SUB>(M<SUB>crit</SUB>) = (M<SUB>crit</SUB>-mu<SUB>1</SUB>)/(sigma/sqrt(N)) = (6.20-5.0)/(10.0/sqrt(10)) = 0.38.
+<BR>From the standardized normal tables, we find that a Z of 0.38 implies that the power is 35.2%.
+<P>
+To be completely accurate, we should also determine the contribution to the power from the "low tail" of the distribution. This contribution will be tiny, however, so we'll ignore it here. (But your answer should at least mention the low tail, as it is mentioned here.)
+</BLOCKQUOTE>
+
+<p><strong>(c)</strong> If we wanted the power to be at least .88, what minimal sample size would we need?
+
+<BLOCKQUOTE>
+First, we use the desired power and the alternative hypothesis sampling distribution to determine one constraint on N. From the standardized normal table, we find that the desired power of .88 implies that the critical mean should have a Z value of -1.18. Hence
+<BR>z<SUB>1</SUB>(M<SUB>crit</SUB>) = -1.18 = (M<SUB>crit</SUB>-mu<SUB>1</SUB>)/(sigma/sqrt(N)) = (M<SUB>crit</SUB>-5.0)/(10.0/sqrt(N)).
+<BR>Rearranging that equation implies
+<BR>M<SUB>crit</SUB> = -1.18 * 10.0 / sqrt(N) + 5.0.
+<P>
+From the null hypothesis, have
+<BR>z<SUB>0</SUB>(M<SUB>crit</SUB>) = 1.96 = (M<SUB>crit</SUB>-mu<SUB>0</SUB>)/(sigma/sqrt(N)) = (M<SUB>crit</SUB>-0.0)/(10.0/sqrt(N)).
+<BR>Substituting for M<SUB>crit</SUB> the expression derived above yields:
+<BR>1.96 = ( [-1.18 *10.0/sqrt(N)+5.0] -0.0)/(10.0/sqrt(N)).
+<BR>Solving for N then yields
+<BR>(1.96 - -1.18) * 10.0 / 5.0 = sqrt(N).
+<BR>Hence N=39.44, i.e., we need a sample size of at least 40.
+</BLOCKQUOTE>
+
+<p><strong>(d)</strong> We draw a random sample from the world, with N = 4, and obtain the following scores: 0, 4, 8, 12.  Can we reject the null hypothesis? (The null hypothesis was stated at the beginning of this exercise. Assume a non-directional test with alpha = .05.)
+
+<BLOCKQUOTE>
+The sample mean is 6.0, so z = (6.0-0.0)/(10.0/sqrt(4)) = 6/5 = 1.20. This does not exceed the critical z value of 1.96, so we cannot reject the null hypothesis at the .05 level.
+</BLOCKQUOTE>
+
+<p><strong>(e)</strong> Using the standard deviation assumed by the null hypothesis, compute the 95% confidence interval for the population mean, based on the sample mean from part (d). Assume a non-directional, two-sided confidence interval.
+
+<BLOCKQUOTE>
+The confidence interval is the sample mean, 6.0, plus or minus 1.96 standard errors:
+<BR>Low end: 6.0 - 1.96*10.0/sqrt(4) = -3.8.
+<BR>High end: 6.0 + 1.96*10.0/sqrt(4) = 15.8.
+</BLOCKQUOTE>
+
+<p>
+
+<table align=right border=1 cellpadding=3>
+<tr><td align=center>after</td><td align=center>before</td></tr>
+<tr><td align=center>8</td><td align=center>7</td></tr>
+<tr><td align=center>8</td><td align=center>6</td></tr>
+<tr><td align=center>6</td><td align=center>6</td></tr>
+<tr><td align=center>4</td><td align=center>2</td></tr>
+<tr><td align=center>6</td><td align=center>5</td></tr>
+<tr><td align=center>1</td><td align=center>1</td></tr>
+<tr><td align=center>3</td><td align=center>4</td></tr>
+<tr><td align=center>5</td><td align=center>5</td></tr>
+<tr><td align=center>8</td><td align=center>9</td></tr>
+<tr><td align=center>6</td><td align=center>4</td></tr>
+</table>
+
+<strong><li> (30 pts)</strong>
+
+Suppose we measure subjective comfort of patients before and after taking a certain drug.  Subjective comfort is rated on a scale from 1 (low) to 10 (high).  Suppose we have a null hypothesis that comfort will not change after taking the drug.  For ten patients selected at random, the before and after ratings are as shown in the table at the right.
+
+<p><strong>(a)</strong> Can the null hypothesis be rejected? (Assume alpha = .05, two-tailed.)
+
+<BLOCKQUOTE>
+The mean change in subjective comfort is an increase of 0.60 (from 4.90 to 5.50). The estimated sigma is sqrt(SS/df) = 1.174. Then t = 0.60/(1.174/sqrt(10)) = 1.62.
+<P>From the t-table, we find that t<SUB>crit</SUB>(9) = 2.262 (for a two-tailed test with Type I error rate of .05). Hence we cannot reject the null hypothesis of no change.
+</BLOCKQUOTE>
+
+<p><strong>(b)</strong> Determine the 95% confidence interval (using the method M-t<sub>crit</sub>SE to M+t<sub>crit</sub>SE).
+
+<BLOCKQUOTE>
+Lower bound of different between means: 0.60 - 2.262 * 1.174/sqrt(10) = -0.24.
+<BR>Upper bound of different between means: 0.60 + 2.262 * 1.174/sqrt(10) = 1.44.
+</BLOCKQUOTE>
+
+<p><strong>(c)</strong> Estimate the effect size (of the change in subjective comfort).
+
+<BLOCKQUOTE>
+The estimated effect size is 0.60/1.174 = 0.51.
+</BLOCKQUOTE>
+
+<p><strong>(d)</strong> What is the approximate power of the test? (Estimate from the tables.)
+
+<BLOCKQUOTE>
+From the power table we find that for an effect size of 0.50 and sample size of 10, the power is 0.32 (for a two-tailed test with .05 Type I error rate). Because our estimated effect size is very nearly 0.50, we can estimate the power of our experiment to be close to the tabled value of 32%.
+</BLOCKQUOTE>
+
+<BR clear="all">
+
+<!--
+
+<P><STRONG><LI>(15 pts. Extra Credit, optional but highly recommended take-home question due Tuesday)</STRONG>
+
+A sample of five scores is obtained in an experiment, and the <EM>maximal</EM> score in the sample is 2.1. Can we reject the hypothesis that the sample was drawn from a normally distributed population with mean 0.0 and standard deviation 1.0? (Hint: Write an SPSS program to generate a sampling distribution for the MAX of a sample.)
+
+<BLOCKQUOTE>
+Answer to be supplied later, after late exam-takers have turned in the extra credit.
+</BLOCKQUOTE>
+
+-->
+
+</ol>
+
+<br clear="all">
+<hr>
+
+<!--
+<p>
+<table align=right border=1 cellspacing=0 cellpadding=10>
+<tr><td>&nbsp;&nbsp;</td></tr>
+</table>
+In the box at the right, please write a number from 1 to 10 that indicates your <em>confidence</em> about the exam, where 1 means very low confidence, 5 means moderate confidence, and 10 means very high confidence. You may use any integer value from 1 to 10. Please give your rating only <em>after</em> completing the exam, and please do not feel compelled to give the same rating you gave at the start of the exam.
+-->
+
+
+</font>
+</BODY>
+</HTML>

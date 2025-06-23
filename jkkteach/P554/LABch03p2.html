@@ -1,0 +1,99 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>P554 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="khaki">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/P554/">P554 Statistics in Psychology</a>, 
+Prof. Kruschke
+<br>
+<!-- ------------------------------------------------------------ -->
+Lab Assignment for Ch. 3 (Part II). Th 18, F 19 Jan 2007.
+<!-- ------------------------------------------------------------ -->
+</h3>
+</center>
+
+<small>
+<p><em>General instructions.</em> This assignment is to be done in
+your lab session. Submit your assignment from the lab computer during
+lab time.  If the assignment involves SPSS, <em>be sure that when you open
+SPSS, you set it so that commands are displayed in the output: Edit ->
+Options, Viewer tab, check box Display commands in the log</em>.
+
+</small>
+
+<!--
+<p><b>Under construction. Do not yet do this assignment.</b><p>
+-->
+
+<p>
+<!-- ------------------------------------------------------------ -->
+
+Our goal in this lab exercise is to produce one curve in the power
+chart of Table A-11, p. A-28.
+
+To do this, you will adapt the <a href="SampleGeneralizedF.SPS">linked
+SPSS syntax file</a>. Recall from last week that this program samples
+three scores (n=3) from each of three normally distributed groups
+(a=3).  Recall also that the critical value for F, when the Type I
+error rate is 5%, is F_crit(2,6) = 5.14.
+
+
+You will be changing the means of the normal populations, and
+estimating the power from the percentiles in the sampling
+distributions.
+
+<p>* Change the <tt>/PERCENTILES</tt> subcommand so that it specifies
+2.5 5 7.5 10 15 20 25 ... 70 75 80 85 . This will allow you to estimate the
+power to within about 5 percentage points.
+
+<p>* Now change the mean of the second group to +1.0, and change the
+mean of the third group to -1.0. (Leave the mean of the first group at
+0.0.) Run the program. What is the power for this alternative
+hypothesis, that is, what percentage of the sampled F values are above
+5.14? What is the effect size <em>f</em>, and what is the value of phi
+(Equation 100)? Make a note of the value of phi and the value of the
+power.
+
+<p>* Repeat the previous step, using second and third group means of
++/-1.2, +/-1.4, +/-1.6, ..., +/-2.4, +/-2.6 (instead of +/-1.0). In
+each case, determine phi and the approximate power.
+
+<p>* Now clear out the data editor of SPSS (File -> New -> Data), and
+enter the phi values in one column (label it Phi) and the power values
+in the adjacent column (label it Power). 
+
+<br>&nbsp;&nbsp; Now display the Phi and Power values: <br>Analyze ->
+Reports -> Case Summaries <br>Drag both Phi and Power to the Variables
+box; click OK.
+
+<br>&nbsp;&nbsp; 
+Now graph the Power versus
+Phi: <br>Graphs -> Interactive -> Line.  <br>Drag Phi to the x-axis
+and Power to the y-axis.  <br>Uncheck the "Display Key" box.  <br>On
+the Titles tab, in the Chart Title box, type your full name,
+and in the Chart Subtitle box, type: "df_num = ____, df_denom = ____"
+with the blanks filled in by the appropriate numbers.
+
+<p>* Look at the corresponding curve in Table A.11, p. A-28. Does your
+plotted curve match the Table A.11 curve fairly well?
+
+<p><em>What to turn in and how to turn it in.</em> Clear out
+everything from your SPSS output file except (i) the syntax that
+defined the group means, (ii) the case summaries tables and (iii) the final
+graph you made.  Save a copy of the output file for your own records,
+and <em>upload a copy to the Assignments in Oncourse</em>.
+
+
+
+
+<!-- ------------------------------------------------------------ -->
+<p><hr>
+</BODY>
+</font>
+</HTML>
+
+

@@ -1,0 +1,252 @@
+<HTML>
+<HEAD>
+<TITLE>Q750 Recent Advances in Connectionist Models, Prof. Kruschke</TITLE>
+</HEAD>
+<! BODY background="../bg.gif">
+<BODY bgcolor="FFFFFF">
+
+<hr>
+
+<center>
+<h1> Q750: Recent Advances in <br>Connectionist Models<br> </h1>
+<h3> (listed as "Neural Networks as Models of Cognition")<br></h3>
+<h2>Spring 1996, Section 1972, Tu & Th 2:30-3:45, PY 230<br> </h2>
+</center>
+
+<a name="contents"></a>
+<h2>Contents:</h2>
+
+<ul>
+
+<li> <a href="#instructor">Instructor</a>
+
+<li> <a href="#announcements">Announcements</a>
+
+<li> <a href="#newsgroup">Q750 Newsgroup</a>
+
+<li> <a href="syllabus.html">Syllabus</a>
+
+<li> <a href="#links">Links to Other Resources</a>
+
+</ul>
+<p>
+
+
+<a name="instructor"></a>
+<hr>
+
+<h2>Instructor:</h2>
+
+<strong>Instructor: Prof.  <a
+href="http://www.indiana.edu/~kruschke/home.html"> John K.
+Kruschke</a><br></strong>
+Office: PY 336,  855-3192, Thursday 4:00-5:00 and by appt.<br>
+E-mail: <A HREF=mailto:KRUSCHKE@indiana.edu>kruschke@indiana.edu</A>
+<br> <p>
+
+<p><center> [ <a href="#contents">Contents</a> ] </center><p>
+
+<a name="announcements">
+<hr>
+
+<H2>Announcements:</H2>
+
+<dl>
+
+<dt>March 21, 1996 <dd>Dates for individual project presentations:<br>
+Tuesday April 16: Byron Long; Mark Steyvers<br> Thursday April 18:
+Charles Twardy; Daniel Lipofsky<br> Tuesday April 23: Eliana Colunga;
+Pantelis Papadopoulous<br> Thursday April 25: Dave Huber<br> Written
+papers are due Thursday April 25, except for the person presenting on
+that day (Dave Huber), for whom the paper is due by 5pm Friday April
+26.
+
+
+<p><dt>February 13, 1996 <dd>Re-modified list of discussion
+leaders for the various topics:
+<ul>
+
+<li><em><a href="syllabus.html#wk2">Week 2, Meta-Theory:</a></em> open
+discussion
+
+<li><em><a href="syllabus.html#wk3">Week 3, Category Learning:</a></em>
+Kruschke
+
+<li><em><a href="syllabus.html#wk4">Week 4, Development:</a></em> Charles
+Twardy, Daniel Lipofsky
+
+<li><em><a href="syllabus.html#wk5">Week 5, Sequence Learning:</a></em>
+Mark Stuyvers, Jung Suh
+
+<li><em><a href="syllabus.html#wk6">Week 6, Similarity:</a></em> Eliana
+Colunga, Pantelis Papadopoulous
+
+<li><em><a href="syllabus.html#wk7">Week 7, Strength of
+Processing:</a></em> David Huber, Daniel Lipofsky
+
+<li><em><a href="syllabus.html#wk8">Week 8, Memory:</a></em> Mark
+Steyvers, Byron Long
+
+<li><em><a href="syllabus.html#wk9">Week 9, Neural Dynamics of
+Vision:</a></em> Kruschke
+
+<li><em><a href="syllabus.html#wk10">Week 10, Word Recognition:</a></em>
+Eliana Colunga, Byron Long
+
+<li><em><a href="syllabus.html#wk11">Week 11, Lesions:</a></em> Pantelis
+Papadopoulous, Dave Huber
+
+<li><em><a href="syllabus.html#wk12">Week 12, Reprise of
+Meta-Theory:</a></em> Charles Twardy (perhaps just one day)
+
+</ul>
+
+(If I misspelled any of your names, please let me know!)
+<p>
+
+<dt>February 12, 1996 <dd>Regarding the "reaction papers": Students
+who are leading discussion of an article need not turn in a reaction
+paper for that article.<p>
+
+<dt>February 9, 1996 <dd>In order to insure that we all read the
+assigned articles and participate in class discussion, I am
+establishing a new assignment: Students must write brief "reaction"
+papers for each article.  The reaction paper should be up to one page
+long, and describe your reaction to the article.  Your reaction could
+include discussion of implications not mentioned by the article's
+authors, or discussion of criticisms, or discussion of possible
+experiments or models that would help clarify issues in the article,
+or anything else that indicates a thoughtful reaction to the article.
+The reaction paper is due at the beginning of class on the day that
+the article is to be discussed.  You will receive a "check" for
+turning in the reaction paper, and a "check plus" for an exceptionally
+thoughtful reaction.  Not turning in reaction papers will reflect
+badly in your course grade. This applies to all articles from now on,
+starting with the Week 6 articles on similarity.  <p>
+
+<dt>January 5, 1996 <dd>The course reader will be available at the IMU
+Bookstore by Monday, January 8th.  The price is $51.20, of which $19
+is for copyright fees and $32 is for photocopying.  (The copyright
+fees go to the publishers; none goes to the authors.)
+<p>
+
+<dt>January 
+<dd>Announcements will be posted here, in reverse chronological order,
+so that the most recent announcement is listed first.
+
+</dl>
+
+<p><center> [ <a href="#contents">Contents</a> ] </center><p>
+
+<a name="newsgroup"> 
+<hr>
+
+<H2>Q750 Newsgroup:</H2>
+
+Students: For posting to our newsgroup, it is important to run
+Netscape from your Student Lockers.  You should read the following
+documents:<br>
+
+<a href="http://www.indiana.edu/~ucspubs/b119/"> Netscape 1.1N in the
+IUB public computing sites </a> <br>
+
+<a href="http://www.indiana.edu/~ucspubs/b073/"> The Student Locker
+handbook</a> <br>
+
+<a href="http://pcfwww.ucs.indiana.edu/tltl/documents/lockerfaq.html">
+Frequently Asked Questions about Student Lockers, Netscape,
+Newsgroups, etc.</a> <p>
+
+<a href="news:ac.cogs.q750"> Click here to go to our <strong>Q750
+NEWSGROUP (ac.cogs.q750)</strong></a> <p>
+
+<p><center> [ <a href="#contents">Contents</a> ] </center><p>
+
+
+
+<a name="links"></a>
+<hr>
+<H2>Links to other resources:</H2>
+
+<UL>
+
+	<li> Indiana University
+
+	<ul>
+
+		<LI><A HREF="http://sckb.ucssc.indiana.edu/kb/">
+		<strong>University Computing Services Knowledge Base</strong>
+		</A>
+
+		<LI><A HREF="http://www.indiana.edu/~libweb/index.html">
+		<strong>I.U. Libraries</strong>
+		</A>
+
+		<LI><A HREF="http://www.indiana.edu/iub">
+		Indiana University, Bloomington
+		</A>
+
+		<LI>
+		<A HREF="http://www.psych.indiana.edu">
+		I.U. Cognitive Science
+		</A>
+
+		<li>
+		<A HREF="http://www.indiana.edu/~psych/welcome.html">
+		I.U. Department of Psychology
+		</a>
+
+		<LI>
+		<A HREF="http://www.bloomington.in.us/">
+		City of Bloomington
+		</A>
+
+	</ul>
+
+	<li> Outside I.U.
+	<ul>
+
+		<li>
+		<a href="http://http2.sils.umich.edu/Public/nirg/conn.html">
+		Connectionists E-list
+		</a>
+
+		<LI>
+		<A HREF="http://psych.hanover.edu/APS/">
+		American Psychological Society
+		</A>
+
+		<LI>
+		<A HREF="http://www.apa.org/">
+		American Psychological Association
+		</A>
+
+		<LI>
+		<A HREF="http://matia.stanford.edu//cogsci.html">
+		Stanford Link List for Cognitive and Psychological Sciences
+		</A>
+
+		<LI>
+		<A HREF="http://psy.ucsd.edu/otherpsy.html">
+		UCSD Link List for Cognitive and Psychological Sciences
+		</A>
+
+		<LI>
+		<A HREF="http://pegasus.acs.ttu.edu/~civelek/newII/thanatos2.html">
+		PsychGuide to sites related to psychology
+		</A>
+
+	</ul>
+
+</UL>
+
+<p><center> [ <a href="#contents">Contents</a> ] </center><p>
+
+<hr>
+
+<p>
+<strong><a href="../usage/usage.html">Usage Statistics</a></strong>
+
+
+</BODY>
+</HTML>

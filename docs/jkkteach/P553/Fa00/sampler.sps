@@ -1,0 +1,152 @@
+INPUT PROGRAM .
+  LOOP #I = 1 TO 5000 .
+
+    COMPUTE N = 10 .
+    COMPUTE RHO = 0.0 .
+
+    COMPUTE X1 = NORMAL(1.0) .
+    COMPUTE X2 = NORMAL(1.0) .
+    COMPUTE X3 = NORMAL(1.0) .
+    COMPUTE X4 = NORMAL(1.0) .
+    COMPUTE X5 = NORMAL(1.0) .
+    COMPUTE X6 = NORMAL(1.0) .
+    COMPUTE X7 = NORMAL(1.0) .
+    COMPUTE X8 = NORMAL(1.0) .
+    COMPUTE X9 = NORMAL(1.0) .
+    COMPUTE X10 = NORMAL(1.0) .
+
+    COMPUTE Y1 = RHO * X1 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y2 = RHO * X2 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y3 = RHO * X3 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y4 = RHO * X4 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y5 = RHO * X5 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y6 = RHO * X6 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y7 = RHO * X7 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y8 = RHO * X8 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y9 = RHO * X9 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y10 = RHO * X10 + SQRT(1-RHO**2)* NORMAL(1.0) .
+
+    COMPUTE SX   = SUM(X1 to X10) .
+    COMPUTE SXSQ = X1**2 + X2**2 + X3**2 + X4**2 + X5**2
+                 + X6**2 + X7**2 + X8**2 + X9**2 + X10**2 .
+    COMPUTE SY   = SUM(Y1 to Y10) .
+    COMPUTE SYSQ = Y1**2 + Y2**2 + Y3**2 + Y4**2 + Y5**2
+                 + Y6**2 + Y7**2 + Y8**2 + Y9**2 + Y10**2 .
+    COMPUTE SXY  = X1*Y1 + X2*Y2 + X3*Y3 + X4*Y4 + X5*Y5
+                 + X6*Y6 + X7*Y7 + X8*Y8 + X9*Y9 + X10*Y10 .
+
+    COMPUTE R = ( N * SXY - SX * SY ) 
+       / (  SQRT( N * SXSQ - SX**2 ) 
+          * SQRT( N * SYSQ - SY**2 ) ) .
+
+    END CASE .
+  END LOOP .
+  END FILE .
+END INPUT PROGRAM .
+EXECUTE .
+IGRAPH 
+  /VIEWNAME='Scatterplot' 
+  /X1 = VAR(x1) TYPE = SCALE 
+  /Y = VAR(y1) TYPE = SCALE 
+  /COORDINATE = VERTICAL  
+  /FITLINE METHOD = REGRESSION LINEAR LINE = TOTAL SPIKE=OFF 
+  /X1LENGTH=3.0 
+  /YLENGTH=3.0 
+  /X2LENGTH=3.0 
+  /CHARTLOOK='NONE'
+  /SCALERANGE = VAR(x1) MIN=-4.000000 MAX=4.000000
+  /SCATTER COINCIDENT = NONE .
+FREQUENCIES VARIABLES = R
+ /FORMAT = NOTABLE
+ /STATISTICS=MINIMUM MAXIMUM MEAN
+ /PERCENTILES = 2.5 5  95 97.5 .
+IGRAPH
+ /X1 = VAR(R) TYPE = SCALE TITLE = 'Sample R'
+ /Y = $count TITLE = 'Frequency'
+ /COORDINATE = VERTICAL  
+ /TITLE = 'Histogram of Sample R'
+ /SUBTITLE = '_____ samples of N=___ from bivariate normal, rho=____'
+ /X1LENGTH = 5.0
+ /YLENGTH = 3.0
+ /CHARTLOOK = 'C:\Program Files\SPSS\Looks\Grayscale.clo' 
+ /SCALERANGE = VAR(R) MIN = -1.0 MAX = 1.0
+ /SCALERANGE = $count MIN = 0.0 MAX = 400.0
+ /HISTOGRAM SHAPE = HISTOGRAM CURVE = ON X1INTERVAL AUTO X1START = 0 .
+EXECUTE.
+
+INPUT PROGRAM .
+  LOOP #I = 1 TO 5000 .
+
+    COMPUTE N = 10 .
+    COMPUTE RHO = 0.5 .
+
+    COMPUTE X1 = NORMAL(1.0) .
+    COMPUTE X2 = NORMAL(1.0) .
+    COMPUTE X3 = NORMAL(1.0) .
+    COMPUTE X4 = NORMAL(1.0) .
+    COMPUTE X5 = NORMAL(1.0) .
+    COMPUTE X6 = NORMAL(1.0) .
+    COMPUTE X7 = NORMAL(1.0) .
+    COMPUTE X8 = NORMAL(1.0) .
+    COMPUTE X9 = NORMAL(1.0) .
+    COMPUTE X10 = NORMAL(1.0) .
+
+    COMPUTE Y1 = RHO * X1 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y2 = RHO * X2 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y3 = RHO * X3 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y4 = RHO * X4 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y5 = RHO * X5 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y6 = RHO * X6 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y7 = RHO * X7 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y8 = RHO * X8 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y9 = RHO * X9 + SQRT(1-RHO**2)* NORMAL(1.0) .
+    COMPUTE Y10 = RHO * X10 + SQRT(1-RHO**2)* NORMAL(1.0) .
+
+    COMPUTE SX   = SUM(X1 to X10) .
+    COMPUTE SXSQ = X1**2 + X2**2 + X3**2 + X4**2 + X5**2
+                 + X6**2 + X7**2 + X8**2 + X9**2 + X10**2 .
+    COMPUTE SY   = SUM(Y1 to Y10) .
+    COMPUTE SYSQ = Y1**2 + Y2**2 + Y3**2 + Y4**2 + Y5**2
+                 + Y6**2 + Y7**2 + Y8**2 + Y9**2 + Y10**2 .
+    COMPUTE SXY  = X1*Y1 + X2*Y2 + X3*Y3 + X4*Y4 + X5*Y5
+                 + X6*Y6 + X7*Y7 + X8*Y8 + X9*Y9 + X10*Y10 .
+
+    COMPUTE R = ( N * SXY - SX * SY ) 
+       / (  SQRT( N * SXSQ - SX**2 ) 
+          * SQRT( N * SYSQ - SY**2 ) ) .
+
+    END CASE .
+  END LOOP .
+  END FILE .
+END INPUT PROGRAM .
+EXECUTE .
+IGRAPH 
+  /VIEWNAME='Scatterplot' 
+  /X1 = VAR(x1) TYPE = SCALE 
+  /Y = VAR(y1) TYPE = SCALE 
+  /COORDINATE = VERTICAL  
+  /FITLINE METHOD = REGRESSION LINEAR LINE = TOTAL SPIKE=OFF 
+  /X1LENGTH=3.0 
+  /YLENGTH=3.0 
+  /X2LENGTH=3.0 
+  /CHARTLOOK='NONE'
+  /SCALERANGE = VAR(x1) MIN=-4.000000 MAX=4.000000
+  /SCATTER COINCIDENT = NONE .
+FREQUENCIES VARIABLES = R
+ /FORMAT = NOTABLE
+ /STATISTICS=MINIMUM MAXIMUM MEAN
+ /PERCENTILES = 50 55 60 65 70 75 80 85 90 95 .
+IGRAPH
+ /X1 = VAR(R) TYPE = SCALE TITLE = 'Sample R'
+ /Y = $count TITLE = 'Frequency'
+ /COORDINATE = VERTICAL  
+ /TITLE = 'Histogram of Sample R'
+ /SUBTITLE = '_____ samples of N=___ from bivariate normal, rho=____'
+ /X1LENGTH = 5.0
+ /YLENGTH = 3.0
+ /CHARTLOOK = 'C:\Program Files\SPSS\Looks\Grayscale.clo' 
+ /SCALERANGE = VAR(R) MIN = -1.0 MAX = 1.0
+ /SCALERANGE = $count MIN = 0.0 MAX = 400.0
+ /HISTOGRAM SHAPE = HISTOGRAM CURVE = ON X1INTERVAL AUTO X1START = 0 .
+EXECUTE.
+

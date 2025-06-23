@@ -1,0 +1,23 @@
+SUBJECT>Homework 2, #4 (maximal likelihood estimation of uniform distribution)
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Friday, 13 September 2002, at 12:02 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Nathan tells me there were questions about this homework exercise. Below are some clarifications (I hope!). Feel free to respond to this posting.
+<P><p>Homework 2, #4. (2 pts.) Suppose we model a population of integer values as a uniform distribution. The shape of a uniform distribution is rectangular. An example is the probability distribution of a fair, six-sided die. In general, the probability of a score is zero until the value gets up to min, at which point the probability rises to a fixed level until the value of the score gets to max+1, at which point the probability drops to zero again. Because the total probability of all possible values must add to 1.0, the fixed level of probability between min and max is 1/(max+1-min). For example, in the case of the fair six-sided die, min=1, max=6, and the probability of values from 1 to 6 is 1/6.
+<P><p>Consider the following scores: <br>Set A: 1, 2, 3, 4, 5. <br>Set B: 1, 3, 3, 3, 5.
+<P><p>If we let min=0 and max=10, what is the probability of the scores in Set A?
+<P><blockquote>This question is asking, "What is the probability of getting x<sub>1</sub>=1 AND x<sub>2</sub>=2 AND x<sub>3</sub>=3 AND x<sub>4</sub>=4 AND x<sub>5</sub>=5, <strong>if</strong> we hypothesize a uniform population distribution with min=0 and max=10?" The context for this question is <em>maximal likelihood estimation</em>. Recall that for independently sampled scores, p(x<sub>1</sub> AND x<sub>2</sub> |hypothesis) = p(x<sub>1</sub>|hypothesis) * p(x<sub>2</sub>|hypothesis). So your job is to figure out p(x<sub>i</sub>|hypothesis). Remember, for a uniform distribution, the width times height equals 1.0. </blockquote>
+<P><p>If we let min=2 and max=4, what is the probability of the scores in Set A?
+<P><blockquote>Because the width of the hypothesized population has changed (from the previous question), its height has changed; therefore, p(x<sub>i</sub>|hypothesis) has changed. </blockquote>
+<P><p>What are the maximal likelihood estimates of min and max for the scores in Set A?
+<P><blockquote>Where should you set min and max so that the height of the uniform distribution is as tall as possible across all the scores of Set A?</blockquote>
+<P><p>What are the maximal likelihood estimates of min and max for the scores in Set B?
+<P><blockquote>Same question as previous, but now for Set B. </blockquote>
+<P><p>(For your personal edification, compare these results with the previous exercise.)
+<P><blockquote>For the two Sets of scores, do the maximal likelihood parameters differ? Was that the case for the previous exercise? </blockquote>

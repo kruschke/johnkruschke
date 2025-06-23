@@ -1,0 +1,57 @@
+
+(Idea for next time: Do analogous problems for a simpler 3-D space,
+with a simple 1-D rule.  Some exceptions to the rule are still
+linearly separable, but others are not.  This maps onto Shepard
+Hovland Jenkins types.)
+
+Q550 Homework 3: Perceptrons (Non-Linear, Single-Layer Networks)
+
+Due Tuesday, 21 February 1995.
+
+Rules and Exceptions in Perceptrons.  As an introduction to this
+exercise, look at questions Q.4.4.1-Q.4.4.4 in PDP~III.  Study them,
+look at the answers in the back of the book, but don't turn in any
+answers to those questions.
+
+Now do the following: 
+
+First, get the pattern file 78.pat and ptrain the network for 200
+epochs. (Set the stepsize to nepoch, and set nepoch to 200, so that
+you aren't slowed down terribly by screen updates.) Save the screen so
+you later can examine the resulting weight matrix.
+
+Second, reset the network, and get the pattern file all.pat, and
+ptrain for 200 epochs.  Save the screen.
+
+Third, copy the 78.pat file to a new file and in the new file change
+BOTH the 147 and 148 patterns to exceptions, so that 147=>147 and
+148=>148. Reset the network, get the new pattern file, and ptrain for
+200 epochs.  Save the resulting screen.
+
+A. In your homework, turn in printouts of the three screens.
+
+B. Did the network learn the rule with one exception? (Careful! This
+is a stochastic network, so you can't judge by outputs from a single
+test trial.  You must instead examine the weights!)  
+
+Explain how the weights are different in the one-exception case than
+in the no-exception case so that the exception could be accommodated.
+(Don't just point out the different weights; explain what difference
+they make for getting the exception correct.)
+
+C. Did the network learn the two-exception case?  Why or why not?  
+
+How are the weights different from the no-exception case?  Why?
+
+D. Could the network learn some OTHER two-exception case? (The answer
+is "yes".) Give an example.
+
+Could it learn a three-exception case?  (The answer is yes.)  Give an
+example.
+
+E. Why is it that some exceptions can be accommodated, but others
+cannot be?  (Just a simple answer about the general nature of
+perceptrons suffices, here.  You might be repeating yourself from
+previous answers.)
+
+===end===

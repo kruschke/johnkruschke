@@ -1,0 +1,193 @@
+From mgrlog@avanti.ucs.indiana.edu Mon Jul  1 06:21:02 1996
+Received: from roatan.ucs.indiana.edu by croton.psych.indiana.edu; (5.65/1.1.8.2/07May94-0233PM)
+	id AA15299; Mon, 1 Jul 1996 06:21:02 -0500
+Received: from avanti.ucs.indiana.edu (avanti.ucs.indiana.edu [129.79.17.41]) by roatan.ucs.indiana.edu (8.7.3/8.7.3/1.10IUPO) with SMTP id GAA30643 for <kruschke@indiana.edu>; Mon, 1 Jul 1996 06:20:14 -0500 (EST)
+Received: by avanti.ucs.indiana.edu; id AA09244; Mon, 1 Jul 1996 06:19:46 -0500
+Date: Mon, 1 Jul 1996 06:19:46 -0500
+From: Log Manager <mgrlog@avanti.ucs.indiana.edu>
+Message-Id: <9607011119.AA09244@avanti.ucs.indiana.edu>
+To: kruschke@indiana.edu
+Subject: WWW usage reports
+
+<HTML><HEAD>
+<TITLE>World-Wide Web Access Statistics for jkkteach for www.indiana.edu</TITLE>
+</HEAD><BODY>
+<H1>World-Wide Web Access Statistics for jkkteach for www.indiana.edu</H1>
+<EM>Last updated: Mon, 01 Jul 1996 06:19:46 (GMT -0500)</EM>
+<UL>
+<LI><A HREF="#Daily">Daily Transmission Statistics</A>
+<LI><A HREF="#Hourly">Hourly Transmission Statistics</A>
+<LI><A HREF="#Domain">Total Transfers by Client Domain</A>
+<LI><A HREF="#Clump">Total Transfers by UCS Central UNIX Machines</A>
+<LI><A HREF="#Indiana">Total Transfers for Indiana University</A>
+<LI><A HREF="#USUniversity">Total Transfers by US University</A>
+<LI><A HREF="#Subdomain">Total Transfers by Subdomain</A>
+<LI><A HREF="#Archive">Total Transfers from each Archive Section</A>
+</UL>
+<H2>Totals for Summary Period:  Jun  3 1996 to Jun 30 1996</H2>
+<PRE>
+Files Transmitted During Summary Period             158
+Bytes Transmitted During Summary Period          930869
+Average Files Transmitted Daily                       7
+Average Bytes Transmitted Daily                   40473
+</PRE>
+<HR>
+<H2><A NAME="Daily">Daily Transmission Statistics</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Date
+----- ----- ------------ -------- |------------
+ 8.23  9.48        88200       13 | Jun  3 1996
+13.29 12.61       117379       21 | Jun  4 1996
+ 1.27  2.54        23611        2 | Jun  6 1996
+ 0.63  1.80        16790        1 | Jun  7 1996
+ 1.90  1.78        16596        3 | Jun  9 1996
+ 3.80  2.53        23521        6 | Jun 10 1996
+ 2.53  3.40        31654        4 | Jun 11 1996
+ 2.53  3.71        34578        4 | Jun 12 1996
+ 2.53  2.52        23417        4 | Jun 13 1996
+ 4.43  3.81        35481        7 | Jun 15 1996
+ 0.63  0.23         2166        1 | Jun 16 1996
+10.76  9.28        86422       17 | Jun 17 1996
+ 9.49 11.39       106054       15 | Jun 19 1996
+ 1.27  0.88         8174        2 | Jun 20 1996
+ 1.90  2.98        27714        3 | Jun 21 1996
+ 1.27  1.30        12092        2 | Jun 22 1996
+ 3.80  6.12        56997        6 | Jun 23 1996
+ 0.63  1.23        11446        1 | Jun 24 1996
+ 1.90  1.60        14864        3 | Jun 25 1996
+13.92 10.52        97954       22 | Jun 26 1996
+ 6.96  5.45        50726       11 | Jun 27 1996
+ 2.53  1.21        11284        4 | Jun 28 1996
+ 3.80  3.63        33749        6 | Jun 30 1996
+</PRE>
+<HR>
+<H2><A NAME="Hourly">Hourly Transmission Statistics</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Time
+----- ----- ------------ -------- |-----
+ 3.80  3.24        30157        6 |  00
+ 3.16  2.20        20521        5 |  01
+ 0.63  1.04         9714        1 |  02
+ 2.53  2.24        20872        4 |  03
+ 0.63  1.04         9671        1 |  04
+ 0.63  0.26         2421        1 |  07
+ 3.16  3.63        33820        5 |  08
+ 1.90  1.91        17745        3 |  09
+ 8.23  9.79        91112       13 |  10
+11.39 12.57       116998       18 |  11
+ 3.80  4.19        38966        6 |  12
+ 6.96  7.65        71182       11 |  13
+ 8.86  7.46        69401       14 |  14
+12.66 11.99       111598       20 |  15
+ 8.86  7.61        70813       14 |  16
+ 7.59  7.34        68307       12 |  17
+ 7.59  7.98        74292       12 |  18
+ 1.90  1.78        16596        3 |  20
+ 2.53  3.07        28556        4 |  21
+ 0.63  0.73         6821        1 |  22
+ 2.53  2.29        21306        4 |  23
+</PRE>
+<HR>
+<H2><A NAME="Domain">Total Transfers by Client Domain</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Domain
+----- ----- ------------ -------- |------------------------------------
+ 1.90  1.78        16596        3 | au    Australia
+ 0.63  1.80        16790        1 | de    Germany
+ 6.96  8.30        77277       11 | es    Spain
+ 6.33  5.48        51030       10 | fr    France
+ 1.90  2.03        18885        3 | il    Israel
+ 0.63  1.80        16790        1 | uk    United Kingdom
+12.03 12.81       119286       19 | com   US Commercial
+25.95 27.52       256201       41 | edu   US Educational
+ 0.63  0.34         3188        1 | gov   US Government
+ 4.43  3.26        30342        7 | net   Network
+13.92 13.89       129265       22 | unresolved 
+24.68 20.97       195219       39 | indiana.edu 
+</PRE>
+<HR>
+<H2><A NAME="Clump">Total Transfers by UCS Central UNIX Machines</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   UCS Central UNIX Machines
+----- ----- ------------ -------- |------------------------------------
+</PRE>
+<HR>
+<H2><A NAME="Indiana">Total Transfers for Indiana University</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Indiana University
+----- ----- ------------ -------- |------------------------------------
+ 1.27  1.17        10924        2 | bio.indiana.edu
+ 2.53  2.35        21847        4 | chem.indiana.edu
+ 1.27  1.17        10924        2 | educ.indiana.edu
+ 1.90  1.60        14864        3 | folklore.indiana.edu
+ 1.90  1.60        14864        3 | isdd.indiana.edu
+ 0.63  1.80        16790        1 | music.indiana.edu
+ 7.59  7.02        65316       12 | psych.indiana.edu
+ 2.53  0.08          720        4 | ucs.indiana.edu
+</PRE>
+<HR>
+<H2><A NAME="USUniversity">Total Transfers by US University</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   US University
+----- ----- ------------ -------- |------------------------------------
+ 1.27  0.65         6035        2 | berkeley.edu
+ 1.90  1.78        16596        3 | maine.edu
+ 8.86 10.07        93785       14 | nevada.edu
+ 0.63  0.58         5435        1 | pitt.edu
+ 5.70  4.95        46106        9 | su.edu
+ 3.16  3.17        29472        5 | ucsb.edu
+ 2.53  1.97        18371        4 | ucsd.edu
+ 1.27  2.54        23611        2 | upenn.edu
+ 0.63  1.80        16790        1 | washington.edu
+</PRE>
+<HR>
+<H2><A NAME="Subdomain">Total Transfers by Subdomain</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Subdomain
+----- ----- ------------ -------- |------------------------------------
+ 0.63  0.73         6821        1 | Indiana University Dial In
+ 4.43  3.45        32149        7 | Indiana University Public Clusters
+35.44 37.62       350184       56 | Other Domains
+13.92 13.89       129265       22 | Unresolved
+</PRE>
+<HR>
+<H2><A NAME="Archive">Total Transfers from each Archive Section</A></H2>
+<PRE>
+%Reqs %Byte  Bytes Sent  Requests   Archive Section
+----- ----- ------------ -------- |------------------------------------
+ 0.63  0.08          703        1 | /~jkkteach/
+ 1.27  0.47         4332        2 | /~jkkteach/P335/aivideo.html
+ 4.43  8.61        80122        7 | /~jkkteach/P335/app1.html
+ 2.53  0.95         8816        4 | /~jkkteach/P335/compmet.gif
+ 0.63  0.43         4014        1 | /~jkkteach/P335/exam1.html
+ 0.63  0.28         2596        1 | /~jkkteach/P335/exam2.html
+ 0.63  0.35         3213        1 | /~jkkteach/P335/exam3.html
+ 0.63  0.29         2673        1 | /~jkkteach/P335/exam4.html
+ 1.90  4.18        38886        3 | /~jkkteach/P335/goals.html
+ 2.53  0.90         8340        4 | /~jkkteach/P335/knoworgbot.gif
+ 2.53  1.41        13136        4 | /~jkkteach/P335/knoworgsmall.gif
+ 2.53  0.61         5652        4 | /~jkkteach/P335/knoworgtop.gif
+ 9.49 13.60       126639       15 | /~jkkteach/P335/p335.html
+ 1.27  1.17        10870        2 | /~jkkteach/P335/scores.html
+ 2.53  7.23        67288        4 | /~jkkteach/P335/syllabus.html
+ 0.63  0.40         3748        1 | /~jkkteach/P553/
+ 1.90  0.57         5325        3 | /~jkkteach/P553/bronowski.html
+ 0.63  0.34         3188        1 | /~jkkteach/P553/exam1.html
+ 0.63  0.21         1996        1 | /~jkkteach/P553/exam2.html
+ 0.63  1.12        10427        1 | /~jkkteach/P553/goals.html
+ 0.63  0.46         4276        1 | /~jkkteach/P553/hw12.html
+ 0.63  0.10          916        1 | /~jkkteach/P553/hw3.html
+ 0.63  0.19         1759        1 | /~jkkteach/P553/hw9.html
+ 7.59 10.43        97067       12 | /~jkkteach/P553/p553.html
+ 2.53  5.90        54940        4 | /~jkkteach/P553/syllabus.html
+ 2.53  1.04         9684        4 | /~jkkteach/Q500/categorization.html
+ 5.06  5.86        54568        8 | /~jkkteach/Q750/q750.html
+ 5.70 16.23       151110        9 | /~jkkteach/Q750/syllabus.html
+14.56  9.63        89631       23 | /~jkkteach/bg.gif
+18.35  3.90        36337       29 | /~jkkteach/hr.gif
+ 0.63  1.32        12269        1 | /~jkkteach/usage/Dec95.html
+ 1.27  1.62        15058        2 | /~jkkteach/usage/May96.html
+ 1.27  0.14         1290        2 | /~jkkteach/usage/usage.html
+</PRE>
+<HR>
+</BODY></HTML>

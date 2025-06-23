@@ -1,0 +1,653 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                             Appendix M
+                           BSB Procedure 
+
+     This program implements a simple version of the BSB procedure.  It 
+is essentially the program and data set used in Appendix J, which 
+implemented the Widrow-Hoff learning rule.  This program was modified 
+by the addition of code to implement the BSB procedure during retrieval.  
+The Widrow-Hoff learning has been placed in a single PROCEDURE Learn.  
+The BSB Retrieval process has been placed in PROCEDURE BSB_Iteration.  
+Note: A much more flexible version of BSB is present with these files in
+Program BSB.  See the Manual.TXT for details of its use.
+
+     The retrieval constants used are embedded in the Program in 
+PROCEDURE BSB_Parameters.  They can be easily changed and are not 
+critical.  A few additional global parameters were defined as well.  
+
+     When the program is run, it will prompt for (1) the name of the 
+file containing the character strings to be learned; (2) a random number 
+seed; (3) the interpretation threshold (0.5 is a good starting point with 
+BSB so that small noisy element values will not be displayed); (4) the 
+number of vectors to learn (15 for the state data base) and (5) the 
+number of Widrow-Hoff learning trials. (In the simulation in Figure 15.11 
+this was 150.).
+
+     The BSB iterations will stop when an attractor is reached, that is, 
+a fully limited state vector, or when 25 iterations (parameter  
+Max_number_of_iterations) have been performed.  The display tells how 
+many units have reached their limits so the progress of growth of the 
+state vector can be followed.  The program will run through the entire 
+set of vectors in the file.  Test vectors should be placed in the data 
+base after the vectors to be learned, as was done in previous versions of 
+this program. 
+
+--------------------------------------------------------------------
+PROGRAM BSB25 (Input, Output, Stimuli);
+
+CONST Dimensionality       = 200;
+      Number_of_characters =  25;
+
+Type Vector  =  ARRAY [1..Dimensionality] OF REAL;
+     String  =  ARRAY [1..Number_of_characters] OF CHAR;
+    
+     Matrix           = ARRAY [1..Dimensionality,
+                               1..Dimensionality] OF REAL;
+
+VAR  I,J, 
+     Pairs_to_learn,
+     Seed,
+     Random_pair,
+     Total_learning_trials,
+     Number_limited,            {Number of vector elements at limit.}
+     Iteration_number,          {Number of BSB Iterations.}
+     Max_number_of_iterations,  {Maximum number of BSB iterations.}
+     Number_of_associations : INTEGER;
+     A, Delta_A             : Matrix;
+     Stimuli                : TEXT; 
+     File_name              : VARYING [40] OF CHAR;
+
+     Original_state_vector,    {Starting vector for BSB iterations.}
+     Current_state_vector,     {Current system state.}
+     New_state_vector,         {Next system state after one BSB iteration.}
+     Error_signal,
+     Output_vector          : Vector;
+     Eta,
+     Eta_prime,
+     Threshold              : REAL;
+     F_string,
+     G_string,
+     Input_string,
+     Interpretation         : String;
+     F_set,
+     G_set                  : ARRAY  [1..100] OF Vector;
+
+
+FUNCTION MTH$RANDOM (VAR Seed: INTEGER): REAL; EXTERN;
+
+FUNCTION Random: REAL;
+    BEGIN
+    Random:= MTH$RANDOM (Seed);
+    END;
+
+PROCEDURE Subtract_Vectors (Vector_1, Vector_2: Vector;
+                            VAR Vector_difference: Vector);
+    VAR I: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        Vector_difference [I] := Vector_1 [I] - Vector_2 [I];
+    END;
+
+PROCEDURE Scalar_times_vector (Scalar: REAL; Vector_in: Vector;
+                                       VAR Vector_out: Vector);
+    VAR I: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+         Vector_out [I] := Scalar * Vector_in [I];
+    END;
+
+FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+    VAR             I: INTEGER;
+     Sum_of_products : REAL;
+    BEGIN
+    Sum_of_products := 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+    Inner_product:= Sum_of_products;
+    END;
+
+FUNCTION Vector_length (Vector_1: Vector): REAL;
+    VAR Sum_of_Squares: REAL;
+                     I: INTEGER;
+    BEGIN
+    Sum_of_Squares:= 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+    Vector_length:= SQRT (Sum_of_Squares);
+    END;
+
+PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+    VAR Length_of_vector_in: REAL;
+        I                  : INTEGER;
+        Vector_in_is_zero  : BOOLEAN;
+    BEGIN
+    Vector_out:= Vector_in;
+    Length_of_vector_in := Vector_length (Vector_in);
+    IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                 ELSE Vector_in_is_zero := FALSE;
+    IF Vector_in_is_zero 
+       THEN BEGIN
+            WRITE  ('Normalized zero vector!');
+            Vector_out:= Vector_in;  {Make Vector_out the zero vector.}
+            END       {Programming note: Watch out! no semicolon here!}
+       ELSE FOR I:= 1 TO Dimensionality DO
+            Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+    END;
+
+PROCEDURE Matrix_times_vector (A: Matrix; F: Vector;
+                                      VAR G: Vector);
+
+    {This PROCEDURE forms the product Af = g where }
+    {both f and g are column vectors.              }
+
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO G[I]:= 0;   {Zero vector G.}
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO G[I]:= G[I] + A[I,J] * F[J];
+    END;
+
+
+PROCEDURE Add_matrices (Mx_1, Mx_2: Matrix; VAR Matrix_sum: Matrix);
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO
+            Matrix_sum [I,J] := Mx_1 [I,J] + Mx_2 [I,J];
+    END; 
+
+PROCEDURE Outer_product (G,F: Vector; VAR A: Matrix);
+    {                                                       }
+    {We want to generate an outerproduct matrix A so that   }
+    {            T                                          }
+    {     A = G F                                           }
+    {                                                       }
+    VAR I,J: INTEGER;
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO
+        FOR J:= 1 TO Dimensionality DO 
+            A[I,J] := G[I] * F[J];
+    END;
+
+PROCEDURE Blank_string (VAR S: String);
+     VAR I: INTEGER;
+     BEGIN
+     FOR I:= 1 TO Number_of_characters DO S[I]:=' ';
+     END;
+
+PROCEDURE Interpret (Threshold: Real; 
+                             V: Vector; 
+            VAR Interpretation: String);
+
+    Type Byte    =  ARRAY [1..8] OF INTEGER;
+         IVector =  ARRAY [1..Dimensionality] OF INTEGER;
+
+    VAR  IV : Ivector;
+          
+    PROCEDURE Make_Binary_Vector (V: Vector; VAR IV: Ivector);
+        VAR J: INTEGER;
+        BEGIN
+        FOR J:= 1 TO Dimensionality DO
+                BEGIN
+                IV[J]:= 0;
+                IF V[J] >=  ABS(Threshold) THEN IV[J]:= 1;
+                IF V[J] <= -ABS(Threshold) THEN IV[J]:=-1;
+                END;
+        END;
+
+    FUNCTION Count (B: Byte): INTEGER; {Counts zeros in byte.}
+        VAR I,Sum: INTEGER;
+        BEGIN
+        Sum:= 0;
+        FOR I:= 1 TO 7 DO IF B[I]=0 THEN Sum:= Sum +1; {Ignore parity bit.}
+        Count:= Sum;
+        END;
+ 
+    FUNCTION Byte_Interpret (B: Byte): CHAR; 
+        VAR I, 
+            Charnr: INTEGER;
+        Print_char: CHAR;
+        Ambiguous : BOOLEAN;
+        BEGIN
+          {First check to see if all byte elements + 1 or - 1.}
+        IF Count (B) > 0 THEN Ambiguous:= TRUE ELSE Ambiguous:= FALSE;
+          {Now convert to byte of zero and +1.}
+        FOR I:= 1 TO 8 DO IF B[I]=-1 THEN B[I]:= 0; 
+          {Convert to Char. number.}
+        Charnr:= 64*B[7] + 32*B[6] + 16*B[5] + 8*B[4] + 4*B[3] + 2*B[2] + B[1];
+          {Special cases.}
+        IF (Charnr <  32) THEN Print_char := '#'    {Non-printing character. }
+                          ELSE Print_char := CHR (Charnr);  {Print character.}
+        IF (Charnr =   0) THEN Print_char := '_';   {Zero convention is '_'  }
+        IF (Charnr = 127) THEN Print_char:= '_';    {Delete convention is '_'}
+        IF Ambiguous THEN Print_char:= '_';         {Ambiguous character.    }
+        Byte_Interpret:= Print_char;
+        END;
+ 
+    PROCEDURE Read_IVector_as_ASCII (IV: Ivector; 
+                     VAR Interpretation: STRING);
+        VAR I,J: INTEGER;
+            B  : BYTE;
+        BEGIN
+        FOR J:= 0 TO (Number_of_characters - 1) DO 
+                BEGIN
+                {Next line flips order of vector elements.}
+                FOR I:= 1 TO 8 DO B[ 9 - I]:= IV[ J*8 + I]; 
+                Interpretation [(J+1)]:= Byte_Interpret (B);
+                END;
+         END;
+ 
+    BEGIN    {Interpret procedure}
+    Make_Binary_Vector (V, IV);
+    Read_IVector_as_ASCII (IV, Interpretation);
+    END;     {Interpret procedure.}
+
+PROCEDURE Make_stimulus (Input_string : String; 
+                     VAR Output_Vector: Vector);
+
+    Type Byte    =  ARRAY [1..8] OF INTEGER;
+         IVector =  ARRAY [1..Dimensionality] OF INTEGER;
+
+    VAR B: Byte;
+
+    PROCEDURE Zero_Byte (VAR B: Byte);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 8 DOWNTO 1 DO B[I]:= 0;
+       END;
+
+    PROCEDURE Nr_to_Byte (Nr: INTEGER; VAR B: BYTE);
+       VAR I, 
+           Power_of_2, 
+           Remainder, 
+           Parity       : INTEGER;
+       BEGIN
+       IF Nr > 128 THEN WRITELN ('Too large. ASCII conversion fails.'      );
+       IF Nr < 0   THEN WRITELN ('Negative number. ASCII conversion fails.');
+       Remainder:= Nr;    Parity:= 0;     Power_of_2:= 256;
+       FOR I:= 8 DOWNTO 1 DO {msb in B[8], lsb in B[1]}
+              BEGIN
+              Power_of_2:= Power_of_2 DIV 2;
+              IF ( (Remainder - Power_of_2) <  0 ) THEN B[I]:= -1;
+              IF ( (Remainder - Power_of_2) >= 0 ) THEN
+                     BEGIN
+                     B[I]:= 1;
+                     Remainder:= Remainder - Power_of_2;
+                     Parity:= Parity + 1;
+                     END;
+              END;
+       IF ODD (Parity) THEN B[8]:= 1 ELSE B[8]:= -1;
+       END;
+
+     PROCEDURE Add_Byte_to_Vector (VAR V: VECTOR; I: INTEGER; B: BYTE);
+       VAR J: INTEGER;
+       BEGIN
+       FOR J:= 1 TO 8 DO V[(I-1)*8 + J ]:= B [9-J];
+       END;
+
+   BEGIN {Make_stimulus}
+   FOR I:= 1 TO Number_of_characters DO
+       BEGIN
+       Nr_to_byte (ORD (Input_string [I]),B);
+       IF (Input_string[I] = '_') THEN Zero_byte(B);
+       Add_byte_to_vector (Output_vector, I ,B);
+       END;
+   END;  {Make_stimulus}
+
+PROCEDURE Write_string (S: String);
+   VAR I: INTEGER;
+   BEGIN
+   FOR I:= 1 TO Number_of_characters DO WRITE (S[I]);
+   END;
+
+PROCEDURE Read_stimuli;
+   VAR Input_line             : VARYING [80] OF CHAR;
+       Input_string           : String;
+
+   PROCEDURE Read_input_line;
+      VAR I : INTEGER;
+      BEGIN
+      Blank_string (Input_string);
+      READLN (Stimuli, Input_line);
+      IF (Length (Input_line) < Number_of_characters) 
+       THEN 
+       FOR I:= 1 TO Length(Input_line) DO Input_string[I]:= Input_line[I]
+       ELSE FOR I:= 1 TO Number_of_characters DO Input_string[I]:= Input_line[I];
+      END;
+
+   BEGIN
+   OPEN (Stimuli, File_name, OLD);
+   RESET (Stimuli);
+   Number_of_associations:= 0;
+   REPEAT 
+     Number_of_associations:= Number_of_associations + 1;
+     READLN (Stimuli);  {First line of association is a blank line.}
+     Read_input_line;  {Second line is the F stimuli. }
+     Make_stimulus (Input_string, F_set [Number_of_associations]);
+     Read_input_line;  {Third line is the G stimuli.}
+     Make_stimulus (Input_string, G_set [Number_of_associations]);
+   UNTIL EOF (Stimuli);
+   CLOSE (Stimuli);
+   END;
+
+PROCEDURE Associate (F,G : Vector);
+   BEGIN
+   Outer_product (G, F, Delta_A);
+   Add_matrices (A, Delta_A, A);
+   END;
+ 
+PROCEDURE Learn;
+   VAR I,J: INTEGER;
+   BEGIN
+   FOR I:= 1 TO Total_learning_trials DO 
+      BEGIN
+      Random_pair:= TRUNC (Random * Pairs_to_learn) + 1; {Chooses random pair.}
+      Matrix_times_vector (A, F_set [Random_pair], Output_vector);
+      FOR J:= 1 TO Dimensionality DO
+          Error_signal [J]:= 
+                    Eta_prime * (G_set[Random_pair][J]-Output_vector[J]); 
+      Associate (F_set[Random_pair], Error_signal);
+      IF ((I MOD 10) = 1) THEN WRITELN (I:3,'  Learning: ', Random_pair:4);
+      END;
+   WRITELN ('Completion of specified learning.');
+   END;
+
+PROCEDURE BSB_Iteration (VAR Number_limited  : INTEGER;
+                         Original_vector : Vector;   {Starting Vector.}
+                         VAR     V_in,               {Input vector.}
+                                 V_out   : Vector);  {Output vector.}
+
+  VAR I,J                : INTEGER;
+        Upper_limit, Lower_limit,    {Upper and lower limits.}
+        Alpha,                       {Multiplies matrix feedback term.}
+        Gamma,                       {Decay term.                     }
+        Delta            : REAL;     {Maintains original input.       }
+        Matrix_output    : Vector;   {Terms in BSB expression.}
+
+    PROCEDURE Limit (VAR V: Vector);
+        VAR I: INTEGER;
+        BEGIN
+        FOR I:= 1 TO Dimensionality DO
+            BEGIN
+            IF (V[I] > Upper_limit) THEN V[I]:= Upper_limit;
+            IF (V[I] < Lower_limit) THEN V[I]:= Lower_limit;
+            END;
+        END;
+
+    FUNCTION Number_of_limits (V:Vector): INTEGER;
+       VAR I, Count: INTEGER;
+       BEGIN
+       Count:= 0;
+       FOR I:= 1 TO Dimensionality DO
+           BEGIN
+           IF (V[I] = Upper_limit) THEN Count:= Count+1;
+           IF (V[I] = Lower_limit) THEN Count:= Count+1;
+           END;
+       Number_of_limits := Count;
+       END;
+
+    PROCEDURE BSB_Parameters;
+       BEGIN
+       {Reasonable set of BSB Parameters.}
+       Upper_limit:=  1;  
+       Lower_limit:= -1;   {For use with binary vectors.}
+       Gamma:= 0.9; 
+       Alpha:= 0.5; 
+       Delta:= 1.0;    
+       END;   
+
+    BEGIN
+    BSB_Parameters;     {Set BSB Parameters.}
+
+    {Term due to matrix feedback.}
+    Matrix_times_vector (A, V_in, Matrix_output);
+    Scalar_times_vector (Alpha, Matrix_output, Matrix_output);
+
+    {Put them all together.}
+    FOR I:= 1 TO Dimensionality DO
+        V_out[I]:= Gamma*V_in[I]+ Matrix_output[I]+Delta*Original_vector[I];
+
+    {Limit the values.}
+    Limit (V_out);
+    Number_limited:= Number_of_limits(V_out);   {Number of elements at limit.}
+    END;
+
+PROCEDURE Write_output (Iteration_number,
+                        Number_limited: INTEGER; 
+                        V_in: Vector);
+    VAR I: INTEGER;
+       Interpretation: String;
+    BEGIN
+    Interpret (Threshold, V_in, Interpretation);
+    WRITE ('  ',Iteration_number:3,'.  ');
+    Write_string (Interpretation);
+    WRITE ('   Limited:');
+    WRITELN (Number_limited:4);
+    END;
+
+PROCEDURE Initialize;
+  VAR I,J: INTEGER;
+  BEGIN
+  WRITELN ('Demonstration of BSB model.  Uses Widrow-Hoff learning.'   );
+  WRITELN ('Reads character vectors from a file.  Learns and recalls ' );
+  WRITELN ('the pairs of associations.  Uses BSB retrieval network.'   );
+  WRITELN;
+  WRITE ('File name of stimuli      : ');  READLN (File_name); WRITELN;
+  WRITE ('Seed                      : ');  READLN (Seed);      WRITELN;
+  WRITE ('Threshold                 : ');  READLN (Threshold); WRITELN;
+  WRITE ('Different pairs to learn  : ');  READLN (Pairs_to_learn); 
+        WRITELN;
+  WRITE ('Total learning trials     : ');  READLN (Total_learning_trials);
+        WRITELN;
+  Eta:= 1/SQRT(Dimensionality);   {Learning constant. This is length of  }
+                                  {a vector completely composed of +1 and}
+                                  {-1.                                   }
+
+  Eta_prime:= Eta * 0.1;         {Learning constant used for corrections}
+                                  {in Widrow-Hoff Procedure.             }
+  Read_stimuli;
+  {FOR I:= 1 TO Number_of_associations DO
+      FOR J:= 1 TO Dimensionality DO
+          F_Set[I][J]:= F_Set[I][J]*Eta; }
+
+  {Initialize matrices.}
+  FOR I:= 1 TO Dimensionality DO 
+      FOR J:= 1 TO Dimensionality DO
+          BEGIN
+          A[I,J]:= 0;
+          Delta_A[I,J]:= 0;
+          END;
+  END;
+
+BEGIN  {Main Program}
+Initialize;
+Learn;  {Widrow-Hoff Learning.}
+
+WRITELN ('Start of BSB procedure.');
+WRITELN ('Threshold: ', Threshold:6:2);  {0.5 is a good value.}
+
+FOR J:= 1 TO Number_of_associations DO
+   BEGIN
+   {Initialize first iteration.}
+   Iteration_number:= 0;  Number_limited:= 0; Max_number_of_iterations:= 25;
+   Original_state_vector:= F_set[J];  Current_state_vector := F_set[J];
+   WRITELN;
+   WRITELN ('Association: ', J:2);
+   Write_output (Iteration_number, Number_limited, Original_state_vector);
+
+   {Perform iterations until finish.}
+   REPEAT BSB_Iteration (Number_limited, 
+                         Original_state_vector, 
+                         Current_State_vector, 
+                         New_state_vector);
+         Iteration_number:= Iteration_number + 1;
+         Write_output (Iteration_number, Number_limited, New_state_vector);
+         Current_state_vector:= New_state_vector;
+   UNTIL     ((Iteration_number = (Max_number_of_iterations+1)) 
+          OR  (Number_limited=Dimensionality) );    
+   END;
+END.   {Main Program}
+
+--------------------------------------------------------------------
+ASCII Input File of State Names and Capitals.  This is the same input
+file as used in Appendix J.
+--------------------------------------------------------------------
+1234567890123456789012345
+Boston      Massachusetts
+Boston      Massachusetts
+2
+Providence   Rhode Island
+Providence   Rhode Island
+3
+Sacramento     California
+Sacramento     California
+4
+Bismarck     North Dakota
+Bismarck     North Dakota
+5
+Oklahoma City    Oklahoma
+Oklahoma City    Oklahoma
+6
+Harrisburg   Pennsylvania
+Harrisburg   Pennsylvania
+7
+Charleston  West Virginia
+Charleston  West Virginia
+8
+Baton Rouge     Louisiana
+Baton Rouge     Louisiana
+9
+Concord     New Hampshire
+Concord     New Hampshire
+10
+Columbia   South Carolina 
+Columbia   South Carolina 
+11
+Albany           New York
+Albany           New York
+12
+Trenton        New Jersey
+Trenton        New Jersey
+13
+Juneau             Alaska
+Juneau             Alaska
+14
+Talahassee        Florida
+Talahassee        Florida
+15
+Austin              Texas
+Austin              Texas
+1234567890123456789012345
+Boston___________________
+Boston      Massachusetts
+17
+Providence_______________
+Providence   Rhode Island
+18
+Sacramento_______________
+Sacramento     California
+19
+Bismarck_________________
+Bismarck     North Dakota
+20
+Oklahoma City____________
+Oklahoma City    Oklahoma
+21
+Harrisburg_______________
+Harrisburg   Pennsylvania
+22
+Charleston_______________
+Charleston  West Virginia
+23
+Baton Rouge______________
+Baton Rouge     Louisiana
+24
+Concord__________________
+Concord     New Hampshire
+25
+Columbia_________________ 
+Columbia   South Carolina
+26
+Albany___________________
+Albany           New York
+27
+Trenton__________________
+Trenton        New Jersey
+28
+Juneau___________________
+Juneau             Alaska
+29
+Talahassee_______________
+Talahassee        Florida
+30
+Austin___________________
+Austin              Texas
+1234567890123456789012345
+____________Massachusetts
+Boston      Massachusetts
+32
+_____________Rhode Island
+Providence   Rhode Island
+33
+_______________California
+Sacramento     California
+34
+_____________North Dakota
+Bismarck     North Dakota
+35
+_________________Oklahoma
+Oklahoma City    Oklahoma
+36
+_____________Pennsylvania
+Harrisburg   Pennsylvania
+37
+____________West Virginia
+Charleston  West Virginia
+38
+________________Louisiana
+Baton Rouge     Louisiana
+39
+____________New Hampshire
+Concord     New Hampshire
+40
+___________South Carolina 
+Columbia   South Carolina 
+41
+_________________New York
+Albany           New York
+42
+_______________New Jersey
+Trenton        New Jersey
+43
+___________________Alaska
+Juneau             Alaska
+44
+__________________Florida
+Talahassee        Florida
+45
+____________________Texas
+Austin              Texas
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

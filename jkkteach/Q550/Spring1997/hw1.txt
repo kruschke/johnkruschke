@@ -1,0 +1,111 @@
+
+Q550 Homework 1: Linear Networks, Part 1.
+
+Due **
+
+
+1. Supervised Hebbian Learning.  Start the "pa" program as described
+on pp.108-111 of PDP-III.  At this point, the network has been trained
+just once on a single pattern. (Because of "clamping" the teacher
+values, the outputs shown during training are not the actual output
+activations.  When desired, use "tall" or "test" to see the actual
+output activations.)
+
+1A. Weight Explosion. "strain" the network several more times.  What
+happens to the weights?
+
+1B. Weight Decay.  By hand, show what would happen to weight w_11
+during the first ten training trials, if weight decay were present.
+
+[Use the equation: 
+  change in w_11  =  lrate * teach_1 * act_1  -  lrate * w_11  .]  
+
+What value does the weight approach? Prove it by setting the change in
+weight to zero and solving for the weight value. How does that compare
+with the weight value that one "strain" would produce if lrate = 1.0
+and there was no decay?
+
+1C. Orthogonal or Linearly-Independent Training Patterns.  Do question
+Q.4.2.1 on p.112 of PDP-III.  (You are encouraged to read and
+understand the answer in the back of the book, but write your own
+answer in your own words.)
+
+1D. Generalization. "reset" the network, and "get" the pattern file
+"one.pat". Then "strain" once.  Now "test" the network, using the "E"
+option.  Use a variety of input patterns (and always using the target
+pattern #0).  How are the output patterns related to the target
+pattern? Why? That is, of what general principle is this a case?
+
+
+2. Hebbian vs. Delta-Rule Learning.  Use the "pa" program to study a
+network with just two input nodes and one output node.  (It's easiest
+to use the 8x8.tem file already supplied, and just ignore the extra
+nodes.)  The first input node represents the presence or absence of a
+tone (coded with activation values of +1 or 0), and the second input
+node represents the presence or absence of a light (coded with
+activation values of +1 or 0).  The output node represents the
+presence of food or of shock (coded with activation values of +1 or
+-1, not 0).  Use an "lrate" of 0.10.
+
+2A. Blocking. You will train the network in successive phases, without
+resetting the weights between phases. Make sure the network is in
+delta-rule mode. First, train the network using an input of tone alone
+[+1,0] and a teacher of food [+1], until "tss" is close to zero.
+Next, without resetting the weights, train the network using an input
+of tone and light [+1,+1] and a teacher of food [+1], for 10 epochs.
+At this point, we might hope that the network will have learned to
+associate both tone (alone) and light (alone) with food, because it
+has been trained using both tone and light. "test" the network on tone
+alone and on light alone.  Why has the learning of the light-food
+association been impeded, or blocked?  Now reset the network and put
+it in Hebb mode, and repeat the training and testing.  Is the
+light-food association blocked in Hebbian learning?
+
+2B. Apparent Base-Rate Neglect. Set up a pattern file with the
+following 16 patterns in it:
+
+  input           teacher  frequency of pattern pair
+  ------------    -------  -------------------------
+  tone (alone)    food     4
+  tone (alone)    shock    2
+  light (alone)   food     1
+  light (alone)   shock    5
+  tone+light      food     1
+  tone+light      shock    3
+
+How often does food occur?  How often does shock occur?  The relative
+probabilities of food and shock are called their "base rates."  Here,
+the base rate of shock is higher than the base rate of food; i.e.,
+food is relatively rare.  
+
+Show that the probability of food, given tone, is 0.50.  Show that the
+probability of shock, given tone, is 0.50.  That might lead us to
+expect that the weight from tone to the output should remain at zero,
+since tone is paired with shock as often as it is paired with food.
+
+Put the network in Hebb mode, reset the weights, and "ptrain" (NOT
+"strain"!) for 10 epochs.  What is the weight from tone?  Why?
+
+Now put the network in delta-rule mode, reset the weights, and
+"ptrain" the network for 20 epochs (at which point the "tss" will be
+about 12 or 13).  Why is the "tss" not zero?  Why is the weight from
+tone not zero?  (This is called "apparent base-rate neglect" because
+it's as if the network has ignored the low base rate of food -- it
+shouldn't predict a rare event.)
+
+To answer that last question more insightfully, try this simpler case.
+Set up a pattern file with just two patterns in it:
+
+  tone (alone) => food
+  tone+light   => shock.
+
+What is the probability of food given tone?  
+
+Put the network in Hebb mode and train the network for 10 epochs.
+What is the weight from tone?
+
+Now, put the network in delta-rule mode, reset the weights, and
+"ptrain" the network until the "tss" goes to zero.  Why is the weight
+from tone not equal to zero?  (HINT: Relate this to blocking!)
+
+=== end ===

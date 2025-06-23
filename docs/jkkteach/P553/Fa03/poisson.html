@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+<hr>
+
+<center> <h3><a href="p553.html">P553 Statistics in Psychology,
+Professor Kruschke</a> </h3> <h2>The Poisson Approximiation to the Binomial Distribution</h2> </center>
+
+<p>When <em>p</em> is extreme, the binomial is skewed (non-normal),
+and we approximate it with the discrete Poisson distribution:
+
+<p><center>
+pr(<em>x;m</em>) 
+= ( exp(-<em>m</em>)  <em>m<sup>x</sup></em> ) / <em>x</em>!
+</center>
+
+<br>for integer-valued <em>x</em> and <em>m</em> greater than zero.
+For the approximation to the binomial, we set <em>m = N p</em>, and
+<em>x</em> corresponds to <em>r</em>.
+
+<br><br>
+
+<p><em>The example discussed in class:</em> Suppose we have an
+assembly line for ball bearings.  We hypothesize a defect rate of 1 in
+10,000; i.e., p=0.0001.  We sample 25,000 ball bearings and find that
+4 are defective.  Can we reject the hypothesis?
+
+<p>Out of N=25,000, we expect on average to find N*p=2.5 defective
+ball bearings, according to the hypothesis. In fact we found r=4,
+i.e., more than what we expected. Is this so extreme that we would
+reject our hypothesis?
+
+<p>In principle, we could use the binomial distribution. We would sum
+up the probability of getting r=4 <em>or more extreme</em> and see
+whether that is less than 2.5% (for a two-tailed test with 5% Type I
+error). The total probability of getting 4 or more is then
+<p><center>
+
+<table>
+<tr>
+
+<td align="center">
+<font size="small">25,000</font> 
+<br>
+SUM
+<br>
+<font size="small">r=4</font> 
+</td>
+
+<td>
+<font size="+2">(</font>
+</td>
+<td align="center">
+<font size="small">25,000</font> 
+<br>
+<font size="small">r</font> 
+</td>
+<td>
+<font size="+2">)</font>
+</td>
+
+<td>
+.0001<sup>r</sup> .9999<sup>(25,000-r)</sup>
+</td>
+
+</table>
+
+</center>
+<p>but this is intractable because of the huge factorials.
+
+<p>So, instead we use the Poisson approximation to the binomial,
+setting m=N*p=2.5.  First, a trick: The probability that r is 4 or
+greater is just 1 minus the probability that r is 3 or less. Thus, the
+probability that r is 4 or more is
+
+<center>
+
+<p>1 - [ pr(r=0) + pr(r=1) + pr(r=2) + pr(r=3) ]
+
+<p>= 1 - [ 
+exp(-2.5)*2.5<sup>0</sup>/0! +
+exp(-2.5)*2.5<sup>1</sup>/1! +
+exp(-2.5)*2.5<sup>2</sup>/2! +
+exp(-2.5)*2.5<sup>3</sup>/3! ]
+
+<p>= 0.2424...
+
+</center>
+
+<p>Thus, the probability of getting an r of 4 or more is about 24%,
+which means that we do not reject the hypothesis.
+
+<p><hr>
+</BODY>
+</HTML>
+
+

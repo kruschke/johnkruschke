@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psychology, Prof. Kruschke, Exam 2</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<hr>
+
+<center>
+<h2>
+P553 Statistics in Psychology, Prof. Kruschke<br>
+</h2>
+<h2>
+Exam 2 Sample Questions
+</h2>
+</center>
+
+<p>The exam is closed-book and closed-notes, but you are encouraged to
+use a calculator (and you may also bring along the calculator manual).
+There are 100 points possible, with points for each problem as marked.
+You have 75 minutes; please allocate your time carefully.
+
+<p><strong>1. (30 pts. total):</strong> 
+
+<p><strong>Part A (15 pts).</strong> Test whether the means of the following
+three groups differ. Use a significance level of 5%.
+<br>Group 1: 4.0, 6.0, 8.0 <br>Group 2: 13.0, 15.0, 17.0
+<br>Group 3: 6.0, 9.0, 12.0 
+
+
+<p><strong>Part B (5 pts).</strong> What assumptions have you made in
+conducting the test?
+
+
+
+<p><strong>Part C (5 pts).</strong> What is the proportion of total
+variance accounted for by the difference of group means?
+
+
+<p><strong>Part D (5 pts).</strong> What is the effect size and
+approximate power of the test?
+
+
+<p><strong>2. (25 pts. total):</strong>
+ 
+<p><strong>Part A (15 pts).</strong> Test whether the means of the
+following two groups differ.  Use a two-tailed <em>t</em>-test, with
+significance level of .05. (Also okay to use an ANOVA.) <br>Group 1:
+17.0, 21.0, 24.0 <br>Group 2: 14.0, 15.0, 16.0, 17.0, 18.0
+
+
+<p><strong>Part B (5 pts).</strong> What assumptions have you made in
+conducting the test?
+
+
+<p><strong>Part C (5 pts).</strong> What is the effect size and
+approximate power of the test? (Use <em>d</em> as a measure of effect
+size, not <em>f</em>.)
+
+<p><strong>3. (25 pts. total):</strong>
+
+<p>Suppose we measure ``feeling of contentment'' of students before
+and after taking a statistics exam.  Feeling of contentment is rated
+on a scale from 1~(low) to 10~(high).  For nine students selected at
+random, the before and after ratings are as follows: 3,1; 5,7; 8,8;
+4,2; 9,10; 2,3; 8,10; 1,1; 6,5.
+
+<p><strong>Part A (10 pts).</strong> Compute the standardized values
+and the correlation coefficient of the before and after scores. (If
+using a calculator that computes <em>r</em> from the raw scores,
+please also report the standardized scores.)
+
+
+<p><strong>Part B (5 pts).</strong> Suppose we have a null hypothesis
+that feelings of contentment before and after the exam are completely
+uncorrelated.  Test this hypothesis, assuming a two-tailed test and a
+significance level of .05.
+
+
+<p><strong>Part C (5 pts).</strong> What assumptions have you made in
+conducting the test?
+
+
+<p><strong>Part D (5 pts).</strong> What is the effect size and
+approximate power of the test?
+
+
+<p><strong>4. (20 pts. total):</strong>
+
+<p>In a Minitab print out of a regression problem, like the one shown
+below, you should know 
+
+<ul>
+
+<li>how to compute R-sq from the analysis of variance information
+
+<li>where the DF came from in the analysis of variance
+
+<li>where the MS and F values came from in the analysis of variance
+
+<li>how to determine the group means from the regression equation, and
+whether particular pairs of groups means differ significantly.
+
+</ul>
+
+<pre>
+  ROW  score  group  code1  code2
+ 
+    1      1      1      0      0
+    2      2      1      0      0
+    3      3      1      0      0
+    4      3      2      1      0
+    5      4      2      1      0
+    6      5      2      1      0
+    7      5      3      0      1
+    8      6      3      0      1
+    9      7      3      0      1
+
+ MTB > regress 'score' 2 'code1' 'code2'
+ 
+ The regression equation is
+ score = 2.00 + 2.00 code1 + 4.00 code2
+ 
+ Predictor       Coef       Stdev    t-ratio        p
+ Constant      2.0000      0.5774       3.46    0.013
+ code1         2.0000      0.8165       2.45    0.050
+ code2         4.0000      0.8165       4.90    0.003
+ 
+ s = 1.000       R-sq = 80.0%     R-sq(adj) = 73.3%
+ 
+ Analysis of Variance
+ 
+ SOURCE       DF          SS          MS         F        p
+ Regression    2      24.000      12.000     12.00    0.008
+ Error         6       6.000       1.000
+ Total         8      30.000
+ 
+ SOURCE       DF      SEQ SS
+ code1         1       0.000
+ code2         1      24.000
+</pre>
+
+<p><hr>
+
+</BODY>
+</HTML>

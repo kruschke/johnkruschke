@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>Form Test</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<FORM 
+METHOD="POST" 
+ACTION="/cgi-bin-local/public/transform2?jkkteach/www/dev/transformtest">
+
+<p>Enter your name here (30 characters max):
+<INPUT TYPE="text" NAME="name" SIZE=30 MAXLENGTH=30>
+
+<p>Enter your e-mail address here (30 characters max):
+<INPUT TYPE="text" NAME="email" SIZE=30 MAXLENGTH=30>
+
+<p>Enter some text here (30 characters max):
+<INPUT TYPE="text" NAME="text" SIZE=30 MAXLENGTH=30>
+
+<p>What's your favorite color:
+<SELECT NAME="color">
+<OPTION>red
+<OPTION SELECTED>orange
+<OPTION>yellow
+<OPTION>green
+<OPTION>blue
+<OPTION>violet
+</SELECT>
+<br>(Click on the box and options will pop-up.  With the mouse button
+held down, drag the cursor to your selection.)
+
+<p>When done, submit it:
+<INPUT TYPE="submit" VALUE="Submit now"> 
+
+</FORM>
+
+</BODY>
+</HTML>
+

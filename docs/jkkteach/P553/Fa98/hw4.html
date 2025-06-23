@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 4</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology<br>
+Homework 4: <em>t</em>-test of a single mean.
+<br>Due 1 Oct. 1996 
+</h2>
+</center>
+
+<p>1.(9 pts.) The Minitab commands at the end of this page illustrate
+the sampling distribution for the <em>t</em> statistic.  The commands
+grab 500 samples from a normal population (mean 0.0 and variance 1.0),
+compute the <em>t</em> and <em>z</em> of the sample, and then plot the
+sampling distributions of <em>t</em> and <em>z</em>.  This is done for
+three different sample sizes (N=2, N=4, and N=50).  Here are questions
+to answer:
+
+<ul>
+
+<li>What are the means of the <em>t</em> and <em>z</em> sampling
+distributions?  What are the theoretically expected values of the
+means?
+
+<li>What are the variances of the <em>t</em> and <em>z</em> sampling
+distributions?  Which is greater, the <em>t</em> or <em>z</em>?
+
+<li>What are the approximate critical values in the <em>t</em> and
+<em>z</em> sampling distributions for alpha of 5%?  That is, what are
+the approximate <em>t</em> and <em>z</em> values for which 5% of the
+samples are larger?  Which is larger, the <em>t</em> critical value or
+the <em>z</em> critical value?
+
+<li>What are the critical <em>t</em> values listed in the
+<em>t</em>-table for sample sizes of 2, 4 and 50? (Careful, N is not
+df!)  Are the approximate critical values in your sampling
+distribution close to the tabled values?
+
+</ul>
+
+<p>2. (4 pts.) Exercise 2, Set II, p.278 of A&A text. Do this by hand
+<em>and</em> with Minitab to check your results (include a printout of
+your Minitab session).
+
+<p>3. (4 pts.) Exercise 4, Set II, p.278 of A&A text. Do this by hand
+<em>and</em> with Minitab to check your results (include a printout of
+your Minitab session).  Note that it asks for the effect size.
+
+<p>4. (4 pts.) Exercise 5, Set II, p.278 of A&A text. Do this by hand
+<em>and</em> with Minitab to check your result (include a printout of
+your Minitab session)s.
+
+<p>5. (4 pts.) Exercise 7, Set II, p.279 of A&A text.  When
+"explaining" be brief and concise. Note that it asks for the
+approximate power of the study.
+
+
+<p><hr>
+
+Below are the Minitab commands for demonstrating the sampling
+distribution of the <em>t</em> statistic in Exercise 1.  You can (1)
+just type them into Minitab line by line, or (2) if you know how, you
+can download this page to your Mac or PC, edit away all the text
+above, and then execute it in Minitab, or (3) if you use Zinc, you can
+copy it from my directory: /N/fs2/kruschke/Zinc/t.MTB and
+/N/fs2/kruschke/Zinc/t_getsample.mtb.
+
+<p>To write the file named 't_getsample.mtb', on Zinc you can use the
+<a href="http://www.indiana.edu/~ucspubs/b103/">Pico text editor</a>.
+
+<pre>
+# In a separate file named 't_getsample.mtb', 
+# include the following six lines:
+#
+#  random 'N' 'sample';
+#  normal 0.0 1.0.
+#  let 't'('rowindex') = (mean('sample')-0.0)/(stdev('sample')/sqrt('N'))
+#  let 'z'('rowindex') = (mean('sample')-0.0)/(1.0/sqrt('N'))
+#  let 'rowindex' = 'rowindex' + 1
+#  end
+#
+########################################################################
+#
+# Now initialize the sampling variables
+#
+name c1 'sample'
+name c2 't'
+name c3 'z'
+name k1 'N'
+name k2 'rowindex'
+#
+# Now draw 500 samples of size 2 and 
+# plot the sampling distribution of the sample t and z
+#
+let 'N' = 2
+let 'rowindex' = 1
+noecho
+execute 't_getsample.mtb' 500
+histogram 't' 'z' -3.0 0.5
+describe 't' 'z'
+#
+# Now draw 500 samples of size 4 and 
+# plot the sampling distribution of the sample t and z
+#
+let 'N' = 4
+let 'rowindex' = 1
+noecho
+execute 't_getsample.mtb' 500
+histogram 't' 'z' -3.0 0.5
+describe 't' 'z'
+#
+# Now draw 500 samples of size 50 and 
+# plot the sampling distribution of the sample t and z
+#
+let 'N' = 50
+let 'rowindex' = 1
+noecho
+execute 't_getsample.mtb' 500
+histogram 't' 'z' -3.0 0.5
+describe 't' 'z'
+#
+# End.
+#
+</pre>
+
+<p><hr>
+
+
+</BODY>
+</HTML>
+
+

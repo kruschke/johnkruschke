@@ -1,0 +1,139 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>P554 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="khaki">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/P554/">P554 Statistics in Psychology</a>, 
+Prof. Kruschke
+<br>
+<!-- ------------------------------------------------------------ -->
+Homework for Ch. 5. Due at beginning of class, Tu 6 Feb 2007.
+<!-- ------------------------------------------------------------ -->
+</h3>
+</center>
+<small>
+<p><em>General instructions.</em> Please write your full name 
+at the top of every page you hand in. Please collate and staple
+your pages together. Please write clearly and thoroughly explain all
+your computations; an unannotated series of formulas that mysteriously
+ends up with the correct number will not be given full credit. When
+doing the homework, you are encouraged to use all resources at your
+disposal to the extent that they help you learn the material;
+nevertheless, <em>you must write your own answers in your own words</em>.
+</small>
+
+<!--
+<p><b>Under construction. Do not yet do this assignment.</b>
+-->
+
+<ol>
+<!-- ------------------------------------------------------------ -->
+
+<p><li> (10 pts.)  
+<br>#16, p. 241-242, parts a, b, (not c), d, e, and f.
+
+<br>You may use SPSS, but be sure to keep clear what your answers to
+the questions are and exactly where the corresponding SPSS output is.
+
+
+<p><li> (10 pts.)  
+<br>
+Suppose an experimenter randomly assigns six participants to treatment
+A and six partipants to treatment B. She runs the experiment in four
+rooms that have been carefully constructed to be as indentical as
+possible, which hold just three people each. She believes that the
+rooms have essentially no effect whatsoever on the score that is
+measured, but just for administrative purposes she keeps track of what
+room each participant was in. Here are the results of the experiment:
+<pre>
+Treatment Room Score
+A         1    1.5
+A         1    3.0
+A         1    4.5
+A         2    1.8
+A         2    3.0
+A         2    4.2
+B         3    3.8
+B         3    5.0
+B         3    6.2
+B         4    3.4
+B         4    5.0
+B         4    6.6
+</pre>
+She hands off the data to a research assistant, saying "run an ANOVA
+and let me know if there is a significant difference between groups."
+
+
+<br>
+<b>(A)</b> The research assistant doesn't know the experiment design and
+just sees the coding in the data file. So he thinks, Well, looks like
+there were four groups of subjects, so I'd better run an ANOVA with
+three planned contrasts: 
+
+<br>&nbsp;&nbsp;&nbsp; 1 -1 0 0 (room 1 vs room 2, both treatment A)
+
+<br>&nbsp;&nbsp;&nbsp; 0 0 1 -1 (room 3 vs room 4, both treatment B)
+
+<br>&nbsp;&nbsp;&nbsp; 1 1 -1 -1 (treatment A versus treatment B)
+
+<br>Conduct those contrasts in SPSS. Include the output tables. Using
+the Bonferroni correction [show your work!] for multiple planned
+comparisons, what does the research assistant conclude about the
+contrast of treatment A versus treatment B?
+
+<br>
+<b>(B)</b> The research assistant reports back to the experimenter,
+who says, "Oh, I never planned to compare the rooms with each other. I
+included the room codes merely to keep track of data files, not
+because they were part of the design."  So the research assistant
+jettisons consideration of his first two contrasts, and only considers
+the one last contrast of treatment A versus treatment B. What does he
+conclude? Explain what this does to the Bonferroni correction.
+
+<br>
+<b>(C)</b>
+The research assistant reports back to the experimenter, who says,
+"Oh, you shouldn't do an ANOVA contrast on the four rooms like that,
+instead, just do a two-group ANOVA, coding the two treatments as 1 and
+2."  Conduct the analysis in SPSS. Include the output table. What does
+the research assistant conclude?
+
+<br>
+<b>(D)</b> A few days later the experimenter comes back to the
+research assistant, saying: "Well, it's a good thing I kept track of
+the rooms each subject was in. I was looking at the data and noticed
+small differences between room scores, and that got me thinking about
+the rooms. So I looked at the rooms again and noticed that they felt
+different. I checked with building maintenance, and, sure enough,
+there's a problem with the air conditioning in those rooms. The rooms
+might have had different temperatures and air flow. So, we need to
+consider each room as a different group, just like you did in the
+first place." So, the researcher digs out his original set of
+contrasts. He realizes, though, that the contrast is now post-hoc, so
+he uses the Scheffe method to set the critical value. Show your
+work. What does he conclude?
+
+<p><font size="-1"> The moral to the story: To me, this illustrates
+the logical quagmire that null hypothesis significance testing leads
+to. For each contrast, the meaning of the <i>p</i> value is clear: It is
+the probability of getting that F, or greater, when sampled from the
+null hypothesis population. But interpreting that <i>p</i> as
+"significant" (and in turn establishing confidence intervals) is a
+matter of where you set your cutoff. Different considerations
+prescribe different settings of the cutoff, and hence the messiness
+above. All this nonsense is avoided with Bayesian methods!
+</font>
+
+
+<!-- ------------------------------------------------------------ -->
+</ol>
+<p><hr>
+</BODY>
+</font>
+</HTML>
+
+

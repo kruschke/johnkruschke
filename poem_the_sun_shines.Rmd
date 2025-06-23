@@ -1,0 +1,50 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## The Sun Shines Fluidly on Every House
+<!-- 170 words -->
+<br>
+
+The sun shines fluidly on every house,\
+spilling over the sheep and cattle\
+in view of the cowboy brothers (twins\
+-- by different fathers -- it's a long story),\
+while at the water's edge a crab\
+scuttles unnoticed by a cat\
+dozing beside an adolescent girl\
+weighing her options, curious\
+of the scorpion poised\
+at the hooves of a centaur (yes,\
+a half-horse man roams this landscape)\
+with bow and arrow slung open-carry,\
+galloping to meet his chimeric brethren\
+the sea-goat at the seaside where\
+a gorgeous boy pours them wine\
+and two fish swim together\
+connected by a luminous thread,\
+which, star by star, connects to every\
+creature in this scene because\
+the sun shone fluidly in every house\
+the day each one was born,\
+and would keep shining even if\
+the cat appraised its options,\
+and the scorpion claimed to be crab\
+and the bull converted to ram\
+and the brothers came out as fishes\
+and the centaur dressed as a sea-goat\
+and the boy became a girl.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://www.flyingislandjournal.org/2024/11/the-sun-shines-fluidly-on-every-house.html" , journal_name = "*Flying Island Journal*" , publication_info = "29 November 2024.")`
+
+*Notes:* 
+This poem suggests that a person's sun sign at birth should not define their identity. The poem goes through all twelve signs of the zodiac, also called houses, in order: sheep = aries; cattle = taurus; brothers = gemini; crab = cancer; cat = leo; girl = virgo; weighing options = libra; scorpion = scorpio; centaur = sagittarius; sea-goat = capricorn; boy = aquarius; fish = pisces.
+
+`r next_link("poem_the_sun_shines.html")`
+
+</small>

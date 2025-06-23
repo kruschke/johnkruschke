@@ -1,0 +1,10 @@
+<center>
+<p>Rate this item
+<br>
+<br><input type="radio" name="test_response" value="1"><strong>1</strong>
+<br><input type="radio" name="test_response" value="2"><strong>2</strong>
+<br><input type="radio" name="test_response" value="3"><strong>3</strong>
+<br><input type="radio" name="test_response" value="4"><strong>4</strong>
+<br><input type="radio" name="test_response" value="5"><strong>5</strong>
+<p>
+</center>

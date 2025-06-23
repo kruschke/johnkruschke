@@ -1,0 +1,177 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<h2> 
+<a href="q550.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<br>Spring 1997, Section 0978, Tu & Th 2:30-3:45, PY 228 
+<p>Homework 4, Part A: Multi-layer non-linear networks (backpropagation)
+<br>Due Tuesday 25 March.
+</h2>
+<p>Part B will be posted on Tuesday 11 March
+</center>
+
+<p>Please see <a href="hwcomments.html">comments regarding homework
+assignments</a>.
+
+<p><strong>Exploring the 4-4 encoder. (30 pts total)</strong>
+
+<p>For this exercise, you are to study the 4-4 encoder problem with 1,
+2 or 10 hidden nodes.  Sample files for the 10-node case are included
+below.  You should set up analogous files for the 1-node and 2-node
+cases.  Use the "4n4trn.pat" pattern file for training, and the
+"4n4gen.pat" file for generalization tests.  (You could use the
+"4n4gen.pat" file for both training and generalization, but using the
+"4n4trn.pat" file for training is faster.)
+
+<p>If you like, you can copy the files from my directory on copper:
+/N/fs2/kruschke/Copper/pdp/bp/
+(see <a href="announce.html">announcements</a>)
+
+
+<p>Note that for the "bp" program, <em>teacher values of -1 mean no
+particular desired value; i.e., no error is generated for that output
+node regardless of the actual output activation</em>.  
+
+<p>Make sure that the startup file is the same in every case, except
+for the command that calls the network file.
+
+<p><strong>1. Learning Speed as a Function of Number of Hidden Nodes.</strong>
+
+<p>For each of the three sizes, "ptrain" the network for 500 epochs,
+and log the "tss" as a function of epoch.  (The training automatically
+stops when "ecrit" is reached, so you might need to reduce "ecrit" to
+train for 500 epochs.  Also, you can set the "stepsize" to "epoch" so
+that less time is wasted with screen updates.)
+
+<p><strong>1A. (5 pts.)</strong> Make a graph of the three learning
+curves.
+
+<p><strong>1B. (5 pts.)</strong> Do all three networks learn the
+mapping? That is, do all three networks reduce "tss" to nearly zero?
+Why or why not?
+
+<p><strong>1C. (5 pts.)</strong> If both the 2-node and 10-node
+networks can solve the problem, why is the 10-node network faster?
+
+<p><strong>2.  Generalization as a Function of Number of Hidden
+Nodes.</strong>
+
+<p>After training each size network for 500 epochs, "tall" the patterns
+(use "4n4gen.pat").
+
+<p><strong>2A. (5 pts.)</strong> Make a table showing the four output
+activations for each pattern, for each network.  (Each table has 16
+rows, one row per pattern, and 8 columns: The first four columns
+specify the input activations, the next four columns specify the
+output activations.)
+
+<p><strong>2B. (5 pts.)</strong> Do the networks generalize the same
+way?  Why or why not?  Can you discern any regularities in the
+generalization?  
+
+<p>(HINT: It helps to visualize the hidden node activation space, for
+the 1-node and 2-node networks, and consider how the input patterns
+are represented in that space and how the output nodes might "carve
+off" the appropriate points.)
+
+<p><strong>2C. (5 pts.)</strong> When the input is 1 1 1 1, why is the
+activation of every output node close to zero?
+(see <a href="announce.html">announcements</a>)
+
+<p><hr>
+<p>4ten4.net:
+
+<pre>
+definitions:
+nunits 18
+ninputs 4
+noutputs 4
+end
+network:
+%r 4 10 0 4
+%r 14 4 4 10
+end
+biases:
+%r 4 14
+end
+</pre>
+
+<p><hr>
+<p>4ten4.str:
+<pre>
+get network 4ten4.net
+get patterns 4n4trn.pat
+set dlevel 2
+set slevel 1
+set lflag 1
+set param lrate .5
+set mode lgrain pattern
+</pre>
+
+<p><hr>
+<p>4ten4.tem:
+<pre>
+define: layout
+                                                  pname  ipatterns   tpatterns
+epoch   $       tss     $                         $      $           $
+                gcor    $
+cpname  $       pss     $            
+
+  in  hid  out  targ
+$    $    $     $
+end
+epochno	variable	1	$	0	epochno    5 1.0
+tss	floatvar	1	$   	n	tss        6 1.0 
+env.pname vector	0	$       n	pname    v 5     0 0 16 
+env.ipat matrix		0	$	n	ipattern h 2 1.0 0 16 0 4
+env.tpat matrix		0	$	n	tpattern h 2 1.0 0 16 0 4
+gcor	floatvar	2	$   	n	gcor       6 1.0 
+cpname	variable	2	$	n	cpname    -5 1.0
+pss	floatvar	2	$	n	pss        6 1.0
+input	vector		2	$	n	activation v 4 100.0 0 4
+hidden  vector          2       $       n       activation v 4 100.0 4 10
+output	 vector		2	$	n	activation v 4 100.0 14 4
+targets	vector		2	$	n	target     v 4 100.0 0 4
+</pre>
+
+<p><hr>
+<p>4n4trn.pat:
+<pre>
+1   0 0 0 1   0 0 0 1
+2   0 0 1 0   0 0 1 0
+4   0 1 0 0   0 1 0 0
+8   1 0 0 0   1 0 0 0
+</pre>
+
+<p><hr>
+<p>4n4gen.pat:
+<pre>
+0   0 0 0 0   -1 -1 -1 -1
+1   0 0 0 1   0 0 0 1
+2   0 0 1 0   0 0 1 0
+4   0 1 0 0   0 1 0 0
+8   1 0 0 0   1 0 0 0
+3   0 0 1 1   -1 -1 -1 -1
+5   0 1 0 1   -1 -1 -1 -1
+6   0 1 1 0   -1 -1 -1 -1
+9   1 0 0 1   -1 -1 -1 -1
+10  1 0 1 0   -1 -1 -1 -1
+12  1 1 0 0   -1 -1 -1 -1
+7   0 1 1 1   -1 -1 -1 -1
+11  1 0 1 1   -1 -1 -1 -1
+13  1 1 0 1   -1 -1 -1 -1
+14  1 1 1 0   -1 -1 -1 -1
+15  1 1 1 1   -1 -1 -1 -1
+</pre>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

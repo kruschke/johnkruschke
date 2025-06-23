@@ -1,0 +1,11 @@
+SUBJECT>Estimated Sigma &amp; Sample Test
+POSTER>Dazed and Confused
+EMAIL>chcoe@indiana.edu
+DATE>Wednesday, 2 October 2002, at 5:32 p.m.
+IP_ADDRESS> REMOTE_HOST: d-37-34.dhcp-129-79.indiana.edu; REMOTE_ADDR: 129.79.37.34
+PREVIOUS>
+NEXT> 51
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>Prof. Kruschke, On question 4a in the sample test with answers, estimated sigma is defined as = sqrt(SS/df). Estimated sigma is then used to determine the t score. The book however teaches us that to figure the "t score" we use sqrt(S^2m) which is defined as sqrt(S^2/N) and S^2 is equal to SS/df (see page 310) There is a noticable difference in results. Will our answer be wrong if we use the book method? In the book's defense, I think they present the material in a logical and methodical manner and it is the way I come to understand how to do 't scores' Any thoughts would be appreciated. signed, slightly confused.

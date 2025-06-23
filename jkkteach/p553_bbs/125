@@ -1,0 +1,20 @@
+SUBJECT>Re: Homework 1-C
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Tuesday, 17 December 2002, at 11:37 a.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>123
+NEXT> 126
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>
+<P>&gt; I, too, am having trouble
+<BR>&gt; figuring the power for N=500 in
+<BR>&gt; question 1. Is anyone feeling kind
+<BR>&gt; enough to post the actual computation
+<BR>&gt; (with brief explanation)? Please!
+<BR>&gt; :)
+<P>Here's the question again: <blockquote> 1. (5 pts) (A) We flip a coin 5 times and find that it comes up heads 3 times. Test the hypothesis that the coin is fair. What assumptions have you made? (B) Now the coin is flipped 500 times and comes up heads 300 times. Test whether the coin is fair. (C) If we have an alternative hypothesis that the probability of heads is .6, what are the powers of the tests (for N=5 and N=500)? </blockquote>
+<P><strong>For part B</strong>, use the normal approximation. N=500, r=300. The null hypothesis is that p=.5. Compute the standardized value of r in the binomial sampling distribution, using the correction for continuity: z(r) = ((r-0.5)-Np)/sqrt(Npq) = ((300-0.5)-250)/sqrt(500*.5*.5) = 4.43. This is huge, so we can reject the null hypothesis with very high confidence.
+<P><strong>Part C</strong> has two sub-parts, corresponding to N=5 (Part A) and N=500 (Part B). Here I'll address the latter, i.e., N=500. The null hypothesis is p=.5, and the alternative hypothesis is p=.6. In the null hypothesis sampling distribution, for a 2-tailed test, the critical value of r satisfies z_crit = 1.96 = ((r_crit-0.5)-Np)/sqrt(Npq) = ((r_crit-0.5)-250)/11.18. Solving yields r_crit = 272.41. In the alternative hypothesis sampling distribution, z(r_crit) = (272.41-(500*.6))/sqrt(500*.6*.4) = -2.52. Notice that there was no "correction for continuity" used in standardizing the critical value in the alternative distribution, because the r_crit is already a continuous value obtained not from the binomial but from the normal approximation to the binomial. The value -2.52 corresponds to a huge power of 99.4%

@@ -1,0 +1,13 @@
+---
+title: "Art Critic"
+lang: en
+---
+
+A light-hearted app I wrote, modeled after a statement I memorized when I was 16 because it seemed so obscure yet could apply to virtually anything: 
+<blockquote>
+"In it, an almost preternatural insight into the significance of intelligible form is fused with a lyrical sensuality that prevents stylization from becoming academic and lifeless, the mere repetition of formula." 
+</blockquote>
+That's from Philip Sherrard in an essay on Byzantine art (but I haven't been able to track down the *exact* source; if you find it let me know). All the phrases in the app come from my own imagination. Enjoy ;-)
+
+<h2>Click: <a href="ArtCriticScript.html" target="_blank">Art Critic</a></h2>
+

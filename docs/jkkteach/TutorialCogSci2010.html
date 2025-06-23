@@ -1,0 +1,175 @@
+<HTML>
+<font face="tahoma">
+<HEAD>
+<TITLE>Bayesian Data Analysis, CogSci 2010</TITLE>
+</HEAD>
+<BODY bgcolor="#AAFFFF">
+
+<hr>
+
+<center> <h2>Doing Bayesian data analysis with R and BUGS </h2>
+<h3><a
+href="http://cognitivesciencesociety.org/conference2010/"
+target="_blank">Tutorial at the Cognitive Science Society conference, 11
+August 2010</a></h3>
+<h4>This page updated July 26, 2010.</h4> 
+
+
+<!-- <p>THIS PAGE IS UNDER CONSTRUCTION. PLEASE RETURN SOON FOR
+COMPLETE INFO. -->
+
+</center>
+
+<table border="0" cellpadding="10" align="right" width="420"
+align="right" bgcolor="white"> <tr><td> <img
+src="BayesTutorial/TutorialLinearRegressionDataLines.jpg" width="420"
+alt="Success increasing with knowledge of Bayesian data
+analysis"></td></tr> <tr><td align="center"> <font size="-1"><b>Figure
+1. Why you should attend the tutorial.</b> <br>(Notice that the
+Bayesian analysis reveals many credible regression lines, for which
+the slopes and intercepts trade off, instead of just one "best"
+line.)</font> </td></tr> </table>
+
+<p>This full-day tutorial shows you how to do Bayesian data analysis,
+hands on. The software is free; <b>see installation instructions, <a
+href="#beforeArriving">below</a>, <em>before</em> arriving at the
+tutorial</b>. The intended audience is grad students and other
+researchers who want a ground-floor introduction to Bayesian data
+analysis. No mathematical expertise is presumed. If you can handle a
+few minutes of summation notation like
+&Sigma;<sub>i</sub>x<sub>i</sub> and integral notation like
+&int;&nbsp;x&nbsp;dx, you're good to go. Complete computer programs
+will be worked through, step by step.
+
+
+<p><b>Schedule of Topics:</b>
+Room B113-114
+<ul>
+<li>9:00-10:30 Bayes' Rule, Grid Approximation, and R.
+
+<br><small>10:30-11:00 Break (Accompanied by frantic scurrying back to
+internet-enabled hotel rooms by people who didn't download the
+software before arriving at the <em>non-</em>internet enabled
+tutorial room. See installation instructions <a
+href="#beforeArriving">below</a>, before arriving.)</small>
+
+<li>11:00-12:30 Markov Chain Monte Carlo and BUGS.
+<br><small>12:30-1:30 Lunch (on your own)</small>
+<li>1:30-3:00 Linear Regression and Hierarchical Models.
+<br><small>3:00-3:30 Break</small>
+<li>3:30-5:00 Bayesian ANOVA and Power Analysis.
+</ul>
+
+<p><b>Bayesian data analysis is not Bayesian modeling of
+cognition.</b> Data analysis involves "generic" descriptive models
+(such as linear regression) without any necessary interpretation as
+cognitive computation. The rational way to estimate parameters in
+descriptive models is Bayesian, regardless of whether or not Bayesian
+models of mind are viable.
+
+<p><b>Why go Bayesian?</b> <em>See Figure 1.</em> For a more serious,
+yet brief discussion of several benefits of Bayesian data analysis,
+along with an example and an emphasis that Bayesian data analysis is
+not Bayesian modeling of mind, see <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010TiCS.pdf"
+target="_blank">this article</a> from <a
+href="http://dx.doi.org/10.1016/j.tics.2010.05.001" target="_blank">
+<em>Trends in Cognitive Sciences</em></a>.  For a lengthier exposition
+that explains a fatal flaw of 20th century null hypothesis
+significance testing, along with a discussion of Bayesian null
+hypothesis testing and other examples, see <a
+href="http://www.indiana.edu/~kruschke/articles/Kruschke2010WIRES.pdf"
+target="_blank">this article</a> from <a
+href="http://dx.doi.org/10.1002/wcs.72" target="_blank"><em>Wiley
+Interdisciplinary Reviews: Cognitive Science</em></a>.
+
+
+<p><b>Who is the instructor?</b> <a
+href="http://www.indiana.edu/~kruschke/" target="_blank">John
+Kruschke</a> has taught introductory Bayesian statistics to graduate
+students for several years (and traditional statistics and
+mathematical modeling for over 20 years). He is five-time winner of
+Teaching Excellence Recognition Awards from Indiana University, where
+he is Professor of Psychological and Brain Sciences, and Adjunct
+Professor of Statistics. He has written an introductory textbook on
+Bayesian data analysis, to be published in November 2010; see also the
+articles linked above. His research interests include models of
+attention in learning, which he has developed in both connectionist
+and Bayesian formalisms. He received a Troland Research Award from the
+National Academy of Sciences. He chaired the Cognitive Science
+Conference in 1992.
+
+
+<br clear="all">
+
+<p><table border="1" cellpadding="10"><tr><td bgcolor="lightyellow">
+
+<b><em><a name="beforeArriving">Before arriving</a> at the tutorial,
+you must install the software listed below on your notebook
+computer,</em></b> because there will not be any internet service
+available in the tutorial room.
+
+<ol>
+
+<li>One of the packages we'll be using requires the <b>Windows
+operating system</b> (OS). If your machine can operate with Windows,
+the tutorial materials may operate best that way. If you are using
+Macintosh OS or Linux without the option to boot with Windows, you
+must install a <b>Windows emulator such as the <em>free</em>ware
+WINE</b> (which stands for WINE Is Not an Emulator). WINE can be
+downloaded from <a href="http://www.winehq.org/"
+target="_blank">http://www.winehq.org/</a>. <em>From this point on, these
+instructions assume you are running Windows or a Windows
+(non-)emulator.</em>
+
+<p><li>Install <b>the free programming language R</b>. Go to <a
+href="http://cran.r-project.org/"
+target="_blank">http://cran.r-project.org/</a>. In the box labelled
+"Download and Install R" click the "<b>Windows</b>" link. On the page
+that appears, click the "<b>base</b>" link. The next page that appears
+has the latest version of R as its top link. Click that link and
+follow the installation instructions. (Even if you are using MacOS or
+Linux, download the Windows executable and install R within WINE!)
+
+<p><li>Invoke R. (If you are using MacOS or Linux, invoke the Windows
+version of R within WINE.) At the command line in the R console
+window, type<br> <tt><font
+size="+2"><b>install.packages("BRugs")</b></font></tt> <br>You must
+include the quotes around "BRugs", and type "BR" in uppercase and
+everything else in lowercase. You will be prompted to select an
+internet repository; choose a site that is geographically near you.
+
+<p>Note: You must be using a recent version of R, preferably version
+2.11.0 or later, for the install.packages("BRugs") command to work
+properly. Are you getting an error message that the package is not
+available? If so, try this: In the R console window, click menu items
+Packages > Select Repositories, and, in the resulting pop-up window,
+make sure to select both CRAN and CRAN(extras), then click
+okay. BRugs lives in CRAN(extras). Then try install.packages("BRugs")
+again. Thanks to Uwe Ligges for these hints!
+
+<p><li>Copy the following data analysis program to your computer and
+be sure that it runs. <em>Right click</em> <a
+href="http://www.indiana.edu/~jkkteach/BayesTutorial/TutorialBRugsTest.R"
+target="_blank">this link</a> and <em>save</em> the linked file on your
+computer, using any file name with a ".R" extension. Then, invoke R,
+and on the R console window click the menu items <em>File</em> >
+<em>Source&nbsp;R&nbsp;code...</em> Browse to your saved file and
+select it (and click Open or OK). The program should run in R and
+produce a graph in a new window and some output text in the R console.
+<p>If the program does not run, please study all the previous steps
+and be sure that each was successfully accomplished.
+
+<p><li> Download <a
+href="http://www.indiana.edu/~jkkteach/BayesTutorial/BayesianDataAnalysisPrograms.zip">this
+zip file</a> of data analysis programs. (This link updated on July 26,
+2010.)
+
+
+</ol>
+</td></tr></table>
+
+
+<p align="right"><font size="-1">This page URL:
+http://www.indiana.edu/~jkkteach/TutorialCogSci2010.html</font> <hr>
+</BODY> </font></HTML>

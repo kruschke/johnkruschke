@@ -1,0 +1,133 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Chi-square</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology
+<br>Computing the Pearson Chi-Square Distribution
+<br>for 3 Categories and Small N
+</h2>
+</center>
+
+<p>Consider a population with three equally probable categories, A, B
+and C.  Thus, p(A) = p(B) = p(C) = 0.333.  I will derive the sampling
+distribution of Pearson chi-square for various values of sample size,
+N.  Recall that the Pearson chi-square is <br> SUM_k
+(obs_k-exp_k)^2/exp_k <br>where the SUM is over categories k, obs_k is
+the observed frequency of category k, and exp_k is the expected
+frequency of category k.
+
+<p><strong>N = 1.</strong>
+
+<br>When N=1, the expected frequencies of A, B and C in the sample are
+0.333.  The table below lists the possible samples, their
+probabilities, and their chi-square values.
+
+<pre>
+  sample  prob   chi-square
+  A       0.333  2.0
+  B       0.333  2.0
+  C       0.333  2.0
+</pre>
+
+<em>So, for N=1, the sampling distribution of chi-square is just a
+single spike of height 1.0 at the value 2.0.  That is, for a sample
+size of 1.0, there is a 100 per cent probability of getting a sample
+with chi-square value of 2.0.</em> (Notice that the mean of sampling
+distribution is 2.0, the df.)
+
+<p><strong>N = 2.</strong>
+
+<br>When N=2, the expected frequencies of A, B and C in the sample are
+each 0.667.  The table below lists the possible samples, their probabilities, and their chi-square values.
+
+<pre>
+  sample  prob   chi-square
+  AA      0.111  4.0
+  AB      0.111  1.0
+  AC      0.111  1.0
+  BA      0.111  1.0
+  BB      0.111  4.0
+  BC      0.111  1.0
+  CA      0.111  1.0
+  CB      0.111  1.0
+  CC      0.111  4.0
+</pre>
+
+<em>So, for N=2, the sampling distribution of chi-square is two
+spikes, one at value 1.0 of height 0.667, the other at value 4.0 of
+height 0.333.</em> (Notice that the mean of sampling
+distribution is 2.0, the df.)
+
+<p><strong>N = 3.</strong> <br>When N=3, we can list all 27
+possibilities analogously to the above tables, but instead let's try
+to produce general formulas.  (We will, in essence, be deriving a case
+of the <em>multinomial distribution</em>, so you might like to look
+this up in a statistics textbook.)
+
+<p>A sample of size N can be construed as N "slots" that need to be
+filled with instances from the population.  Suppose we fill r of the
+slots with instances of category A, s of the slots with instances of
+B, and t of the slots with instances of C.  How many different samples
+have r A's, s B's, and t C's?  To answer this question, consider first
+that there are (N choose r) ways to place the r A's in the N slots.
+Then, in the remaining N-r slots, there are (N-r choose s) ways to
+place the s B's.  Finally, there are just N-r-s = t remaining slots,
+into which the t C's can be placed (just one way).  So, there are (N
+choose r)*(N-r choose s) samples with r A's, S B's, and t C's.
+
+<p>Instead of considering every possible sample of size N (of which
+there are 3^N possibilities) as we did for N=1 and N=2, we consider
+the possible values of r, s and t (of which there are fewer
+possibilities: N,0,0; N-1,1,0; N-1,0,1; N-2,2,0; N-2,1,1; N-2,0,2;
+...; 0,1,N-1; 0,0,N) and multiply the probability of each possibility
+by (N choose r)*(N-r choose s).
+
+<p>As a final simplification, when the probabilities are all equal in
+the population, the chi-square for r,s,t is the same as for s,r,t and
+t,r,s, etc., so we need only compute it once, and then just multiply
+by the number of distinct permutations of r, s and t.  For example,
+the result N,0,0 has three distinct permutations: N,0,0; 0,N,0; and
+0,0,N.  The result N,1,0 has six distinct permutations: N,1,0; N,0,1;
+1,N,0; 1,0,N; 0,N,1 and 0,1,N.
+
+<p>Thus, for N = 3:
+
+<pre>
+sample
+distrib.          (N choose r)    # distinct    
+r,s,t     prob   *(N-r choose s)  permutations  product  chi-square
+--------  -----  ---------------  ------------  -------  ----------
+3,0,0     .0370   1               3              3       6.0
+2,1,0     .0370   3               6             18       2.0
+1,1,1     .0370   6               1              6       0.0
+</pre>
+
+The product value simply tells us the number of samples with r A's, s
+B's, and t C's.  (Notice that the product column sums to 27, exactly
+the number of distinct samples of size 3.)  <em>So, for N=3, the
+chi-square sampling distribution has three values, with value 0.0
+having a probability of 6*.037=0.222, value 2.0 having a probability
+of 18*.037=0.666, and value 6.0 having a probability of 0.111.</em>
+(Notice that the mean of sampling distribution is 2.0, the df.)
+
+<p><strong>N greater than 3.</strong> <br>Hopefully you can
+extrapolate the method used for N=3 to cases of N=4, N=5, etc.  When N
+gets much larger, this method becomes intractable too, and then you
+can write a computer program to arrive at an answer.
+
+<p>
+Copyright &copy; 1996 by John K. Kruschke
+
+<p><hr>
+
+
+</BODY>
+</HTML>
+
+
+
+

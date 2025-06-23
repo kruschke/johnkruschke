@@ -1,0 +1,102 @@
+<p>
+<table border=1 align=center>
+<tr><td>
+<table border=0 cellspacing=0 cellpadding=2 align=center>
+<tr>
+<td colspan=6 align=center><font size="-1">
+<u>SELECT a raft (click a spot below)</u>
+</font></td>
+<td colspan=7 align=center><font size="-1">
+<INPUT TYPE="submit" VALUE="then click here to VIEW the selected raft">
+</font></td>
+</tr>
+<tr>
+<td colspan=2 align=center bgcolor="00CCFF">
+<input type="radio" name="item_code" value="I.PE_1"><font size="-1">Salmon
+</font></td>
+<td colspan=2 align=center bgcolor="00CCFF">
+<input type="radio" name="item_code" value="PE.I_1"><font size="-1">Piranha
+</font></td>
+<td colspan=2 align=center bgcolor="00CCFF">
+<input type="radio" name="item_code" value="A.B"><font size="-1">Sculpin
+</font></td>
+<td colspan=2 align=center bgcolor="00CCFF">
+<input type="radio" name="item_code" value="I.PE_2"><font size="-1">Minnow
+</font></td>
+<td colspan=2 align=center bgcolor="00CCFF">
+<input type="radio" name="item_code" value="I.PL_1"><font size="-1">Oscar
+</font></td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr>
+<td align=center>&nbsp;</td>
+<td colspan=2 align=center bgcolor="2099FF">
+<input type="radio" name="item_code" value="PE.I_2"><font size="-1">Catfish
+</font></td>
+<td colspan=2 align=center bgcolor="2099FF">
+<input type="radio" name="item_code" value="C.D"><font size="-1">Stickleback
+</font></td>
+<td colspan=2 align=center bgcolor="2099FF">
+<input type="radio" name="item_code" value="I.PE_3"><font size="-1">Goldfish
+</font></td>
+<td colspan=2 align=center bgcolor="2099FF">
+<input type="radio" name="item_code" value="PE.I_3"><font size="-1">Red Snapper
+</font></td>
+<td colspan=2 align=center bgcolor="2099FF">
+<input type="radio" name="item_code" value="PL.I_1"><font size="-1">Angelfish
+</font></td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td colspan=2 align=center bgcolor="4066FF">
+<input type="radio" name="item_code" value="PE.I_4"><font size="-1">Guppy
+</font></td>
+<td colspan=2 align=center bgcolor="4066FF">
+<input type="radio" name="item_code" value="PL.I_2"><font size="-1">Pupfish
+</font></td>
+<td colspan=2 align=center bgcolor="4066FF">
+<input type="radio" name="item_code" value="I.PL_2"><font size="-1">Shark
+</font></td>
+<td colspan=2 align=center bgcolor="4066FF">
+<input type="radio" name="item_code" value="B.A"><font size="-1">Sturgeon
+</font></td>
+<td colspan=2 align=center bgcolor="4066FF">
+<input type="radio" name="item_code" value="PL.I_3"><font size="-1">Batfish
+</font></td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td colspan=2 align=center bgcolor="6033FF">
+<input type="radio" name="item_code" value="I.PE_4"><font size="-1">Trout
+</font></td>
+<td colspan=2 align=center bgcolor="6033FF">
+<input type="radio" name="item_code" value="I.PL_3"><font size="-1">Cichlid
+</font></td>
+<td colspan=2 align=center bgcolor="6033FF">
+<input type="radio" name="item_code" value="D.C"><font size="-1">Siscowet
+</font></td>
+<td colspan=2 align=center bgcolor="6033FF">
+<input type="radio" name="item_code" value="PL.I_4"><font size="-1">Pardo
+</font></td>
+<td colspan=2 align=center bgcolor="6033FF">
+<input type="radio" name="item_code" value="I.PL_4"><font size="-1">Koi
+</font></td>
+</tr>
+</table>
+</td></tr></table>
+
+
+
+
+
+
+
+

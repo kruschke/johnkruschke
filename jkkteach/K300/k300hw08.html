@@ -1,0 +1,189 @@
+<html>
+<font face="tahoma">
+<title>K300, Prof. Kruschke</title>
+<body>
+
+K300 Statistics, Prof. Kruschke
+<h3>
+Homework 8, Due at the beginning of class, Tuesday April 5, 2005.
+<!-- <br>UNDER CONSTRUCTION -- DO NOT YET DO -->
+
+</h3>
+
+<p>Be sure to <li>write your name and ID on every page <li>make a copy of
+your homework for your own records and exam study <li>staple (not
+paper clip) your pages <li>write clearly <li>show your work as
+appropriate -- an unannotated sequence of numbers and derivations that
+mysteriously ends up with the correct numerical answer will
+<em>not</em> be given full credit <li>answer every part of every
+question (unless instructed otherwise).
+
+<ol>
+
+<p><li>15  pts. 
+
+A researcher is interested in the effects of caffeine on how fast
+people solve a maze. She gives four randomly selected people a cup of
+(caffeinated) coffee, and four other randomly selected people a cup of
+de-caffeinated coffee. Then she has each person solve a complex
+maze. Here are the duractions, in minutes, for solving the maze:
+
+<br>&nbsp;&nbsp;&nbsp; Caffeine: 0.250, 0.200, 0.167, 0.143
+
+<br>&nbsp;&nbsp;&nbsp; De-caf: 1.000, 0.500, 0.333, 0.250
+
+<br><b>A.</b> Conduct a t-test on the durations, assuming a
+non-directional test and a .05 significance level. Do the computations
+by hand and show your work, but you do not need to draw the
+distributions. Be sure to specify the critical t value and your
+conclusion.
+
+<br><b>B.</b> Do the two groups seem to have equal variances of
+durations?  Do the durations within each group appear to be
+symmetrically distributed, or are they skewed? Should we trust the
+conclusion from part A, and why or why not (mention the assumptions
+behind the critical t value)?
+
+<br><b>C.</b> Instead of measuring each participant's duration to
+complete the maze, the researcher transforms the durations into
+speeds. Thus, instead of describing each person's performance as
+minutes per maze, she describes each person's performance as mazes per
+minute (i.e., the number of equally difficult mazes they would solve
+in a minute, if they kept the same pace). For example, a duration of
+0.250 minutes per maze is transformed into a speed of 1/0.250 = 4.000
+mazes per minute.  Transform every duration above into speed by taking
+the reciprocal. Then conduct a t-test on the speeds, assuming a
+non-directional test and a .05 significance level. Do the computations
+by hand and show your work, but you do not need to draw the
+distributions. Be sure to specify the critical t value and your
+conclusion..
+
+<br><b>D.</b> Do the two groups seem to have equal variances of
+speeds?  Do the speeds within each group appear to be symmetrically
+distributed, or are they skewed? Should we trust the conclusion from
+part C, and why or why not (mention the assumptions behind the
+critical t value)?
+
+
+<p><li>15  pts. 
+
+A zoologist is studying the sounds produced by two species of bats.
+She randomly samples 10 recordings from each of the two species, and
+measures the dominant frequency (in Hz) of each sound production.  The
+data are as follows:
+
+<pre>
+spec_1  spec_2
+  4675   38177
+ 34544   80822
+  6634    7708
+   518    1212
+  6974   46630
+ 13360    4024
+   545   89322
+   365     898
+   314   32860
+  1556    4230
+</pre>
+
+<br><b>A.</b> Do the two species differ in the mean dominant frequency of
+their sound productions? Conduct a t-test (non-directional, .05
+significance) in Excel. Print out a single page that shows the data in
+the spreadsheet and the results of test, and be sure to write your
+conclusion under the t-test output. Also, be sure to clearly write on
+the page what exercise it is for, and <em>please put the page in order
+with the other exercises</em>.
+
+
+<br><b>B.</b> Can we trust the results of the t-test in part A? Why or
+why not? (Mention variances, symmetry, and how the critical t value is
+generated.)
+
+<br><b>C.</b>The zoologist is actually interested in the effective
+<em>pitch</em> (do-re-mi...) of the sound, not the raw frequency of
+sound.  To convert to pitch from frequency, just take the logarithm of
+frequency. In Excel, use the <tt>ln</tt> function to take the
+logarithm: For a number in cell A1, compute its logarithm by typing
+"<tt>=ln(A1)</tt>" in cell B1.  Conduct a t-test (non-directional, .05
+significance) on the pitches in Excel. Print out a single page that
+shows the data in the spreadsheet and the results of test, and be sure
+to write your conclusion under the t-test output. Also, be sure to
+clearly write on the page what exercise it is for, and <em>please put
+the page in order with the other exercises</em>.
+
+<br><b>D.</b> Can we trust the results of the t-test in part C? Why or
+why not? (Mention variances, symmetry, and how the critical t value is
+generated.)
+
+
+
+
+<p><li>10  pts. 
+
+A researcher is interested in the effects of different kinds of stress
+on how well people do on a test. She gives four randomly selected
+people some strenuous exercise, and four other randomly selected
+people threats of grave consequences if they do poorly. Then she has
+each person take the test. Here are the scores, out of 25 possible:
+
+<br>&nbsp;&nbsp;&nbsp; Exercise: 23, 22, 20, 3
+
+<br>&nbsp;&nbsp;&nbsp; Threats: 21, 4, 2, 1 
+
+<br>The scores do not appear to be normally distributed; in fact, they
+appear to be bimodal, with some people responding well to stress and
+other people reacting badly. The researcher believes that a standard
+t-test is inappropriate because of the non-normality, and decides to
+use resampling instead.
+
+<p>In Oncourse, go to the Schedule tab (<em>not</em> the In
+Touch / Group Spaces tab) and get the Excel spreadsheet for
+resampling. Type in the scores for the two groups. Press F9 a few
+times so that you see how the values change with different random
+samplings, and stop pressing F9 when the result looks typical. 
+
+
+
+<br><b>A.</b> For the Null Hypothesis worksheet, briefly state how the
+numbers in cells B4 and F4 are generated.
+
+
+
+<br><b>B.</b> Does the null hypothesis sampling distribution have a
+single mode like the t distributions we have seen for sampling from
+normal distributions? 
+
+
+<br><b>C.</b> What is the critical t value, in the re-sampled t
+distribution, on the high (positive) end of the distribution? [Hint:
+it will be close to, but not exactly equal to, the t value for a
+normal population.]
+
+<br><b>D.</b> Does the actual data t value exceed the critical t value
+in the re-sampled t distribution? Should the researcher reject the
+null hypothesis that the two types of stress have equal effects?
+
+
+<br><b>E.</b> For the Alternative Hypothesis worksheet, briefly state how the
+numbers in cells B4 and F4 are generated.
+
+<br><b>F.</b> On the Alternative Hypothesis worksheet, press F9 until
+typical values appear. Does the alternative hypothesis sampling
+distribution have a single mode like the t distributions we have seen
+for sampling from normal distributions?
+
+
+
+<br><b>G.</b> Under the alternative hypothesis, what is the
+probability that the re-sampled t will exceed the critical value from
+the null hypothesis?
+
+
+</ol>
+
+<hr>
+</body></font></html>
+
+
+
+

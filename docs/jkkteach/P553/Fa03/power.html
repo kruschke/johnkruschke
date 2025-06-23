@@ -1,0 +1,249 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#EECCCC">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">Prof. Kruschke</a>
+<h2>
+<p>Statistical Power and Effect Size
+</h2>
+</center>
+
+Figure 1 (below) illustrates the concepts of statistical power and
+effect size.  The diagram will be explained in detail in lecture.  One
+point to be emphasized is that <em>power</em> lives in the
+<em>sampling</em> distributions, whereas <em>effect size</em> lives in
+the <em>population</em> distributions.
+
+<p>
+<center>
+<table border=1 cellpadding=10 bgcolor="white">
+<tr><td align=center>
+<IMG SRC="http://www.indiana.edu/~jkkteach/P553/power.gif" 
+align=center>
+</td></tr>
+<tr><td align=center> 
+<font size=-1><em>Figure 1.  Illustration of effect size and power.</em>
+<br>The "1.65" in the sampling distribution of the null 
+<br>hypothesis assumes a Type&nbsp;I error rate of 5%.</font>
+</td></tr>
+</table>
+</center>
+
+<br clear="all"><br>
+
+<table align=right border=1 cellpadding=10 cellspacing=0 bgcolor="white">
+<tr><td align=center>
+<IMG SRC="http://www.indiana.edu/~jkkteach/P553/powersamp.gif" 
+align=center>
+</td></tr>
+<tr><td align=center> 
+<font size=-1><em>Figure 2. Sampling distributions
+<br>with critical value of sample mean
+<br>explicitly marked.</font>
+</td></tr>
+</table>
+
+<p>All the basic computations regarding power result from just the two
+equations that describe the position of the critical value in the
+sampling distributions.  Figure 2 (right) shows the two sampling
+distributions with the critical value of the sample mean labeled as
+M<sub>crit</sub>.  Recall from Figure 1 that &sigma;<sub>M</sub> =
+&sigma;/sqrt(N).
+
+<p>In the null hypothesis sampling distribution, the diagram indicates
+that
+
+<table cellpadding=20>
+<tr><td align=center>
+z<sub>null</sub>(M<sub>crit</sub>) = 
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;&mu;<sub>null</sub>&nbsp;)&nbsp;/&nbsp;&sigma;<sub>M</sub>
+</td>
+<td align=right>
+[Eqn. 1]
+</td>
+</tr>
+</table>
+
+The value of the Type I error rate sets the desired value of z; if we
+want the Type I error rate to be .05, then z(M<sub>crit</sub>) = 1.65,
+as shown in the diagram.
+
+<p>In the alternative hypothesis sampling distribution, the diagram indicates
+that
+
+<table  cellpadding=20>
+<tr><td align=center>
+z<sub>alt</sub>(M<sub>crit</sub>) = 
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;&mu;<sub>alt</sub>&nbsp;)&nbsp;/&nbsp;&sigma;<sub>M</sub>
+</td>
+<td align=right>
+[Eqn. 2]
+</td>
+</tr>
+</table>
+
+
+From this value of z<sub>alt</sub>(M<sub>crit</sub>), we can determine
+the power, or, if given a desired power, we can determine the needed
+value of z<sub>alt</sub>(M<sub>crit</sub>).
+
+
+<br clear="all">
+<p>
+<strong>Determining power:</strong>
+If you are given &mu;<sub>null</sub>, &mu;<sub>alt</sub>, &sigma;, alpha
+(i.e., the Type I error rate), and N, then you can compute the power
+from the two equations.  Start with Equation 1 to determine
+M<sub>crit</sub>.  Then use this value in Equation 2 to determine the
+resulting power.
+
+<p><blockquote>
+<table cellpadding=10 border=1 bgcolor="lavender"><tr><td>
+<em>Example.</em>
+
+Suppose &mu;<sub>null</sub>=0, &sigma;=10, &mu;<sub>alt</sub>=5, alpha=.05,
+and N=16. What is the power?
+
+<p>Before jumping into the equations, it would help if you entered
+these values into a diagram like Figure 2, above.
+
+<p>We start with the null hypothesis to determine
+M<sub>crit</sub>. Because we want alpha=.05 one-tailed, we need
+z<sub>null</sub>(M<sub>crit</sub>)=1.65. It's positive 1.65, instead
+of negative 1.65, because &mu;<sub>alt</sub> is greater than
+&mu;<sub>null</sub>. Also notice that because &sigma;=10 and N=16,
+&sigma;<sub>M</sub> = 10/sqrt(16) = 2.5.  We then plug in the known
+numerical values into Equation 1, z<sub>null</sub>(M<sub>crit</sub>) =
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;&mu;<sub>null</sub>&nbsp;)&nbsp;/&nbsp;&sigma;<sub>M</sub>,
+which becomes 1.65 =
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;0&nbsp;)&nbsp;/&nbsp;2.5. Solving
+for M<sub>crit</sub> yields M<sub>crit</sub> = 2.5*1.65.
+
+<p>We then consider the alternative hypothesis. Using Equation 2, we
+plug in the value of M<sub>crit</sub> that we just determined.
+z<sub>alt</sub>(M<sub>crit</sub>) =
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;&mu;<sub>alt</sub>&nbsp;)&nbsp;/&nbsp;&sigma;<sub>M</sub>
+= (&nbsp;2.5*1.65&nbsp;&minus;&nbsp;5&nbsp;)&nbsp;/&nbsp;2.5 = &minus;0.35. We
+convert this z value to a probability value by looking up the
+probabilities in a normal table, such as Table A-1, pp.639-641 of Aron
+and Aron. There we find that for z=0.35, the percentage from the mean
+is 13.68. Because our M<sub>crit</sub> is below the mean (that's why
+the z value was negative), the power is 13.68 plus 50, i.e., 63.68.
+
+</td></tr></table></blockquote>
+
+<p>
+<strong>Determining sample size:</strong>
+If you are given &mu;<sub>null</sub>, &mu;<sub>alt</sub>, &sigma;, alpha
+(i.e., the Type I error rate), and the desired power, then you can
+compute the needed N from the two equations.  Essentially, you simply
+plug in all the given information into the two equations, which yields
+two equations with two unknowns; the unknowns are N and
+M<sub>crit</sub>.  Solving the two equations yields N.  
+
+
+<p><blockquote>
+<table cellpadding=10 border=1 bgcolor="lavender"><tr><td>
+<em>Example.</em>
+
+Suppose &mu;<sub>null</sub>=0, &sigma;=10, &mu;<sub>alt</sub>=5, alpha=.05,
+and a desired power of .75. What is the minimal N needed?
+
+<p>Before jumping into the equations, it would help if you entered
+these values into a diagram like Figure 2, above. Also, notice the
+similarity of this example to the previous example: The means and
+standard deviations are the same. We found that for N=16 the power was
+.6368; now we want a power of .75, so we know that N will need to be
+bigger than 16.
+
+<p>We start with the null hypothesis to describe
+M<sub>crit</sub>. Because we want alpha=.05 one-tailed, we need
+z<sub>null</sub>(M<sub>crit</sub>)=1.65. It's positive 1.65, instead
+of negative 1.65, because &mu;<sub>alt</sub> is greater than
+&mu;<sub>null</sub>. We hypothesize &sigma;=10 but we don't know N, so all
+we can say is &sigma;<sub>M</sub> = 10/sqrt(N).  We then plug in the
+other known numerical values into Equation 1,
+z<sub>null</sub>(M<sub>crit</sub>) =
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;&mu;<sub>null</sub>&nbsp;)&nbsp;/&nbsp;&sigma;<sub>M</sub>,
+which becomes 1.65 =
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;0&nbsp;)&nbsp;/&nbsp;(10/sqrt(N)),
+which rearranged becomes 1.65 * 10 / M<sub>crit</sub> = sqrt(N).
+
+<p>We then consider the alternative hypothesis. We want the power to
+be .75, which entails that M<sub>crit</sub> lies below
+&mu;<sub>alt</sub> such that the area between &mu;<sub>alt</sub> and
+M<sub>crit</sub> is .25. From a table of normal probabilities, such as
+Table A-1 in Aron and Aron, we find that a z value of &minus;0.68 is needed
+to get at least .25. Using Equation 2,
+z<sub>alt</sub>(M<sub>crit</sub>) =
+(&nbsp;M<sub>crit</sub>&nbsp;&minus;&nbsp;&mu;<sub>alt</sub>&nbsp;)&nbsp;/&nbsp;&sigma;<sub>M</sub>,
+we get &minus;0.68 = (M<sub>crit</sub>&minus;5)/(10/sqrt(N)).
+
+<p>The previous two paragraphs have just yielded two equations with
+two unknowns, namely N and M<sub>crit</sub>. Now we just solve the
+equations. The first equation gave us a for&mu;la for sqrt(N), which we
+plug into the second equation: &minus;0.68 =
+(M<sub>crit</sub>&minus;5)/(10/sqrt(N)) = (M<sub>crit</sub>&minus;5)/(10/[1.65 *
+10 / M<sub>crit</sub>]). Rearranging to solve for M<sub>crit</sub>
+yields M<sub>crit</sub>=3.54. Now we can plug that into the first
+equation, sqrt(N) = 1.65*10/3.54, hence N=21.7. That is, we need N=22
+to get a power of at least .75.
+
+</td></tr></table></blockquote>
+
+
+
+<p>Doing this in
+the general case yields:
+
+<table width=100% cellpadding=10>
+<tr><td align=center>
+N = 
+[ ( z<sub>null</sub>(M<sub>crit</sub>) &minus; z<sub>alt</sub>(M<sub>crit</sub>) ) 
+/ effect&nbsp;size ]<sup><strong>2</strong></sup>
+</td>
+<td align=right>
+[Eqn. 3]
+</td>
+</tr>
+</table>
+
+For example, if we have a Type I error rate of .05, then
+z<sub>null</sub>(M<sub>crit</sub>) = 1.65.  If we want a power of
+0.84, then z<sub>alt</sub>(M<sub>crit</sub>) = &minus;1.00 (notice the
+negative sign, because M<sub>crit</sub> is less than
+&mu;<sub>alt</sub>).  For a moderate effect size of 0.5, then Equation 3
+implies that N = [ ( 1.65 &minus; &minus;1.00 ) / 0.5 ]<sup>2</sup> = 28.09, so we
+need N=29 to achieve a power of at least 0.84.
+
+
+<p><strong>Two-tailed tests.</strong>
+
+<p>
+<center>
+<table border=1 cellpadding=10 bgcolor="white">
+<tr><td align=center>
+<IMG SRC="http://www.indiana.edu/~jkkteach/P553/powertwotailed.gif" 
+align=center>
+</td></tr>
+<tr><td align=center> 
+<font size=-1><em>Figure 3.  Illustration of effect size and power for two-tailed tests of the null hypothesis.</em>
+<br>The "1.96" in the sampling distribution of the null 
+hypothesis assumes<br>a Type&nbsp;I error rate of 5%: There is 2.5% in each tail.</font>
+</td></tr>
+</table>
+</center>
+
+
+
+<p>
+<h6><center>Copyright &copy; 1999, 2002 John K. Kruschke</center></h6>
+<p><hr>
+
+</BODY>
+</HTML>

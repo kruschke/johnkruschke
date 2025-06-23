@@ -1,0 +1,107 @@
+                <<< $3$DUA42:[NOTES$LIBRARY]Q550_1857.NOTE;1 >>>
+                                 -< Q550_1857 >-
+================================================================================
+Note 3.9                   linear 1-layer feed-forward                   9 of 16
+PRISM::KRUSCHKE                                     100 lines   2-FEB-1995 16:54
+                        -< HOMEWORK 2, DUE 14 FEBRUARY >-
+--------------------------------------------------------------------------------
+
+Q550 Homework 2: Linear Networks, Part 2.
+
+Due Tuesday 14 February 1995
+
+
+1. Feature and Pattern Levels of Representation. Suppose we have some
+very simple pictures consisting of two pixels.  We set up a linear
+network of two input nodes and two output nodes, and we want it to
+learn to associate pictures.  Just what the nodes represent about the
+pictures is up to us, however.  We'll consider two different
+representations: a "feature" representation and a "pattern"
+representation.
+
+Feature basis: If we consider individual pixels to be features, then
+it is natural to define a "feature" (or "pixel") basis:
+
+ (1,0)     (0,1)
+
+That's supposed to indicate two pictures; one picture has grey levels
+1 and 0, the other 0 and 1.  Any picture can be described as some
+linear combination of those two basis pictures, and the coefficients
+in the resulting linear combination (i.e., the coordinates) are the
+input activations (and teacher values) for the feature-based network.
+
+Pattern basis: Let's also define a pattern basis, consisting of a
+uniform picture and a "ramp" picture:
+
+ (1,1)     (.25,.75)
+
+Again, any picture can be described as some linear combination of
+those two basis pictures, and the coefficients in that linear
+combination (i.e., the coordinates) are the input activations (and
+teacher values) for the pattern-based network.
+
+From that choice of bases it follows that the change-of-basis matrices
+are 
+
+  -1   [ 1.0 0.25 ]                [  1.5 -0.5 ]
+ P   = [ 1.0 0.75 ]      and   P = [ -2.0  2.0 ]
+
+for patterns-to-features and features-to-patterns, respectively.  (The
+"-1" over the "P" means that the matrix on the left is the inverse of
+the matrix on the right.)  
+
+For example, consider the picture (1,1).  In the feature basis, it has
+coordinates 1 and 1 (i.e., 1 times the first feature basis vector plus
+1 times the second feature basis vector).  What are its coordinates in
+the pattern basis?  By inspection, we can see that the coordinates
+must be 1 and 0, because the picture _is_ the first pattern basis
+vector.  But let's see if the change of basis matrix gives us that
+answer:
+
+ [  1.5 -0.5 ]  [ 1 ]  =  [ 1 ]
+ [ -2.0  2.0 ]  [ 1 ]     [ 0 ]
+
+Yes! It works!  Remember, the change of basis matrix operates on
+coordinates, not on pictures.  I've tried to distinguish pictures from
+coordinates by putting picture grey-levels in parentheses, and
+coordinates in vertical columns enclosed with brackets.
+
+Suppose we want to associate the following pictures:
+
+    in           out              in           out
+ (1.0,0.0) => (0.5,0.5)        (0.0,1.0) => (1.0,0.0)
+
+
+1A. Express those associations in terms of coordinates.  First, what
+are the corresponding associations in terms of feature coordinates?
+Second, what are the corresponding associations in terms of pattern
+coordinates? (For the second part, use the change of basis matrix.)
+
+1B. Isomorphism at Asymptote. Use the "pa" program in delta-rule mode
+to see if the feature-based and pattern-based networks converge to
+"similar" weight matrices, where "similar" is used in the technical
+sense. That is, if W_F is the asymptotic weight matrix for the
+feature-based network, and W_P is the asymptotic weight matrix for the
+pattern-based network, show that W_F = P^-1 * W_P * P (where P^-1
+means P inverse).
+
+1C. Non-Isomorphic Course of Training. Now test whether the weight
+matrices are similar throughout the course of training.  Are the
+feature-based and pattern-based weight matrices "similar" (in the
+technical sense) after 5 epochs of training?
+
+Test generalization as well, before asymptote is reached.  Test the
+the pattern-based network with the input picture (1,0) expressed in
+pattern coordinates, and test the feature-based network with the same
+input picture expressed in feature coordinates.  Are the outputs
+identical in terms of the picture they represent?
+
+1D. Non-Isomorphism under Local Damage. Now use the asymptotic weight
+matrices of the feature-based and pattern-based networks, and suppose
+we inflict local damage by excising the first input node from each
+network.  Test each damaged network with the input picture (1,1).  Use
+the appropriate input coordinates for each network!  Are the outputs
+from the two damaged networks equivalent in terms of the picture they
+represent?
+
+=== end ===

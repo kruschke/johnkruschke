@@ -1,0 +1,25 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Magnifying Glass (haiku)
+<br>
+
+<!-- 9  words -->
+Magnifying glass\
+enlarges every detail.\
+I am smaller now.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://mcpl.info/geninfo/haiku-writing-contest" , journal_name = "Monroe County Public Library haiku writing contest" , publication_info = "3rd place, 25 April 2025.")`
+
+*Notes:*
+This might lean a bit toward senryu more than haiku, but where does nature stop and human nature begin?
+
+`r next_link("poem_magnifying_glass.html")`
+
+</small>

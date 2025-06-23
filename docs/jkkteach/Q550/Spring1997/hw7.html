@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2> 
+<a href="q550.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<br>Spring 1997, Section 0978, Tu & Th 2:30-3:45, PY 228 
+<p>Homework 7: Competitive Learning
+<br>Due Tuesday 29 April.
+<br>MUST BE TURNED IN ON TIME. NO LATE HOMEWORK PERMITTED.
+</h2>
+<p><strong>20 pts. total</strong>
+</center>
+
+<p><strong>1. Types of maps. (6 pts.)</strong> 
+
+<p>Chapter 10 of Anderson discusses Nelson and Bower's (1990) taxonomy
+of cortical maps.  Which of N&B's three types is the map in Figure
+14.7? Figure 14.13?  Figure 14.15?  Figure 14.16? Figure 14.17? Figure
+14.19?
+
+
+<p><strong>2. Only-winner-learns vs. neighbors-learn-too. (5
+pts.)</strong> 
+
+<p>In describing the formation of adaptive ("Kohonen") maps, on p.469
+Anderson states that "using a very large initial neighborhood seems to
+be essential for proper formation of the maps."  Briefly describe what
+would happen if the system began with (and forever thereafter used) an
+excitatory neighborhood with radius <em>zero</em>, so that only the
+winner learns.
+
+<p><strong>3. Competitive learning in program <tt>cl</tt> (9 pts.)</strong>
+
+<p>Use the files provided below to explore the behavior of competitive
+learning under the influences of (i) the number of output nodes and
+(ii) the learning rate.  In this exercise there are three input nodes,
+and the patterns represent single "features" in the input.  The
+patterns are presented cyclically, using <tt>strain</tt>.
+
+<p>Your job is to <tt>strain</tt> the network for three different
+learning rates and three different numbers of output (cluster) nodes.
+Use learning rates of 1.0, 0.5 or 0.05, and 1, 2 or 3 output nodes.
+For each of the nine combinations, <tt>strain</tt> the network and
+describe the asymptotic behavior of the weights.  Briefly explain why
+these behaviors occur, in terms of the mechanisms of competitive
+learning.
+
+<p>Hints: You can use the same template file for all runs.  For a
+given number of output nodes, you can change the learning rate by
+typing <tt>set param lrate</tt> on the command line (and then don't
+forget to <tt>reset</tt>).  To change the number of output nodes, quit
+the program, change the <tt>set config noutputs</tt> line in the the
+start-up file, and re-invoke the program.
+
+<hr width=70%>
+<p>cycle.tem
+<pre>
+define: layout
+epochno  $
+-
+                 INPUT ACT
+                   x  y  z
+   cpname $      $            
+-
+                   WEIGHTS
+                    from
+                   x  y  z       OUTPUT
+to output-node1  $               $
+to output-node2
+to output-node3
+end
+epochno variable 1 $ 0 epochno     6 1
+cpname  variable 1 $ n cpname      6 1
+input   vector   1 $ n activation  h 3 1.0    0 3
+weights matrix   1 $ n weight      h 3 100.0  3 3  0 3
+output  vector   1 $ n activation  v 2 1.0    3 3
+</pre>
+<hr width=70%>
+<p>cycle.str
+<pre>
+set config noutputs 2
+set config ninputs 3
+set param lrate 0.5
+set dlevel 1
+set stepsize pattern
+set single 1
+set nepoch 10
+get patterns cycle.pat
+</pre>
+<hr width=70%>
+<p>cycle.pat
+<pre>
+x  1 0 0
+y  0 1 0
+z  0 0 1
+</pre>
+
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

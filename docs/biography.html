@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Biography</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="jkkweb_style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">John K. Kruschke</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="pubs.html">Publications</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Bayesian
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="DBDA.html">Book</a>
+    </li>
+    <li>
+      <a href="BARG.html">BARG</a>
+    </li>
+    <li>
+      <a href="bayesAndFreqApp.html">App</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="teach.html">Courses Etc.</a>
+    </li>
+    <li>
+      <a href="students.html">Students</a>
+    </li>
+    <li>
+      <a href="poems.html">Poems</a>
+    </li>
+    <li>
+      <a href="artcritic.html">Art Critic</a>
+    </li>
+    <li>
+      <a href="biography.html">Biography</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Biography</h1>
+
+</div>
+
+
+<p><i>Below</i> are <b>two biographical sketches</b> for the 2018
+<a href="https://news.iu.edu/stories/2018/03/iub/inside/19-bloomington-announces-sonneborn-provost-professors.html" target="_blank">Provost
+Professor</a> induction ceremony. The first sketch is the one Kruschke
+wrote and submitted, and the second sketch is the one they subsequently
+wrote and published.</p>
+<p><img src="provostFlames.png" alt="flames icon" style="width:50px !important;">
+<b>The sketch Kruschke wrote and submitted when they requested:</b>
+<br>      Kruschke grew up in northern California, and during his
+teenage years he dreamed of a career in astronomy. Despite that dream,
+he declined a scholarship to study astrophysics at Michigan State
+University because he was afraid of moving to the Midwest. While an
+undergraduate at Berkeley, he decided he would be disappointed by a
+career in astrophysics because he would be spending all his time staring
+at computer screens instead of gazing at the stars. He ultimately
+shifted his studies to cognitive psychology, which, it turns out,
+requires spending all his time staring at computer screens to analyze
+what people do when staring at computer screens. In 1989, after six
+years of graduate school with no publications and no dissertation, the
+IU Psychology Department made the audacious move to interview him. On
+the airline flight returning from the interview, Kruschke read an
+article that had been handed to him by an IU professor, and before the
+plane landed Kruschke knew he had to create a completely new
+dissertation project, which he produced during his first year as a
+lecturer at IU. The IU Psychology department convinced Kruschke that the
+Midwest is not such a scary place after all. <br>      Aside from fear,
+another major motivator for Kruschke has been annoyance: annoyance at
+shoddy explanations. The urge to explain stuff has been lifelong, from a
+demonstration of Saturn‑V rocket stages using cardboard tubes when he
+was in the fifth grade (unfortunately no flames were involved), to
+self-designed tutorials in linear algebra while he was an undergraduate
+(no flames there either), to a YouTube video explaining a cup-passing
+game when he was supposedly a mature adult (still no flames). The
+lifelong temerity to presume he could explain stuff without using
+pyrotechnics continued into his teaching of statistics at IU. But the
+more he taught traditional statistical methods, the more annoyed he
+became, and the more convinced he was that science needed Bayesian
+statistics. He wished someone would write an accessible book on Bayesian
+stats, and he realized that “someone” would have to be him. After only
+several thousand hours of relentless effort, there emerged two editions
+of the book, Doing Bayesian Data Analysis, which is notable for the
+doggies on its cover and the doggerel that begins each chapter. Finally
+flames can be involved, as some critics have wished the book to be
+burned. <br>      In a desperate effort to avoid burn out, Kruschke has
+changed his research focus over the years. In the early years, he
+created a series of mathematical models of attention in learning.
+Computer simulations of the models mimicked aspects of human behavior,
+such as what people learn to pay attention to. Kruschke then completely
+shifted his attention to Bayesian statistical methods. A strong impetus
+for the shift was a moral emotion, a feeling of being lied to by
+traditional methods (“perfidious p values and the con game of confidence
+intervals”). Moral motivations have now become the focus of his
+research. The research asks questions such as, What is going on in
+people’s minds when they make judgments of right or wrong action? How do
+people mete out appropriate punishments? And, How do people judge good
+or bad character? By pondering these questions now, Kruschke hopes he
+can lead a life of wisdom in retirement. But he’ll probably just be
+staring at computer screens, wishing he were gazing at the stars.</p>
+<p><img src="provostLaurels.png" alt="laurels icon" style="width:50px !important;">
+<b>The sketch they subsequently created and published:</b> <br>     John
+Kruschke is professor in the Department of Psychological and Brian
+Sciences, adjunct professor in statistics, and a core member of the
+cognitive science program. He received his Ph.D. in cognitive psychology
+from the University of California, Berkeley in 1990 and has been at
+Indiana University since 1989. <br>      Kruschke is known for his
+substantive and methodological contributions to the fields of cognitive
+science and cognitive psychology. In particular, he has made monumental
+contributions to research in experimental psychology in two major areas:
+attention in learning and Bayesian data analysis. He made a theoretical
+breakthrough by creating a new theory of attention and category
+learning, formalized as a connectionist learning model, based on
+rigorous mathematical as well as computer simulation methods. The models
+implement specific psychological principles, such as, learning driven by
+maximizing improvement in accuracy and memory represented by exemplars
+of learned items. His work on this topic has been published in the
+premier theoretical journal of psychology, Psychological Review. In
+particular, his 1992 article is considered to be a classic and has been
+cited almost 2,000 times. His colleague Robert Nosofsky notes of this
+work: “The resulting models are among the most elegantly formalized and
+impressive ones in the field today. The psychological principles are
+formalized in a conceptually clear and parsimonious fashion, and models
+yield outstanding quantitative fits to intricate and challenging sets of
+experimental data.” <br>      Kruschke’s other major contribution has
+been his advancement of Bayesian statistical analysis methods in the
+psychological sciences. The methods that have dominated the field for
+many decades are based on null hypothesis statistical testing (NHST).
+Kruschke has been the leader in his field to draw attention to the deep
+flaws in the logic that underlies NHST as well as the inappropriate
+procedures by which these methods are generally applied. He has
+advocated for the use of Bayesian statistical analysis as a remedy for
+many of the prevalent flaws in statistical analysis. This line of
+research has resulted in many influential articles as well as the
+736-page textbook, Doing Bayesian Data Analysis, 2nd Edition (Elsevier,
+2015), which has been cited more than 1,500 times and is considered an
+instant classic. <br>      Kruschke has taught an undergraduate course
+in cognitive psychology for eleven years, courses in models of cognitive
+sciences for fifteen years, and courses in statistics for twenty-four
+years. Students have consistently rated him an excellent teacher, and
+his devotion to teaching has earned him Teaching Excellence Recognition
+Awards from the IU Trustees eight times. He has also received four
+different teaching development grants and fellowships, including the
+Instructional Development Summer Fellowship in 1993 and 2006 and Grants
+to Enhance Active Learning in 1997 and 2005. Since 2010, he has
+presented 45 tutorials and extended workshops, most resulting from
+invitations. <br>      In honor of his scholarly contributions, Kruschke
+was elected a fellow of the prestigious Society of Experimental
+Psychologists in 2006. He also won the highly competitive Troland
+Research Award from the National Academy of Sciences in 2002 and a First
+Award Grant from NIMH from 1994 to 1999. His stature in the field has
+been recognized in the form of his service on prestigious editorial
+boards and grant review panels.</p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

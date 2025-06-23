@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2> 
+<a href="q550.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<br>Spring 1997, Section 0978, Tu & Th 2:30-3:45, PY 228 
+<p>Homework 4: Multi-layer non-linear networks (backpropagation)
+<br>Part B: Variants of backprop (nearest neighbor classifiers).
+<br>Due Tuesday 25 March.
+</h2>
+
+<p>Please see <a href="hwcomments.html">comments regarding homework
+assignments</a>.
+
+<p><strong>25 pts. total.</strong>
+</center>
+
+
+<p>The questions below can only be answered with certainty by actually
+simulating the referred-to models.  I do not expect you to simulate
+the models.  Hence, I expect your answers to be concisely stated
+arguments about how you expect the models to behave, based on the
+principles underlying the construction of the models and on the few
+details provided in the Anderson textbook.
+
+<p><em>Filtration vs. condensation structure and result.</em> The
+diagrams below indicate the structures of filtration and condensation
+described in class.  Human data indicate that filtration is far easier
+to learn than condensation.
+
+<pre>
+  FILTRATION:       CONDENSATION:
+ ^                 ^             
+ |             	   |             
+ |     X X     	   |     X X     
+ |   X     X   	   |   O     X   
+ |             	   |             
+ |   O     O   	   |   O     X   
+ |     O O     	   |     O O     
+ +------------>	   +------------>
+</pre>
+
+<p><em>Extrapolation structure and result.</em> Some of the questions
+refer to the following type of categorization structure.  Consider
+stimuli that vary on two dimensions.  Suppose that the training
+stimuli are classified as shown here:
+
+<pre>
+ ^
+ |            ?
+ |     X X
+ |   X     E
+ |
+ |  X       X
+ |  O       O
+ | 
+ |   O     O
+ |     O O
+ +--------------->
+</pre>
+
+<p>Thus, the stimuli can be classified according to a rule, "if it's
+taller than midway, it's an X, otherwise it's an O," except for one
+exception near the top right, which is classified as an E.  The key
+test stimulus is marked by the "?" at the top right.  This stimulus
+probes <em>extrapolation</em> from the training stimuli.  It is
+closest to the exceptional instance E, but lies in the region of the
+X-rule.  Human data described in class show that people respond to the
+? stimulus with X rather than with E.
+
+<p><strong>1 (10 pts).</strong> <br>Would the Nestor algorithm show
+filtration advantage?  <p>Would the Nestor system show human-like
+extrapolation in the structure described above?
+
+<p><strong>2 (10 pts).</strong> <br>Would Kanerva's sparse distributed
+memory (SDM) show filtration advantage?  
+<p>Would SDM show human-like
+extrapolation in the structure described above?
+
+<p>
+<blockquote>
+<pre>
+>  I'm a little bit confused on the question concerning sparse
+> distributed memory.  In particular I'm not sure how I should think
+> about categorization in this approach.  As far as I understand, for
+> a new input its "best match" is found from among the training inputs
+> (determined by nearness in memory space).  But where is the
+> categorization in this?  Are the hard locations interpreted as
+> categories?  In the nearest neighbor approaches something like "best
+> match" was used, but then there was the extra step of checking what
+> category that "best match" was and giving the same categorization to
+> the new pattern.  I don't see how anything like this second step is
+> taken in sparse distributed memory.  Thanks...
+</pre>
+
+<p>You're right that Kanerva does not set up SDM to do categorization
+exactly the same way that, say, ALCOVE does it.  SDM is described by
+Kanerva as what we would call an auto-encoder, trying to map each
+input pattern to itself.
+
+<p>But it is straight-forward to consider what SDM would do if the taught
+output patterns were category labels instead of copies of the input.
+This is perhaps easiest to understand when SDM is thought of as a
+feed-forward network as I showed in lecture.  This is what I had in
+mind when asking the homework question.  Sorry for not making this
+clear.
+
+
+</blockquote>
+
+<p><strong>3 (5 pts).</strong> Consider the example of Anderson's
+Figure 13.19, p.457.  Accurately draw the graph of the network's
+response for values of x from f<sub>1</sub>-2d to f<sub>3</sub>+2d.
+That is, draw a graph like the one in Figure 13.19.c, but also with
+extrapolation, not just interpolation.  Concisely explain how you
+derived the graph.
+
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,222 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                            Appendix D
+               Inner Product Demonstration (Chapter 7)
+
+
+     This program demonstrates some properties of the inner product
+between random vectors.  The inner product between a pair of random 
+vectors is computed.  A histogram of inner product values is given 
+as output, along with some summary statistics of the histogram.  
+
+     Normalized vectors (length one) with uniformly distributed
+random elements with mean zero are generated using the VAX math library
+random number generator, MTH$RANDOM.  If other computers are used, 
+use their generator.  A word of warning: No computer random number 
+generator is really trustworthy.  Use the tests in Chapter Three of 
+Donald Knuth's "The Art of Computer Programming: Semi-Numerical
+Algorithms, Volume 2," (Reading, MA: Addison-Wesley) if there is any 
+doubt.  Because neural networks are so sensitive to correlations, 
+they are exceptionally vulnerable to bad random number generators.
+Personal computer random number generators are particularly likely to 
+be poor.  
+
+     When the program is run, the program will prompt for (1) the
+seed for the random number generator, (2) the dimensionality of the 
+vectors to be used (maximum 4,000), (3) the number of random vectors 
+to be used to form the histogram, and (4) the number of bins between 
+0 and 1.  For this last value, 10 bins would mean the bins were of 
+size 0.1, 50 bins would be of size 0.02, and so on.  The maximum possible
+inner product between two vectors of length one is, of course, one.  
+High dimensionality simulations have histograms tightly clustered around 
+zero.  Changing the bin size lets the histogram be expanded so its 
+structure can be seen.  Some simple summary statistics are computed from
+the simulation.
+
+----------------------------------------------------------------------
+
+
+PROGRAM Inner_Product_Demo (Input, Output);
+
+CONST Max_dimensionality = 4000;
+
+TYPE  Vector         =  ARRAY [1..Max_dimensionality] OF REAL;
+
+VAR   Dimensionality,
+      Nr_vectors,
+      I,
+      Bin,
+      Bin_number, 
+      Seed           : INTEGER;
+      Histogram      : ARRAY [-200..200] OF INTEGER;
+      Vector_1, 
+      Vector_2       : Vector;
+
+FUNCTION Inner_product (Vector_1, Vector_2: Vector): REAL;
+    VAR             I: INTEGER;
+     Sum_of_products : REAL;
+    BEGIN
+    Sum_of_products := 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_products := Vector_1 [I] * Vector_2 [I] + Sum_of_products;
+    Inner_product:= Sum_of_products;
+    END;
+
+FUNCTION Vector_length (Vector_1: Vector): REAL;
+    VAR Sum_of_Squares: REAL;
+                     I: INTEGER;
+    BEGIN
+    Sum_of_Squares:= 0;
+    FOR I:= 1 TO Dimensionality DO 
+        Sum_of_Squares := Vector_1 [I]*Vector_1 [I] + Sum_of_squares;
+    Vector_length:= SQRT (Sum_of_Squares);
+    END;
+
+PROCEDURE Normalize (Vector_in: Vector; VAR Vector_out: Vector);
+    VAR Length_of_vector_in: REAL;
+        I                  : INTEGER;
+        Vector_in_is_zero  : BOOLEAN;
+    BEGIN
+    Vector_out:= Vector_in;
+    Length_of_vector_in := Vector_length (Vector_in);
+    IF (Length_of_vector_in = 0) THEN Vector_in_is_zero := TRUE
+                                 ELSE Vector_in_is_zero := FALSE;
+    IF Vector_in_is_zero 
+       THEN WRITE  ('Normalized zero vector!')
+       ELSE FOR I:= 1 TO Dimensionality DO
+            Vector_out [I] := Vector_in [I] / Length_of_vector_in;
+    END;
+
+FUNCTION Vector_cosine (Vector_1, Vector_2: Vector): REAL;
+    VAR Normal_vector_1, Normal_vector_2: Vector;
+    BEGIN
+    Normalize (Vector_1, Normal_vector_1);
+    Normalize (Vector_2, Normal_vector_2);
+    Vector_cosine:= Inner_product (Normal_vector_1,Normal_vector_2);
+    END;
+    
+PROCEDURE Make_random_vector  (VAR V: Vector);
+
+    {This procedure generates a random vector with length one }
+    {and with elements of zero mean.                          }
+
+    VAR I,J: INTEGER;
+
+    {VMS VAX math library random number generator. Change for }
+    {other computers.}
+
+    FUNCTION MTH$RANDOM (Var Seed: INTEGER): REAL; EXTERN;
+
+    FUNCTION Random: REAL;
+        BEGIN
+        Random := MTH$RANDOM (Seed);
+        END;
+
+    BEGIN
+    FOR I:= 1 TO Dimensionality DO V[I]:= Random-0.5;
+    Normalize (V,V);
+    END; 
+
+PROCEDURE Plot_histogram;
+    VAR I,J       : INTEGER;
+        Y_axis    : REAL;
+        Off_screen: BOOLEAN;
+    BEGIN
+    WRITELN ('Inner products between ', Nr_vectors:1,
+             ' random vectors.  Dimensionality: ', Dimensionality:1,'.');
+    WRITELN;
+    FOR I:= -9 TO 9 DO BEGIN
+                         Y_axis:= I/Bin_number; 
+                         WRITE (Y_axis:6:3, Histogram[I]:5,':');
+                         IF Histogram [I] >= 68 
+                         THEN Off_screen:= TRUE
+                         ELSE Off_screen:= FALSE;
+                         IF Off_screen 
+                            THEN BEGIN 
+                                 FOR J:= 1 TO 67 DO WRITE ('*');
+                                 WRITE ('+')
+                                 END
+                            ELSE FOR J:= 1 TO Histogram [I]
+                                 DO WRITE ('*');
+                         WRITELN;
+                         END;
+    END;
+
+PROCEDURE Write_statistics;
+    VAR I: INTEGER;
+        Y_axis, Sum, Mean, Variance, SD: REAL;
+    BEGIN
+    WRITE ('Statistics:');
+    Sum:= 0;
+    FOR I:= -200 TO 200 DO
+        BEGIN
+        Y_axis:= I/Bin_number; 
+        Sum:= Sum + Histogram[I]*Y_axis;
+        END;
+    Mean:= Sum/Nr_vectors;
+    WRITE ('   Mean: ', Mean:8:6);
+    Sum:= 0;
+    FOR I:= -200 TO 200 Do
+        BEGIN
+        Y_axis:= I/Bin_number;
+        Sum:= Sum + Histogram[I]*SQR (Y_axis - Mean);
+        END;
+    Variance:= Sum/Nr_vectors;
+    SD      := SQRT (Variance);
+    WRITE   ('   Var : ', Variance:10:8);
+    WRITELN ('   StdDev: ',  SD:8:6);
+    WRITELN;
+    END;
+
+PROCEDURE Initialize;
+    VAR I: INTEGER;
+    BEGIN
+    WRITELN ('This program generates a number of random vectors with      ');
+    WRITELN ('averege element zero, and length one and computes and plots ');
+    WRITELN ('the inner product between them.                             ');
+    WRITELN ('Bins are centered on the number next to them.               ');
+    WRITELN;
+
+    WRITE   ('Seed for Random Number Generator: ');            READLN (Seed);
+    WRITE   ('Dimensionality, Maximum 4000    : '); READLN (Dimensionality);
+    WRITE   ('Number of random vectors to test: ');      READLN (Nr_vectors);
+    WRITE   ('Number of bins between 0,1      : ');      READLN (Bin_number);
+    WRITELN;
+    FOR I:= -200 TO 200 DO Histogram [I]:= 0;
+    END;
+
+BEGIN {Main Program.}
+Initialize;
+FOR I:= 1 TO Nr_vectors DO
+    BEGIN
+    Make_random_vector (Vector_1);  Make_random_vector (Vector_2);
+    Bin:= ROUND (Bin_number*Vector_cosine (Vector_1, Vector_2) 
+                 - 1/(2*Bin_number) );  {Centers the bin.}
+    Histogram [Bin]:= Histogram [Bin] + 1;
+    END;
+Plot_histogram;
+Write_statistics;
+END.  {Main Program.}
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

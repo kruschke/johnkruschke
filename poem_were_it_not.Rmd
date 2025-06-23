@@ -1,0 +1,52 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Were It Not for the Firefly
+<br>
+<!-- 129 words -->
+
+Summer's hot and summer's humid:\
+Summer's trifling, endless, stupid.\
+
+Summer's games waste on all night,\
+insects swarm under the lights,\
+mindless phototropic creatures,\
+like the people in the bleachers,\
+mesmerized by play-by-play,\
+eating dogs while they decay.\
+
+Dogs bark man at crack of dawn,\
+roaring mowers bite the lawn,\
+deaf'ning blowers blast the dust,\
+wound with gas exhaust disgust.\
+
+August: Annexed 8 B.C., when\
+Ceasar named a month "for Me!"\
+because his uncle Julius\
+already seized July from us.\
+
+July the Fourth: The flag's still there!\
+The fireworks, bursting in air,\
+remind us all of war's delights:\
+Our children's fate is firefights.\
+
+But wait... retreat.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The firefly ---\
+in quiet night, in starlit sky,\
+with summer's Milky Way aglow ---\
+still winks of wonders yet to know.\
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://issuu.com/tiptonpoetryjournal/docs/tpj61/10" , journal_name = "*The Tipton Poetry Journal*" , publication_info = "Issue #61, 01 September 2024, p. 10.")`
+
+*Notes:* 
+Ever wonder why the months -- September, October, November, and December -- are the 9th to 12th months of the year, instead of the 7th to 10th as their names imply? Now you know: Julius Caesar and Caesar Augustus.
+
+`r next_link("poem_were_it_not.html")`
+
+</small>

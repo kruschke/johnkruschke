@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h3> 
+<a href="http://www.indiana.edu/~jkkteach/Q550/">
+Q550 Models in Cognitive Science</a>,
+<a href="http://www.indiana.edu/~kruschke/">Prof. John K. Kruschke</a>
+</h3>
+<h2>
+Exercises, Week 8 (Hebbian Learning), Due Tuesday 7 March 2000.
+</h2>
+</center>
+
+
+<p> "MPnR Reading" refers to the book by McLeod, Plunkett and Rolls.
+<em>Note: These exercises do <strong>not</strong> use the T-learn
+software from MPnR.</em> Just do the computations "by hand."
+
+<ol>
+
+
+<p><li><em>Weight explosion in Hebbian learning.</em> Consider a network
+with just one input node and just one output node.  We want to
+associate an input activation of 1 with an output activation of 1
+(i.e., the teacher value is 1.0 for an input value of 1.0).  Apply the
+Hebbian learning rule, <center><tt> Change_in_weight = learning_rate *
+output_teacher_value * input_value </tt></center> using a learning
+rate of 0.5, for 10 (ten) iterations.  Make a table showing, for each
+iteration, (a) the value of the weight, starting with a value of zero,
+and (b) the value of the global goodness, again starting with zero.
+If you were to train for N iterations, what would the value of the
+weight be, and what would the value of the goodness be?
+
+<p><li><em>Weight decay.</em>We can also incorporate <em>weight
+decay</em> into Hebbian learning, whereby the weight decays back
+toward zero:
+ <center><tt> Change_in_weight = (learning_rate * output_teacher_value
+* input_value) - (decay_rate * weight) </tt></center>
+ We want to associate an input activation of 1 with an output
+activation of 1 (i.e., the teacher value is 1.0 for an input value of
+1.0). Suppose that the decay_rate equals the learning_rate, and both
+are set to 0.5.  Apply the Hebbian learning rule, with weight decay,
+for 10 (ten) iterations.  Make a table showing the value, for each
+iteration, of (a) the weight, and (b) the value of the global goodness
+function, including the term for the weight decay.  To what value does
+the weight converge?  Prove this convergence by setting the
+Change_in_weight to zero in the equation above, and solving for the
+weight.
+
+<p><li><em>Generalization.</em> Consider a linear network with two input
+nodes and six output nodes.  We want it to learn these two pattern
+associations:
+
+<center>
+<pre>
+1 0  =>  1 1 0 0 0 0
+0 1  =>  0 0 1 1 0 0
+</pre>
+</center>
+
+Suppose we train the network, using Hebbian learning, just once on
+each association, using a learning rate of 1.0 and no weight decay.
+Write the resulting weight matrix (which has six rows and two
+columns).  Does this weight matrix correctly produce the desired
+output patterns for the trained input patterns?  Now determine what
+this trained network will produce as output for these novel input
+patterns: 3,2 and 0.5,0.75.  Is there any input for which the network
+could generate an output of 1,2,2,1,5,5?  Why or why not?
+
+<p><li><em>Non-orthogonal input patterns.</em> Consider a linear
+network with two input nodes and six output nodes.  We want it to
+learn these two pattern associations:
+
+<center>
+<pre>
+0.71 0.71  =>  1 1 0 0 0 0
+0.00 1.00  =>  0 0 1 1 0 0
+</pre>
+</center>
+
+Suppose we train the network, using Hebbian learning, just once on
+each association, using a learning rate of 1.0 and no weight decay.
+Write the resulting weight matrix (which has six rows and two
+columns).  Does this weight matrix correctly produce the desired
+output patterns for the trained input patterns (to within 0.02 of the
+desired value)?  Why or why not?  Now, starting from zero weights, we
+want it to learn these two pattern associations:
+
+<center> 
+<pre>
+0.71  0.71 => 1 1 0 0 0 0
+0.71 -0.71 => 0 0 1 1 0 0
+</pre> 
+</center> 
+
+(notice that the second component of the second input pattern is
+negative).  Suppose we train the network, using Hebbian learning, just
+once on each association, using a learning rate of 1.0 and no weight
+decay.  Write the resulting weight matrix (which has six rows and two
+columns).  Does this weight matrix correctly produce the desired
+output patterns for the trained input patterns (to within 0.02 of the
+desired value)?  Why or why not?
+
+
+
+</ol>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+

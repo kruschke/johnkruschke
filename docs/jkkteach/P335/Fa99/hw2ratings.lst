@@ -1,0 +1,333 @@
+
+09:04:24    Indiana University             SUN SPARC        Solaris 2.3
+For Solaris 2.3         Indiana University                      SPSS ID 190581
+
+   1  0  set width=80.
+   2  set highres off.
+   3
+   4  COMMENT data file must first have date-string removed, and blank lines rem
+         oved.
+   5  data list file='hw2ratings.dat' free
+   6    / r1 to r12 time .
+   7
+   8  COMMENT s1 is training disease A, should be +3
+   9  compute s1  = mean( r1 to r2 )   .
+  10
+  11  COMMENT s2 is training disease B, should be -3
+  12  compute s2  = mean( r3 to r4 )   .
+  13
+  14  COMMENT s3 is blocking cases, should be < 0
+  15  compute s3  = mean( r5 to r8 )   .
+  16
+  17  COMMENT s4 is overshadowing cases, should be > 0
+  18  compute s4  = mean( r9 to r12 )  .
+  19
+  20  COMMENT When did people do the exercise?
+  21  COMMENT Increment of 86400 seconds is 24 hours
+  22  COMMENT frequencies var=time
+  23  COMMENT  /barchart inc(86400) .
+  24
+
+  42  select if ( (s1) GT 1  and  (s2) LT -1 ) .
+  43  descriptives var = s1 to s4
+  44   / statistics = mean variance semean
+  45   / format = serial .
+
+
+Variable  S1 (Disease A)
+
+Mean             2.915                  S.E. Mean         .033
+Variance          .078
+
+Valid observations -       71         Missing observations -        0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Variable  S2 (Disease B)
+
+Mean            -2.958                  S.E. Mean         .024
+Variance          .041
+
+Valid observations -       71         Missing observations -        0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Variable  S3 (Blocking Test Cases)
+
+Mean             -.310                  S.E. Mean         .079
+Variance          .438
+
+Valid observations -       71         Missing observations -        0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Variable  S4 (Overshadowing Test Cases)
+
+Mean              .514                  S.E. Mean         .084
+Variance          .507
+
+Valid observations -       71         Missing observations -        0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+  46  frequencies var = s1 to s4
+  47   / barchart min(-3.0) inc(0.25).
+
+S1
+
+                                                        Valid     Cum
+Value Label                 Value  Frequency  Percent  Percent  Percent
+
+                             2.00         6      8.5      8.5      8.5
+                             3.00        65     91.5     91.5    100.0
+                                     -------  -------  -------
+                            Total        71    100.0    100.0
+
+
+                     |
+                2.00 |**** 6
+                     |
+                3.00 |******************************************* 65
+                     |
+                     +---------+---------+---------+---------+---------+
+                     0        15        30        45        60        75
+                                          Frequency
+
+Valid cases      71      Missing cases      0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+S2
+
+                                                        Valid     Cum
+Value Label                 Value  Frequency  Percent  Percent  Percent
+
+                            -3.00        68     95.8     95.8     95.8
+                            -2.00         3      4.2      4.2    100.0
+                                     -------  -------  -------
+                            Total        71    100.0    100.0
+
+
+                     |
+               -3.00 |********************************************* 68
+                     |
+               -2.00 |** 3
+                     |
+                     +---------+---------+---------+---------+---------+
+                     0        15        30        45        60        75
+                                          Frequency
+
+Valid cases      71      Missing cases      0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+S3
+
+                                                        Valid     Cum
+Value Label                 Value  Frequency  Percent  Percent  Percent
+
+                            -3.00         1      1.4      1.4      1.4
+                            -2.00         1      1.4      1.4      2.8
+                            -1.50         2      2.8      2.8      5.6
+                            -1.00        11     15.5     15.5     21.1
+                             -.50        18     25.4     25.4     46.5
+                              .00        29     40.8     40.8     87.3
+                              .50         6      8.5      8.5     95.8
+                             1.00         3      4.2      4.2    100.0
+                                     -------  -------  -------
+                            Total        71    100.0    100.0
+
+
+                     |
+               -3.00 |** 1
+                     |
+               -2.00 |** 1
+                     |
+               -1.50 |*** 2
+                     |
+               -1.00 |****************** 11
+                     |
+                -.50 |****************************** 18
+                     |
+                 .00 |************************************************ 29
+                     |
+                 .50 |********** 6
+                     |
+                1.00 |***** 3
+                     |
+                     +---------+---------+---------+---------+---------+
+                     0         6        12        18        24        30
+                                          Frequency
+
+Valid cases      71      Missing cases      0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+S4
+
+                                                        Valid     Cum
+Value Label                 Value  Frequency  Percent  Percent  Percent
+
+                             -.50         5      7.0      7.0      7.0
+                              .00        29     40.8     40.8     47.9
+                              .50        11     15.5     15.5     63.4
+                             1.00        18     25.4     25.4     88.7
+                             1.50         4      5.6      5.6     94.4
+                             2.00         2      2.8      2.8     97.2
+                             2.50         1      1.4      1.4     98.6
+                             3.00         1      1.4      1.4    100.0
+                                     -------  -------  -------
+                            Total        71    100.0    100.0
+
+
+                     |
+                -.50 |******** 5
+                     |
+                 .00 |************************************************ 29
+                     |
+                 .50 |****************** 11
+                     |
+                1.00 |****************************** 18
+                     |
+                1.50 |******* 4
+                     |
+                2.00 |*** 2
+                     |
+                2.50 |** 1
+                     |
+                3.00 |** 1
+                     |
+                     +---------+---------+---------+---------+---------+
+                     0         6        12        18        24        30
+                                          Frequency
+
+Valid cases      71      Missing cases      0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+  48  correlation var = s1 to s4 .
+
+                      - -  Correlation Coefficients  - -
+
+             S1         S2         S3         S4
+
+S1           1.0000     -.1879      .0108      .0061
+            (   71)    (   71)    (   71)    (   71)
+            P= .       P= .117    P= .928    P= .960
+
+S2           -.1879     1.0000      .0458     -.0537
+            (   71)    (   71)    (   71)    (   71)
+            P= .117    P= .       P= .705    P= .656
+
+S3            .0108      .0458     1.0000     -.6119
+            (   71)    (   71)    (   71)    (   71)
+            P= .928    P= .705    P= .       P= .000
+
+S4            .0061     -.0537     -.6119     1.0000
+            (   71)    (   71)    (   71)    (   71)
+            P= .960    P= .656    P= .000    P= .
+
+(Coefficient / (Cases) / 2-tailed Significance)
+
+" . " is printed if a coefficient cannot be computed
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+  49  regression var = s3, s4
+  50   / dependent = s3
+  51   / method = enter .
+
+Multiple R           .61187
+R Square             .37439
+Adjusted R Square    .36532
+Standard Error       .52744
+
+Analysis of Variance
+                    DF      Sum of Squares      Mean Square
+Regression           1            11.48742         11.48742
+Residual            69            19.19567           .27820
+
+F =      41.29224       Signif F =  .0000
+
+
+------------------ Variables in the Equation ------------------
+
+Variable              B        SE B       Beta         T  Sig T
+
+S4             -.568962     .088542   -.611874    -6.426  .0000
+(Constant)     -.017365     .077396                -.224  .8231
+
+
+
+  52  plot
+  53   / title 'Blocking vs. Overshadowing'
+  54   / vertical 'Blocking Mean'
+  55   / horizontal 'Overshadowing Mean'
+  56   / plot s3 with s4 .
+
+Frequencies and symbols used (not applicable for control or overlay plots)
+
+          1 - 1     11 - B     21 - L     31 - V
+          2 - 2     12 - C     22 - M     32 - W
+          3 - 3     13 - D     23 - N     33 - X
+          4 - 4     14 - E     24 - O     34 - Y
+          5 - 5     15 - F     25 - P     35 - Z
+          6 - 6     16 - G     26 - Q     36 - *
+          7 - 7     17 - H     27 - R
+          8 - 8     18 - I     28 - S
+          9 - 9     19 - J     29 - T
+         10 - A     20 - K     30 - U
+
+                              Blocking vs. Overshadowing
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+        1+               1    1         1                                   +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+       .5+               1    4                        1                    +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+        0+               2    L    3    2         1                         +
+         |                                                                  |
+         |                                                                  |
+B        |                                                                  |
+l        |                                                                  |
+o     -.5+               1    2    7    8                                   +
+c        |                                                                  |
+k        |                                                                  |
+i        |                                                                  |
+n        |                                                                  |
+g      -1+                    1    1    6    3                              +
+         |                                                                  |
+M        |                                                                  |
+e        |                                                                  |
+a        |                                                                  |
+n    -1.5+                              1         1                         +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+       -2+                                   1                              +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+     -2.5+                                                                  +
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+         |                                                                  |
+       -3+                                                  1               +
+         ++----+----+----+----+----+----+----+----+----+----+----+----+----++
+         -2        -1         0         1         2         3         4
+
+
+                                  Overshadowing Mean
+
+        71 cases plotted.

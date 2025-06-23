@@ -1,0 +1,18 @@
+SUBJECT>Homework 1-C
+POSTER>Raymond
+EMAIL>bhpark@indiana.edu
+DATE>Monday, 16 December 2002, at 11:19 p.m.
+IP_ADDRESS> REMOTE_HOST: d-91-114.dhcp-129-79.indiana.edu; REMOTE_ADDR: 129.79.91.114
+PASSWORD>aatxRPdZ/m52.
+PREVIOUS>
+NEXT> 123
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>I am somewhat puzzled with making the correction of continuity for this question.
+<P>For N=500, I thought I needed to make this correction. However, what puzzles me is if I need to make this correction for both a & b, or just for b, when a & b are:
+<P>a) calculating the Mcrit
+<P>(1.96 = Mcrit - 250/sd)
+<P>b) calculating the Z-score
+<P>(Z = r-M/sd)
+<P>...or, should I do not make any corrections to a and b?

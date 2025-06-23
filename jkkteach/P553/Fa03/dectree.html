@@ -1,0 +1,239 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke, Syllabus</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFAA">
+
+<center>
+<h2><a href="p553.html">
+P553 Statistics in Psychology, Prof. Kruschke</a>
+<br>Which Sampling Distribution?
+</h2>
+</center>
+
+<p>The sampling distribution of a sample statistic is determined by
+the constellation of hypotheses about the population from which the
+samples are drawn.  Shown below is a "decision tree" which branches
+through various population hypotheses and ends up with corresponding
+sampling distribution implied by the hypotheses. Below the diagram is
+the same structure in the form of nested tables.
+
+<p><em>Not all hypotheses we studied are in the tree</em>, and some
+topics we did not have time for are in the tree. For example, we did
+not have time to study tests of variance. But we <em>did</em> study
+cases when there are <em>two dependent variables</em> as in Pearson
+correlation (continuous variables) and chi-square tests of
+independence of attributes (nominal variables); these cases are not
+shown in the decision tree. Could you add branches to the tree to
+accommodate these cases?
+
+<p>Notation:
+<table>
+<tr><td>mu</td><td> is the population mean.</td></tr>
+
+<tr><td>sigma</td><td> is the population standard deviation.</td></tr>
+
+<tr><td>rho</td><td> is the population correlation.</td></tr>
+
+<tr><td>N (or <strong>N</strong> or <em>N</em>)</td><td> is the sample
+size</td></tr>.
+
+<tr><td><em>M</em></td><td> is the sample mean.</td></tr>
+
+<tr><td><em>t</em></td><td> is the sample <em>t</em> value, where
+<em>t</em> = (M-mu)/[sqrt(SS/df)/sqrt(N)].</td></tr>
+
+<tr><td><em>S^2</em></td><td> is the unbiased sample variance,
+SS/df.</td></tr>
+
+<tr><td><em>r</em></td><td> is the sample correlation.</td></tr>
+
+<tr><td><em>p</em> (or <strong><em>p</em></strong>)</td><td> is the
+population probability for a corresponding category.</td></tr>
+</table>
+
+
+<p>
+<table align="center">
+<tr><td>
+<img src="DecisionTree1200.jpg" width="800" align="center">
+</td></tr>
+</table>
+
+<p>
+<hr>
+<p>
+
+<center> 
+
+<table border=1 cellspacing=1 cellpadding=2>
+<tr><td colspan=2 align=center><strong>Population Scale Type?</strong></td></tr>
+<tr><td align=center><a href="#continuous">continuous (ratio scale)</a></td>
+    <td align=center><a href="#discrete">discrete (nominal scale)</a></td></tr>
+
+</table>
+
+
+
+
+<a name="continuous">
+
+<p>
+<table border=1 cellspacing=1 cellpadding=2>
+<tr><td colspan=7 align=center>continuous (ratio scale)</td></tr>
+<tr><td colspan=7 align=center><strong>Population Hypothesis?</strong></td></tr>
+<tr>
+<td align=center>mean = mu,<br>variance = sigma^2</td>
+<td align=center>mean = mu</td>
+<td align=center>mean_1 = mean_2,<br>normal,<br>homog.</td>
+<td align=center>mean_i = mean_j,<br>normal,<br>homog.</td>
+
+<td align=center>rho = 0,<br>normal,<br>homog.</td>
+
+<td align=center>var_1 = var_2,<br>normal</td>
+<td align=center>var = sigma^2,<br>normal</td>
+</tr>
+<tr>
+<td align=center>
+	<table border=1 cellspacing=1 cellpadding=2>
+	<tr><td colspan=2 align=center><strong>Shape of Pop. Distrib.?</strong></td></tr>
+	<tr><td align=center>normal</td>
+	    <td align=center>not nec. normal</td></tr>
+	<tr><td align=center><em>M is (unstd) normal</em></td>
+	    <td align=center>
+
+		<table border=1 cellspacing=1 cellpadding=2>
+		<tr><td colspan=2 align=center><strong><strong>Size of N?</strong></td></tr>
+		<tr><td align=center>small</td>
+		    <td align=center>large</td></tr>
+		<tr><td align=center><em>samp. distrib. of M is not tabled</em></td>
+		    <td align=center><em>M is approx. (unstd) normal by CLT</em></td></tr>
+		</table>
+
+	</td>
+
+	</tr>
+
+	</table>
+
+</td>
+
+<td align=center>
+
+	<table border=1 cellspacing=1 cellpadding=2>
+	<tr><td colspan=2 align=center><strong>Shape of Pop. Distrib.?</strong></td></tr>
+	<tr><td align=center>normal</td>
+	    <td align=center>not nec. normal</td></tr>
+	<tr><td align=center><em>samp. t is tabled t</em></td>
+	    <td align=center>
+
+		<table border=1 cellspacing=1 cellpadding=2>
+		<tr><td colspan=2 align=center><strong>Size of N?</strong></td></tr>
+		<tr><td align=center>small</td>
+		    <td align=center>large</td></tr>
+		<tr><td align=center><em>samp. distrib. of M (and t) is not tabled</em></td>
+		    <td align=center><em>samp. t is approx. (std) normal by CLT</em></td></tr>
+		</table>
+
+	</td>
+
+	</tr>
+
+	</table>
+
+</td>
+
+<td align=center>
+<em>[(M1 - M2) - (mu1 - mu2)] / S_dif <br>is tabled t</em>
+</td>
+
+<td align=center>
+<em>MSb / MSw <br>is tabled F</em>
+</td>
+
+<td align=center>
+<em>convert r to tabled t</em>
+</td>
+
+<td align=center>
+<em>S^2_1 / S^2_2 <br>is tabled F</em>
+</td>
+
+<td align=center>
+<em>(N-1) S^2 / sigma^2 <br>is tabled chi^2</em>
+</td>
+
+</tr>
+</table>
+
+
+
+
+<a name="discrete">
+
+<p>
+<table border=1 cellspacing=1 cellpadding=2>
+<tr><td colspan=2 align=center>discrete (nominal scale)</td></tr>
+<tr><td colspan=2 align=center><strong>Number of Categories?</strong></td></tr>
+<tr><td align=center>two</td>
+    <td align=center>two or more</td></tr>
+<tr><td align=center>
+
+	<table border=1 cellspacing=1 cellpadding=2>
+	<tr><td colspan=2 align=center><strong>Size of N?</strong></td></tr>
+	<tr><td align=center>small</td>
+	    <td align=center>large</td></tr>
+	<tr><td align=center>
+	<em>samp. freq is binom.</em>
+	</td>
+	    <td align=center>
+
+		<table border=1 cellspacing=1 cellpadding=2>
+		<tr><td colspan=2 align=center><strong>Size of Pop. <em>p</em>?</strong></td></tr>
+		<tr><td align=center>moderate</td>
+		    <td align=center>extreme</td></tr>
+		<tr><td align=center><em>samp. freq. is exactly binom. and approx. (unstd) normal</em></td>
+		    <td align=center><em>samp. freq. is exactly binom. and approx. Poisson</em></td></tr>
+		</table>
+
+	</td></tr>
+	</table>
+
+	</td>
+	    <td align=center>
+
+	<table border=1 cellspacing=1 cellpadding=2>
+	<tr><td colspan=2 align=center><strong>Size of N?</strong></td></tr>
+	<tr><td align=center>small</td>
+	    <td align=center>large</td></tr>
+	<tr><td align=center><em>samp. distrib. is not tabled</em></td>
+	    <td align=center>
+
+		<table border=1 cellspacing=1 cellpadding=2>
+		<tr><td colspan=2 align=center><strong>Pop. <em>p</em>'s?</strong></td></tr>
+		<tr><td align=center>all moderate</td>
+		    <td align=center>some extreme</td></tr>
+		<tr><td align=center><em>Pearson chi^2 is approx. tabled chi^2</em></td>
+		    <td align=center><em>samp. distrib. is not tabled</em></td></tr>
+		</table>
+
+
+
+	</td></tr>
+	</table>
+
+</td></tr>
+</table>
+
+
+</center>
+
+
+<p>Copyright &copy; 1996 John K. Kruschke
+<p><hr>
+
+</BODY>
+<!-- Copyright (c) 1996 John K. Kruschke -->
+</HTML>
+
+

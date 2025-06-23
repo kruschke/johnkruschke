@@ -1,0 +1,108 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## In Retirement Sunlight Falls / Blackbirds Hang
+<!-- 310 words -->
+<br>
+
+<b><i>I.</i></b>\
+
+In retirement, sunlight falls\
+like cherry blossom petals, floating\
+into drifts of pastel luminescence,\
+soft’ning corners in curvaceous glow,\
+and when I raise my arms,\
+corollas swarm\
+to form angelic wings.\
+
+Heaven’s merfolk spout\
+celestial dew\
+that trickles, gently off\
+my glass umbrella,\
+tickles near my sandaled feet.\
+My silken robes are lined\
+with thousand\
+puckered lips in secret\
+
+kissing and caressing\
+ev’ry moment of my smoothly satin skin,\
+and when I part my lips\
+to speak, emerges only\
+laughter, chuckles, chortles,\
+pausing, raptured, to inhale\
+sweet redolent gardenias.\
+Mouth forever fed with honey,\
+leaves of mint protrude, perennial grin.\
+
+The fruit trees overhead are flocked\
+with starry galaxies\
+rotating, each one singing\
+like Tibetan bowls.\
+Before me flows a tiding ocean\
+of chinchillas,\
+parting as I stroll\
+and nuzzling both my ankles\
+with their zephyr surf of fur.\
+
+And in my wake,\
+sequoias sprout\
+from russet loam\
+through sylvan mist\
+to cirrus sky.\
+
+<b><i>II.</i></b>\
+
+In retirement, blackbirds hang\
+like fruit rot, upside down,\
+inscrutable and hollow,\
+watching me with beady onyx eyes,\
+their charcoal feathers molting\
+
+onto root-entangled railroad tracks\
+on which I tread. I flounder past\
+a stalled commuter train,\
+its doors ajar and windows parted;\
+inside hang stalactites\
+pinning down\
+stalagmite-crusted passengers,\
+the hapless few who stayed\
+
+my friends.\
+Tornadic bats swarm overhead,\
+my shadow flickers, phantom, blurs;\
+my feet|feet catch on creosote crossties.\
+Rails conclude at wasteland’s end,\
+the lighthouse, toppled now,\
+a scree of headstones marking\
+vertebrae of spiral staircase\
+climbing up chiropteran sky.\
+
+On the dock of doldrum ocean,\
+mammoth pace clock faces outward to the sea;\
+converge the ashen swimmers, darkly goggled,\
+turn our backs against the shore,\
+and crawl-stroking away through fetid kelp,\
+we drag behind, each one of us,\
+a tow-float swim-buoy\
+made of block of ice,\
+once finely sculpted, melting now,\
+dissolving figures\
+of our dogs\
+or cats\
+or lovers.\
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://sparepartslit.wixsite.com/sparepartslit/read-volume-10#jkk" , journal_name = "*Spare Parts Literary Magazine*" , publication_info = "Volume 10, 16 May 2025")`
+
+*Notes:* 
+In late January or early February of 2025, I watched an episode of *Sky Arts Landscape Artist of the Year (2021)* that featured painter Ophelia Redpath and her surrealist painting, `r link_new_tab( url = "https://opheliaredpath.com/original-paintings/heron-at-west-reservoir" , display_text = "Heron at West Reservoir" )`. I was mesmerized and was inspired to write a surrealist poem. I decided to describe the feelings of being retired, in their most extreme positive or negative valences. Notice, throughout the two-part poem, it is carefully constructed to have alternating unstessed and stressed syllables. This alternating unstessed/stressed rhythm is intended to propel the reading of the poem.
+
+`r next_link("poem_in_retirement.html")`
+
+</small>

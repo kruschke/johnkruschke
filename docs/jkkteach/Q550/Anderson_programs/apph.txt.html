@@ -1,0 +1,231 @@
+<HTML>
+<HEAD>
+<TITLE>Q550 (Connectionist) Models in Cognitive Science, Prof. Kruschke</TITLE>
+</HEAD>
+<BODY>
+<hr>
+
+<center>
+<h2>
+<a href="../index.html">Q550 (Connectionist) Models in Cognitive Science</a>
+<br>Prof. John K. Kruschke
+<p>Materials Accompanying J. A. Anderson Textbook
+</h2>
+</center>
+
+<p>Retrieved via anonymous ftp from mitpress.mit.edu, directory
+pub/Intro-to-NeuralNets
+
+<p><pre>
+                           Appendix H
+      Utility Programs for Character Based Simulations (Chapter 7)
+
+
+     This Appendix gives a number of lines of boring code that turn 
+character strings into state vectors and vice versa.  The PROCEDURES 
+were written for a VMS VAX. Unfortunately, Pascal implementations differ 
+significantly in the way they handle character strings, so reprogramming
+may be necessary if these programs are to be run on different machines.  
+These routines are used in program BSB, which is also included with 
+these Appendices.
+
+     Two PROCEDURES, PROCEDURE Make_stimulus, and PROCEDURE Interpret, 
+are used to make state vectors from character strings and to interpret 
+state vectors back into character strings.  The PROCEDUREs require the 
+program to have a CONST declaration and a declaration of TYPE String.
+We have used a dimensionality of 200 as an example.  The number of 
+characters is 200 divided by eight, or 25.
+
+--------------------------------------------------------------------
+
+CONST Dimensionality       = 200;
+      Number_of_characters =  25;
+
+...
+
+TYPE Vector  = ARRAY [1..Dimensionality] OF REAL;
+     String  = ARRAY [1..Number_of_characters] OF CHAR;
+
+....
+
+--------------------------------------------------------------------
+        The two PROCEDUREs have straightforward calls
+--------------------------------------------------------------------
+
+PROCEDURE Intepret   (Threshold: Real;    {Determines interpretation threshold.}
+                              V: Vector;  {Input state vector.}
+              VAR Intepretation: String); {Output interpreted string.}
+...
+
+PROCEDURE Make_stimulus (Input_string: String;  {Character string to be     }
+                                                {turned into a state vector.}
+                    VAR Output_vector: Vector); {Output state vector.}
+                              
+...
+
+--------------------------------------------------------------------
+
+     Both PROCEDUREs use an internal TYPE Byte, that is, an eight element 
+array of integers and TYPE IVector, which is a vector composed of integer 
+components. The programs are straightforward realizations of their 
+functions.  It would be easy to make more compact and faster code, but, 
+in practice, the amount of time spent doing the interpretation and 
+translations are negligible.
+ 
+     A minor problem arises because of numbering conventions for vector 
+elements and bytes.  It is customary for vector elements to be numbered, 
+as objects, in ascending order, left to right.  When bytes are listed 
+in computer manuals, they are almost always listed as binary numbers, 
+which means the elements are numbered from right to left.  This convention 
+has been maintained, though at the cost of awkwardness in the code:
+
+
+Vector     [ 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 ...
+elements: 
+
+                First Byte                 Second Byte          ...
+
+Byte order ( 8  7  6  5  4  3  2  1)(8   7  6  5  4  3  2  1)(8 ...
+in vector:
+
+     The underline chacter, `_', gives rise to a byte of all zeros,
+(0 0 0 0 0 0 0 0), allowing a convenient way of inserting zeros into the 
+state vectors.  When a vector is intepreted, a byte at least one of 
+whose elements has an absolute value below the interpretation threshold 
+is printed as the underline, `_'.
+
+     A byte which would give rise to a nonprinting character like 
+`Line Feed', `Form Feed', `Bell', `Escape', etc. is printed as `#.' 
+
+--------------------------------------------------------------------
+                    PROCEDURE Interpret
+--------------------------------------------------------------------
+
+PROCEDURE Interpret (Threshold: Real; 
+                             V: Vector; 
+            VAR Interpretation: String);
+
+    Type Byte    =  ARRAY [1..8] OF INTEGER;
+         IVector =  ARRAY [1..Dimensionality] OF INTEGER;
+
+    VAR  IV : Ivector;
+          
+    PROCEDURE Make_Binary_Vector (V: Vector; VAR IV: Ivector);
+        VAR J: INTEGER;
+        BEGIN
+        FOR J:= 1 TO Dimensionality DO
+                BEGIN
+                IV[J]:= 0;
+                IF V[J] >=  ABS(Threshold) THEN IV[J]:= 1;
+                IF V[J] <= -ABS(Threshold) THEN IV[J]:=-1;
+                END;
+        END;
+
+    FUNCTION Count (B: Byte): INTEGER; {Counts zeros in byte.}
+        VAR I,Sum: INTEGER;
+        BEGIN
+        Sum:= 0;
+        FOR I:= 1 TO 7 DO IF B[I]=0 THEN Sum:= Sum +1; {Ignore parity bit.}
+        Count:= Sum;
+        END;
+ 
+    FUNCTION Byte_Interpret (B: Byte): CHAR; 
+        VAR I, 
+            Charnr: INTEGER;
+        Print_char: CHAR;
+        Ambiguous : BOOLEAN;
+        BEGIN
+          {First check to see if all byte elements + 1 or - 1.}
+        IF Count (B) > 0 THEN Ambiguous:= TRUE ELSE Ambiguous:= FALSE;
+          {Now convert to byte of zero and +1.}
+        FOR I:= 1 TO 8 DO IF B[I]=-1 THEN B[I]:= 0; 
+          {Convert to Char. number.}
+        Charnr:= 64*B[7] + 32*B[6] + 16*B[5] + 8*B[4] + 4*B[3] + 2*B[2] + B[1];
+          {Special cases.}
+        IF (Charnr <  32) THEN Print_char := '#'    {Non-printing character. }
+                          ELSE Print_char := CHR (Charnr);  {Print character.}
+        IF (Charnr =   0) THEN Print_char := '_';   {Zero convention is '_'  }
+        IF (Charnr = 127) THEN Print_char:= '_';    {Delete convention is '_'}
+        IF Ambiguous THEN Print_char:= '_';         {Ambiguous character.    }
+        Byte_Interpret:= Print_char;
+        END;
+ 
+    PROCEDURE Read_IVector_as_ASCII (IV: Ivector; 
+                     VAR Interpretation: STRING);
+        VAR I,J: INTEGER;
+            B  : BYTE;
+        BEGIN
+        FOR J:= 0 TO (Number_of_characters - 1) DO 
+                BEGIN
+                {Next line flips order of vector elements.}
+                FOR I:= 1 TO 8 DO B[ 9 - I]:= IV[ J*8 + I]; 
+                Interpretation [(J+1)]:= Byte_Interpret (B);
+                END;
+         END;
+ 
+    BEGIN    {Interpret procedure}
+    Make_Binary_Vector (V, IV);
+    Read_IVector_as_ASCII (IV, Interpretation);
+    END;     {Interpret procedure.}
+
+------------------------------------------------------------------------
+                        PROCEDURE Make_stimulus
+------------------------------------------------------------------------
+
+PROCEDURE Make_stimulus (Input_string : String; 
+                     VAR Output_Vector: Vector);
+
+    Type Byte    =  ARRAY [1..8] OF INTEGER;
+         IVector =  ARRAY [1..Dimensionality] OF INTEGER;
+
+    VAR B: Byte;
+
+    PROCEDURE Zero_Byte (VAR B: Byte);
+       VAR I: INTEGER;
+       BEGIN
+       FOR I:= 8 DOWNTO 1 DO B[I]:= 0;
+       END;
+
+    PROCEDURE Nr_to_Byte (Nr: INTEGER; VAR B: BYTE);
+       VAR I, 
+           Power_of_2, 
+           Remainder, 
+           Parity       : INTEGER;
+       BEGIN
+       IF Nr > 128 THEN WRITELN ('Too large. ASCII conversion fails.'      );
+       IF Nr < 0   THEN WRITELN ('Negative number. ASCII conversion fails.');
+       Remainder:= Nr;    Parity:= 0;     Power_of_2:= 256;
+       FOR I:= 8 DOWNTO 1 DO {msb in B[8], lsb in B[1]}
+              BEGIN
+              Power_of_2:= Power_of_2 DIV 2;
+              IF ( (Remainder - Power_of_2) <  0 ) THEN B[I]:= -1;
+              IF ( (Remainder - Power_of_2) >= 0 ) THEN
+                     BEGIN
+                     B[I]:= 1;
+                     Remainder:= Remainder - Power_of_2;
+                     Parity:= Parity + 1;
+                     END;
+              END;
+       IF ODD (Parity) THEN B[8]:= 1 ELSE B[8]:= -1;
+       END;
+
+     PROCEDURE Add_Byte_to_Vector (VAR V: VECTOR; I: INTEGER; B: BYTE);
+       VAR J: INTEGER;
+       BEGIN
+       FOR J:= 1 TO 8 DO V[(I-1)*8 + J ]:= B [9-J];
+       END;
+
+   BEGIN {Make_stimulus}
+   FOR I:= 1 TO Number_of_characters DO
+       BEGIN
+       Nr_to_byte (ORD (Input_string [I]),B);
+       IF (Input_string[I] = '_') THEN Zero_byte(B);
+       Add_byte_to_vector (Output_vector, I ,B);
+       END;
+   END;  {Make_stimulus}
+
+</pre>
+<p><hr>
+
+</BODY>
+</HTML>

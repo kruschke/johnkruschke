@@ -1,0 +1,13 @@
+SUBJECT>Exam 2 Take-Home Problem
+POSTER>Prof. Kruschke
+EMAIL>kruschke@indiana.edu
+DATE>Friday, 8 November 2002, at 12:20 p.m.
+IP_ADDRESS> REMOTE_HOST: ; REMOTE_ADDR: 129.79.164.170
+PREVIOUS>
+NEXT>
+IMAGE>
+LINKNAME>
+LINKURL>
+<P>In the definition of the Levene statistic, D with a bar over it indicates the mean of D. In general, any variable with a bar over it indicates the mean of that variable.
+<P>D-bar sub-j indicates the mean of D in group j.
+<P>D-bar with no subscript indicates the mean over all scores in all groups, i.e., the grand mean of D.

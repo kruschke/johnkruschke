@@ -1,0 +1,431 @@
+<HTML>
+<HEAD>
+   <TITLE>SMP98 Teaching Talk</TITLE>
+</HEAD>
+<BODY BGCOLOR="#DDDDDD">
+
+<H1 ALIGN=CENTER>Teaching<br>Statistics as an Expression
+of Liberty</H1>
+
+<H2 ALIGN=CENTER>John K. Kruschke<BR>
+Indiana University</H2>
+
+<p><center> Talk presented at <br>the 31st Annual Meeting of the Society
+for Mathematical Psychology, <br>Vanderbilt University, Nashville TN, 8
+August 1998.</center>
+
+
+
+<p><hr width=80%><p>
+
+<p><h3>Outline:</h3>
+
+<ul>
+
+<il><a href="#challenge">You can lead a horse to water...</a>
+
+<br><il><a href="#emotion">Motivation is emotional.</a>
+
+<br><il><a href="#provoke">Provoke the premise:</a> (You could be wrong.)
+
+<br><il><a href="#ubidubium">Ubi dubium ibi libertas.</a> (Where there
+is doubt there is liberty.)
+
+<br><il><a href="#device">One device for communicating this to students.</a>
+(Bronowski's <em>Knowledge or certainty</em>.)
+
+<br><il><a href="#conclusion">Conclusion: Profess your passion.</a>
+
+<br><il><a href="#tenure">Epilogue: The price of liberty and the role of
+tenure.</a>
+
+<br><il><a href="#cynicism">Post script: Teach skepticism not cynicism.</a>
+
+</ul>
+
+<a name="challenge">
+<p><hr width=80%><p>
+<p><h3>You can lead a horse to water...</h3>
+</a>
+
+<p>Regardless of the topic, teaching poses two essential challenges:
+
+<ul>
+
+<p><li>One challenge is to convey ideas clearly, concisely, and
+interactively.  
+
+<p><li>But the <em>primary</em> challenge is to motivate the student.
+</ul>
+
+This talk addresses one way to motivate students to learn statistics.
+
+<a name="emotion">
+<p><hr width=80%><p>
+<p><h3>Motivation is emotional.</h3> 
+</a>
+
+<p>The words "motivation" and "emotion" share a similar etymology.  A
+student is motivated to learn when he or she has an emotional
+investment in the topic.  An instructor is motivated to teach when he
+or she has an emotional investment in the topic.
+
+<p>
+Good teaching of <em>any</em> topic is motivational and emotional. At
+the 1998 National Institute on the Teaching of Psychology, Karen
+Huffman presented a talk about generating "magical moments" in the
+classroom, by which she meant moments in which instructor and student
+achieve a sense of fulfillment, i.e., a sense that the classroom
+experience has made a significant and meaningful impact on the
+student's life. In essence, she showed that having both teacher and
+student emotionally and personally invested in the topic leads to
+fulfilling moments in class. 
+
+<p>But how do you, as an instructor, get emotionally invested? She
+suggested evaluating your own goals, not just as an instructor, but as
+a human being. Decide what you care deeply about, and bring these
+values into your teaching.
+
+<p>Now the critical question: How can the topic of <em>inferential
+statistics</em> be made emotionally engaging?  What deeply felt human
+values can be incorporated into the teaching of statistics?
+
+<a name="provoke">
+<p><hr width=80%><p>
+<p><h3>Provoke the premise.</h3> 
+</a>
+
+<p>One method by which to get students emotionally invested in
+statistics is to pose provocative claims made by celebrities or
+persons of power, regarding emotionally laden issues such as race,
+religion, sex, age, drugs, diet/nutrition, and so on.  You can
+probably find current examples in the popular media.  I will not
+pursue examples of these here, as the best ones are the most recent
+ones and the ones you personally find most compelling.
+
+<p>Presenting provocative claims must be done carefully and
+considerately, as it involves a risk: Some students might get
+offended.  You, as the instructor, must be careful to present the
+provocative claims without appearing to espouse them yourself (unless
+you want to, of course).  Do not present any controversial claim that
+you are not comfortable discussing.
+
+<p><strong>Presenting provocative claims has one major goal:</strong>
+
+<ul>
+
+<p><li>to provoke a response of moral indignation from
+the student; in other words,
+
+<p><li>to get the student to <em>want</em> to disprove a
+claim, in other words,
+
+<p><li>to get the student to <em>experience</em> the
+fundamental premise of statistics: <br><strong><em>You could be
+wrong.</em></strong>
+
+</ul>
+
+<a name="ubidubium">
+<p><hr width=80%><p>
+<p><h3>Ubi dubium ibi libertas.</h3>
+</a>
+
+<p>Crucially, the "you", in "you could be wrong", could be anyone,
+even a person of power; i.e., a person who controls valuable
+resources.
+
+<p>People in power sometimes do not like dissent, disapproval,
+discussion, or disbelief.
+
+<p>
+<CENTER><TABLE BORDER=2 CELLPADDING=20 BGCOLOR="#000000" width=60%>
+<TR><TD align=center><font color="#FF4444">
+Ideas are more powerful than guns. <br>We would not let our enemies
+have guns. <br>Why should we let them have ideas?<br>-Joseph Stalin.
+</font>
+</td></tr>
+<TR><TD align=center><font color="#FF4444">
+In every country and every age,
+<br>the priest has been hostile to liberty.
+<br>-Thomas Jefferson
+</font></td></tr></table></center>
+
+<p><font size=+2>Only a society with <em>liberty</em> allows open
+teaching and free use of inferential statistics, because a statistical
+test is inherently an expression of doubt.</font>
+
+<p>
+<CENTER><TABLE BORDER=10 CELLPADDING=20 BGCOLOR="#FFFFFF" >
+<TR>
+<TD ALIGN=CENTER><FONT COLOR="#0000FF"><FONT SIZE=+1>What is the fundamental premise of inferential
+statistics? </FONT></FONT>
+<P><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>You could be wrong.
+</FONT></FONT></I></B></P>
+<P><FONT COLOR="#0000FF"><FONT SIZE=+1>What societal and institutional condition is critically
+necessary 
+for the implications of this premise to be pursued? </FONT></FONT></P>
+<P><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>Liberty. </FONT></FONT></I></B></P>
+<P><FONT COLOR="#0000FF"><FONT SIZE=+1><I>Ubi dubium ibi libertas</I>: Where there is doubt,
+there is freedom. </FONT> </FONT> </P>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<a name="device">
+<p><hr width=80%><p>
+<p><h3>One device for communicating this to students.</h3>
+</a>
+
+<p>In my graduate statistics class, I communicate these ideas to my
+students by letting a far more eloquent man, Jacob Bronowski, do it
+for me.  His video series, <em>The Ascent of Man</em>, was broadcast
+in 1972 and it is still, in my opinion, one of the finest documentary
+series ever produced.  Throughout the series, Bronowski emphasizes
+that science is human and personal, that science is created by people
+who are trying to touch reality, and that the products of science in
+turn touch people.
+
+<p>Episode 11, entitled <em>Knowledge or Certainty</em>, propounds
+scientific knowledge as a profound expression of human
+epistemology. Bronowski emphasizes that the entire enterprise of
+scientific groping for knowledge is, and must be, conducted with
+inherent tolerance for uncertainty, and with attention to the
+possibility of error.
+
+<p>
+<CENTER><TABLE BORDER=10 CELLPADDING=20 BGCOLOR="#FFFFFF" >
+<TR>
+<TD>
+<p><center><font size=+1>From <em>The Ascent of Man</em> by Jacob
+Bronowski<br>Episode 11: Knowledge or certainty</font></center>
+
+<p>[<em>The irony of the uncertainty principle amidst the rise of
+dictators.</em> <br>The following passage was spoken at the University in
+Gottingen, Germany:]
+
+<p>Yet the Principle of Uncertainty is a bad
+name.  In science or outside it, we are not uncertain; our knowledge
+is merely confined within a certain tolerance.  We should call it the
+Principle of Tolerance.  And I propose that name in two senses.
+First, in the engineering sense.  Science has progressed step by step,
+the most successful enterprise in the ascent of man, because it has
+understood that the exchange of information between man and nature,
+and man and man, can only take place with a certain tolerance.  But
+second, I also use the word passionately about the real world.  All
+knowledge, all information between human beings can only be exchanged
+within a play of tolerance.  And that is true whether the exchange is
+in science, or in literature, or in religion, or in politics, or even
+in any form of thought that aspires to dogma.  It is a major tragedy
+of my lifetime and yours that, here in Gottingen, scientists were
+refining to the most exquisite precision the Principle of Tolerance,
+and turning their backs on the fact that all around them tolerance was
+crashing to the ground beyond repair.
+
+<p>The Principle of Uncertainty or, in my phrase, the Principle of
+Tolerance, fixed once for all the realization that all knowledge is
+limited.  It is an irony of history that at the very time when this
+was being worked out there should rise, under Hitler in Germany and
+other tyrants elsewhere, a counter-conception: a principle of
+monstrous certainty.  When the future looks back on the 1930s it will
+think of them as a crucial confrontation of culture as I have been
+expounding it, the ascent of man, against the throwback to the
+despots' belief that they have absolute certainty.
+
+<p>[<em>Science is a human form of knowledge</em>. <br>The following
+passage was spoken at Auschwitz:]
+
+<p>It is said that science will dehumanize people and turn them into
+numbers. That is false, tragically false.  Look for yourself.  This is
+the concentration camp and crematorium at Auschwitz, this is where
+people were turned into numbers. Into this pond were flushed the ashes
+of four million people. And that was not done by gas. It was done by
+arrogance. It was done by dogma. It was done by ignorance. When people
+believe that they have absolute knowledge, with no test in reality,
+this is how they behave. This is what men do when they aspire to the
+knowledge of gods. 
+
+<p>Science is a very human form of knowledge.  We are always at the
+brink of the known, we always feel forward for what is to be hoped.
+Every judgment in science stands on the edge or error, and is personal.
+Science is a tribute to what we can know although we are fallible.  In
+the end the words were said by Oliver Cromwell: "I beseech you, in the
+bowels of Christ, think it possible you may be mistaken."
+
+<p>... We have to cure ourselves of the itch for absolute
+knowledge and power. We have to close the distance between the
+push-button order and the human act. We have to touch people.
+
+</TD></TR></TABLE>
+</center>
+
+<p>
+<font size=+2>Thus, properly conducting a statistical test is a
+profoundly <em>human</em> act, and is an expression of
+<em>liberty</em>.</font>
+
+<a name="conclusion">
+<p><hr width=80%><p>
+<p><h3>Conclusion: Profess your passion.</h3>
+</a>
+
+<p>
+<CENTER>
+<TABLE BORDER=10 CELLPADDING=20 BGCOLOR="#FFFFFF">
+<tr><td>
+<font size=+1>
+
+<P><em>An imperative:</em> 
+
+<blockquote>When you teach - even statistics - find ways to
+make it <em>personal, emotional, passionate</em>; first for yourself, then for
+your students. </blockquote>
+
+<p><em>The reward:</em> 
+
+<blockquote>
+When it's emotionally compelling for you, teaching it is compelling.
+
+<p>When it's emotionally compelling for your students, they
+will value what you and our colleagues do. They will support it
+personally, philosophically, politically and economically.  
+
+<p>Teaching passionately is just enlightened
+self interest.  
+</blockquote>
+
+</font></td></tr></table>
+</center>
+
+<a name="tenure">
+<p><hr width=80%><p>
+<p><h3>Epilogue: The price of liberty and the role of tenure.</h3>
+</a>
+
+<p><blockquote>"It is the common fate of the indolent to see their
+rights become a prey to the active. The condition upon which God hath
+given liberty to man is eternal vigilance; which condition if he
+break, servitude is at once the consequence of his crime and the
+punishment of his guilt."  <br>-John Philpot Curran: Speech upon the
+Right of Election, 1790. (Speeches. Dublin, 1808.)  <p>"Eternal
+vigilance is the price of liberty." <br>-abolitionist Wendell Phillips
+(1811-1844) paraphrasing John Philpot Curran (above)
+</blockquote>
+
+
+<p><strong>Students, both undergrad and grad, are shockingly unaware
+of the purpose of tenure. Stats class is a great venue for explaining
+tenure.</strong>
+
+<p>Students first need to be reminded that the reasonably pursued
+truth is not always flattering to people in power, and that some
+people in power will suppress their detractors.  Hitler and Stalin and
+Pol Pot are good dramatic examples of ruthless power wielders.  Remind
+students that United States Supreme Court Justices have tenure so that
+they can interpret the Constitution as they see it, without threat of
+losing their position by the capricious decision of someone in power.
+
+<p>Here are some examples of victims in science:
+
+<ul>
+
+<p><li><em>Galileo Galilei</em> (1564-1642).
+"Galileo's publications on celestial phenomena supported the
+heliocentric theory (according to which the sun is at the center of
+the world), and explained that this physical theory presents the world
+as it is. This claim contradicted the Church interpretation of
+Scripture. These publications and Galileo's attempts to interpret
+Scripture according to this new theory, were not acceptable to the
+Church. In 1616, he met inquisition officials a number of times and
+they forbade him to support the Copernican theory (See the Prohibition
+of the Copernican theory). This was the first part of his conflict
+with the Church, which reached its climax at his trial conducted 17
+years later." (Quated from a web page of the Tel Aviv University
+Virtual Museum of Science,
+http://muse.tau.ac.il/~museum/galileo/galileo.html)
+
+<p><li><em>Charles Darwin and John Scopes</em> (1809-1882).
+"... a Dayton, Tennessee courtroom in the summer of 1925. There a jury
+was to decide the fate of John Scopes, a high school biology teacher
+charged with illegally teaching the theory of evolution. The guilt or
+innocence of John Scopes, and even the constitutionality of
+Tennessee's anti-evolution statute, mattered little. The meaning of
+the trial emerged because it was seen as a conflict of social and
+intellectual values." (Quoted from the University of Missouri (K.C.)
+web pages on the Scopes trial,
+http://www.law.umkc.edu/ftrials/scopes/scopes.htm)
+
+<p><li><em>William Gosset</em>. In 1908 William Gosset published his
+work on the <em>t</em>-distribution under the pseudonym "Student".
+Why did he prefer to be anonymous?  Partially because of personal
+modesty, but also "so that the Guinness brewery would not have to
+admit publicly that it sometimes brewed a bad batch!" [Aron and Aron
+(1994). <em>Statistics for Psychology</em>, Englwood Cliffs, NJ:
+Prentice-Hall, p. 251.]
+
+<p><li>Drummond Rennie, health-policy professor at the University of
+California at San Francisco, recounted a case where a <em>university
+researcher</em> inadvertently let a clause restricting publication
+slip into a contract with a drug company.  The study compared the
+efficacy of one of the company's proprietary drugs with lower-cost
+competitors.  When the study found little difference between the
+drugs, the company tried to suppress the findings, Professor Rennie
+said. He explained it took a seven-year struggle to get the results
+published. During that time, the researchers felt harassed, especially
+when other scientists with ties to the company tried to discredit the
+research. The harassment included baseless charges of research
+misconduct, according to Rennie. (From "Academics Face Abuse Of Rules
+Designed To Protect Research" by Robert C. Cowen, Staff Writer,
+Christian Science Monitor, March 25, 1998, p.13.)
+
+<p><li>Botanist <em>JoAnn Burkholder</em> at North Carolina State
+University at Raleigh has received wide publicity for uncovering a
+previously unknown form of toxic algae responsible for massive fish
+kills in Chesapeake Bay and other regional waters. They also send
+toxins into the air that have poisoned local people. What may not be
+so well know outside of her area is how vested interests in the
+tourist business, including public officials, and chicken farmers have
+harassed her. In outlining this, Dr. Burkholder explained that the
+farmers' interests are involved because pollution from their farms
+appears to encourage growth of the algae. She further explained how
+efforts to discredit her work and her scientific reputation went
+beyond normal scientific debate.  (From "Academics Face Abuse Of Rules
+Designed To Protect Research" by Robert C. Cowen, Staff Writer,
+Christian Science Monitor, March 25, 1998, p.13.)
+
+</ul>
+
+<p>Students should also be told that tenure is only a partial
+guarantee. Tenure does not guarantee any particular salary level, nor
+does it guarantee funding for research projects, nor does it guarantee
+lack of harassment.
+
+
+
+<a name="cynicism">
+<p><hr width=80%><p>
+<p><h3>Post script: Teach skepticism not cynicism.</h3>  
+</a>
+
+<p>The overarching goal is to turn students into passionate and
+principled critical thinkers.  They should be reasonably skeptical in
+all things.
+
+<p>Skepticism can, and should, also be directed at purveyors of
+statistical results.  A claim bolstered with statistical results must
+be critically examined, as we all know "How to lie with statistics"
+(Huff, 1954).  But this recursive skepticism must be taught carefully,
+lest we inadvertently turn students into cynical relativists, the
+exact opposite of  principled critical thinkers.
+
+<p>My hope is that students come away from a course in statistics with
+a feeling that statistical tests are a profound expression of liberty,
+and are an exquisitely developed and still developing set of methods
+for expressing doubt and pursuing the truth.
+
+
+<p><hr width=80%><p>
+<center><h5>Copyright &copy; 1998 by John K. Kruschke</h5></center>
+<p><hr>
+</BODY>
+</HTML>

@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics in Psych, Prof. Kruschke, Syllabus</TITLE>
+</HEAD>
+<BODY bgcolor="FFFFFF">
+
+<center>
+<a href="http://www.indiana.edu/~jkkteach/P553/">
+P553 Statistics in Psychology</a>, 
+<a href="http://www.indiana.edu/~kruschke/">
+Prof. Kruschke</a>
+<br><font size=+2><strong>Measures of Central Tendency</strong></font>
+ </center>
+
+<p><font size=+1>We want to choose a value <em>M</em> that represents the
+central tendency of a distribution.  By "central tendency" we mean the
+value <em>M</em> that <em>varies the least</em> from all the scores <em>x</em>
+in the distribution.  To determine the value <em>M</em>, we need to
+formally define what we mean by variability.  Below are three
+definitions of variability, and their corresponding values for central
+tendency. (<em>N</em> is the number of scores in the sample.)</font>
+
+<p><center><table border=1 cellspacing=1 cellpadding=6 width=100%>
+
+<tr>
+<td></td>
+<td><font size=+2><center>Formalization #1</center></font></td> 
+<td><font size=+2><center>Formalization #2</center></font></td>
+<td><font size=+2><center>Formalization #3</center></font></td>
+</tr>
+
+<tr>
+<td><font size=+2>Formal Measure of Variability, <em>V</em></font></td>
+<td><font size=+2>
+<center>
+<tt><em>V</em> = SUM(STEP(|<em>x</em>-<em>M</em>|))/<em>N</em></tt>
+</center>
+where 
+<table>
+<tr>
+<td rowspan=2 valign=center align=right>STEP(<em>x</em>) = </font></td>
+<td rowspan=2 valign=center align=center><font size=+5>{</font></font></td>
+<td><font size=+2>1 if <em>x</em> > 0</font></td></tr>
+<tr><td><font size=+2>0 otherwise</font></td></tr>
+</table>
+</font></td>
+<td><font size=+2><center>
+<tt><em>V</em> = SUM(|<em>x</em>-<em>M</em>|)/<em>N</em></tt>
+</center></font></td>
+<td><font size=+2><center>
+<tt><em>V</em> = SUM(|<em>x</em>-<em>M</em>|<sup>2</sup>)/<em>N</em></tt>
+</center></font></td>
+</tr>
+
+<tr> 
+
+<td><font size=+2>Value that Minimizes the Variability</font></td>
+
+<td><font size=+2><em>M</em> minimizes <em>V</em> when <em>M</em> is the value of a
+most frequent score.
+
+<p>Proof: Split the sum into matches and nonmatches. Then it's
+obvious.
+
+</font></td>
+
+<td><font size=+2><em>M</em> minimizes <em>V</em> when half the scores are larger
+than <em>M</em> and half the scores are smaller than <em>M</em>.
+
+<p>Proof: Calculus...
+
+</font></td>
+
+
+<td><font size=+2><center><tt><em>M</em> = SUM(<em>x</em>)/<em>N</em></tt></center>
+
+<p>Proof: Calculus...
+
+</font></td> </tr>
+
+
+<tr> 
+<td><font size=+2>Terminology</font></td> 
+<td><font size=+2><em>M</em> is called the <strong>mode</strong>.</font></td>
+<td><font size=+2><em>M</em> is called the <strong>median</strong>.</font></td> 
+<td><font size=+2><em>M</em> is called the <strong>mean</strong>. The value of the
+minimized variability is called the <strong>variance</strong>.</font></td>
+</tr>
+
+<tr> 
+
+<td><font size=+2>Problems or Advantages</font></td> 
+
+<td><font size=+2>Descriptive: Not unique; distributions can
+be multi-modal.</font></td> 
+
+<td><font size=+2>Descriptive: Not unique for even <em>N</em>.
+<p>Inferential: Sampling distribution is difficult to generate
+analytically.</font></td> 
+
+<td><font size=+2>Descriptive: Over-emphasizes
+outliers. <p>Inferential: Sampling distribution <em>is</em>
+analytically tractable.</font></td> 
+
+</tr>
+
+</table></center>
+
+<p>
+<font size=+1>
+<strong>An Example:</strong> Consider the set of values, 1 2 2 3 3
+3 4 4 4 4 5 5 5 5 5.  
+
+<!-- (That is, one 1, two 2's, three 3's, four 4's, and five 5's.) -->
+
+<ul>
+<li>The <em>mode</em> is 5.0, and the minimized Formalization #1
+variability around that mode is 0.67
+
+<li>The <em>median</em> is 4.0, and the minimized Formalization #2
+variability around that median is 1.00.
+
+<li>The <em>mean</em> is 3.67, and the variance (minimized
+Formalization #3 variability) around that mean is 1.55.
+</ul>
+
+</font>
+
+<p>
+<h6><center>Copyright &copy; 1999 John K. Kruschke</center></h6>
+<hr>
+
+</BODY>
+</HTML>
+
+

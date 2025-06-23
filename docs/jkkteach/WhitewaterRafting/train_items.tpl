@@ -1,0 +1,1327 @@
+############################## DEFINE-VARIABLES SECTION #################
+*define-variables*
+!show-sig = no
+!force-error-if (
+!!          [item_code] eq ""
+!!        )
+!force-error-if (
+!!          [test_response] eq ""
+!!        ) and (
+!!          [item_code] eq "Itest_1" or
+!!          [item_code] eq "Itest_2" or
+!!          [item_code] eq "Itest_3" or
+!!          [item_code] eq "Itest_4" or
+!!          [item_code] eq "PE.PLtest_1" or
+!!          [item_code] eq "PE.PLtest_2" or
+!!          [item_code] eq "PL.PEtest_1" or
+!!          [item_code] eq "PL.PEtest_2" or
+!!          [item_code] eq "I.PEtest_1" or
+!!          [item_code] eq "I.PEtest_2" or
+!!          [item_code] eq "PE.Itest_1" or
+!!          [item_code] eq "PE.Itest_2" or
+!!          [item_code] eq "I.PLtest_1" or
+!!          [item_code] eq "I.PLtest_2" or
+!!          [item_code] eq "PL.Itest_1" or
+!!          [item_code] eq "PL.Itest_2" 
+!!        )
+### end of define-variables section
+############################## ERROR-RESPONSE SECTION ###################
+*error-response*
+!use-if (
+!!          [item_code] eq ""
+!!        )
+<html>
+YOU MUST SELECT A NEXT RAFT.
+<p>
+To return to the previous page: <ul>
+<li>In <strong>Netscape</strong>, at the top of the browser click
+"<u>G</u>o", then "<u>B</u>ack".
+<p><li> In <strong>Explorer</strong>, at the top of the browser click
+"<u>V</u>iew", then "<u>G</u>o&nbsp;To", then "<u>B</u>ack". </ul>
+<p><hr>
+</html>
+*error-response*
+!use-if (
+!!          [test_response] eq ""
+!!       ) and (
+!!          [item_code] eq "Itest_1" or
+!!          [item_code] eq "Itest_2" or
+!!          [item_code] eq "Itest_3" or
+!!          [item_code] eq "Itest_4" or
+!!          [item_code] eq "PE.PLtest_1" or
+!!          [item_code] eq "PE.PLtest_2" or
+!!          [item_code] eq "PL.PEtest_1" or
+!!          [item_code] eq "PL.PEtest_2" or
+!!          [item_code] eq "I.PEtest_1" or
+!!          [item_code] eq "I.PEtest_2" or
+!!          [item_code] eq "PE.Itest_1" or
+!!          [item_code] eq "PE.Itest_2" or
+!!          [item_code] eq "I.PLtest_1" or
+!!          [item_code] eq "I.PLtest_2" or
+!!          [item_code] eq "PL.Itest_1" or
+!!          [item_code] eq "PL.Itest_2" 
+!!       )
+<html>
+YOU MUST PREDICT THE QUALITY OF THE RAFT.
+<p>
+To return to the previous page: <ul>
+<li>In <strong>Netscape</strong>, at the top of the browser click
+"<u>G</u>o", then "<u>B</u>ack".
+<p><li> In <strong>Explorer</strong>, at the top of the browser click
+"<u>V</u>iew", then "<u>G</u>o&nbsp;To", then "<u>B</u>ack". </ul>
+<p><hr>
+</html>
+### end error-response section
+############################## APPEND-RESPONSE SECTION ##################
+*append-response*
+!use-if (
+!!        [item_code] eq "A.B" or
+!!        [item_code] eq "B.A" or
+!!        [item_code] eq "C.D" or
+!!        [item_code] eq "D.C" or
+!!        [item_code] eq "I.PE_1" or
+!!        [item_code] eq "I.PE_2" or
+!!        [item_code] eq "I.PE_3" or
+!!        [item_code] eq "PL.I_1" or
+!!        [item_code] eq "I.PE_4" or
+!!        [item_code] eq "PE.I_1" or
+!!        [item_code] eq "PE.I_2" or
+!!        [item_code] eq "PL.I_2" or
+!!        [item_code] eq "PE.I_3" or
+!!        [item_code] eq "PE.I_4" or
+!!        [item_code] eq "I.PL_1" or
+!!        [item_code] eq "PL.I_3" or
+!!        [item_code] eq "I.PL_2" or
+!!        [item_code] eq "I.PL_3" or
+!!        [item_code] eq "I.PL_4" or
+!!        [item_code] eq "PL.I_4" 
+!!      ) and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" 
+!!      )
+!append-file-name = "~jkkteach/www/WhitewaterRafting/data/[subj].dat"
+[!TIME] [item_code] 
+###
+*append-response*
+!use-if (
+!!        [item_code] eq "A.B" or
+!!        [item_code] eq "B.A" or
+!!        [item_code] eq "C.D" or
+!!        [item_code] eq "D.C" or
+!!        [item_code] eq "I.PE_1" or
+!!        [item_code] eq "I.PE_2" or
+!!        [item_code] eq "I.PE_3" or
+!!        [item_code] eq "PL.I_1" or
+!!        [item_code] eq "PE.I_1" or
+!!        [item_code] eq "PE.I_2" or
+!!        [item_code] eq "PL.I_2" or
+!!        [item_code] eq "PE.I_3" or
+!!        [item_code] eq "PE.I_4" or
+!!        [item_code] eq "I.PL_1" or
+!!        [item_code] eq "PL.I_3" or
+!!        [item_code] eq "I.PL_2" or
+!!        [item_code] eq "I.PL_3" or
+!!        [item_code] eq "I.PL_4" or
+!!        [item_code] eq "PL.I_4" 
+!!      ) and (
+!!        [A.Bchosen] ne "" and
+!!        [B.Achosen] ne "" and
+!!        [C.Dchosen] ne "" and
+!!        [D.Cchosen] ne "" and
+!!        [I.PE_1chosen] ne "" and 
+!!        [I.PE_2chosen] ne "" and 
+!!        [I.PE_3chosen] ne "" and 
+!!        [PL.I_1chosen] ne "" and
+!!        [I.PE_4chosen] ne "" and 
+!!        [PE.I_1chosen] ne "" and 
+!!        [PE.I_2chosen] ne "" and 
+!!        [PL.I_2chosen] ne "" and
+!!        [PE.I_3chosen] ne "" and 
+!!        [PE.I_4chosen] ne "" and 
+!!        [I.PL_1chosen] ne "" and 
+!!        [PL.I_3chosen] ne "" and
+!!        [I.PL_2chosen] ne "" and 
+!!        [I.PL_3chosen] ne "" and 
+!!        [I.PL_4chosen] ne "" and 
+!!        [PL.I_4chosen] ne "" 
+!!      )
+!append-file-name = "~jkkteach/www/WhitewaterRafting/data/[subj].dat"
+[!TIME] test_phase_instructions 
+###
+*append-response*
+!use-if (
+!!          [item_code] eq "Itest_1" or
+!!          [item_code] eq "Itest_2" or
+!!          [item_code] eq "Itest_3" or
+!!          [item_code] eq "Itest_4" or
+!!          [item_code] eq "PE.PLtest_1" or
+!!          [item_code] eq "PE.PLtest_2" or
+!!          [item_code] eq "PL.PEtest_1" or
+!!          [item_code] eq "PL.PEtest_2" or
+!!          [item_code] eq "I.PEtest_1" or
+!!          [item_code] eq "I.PEtest_2" or
+!!          [item_code] eq "PE.Itest_1" or
+!!          [item_code] eq "PE.Itest_2" or
+!!          [item_code] eq "I.PLtest_1" or
+!!          [item_code] eq "I.PLtest_2" or
+!!          [item_code] eq "PL.Itest_1" or
+!!          [item_code] eq "PL.Itest_2" 
+!!      ) and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!!      )
+!append-file-name = "~jkkteach/www/WhitewaterRafting/data/[subj].dat"
+[test_response] [!TIME] [item_code]
+###
+*append-response*
+!use-if (
+!!          [item_code] eq "Itest_1" or
+!!          [item_code] eq "Itest_2" or
+!!          [item_code] eq "Itest_3" or
+!!          [item_code] eq "Itest_4" or
+!!          [item_code] eq "PE.PLtest_1" or
+!!          [item_code] eq "PE.PLtest_2" or
+!!          [item_code] eq "PL.PEtest_1" or
+!!          [item_code] eq "PL.PEtest_2" or
+!!          [item_code] eq "I.PEtest_1" or
+!!          [item_code] eq "I.PEtest_2" or
+!!          [item_code] eq "PE.Itest_1" or
+!!          [item_code] eq "PE.Itest_2" or
+!!          [item_code] eq "I.PLtest_1" or
+!!          [item_code] eq "I.PLtest_2" or
+!!          [item_code] eq "PL.Itest_1" or
+!!          [item_code] eq "PL.Itest_2" 
+!!        ) and ( not (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!!        ) )
+!append-file-name = "~jkkteach/www/WhitewaterRafting/data/[subj].dat"
+[test_response] [!TIME] farewell
+CueI=[CueI] CuePE=[CuePE] CuePL=[CuePL] OutE=[OutE] OutL=[OutL]
+### end append-response section
+############################## SUCCESS-RESPONSE SECTION #################
+*success-response*
+<html>
+<head><title>Adventures in whitewater rafting</title></head>
+<body background="backg.jpg">
+<FORM METHOD="POST"
+ACTION="transform.cgi?jkkteach/www/WhitewaterRafting/train_items.tpl">
+###
+!print-if [item_code] eq "I.PE_1"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [PL.I_2chosen] eq "" or
+!!        [PL.I_3chosen] eq "" or
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PE_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PE_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PE_2"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PE_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PE_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PE_3"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PE_3chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PE_3"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PE_4"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PE_4chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PE_4"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.I_1"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PE.I_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.I_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.I_2"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PE.I_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.I_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.I_3"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PE.I_3chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.I_3"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.I_4"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PE.I_4chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.I_4"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PL_1"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PL_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PL_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PL_2"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PL_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PL_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PL_3"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PL_3chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PL_3"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PL_4"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="I.PL_4chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PL_4"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.I_1"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PL.I_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.I_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.I_2"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PL.I_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.I_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.I_3"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PL.I_3chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.I_3"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.I_4"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="PL.I_4chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.I_4"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "A.B"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="A.Bchosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/A.B"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "B.A"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="B.Achosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/B.A"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "C.D"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="C.Dchosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/C.D"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "D.C"
+!!        and (
+!!        [A.Bchosen] eq "" or
+!!        [B.Achosen] eq "" or
+!!        [C.Dchosen] eq "" or
+!!        [D.Cchosen] eq "" or
+!!        [I.PE_1chosen] eq "" or 
+!!        [I.PE_2chosen] eq "" or 
+!!        [I.PE_3chosen] eq "" or 
+!!        [PL.I_1chosen] eq "" or
+!!        [I.PE_4chosen] eq "" or 
+!!        [PE.I_1chosen] eq "" or 
+!!        [PE.I_2chosen] eq "" or 
+!!        [PL.I_2chosen] eq "" or
+!!        [PE.I_3chosen] eq "" or 
+!!        [PE.I_4chosen] eq "" or 
+!!        [I.PL_1chosen] eq "" or 
+!!        [PL.I_3chosen] eq "" or
+!!        [I.PL_2chosen] eq "" or 
+!!        [I.PL_3chosen] eq "" or 
+!!        [I.PL_4chosen] eq "" or 
+!!        [PL.I_4chosen] eq "" )
+<input type="hidden" name="D.Cchosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/D.C"
+!print-file = "~jkkteach/www/WhitewaterRafting/training_choice_list"
+!end-print-if
+###
+!print-if (
+!!        [item_code] eq "A.B" or
+!!        [item_code] eq "B.A" or
+!!        [item_code] eq "C.D" or
+!!        [item_code] eq "D.C" or
+!!          [item_code] eq "I.PE_1" or
+!!          [item_code] eq "I.PE_2" or
+!!          [item_code] eq "I.PE_3" or
+!!          [item_code] eq "I.PE_4" or
+!!          [item_code] eq "PE.I_1" or
+!!          [item_code] eq "PE.I_2" or
+!!          [item_code] eq "PE.I_3" or
+!!          [item_code] eq "PE.I_4" or
+!!          [item_code] eq "I.PL_1" or
+!!          [item_code] eq "I.PL_2" or
+!!          [item_code] eq "I.PL_3" or
+!!          [item_code] eq "I.PL_4" or
+!!          [item_code] eq "PL.I_1" or
+!!          [item_code] eq "PL.I_2" or
+!!          [item_code] eq "PL.I_3" or
+!!          [item_code] eq "PL.I_4"
+!!        ) and (
+!!        [A.Bchosen] ne "" and
+!!        [B.Achosen] ne "" and
+!!        [C.Dchosen] ne "" and
+!!        [D.Cchosen] ne "" and
+!!          [I.PE_1chosen] ne "" and 
+!!          [I.PE_2chosen] ne "" and 
+!!          [I.PE_3chosen] ne "" and 
+!!          [I.PE_4chosen] ne "" and 
+!!          [PE.I_1chosen] ne "" and 
+!!          [PE.I_2chosen] ne "" and 
+!!          [PE.I_3chosen] ne "" and 
+!!          [PE.I_4chosen] ne "" and 
+!!          [I.PL_1chosen] ne "" and 
+!!          [I.PL_2chosen] ne "" and 
+!!          [I.PL_3chosen] ne "" and 
+!!          [I.PL_4chosen] ne "" and 
+!!          [PL.I_1chosen] ne "" and 
+!!          [PL.I_2chosen] ne "" and 
+!!          [PL.I_3chosen] ne "" and 
+!!          [PL.I_4chosen] ne "" 
+!!        )
+<table width=70% align=center><tr><td> Although you selected another
+raft to look at, you have now looked at all the rafts at least once.
+Therefore we'd like you to take a consumer survey instead.  You'll see
+rafts similar to those you've seen before, but all these rafts are
+still in the production stages.  <em>The manufacturers would like to know
+what you think would be the overall quality of the rafts, based on the
+features of the rafts.  <strong>For each raft you view, indicate your
+prediction of the quality by clicking the appropriate button in the
+display.</strong> </em>
+<p>For each of the following pages, 
+you must rate the quality of the displayed raft, <em>and
+also</em> select a next raft to view. 
+<p><em>You must rate all the rafts at least once.</em> 
+(You might notice that for the raft you think is the
+last one you need to rate, you still need to select another raft. This
+is just so that the computer can register the fact that you are done
+rating the raft.)
+Please do not go back to review the previous rafts; we are interested in your
+predictions based on your memory. 
+</td></tr></table>
+<input type="hidden" name="test_response" value="(test_instruction_resp)">
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "Itest_1"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="Itest_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/Itest_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.PLtest_1"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PE.PLtest_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.PLtest_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PEtest_1"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="I.PEtest_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PEtest_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PLtest_1"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="I.PLtest_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PLtest_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "Itest_2"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="Itest_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/Itest_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.PLtest_2"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PE.PLtest_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.PLtest_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PEtest_2"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="I.PEtest_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PEtest_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "I.PLtest_2"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="I.PLtest_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/I.PLtest_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "Itest_3"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="Itest_3chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/Itest_3"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.PEtest_1"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PL.PEtest_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.PEtest_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.Itest_1"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PE.Itest_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.Itest_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.Itest_1"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PL.Itest_1chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.Itest_1"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "Itest_4"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="Itest_4chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/Itest_4"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.PEtest_2"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PL.PEtest_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.PEtest_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PE.Itest_2"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PE.Itest_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PE.Itest_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if [item_code] eq "PL.Itest_2"
+!!        and (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!! )
+<input type="hidden" name="PL.Itest_2chosen" value="yes">
+!print-file = "~jkkteach/www/WhitewaterRafting/PL.Itest_2"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_resp"
+!print-file = "~jkkteach/www/WhitewaterRafting/test_choice_list"
+!end-print-if
+###
+!print-if  NOT (
+!!        [I.PEtest_1chosen]  eq "" or
+!!        [I.PLtest_1chosen]  eq "" or
+!!        [Itest_1chosen]     eq "" or 
+!!        [PE.PLtest_1chosen] eq "" or
+!!        [I.PEtest_2chosen]  eq "" or
+!!        [I.PLtest_2chosen]  eq "" or
+!!        [Itest_2chosen]     eq "" or 
+!!        [PE.PLtest_2chosen] eq "" or
+!!        [PE.Itest_1chosen]  eq "" or
+!!        [PL.Itest_1chosen]  eq "" or
+!!        [Itest_3chosen]     eq "" or 
+!!        [PL.PEtest_1chosen] eq "" or
+!!        [PE.Itest_2chosen]  eq "" or
+!!        [PL.Itest_2chosen]  eq "" or
+!!        [Itest_4chosen]     eq "" or 
+!!        [PL.PEtest_2chosen] eq "" 
+!!        )
+<table width=80% align=center><tr><td> 
+Although you selected another raft to look at, you have now rated all
+the production rafts at least once.
+<p><strong><font color="red">IMPORTANT:</font> All of the information
+in this experiment has been random and fictitious. There is no
+"Society of Whitewater Rafters," and the correspondence between
+features and quality was determined randomly for each participant in
+the experiment. Do not let any of the information about rafts in this
+experiment influence you in any way if you ever deal with
+real whitewater rafts!  For actual whitewater rafts, please
+get accurate information from reliable sources.  </strong>
+<p>This experiment was investigating how people learn to associate
+features of products with the quality of the products. We believe that
+for the rafts you viewed <em>early</em> in the experiment, you
+associated <em>both</em> features with the raft's quality. For the
+rafts you viewed <em>later</em> in the experiment, we suspect that you
+shifted your attention away from features that you had already learned
+about for previous rafts, and consequently learned primarily about the
+<em>distinctive</em> feature. <p>We tested this prediction in the second
+part of the experiment, in which you predicted the quality of rafts
+still in production. For some of those rafts, the features were
+actually <em>equally</em> predictive of high or low quality, yet we
+suspect that you probably tended to rate them one way or the other,
+depending on what you attended to in learning.
+<p>The experiment is now over. <strong><u>Thank you very much for
+participating!</u></strong> <em>Please now quietly go to the front
+reception room, and tell the experimenter that the experiment is over. </em>.
+</td></tr></table>
+!end-print-if
+###
+!carry-forward [subj]
+!carry-forward [CueA] [CueB] [CueC] [CueD]
+!carry-forward [CueI] [CuePE] [CuePL] [OutE] [OutL]
+!carry-forward [A.Bchosen] [B.Achosen] [C.Dchosen] [D.Cchosen]
+!carry-forward [I.PE_1chosen] [I.PE_2chosen] [I.PE_3chosen] [I.PE_4chosen]
+!carry-forward [PE.I_1chosen] [PE.I_2chosen] [PE.I_3chosen] [PE.I_4chosen]
+!carry-forward [I.PL_1chosen] [I.PL_2chosen] [I.PL_3chosen] [I.PL_4chosen]
+!carry-forward [PL.I_1chosen] [PL.I_2chosen] [PL.I_3chosen] [PL.I_4chosen]
+!carry-forward [Itest_1chosen] [PE.PLtest_1chosen] [I.PEtest_1chosen] [I.PLtest_1chosen]
+!carry-forward [Itest_2chosen] [PE.PLtest_2chosen] [I.PEtest_2chosen] [I.PLtest_2chosen]
+!carry-forward [Itest_3chosen] [PL.PEtest_1chosen] [PE.Itest_1chosen] [PL.Itest_1chosen]
+!carry-forward [Itest_4chosen] [PL.PEtest_2chosen] [PE.Itest_2chosen] [PL.Itest_2chosen]
+</FORM>
+</body>
+</html>
+# end of success-response section
+

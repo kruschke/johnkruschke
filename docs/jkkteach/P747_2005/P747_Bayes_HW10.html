@@ -1,0 +1,145 @@
+<html>
+<font face="tahoma">
+
+
+<body>
+
+
+
+P747 Bayesian Stats, Prof. Kruschke
+<br>
+Homework 10, Due Wednesday Nov. 16, 2005.
+
+<!--
+<br><strong>UNDER CONSTRUCTION! DO NOT YET DO!</strong>
+-->
+
+<font size="-1">
+<p>General directions:
+
+<li>
+Make a cover sheet, without any answers, that has your name and
+student ID number (not your SS number). On all subsequent sheets, that
+have your answers, write only your student ID number (not your SS
+number, and not your name).
+
+<li>
+Make a photocopy of your homework, and hand in the original and the
+photocopy. (Of course, you might want to keep another copy for
+yourself!) The copy, with the cover page removed, will be used for
+peer-grading.
+
+<li>
+Include your complete R program. Make sure it is well commented, so that
+the reader knows why each line of code is there.
+</font>
+
+
+
+<p>
+This is essentially similar to <a href="P747_Bayes_HW04.html">Homework
+4</a> but with integrals approximated using the Metropolis algorithm
+instead of dense grids. N.B.: Some of the details of the models and
+priors have changed, however.
+
+<p><em>Two models, denoted H1 and H2:</em>
+<center>
+H1: p(y|m,s) = (1/(s*sqrt(2*pi))) * exp( -.5 * ( (y-m)/s )^2 ) 
+<br>H2: p(y|m,s) = (1/(s*2)) * exp( -abs( (y-m)/s ) )
+</center>
+For both models, m can be any real number, and s>0. H1 is the
+normal distribution, and H2 is the exponential
+distribution. 
+
+<p><em>Priors:</em> For both models, assume that <br>p(m) is uniform
+on [-50.0,+50.0], <br>p(s) is distributed as a Gamma distribution with
+shape parameter 2.0 and scale parameter 2.0, and <br>p(m,s)=p(m)*p(s).
+
+<p><em>Observed Data:</em> Suppose we gather some data points at
+random and we find these values: <br>D = { -24.7, -18.4, -12.3, -2.9,
+-0.8, 1.6, 10.4, 12.3, 15.2, 34.8 }.
+
+
+
+<p><em>Programming hints:</em> In R, H1 can be programmed using the
+<tt>dnorm(y,m,s)</tt> and <tt>rnorm(n,m,s)</tt> functions.
+
+<br>H2 can be programmed using the functions in the table below, where
+"symexp" denotes symmetric exponential.
+
+<table border="1" cellspacing="0" cellpadding="8" align="center" width="100%">
+<tr>
+<td valign="top">
+<pre>
+dsymexp <- function( y , m , s ) {
+    dens <- 0.5 * dexp( abs(y-m) , 1/s ) 
+    return( dens )
+}
+</pre></td>
+<td valign="top">
+<pre>
+rsymexp <- function( n , m , s ) {
+    y <- rexp( n , 1/s )
+    y <- y * sign(runif(n,-1,+1))
+    y <- y + m
+    return( y )
+}</pre></td>
+</tr>
+</table>
+
+The priors can programmed in R using <tt>dunif(m,-50,+50)</tt>,
+<tt>runif(n,-50,+50)</tt>, <tt>dgamma(s,2.0,2.0)</tt>, and
+<tt>rgamma(n,2.0,2.0)</tt>.
+
+<p>
+<ol>
+<li>Estimation:
+
+<br>(A) Use the Metropolis algorithm to generate 1,000 samples from
+the posteriors of each model. (Careful to exclude the burn-in.) Show a
+scatterplot for each model.
+
+<br>(B) From the marginal distributions of the sampled m and s,
+determine 95% confidence intervals (from the 2.5%ile to the 97.5%ile)
+of m and s for each model, and determine the median values (50%ile) of
+m and s for each model.
+
+
+<p>
+<li>Prediction:
+
+<br>
+We want to determine the probability of new data values. For each
+model, estimate the expected value of the next datum y by randomly
+sampling 1,000 pairs of m,s from the posteriors and then for each pair
+randomly generating a y value. (Conveniently, the models already have
+random value generators given by <tt>rnorm</tt> and <tt>rsymexp</tt>
+[defined above], so we do not have to program an additional Metropolis
+algorithm to generate y values.)
+
+
+
+<p>
+<li>Model Comparison:
+
+<br>
+Approximate <center>p(D|H) = Integral dm*ds p(D|m,s,H)
+p(m,s|H)</center> as <center>1/N Sum p(D|m,s) with m,s sampled from
+the prior p(m,s|H).</center> It is convenient that the prior already
+has sampling functions built into R (<tt>runif</tt> and
+<tt>rgamma</tt>), so we do not need to construct a Metropolis
+algorithm for sampling from the prior. Make N large enough that the
+p(D|H1) and p(D|H2) estimates are ordinally stable.
+
+<br>What is p(D|H1)? What is p(D|H2)? So, which model is a better
+model of the data?
+
+
+</ol>
+<p><hr>
+</body>
+</font>
+</html>
+
+
+

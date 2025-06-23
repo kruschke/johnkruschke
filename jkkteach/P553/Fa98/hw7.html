@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<TITLE>P553 Statistics, Prof. Kruschke, Homework 7</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+
+<center>
+<h2>
+P553 Statistics in Psychology
+<br>Homework 7: Linear regression.
+<br>Due 29 October 1996.
+</h2>
+</center>
+
+
+For each of the data sets below, do the following: 
+
+<ul>
+
+<li>Compute the correlation with Minitab (use the "correlate"
+command).
+
+<li>Test by hand (i.e., convert <em>r</em> to <em>t</em> by hand)
+whether the correlation significantly deviates from zero.  (Two-tailed
+test, 5% alpha level.)
+
+<li>Determine the approximate power of the test.
+
+<li>Compute the proportion of variance accounted for (just <em>r</em>^2).
+
+<li>Using Minitab, standardize the data (use the command, "let c3 =
+[c1-mean(c1)]/{[count(c1)-1]*stdev(c1)/count(c1)}) and make a
+scattergram of the standardized scores (use the "plot" command). and
+accurately draw by hand the best fitting regression line.
+
+<li>Using Minitab, make a scattergram of the <em>raw</em> scores (use
+the "plot" command), and accurately draw by hand the best fitting
+regression line.  Derive and state the regression equation in
+raw-score form (that is, derive the slope and intercept of the
+raw-score regression line from the values of the correlation, means,
+and standard deviations.)
+
+<li>Verify your analyses with a linear regression in Minitab (use the
+"regress" command). In the Minitab print out, circle and identify
+(a) the slope and intercept of the linear regression equation, (b) the
+<em>t</em> statistic that corresponds to your by-hand test of the
+correlation, and (c) the proportion of variance accounted for.
+
+<li>Compute the predicted raw-scale value of the predicted (or
+"criterion") variable when the predictor variable is the value
+indicated in the problems below.
+
+</ul>
+
+<p><strong>Data Set 1 (7 pts): From A&A Text p.97, Set II Exercise
+3.</strong> (Use the raw scores.)
+
+<p>Age of Painting is the predictor variable, Number of People is the
+predicted variable.  When the painting is only 10 years old, what is
+the predicted number of people viewing it?
+
+<p><strong>Data Set 2 (9 pts):</strong> Use Minitab to generate 15
+random page numbers for your phone book: From your own phone book
+determine how many pages of residential (non-business) names there
+are. For example, last year's Bloomington directory had 234 pages.
+Then in Minitab type
+
+<pre>
+#
+# 234 below is the number of pages; change it to your value.
+# c3 below is just an arbitrary column.
+#
+random 15 c3;
+uniform 1 234.
+round c3 c3
+print c3
+</pre>
+
+From those 15 random pages in the phone book, select the first name
+that has full first and last names included, and record the number of
+letters in the first name and the number of letters in the last
+name. (Report the names in your homework.) 
+
+<p>Number of letters in first name is the predictor variable, number
+of letters in last name is the predicted variable.  When the first
+name has 8 letters, what is the predicted number of letters in the
+last name?  (By the way, did you know that the most common first name
+in the world is "Mohammed" and the most common last name is "Smith"?
+Or so I've heard.)
+
+<p><strong>Data Set 3 (9 pts):</strong> 
+
+<p>The data below are estimated from a graph in the Bloomington
+Herald-Times.  Year is predictor variable, Tax is predicted variable.
+What is the predicted tax for 1996?
+
+<pre>
+yr tx
+-- --
+74 3.25
+75 3.45
+76 3.40
+77 3.75
+78 3.65
+79 3.85
+80 3.05
+81 3.10
+82 3.15
+83 3.35
+84 3.20
+85 3.20
+86 3.60
+87 3.85
+88 3.90
+89 4.29
+90 3.75
+91 3.50
+92 3.25
+93 3.65
+94 3.80
+95 4.00
+</pre>
+
+<p><hr>
+
+</BODY>
+</HTML>
+
+
