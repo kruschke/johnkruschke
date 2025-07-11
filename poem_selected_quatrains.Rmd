@@ -205,7 +205,7 @@ One of the topics in this chapter is reparameterization, in which parameters of 
 
 `r end_poem_mark`
 
-`r qrc_png( url = "https://jkkweb.sitehost.iu.edu/DBDA.html" , journal_name = "*Doing Bayesian Data Analysis, 2nd Edition*" , publication_info = "Academic Press, 2015.")`
+`r qrc_png( url = "johnkruschke.com/DBDA.html" , journal_name = "*Doing Bayesian Data Analysis, 2nd Edition*" , publication_info = "Academic Press, 2015.")`
 
 `r next_link("poem_selected_quatrains.html")`
 </small>

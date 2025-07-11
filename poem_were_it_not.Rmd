@@ -42,7 +42,7 @@ still winks of wonders yet to know.\
 
 <small>
 
-`r qrc_png( url = "https://issuu.com/tiptonpoetryjournal/docs/tpj61/10" , journal_name = "*The Tipton Poetry Journal*" , publication_info = "Issue #61, 01 September 2024, p. 10.")`
+`r qrc_png( url = "https://issuu.com/tiptonpoetryjournal/docs/tpj61/16" , journal_name = "*The Tipton Poetry Journal*" , publication_info = "Issue #61, 01 September 2024, p. 10.")`
 
 *Notes:* 
 Ever wonder why the months -- September, October, November, and December -- are the 9th to 12th months of the year, instead of the 7th to 10th as their names imply? Now you know: Julius Caesar and Caesar Augustus.

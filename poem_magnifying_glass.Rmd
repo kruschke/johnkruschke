@@ -18,8 +18,8 @@ I am smaller now.\
 `r qrc_png( url = "https://mcpl.info/geninfo/haiku-writing-contest" , journal_name = "Monroe County Public Library haiku writing contest" , publication_info = "3rd place, 25 April 2025.")`
 
 *Notes:*
-This might lean a bit toward senryu more than haiku, but where does nature stop and human nature begin? Regarding form, the contest rules required lines with 5/7/5 syllables. Regarding meter, I'm a fan of haiku with alternating stresses: &acute;&nbsp;&breve;&nbsp;&acute;&nbsp;&breve;&nbsp;&acute; / &breve;&nbsp;&acute;&nbsp;&breve;&nbsp;&acute;&nbsp;&breve;&nbsp;&acute;&nbsp;&breve; /
-&acute;&nbsp;&breve;&nbsp;&acute;&nbsp;&breve;&nbsp;&acute;.
+This might lean a bit toward senryu more than haiku, but where does nature stop and human nature begin? Regarding form, the contest rules required lines with 5/7/5 syllables. Regarding meter, I'm a fan of haiku with alternating stresses: <b>&acute;</b>&nbsp;&breve;&nbsp;<b>&acute;</b>&nbsp;&breve;&nbsp;<b>&acute;</b> / &breve;&nbsp;<b>&acute;</b>&nbsp;&breve;&nbsp;<b>&acute;</b>&nbsp;&breve;&nbsp;<b>&acute;</b>&nbsp;&breve; /
+<b>&acute;</b>&nbsp;&breve;&nbsp;<b>&acute;</b>&nbsp;&breve;&nbsp;<b>&acute;</b>.
 
 `r next_link("poem_magnifying_glass.html")`
 
