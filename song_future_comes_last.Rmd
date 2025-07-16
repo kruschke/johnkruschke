@@ -1,0 +1,41 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## The Future Comes Last
+<br>
+(song; link to sheet music is below)\
+
+Well, I ain't got no nihilistic tendencies,\
+nor no mendicant dependencies,\
+but facing facts, well it ain't free,\
+it costs remembered reverie.\
+
+But live for the future,\
+live for the past,\
+any way you do it,\
+the future comes last,\
+so you'd better eat now\
+'cause tomorrow comes fast.\
+
+Well, I ain't got no solemn animosities,\
+nor no gloomy eschatologies,\
+just hate to see the word *"finis,"*\
+seems good times end too easily.\
+
+But live for the future,\
+live for the past,\
+any way you do it,\
+the future comes last,\
+so you'd better eat now\
+'cause tomorrow comes fast.\
+
+
+<br><p>PDF of sheet music: click [**here**](Kruschke-TheFutureComesLast.pdf). 
+
+<small>
+
+*Notes:* Written when I was 19 years old, in August 1981. U.S. Copyright PAu004161008, 12 Nov 2022. (If you would like to perform or record this song publicly, I would be delighted, and please contact me.)
+
+</small>

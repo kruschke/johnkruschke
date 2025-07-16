@@ -17,12 +17,16 @@ editor_options:
   
 ### Some of my published poems {#sec-my_poems}
 
-Click on any poem title to reveal the poem text, along with some notes about the poem. My favorite, for now, is [*Honor Among Sleeves*](poem_honor_among.html).
+Click on any poem title to reveal the poem text, along with some notes about the poem, and a link to the publication. My favorite poem, for now, is [*Honor Among Sleeves*](poem_honor_among.html).
 
 
 `r paste0( 
   "\n  * [", poem_info[2:(nrow(poem_info)-1),"title"], "]", 
   "(", poem_info[2:(nrow(poem_info)-1),"file"], ")" )`
 
+
+And, a song:
+
+  * [The Future Comes Last](song_future_comes_last.html)
 
 <!-- <p><hr style="height:1px; border:none; color:#18bc9c; background-color:#18bc9c; page-break-after:always;"><p> -->
