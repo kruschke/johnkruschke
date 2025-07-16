@@ -5,7 +5,7 @@
 
 ## The Future Comes Last
 <br>
-(song; link to sheet music is below)\
+(song lyrics; link to sheet music is below)\
 
 Well, I ain't got no nihilistic tendencies,\
 nor no mendicant dependencies,\
@@ -31,9 +31,12 @@ the future comes last,\
 so you'd better eat now\
 'cause tomorrow comes fast.\
 
-
 <br><p>
-PDF of sheet music: click [**here**](Kruschke-TheFutureComesLast.pdf). 
+
+<a href="Kruschke-TheFutureComesLast.pdf" target="_blank">
+<img src="Kruschke-TheFutureComesLast.png" alt="Image of first page of sheet music." style="width:120px;height:auto;"> 
+PDF of sheet music
+</a>
 
 <small>
 *Notes:* Written when I was 19 years old, in August 1981. U.S. Copyright PAu004161008, 12 Nov 2022. (If you would like to perform or record this song publicly, I would be delighted, and please contact me.)
