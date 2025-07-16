@@ -32,10 +32,13 @@ so you'd better eat now\
 'cause tomorrow comes fast.\
 
 
-<br><p>PDF of sheet music: click [**here**](Kruschke-TheFutureComesLast.pdf). 
+<br><p>
+PDF of sheet music: click [**here**](Kruschke-TheFutureComesLast.pdf). 
 
 <small>
-
 *Notes:* Written when I was 19 years old, in August 1981. U.S. Copyright PAu004161008, 12 Nov 2022. (If you would like to perform or record this song publicly, I would be delighted, and please contact me.)
-
 </small>
+
+<table style='width:100%'><tr>
+<td style='width:100%; text-align:center'>[Poem List &#8593;](poems.html#sec-my_poems)</td>
+</tr></table>
