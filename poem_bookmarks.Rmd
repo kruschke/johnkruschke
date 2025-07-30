@@ -37,6 +37,10 @@ and where visitors may resume reading.\
 *Notes:* 
 The lines are all *decasyllabic*. There is intentional echoing of sounds beyond the end rhymes; for example, "slower gazing" with "flowers lazing" and with "flow was lost". I had fun rhyming "interrupt-/ ted" with "upped/ and". The metaphors -- body as bookmark and headstone as bookmark -- still affect me even after reflection, and I hope they may work for you too.
 
+<p>
+<audio controls src="poem_bookmarks.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_bookmarks.html")`
 
 </small>

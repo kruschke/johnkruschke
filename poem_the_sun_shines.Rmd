@@ -45,6 +45,10 @@ and the boy became a girl.\
 *Notes:* 
 This poem suggests that a person's sun sign at birth should not define their identity. The poem goes through all twelve signs of the zodiac, also called houses, in order: sheep = aries; cattle = taurus; brothers = gemini; crab = cancer; cat = leo; girl = virgo; weighing options = libra; scorpion = scorpio; centaur = sagittarius; sea-goat = capricorn; boy = aquarius; fish = pisces.
 
+<p>
+<audio controls src="poem_the_sun_shines.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_the_sun_shines.html")`
 
 </small>

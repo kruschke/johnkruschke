@@ -48,11 +48,10 @@ and now I hear the ocean.\
 *Notes:* 
 When poets read their poems aloud, especially in the context of background noises in a crowd of people at an open-mic night, I find it challenging to hear every word and to fully comprehend the poem. Beyond comprehension, appreciation of a poem also depends on how it resonates with the listener. Perhaps, sometimes, a listener likes a poem best when it lets them hear themselves. Have you had this kind of experience listening to poetry? Is that the ocean you hear?
 
-<!-- <audio controls> -->
-<!--   <source src="Open Mic Night.mp3" type="audio/mpeg"> -->
-<!--   Your browser does not support the audio element. -->
-<!-- </audio> -->
+<p>
+<audio controls src="poem_open_mic.m4a" type="audio/mp4"></audio>
 
+<p>
 `r next_link("poem_open_mic.html")`
 
 </small>
