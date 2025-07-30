@@ -103,6 +103,10 @@ or lovers.\
 *Notes:* 
 In late January or early February of 2025, I watched an episode of *Sky Arts Landscape Artist of the Year (2021)* that featured painter Ophelia Redpath and her surrealist painting, `r link_new_tab( url = "https://opheliaredpath.com/original-paintings/heron-at-west-reservoir" , display_text = "Heron at West Reservoir" )`. I was mesmerized and was inspired to write a surrealist poem. I decided to describe the feelings of being retired, in their most extreme positive or negative valences. Notice, throughout the two-part poem, it is carefully constructed to have alternating unstessed and stressed syllables. This alternating unstessed/stressed rhythm is intended to propel the reading of the poem.
 
+<p>
+<audio controls src="poem_in_retirement.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_in_retirement.html")`
 
 </small>
