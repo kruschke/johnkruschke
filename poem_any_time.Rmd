@@ -51,6 +51,10 @@ The fourth suggests moral engagement and outrage is important, but then suggests
 The fifth and sixth go together, pondering categories of choice, because the whole issue of How To Spend One's Time presumes one has some degree of choice.
 The last tercet abstracts to the highest level. It was provoked by reading `r link_new_tab( "https://www.nytimes.com/2023/11/19/nyregion/david-buckel-climate-activist-suicide-fossil-fuels.html" , "an article in the NYT")` about a climate activist who committed suicide but his loved ones and colleagues did not give up.
 
+<p>
+<audio controls src="poem_any_time.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_any_time.html")`
 
 </small>

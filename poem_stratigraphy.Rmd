@@ -45,6 +45,10 @@ loss&nbsp;relentless<br>
 *Notes:* 
 The poem is intended to be read first as in standard English, left to right, top to bottom, then to be read again as a geologist would read strata, from bottom to top, and *right to left*. Feel your eyes as you read upward. The poem is formatted to resemble a rock formation in [Monument Valley](https://en.wikipedia.org/wiki/Monument_Valley) and [The Valley of the Gods](https://en.wikipedia.org/wiki/Valley_of_the_Gods). 
 
+<p>
+<audio controls src="poem_stratigraphy.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_stratigraphy.html")`
 
 </small>
