@@ -47,6 +47,10 @@ still winks of wonders yet to know.\
 *Notes:* 
 Ever wonder why the months -- September, October, November, and December -- are the 9th to 12th months of the year, instead of the 7th to 10th as their names imply? Now you know: Julius Caesar and Caesar Augustus.
 
+<p>
+<audio controls src="poem_were_it_not.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_were_it_not.html")`
 
 </small>

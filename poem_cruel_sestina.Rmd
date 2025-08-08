@@ -68,6 +68,10 @@ until fever compels that you look in their eyes.\
 *Notes:* 
 A `r link_new_tab( url = "https://www.poetryfoundation.org/education/glossary/sestina" , display_text = "*sestina*" )` is a complex form dating back to twelfth century France. It has six stanzas of six lines each, followed by a seventh stanza, called the envoi, that has three lines. The final words of each line must be repeated in every stanza with a specific permutation from one stanza to the next. If we label the end words in one stanza as 1 2 3 4 5 6, then the end-words must be in the order 6 1 5 2 4 3 in the next stanza. The envoi must contain the same six words, two words per line. To create this poem, I first built the envoi with three phrases from Taylor Swift's song. I also avoided repeating a word explicitly from the last line of one stanza to the first line of the next; e.g., "dice" becomes "sand ice", "window" becomes "wind owe", etc. In the first stanza, I tried to engage the reader by making each pair of lines have parallel sounds throughout the lines.
 
+<p>
+<audio controls src="poem_cruel_sestina.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_cruel_sestina.html")`
 
 </small>
