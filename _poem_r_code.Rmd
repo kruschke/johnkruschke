@@ -19,7 +19,7 @@ poem_info <- rbind(
   , c( "Magnifying Glass (haiku)", "poem_magnifying_glass", 17, "25 Apr 2025" ) 
   , c( "Selected Quatrains from DBDA2", "poem_selected_quatrains", 32, "03 Nov 2014" )
   , c( "Looking East", "poem_looking_east", 45, "07 Dec 2024" ) 
-  , c( "Stratigraphy", "poem_stratigraphy", 50, "17 Feb 2025" )
+  , c( "Stratigraphy", "poem_stratigraphy", 2*50, "17 Feb 2025" )
   , c( "Honor Among Sleeves", "poem_honor_among", 264, "15 Oct 2025" )
   , c( "The Power of Poetry for Climate Change", "poem_the_power_of_poetry", 51, "01 Mar 2025" )
   , c( "Any Time Spent", "poem_any_time", 72, "17 Feb 2025" )
