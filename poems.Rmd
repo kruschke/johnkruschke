@@ -12,15 +12,14 @@ editor_options:
 
   * `r link_new_tab( "https://www.newyorker.com/magazine/2009/03/09/contemplation" , display_text = "*Contemplation*" )` by Meredith Root-Bernstein. Published in the *New Yorker* magazine, March 9, 2009. See also her poem, *Trash*, in her 2012 book *Hock*.
   * `r link_new_tab( "https://poets.org/poem/one-train-may-hide-another" , "*One Train May Hide Another*" )` by Kenneth Koch. Published in his book, *One Train*, Knopf 1994.
-  * The lyrics of `r link_new_tab( "https://www.connectbrazil.com/the-waters-of-march-the-story-behind-the-song/" , "*Waters of March*" )` by Antonio Carlos Jobim, written in 1972, and performed by many.
+  * The lyrics of `r link_new_tab( "https://www.musixmatch.com/lyrics/Susannah-McCorkle/The-Waters-of-March" , "*Waters of March*" )` by Antonio Carlos Jobim, written in 1972, and performed by many; see especially the version by Susannah McCorkle.
   * The lyrics of `r link_new_tab( "https://genius.com/Tony-bennett-fly-me-to-the-moon-in-other-words-lyrics" , "*Fly Me to the Moon (In Other Words)*" )` by Bart Howard, written in 1954. The preamble ("Poets often use many words...") is essential, but most performers omit it. Listen to the performance by Tony Bennett.
-  
+
 ### Some of my published poems {#sec-my_poems}
 
 Click on any poem title to reveal the poem text, along with a link to the publication, some notes about the poem, and (for most) an audio recording. 
 
 My favorite poem, for now, is [*Honor Among Sleeves*](poem_honor_among.html).
-
 
 `r paste0( 
   "\n  * [", poem_info[2:(nrow(poem_info)-1),"title"], "]", 
