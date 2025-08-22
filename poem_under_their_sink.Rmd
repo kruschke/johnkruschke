@@ -7,37 +7,37 @@
 <br>
 <!-- 168 words -->
 
-[Withheld until two months after publication; see poem at link below.]
+<!-- [Withheld until two months after publication; see poem at link below.] -->
 
-<!-- Underneath their kitchen sink, the shiny\ -->
-<!-- red cylinder stands vigilant, ready\ -->
-<!-- to rescue them from their flammable home,\ -->
-<!-- extinguishing fires, with its thick foam,\ -->
-<!-- that erupt from oven, stove top, or fears,\ -->
-<!-- though flames never appeared in all these years.\ -->
+Underneath their kitchen sink, the shiny\
+red cylinder stands vigilant, ready\
+to rescue them from their flammable home,\
+extinguishing fires, with its thick foam,\
+that erupt from oven, stove top, or fears,\
+though flames never appeared in all these years.\
 
-<!-- In their TV cabinet, there is no\ -->
-<!-- sentinel for dousing the inferno\ -->
-<!-- of contempt and dehumanization\ -->
-<!-- that rages uncontrolled on the flat screen,\ -->
-<!-- fought with backfires they might set someday;\ -->
-<!-- meanwhile, they backlight a candle and pray.\ -->
+In their TV cabinet, there is no\
+sentinel for dousing the inferno\
+of contempt and dehumanization\
+that rages uncontrolled on the flat screen,\
+fought with backfires they might set someday;\
+meanwhile, they backlight a candle and pray.\
 
-<!-- In the bedroom, a small candle toils\ -->
-<!-- to effuse, for lovers, essence oils,\ -->
-<!-- and to distract, by flickering shadows,\ -->
-<!-- the mental ceiling sprinklers spraying to-do's,\ -->
-<!-- agendas, disappointments, and regrets\ -->
-<!-- that swamp their pelvic floors, make their feet wet.\ -->
+In the bedroom, a small candle toils\
+to effuse, for lovers, essence oils,\
+and to distract, by flickering shadows,\
+the mental ceiling sprinklers spraying to-do's,\
+agendas, disappointments, and regrets\
+that swamp their pelvic floors, make their feet wet.\
 
-<!-- And in the children's rooms, the foam is deep,\ -->
-<!-- sprayed thick with good intentions, there to keep\ -->
-<!-- the children safe from self-immolation\ -->
-<!-- by unrealistic expectation\ -->
-<!-- of growing up to become an artist,\ -->
-<!-- musician, astronaut, or novelist.\ -->
-<!-- When grown, their recompense will be to think\ -->
-<!-- of the extinguisher under their sink.\ -->
+And in the children's rooms, the foam is deep,\
+sprayed thick with good intentions, there to keep\
+the children safe from self-immolation\
+by unrealistic expectation\
+of growing up to become an artist,\
+musician, astronaut, or novelist.\
+When grown, their recompense will be to think\
+of the extinguisher under their sink.\
 
 `r end_poem_mark`
 
@@ -52,6 +52,10 @@
 Ironies of fire extinguishers: Under the kitchen sink but never used, needed at the TV but not available, not wanted in the bedroom but mentally applied anyway, and used on ambitions of children -- who grow up to repeat what they've learned.
 Regarding form: Every line is *decasyllabic*, with rhyming pairs of lines.
 
+<p>
+<audio controls src="poem_under_their_sink.m4a" type="audio/mp4"></audio>
+
+<p>
 `r next_link("poem_under_their_sink.html")`
 
 </small>
