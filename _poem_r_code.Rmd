@@ -12,38 +12,42 @@ editor_options:
 library(kableExtra)
 library(qrcode)
 
-# Poem info data frame:
+# Construct poem-info data frame:
 poem_info <- rbind(
-  c( "", "poems", 0, "01 Jan 1900" ) # placeholder for first
-  , c( "", "poems", 10000, "31 Dec 2100" ) # placeholder for last
-  , c( "Magnifying Glass (haiku)", "poem_magnifying_glass", 17, "25 Apr 2025" ) 
-  , c( "Selected Quatrains from DBDA2", "poem_selected_quatrains", 32, "03 Nov 2014" )
-  , c( "Looking East", "poem_looking_east", 45, "07 Dec 2024" ) 
-  , c( "Stratigraphy", "poem_stratigraphy", 2*50, "17 Feb 2025" )
-  , c( "Honor Among Sleeves", "poem_honor_among", 264, "15 Oct 2025" )
-  , c( "The Power of Poetry for Climate Change", "poem_the_power_of_poetry", 51, "01 Mar 2025" )
-  , c( "Any Time Spent", "poem_any_time", 72, "17 Feb 2025" )
-  , c( "Open Mic Night", "poem_open_mic", 117, "01 Mar 2025" )
-  , c( "Bookmarks and Headstones", "poem_bookmarks", 123, "05 Feb 2025" )
-  , c( "Were It Not for the Firefly", "poem_were_it_not", 129, "01 Sep 2024" )
-  , c( "A Late Afternoon Lying on My Back", "poem_a_late_afternoon", 131, "13 Aug 2025" )
-  , c( "At the Window", "poem_at_the_window", 138, "17 Feb 2025" )
-  , c( "The Sun Shines Fluidly on Every House", "poem_the_sun_shines", 170, "29 Nov 2024" )
-  , c( "Under Their Sink", "poem_under_their_sink", 168, "21 Jun 2025" )
-  , c( "The Purpose of Time", "poem_the_purpose_of_time", 173, "20 Feb 2025" )
-  , c( "Carbon Footprints of Unwanted Children", "poem_carbon_footprints", 208, "17 Feb 2025" )
-  , c( "In Retirement Sunlight Falls / Blackbirds Hang", "poem_in_retirement", 310, "16 May 2025" )
-  , c( "Cruel Sestina", "poem_cruel_sestina", 315, "01 Oct 2024" )
-  , c( "Golden State", "poem_golden_state", 326, "19 Dec 2024" )
-  , c( "Cueva de las Manos", "poem_cueva_de_las_manos", 212, "15 Sep 2025" )
+   # placeholder for first, with names of variables:
+  c( title = "", file = "poems", n_syl = 0, n_word = 0, pub_date = "01 Jan 1900" )
+  # placeholder for last:
+  , c( "", "poems", 100000, 100000, "31 Dec 2500" ) 
+  , c( "A Late Afternoon Lying on My Back", "poem_a_late_afternoon", 176, 138, "13 Aug 2025" )
+  , c( "At the Window", "poem_at_the_window", 190, 141, "17 Feb 2025" )
+  , c( "Bookmarks and Headstones", "poem_bookmarks", 184, 126, "05 Feb 2025" )
+  , c( "Carbon Footprints of Unwanted Children", "poem_carbon_footprints", 295, 213, "17 Feb 2025" )
+  , c( "Cruel Sestina", "poem_cruel_sestina", 455, 330, "01 Oct 2024" )
+  , c( "Cueva de las Manos", "poem_cueva_de_las_manos", 326, 216, "15 Sep 2025" )
+  , c( "Golden State", "poem_golden_state", 525, 327, "19 Dec 2024" )
+  , c( "Honor Among Sleeves", "poem_honor_among", 365, 267, "15 Oct 2025" )
+  , c( "In Retirement Sunlight Falls / Blackbirds Hang", "poem_in_retirement", 504, 319, "16 May 2025" )
+  , c( "Looking East", "poem_looking_east", 84, 47, "07 Dec 2024" ) 
+  , c( "Magnifying Glass (haiku)", "poem_magnifying_glass", 25, 12, "25 Apr 2025" ) 
+  , c( "Open Mic Night", "poem_open_mic", 177, 120, "01 Mar 2025" )
+  , c( "Selected Quatrains from DBDA2", "poem_selected_quatrains", 45, 40, "03 Nov 2014" )
+  , c( "Stratigraphy", "poem_stratigraphy", 136, 101, "17 Feb 2025" )
+  , c( "The Power of Poetry for Climate Change", "poem_the_power_of_poetry", 88, 58, "01 Mar 2025" )
+  , c( "The Purpose of Time", "poem_the_purpose_of_time", 263, 186, "20 Feb 2025" )
+  , c( "The Sun Shines Fluidly on Every House", "poem_the_sun_shines", 248, 175, "29 Nov 2024" )
+  , c( "Under Their Sink", "poem_under_their_sink", 263, 168, "21 Jun 2025" )
+  , c( "Were It Not for the Firefly", "poem_were_it_not", 186, 131, "01 Sep 2024" )
+  , c( "Any Time Spent", "poem_any_time", 106, 75, "17 Feb 2025" )
 )
 # name, format, sort:
-colnames( poem_info ) <- c("title", "file", "n_word", "pub_date" )
+# colnames( poem_info ) <- c("title", "file", "n_word", "pub_date" )
 poem_info <- data.frame( poem_info )
 poem_info$file <- paste0( poem_info$file , ".html" )
+poem_info$n_syl <- as.numeric( poem_info$n_syl )
 poem_info$n_word <- as.numeric( poem_info$n_word )
 poem_info$pub_date <- as.Date( poem_info$pub_date , format = "%d %b %Y" )
-poem_info <- poem_info[ order(poem_info$n_word), ]
+# poem_info <- poem_info[ order(poem_info$n_word), ]
+poem_info <- poem_info[ order(poem_info$n_syl), ]
 # poem_info <- poem_info[ order(poem_info$pub_date), ]
 # poem_info |> str()
 

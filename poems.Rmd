@@ -17,9 +17,9 @@ editor_options:
 
 ### Some of my published poems {#sec-my_poems}
 
-Click on any poem title to reveal the poem text, along with a link to the publication, some notes about the poem, and (for most) an audio recording. 
+Click on any poem title below to reveal the poem text, along with a link to the publication, some notes about the poem, and (for most) an audio recording. The poems are ordered by number of syllables. 
 
-My favorite poem, for now, is [*Honor Among Sleeves*](poem_honor_among.html).
+*My favorite poem, for now, is* [Honor Among Sleeves](poem_honor_among.html).
 
 `r paste0( 
   "\n  * [", poem_info[2:(nrow(poem_info)-1),"title"], "]", 
@@ -34,9 +34,9 @@ A few songs:
 
 <hr>
 
-`r link_new_tab( "https://www.idsnews.com/article/2025/08/conversation-with-retired-indiana-university-professor-turned-poet-john-kruschke" , display_text = "Interview with Indiana Daily Student (click this link)" )`
+Read an `r link_new_tab( "https://www.idsnews.com/article/2025/08/conversation-with-retired-indiana-university-professor-turned-poet-john-kruschke" , display_text = "interview with Indiana Daily Student (click this link)" )`
 
-A view from the microphone, reading at <a href="https://writersguildbloomington.com/event/last-sunday-poetry-open-mic-5/" target="_blank"> Last Sunday Poetry, Writers Guild at Bloomington: 
+A view from the microphone, when reading at <a href="https://writersguildbloomington.com/event/last-sunday-poetry-open-mic-5/" target="_blank"> Last Sunday Poetry, Writers Guild at Bloomington: 
 <img src="Last_Sunday_Poetry_Aug_31_2025.jpg" alt="Image of audience at Last Sunday Poetry reading." style="width:100%;height:auto;"> 
 </a>
 

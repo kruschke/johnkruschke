@@ -45,8 +45,10 @@ I belong.\
 
 `r qrc_png( url = "https://sagemagazine.org/carbon-footprints-of-unwanted-children/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
 
+Also appears in: *Stormwash: Environmental Poems, Volume 2*, edited by Hiromi Yoshida. Seaker Press, October 2025.
+
 *Notes:* 
-This poem was provoked by thoughts of climate change. In our cultural climate, there has been a change in attitudes about children. This poem is about attitudes toward children (give them freedom, protect them from every conceivable danger), attitudes about children (they are a gift, they are an imposition), attitudes from children (joy and delight), and attitudes of our own affected by children (let's keep trying to make things better).
+This poem was provoked by thoughts of climate change, not only meteorological but also cultural. In particular, there has been a cultural change in attitudes about (having) children. This poem is about attitudes toward children (give them freedom, or protect them from every conceivable danger, even to the point of not putting them into the world at all), attitudes about children (they are a gift, they are an imposition), attitudes from children (joy and delight), and attitudes of our own affected by wanting the best for our children (let's keep trying to make things better).
 
 <p>
 <audio controls src="poem_carbon_footprints.m4a" type="audio/mp4"></audio>
