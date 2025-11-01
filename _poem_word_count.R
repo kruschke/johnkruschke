@@ -760,5 +760,89 @@ still winks of wonders yet to know.\
 
 #---------------------------------------------------------------
 r"(
+Hamster in Your Head
+
+If you hold this poem\
+in the rain\
+its fur will get soaking wet.\
+If you hold this poem\
+in the sun\
+it will squint its eyes.\
+If you hold this poem\
+while you laugh\
+it will wiggle its whiskers with delight.\
+If you hold this poem\
+with a friend\
+it may warm both your hearts.\
+If you read this poem\
+with an open mind\
+it may scurry home\
+inside your head,\
+with all its soaking and squinting,\
+wiggling and warming,\
+nestled snug\
+in the sawdust\
+of your childhood memories\
+and the shredded paper\
+of your past loves.\
+)" |> word_syl_count()
+
+#---------------------------------------------------------------
+r"(
+Feather in the Path of a Mower
+
+Rain is coming this afternoon, so this morning\
+I am mowing the unkempt lawn.\
+Pushing the mower into the unruly growth,\
+I am vigilant for debris that might obstruct my progress,\
+and I see on the grass, four strides ahead,\
+a single gray feather.\
+
+I found a feather when I was four years old,\
+and it was so beautiful\
+I placed it, quill-end down,\
+into a clear glass jar filled partway with water.\
+I hoped the feather would survive like a flower,\
+and might even sprout a bird.\
+
+As I approach, three strides away,\
+I admire its elegant gradation from light gray to dark.\
+Perhaps from a catbird, like the one\
+at the birdbath a few days ago, hopping in\
+and out of the pool, flaunting his black head crest.\
+When I was a kid, we had a swimming pool.\
+I dove in and climbed out, time and again,\
+drying my shaggy head-crest with a towel.\
+
+Decades later at a deserted beach in Perth,\
+I dunked myself into the surf\
+and survived in a rip tide\
+a long time alone far from shore,\
+because I knew how to float.\
+The sea birds were indifferent to this human flotsam,\
+though I admired their white and gray plumage,\
+like the gray feather two strides ahead of me.\
+
+After the rain passes,\
+I will go sailing.\
+I love gliding across the lake water,\
+propelled by only my intention and the wind,\
+like a feather on a wing,\
+flying by only impulse and atmosphere,\
+as this gray feather once soared,\
+now one stride ahead of me.\
+
+It slides under the deck and\
+disintegrates in the whirling scythe,\
+vanishing into compost atop the leveled turf,\
+on which I plod\
+while scanning ahead\
+for flotsam on the sea of grass,\
+soon to be soaked with rain\
+from the feather-gray clouds swirling overhead.\
+)" |> word_syl_count()
+
+#---------------------------------------------------------------
+r"(
 text here
 )" |> word_syl_count()

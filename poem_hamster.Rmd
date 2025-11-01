@@ -1,0 +1,53 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Hamster in Your Head
+
+<br>[Withheld until publication.]
+
+<br>
+<!-- Hamster in Your Head -->
+
+<!-- If you hold this poem\ -->
+<!-- in the rain\ -->
+<!-- its fur will get soaking wet.\ -->
+<!-- If you hold this poem\ -->
+<!-- in the sun\ -->
+<!-- it will squint its eyes.\ -->
+<!-- If you hold this poem\ -->
+<!-- while you laugh\ -->
+<!-- it will wiggle its whiskers with delight.\ -->
+<!-- If you hold this poem\ -->
+<!-- with a friend\ -->
+<!-- it may warm both your hearts.\ -->
+<!-- If you read this poem\ -->
+<!-- with an open mind\ -->
+<!-- it may scurry home\ -->
+<!-- inside your head,\ -->
+<!-- with all its soaking and squinting,\ -->
+<!-- wiggling and warming,\ -->
+<!-- nestled snug\ -->
+<!-- in the sawdust\ -->
+<!-- of your childhood memories\ -->
+<!-- and the shredded paper\ -->
+<!-- of your past loves.\ -->
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://www.bearpawartsjournal.com/issues" , journal_name = "*Bear Paw Arts Journal*" , publication_info = "November 2025")`
+
+
+*Notes:* 
+
+
+<!-- <p> -->
+<!-- <audio controls src="poem_hamster.m4a" type="audio/mp4"></audio> -->
+
+<p>
+`r next_link("poem_hamster.html")`
+
+</small>

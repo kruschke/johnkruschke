@@ -1,0 +1,77 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Feather in the Path of a Mower
+
+<br>[Withheld until publication.]
+
+<br>
+<!-- Rain is coming this afternoon, so this morning\ -->
+<!-- I am mowing the unkempt lawn.\ -->
+<!-- Pushing the mower into the unruly growth,\ -->
+<!-- I am vigilant for debris that might obstruct my progress,\ -->
+<!-- and I see on the grass, four strides ahead,\ -->
+<!-- a single gray feather.\ -->
+
+<!-- I found a feather when I was four years old,\ -->
+<!-- and it was so beautiful\ -->
+<!-- I placed it, quill-end down,\ -->
+<!-- into a clear glass jar filled partway with water.\ -->
+<!-- I hoped the feather would survive like a flower,\ -->
+<!-- and might even sprout a bird.\ -->
+
+<!-- As I approach, three strides away,\ -->
+<!-- I admire its elegant gradation from light gray to dark.\ -->
+<!-- Perhaps from a catbird, like the one\ -->
+<!-- at the birdbath a few days ago, hopping in\ -->
+<!-- and out of the pool, flaunting his black head crest.\ -->
+<!-- When I was a kid, we had a swimming pool.\ -->
+<!-- I dove in and climbed out, time and again,\ -->
+<!-- drying my shaggy head-crest with a towel.\ -->
+
+<!-- Decades later at a deserted beach in Perth,\ -->
+<!-- I dunked myself into the surf\ -->
+<!-- and survived in a rip tide\ -->
+<!-- a long time alone far from shore,\ -->
+<!-- because I knew how to float.\ -->
+<!-- The sea birds were indifferent to this human flotsam,\ -->
+<!-- though I admired their white and gray plumage,\ -->
+<!-- like the gray feather two strides ahead of me.\ -->
+
+<!-- After the rain passes,\ -->
+<!-- I will go sailing.\ -->
+<!-- I love gliding across the lake water,\ -->
+<!-- propelled by only my intention and the wind,\ -->
+<!-- like a feather on a wing,\ -->
+<!-- flying by only impulse and atmosphere,\ -->
+<!-- as this gray feather once soared,\ -->
+<!-- now one stride ahead of me.\ -->
+
+<!-- It slides under the deck and\ -->
+<!-- disintegrates in the whirling scythe,\ -->
+<!-- vanishing into compost atop the leveled turf,\ -->
+<!-- on which I plod\ -->
+<!-- while scanning ahead\ -->
+<!-- for flotsam on the sea of grass,\ -->
+<!-- soon to be soaked with rain\ -->
+<!-- from the feather-gray clouds swirling overhead.\ -->
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( url = "https://www.westchesterreview.com/" , journal_name = "*The Westchester Review*" , publication_info = "Spring 2026")`
+
+
+*Notes:* 
+
+
+<!-- <p> -->
+<!-- <audio controls src="poem_feather.m4a" type="audio/mp4"></audio> -->
+
+<p>
+`r next_link("poem_feather.html")`
+
+</small>
