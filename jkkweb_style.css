@@ -7,7 +7,7 @@
   
   /* Style for screen display */
   .print-only {
-    display: none; /* Hides the element by default on screen */
+    display: none !important; /* Hides the element by default on screen */
   }
   /* Styles applied only when printing */
   @media print {
