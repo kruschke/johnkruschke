@@ -37,7 +37,7 @@ is not your towel waiting while you swim.\
 
 <small>
 
-`r qrc_png( url = "https://pinehillsreview.com/2025/08/13/john-k-kruschke/" , journal_name = "*Pine Hills Review*" , publication_info = "13 August 2025")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_a_late_afternoon.html", journal_url = "https://pinehillsreview.com/2025/08/13/john-k-kruschke/" , journal_name = "*Pine Hills Review*" , publication_info = "13 August 2025.")`
 
 *Notes:* 
 Just a love poem.

@@ -32,7 +32,7 @@ and where visitors may resume reading.\
 
 <small>
 
-`r qrc_png( url = "https://grand-little-things.com/2025/02/05/bookmarks-and-headstones-by-john-kruschke/" , journal_name = "*Grand Little Things*" , publication_info = "05 February 2025.")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_bookmarks.html", journal_url = "https://grand-little-things.com/2025/02/05/bookmarks-and-headstones-by-john-kruschke/" , journal_name = "*Grand Little Things*" , publication_info = "05 February 2025.")`
 
 *Notes:* 
 The lines are all *decasyllabic*. There is intentional echoing of sounds beyond the end rhymes; for example, "slower gazing" with "flowers lazing" and with "flow was lost". I had fun rhyming "interrupt-/ ted" with "upped/ and". The metaphors -- body as bookmark and headstone as bookmark -- still affect me even after reflection, and I hope they may work for you too.

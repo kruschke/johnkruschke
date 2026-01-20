@@ -40,7 +40,7 @@ Or giving up.\
 
 <small>
 
-`r qrc_png( url = "https://sagemagazine.org/any-time-spent/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_any_time.html", journal_url = "https://sagemagazine.org/any-time-spent/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
 
 *Notes:* 
 The poem offers several answers to the question, *What is wasted time?* 

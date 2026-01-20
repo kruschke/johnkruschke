@@ -38,7 +38,7 @@
 
 <small>
 
-`r qrc_png( url = "https://www.bearpawartsjournal.com/issues" , journal_name = "*Bear Paw Arts Journal*" , publication_info = "November 2025")`
+`r qrc_png(qrc_url = "https://johnkruschke.com/poem_hamster.html", journal_url = "https://www.bearpawartsjournal.com/issues" , journal_name = "*Bear Paw Arts Journal*" , publication_info = "should have been 2025; maybe 2026?")`
 
 
 *Notes:* 

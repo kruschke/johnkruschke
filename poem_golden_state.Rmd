@@ -62,7 +62,7 @@ migrating away, suspending me in a golden state.\
 
 <small>
 
-`r qrc_png( url = "http://www.stickmanreview.com/V23N2/John%20Kruschke%20golden%20state.html" , journal_name = "*Stickman Review*" , publication_info = "V23N2, 19 December 2024.")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_golden_state.html", journal_url = "http://www.stickmanreview.com/V23N2/John%20Kruschke%20golden%20state.html" , journal_name = "*Stickman Review*" , publication_info = "V23N2, 19 December 2024.")`
 
 *Notes:* 
 The alacritous alliterations are intended to propel the poem and give it a rhythm and musicality along with the succession of orange imagery. I'm especially fond of the phrase, "tornado-thousand poppy petals sublimating sky," because it exactly captures the image in my mind. Notice every line is *hexameter* in its strongest syllables, or at least can be read that way, again intended to propel the poem rhythmically. Every stanza supports another; e.g., the shirt mentioned in the first stanza is recalled in the last, the grade schools in the second stanza are not merely to established idyllic imagery but also to set up the transition to university in the fifth stanza, the orange trees in the third stanza set up the contrast with orange in trees in the eighth stanza, the poppies in the fourth stanza set up the metaphor of Monarchs as poppy petals in the seventh stanza, and so on. The arson is metaphorical but emotionally real.

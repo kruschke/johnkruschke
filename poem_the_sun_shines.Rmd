@@ -40,7 +40,7 @@ and the boy became a girl.\
 
 <small>
 
-`r qrc_png( url = "https://www.flyingislandjournal.org/2024/11/the-sun-shines-fluidly-on-every-house.html" , journal_name = "*Flying Island Journal*" , publication_info = "29 November 2024.")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_the_sum_shines.html", journal_url = "https://www.flyingislandjournal.org/2024/11/the-sun-shines-fluidly-on-every-house.html" , journal_name = "*Flying Island Journal*" , publication_info = "29 November 2024.")`
 
 *Notes:* 
 This poem suggests that a person's sun sign at birth should not define their identity. The poem goes through all twelve signs of the zodiac, also called houses, in order: sheep = aries; cattle = taurus; brothers = gemini; crab = cancer; cat = leo; girl = virgo; weighing options = libra; scorpion = scorpio; centaur = sagittarius; sea-goat = capricorn; boy = aquarius; fish = pisces.

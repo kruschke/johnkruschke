@@ -1,6 +1,19 @@
 <style>
+
   .image-left {
     float: left;
     margin-right: 15px;
   }
+  
+  /* Style for screen display */
+  .print-only {
+    display: none; /* Hides the element by default on screen */
+  }
+  /* Styles applied only when printing */
+  @media print {
+    .print-only {
+      display: block !important; /* Forces the element to show when printing */
+    }
+  }
+
 </style>

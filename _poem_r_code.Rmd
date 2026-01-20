@@ -78,18 +78,21 @@ link_new_tab <- function( url , display_text = url ){
 }
 
 # Function for creating html with qrc image, journal name, and pub info:
-qrc_png <- function( url , journal_name = url , publication_info = "" , 
+qrc_png <- function( qrc_url = "https://johnkruschke.com/poems.html" ,
+                     journal_url = "https://johnkruschke.com/poems.html" , 
+                     journal_name = "Journal Name" , 
+                     publication_info = "Issue, Page, Date" , 
                      qrc_ht=60  ){
   require("qrcode")
-  # create filename, remove punct from url:
-  png_name <- url
+  # create filename, remove symbols from qrc_url:
+  png_name <- qrc_url
   for ( split_at in c( "/" , ":" , "\\." , "-" , "_" , "=" , "\\&" , "\\?" ,
                        "%" , "#"  ) ) {
     png_name <- paste0( strsplit( png_name , split_at )[[1]] , collapse="" )
   }
   png_name <- paste0( "qrc_" , png_name , ".png" )
   # create qr code image and save:
-  qrc <- qr_code( url )
+  qrc <- qr_code( qrc_url )
   png( png_name )
   plot( qrc )
   invisible( dev.off() )
@@ -97,13 +100,21 @@ qrc_png <- function( url , journal_name = url , publication_info = "" ,
   img_str <- paste0( "<img src='" , png_name ,
                      "' height=" , qrc_ht , 
                      " class='image-left'>" )
-  url_str <- paste0( "<a href='" , url ,
+  url_str <- paste0( "<a href='" , journal_url ,
                      "' target='_blank'>" ,
                      journal_name , "</a>" )
   end_str <- "<br clear='left'>"
-  return( paste( img_str , url_str , 
-                 ifelse( nchar(publication_info)>0 , ", " , "" ) , 
-                 publication_info , end_str ) )
+  return( paste0( 
+    "<div class='print-only'>",
+      img_str , # <img ... >
+      " John K. Kruschke<br>",
+    "</div>",
+    " First published in ",
+    url_str , # <a href journal_name ... >
+    ifelse( nchar(publication_info)>0 , ", " , "" ) , 
+    publication_info , # volume, date
+    " ",
+    end_str ) )  # <br> etc.
 }
 
 # Definition of marker at end of poem:

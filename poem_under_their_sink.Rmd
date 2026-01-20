@@ -43,9 +43,7 @@ of the extinguisher under their sink.\
 
 <small>
 
-`r qrc_png( url = "https://www.coolbeanslit.com/john-k-kruschke" , journal_name = "*Cool Beans Lit*" , publication_info = "Vol. 2, Issue 2, Summer (June 21) 2025, p.15. A free flipbook and PDF of the entire issue is also available at the website.")`
-
-<!-- PDF flipbook of entire issue: `r qrc_png( url = "https://www.flipsnack.com/EAE7E966AED/cool-beans-lit-vol-2-issue-2-summer-2025/full-view.html?p=15" , journal_name = "*Cool Beans Lit*" , publication_info = "Vol. 2, Issue 2, Summer (June 21) 2025, p.15.")` -->
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_under_their_sink.html", journal_url = "https://www.coolbeanslit.com/john-k-kruschke" , journal_name = "*Cool Beans Lit*" , publication_info = "Vol. 2, Issue 2, Summer (June 21) 2025, p.15. A free flipbook and PDF of the entire issue is also available at the website.")`
 
 
 *Notes:* 

@@ -43,7 +43,7 @@ and now I hear the ocean.\
 
 <small>
 
-`r qrc_png( url = "https://www.thelakepoetry.co.uk/poetry-archive/march25a/" , journal_name = "*The Lake*" , publication_info = "01 March 2025.")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_open_mic.html", journal_url = "https://www.thelakepoetry.co.uk/poetry-archive/march25a/" , journal_name = "*The Lake*" , publication_info = "01 March 2025.")`
 
 *Notes:* 
 When poets read their poems aloud, especially in the context of background noises in a crowd of people at an open-mic night, I find it challenging to hear every word and to fully comprehend the poem. Beyond comprehension, appreciation of a poem also depends on how it resonates with the listener. Perhaps, sometimes, a listener likes a poem best when it lets them hear themselves. Have you had this kind of experience listening to poetry? Is that the ocean you hear?

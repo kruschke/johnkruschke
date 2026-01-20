@@ -43,7 +43,7 @@ I belong.\
 
 <small>
 
-`r qrc_png( url = "https://sagemagazine.org/carbon-footprints-of-unwanted-children/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_carbon_footprints.html", journal_url = "https://sagemagazine.org/carbon-footprints-of-unwanted-children/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
 
 Also appears in: *Stormwash: Environmental Poems, Volume 2*, edited by Hiromi Yoshida. Seaker Press, October 2025.
 

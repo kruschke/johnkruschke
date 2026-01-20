@@ -20,7 +20,7 @@ which justify staying living for today).\
 
 <small>
 
-`r qrc_png( url = "https://orchardspoetry.com/" , journal_name = "*The Orchards Poetry Journal*" , publication_info = "Winter 2024 (07 December 2024), p. 115.")` 
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_looking_east.html", journal_url = "https://orchardspoetry.com/" , journal_name = "*The Orchards Poetry Journal*" , publication_info = "Winter 2024 (07 December 2024), p. 115.")` 
 `r link_new_tab( url = "https://orchardspoetry.com/wp-content/uploads/2024/12/orchards-winter-2024-digitalj2-4.pdf" , display_text = "*Download PDF.*" )`
 
 *Notes:* 

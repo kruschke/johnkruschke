@@ -29,7 +29,7 @@ it made the oceans rise.\
 
 <small>
 
-`r qrc_png( url = "https://www.thelakepoetry.co.uk/poetry-archive/march25a/" , journal_name = "*The Lake*" , publication_info = "01 March 2025.")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_the_power_of_poetry.html", journal_url = "https://www.thelakepoetry.co.uk/poetry-archive/march25a/" , journal_name = "*The Lake*" , publication_info = "01 March 2025.")`
 
 Also appears in: *Stormwash: Environmental Poems, Volume 2*, edited by Hiromi Yoshida. Seaker Press, October 2025.
 

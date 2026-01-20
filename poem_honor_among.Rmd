@@ -49,7 +49,7 @@ anywhere is such injustice, a lie.\
 
 <small>
 
-`r qrc_png( url = "https://blueunicorn.org/" , journal_name = "*Blue Unicorn*" , publication_info = "Volume XLIX Number 1, Fall (October) 2025, p. 62")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_honor_among.html", journal_url = "https://blueunicorn.org/" , journal_name = "*Blue Unicorn*" , publication_info = "Volume XLIX Number 1, Fall (October) 2025, p. 62")`
 
 *Notes:* 
 Even the smallest decision is fraught with moral weight. To choose one as better is to judge the other as worse, even if no such demerit is intended. Meritocracy feels arbitrary and mendacious. Can a person remain honorable even choosing which sleeve to put on first? Every line is *decasyllabic*, and every four lines follow an ABAB rhyme scheme.

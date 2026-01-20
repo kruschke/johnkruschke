@@ -45,7 +45,7 @@ one lover's-hand thickness away from theirs.\
 
 <small>
 
-`r qrc_png( url = "https://www.theargylelitmag.com/poetry-3/cueva-de-las-manos" , journal_name = "*The Argyle Literary Magazine*" , publication_info = "Issue 5, 15 September 2025.")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_cueva_de_las_manos.html", journal_url = "https://www.theargylelitmag.com/poetry-3/cueva-de-las-manos" , journal_name = "*The Argyle Literary Magazine*" , publication_info = "Issue 5, 15 September 2025.")`
 
 *Notes:* 
 `r link_new_tab( url = "https://whc.unesco.org/en/list/936/" , display_text = "La Cueva de las Manos" )`, in Argentina, contains many paintings of hands, approximately 10,000 years old. Based on attempts to reproduce the appearance of ancient hand paintings that mark the area around a hand (in Europe), `r link_new_tab( url = "https://doi.org/10.1016/j.jas.2022.105574" , display_text = "one recent theory" )`  is that people blew mineral pigments — such as calcite, limonite, iron and manganese oxides — through a hollowed bone tube over an outstretched hand. But to achieve the effect found in the cave paintings, the hand was probably held slightly away from the wall, not against the wall. This feeling of not-quite contact intrigued me, and when I combined it with lovers holding hands, it became "one lover's-hand thickness" away from the wall. I also just like the idea that the hand paintings commemorate lovers, although there is no suggestion of this in the research literature. The poem considers many other versions of hands on cave walls, including shadow hands on Plato's cave, and clock hands on walls. Regarding form: Every line is *decasyllabic*, with rhyming pairs of lines.

@@ -42,7 +42,7 @@ and time's true purpose suddenly is found.\
 
 <small>
 
-`r qrc_png( url = "https://sblaam.com/issues/#flipbook-1356/29/" , journal_name = "*Smoky Blue Literary and Arts Magazine*" , publication_info = "Issue #22 Spring/Summer 2025, p. 29; 20 February 2025.")`
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_the_purpose_of_time.html", journal_url = "https://sblaam.com/issues/#flipbook-1356/29/" , journal_name = "*Smoky Blue Literary and Arts Magazine*" , publication_info = "Issue #22 Spring/Summer 2025, p. 29; 20 February 2025.")`
 
 *Notes:* 
 Notice the lines are *decasyllabic*, and every four lines follow an ABAB rhyme scheme. The first ten lines of this poem paraphrase the 1997 poem by X. J. Kennedy, ["The Purpose of Time is to Prevent Everything From Happening at Once"](https://www.poetryfoundation.org/poetrymagazine/browse?volume=171&issue=2&page=33). This poem, by contrast, emphasizes the moral implications of time: Separating act from consequence, delaying comeuppance.
