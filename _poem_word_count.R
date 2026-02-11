@@ -844,5 +844,26 @@ from the feather-gray clouds swirling overhead.\
 
 #---------------------------------------------------------------
 r"(
+Stars Fade	Translated from the English
+Spots Appear
+In grade school	I was young
+the sky in my backyard	and the skin on the back of my hand
+was filled with familiar stars,	was
+memorized by heart	taken for granted.
+Then, diurnal demands,	Many decades
+a driving schedule,	gripping the steering wheel
+allowed seeing at night only the waiting alarm clock	with hands at 10 & 2
+in the caves of anxiety	in the sun of parenting and career.
+Retired now,	Finally pausing
+still insomniac,	at a rest stop in the evening,
+I look through a narrow window at the night sky,	I am startled by
+stars unrecognizable,	the back of my hand full of
+constellations forgotten,	freckles, spots, blemishes,
+random, disorienting, surreal,	foreign membrane,
+awake on an unearthly planet	body-swapped to an alien husk.
+)" |> word_syl_count()
+
+#---------------------------------------------------------------
+r"(
 text here
 )" |> word_syl_count()

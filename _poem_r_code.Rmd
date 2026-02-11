@@ -41,6 +41,7 @@ poem_info <- rbind(
   , c( "Under Their Sink", "poem_under_their_sink", 263, 168, "21 Jun 2025" )
   , c( "Were It Not for the Firefly", "poem_were_it_not", 186, 131, "01 Sep 2024" )
   , c( "Any Time Spent", "poem_any_time", 106, 75, "17 Feb 2025" )
+  , c( "Stars Fade / Spots Appear (contrapuntal)", "poem_stars_fade", 401, 264, "15 Feb 2026" )
 )
 # name, format, sort:
 # colnames( poem_info ) <- c("title", "file", "n_word", "pub_date" )

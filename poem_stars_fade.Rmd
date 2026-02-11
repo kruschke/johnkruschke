@@ -1,0 +1,155 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<head>
+<style>
+table, th, td { border: none /* none or 1px solid black; for checking layout */
+                border-collapse: collapse; 
+                padding: 5px 0px; /* top+bottom left+right */
+                vertical-align: middle; }
+table td:nth-child(1), table th:nth-child(1) { text-align: right; }
+table td:nth-child(2), table th:nth-child(2) { text-align: left; }
+.spacer { display: inline-block; 
+          width: 2.5em; /* set width as desired */ }
+.center-table { margin-left: auto;
+                margin-right: auto; }
+</style>
+</head>
+
+<br>
+
+## Stars Fade / Spots Appear (contrapuntal)
+<br>
+[withheld until publication]
+
+
+<!-- <table class="center-table" width="530em" /* set width as desired */ > -->
+
+<!-- <!-- Instruction row --> -->
+<!-- <tr> -->
+<!-- <td colspan="3" style="text-align: center;">[Read first down each column, then again row by row across columns.]<br><br></td> -->
+<!-- </tr> -->
+
+<!-- <!-- Title row --> -->
+<!-- <tr> -->
+<!-- <td style="vertical-align: bottom;">  -->
+<!--   <span style="font-size: 1.2em;"><b>Stars Fade</b></span>  -->
+<!-- </td> -->
+<!-- <td style="vertical-align: bottom;"><span class="spacer"></span></td> -->
+<!-- <td>  -->
+<!--   <i>Translated from the English</i>  -->
+<!--   <br> <span style="font-size: 1.2em;"><b>Spots Appear</b></span>  -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <!-- text rows begin here --> -->
+<!-- <tr> -->
+<!-- <td>In grade school</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>I was young</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>the sky in my backyard</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>and the skin on the back of my hand</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>was filled with familiar stars,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>was</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>memorized by heart</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>taken for granted.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Then, diurnal demands,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>Many decades</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>a driving schedule,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>gripping the steering wheel</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>allowed seeing at night only <br> the waiting alarm clock</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>with hands at 10 &amp; 2</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>in the caves of anxiety</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>in the sun of parenting and career.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Retired now,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>Finally pausing</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>still insomniac,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>at a rest stop in the evening,</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>I look through a narrow window <br> at the night sky,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>I am startled by</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>stars unrecognizable,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>the back of my hand full of</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>constellations forgotten,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>freckles, spots, blemishes,</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>random, disorienting, surreal,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>foreign membrane,</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>awake on an unearthly planet</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>body-swapped to an alien husk.</td> -->
+<!-- </tr> -->
+
+<!-- </table> -->
+
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png( qrc_url = "https://johnkruschke.com/poem_stars_fade.html", journal_url = "https://www.breakwaterreview.com/homepage" , journal_name = "*Breakwater Review*" , publication_info = "February 2026.")`
+
+*Notes:* 
+When reading across columns, you will have to ignore some of the punctuation, and improvise your own implied punctuation. 
+
+<!-- <p> -->
+<!-- <audio controls src="poem_stars_fade.m4a" type="audio/mp4"></audio> -->
+
+<p>
+`r next_link("poem_stars_fade.html")`
+
+</small>
