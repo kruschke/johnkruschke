@@ -34,7 +34,7 @@ A few songs:
 
 <hr>
 
-Read an `r link_new_tab( "https://www.idsnews.com/article/2025/08/conversation-with-retired-indiana-university-professor-turned-poet-john-kruschke" , display_text = "interview with Indiana Daily Student (click this link)" )`
+Read an `r link_new_tab( "https://www.idsnews.com/article/2025/08/conversation-with-retired-indiana-university-professor-turned-poet-john-kruschke" , display_text = "interview with Indiana Daily Student" )`
 
 A view from the microphone, when reading at <a href="https://writersguildbloomington.com/event/last-sunday-poetry-open-mic-5/" target="_blank"> Last Sunday Poetry, Writers Guild at Bloomington: 
 <img src="Last_Sunday_Poetry_Aug_31_2025.jpg" alt="Image of audience at Last Sunday Poetry reading." style="width:100%;height:auto;"> 
