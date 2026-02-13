@@ -20,8 +20,6 @@ table td:nth-child(2), table th:nth-child(2) { text-align: left; }
 
 ## Stars Fade / Spots Appear (contrapuntal)
 <br>
-[withheld until publication]
-
 
 <table class="center-table" width="530em" /* set width as desired */ >
 
@@ -144,7 +142,7 @@ table td:nth-child(2), table th:nth-child(2) { text-align: left; }
 `r qrc_png( qrc_url = "https://johnkruschke.com/poem_stars_fade.html", journal_url = "https://www.breakwaterreview.com/stars-fade-spots-appear" , journal_name = "*Breakwater Review*" , publication_info = "13 February 2026.")`
 
 *Notes:* 
-When reading across columns, you will have to ignore some of the punctuation, and improvise your own implied punctuation. 
+I was reading a poetry journal that featured many poems translated into English, set next to original texts in languages I have no knowledge of. I realized that the translator could say anything at all, and I would have no idea whether the English reflected the original. In particular, the translator could free associate from the original, and compose a poem loosely based on the original. I also liked the phrase at the top of all the translations, "Translated from the Chinese" (or whatever language it happened to be). I loved the idea of poems "Translated from the English" to English. I set myself one more challenge for this new form: It must be a contrapuntal form that reads coherently, and with emergent meaning, when read line by line across columns.
 
 <!-- <p> -->
 <!-- <audio controls src="poem_stars_fade.m4a" type="audio/mp4"></audio> -->
