@@ -148,7 +148,7 @@ I also liked the phrase at the top of all the translations, "Translated from the
 Finally, I set myself one more essential requirement for this new form: It must be *contrapuntal* and must read coherently, and with emergent meaning, when read row by row across columns; otherwise it would be merely two parts of one poem. I find this to be very challenging!
 
 <p>
-<audio controls src="poem_stars_fade.mp3" type="audio/mp3"></audio>
+<audio controls src="poem_stars_fade_3.mp3" type="audio/mp3"></audio>
 
 <p>
 `r next_link("poem_stars_fade.html")`
