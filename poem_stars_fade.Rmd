@@ -142,10 +142,7 @@ table td:nth-child(2), table th:nth-child(2) { text-align: left; }
 `r qrc_png( qrc_url = "https://johnkruschke.com/poem_stars_fade.html", journal_url = "https://www.breakwaterreview.com/stars-fade-spots-appear" , journal_name = "*Breakwater Review*" , publication_info = "Issue 39, 13 February 2026.")`
 
 *Notes:* 
-I was reading a poetry journal that featured many poems translated into English, set next to original texts in languages I have no knowledge of. I realized that the translator could say anything, and I would have no idea whether the English reflected the original. 
-I thought it could be interesting to free-associate from the original to compose a translation; each poem could enrich the other. 
-I also liked the phrase at the top of all the translations, "Translated from the Chinese", or whatever language it happened to be. I thought it could be engaging to create a genre of poems *"Translated from the English"* to English. 
-Finally, I set myself one more essential requirement for this new form: It must be *contrapuntal* and must read coherently, and with emergent meaning, when read row by row across columns; otherwise it would be merely two parts of one poem. I find this to be very challenging!
+I was reading a poetry journal that printed English translations beside originals in languages I don’t know. It struck me that the translator could write anything, and I’d have no way of knowing whether it matched the source. I imagined free-associating from the original text to create a “translation,” letting each poem enrich the other. I was also taken with the heading that appeared above them: “Translated from the Chinese,” or whatever the language, so I wondered about inventing a genre of poems called *“Translated from the English”*. I added one essential rule: the pieces must be *contrapuntal*, reading coherently and generating emergent meaning when taken row by row across columns; otherwise they’d just be two parts of a single poem. I find this form to be extremely challenging to compose.
 
 <p>
 <audio controls src="poem_stars_fade_3.mp3" type="audio/mp3"></audio>
