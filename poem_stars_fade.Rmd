@@ -18,7 +18,7 @@ table td:nth-child(2), table th:nth-child(2) { text-align: left; }
 
 <br>
 
-## Stars Fade / Spots Appear (contrapuntal)
+## Stars Fade &vert;&vert; Spots Appear (contrapuntal)
 <br>
 
 <table class="center-table" width="530em" /* set width as desired */ >
@@ -142,7 +142,10 @@ table td:nth-child(2), table th:nth-child(2) { text-align: left; }
 `r qrc_png( qrc_url = "https://johnkruschke.com/poem_stars_fade.html", journal_url = "https://www.breakwaterreview.com/stars-fade-spots-appear" , journal_name = "*Breakwater Review*" , publication_info = "Issue 39, 13 February 2026.")`
 
 *Notes:* 
-I was reading a poetry journal that printed English translations beside originals in languages I don’t know. It struck me that the translator could write anything, and I’d have no way of knowing whether it matched the source. I imagined free-associating from the original text to create a “translation,” letting each poem enrich the other. I was also taken with the heading that appeared above them: “Translated from the Chinese,” or whatever the language, so I wondered about inventing a genre of poems called *“Translated from the English”*. I added one essential rule: the pieces must be *contrapuntal*, reading coherently and generating emergent meaning when taken row by row across columns; otherwise they’d just be two parts of a single poem. I find this form to be extremely challenging to compose.
+When reading a poetry journal that presented English translations beside originals in languages I don’t know, I realized that the translator could write anything, and I’d have no way of knowing whether it matched the source. 
+I was also piqued by the heading that appeared above them: “Translated from the Chinese” (or whatever the language). 
+So I imagined a genre of poems called *“Translated from the English”* in which the translation is a free-association based on the original, such that each enriches the other.
+I added one essential rule: the pieces must be *contrapuntal*, reading coherently and generating emergent meaning when scanned row by row across columns; otherwise they’d just be two parts of a single poem.
 
 <p>
 <audio controls src="poem_stars_fade_3.mp3" type="audio/mp3"></audio>
