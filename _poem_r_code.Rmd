@@ -20,7 +20,7 @@ poem_info <- rbind(
   , c( "", "poems", 100000, 100000, "31 Dec 2500" ) 
   # actual poems next:
   , c( "Hamster in Your Head", "poem_hamster", 127, 102, "30 Nov 2025" )
-  , c( "Feather in the Path of a Mower", "poem_feather", 419, 313, "01 Jun 2026" )
+  , c( "Feather in the Path of a Mower", "poem_feather", 419, 313, "01 Apr 2026" )
   , c( "A Late Afternoon Lying on My Back", "poem_a_late_afternoon", 176, 138, "13 Aug 2025" )
   , c( "At the Window", "poem_at_the_window", 190, 141, "17 Feb 2025" )
   , c( "Bookmarks and Headstones", "poem_bookmarks", 184, 126, "05 Feb 2025" )
