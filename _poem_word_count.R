@@ -865,5 +865,36 @@ awake on an unearthly planet	body-swapped to an alien husk.
 
 #---------------------------------------------------------------
 r"(
+A Way of Waving	Translated from the English 
+Wavering Away
+A snake slithers	Like ribbons fluttering
+across blacktop 	at the ends of handlebars
+then ungrips its skin	molted when fledged 
+at the shrugged shoulder	to the shed.
+Night crawler escapes	Like cassette tapes,
+from flooded turf	Play pressed,
+to be impaled and	rewound and
+plunged into deep water	unspooled by appetite.
+Vines creep up trunk and branch,	Like telltales on shrouds
+grope into air	flail from windward
+blindly indicating	to reveal the direction
+into empty space	where you cannot directly sail.
+Seaweeds sway	Like how ocular floaters
+in tidal pools	of vitreous humor,
+sniggering against a snorkel mask	occluding sea and air,
+while breaths squeeze through a tube,	inspire through averted vision.
+V formation of migrating geese	Like my migraine aura,
+with pulsating wings	a corona borealis flickering
+slides overhead	from fovea to periphery
+toward the horizon,	is a benediction from God.
+A snail ventures out	Like how my GPS wristwatch
+during full-moon night	under satellite sky
+leaves a trail of ooze	records my position every other second,
+shimmering in starlight 
+from unnamed constellations	life’s legacy of disconnected dots.
+)" |> word_syl_count()
+
+#---------------------------------------------------------------
+r"(
 text here
 )" |> word_syl_count()

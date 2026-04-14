@@ -19,6 +19,8 @@ poem_info <- rbind(
   # placeholder for last:
   , c( "", "poems", 100000, 100000, "31 Dec 2500" ) 
   # actual poems next:
+  , c( "A Way of Waving &vert;&vert; Wavering Away (contrapuntal)", "poem_waving", 616, 378, "14 Apr 2026" )
+  , c( "Stars Fade &vert;&vert; Spots Appear (contrapuntal)", "poem_stars_fade", 401, 264, "13 Feb 2026" )
   , c( "Hamster in Your Head", "poem_hamster", 127, 102, "30 Nov 2025" )
   , c( "Feather in the Path of a Mower", "poem_feather", 419, 313, "01 Apr 2026" )
   , c( "A Late Afternoon Lying on My Back", "poem_a_late_afternoon", 176, 138, "13 Aug 2025" )
@@ -41,7 +43,6 @@ poem_info <- rbind(
   , c( "Under Their Sink", "poem_under_their_sink", 263, 168, "21 Jun 2025" )
   , c( "Were It Not for the Firefly", "poem_were_it_not", 186, 131, "01 Sep 2024" )
   , c( "Any Time Spent", "poem_any_time", 106, 75, "17 Feb 2025" )
-  , c( "Stars Fade &vert;&vert; Spots Appear (contrapuntal)", "poem_stars_fade", 401, 264, "13 Feb 2026" )
 )
 # name, format, sort:
 # colnames( poem_info ) <- c("title", "file", "n_word", "pub_date" )
