@@ -42,11 +42,12 @@ loss&nbsp;relentless<br>
 
 `r qrc_png( qrc_url = "https://johnkruschke.com/poem_stratigraphy.html", journal_url = "https://sagemagazine.org/stratigraphy/" , journal_name = "*SAGE Magazine*" , publication_info = "17 February 2025")`
 
-*Notes:* 
-The poem is intended to be read first as in standard English, left to right, top to bottom, then to be read again as a geologist would read strata, from bottom to top, and *right to left*. Feel your eyes as you read upward. The poem is formatted to resemble a rock formation in [Monument Valley](https://en.wikipedia.org/wiki/Monument_Valley) and [The Valley of the Gods](https://en.wikipedia.org/wiki/Valley_of_the_Gods). 
+*Notes.* 
+*Regarding form:* The poem is intended to be read first as in standard English, left to right, top to bottom, then to be read again as a geologist would read strata, from bottom to top, and *right to left*. Feel your eyes as you read upward. The poem is formatted to resemble a rock formation in [Monument Valley](https://en.wikipedia.org/wiki/Monument_Valley) and [The Valley of the Gods](https://en.wikipedia.org/wiki/Valley_of_the_Gods). 
+*Regarding content:* Among others, there are two themes about words: First, the role of words evolves with age, from flowing fountains of youth to precious drips in old age. Second, a poem is just a pile of words to be deciphered, but is also a spiritual legacy from the past.
 
 <p>
-<audio controls src="poem_stratigraphy_3.m4a" type="audio/mp4"></audio>
+<audio controls src="poem_stratigraphy_n.mp3" type="audio/mp3"></audio>
 
 <p>
 `r next_link("poem_stratigraphy.html")`
