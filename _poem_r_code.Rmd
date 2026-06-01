@@ -84,7 +84,9 @@ qrc_png <- function( qrc_url = "https://johnkruschke.com/poems.html" ,
                      journal_url = "https://johnkruschke.com/poems.html" , 
                      journal_name = "Journal Name" , 
                      publication_info = "Issue, Page, Date" , 
-                     qrc_ht=60  ){
+                     qrc_ht = 60,
+                     pre_text = " First published in "
+                     ){
   require("qrcode")
   # create filename, remove symbols from qrc_url:
   png_name <- qrc_url
@@ -111,7 +113,7 @@ qrc_png <- function( qrc_url = "https://johnkruschke.com/poems.html" ,
       img_str , # <img ... >
       " John K. Kruschke<br>",
     "</div>",
-    " First published in ",
+    pre_text, 
     url_str , # <a href journal_name ... >
     ifelse( nchar(publication_info)>0 , ", " , "" ) , 
     publication_info , # volume, date
