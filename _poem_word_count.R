@@ -896,5 +896,18 @@ from unnamed constellations	life’s legacy of disconnected dots.
 
 #---------------------------------------------------------------
 r"(
+Fish Ladder	Translated from the English
+Going Home
+Salmon swim upstream.	You can try, but there is no going home.
+Bears take their share.	Working hourly consumes a lifetime.
+Mountain pond languishes, dammed.	See, there is no going home.
+Fish lay eggs, fertilize, spawn.	My baby’s crown smells heavenly, 
+better than coffee, better than gardenias —
+Gills struggle, scales tarnish, 
+in wavelet-rippled light.	this is being home.
+)" |> word_syl_count()
+
+#---------------------------------------------------------------
+r"(
 text here
 )" |> word_syl_count()

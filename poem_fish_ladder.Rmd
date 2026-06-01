@@ -1,0 +1,110 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## Fish Ladder &vert;&vert; Going Home (contrapuntal)
+
+<br>
+Withheld until publication.
+
+<!-- <br> -->
+
+<!-- <html> -->
+
+<!-- <head> -->
+<!-- <style> -->
+<!-- table, th, td { border: none /* none or 1px solid black; for checking layout */ -->
+<!--                 border-collapse: collapse; -->
+<!--                 padding: 5px 0px; /* top+bottom left+right */ -->
+<!--                 vertical-align: middle; } -->
+<!-- table td:nth-child(1), table th:nth-child(1) { text-align: right; } -->
+<!-- table td:nth-child(2), table th:nth-child(2) { text-align: left; } -->
+<!-- .spacer { display: inline-block; -->
+<!--           width: 2.5em; /* set width as desired */ } -->
+<!-- .center-table { margin-left: auto; -->
+<!--                 margin-right: auto; } -->
+<!-- </style> -->
+<!-- </head> -->
+
+<!-- <body> -->
+
+<!-- <table class="center-table" width="500em" /* set width as desired */ > -->
+
+<!-- <!-- Instruction row --> -->
+<!-- <tr> -->
+<!-- <td colspan="3" style="text-align: center;">[Read first down each column, then again row by row across columns.]<br><br></td> -->
+<!-- </tr> -->
+
+<!-- <!-- Title row --> -->
+<!-- <tr> -->
+<!-- <td style="vertical-align: bottom;"> -->
+<!--   <span style="font-size: 1.2em;"><b>Fish Ladder</b></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align: bottom;"><span class="spacer"></span></td> -->
+<!-- <td> -->
+<!--   <i>Translated from the English</i> -->
+<!--   <br> <span style="font-size: 1.2em;"><b>Going Home</b></span> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <!-- text rows begin here --> -->
+<!-- <tr> -->
+<!-- <td>Salmon swim upstream.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>You can try, but there is no going home.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Bears take their share.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>Working hourly consumes a lifetime.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Mountain pond languishes, dammed.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>See, there is no going home.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Fish lay eggs, fertilize, spawn.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>My baby’s crown smells heavenly,  -->
+<!-- <br>better than coffee,  -->
+<!-- <br>better than gardenias&nbsp;&mdash; -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Gills struggle, scales tarnish,  -->
+<!-- <br>in wavelet-rippled light. -->
+<!-- </td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>this is being home.</td> -->
+<!-- </tr> -->
+
+<!-- </table> -->
+
+<!-- </body> -->
+<!-- </html> -->
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png(qrc_url = "https://johnkruschke.com/poem_fish_ladder.html", journal_url = "https://theimagist.wixsite.com/theimagist" , journal_name = "*The Imagist*" , publication_info = "2026.")`
+
+
+*Notes:* 
+
+Regarding the format: When reading a poetry journal that presented English translations beside originals in languages I don’t know, I realized that the translator could write anything, and I’d have no way of knowing whether it matched the source. 
+I was also piqued by the heading that appeared above them: “Translated from the Chinese” (or whatever the language). So I imagined a genre of poems called *“Translated from the English”* in which the translation is a free-association based on the original, such that each enriches the other. I added one essential rule: the pieces must be *contrapuntal*, reading coherently and generating emergent meaning when scanned row by row across columns; otherwise they’d just be two parts of a single poem.
+
+<!-- <p> -->
+<!-- <audio controls src="poem_fish_ladder.mp3" type="audio/mp3"></audio> -->
+
+<p>
+`r next_link("poem_waving.html")`
+
+</small>
