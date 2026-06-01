@@ -105,6 +105,6 @@ I was also piqued by the heading that appeared above them: “Translated from th
 <!-- <audio controls src="poem_fish_ladder.mp3" type="audio/mp3"></audio> -->
 
 <p>
-`r next_link("poem_waving.html")`
+`r next_link("poem_fish_ladder.html")`
 
 </small>
