@@ -34,21 +34,20 @@ of your past loves.\
 
 <small>
 
-`r qrc_png(qrc_url = "https://johnkruschke.com/poem_hamster.html", journal_url = "https://www.bearpawartsjournal.com/issues" , journal_name = "*Bear Paw Arts Journal*" , pre_text = " Accepted for publication in ", publication_info = " Issue 3, scheduled for the end of November, 2025, but never published. Repeated emails to the editor (Gwen Hart) at different email addresses received no responses. The journal has subsequently been listed as defunct at Duotrope.")`
+`r qrc_png(qrc_url = "https://johnkruschke.com/poem_hamster.html", journal_url = "https://www.bearpawartsjournal.com/issues" , journal_name = "*Bear Paw Arts Journal*" , pre_text = " Accepted for publication in ", publication_info = " Issue 3, scheduled for the end of November, 2025, but never published. Repeated emails to the editor at different email addresses received no responses. The journal has subsequently been listed as defunct at Duotrope.")`
 
 *Notes:* 
-This poem was intended as a simple invitation to poetry for the poem-curious. 
+This poem is intended as a simple invitation to poetry for the poem-curious. 
 The imagined audience of the poem was people at a coffee shop who might pick up from the countertop a paper flyer titled "Poetry to the People" distributed by Terry Sloan.
-The poem is supposed to illustrate a few of the things poetry can do, in a compact and accessible stanza. 
-*Personification:* The poem is a person (well, a hamster, but pet hamsters do have personalities).
-*Metaphor:* For example, "the sawdust of childhood memories", and "the shredded paper of past loves."
-*Concrete bodily imagery:* Hold the furry poem and let it scurry into your head; etc.
-Attention to *the sounds of words,* for example the alliteration in "soaking and squinting," and "wiggling and warming."
-And, the poem concludes with some *classic poetic themes* of loss and nostalgia. 
+The poem is supposed to illustrate a few of the things poetry can do, in a compact and accessible stanza: 
+<br>*Personification:* The poem is a person (well, a hamster, but pet hamsters do have personalities).
+<br>*Metaphor:* For example, "the sawdust of childhood memories", and "the shredded paper of past loves."
+<br>*Concrete bodily imagery:* Hold the furry poem and let it scurry into your head; etc.
+<br>Attention to *the sounds of words,* for example the alliteration in "soaking and squinting," and "wiggling and warming."
+<br>And, the poem concludes with some *classic poetic themes* of loss and nostalgia. 
 
-
-<!-- <p> -->
-<!-- <audio controls src="poem_hamster.m4a" type="audio/mp4"></audio> -->
+<p>
+<audio controls src="poem_hamster.mp3" type="audio/mp3"></audio>
 
 <p>
 `r next_link("poem_hamster.html")`
