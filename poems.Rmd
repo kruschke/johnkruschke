@@ -8,13 +8,6 @@ editor_options:
 ```{r child = '_poem_r_code.Rmd'}
 ```
 
-### A few of my favorite poems by others {#sec-poems_by_others}
-
-  * `r link_new_tab( "https://www.newyorker.com/magazine/2009/03/09/contemplation" , display_text = "*Contemplation*" )` by Meredith Root-Bernstein. Published in the *New Yorker* magazine, March 9, 2009. See also her poem, *Trash*, in her 2012 book *Hock*.
-  * `r link_new_tab( "https://poets.org/poem/one-train-may-hide-another" , "*One Train May Hide Another*" )` by Kenneth Koch. Published in his book, *One Train*, Knopf 1994.
-  * The lyrics of `r link_new_tab( "https://www.musixmatch.com/lyrics/Susannah-McCorkle/The-Waters-of-March" , "*Waters of March*" )` by Antonio Carlos Jobim, written in 1972, and performed by many; see especially the version by Susannah McCorkle.
-  * The lyrics of `r link_new_tab( "https://genius.com/Tony-bennett-fly-me-to-the-moon-in-other-words-lyrics" , "*Fly Me to the Moon (In Other Words)*" )` by Bart Howard, written in 1954. The preamble ("Poets often use many words...") is essential, but most performers omit it. Listen to the performance by Tony Bennett.
-
 ### Some of my published poems {#sec-my_poems}
 
 Click on any poem title below to reveal the poem text, along with a link to the publication, some notes about the poem, and (for most) an audio recording. The poems are ordered by number of syllables. 
@@ -34,11 +27,16 @@ A few songs:
 
 <hr>
 
-Read an `r link_new_tab( "https://www.idsnews.com/article/2025/08/conversation-with-retired-indiana-university-professor-turned-poet-john-kruschke" , display_text = "interview with Indiana Daily Student" )`
+An `r link_new_tab( "https://www.idsnews.com/article/2025/08/conversation-with-retired-indiana-university-professor-turned-poet-john-kruschke" , display_text = "interview with the Indiana Daily Student" )`
 
-A view from the microphone, when reading at <a href="https://writersguildbloomington.com/event/last-sunday-poetry-open-mic-5/" target="_blank"> Last Sunday Poetry, Writers Guild at Bloomington: 
+A view from the microphone, as a featured reader at Last Sunday Poetry, Writers Guild at Bloomington, August 31, 2025: 
 <img src="Last_Sunday_Poetry_Aug_31_2025.jpg" alt="Image of audience at Last Sunday Poetry reading." style="width:100%;height:auto;"> 
-</a>
 
+### A few of my favorite poems by others {#sec-poems_by_others}
+
+  * `r link_new_tab( "https://www.newyorker.com/magazine/2009/03/09/contemplation" , display_text = "*Contemplation*" )` by Meredith Root-Bernstein. Published in the *New Yorker* magazine, March 9, 2009. See also her poem, *Trash*, in her 2012 book *Hock*.
+  * `r link_new_tab( "https://poets.org/poem/one-train-may-hide-another" , "*One Train May Hide Another*" )` by Kenneth Koch. Published in his book, *One Train*, Knopf 1994.
+  * The lyrics of `r link_new_tab( "https://www.musixmatch.com/lyrics/Susannah-McCorkle/The-Waters-of-March" , "*Waters of March*" )` by Antonio Carlos Jobim, written in 1972, and performed by many; see especially the version by Susannah McCorkle.
+  * The lyrics of `r link_new_tab( "https://genius.com/Tony-bennett-fly-me-to-the-moon-in-other-words-lyrics" , "*Fly Me to the Moon (In Other Words)*" )` by Bart Howard, written in 1954. The preamble ("Poets often use many words...") is essential, but most performers omit it. Listen to the performance by Tony Bennett.
 
 <!-- <p><hr style="height:1px; border:none; color:#18bc9c; background-color:#18bc9c; page-break-after:always;"><p> -->
