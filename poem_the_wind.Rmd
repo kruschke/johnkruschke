@@ -1,0 +1,123 @@
+
+```{r child = '_poem_r_code.Rmd'}
+```
+<br>
+
+## The Wind &vert;&vert; A Dream (contrapuntal)
+
+<br>
+Withheld until publication.
+
+
+<!-- <br> -->
+
+<!-- <html> -->
+
+<!-- <head> -->
+<!-- <style> -->
+<!-- table, th, td { border: none /* none or 1px solid black; for checking layout */ -->
+<!--                 border-collapse: collapse; -->
+<!--                 padding: 5px 0px; /* top+bottom left+right */ -->
+<!--                 vertical-align: middle; } -->
+<!-- table td:nth-child(1), table th:nth-child(1) { text-align: right; } -->
+<!-- table td:nth-child(2), table th:nth-child(2) { text-align: left; } -->
+<!-- .spacer { display: inline-block; -->
+<!--           width: 2.5em; /* set width as desired */ } -->
+<!-- .center-table { margin-left: auto; -->
+<!--                 margin-right: auto; } -->
+<!-- </style> -->
+<!-- </head> -->
+
+<!-- <body> -->
+
+<!-- <table class="center-table" width="500em" /* set width as desired */ > -->
+
+<!-- <!-- Instruction row --> -->
+<!-- <tr> -->
+<!-- <td colspan="3" style="text-align: center;">[Read first down each column, then again row by row across columns.]<br><br></td> -->
+<!-- </tr> -->
+
+<!-- <!-- Title row --> -->
+<!-- <tr> -->
+<!-- <td style="vertical-align: bottom;"> -->
+<!--   <span style="font-size: 1.2em;"><b>Fish Ladder</b></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align: bottom;"><span class="spacer"></span></td> -->
+<!-- <td> -->
+<!--   <i>Translated from the English</i> -->
+<!--   <br> <span style="font-size: 1.2em;"><b>Going Home</b></span> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <!-- text rows begin here --> -->
+
+<!-- <tr> -->
+<!-- <td>The wind blew fierce last night.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>I dreamed of you.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Tree branches banged <br>on the roof.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>You rapped with knuckles <br>and fists on the door.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Rain sprayed <br>heavy against the windows.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>You frothed spittle <br>in torrents on the glass.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>I had merely built my <br>house there.</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>I had only sought sanctuary.</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>This afternoon,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>This evening,</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>the wind averts its eyes,</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>you flicker the candle,</td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>waiting for shadows to lengthen</td> -->
+<!-- <td><span class="spacer"></span></td> -->
+<!-- <td>waiting for darkness to flood</td> -->
+<!-- </tr> -->
+
+<!-- </table> -->
+
+<!-- </body> -->
+<!-- </html> -->
+
+
+`r end_poem_mark`
+
+<small>
+
+`r qrc_png(qrc_url = "https://johnkruschke.com/poem_the_wind.html", journal_url = "https://www.pangyrus.com/category/poetry/" , journal_name = "*Pangyrus*" , publication_info = "accepted August 15, 2026.")`
+
+
+<!-- *Compostional note accompanying the poem in* *Pangyrus:* -->
+<!-- "The Wind || A Dream" is in a form I call "translated from the English," which is a contrapuntal structure arranged in two columns, the left column containing the original text and the right column containing the translation from the English. The poem should be read initially down each column, then again row by row across columns. Unlike some contrapuntal poems in the literature, this form is supposed to make sense when read across columns. The structure is meant to explore the translation of meaning by association, and the creation of emergent meaning when read row by row together. Many of my poems in this form have one side dominated by nature, and the other side dominated by human psychology. In this poem, "The Wind || A Dream", the storm and the dream become metaphors for each other, both emerging a bit more supernatural. -->
+
+
+<!-- *Notes:*  -->
+<!-- Regarding the format: When reading a poetry journal that presented English translations beside originals in languages I don’t know, I realized that the translator could write anything, and I’d have no way of knowing whether it matched the source.  -->
+<!-- I was also piqued by the heading that appeared above them: “Translated from the Chinese” (or whatever the language). So I imagined a genre of poems called *“Translated from the English”* in which the translation is a free-association based on the original, such that each enriches the other. I added one essential rule: the pieces must be *contrapuntal*, reading coherently and generating emergent meaning when scanned row by row across columns; otherwise they’d just be two parts of a single poem. -->
+
+<!-- <p> -->
+<!-- <audio controls src="poem_the_wind.mp3" type="audio/mp3"></audio> -->
+
+<p>
+`r next_link("poem_the_wind.html")`
+
+</small>

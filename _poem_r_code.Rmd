@@ -19,7 +19,8 @@ poem_info <- rbind(
   ## Placeholder for last:
   , c( "", "poems", 100000, 100000, "31 Dec 2500" ) 
   ## Actual, new poems next:
-  , c( "Fish Ladder &vert;&vert; Going Home (contrapuntal)", "poem_fish_ladder", 198, 132, "30 June 2026" )
+  , c( "The Wind &vert;&vert; A Dream (contrapuntal)", "poem_the_wind", 211, 160, "15 Aug 2026" )
+  , c( "Fish Ladder &vert;&vert; Going Home (contrapuntal)", "poem_fish_ladder", 198, 132, "30 Jun 2026" )
   , c( "A Way of Waving &vert;&vert; Wavering Away (contrapuntal)", "poem_waving", 616, 378, "14 Apr 2026" )
   , c( "Stars Fade &vert;&vert; Spots Appear (contrapuntal)", "poem_stars_fade", 401, 264, "13 Feb 2026" )
   , c( "Hamster in Your Head", "poem_hamster", 127, 102, "30 Nov 2025" )

@@ -909,5 +909,18 @@ in wavelet-rippled light.	this is being home.
 
 #---------------------------------------------------------------
 r"(
+The Wind	Translated from the English
+A Dream
+The wind blew fierce last night.	I dreamed of you.
+Tree branches banged on the roof.	You rapped with knuckles and fists on the door.
+Rain sprayed heavy against the windows.	You frothed spittle in torrents on the glass.
+I had merely built my house there.	I had only sought sanctuary.
+This afternoon,	This evening,
+the wind averts its eyes,	you flicker the candle,
+waiting for shadows to lengthen	waiting for darkness to flood
+)" |> word_syl_count()
+
+#---------------------------------------------------------------
+r"(
 text here
 )" |> word_syl_count()
