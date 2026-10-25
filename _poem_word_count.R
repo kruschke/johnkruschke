@@ -922,5 +922,42 @@ waiting for shadows to lengthen	waiting for darkness to flood
 
 #---------------------------------------------------------------
 r"(
+Eclipse and Corona
+
+Here in this Mexican cantina, 
+tortilla chips hide a bottle of cerveza,
+only its crown emblem peeking out.
+A coronation of this moment.
+I marvel, encantado, 
+amused & amazed & not wanting it to end… 
+as the chips are eaten and the words emerge.
+
+Here on this patio doomscrolling the media blaze,
+a deep breath smothers the flames,
+opens overhead a cathedral of swaying trees, 
+lifts my gaze upward, 
+wide-eyed and wordless,
+awed & grateful & not wanting it to end… 
+as the breeze expires and the headlines rail.
+
+Here in this crowded subway train, 
+my cell phone lapses to dark, 
+exposing, splayed around me, 
+myriad commuters’ legs. 
+A halo of humanity, for whom I smile,
+humble & hopeful & not wanting it to end… 
+as my screen ignites with a livid text from you.
+
+Everywhere you turn and look at me,
+your rage blots out all the features of your face 
+but the serpents writhing around your head. 
+Stone-faced, I have endured, 
+riven & anguished that we might end… 
+but this time I know, I will never again stand 
+in your path of totality.
+)" |> word_syl_count()
+
+#---------------------------------------------------------------
+r"(
 text here
 )" |> word_syl_count()
