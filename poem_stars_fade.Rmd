@@ -18,7 +18,7 @@ table td:nth-child(2), table th:nth-child(2) { text-align: left; }
 
 <br>
 
-## Stars Fade &vert;&vert; Spots Appear (contrapuntal)
+## Stars Fade &vert;&vert; Spots Appear
 <br>
 
 <table class="center-table" width="530em" /* set width as desired */ >
