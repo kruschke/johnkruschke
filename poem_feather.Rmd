@@ -63,6 +63,8 @@ from the feather-gray clouds swirling overhead.\
 `r qrc_png( qrc_url = "https://johnkruschke.com/poem_feather.html", journal_url = "https://www.westchesterreview.com/john-k-kruschke", journal_name = "*The Westchester Review*", 
 publication_info = "Spring 2026 Issue, 01 April 2026.")`
 
+Nominated for *Best of the Net*, see `r link_new_tab(url = "https://www.facebook.com/share/p/1DBaRzDMxJ/", display_text = "announcement on Facebook")`.
+
 *Notes:* Poems written in first person need not be autobiographical, and usually are not. Instead they express an imaginary "I" or a persona. However, this poem is autobiographical, with thoughts that were provoked while mowing the lawn one day. The running theme of the poem is the various ways that I identify with the gray feather, or with the birds that wear the gray feather, and, ultimately, with the feather's perspective of what's impending. 
 
 <p>
